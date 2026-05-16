@@ -28,28 +28,59 @@ Personal Notion Visual Memory Automation System
 
 기존 일정 관리 시스템의 아이콘은 대부분:
 
-- 카테고리 분류
-- 감성적 장식
-- 일반 키워드 매칭
+* 카테고리 분류
+* 감성적 장식
+* 단순 keyword matching
+* 일반 NLP 기반 태그 분류
 
-기반으로 동작한다.
+방식으로 동작한다.
 
 하지만 사용자는:
 
-- 실제 행동
-- 작업 인터페이스
-- workflow
-- cognitive mode
-- 서비스 UI 기억
+* 실제 행동(workflow)
+* 작업 인터페이스
+* 행동 대상(subject/object)
+* cognitive mode
+* 서비스 UI 기억
+* 행동 + 대상 조합(pair interpretation)
 
 을 기준으로 시각 요소를 선택한다.
 
 즉 사용자의 아이콘 체계는:
-# “분류”
-가 아니라
+
+# “분류 시스템”
+
+이 아니라
+
 # “행동 회상 시스템”
 
 이다.
+
+또한 사용자는:
+단일 행동 keyword만으로 행동을 인식하지 않는다.
+
+예:
+
+* “회의자료 수정”
+* “음식 준비”
+* “일정 확인”
+* “바탕화면 폴더 정리”
+
+처럼:
+동일한 행동 keyword라도,
+무엇을 대상으로 하는가(subject)에 따라
+완전히 다른 workflow와 visual을 연상한다.
+
+즉:
+이 시스템은:
+
+# “행동 keyword 매칭”
+
+이 아니라
+
+# “workflow 해석(interpreting workflow intention)”
+
+을 목표로 한다.
 
 ---
 
@@ -62,82 +93,212 @@ Personal Notion Visual Memory Automation System
 ## 3-1. 행동 중심 기억
 
 사용자는:
-- 무엇을 다루는가
-보다
-- 실제로 어떤 행동을 하는가
+
+* 무엇을 다루는가
+  보다
+* 실제로 어떤 행동을 하는가
 
 를 더 중요하게 생각한다.
 
 예:
-- “강남서초 점검일정 안내”
-→ 점검 ❌
-→ 메일 발송 ⭕
+
+* “강남서초 점검일정 안내”
+  → 점검 ❌
+  → 메일 발송 ⭕
 
 ---
 
 ## 3-2. 인터페이스 기반 기억
 
 사용자는:
-- 메일창
-- 전화화면
-- QR 인증화면
-- 엑셀 UI
-- 네이버폼 체크 UI
-- 코드 에디터
+
+* 메일창
+* 전화화면
+* QR 인증화면
+* 엑셀 UI
+* 네이버폼 체크 UI
+* 코드 에디터
+* 터미널 화면
 
 같은 실제 작업 인터페이스를 기억한다.
+
+즉:
+카테고리보다:
+
+# “실제 사용한 인터페이스”
+
+가 더 강한 기억 anchor가 된다.
 
 ---
 
 ## 3-3. workflow 기반 시각화
 
-같은 금전 업무라도:
-
-| 업무 | 사용 아이콘 |
-|---|---|
-| 월급여 입력 | 💰 |
-| 일상경비 교부 요청 | 📝 |
-
-처럼:
-“어떻게 처리하는가”
-에 따라 달라진다.
-
----
-
-## 3-4. cognitive mode 기반 구분
-
-사용자는:
-- 구현
-- 실행
-- 사고
-- 검토
-
-를 서로 다른 모드로 인식한다.
+같은 업무 category라도:
+실제 처리 workflow에 따라 visual이 달라진다.
 
 예:
 
-| 행동 | 시각 요소 |
-|---|---|
-| 브레인스토밍 | 🧠 |
-| 코딩 구현 | code |
-| 터미널 실행 | terminal |
+| 업무          | 사용 visual |
+| ----------- | --------- |
+| 월급여 입력      | 💰        |
+| 일상경비 교부 요청  | 📝        |
+| 강사 일정 메일 안내 | 📧        |
+| 과장님 QR 인증   | qr-code   |
+
+즉:
+사용자는:
+“무슨 업무인가”
+보다
+
+# “실제로 어떤 행동을 수행하는가”
+
+를 기반으로 시각 요소를 선택한다.
 
 ---
 
-## 3-5. 서비스 UI 색상 기억
+## 3-4. 행동 + 대상(pair) 기반 해석
+
+사용자는:
+행동 keyword를 단독으로 해석하지 않는다.
+
+동일한 행동이라도:
+대상(subject/object)에 따라 completely different workflow를 연상한다.
+
+예:
+
+| 표현         | 기대 visual         |
+| ---------- | ----------------- |
+| 면접자료 준비    | 📄                |
+| 음식 준비      | 🍱                |
+| 행사 준비      | 🎉                |
+| 일정 확인      | 💬                |
+| 회의자료 확인    | 📄                |
+| 바탕화면 폴더 정리 | 📁                |
+| 회의실 정리     | chair             |
+| 카톡 알림 정리   | bell-notification |
+
+즉:
+시스템은:
+
+# 행동 keyword
+
+가 아니라
+
+# “행동 + 대상 pair”
+
+를 함께 해석해야 한다.
+
+---
+
+## 3-5. modifier와 workflow anchor 분리
+
+사용자의 일정 표현에는:
+
+* modifier(context)
+* workflow anchor
+
+가 함께 존재한다.
+
+예:
+
+| modifier | workflow anchor |
+| -------- | --------------- |
+| 점심       | 카톡              |
+| 과장님      | 메일              |
+| 저녁       | 전화              |
+
+사용자는:
+modifier보다:
+
+# 실제 행동 workflow(anchor)
+
+를 더 중요하게 기억한다.
+
+즉:
+
+* 점심 카톡 확인 → 💬
+* 과장님 메일 전달 → 📧
+
+처럼:
+modifier는 context 역할만 수행한다.
+
+---
+
+## 3-6. compound noun 기반 의미 보호
+
+사용자는:
+compound noun 내부 substring을
+독립 workflow keyword로 인식하지 않는다.
+
+예:
+
+* 교육청
+* 보고자료
+* 회의자료
+* 계획안
+* 검토보고서
+
+같은 표현은:
+하나의 subject noun으로 인식된다.
+
+즉:
+
+* “보고자료”의 “보고”
+* “교육청”의 “교육”
+
+같은 substring은:
+독립 workflow dominance를 가져서는 안 된다.
+
+---
+
+## 3-7. cognitive mode 기반 구분
+
+사용자는:
+
+* 구현
+* 실행
+* 사고
+* 검토
+* 정리
+* 커뮤니케이션
+
+을 서로 다른 cognitive mode로 인식한다.
+
+예:
+
+| 행동     | visual   |
+| ------ | -------- |
+| 브레인스토밍 | 🧠       |
+| 코딩 구현  | code     |
+| 터미널 실행 | terminal |
+| 자료 검토  | 📄       |
+| 카톡 문의  | 💬       |
+
+즉:
+시스템은:
+단순 업무 category가 아니라,
+
+# 사용자의 cognitive workflow mode
+
+를 해석해야 한다.
+
+---
+
+## 3-8. 서비스 UI 색상 기억
 
 사용자는:
 서비스 자체의 시각 기억도 활용한다.
 
 예:
 
-| 서비스 | 색상 |
-|---|---|
-| Excel | green |
+| 서비스        | 색상    |
+| ---------- | ----- |
+| Excel      | green |
 | Naver Form | green |
-| Terminal | blue |
+| Terminal   | blue  |
 
 즉 색상도:
+
 # workflow 회상 보조 요소
 
 로 작동한다.
@@ -147,23 +308,38 @@ Personal Notion Visual Memory Automation System
 # 4. 핵심 철학
 
 이 프로젝트는:
+
 # “아이콘 추천기”
+
 가 아니다.
 
 대신:
+
 # “행동 회상 인터페이스 AI”
 
 이다.
 
 목표는:
-사용자가 시각 요소를 보는 순간:
+사용자가 visual을 보는 순간:
 
-- 해야 할 행동
-- 작업 인터페이스
-- workflow
-- 서비스 UI
+* 해야 할 행동
+* 작업 인터페이스
+* workflow
+* 서비스 UI
+* cognitive mode
+* 행동 대상(subject)
 
-가 즉시 떠오르게 만드는 것이다.
+이 즉시 떠오르게 만드는 것이다.
+
+즉:
+이 시스템의 목적은:
+“예쁜 아이콘 추천”
+이 아니라,
+
+# “사용자의 행동 기억 구조를 시각적으로 압축”
+
+하는 것이다.
+
 
 ---
 
@@ -174,10 +350,46 @@ Personal Notion Visual Memory Automation System
 # 5-1. sample_cases.json
 
 ## 역할
-실제 사용자의 일정 제목과 선택 패턴을 저장한다.
+
+실제 사용자의 일정 제목과
+실제 선택한 visual 패턴을 저장한다.
+
+---
 
 ## 목적
-사용자의 행동 기억 방식을 AI가 학습하도록 한다.
+
+사용자의:
+
+* workflow 기억 방식
+* 행동 + 대상(pair) 해석 방식
+* interface 기억
+* modifier 사용 패턴
+* cognitive mode
+
+를 AI가 학습하도록 한다.
+
+즉:
+단순 keyword 학습이 아니라,
+
+# “사용자의 행동 회상 구조”
+
+를 학습하는 데이터셋이다.
+
+---
+
+## 핵심 특징
+
+sample_cases는:
+단순 title-example 데이터가 아니다.
+
+각 사례는:
+
+* 어떤 행동을 수행하는지
+* 무엇을 대상으로 하는지
+* 어떤 interface를 사용하는지
+* 어떤 workflow mode인지
+
+를 함께 표현한다.
 
 ---
 
@@ -195,10 +407,21 @@ Personal Notion Visual Memory Automation System
 
   "focus": "엑셀 테이블 정리",
 
+  "workflow_type": "spreadsheet_workflow",
+
+  "pair_context": {
+    "action": "정리",
+    "subject": "엑셀 현황"
+  },
+
   "interface_memory": [
     "엑셀",
     "스프레드시트",
     "테이블UI"
+  ],
+
+  "modifier": [
+    "교육신청"
   ],
 
   "reason": "데이터 테이블 정리 작업 중심"
@@ -210,10 +433,45 @@ Personal Notion Visual Memory Automation System
 # 5-2. visual_candidates.json
 
 ## 역할
-사용 가능한 시각 요소 vocabulary를 정의한다.
+
+사용 가능한 visual vocabulary와
+workflow interpretation rule을 정의한다.
+
+---
 
 ## 목적
-AI가 선택 가능한 행동 회상 시각 요소를 제공한다.
+
+AI가:
+
+* workflow
+* 행동 대상(subject)
+* interface
+* cognitive mode
+
+를 기반으로
+사용자의 기억 구조에 맞는 visual을 선택하도록 한다.
+
+---
+
+## 핵심 특징
+
+visual_candidates는:
+단순 keyword dictionary가 아니다.
+
+각 visual은:
+
+* 어떤 workflow인지
+* 어떤 대상(subject)과 잘 결합되는지
+* 어떤 interface를 연상시키는지
+* 어떤 modifier에 약한지
+
+를 함께 가진다.
+
+즉:
+
+# “workflow semantic vocabulary”
+
+역할을 수행한다.
 
 ---
 
@@ -231,15 +489,36 @@ AI가 선택 가능한 행동 회상 시각 요소를 제공한다.
 
     "workflow_priority": 1,
 
+    "workflow_type": "spreadsheet_workflow",
+
     "meaning": [
-      "엑셀",
-      "스프레드시트",
-      "데이터정리"
+      {
+        "text": "엑셀",
+        "specificity": 3,
+        "interface_dominance": 10
+      },
+      {
+        "text": "스프레드시트",
+        "specificity": 3,
+        "interface_dominance": 10
+      }
+    ],
+
+    "paired_subjects": [
+      "현황",
+      "정산",
+      "명단",
+      "데이터"
     ],
 
     "interface_memory": [
       "엑셀",
       "테이블UI"
+    ],
+
+    "cognitive_mode": [
+      "데이터정리",
+      "테이블작업"
     ]
   }
 }
@@ -250,49 +529,131 @@ AI가 선택 가능한 행동 회상 시각 요소를 제공한다.
 # 5-3. feedback_log.json
 
 ## 역할
-GPT 추천과 실제 사용자 수정 내역 저장
+
+GPT 추천 결과와
+실제 사용자 수정 내역을 저장한다.
 
 ---
 
 ## 목적
-사용자의 실제 선택 패턴을 점진적으로 학습
+
+AI의 일반 추론보다:
+실제 사용자의 선택 패턴을 우선 학습한다.
+
+즉:
+사용자의 workflow 기억 구조를
+점진적으로 personalization한다.
+
+---
+
+## 핵심 특징
+
+feedback_log는:
+단순 correction log가 아니다.
+
+다음을 함께 기록한다:
+
+* GPT 추천 visual
+* 사용자 최종 선택 visual
+* 어떤 modifier가 있었는지
+* 어떤 workflow pair였는지
+* 어떤 keyword 충돌이 있었는지
+
+즉:
+
+# “사용자 workflow 기억 보정 데이터”
+
+역할을 수행한다.
 
 ---
 
 # 6. workflow_priority 정의
 
-| 값 | 의미 |
-|---|---|
-| 1 | workflow 핵심 행동 vocabulary |
-| 2 | 특정 상황 보조 vocabulary |
-| 3 | 개인적/특수 상황 vocabulary |
+workflow_priority는:
+“중요도”
+가 아니라,
+
+# “workflow 기억 anchor 강도”
+
+를 의미한다.
+
+즉:
+사용자가 visual을 보았을 때,
+얼마나 즉시 행동을 회상하는가를 나타낸다.
 
 ---
 
-## 예시
-
-### priority 1
-- 📧
-- 📞
-- 💰
-- 📝
-- spreadsheet_work
-- survey_form
+| 값 | 의미                            |
+| - | ----------------------------- |
+| 1 | 강한 workflow/interface anchor  |
+| 2 | 중간 수준 workflow/context anchor |
+| 3 | modifier/context/개인적 상황       |
 
 ---
 
-### priority 2
-- 🤝
-- 🤵
-- terminal
-- urgent_notice
+## priority 1
+
+실제 interaction interface 또는
+강한 행동 workflow
+
+예:
+
+* 📧
+* 📞
+* 💬
+* qr-code
+* spreadsheet_work
+* survey_form
+* terminal
+* code_editor
+
+특징:
+
+* 즉시 행동 회상 가능
+* 높은 interface dominance
+* modifier보다 우선됨
 
 ---
 
-### priority 3
-- 🍴
-- 🚕
-- 📦
+## priority 2
+
+특정 상황 workflow 또는
+중간 수준 cognitive mode
+
+예:
+
+* 🤝
+* 👩‍🏫
+* 📄
+* 🧠
+* 🎉
+* 📁
+
+특징:
+
+* 특정 맥락에서 강해짐
+* 행동 + 대상(pair)에 영향받음
+
+---
+
+## priority 3
+
+modifier/context/개인적 상황 vocabulary
+
+예:
+
+* 🍚
+* 🚕
+* 📦
+* 🤵
+* 🍽️
+
+특징:
+
+* workflow anchor를 직접 결정하지 않음
+* context 설명 역할
+* interface dominance를 이기지 못함
+
 
 ---
 
@@ -356,36 +717,285 @@ GPT 행동 추론 fallback
 # 8. 핵심 추천 원칙
 
 ## 원칙 1
-카테고리보다 행동을 우선
+
+카테고리보다 workflow를 우선한다
+
+사용자는:
+“무슨 업무인가”
+보다
+“실제로 어떤 행동을 수행하는가”
+
+를 더 중요하게 기억한다.
+
+예:
+
+* 급여 관련 보고자료 작성
+  → 급여 ❌
+  → 작성 ⭕
+
+* 수당 반납 공문 송부
+  → 수당 ❌
+  → 공문 송부 ⭕
+
+즉:
+업무 category보다
+실제 workflow/action을 우선 추천한다.
 
 ---
 
 ## 원칙 2
-사람보다 인터페이스를 우선할 수 있음
+
+행동 keyword는 단독으로 해석하지 않는다
+
+동일한 행동 keyword라도:
+대상(subject/object)에 따라
+completely different workflow mode를 생성할 수 있다.
 
 예:
-- 과장 퇴근 인증
-→ 사람 ❌
-→ QR 인증 ⭕
+
+| 표현         | 기대 visual         |
+| ---------- | ----------------- |
+| 면접자료 준비    | 📄                |
+| 음식 준비      | 🍱                |
+| 행사 준비      | 🎉                |
+| 일정 확인      | 💬                |
+| 회의자료 확인    | 📄                |
+| 바탕화면 폴더 정리 | 📁                |
+| 회의실 정리     | chair             |
+| 카톡 알림 정리   | bell-notification |
+
+즉:
+시스템은:
+단일 행동 keyword가 아니라,
+
+# “행동 + 대상 pair”
+
+를 기반으로 workflow를 해석한다.
 
 ---
 
 ## 원칙 3
-서비스 UI 기억 활용 가능
+
+사람보다 인터페이스를 우선할 수 있음
+
+사용자는:
+사람(person)보다
+실제 interaction interface를 더 강하게 기억한다.
 
 예:
-- Excel green
-- Naver green
+
+* 과장님 메일 전달
+  → 과장님 ❌
+  → 메일 ⭕
+
+* 대표 전화 문의
+  → 대표 ❌
+  → 전화 ⭕
+
+* 과장님 QR 인증
+  → 사람 ❌
+  → QR 인증 ⭕
+
+즉:
+사람 keyword는:
+modifier/context로 취급될 수 있으며,
+
+* 메일
+* 전화
+* QR
+* 카톡
+
+같은 interface/workflow keyword를 우선 추천한다.
 
 ---
 
 ## 원칙 4
-emoji와 notion icon은 동등한 기억 트리거
+
+modifier보다 workflow anchor를 우선한다
+
+사용자의 일정 표현에는:
+
+* modifier(context)
+* workflow anchor
+
+가 함께 존재한다.
+
+예:
+
+| modifier | workflow anchor |
+| -------- | --------------- |
+| 점심       | 카톡              |
+| 저녁       | 메일              |
+| 과장님      | QR              |
+
+사용자는:
+modifier보다
+실제 행동 workflow(anchor)를 더 중요하게 기억한다.
+
+예:
+
+* 점심 카톡 확인 → 💬
+* 저녁 메일 안내 → 📧
+* 과장님 QR 인증 → qr-code
+
+즉:
+modifier는 context 역할만 수행하며,
+visual dominance는 workflow anchor가 가진다.
 
 ---
 
 ## 원칙 5
-사용자 수정이 GPT 판단보다 우선
+
+compound noun 내부 substring은 dominance를 갖지 않는다
+
+사용자는:
+compound noun 내부 substring을
+독립 workflow keyword로 인식하지 않는다.
+
+예:
+
+* 교육청
+* 보고자료
+* 회의자료
+* 계획안
+* 검토보고서
+
+같은 표현은:
+하나의 subject noun으로 취급한다.
+
+즉:
+
+* “교육청”의 “교육”
+* “보고자료”의 “보고”
+* “회의자료”의 “회의”
+
+같은 substring은:
+독립 workflow dominance를 가져서는 안 된다.
+
+---
+
+## 원칙 6
+
+실제 사용 인터페이스는 높은 dominance를 가진다
+
+사용자는:
+카테고리보다
+실제 사용한 인터페이스를 강하게 기억한다.
+
+따라서 아래 keyword는:
+높은 interface dominance를 가진다.
+
+* 메일
+* 전화
+* 카톡
+* QR
+* 엑셀
+* 네이버폼
+* 터미널
+* Cursor
+* VSCode
+
+예:
+
+* 엑셀 정리 → spreadsheet
+* 카톡 문의 → 💬
+* QR 등록 → qr-code
+
+즉:
+실제 interaction interface를 우선 추천한다.
+
+---
+
+## 원칙 7
+
+generic action keyword는 단독 dominance를 가지지 않는다
+
+아래와 같은 일반 행동 keyword는:
+단독으로는 의미가 약하다.
+
+* 정리
+* 준비
+* 확인
+* 수정
+* 관리
+* 운영
+
+이 keyword들은:
+대상(subject/object)과 함께 해석되어야 한다.
+
+예:
+
+* 캐비넷 정리 → 🗄️
+* 회의실 정리 → chair
+* 음식 준비 → 🍱
+* 면접자료 준비 → 📄
+* 일정 확인 → 💬
+* 회의자료 확인 → 📄
+
+즉:
+generic action 자체보다
+행동 대상(subject)을 우선 해석한다.
+
+---
+
+## 원칙 8
+
+emoji와 notion icon은 동등한 기억 trigger이다
+
+사용자에게:
+emoji와 notion icon은
+모두 동일한 workflow 기억 trigger 역할을 수행한다.
+
+중요한 것은:
+“예쁜 디자인”
+이 아니라,
+
+* 행동 회상 속도
+* workflow 직관성
+* interface 연상 가능성
+
+이다.
+
+---
+
+## 원칙 9
+
+서비스 UI 색상 기억을 활용할 수 있다
+
+사용자는:
+서비스 자체의 시각 기억도 활용한다.
+
+예:
+
+| 서비스        | 색상    |
+| ---------- | ----- |
+| Excel      | green |
+| Naver Form | green |
+| Terminal   | blue  |
+
+즉:
+색상도 workflow 회상 보조 요소로 활용 가능하다.
+
+---
+
+## 원칙 10
+
+사용자 수정이 AI 판단보다 우선한다
+
+이 시스템은:
+일반적인 icon recommendation AI가 아니라,
+
+“사용자의 workflow 기억 시스템”
+
+이다.
+
+따라서:
+AI 추론보다
+실제 사용자의 수정 결과를 우선 학습한다.
+
+즉:
+사용자의 실제 선택 패턴이
+최종 truth source가 된다.
 
 ---
 

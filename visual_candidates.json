@@ -141,7 +141,7 @@
       "type": "emoji",
       "value": "📝"
     },
-    "workflow_priority": 1,
+    "workflow_priority": 2,
     "meaning": [
       {
         "text": "작성",
@@ -155,11 +155,6 @@
       },
       {
         "text": "기입",
-        "specificity": 1,
-        "interface_dominance": 0
-      },
-      {
-        "text": "정리",
         "specificity": 1,
         "interface_dominance": 0
       },
@@ -204,7 +199,7 @@
       "type": "emoji",
       "value": "📄"
     },
-    "workflow_priority": 1,
+    "workflow_priority": 2,
     "meaning": [
       {
         "text": "검토",
@@ -213,11 +208,6 @@
       },
       {
         "text": "확인",
-        "specificity": 1,
-        "interface_dominance": 0
-      },
-      {
-        "text": "보고",
         "specificity": 1,
         "interface_dominance": 0
       },
@@ -706,17 +696,7 @@
     "workflow_priority": 3,
     "meaning": [
       {
-        "text": "식사",
-        "specificity": 1,
-        "interface_dominance": 0
-      },
-      {
-        "text": "오찬",
-        "specificity": 1,
-        "interface_dominance": 0
-      },
-      {
-        "text": "식당",
+        "text": "식사 약속",
         "specificity": 1,
         "interface_dominance": 0
       },
@@ -727,8 +707,8 @@
       }
     ],
     "interface_memory": [
-      "식당",
-      "오찬"
+      "식사 약속",
+      "회식"
     ],
     "usage_context": [
       "오찬 일정",
@@ -736,42 +716,60 @@
     ]
   },
   "education_fieldwork": {
-    "visual": {
-      "type": "emoji",
-      "value": "👩‍🏫"
-    },
-    "workflow_priority": 3,
-    "meaning": [
-      {
-        "text": "교육",
-        "specificity": 2,
-        "interface_dominance": 0
-      },
-      {
-        "text": "현장",
-        "specificity": 2,
-        "interface_dominance": 0
-      },
-      {
-        "text": "강사",
-        "specificity": 1,
-        "interface_dominance": 0
-      },
-      {
-        "text": "수업",
-        "specificity": 2,
-        "interface_dominance": 0
-      }
-    ],
-    "interface_memory": [
-      "교육현장",
-      "강의"
-    ],
-    "usage_context": [
-      "식생활교육 방문",
-      "교육 현장 점검"
-    ]
+  "visual": {
+    "type": "emoji",
+    "value": "👩‍🏫"
   },
+  "workflow_priority": 2,
+  "meaning": [
+    {
+      "text": "교육현장",
+      "specificity": 2,
+      "interface_dominance": 0
+    },
+    {
+      "text": "현장교육",
+      "specificity": 2,
+      "interface_dominance": 0
+    },
+    {
+      "text": "강사",
+      "specificity": 2,
+      "interface_dominance": 0
+    },
+    {
+      "text": "수업",
+      "specificity": 2,
+      "interface_dominance": 0
+    },
+    {
+      "text": "강의",
+      "specificity": 2,
+      "interface_dominance": 0
+    },
+    {
+      "text": "교육방문",
+      "specificity": 2,
+      "interface_dominance": 0
+    },
+    {
+      "text": "출강",
+      "specificity": 2,
+      "interface_dominance": 0
+    }
+  ],
+  "interface_memory": [
+    "교육현장",
+    "강의",
+    "수업진행"
+  ],
+  "usage_context": [
+    "식생활교육 방문",
+    "강사 출강",
+    "교육 현장 점검",
+    "수업 진행"
+  ]
+},
   "binder_document": {
     "visual": {
       "type": "emoji",
@@ -1022,5 +1020,241 @@
       "점심 약속",
       "저녁 약속"
     ]
-  }
+  },
+  "folder_organization": {
+    "visual": {
+"type": "emoji",
+"value": "📁"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "폴더",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+"text": "파일",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "드라이브",
+"specificity": 2,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"파일탐색기",
+"폴더구조"
+],
+"usage_context": [
+"바탕화면 폴더 정리",
+"파일 정리",
+"드라이브 정리"
+]
+},
+"room_cleanup": {
+"visual": {
+"type": "notion_icon",
+"value": "chair",
+"color": "gray"
+},
+"workflow_priority": 3,
+"meaning": [
+{
+"text": "회의실",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "정돈",
+"specificity": 1,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"회의실",
+"자리정리"
+],
+"usage_context": [
+"회의실 정리",
+"회의실 정돈"
+]
+},
+"office_cleanup": {
+"visual": {
+"type": "notion_icon",
+"value": "person-trash-can",
+"color": "gray"
+},
+"workflow_priority": 3,
+"meaning": [
+{
+"text": "사무실",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "청소",
+"specificity": 1,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"사무실",
+"정리청소"
+],
+"usage_context": [
+"사무실 정리",
+"사무실 청소"
+]
+},
+"room_cleaning": {
+"visual": {
+"type": "notion_icon",
+"value": "mop-bucket",
+"color": "brown"
+},
+"workflow_priority": 3,
+"meaning": [
+{
+"text": "방",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "청소",
+"specificity": 1,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"방청소",
+"생활정리"
+],
+"usage_context": [
+"방 정리",
+"방 청소"
+]
+},
+"cabinet_organization": {
+"visual": {
+"type": "emoji",
+"value": "🗄️"
+},
+"workflow_priority": 3,
+"meaning": [
+{
+"text": "캐비넷",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "서랍",
+"specificity": 2,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"캐비넷",
+"보관함"
+],
+"usage_context": [
+"캐비넷 정리",
+"서랍 정리"
+]
+},
+"notification_cleanup": {
+"visual": {
+"type": "notion_icon",
+"value": "bell",
+"color": "yellow"
+},
+"workflow_priority": 2,
+"meaning": [
+{
+"text": "알림",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "알림센터",
+"specificity": 2,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"알림창",
+"푸시알림"
+],
+"usage_context": [
+"카톡 알림 정리",
+"알림 정리"
+]
+},
+"food_preparation": {
+"visual": {
+"type": "emoji",
+"value": "🍱"
+},
+"workflow_priority": 3,
+"meaning": [
+{
+"text": "음식",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "도시락",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "간식",
+"specificity": 2,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"식사준비",
+"음식준비"
+],
+"usage_context": [
+"음식 준비",
+"간식 준비"
+]
+},
+"event_preparation": {
+"visual": {
+"type": "emoji",
+"value": "🎉"
+},
+"workflow_priority": 3,
+"meaning": [
+{
+"text": "행사",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "이벤트",
+"specificity": 2,
+"interface_dominance": 0
+},
+{
+"text": "부스",
+"specificity": 2,
+"interface_dominance": 0
+}
+],
+"interface_memory": [
+"행사준비",
+"이벤트운영"
+],
+"usage_context": [
+"행사 준비",
+"부스 준비"
+]
+}
 }

@@ -34,7 +34,6 @@ MID_SPECIFICITY_TERMS: frozenset[str] = frozenset(
         "구현",
         "자동화",
         "행정처리",
-        "교육",
         "현장",
         "수업",
         "API",
@@ -135,32 +134,77 @@ SALARY_SUBJECT_TERMS: frozenset[str] = frozenset(
     }
 )
 
-# 보고서·회의자료 등 — meaning「보고」「회의」가 명사 안에만 들어간 매칭을 막기 위한 subject compound
-# 검토보고서: 명사 접두 「검토」와 동사 「검토」 분리(검토보고서 작성 → 작성)
+# 문서·행정 subject compound — 내부 substring(교육, 보고, 회의, 신청 등)은 workflow anchor·dominance 대상이 아님
 DOCUMENT_COMPOUND_SUBJECT_TERMS: frozenset[str] = frozenset(
     {
+        # 교육·교육청 계열
+        "교육청",
+        "교육자료",
+        "교육계획",
+        "교육예산",
+        "교육지원",
+        "교육신청서",
+        # 보고·발표 계열
         "출장보고서",
         "결과보고서",
         "검토보고서",
+        "면접자료",
+        "발표자료",
         "보고자료",
         "보고서",
+        # 회의 계열
         "회의자료",
+        "회의록",
+        "회의안건",
+        # 계획 계열
         "계획안",
+        "계획서",
+        "운영계획",
+        # 협의 계열
+        "협의회",
+        "협의안",
+        "협의자료",
+        "협의결과",
+        # 검토·확인 계열
+        "검토자료",
+        "검토결과",
+        "검토의견",
+        "확인서",
+        "확인자료",
+        "사실확인서",
+        # 신청 계열
+        "신청서",
+        "신청현황",
+        "신청내역",
+        "신청페이지",
+        # 조사 계열
+        "조사표",
+        "조사결과",
+        "실태조사",
+        "만족도조사",
+        # 분석 계열
+        "분석자료",
+        "분석결과",
+        # 운영·지원·등록·승인 계열
+        "운영현황",
+        "운영예산",
+        "지원사업",
+        "지원예산",
+        "지원현황",
+        "등록부",
+        "등록현황",
+        "등록내역",
+        "승인요청서",
+        "승인내역",
+        "승인현황",
+        # 기안
         "기안문",
     }
 )
 
-# 공문·보고 등 실제 문서 처리 workflow가 제목에 있으면 subject(급여/수당…)보다 우선
+# 공문·보고 등 문서 처리 신호 + subject compound(급여 subject 후순위 판단에 사용)
 DOCUMENT_WORKFLOW_SIGNAL_TERMS: frozenset[str] = frozenset(
     {
-        "보고자료",
-        "보고서",
-        "회의자료",
-        "계획안",
-        "기안문",
-        "결과보고서",
-        "검토보고서",
-        "출장보고서",
         "공문",
         "작성",
         "수정",
@@ -171,7 +215,7 @@ DOCUMENT_WORKFLOW_SIGNAL_TERMS: frozenset[str] = frozenset(
         "검토",
         "확인",
     }
-)
+) | DOCUMENT_COMPOUND_SUBJECT_TERMS
 
 
 def _sorted_terms(terms: frozenset[str]) -> tuple[str, ...]:
@@ -184,6 +228,92 @@ _MID_SORTED = _sorted_terms(MID_SPECIFICITY_TERMS)
 _LOW_SORTED = _sorted_terms(LOW_SPECIFICITY_TERMS)
 _DOCUMENT_WORKFLOW_SIGNAL_SORTED = _sorted_terms(DOCUMENT_WORKFLOW_SIGNAL_TERMS)
 DOCUMENT_COMPOUND_SUBJECT_SORTED = _sorted_terms(DOCUMENT_COMPOUND_SUBJECT_TERMS)
+
+
+def _canonical_title_text(title: str) -> str:
+    return "".join(title.strip().split())
+
+
+def compound_subject_char_mask(canonical: str) -> list[bool]:
+    """compound subject 명사에 덮인 글자는 True."""
+    n = len(canonical)
+    cov = [False] * n
+    for w in DOCUMENT_COMPOUND_SUBJECT_SORTED:
+        if not w:
+            continue
+        start = 0
+        while True:
+            j = canonical.find(w, start)
+            if j < 0:
+                break
+            for k in range(j, min(j + len(w), n)):
+                cov[k] = True
+            start = j + 1
+    return cov
+
+
+def _substring_starts(text: str, needle: str) -> list[int]:
+    if not needle:
+        return []
+    out: list[int] = []
+    start = 0
+    while True:
+        j = text.find(needle, start)
+        if j < 0:
+            break
+        out.append(j)
+        start = j + max(1, len(needle))
+    return out
+
+
+def _occurrence_hits_compound(cov: list[bool], start: int, length: int) -> bool:
+    if start < 0 or length <= 0 or start + length > len(cov):
+        return True
+    return any(cov[start + k] for k in range(length))
+
+
+def meaning_has_noncompound_occurrence(canonical: str, phrase: str, cov: list[bool]) -> bool:
+    """compound subject span 밖에서만 meaning occurrence를 인정(내부 substring은 workflow로 보지 않음)."""
+    p = phrase.strip()
+    if not p or p not in canonical:
+        return False
+    for j in _substring_starts(canonical, p):
+        if _occurrence_hits_compound(cov, j, len(p)):
+            continue
+        return True
+    return False
+
+
+def first_meaning_occurrence_index(canonical: str, phrase: str, cov: list[bool], prefer_last: bool) -> int:
+    """compound 밖 occurrence 인덱스. 없으면 10**9."""
+    p = phrase.strip()
+    if not p:
+        return 10**9
+    valid: list[int] = []
+    for j in _substring_starts(canonical, p):
+        if _occurrence_hits_compound(cov, j, len(p)):
+            continue
+        valid.append(j)
+    if not valid:
+        return 10**9
+    return max(valid) if prefer_last else min(valid)
+
+
+def effective_interface_dominance_for_occurrence(
+    canonical: str,
+    matched: str,
+    raw_dom: int,
+    occ_index: int,
+    cov: list[bool],
+) -> int:
+    """compound 밖·독립 occurrence일 때만 interface dominance 유지(내부 substring은 dominance 0)."""
+    if raw_dom <= 0:
+        return 0
+    L = len(matched.strip())
+    if occ_index >= 10**9 or _occurrence_hits_compound(cov, occ_index, L):
+        return 0
+    return raw_dom
+
 
 # 직책·상대 역할 — 제목에 인터페이스 앵커가 있으면 이 키워드만으로는 후보를 대표하지 않음(modifier)
 PERSON_CONTEXT_MODIFIER_TERMS: frozenset[str] = frozenset(
@@ -208,15 +338,23 @@ PERSON_CONTEXT_MODIFIER_TERMS: frozenset[str] = frozenset(
 
 
 def title_contains_interface_anchor(title: str) -> bool:
-    """제목에 INTERFACE anchor 부분문자열이 하나라도 있으면 True."""
-    t = title.strip()
-    if not t:
+    """제목에 INTERFACE anchor가 있고, compound subject 안에만 있는 매칭은 제외."""
+    c = _canonical_title_text(title)
+    if not c:
         return False
-    return any(a and a in t for a in _INTERFACE_SORTED)
+    cov = compound_subject_char_mask(c)
+    for a in _INTERFACE_SORTED:
+        if not a or a not in c:
+            continue
+        for j in _substring_starts(c, a):
+            if _occurrence_hits_compound(cov, j, len(a)):
+                continue
+            return True
+    return False
 
 
 def title_has_document_workflow_signal(title: str) -> bool:
-    """공문·보고·작성·검토 등 문서 처리 workflow가 제목에 있으면 True (급여 subject보다 우선)."""
+    """문서 처리·subject compound 등 신호가 제목에 있으면 True (급여 subject 후순위)."""
     t = title.strip()
     if not t:
         return False

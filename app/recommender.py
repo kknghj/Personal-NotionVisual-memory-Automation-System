@@ -1,17 +1,31 @@
 from typing import Any, Optional
 
+from app.data_loader import load_pair_rules
+from app.pair_engine import PairRuleEngine
 from app.specificity import (
-    DOCUMENT_COMPOUND_SUBJECT_SORTED,
     PERSON_CONTEXT_MODIFIER_TERMS,
+    compound_subject_char_mask,
+    effective_interface_dominance_for_occurrence,
+    first_meaning_occurrence_index,
     iter_meaning_entries,
+    meaning_has_noncompound_occurrence,
     title_contains_interface_anchor,
     title_has_document_workflow_signal,
+    _canonical_title_text,
 )
 
 SALARY_SYSTEM_CANDIDATE_ID = "salary_system"
 
-# 같은 후보 안에서 뒤쪽 행동 키워드(작성·검토 등)를 우선 — compound subject 뒤의 동사
 DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS = frozenset({"document_edit", "document_review"})
+
+_pair_engine: PairRuleEngine | None = None
+
+
+def _get_pair_engine() -> PairRuleEngine:
+    global _pair_engine
+    if _pair_engine is None:
+        _pair_engine = PairRuleEngine(load_pair_rules())
+    return _pair_engine
 
 
 def find_exact_title_match(title: str, cases: list[dict[str, Any]]) -> Optional[dict[str, Any]]:
@@ -22,94 +36,18 @@ def find_exact_title_match(title: str, cases: list[dict[str, Any]]) -> Optional[
     return None
 
 
-def _canonical_title(title: str) -> str:
-    return "".join(title.strip().split())
-
-
-def _compound_subject_spans(canonical: str) -> list[tuple[int, int]]:
-    spans: list[tuple[int, int]] = []
-    for w in DOCUMENT_COMPOUND_SUBJECT_SORTED:
-        if not w or w not in canonical:
-            continue
-        start = 0
-        while True:
-            j = canonical.find(w, start)
-            if j < 0:
-                break
-            spans.append((j, j + len(w)))
-            start = j + 1
-    return spans
-
-
-def _interval_inside_any_span(start: int, end: int, spans: list[tuple[int, int]]) -> bool:
-    for a, b in spans:
-        if start >= a and end <= b:
-            return True
-    return False
-
-
-def _meaning_occurrence_starts(canonical: str, phrase: str) -> list[int]:
-    p = phrase.strip()
-    if not p:
-        return []
-    out: list[int] = []
-    start = 0
-    while True:
-        j = canonical.find(p, start)
-        if j < 0:
-            break
-        out.append(j)
-        start = j + max(1, len(p))
-    return out
-
-
-def _meaning_allowed_in_title_for_workflow(title: str, phrase: str) -> bool:
-    """
-    공백을 무시한 제목에서 meaning이 등장하는지.
-    보고서·회의자료 등 compound subject 구간 안에만 걸린 부분 문자열(보고, 회의, 기안, 검토 등)은 무시.
-    """
-    canonical = _canonical_title(title)
-    p = phrase.strip()
-    if not p or p not in canonical:
-        return False
-    spans = _compound_subject_spans(canonical)
-    for j in _meaning_occurrence_starts(canonical, p):
-        if not _interval_inside_any_span(j, j + len(p), spans):
-            return True
-    return False
-
-
-def _match_index_for_meaning(title: str, matched: str, candidate_id: str) -> int:
-    """정렬·비교용 인덱스. document_edit/review는 compound 밖 occurrence 중 가장 뒤(실제 행동) 우선."""
-    canonical = _canonical_title(title)
-    m = matched.strip()
-    if not m:
-        return 10**9
-    spans = _compound_subject_spans(canonical)
-    valid = [
-        j
-        for j in _meaning_occurrence_starts(canonical, m)
-        if not _interval_inside_any_span(j, j + len(m), spans)
-    ]
-    if not valid:
-        return 10**9
-    if candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS:
-        return max(valid)
-    return min(valid)
-
-
 def _local_meaning_better(
     cand: tuple[int, int, int, int, str],
     best: tuple[int, int, int, int, str],
     candidate_id: str,
 ) -> bool:
-    """같은 후보 안: specificity ↑, interface_dominance ↑, 위치(문서 후보는 뒤쪽 우선), 길이 ↑."""
-    spec, dom, pos, ln, _t = cand
-    bspec, bdom, bpos, bln, _bt = best
-    if spec != bspec:
-        return spec > bspec
+    """interface_dominance → specificity → 위치 → 길이 (후보 내부)."""
+    dom, spec, pos, ln, _t = cand
+    bdom, bspec, bpos, bln, _bt = best
     if dom != bdom:
         return dom > bdom
+    if spec != bspec:
+        return spec > bspec
     if candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS:
         if pos != bpos:
             return pos > bpos
@@ -126,20 +64,23 @@ def _pick_best_meaning_for_candidate(
     key_title: str,
     title_has_interface: bool,
     candidate_id: str,
+    canonical: str,
+    cov: list[bool],
 ) -> Optional[tuple[int, int, int, int, str]]:
     """
-    제목에 맞는 meaning 중 하나를 고른다.
-    제목에 인터페이스 앵커가 있으면 person modifier meaning만으로는 대표하지 않는다.
+    compound subject 밖(+ embedded 어근 오른쪽 glue 없음)에서만 meaning 매칭.
     """
+    prefer_last = candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS
     matches: list[tuple[int, int, int, int, str]] = []
     for text, spec, dom in iter_meaning_entries(meanings):
-        if not _meaning_allowed_in_title_for_workflow(key_title, text):
+        if not meaning_has_noncompound_occurrence(canonical, text, cov):
             continue
-        pos = _match_index_for_meaning(key_title, text, candidate_id)
+        pos = first_meaning_occurrence_index(canonical, text, cov, prefer_last)
         if pos >= 10**9:
             continue
+        dom_e = effective_interface_dominance_for_occurrence(canonical, text, dom, pos, cov)
         ln = len(text.strip())
-        matches.append((spec, dom, pos, ln, text))
+        matches.append((dom_e, spec, pos, ln, text))
 
     if not matches:
         return None
@@ -162,21 +103,36 @@ def find_best_visual_candidate_match(
     candidates: dict[str, Any],
 ) -> Optional[tuple[dict[str, Any], str, str, int, int, int]]:
     """
-    meaning 키워드가 제목에 포함된 후보 중 정렬:
-    1) interface dominance
-    2) keyword specificity
-    3) workflow_priority
-    4) 제목에서의 등장 위치
-    5) 키워드 길이
-    6) candidate_id
+    정렬: rule_tier → sort_secondary_wp(legacy workflow_priority tie) → interface_dominance
+    → specificity → 제목 위치 → 키워드 길이 → candidate_id
 
-    compound subject(보고서·회의자료 등) 안의 「보고」「회의」만으로는 매칭하지 않으며,
-    document_edit/document_review는 compound 뒤쪽의 행동 키워드를 우선한다.
+    pair rule hits use rule_tier from pair_rules.json; meaning-only rows use rule_tier=0.
+    Returned workflow_priority int is data[\"workflow_priority\"] (PRD anchor strength),
+    not the legacy sort boost.
+
+    compound subject 내부 substring은 매칭·interface dominance에서 제외.
     """
     key_title = title.strip()
+    canonical = _canonical_title_text(key_title)
+    cov = compound_subject_char_mask(canonical)
     title_has_ui = title_contains_interface_anchor(key_title)
     title_has_doc_wf = title_has_document_workflow_signal(key_title)
-    rows: list[tuple[int, int, int, int, int, str, str, dict[str, Any]]] = []
+    rows: list[tuple[int, int, int, int, int, int, str, str, dict[str, Any]]] = []
+
+    for pr in _get_pair_engine().iter_matches(canonical, candidates):
+        rows.append(
+            (
+                pr.rule_tier,
+                pr.sort_secondary_wp,
+                pr.interface_dominance_effective,
+                pr.keyword_specificity,
+                0,
+                len(pr.matched),
+                pr.matched,
+                pr.candidate_id,
+                pr.data,
+            )
+        )
 
     for cid, data in candidates.items():
         if cid == "meta" or not isinstance(data, dict):
@@ -187,28 +143,49 @@ def find_best_visual_candidate_match(
             continue
 
         meanings = data.get("meaning")
-        best_local = _pick_best_meaning_for_candidate(meanings, key_title, title_has_ui, cid)
+        best_local = _pick_best_meaning_for_candidate(
+            meanings, key_title, title_has_ui, cid, canonical, cov
+        )
         if best_local is None:
             continue
 
-        spec, dom, pos, ln, matched = best_local
+        dom_e, spec, pos, ln, matched = best_local
         wp_raw = data.get("workflow_priority", 0)
         try:
-            wp = int(wp_raw)
+            sort_wp = int(wp_raw)
         except (TypeError, ValueError):
-            wp = 0
+            sort_wp = 0
 
-        rows.append((dom, spec, wp, pos, ln, matched, cid, data))
+        rows.append(
+            (
+                0,
+                sort_wp,
+                dom_e,
+                spec,
+                pos,
+                ln,
+                matched,
+                cid,
+                data,
+            )
+        )
 
     if not rows:
         return None
 
-    def _pos_sort_component(r: tuple[int, int, int, int, int, str, str, dict[str, Any]]) -> int:
-        dom, spec, wp, pos, ln, matched, cid, data = r
-        if cid in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS and dom == 0 and spec <= 1:
+    def _pos_key_row(
+        r: tuple[int, int, int, int, int, int, str, str, dict[str, Any]],
+    ) -> int:
+        _rt, _swp, dom_e, spec, pos, _ln, _matched, cid, _data = r
+        if cid in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS and dom_e == 0 and spec <= 1:
             return -pos
         return pos
 
-    rows.sort(key=lambda r: (-r[0], -r[1], -r[2], _pos_sort_component(r), -r[4], r[6]))
-    dom, spec, wp, _pos, _ln, matched, cid, data = rows[0]
-    return (data, cid, matched, wp, spec, dom)
+    rows.sort(key=lambda r: (-r[0], -r[1], -r[2], -r[3], _pos_key_row(r), -r[5], r[7]))
+    _rt, _swp, dom_e, spec, _pos, _ln, matched, cid, data = rows[0]
+    wp_out_raw = data.get("workflow_priority", 0)
+    try:
+        wp_out = int(wp_out_raw)
+    except (TypeError, ValueError):
+        wp_out = 0
+    return (data, cid, matched, wp_out, spec, dom_e)

@@ -50,12 +50,13 @@ _INDEX_HTML = """<!DOCTYPE html>
   <p>
     ① <code>sample_cases.json</code> 제목 <strong>완전 일치</strong> 시 해당 visual·reason 사용.<br/>
     ② 없으면 <code>visual_candidates.json</code>의 <strong>meaning</strong> 키워드가 제목에 포함되는지 본 뒤,
-    키워드 <strong>interface dominance</strong> → <strong>specificity</strong> →
-    <strong>workflow_priority</strong> → 제목에서의 위치 → 키워드 길이 순으로 후보를 고릅니다
+    키워드 <strong>workflow_priority</strong> → <strong>interface dominance</strong> → <strong>specificity</strong> →
+    제목에서의 위치 → 키워드 길이 순으로 후보를 고릅니다
     (점심·저녁 같은 시간 modifier, 과장님·대표·팀장 같은 person modifier가
     카톡·메일·전화 등 채널 anchor보다 앞서지 않도록 함).<br/>
     급여·수당·여비 등 <strong>subject</strong>만 있고 문서 workflow(공문·작성·검토 등)가 없을 때만 💰 후보가 경쟁합니다.<br/>
-    <strong>보고서·회의자료·검토보고서</strong>처럼 명사가 붙은 경우, 그 안의 「보고」「회의」「검토」만으로는 매칭하지 않고
+    <strong>교육청·교육신청서·보고서·회의자료·신청서·협의회</strong> 등 <strong>subject compound</strong> 안의 글자는
+    「교육」「보고」「회의」「신청」만으로는 매칭·interface dominance에 쓰이지 않고,
     <strong>작성·수정·검토·확인·제출</strong> 등 실제 행동을 우선합니다.
   </p>
   <form id="f">
