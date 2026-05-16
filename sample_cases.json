@@ -1,0 +1,742 @@
+[
+    {
+        "title": "강남서초 점검일정 메일 안내",
+        "visual": {
+            "type": "emoji",
+            "value": "📧"
+        },
+        "focus": "메일 안내",
+        "interface_memory": [
+            "메일",
+            "아웃룩"
+        ],
+        "reason": "점검 자체보다 메일 발송 행동이 핵심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "식생활교육 신청페이지 수정 전화 요청",
+        "visual": {
+            "type": "emoji",
+            "value": "📞"
+        },
+        "focus": "전화 요청",
+        "interface_memory": [
+            "전화",
+            "통화"
+        ],
+        "reason": "담당자와 통화하여 수정 요청 예정",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "신청화면 관련 대표 카톡 문의",
+        "visual": {
+            "type": "emoji",
+            "value": "💬"
+        },
+        "focus": "카카오톡 문의",
+        "interface_memory": [
+            "카카오톡",
+            "메신저"
+        ],
+        "reason": "메신저로 문의 및 협의",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "과장님 식사 당번 메일",
+        "visual": {
+            "type": "emoji",
+            "value": "📧"
+        },
+        "focus": "메일 발송",
+        "interface_memory": [
+            "메일",
+            "아웃룩"
+        ],
+        "reason": "과장님보다 메일 행동이 핵심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "출장 여비 입력",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "급여 시스템 입력",
+        "interface_memory": [
+            "급여시스템",
+            "입력"
+        ],
+        "reason": "출장보다 여비 입력 업무가 핵심",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "월급여 입력",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "급여 시스템 처리",
+        "interface_memory": [
+            "급여시스템",
+            "입력"
+        ],
+        "reason": "급여 시스템 입력 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "성과급 입력",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "급여 시스템 처리",
+        "interface_memory": [
+            "급여시스템",
+            "입력"
+        ],
+        "reason": "성과급 지급 입력 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "복리후생비 입력",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "급여 시스템 처리",
+        "interface_memory": [
+            "급여시스템",
+            "입력"
+        ],
+        "reason": "복리 관련 지급 입력 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "초과근무 수당 입력",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "급여 시스템 처리",
+        "interface_memory": [
+            "급여시스템",
+            "입력"
+        ],
+        "reason": "수당 입력 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "일상경비 교부 요청",
+        "visual": {
+            "type": "emoji",
+            "value": "💻"
+        },
+        "focus": "공문 요청",
+        "interface_memory": [
+            "문서작성",
+            "행정시스템"
+        ],
+        "reason": "직접 지급이 아니라 타 부서 요청 문서 작성",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "공익감사단 수당 지급 요청",
+        "visual": {
+            "type": "emoji",
+            "value": "📝"
+        },
+        "focus": "문서 작성",
+        "interface_memory": [
+            "공문",
+            "문서작성"
+        ],
+        "reason": "지급보다 요청 문서 작성이 핵심",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "명찰 주문 요청",
+        "visual": {
+            "type": "notion_icon",
+            "value": "identification-card"
+        },
+        "focus": "명찰",
+        "interface_memory": [
+            "명찰",
+            "신분증"
+        ],
+        "reason": "명찰 자체가 기억 포인트",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "명찰 제작 여부 확인",
+        "visual": {
+            "type": "emoji",
+            "value": "📞"
+        },
+        "focus": "전화 확인",
+        "interface_memory": [
+            "전화",
+            "통화"
+        ],
+        "reason": "제작 확인을 위한 전화 행동이 핵심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "과장님 면담",
+        "visual": {
+            "type": "emoji",
+            "value": "🤵"
+        },
+        "focus": "상사 대면",
+        "interface_memory": [
+            "면담",
+            "대면"
+        ],
+        "reason": "과장님과 직접 대면하는 일정",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "과장 퇴근 인증",
+        "visual": {
+            "type": "notion_icon",
+            "value": "quick-response-code",
+            "color": "orange"
+        },
+        "focus": "QR 인증",
+        "interface_memory": [
+            "QR",
+            "출퇴근시스템"
+        ],
+        "reason": "사람보다 QR 인증 행동이 핵심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "네이버폼 교육 접수 제작 관련 검토",
+        "visual": {
+            "type": "notion_icon",
+            "value": "checkmark-circle",
+            "color": "green"
+        },
+        "focus": "설문 체크 UI",
+        "interface_memory": [
+            "네이버폼",
+            "설문",
+            "체크UI"
+        ],
+        "reason": "네이버폼 체크 인터페이스 및 초록색 서비스 연상",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "주간업무 작성",
+        "visual": {
+            "type": "emoji",
+            "value": "📝"
+        },
+        "focus": "문서 작성",
+        "interface_memory": [
+            "작성",
+            "문서수정"
+        ],
+        "reason": "작성 행동이 핵심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "보고자료 수정",
+        "visual": {
+            "type": "emoji",
+            "value": "📝"
+        },
+        "focus": "문서 수정",
+        "interface_memory": [
+            "수정",
+            "문서편집"
+        ],
+        "reason": "수정 작업이 핵심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "회의자료 확인",
+        "visual": {
+            "type": "emoji",
+            "value": "📄"
+        },
+        "focus": "문서 확인",
+        "interface_memory": [
+            "문서확인",
+            "검토"
+        ],
+        "reason": "작성보다 확인 행동이 핵심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "시장 보고자료 전달",
+        "visual": {
+            "type": "emoji",
+            "value": "📄"
+        },
+        "focus": "문서 전달",
+        "interface_memory": [
+            "보고",
+            "전달"
+        ],
+        "reason": "전달 및 보고 목적",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "강사비 지급 내역 검토",
+        "visual": {
+            "type": "emoji",
+            "value": "📄"
+        },
+        "focus": "문서 검토",
+        "interface_memory": [
+            "검토",
+            "확인"
+        ],
+        "reason": "검토 및 확인 작업",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "식생활교육 강사 연락",
+        "visual": {
+            "type": "emoji",
+            "value": "📞"
+        },
+        "focus": "전화 연락",
+        "interface_memory": [
+            "전화",
+            "통화"
+        ],
+        "reason": "강사와 통화 예정",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "교육 일정 변경 안내",
+        "visual": {
+            "type": "emoji",
+            "value": "📧"
+        },
+        "focus": "메일 안내",
+        "interface_memory": [
+            "메일",
+            "아웃룩"
+        ],
+        "reason": "일정 변경 메일 발송",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "식생활교육 만족도 조사 제작",
+        "visual": {
+            "type": "notion_icon",
+            "value": "checkmark-circle",
+            "color": "green"
+        },
+        "focus": "설문 제작",
+        "interface_memory": [
+            "네이버폼",
+            "체크UI"
+        ],
+        "reason": "설문 체크 인터페이스 기반 업무",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "교육 신청 현황 엑셀 정리",
+        "visual": {
+            "type": "notion_icon",
+            "value": "grid-rectangle-2x3",
+            "color": "green"
+        },
+        "focus": "엑셀 테이블 정리",
+        "interface_memory": [
+            "엑셀",
+            "스프레드시트",
+            "테이블"
+        ],
+        "reason": "데이터 테이블 정리 작업 중심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "강사 배정표 엑셀 수정",
+        "visual": {
+            "type": "notion_icon",
+            "value": "grid-rectangle-2x3",
+            "color": "green"
+        },
+        "focus": "엑셀 수정",
+        "interface_memory": [
+            "엑셀",
+            "테이블",
+            "수정"
+        ],
+        "reason": "스프레드시트 수정 작업 중심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "지메일 권한 승인 신청",
+        "visual": {
+            "type": "emoji",
+            "value": "📄"
+        },
+        "focus": "신청 문서 처리",
+        "interface_memory": [
+            "신청",
+            "문서"
+        ],
+        "reason": "권한 승인이라는 행정 신청 처리 중심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "윈도우11 업데이트 안내",
+        "visual": {
+            "type": "notion_icon",
+            "value": "fabric-swatch",
+            "color": "blue"
+        },
+        "focus": "시스템 업데이트 안내",
+        "interface_memory": [
+            "윈도우",
+            "PC설정"
+        ],
+        "reason": "윈도우 업데이트라는 PC 시스템 작업 중심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "교육훈련여비 정산 제출",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "여비 정산",
+        "interface_memory": [
+            "급여시스템",
+            "정산"
+        ],
+        "reason": "여비·정산 계열의 금전 처리 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "중랑구 근무내역 통화",
+        "visual": {
+            "type": "emoji",
+            "value": "📞"
+        },
+        "focus": "전화 통화",
+        "interface_memory": [
+            "전화",
+            "통화"
+        ],
+        "reason": "근무내역보다 통화 행동이 핵심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "과장님 안내사항 공지",
+        "visual": {
+            "type": "notion_icon",
+            "value": "exclamation-mark",
+            "color": "red"
+        },
+        "focus": "공지",
+        "interface_memory": [
+            "안내",
+            "공지"
+        ],
+        "reason": "주의성 있는 안내사항 전달 업무",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "PC 셧다운 해제 신청",
+        "visual": {
+            "type": "emoji",
+            "value": "💻"
+        },
+        "focus": "PC 시스템 신청",
+        "interface_memory": [
+            "PC",
+            "신청"
+        ],
+        "reason": "PC 설정 관련 시스템 처리 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "비상연락망 제출",
+        "visual": {
+            "type": "notion_icon",
+            "value": "subtask",
+            "color": "red"
+        },
+        "focus": "비상연락망 제출",
+        "interface_memory": [
+            "비상연락망",
+            "제출"
+        ],
+        "reason": "비상·연락망 성격이 강한 제출 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "세출예산 사업설명서 마감",
+        "visual": {
+            "type": "notion_icon",
+            "value": "clock",
+            "color": "gray"
+        },
+        "focus": "마감 관리",
+        "interface_memory": [
+            "마감",
+            "기한"
+        ],
+        "reason": "문서 자체보다 마감 기한 인식이 핵심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "강사단 근무표 작성",
+        "visual": {
+            "type": "emoji",
+            "value": "📝"
+        },
+        "focus": "근무표 작성",
+        "interface_memory": [
+            "문서작성",
+            "표작성"
+        ],
+        "reason": "근무표를 작성하는 행위 중심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "민원처리상황 확인",
+        "visual": {
+            "type": "emoji",
+            "value": "🔉"
+        },
+        "focus": "민원 상황 확인",
+        "interface_memory": [
+            "민원",
+            "상황확인"
+        ],
+        "reason": "민원 대응 상황을 확인하는 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "월급여 입력",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "급여 시스템 입력",
+        "interface_memory": [
+            "급여시스템",
+            "입력"
+        ],
+        "reason": "급여 시스템에서 처리하는 금전 입력 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "복리 입력",
+        "visual": {
+            "type": "emoji",
+            "value": "💰"
+        },
+        "focus": "복리후생 입력",
+        "interface_memory": [
+            "급여시스템",
+            "복리"
+        ],
+        "reason": "복리도 급여·수당 시스템 처리 계열",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "고용보험 토탈서비스 대리인 신청",
+        "visual": {
+            "type": "emoji",
+            "value": "📠"
+        },
+        "focus": "외부 행정시스템 신청",
+        "interface_memory": [
+            "고용보험",
+            "팩스"
+        ],
+        "reason": "팩스를 통해 신청하는 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "재물조사 사전준비",
+        "visual": {
+            "type": "emoji",
+            "value": "📦"
+        },
+        "focus": "물품 조사 준비",
+        "interface_memory": [
+            "물품",
+            "재물조사"
+        ],
+        "reason": "물품·재물 관리 업무 성격이 핵심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "8월 보안당번 근무명령 기안",
+        "visual": {
+            "type": "emoji",
+            "value": "🔐"
+        },
+        "focus": "보안당번 기안",
+        "interface_memory": [
+            "보안",
+            "근무명령"
+        ],
+        "reason": "보안 업무 성격이 강한 기안",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "예산 협의회 자료 검토",
+        "visual": {
+            "type": "emoji",
+            "value": "📄"
+        },
+        "focus": "자료 검토",
+        "interface_memory": [
+            "검토",
+            "예산자료"
+        ],
+        "reason": "자료를 작성하기보다 검토하는 행위 중심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "합동 점검 팀장 개선 의견 생각",
+        "visual": {
+            "type": "emoji",
+            "value": "🧠"
+        },
+        "focus": "의견 구상",
+        "interface_memory": [
+            "생각정리",
+            "개선의견"
+        ],
+        "reason": "문서 작업보다 생각을 정리하는 일이 핵심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "국과장팀장 오찬 일정 확인, 안내",
+        "visual": {
+            "type": "emoji",
+            "value": "🍴"
+        },
+        "focus": "식사 일정 안내",
+        "interface_memory": [
+            "오찬",
+            "식사"
+        ],
+        "reason": "식사 일정 자체가 기억 포인트",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "과장님 팀식사 식당 예약",
+        "visual": {
+            "type": "emoji",
+            "value": "📞"
+        },
+        "focus": "식당 예약 전화",
+        "interface_memory": [
+            "전화",
+            "예약"
+        ],
+        "reason": "식사보다 예약 연락 행동이 핵심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "국회의원 요구자료 메일 안내",
+        "visual": {
+            "type": "emoji",
+            "value": "📧"
+        },
+        "focus": "메일 안내",
+        "interface_memory": [
+            "메일",
+            "요구자료"
+        ],
+        "reason": "요구자료보다 메일 안내 행동이 핵심",
+        "workflow_specificity": 3
+    },
+    {
+        "title": "학교급식법 개정안 검토",
+        "visual": {
+            "type": "emoji",
+            "value": "📄"
+        },
+        "focus": "법령 문서 검토",
+        "interface_memory": [
+            "법령",
+            "검토"
+        ],
+        "reason": "개정안 문서를 확인·검토하는 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "바인더 법령조례집 업데이트",
+        "visual": {
+            "type": "emoji",
+            "value": "📒"
+        },
+        "focus": "법령집 현행화",
+        "interface_memory": [
+            "바인더",
+            "법령집"
+        ],
+        "reason": "책자·바인더 형태의 자료 관리가 핵심",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "업무택시 회원가입",
+        "visual": {
+            "type": "emoji",
+            "value": "🚕"
+        },
+        "focus": "업무택시 시스템 등록",
+        "interface_memory": [
+            "업무택시",
+            "등록"
+        ],
+        "reason": "택시 서비스 이용 시스템 등록 업무",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "식생활교육 현장방문",
+        "visual": {
+            "type": "emoji",
+            "value": "👩‍🏫"
+        },
+        "focus": "교육 현장방문",
+        "interface_memory": [
+            "식생활교육",
+            "현장"
+        ],
+        "reason": "식생활교육 현장 자체가 핵심",
+        "workflow_specificity": 2
+    },
+    {
+        "title": "학습관리시스템 과조정 승인",
+        "visual": {
+            "type": "emoji",
+            "value": "💻"
+        },
+        "focus": "시스템 승인 처리",
+        "interface_memory": [
+            "학습관리시스템",
+            "승인"
+        ],
+        "reason": "전산 시스템에서 승인 처리하는 업무",
+        "workflow_specificity": 1
+    },
+    {
+        "title": "점심 약속",
+        "visual": {
+            "type": "emoji",
+            "value": "🍚"
+        },
+        "focus": "점심, 밥약속",
+        "interface_memory": [
+            "점심",
+            "밥밥"
+        ],
+        "reason": "점심 약속 자체가 기억 포인트",
+        "workflow_specificity": 2
+    }
+]

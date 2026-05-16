@@ -1,0 +1,1026 @@
+{
+  "meta": {
+    "schema_version": 3,
+    "meaning_format": {
+      "text": "string",
+      "specificity": "int (1=일반 행동, 2=업무 개념·중간, 3=인터페이스·도구·채널)",
+      "interface_dominance": "int (1=키워드에 interface anchor 부분문자열 포함)"
+    }
+  },
+  "mail_action": {
+    "visual": {
+      "type": "emoji",
+      "value": "📧"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "메일",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "안내",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공지",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "발송",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "전달",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "아웃룩",
+      "메일창"
+    ],
+    "usage_context": [
+      "안내 메일",
+      "일정 공지",
+      "자료 전달"
+    ]
+  },
+  "phone_call": {
+    "visual": {
+      "type": "emoji",
+      "value": "📞"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "전화",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "통화",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "연락",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "문의",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "확인",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "전화앱",
+      "통화화면"
+    ],
+    "usage_context": [
+      "전화 문의",
+      "일정 확인",
+      "예약 연락"
+    ]
+  },
+  "messenger_chat": {
+    "visual": {
+      "type": "emoji",
+      "value": "💬"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "카카오톡",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "카톡",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "채팅",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "메신저",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "협의",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "카카오톡",
+      "채팅창"
+    ],
+    "usage_context": [
+      "카톡 협의",
+      "메신저 대화",
+      "일정 조율"
+    ]
+  },
+  "document_edit": {
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "작성",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수정",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기입",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정리",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기안",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "송부",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "요청",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "제출",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공문",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "문서편집",
+      "작성화면"
+    ],
+    "usage_context": [
+      "회의록 수정",
+      "기안 작성",
+      "자료 정리"
+    ]
+  },
+  "document_review": {
+    "visual": {
+      "type": "emoji",
+      "value": "📄"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "검토",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "확인",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "보고",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "열람",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "전달",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "PDF",
+      "문서뷰어"
+    ],
+    "usage_context": [
+      "자료 검토",
+      "보고자료 확인",
+      "법령 검토"
+    ]
+  },
+  "salary_system": {
+    "visual": {
+      "type": "emoji",
+      "value": "💰"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "급여",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수당",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "성과급",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "복리",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "여비",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정산",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "출장비",
+        "specificity": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "급여시스템",
+      "행정입력"
+    ],
+    "usage_context": [
+      "월급여 입력",
+      "출장 여비 입력",
+      "복리 입력"
+    ]
+  },
+  "spreadsheet_work": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "grid-rectangle-2x3",
+      "color": "green"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "엑셀",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "스프레드시트",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "테이블",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "데이터정리",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "표",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "엑셀",
+      "테이블UI",
+      "스프레드시트"
+    ],
+    "usage_context": [
+      "엑셀 정리",
+      "명단 관리",
+      "근무표 수정"
+    ]
+  },
+  "survey_form": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "checkmark-circle",
+      "color": "green"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "네이버폼",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "설문",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "접수",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "체크",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "응답",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "네이버폼",
+      "체크UI"
+    ],
+    "usage_context": [
+      "설문 제작",
+      "폼 테스트",
+      "응답 확인"
+    ]
+  },
+  "coding": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "angle-brackets-solidus",
+      "color": "blue"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "코딩",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "구현",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "개발",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자동화",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "API",
+        "specificity": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "Cursor",
+      "VSCode",
+      "코드에디터"
+    ],
+    "usage_context": [
+      "API 구현",
+      "자동화 개발",
+      "코드 작성"
+    ]
+  },
+  "terminal_work": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "command-line-rectangle",
+      "color": "blue"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "터미널",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "명령어",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "실행",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "세팅",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "환경구축",
+        "specificity": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "CLI",
+      "터미널",
+      "명령프롬프트"
+    ],
+    "usage_context": [
+      "서버 실행",
+      "패키지 설치",
+      "개발환경 세팅"
+    ]
+  },
+  "qr_auth": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "quick-response-code",
+      "color": "orange"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "QR",
+        "specificity": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "인증",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "출퇴근",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "QR화면",
+      "출퇴근시스템"
+    ],
+    "usage_context": [
+      "퇴근 인증",
+      "출퇴근 체크"
+    ]
+  },
+  "executive_meeting": {
+    "visual": {
+      "type": "emoji",
+      "value": "🤵"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "과장님",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "대표",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "상사",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "면담",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "대면",
+      "상사면담"
+    ],
+    "usage_context": [
+      "과장님 면담",
+      "대표 간담회"
+    ]
+  },
+  "meeting": {
+    "visual": {
+      "type": "emoji",
+      "value": "🤝"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "회의",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "간담회",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "협의",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "대면",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "회의실",
+      "대면회의"
+    ],
+    "usage_context": [
+      "협의 회의",
+      "평가회의"
+    ]
+  },
+  "brainstorming": {
+    "visual": {
+      "type": "emoji",
+      "value": "🧠"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "브레인스토밍",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "생각",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "구상",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "아이디어",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "사고정리",
+      "기획메모"
+    ],
+    "usage_context": [
+      "아이디어 구상",
+      "개선 의견 생각"
+    ]
+  },
+  "system_work": {
+    "visual": {
+      "type": "emoji",
+      "value": "💻"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "시스템",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "승인",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "전산",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "PC",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "행정처리",
+        "specificity": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "행정시스템",
+      "PC설정"
+    ],
+    "usage_context": [
+      "시스템 승인",
+      "PC 설정",
+      "행정 시스템 처리"
+    ]
+  },
+  "security_work": {
+    "visual": {
+      "type": "emoji",
+      "value": "🔐"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "보안",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "근무명령",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "잠금",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "보호",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "보안업무",
+      "관리시스템"
+    ],
+    "usage_context": [
+      "보안당번",
+      "보안관리"
+    ]
+  },
+  "food_meeting": {
+    "visual": {
+      "type": "emoji",
+      "value": "🍴"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "식사",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "오찬",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "식당",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "회식",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "식당",
+      "오찬"
+    ],
+    "usage_context": [
+      "오찬 일정",
+      "식당 예약"
+    ]
+  },
+  "education_fieldwork": {
+    "visual": {
+      "type": "emoji",
+      "value": "👩‍🏫"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "교육",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현장",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "강사",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수업",
+        "specificity": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "교육현장",
+      "강의"
+    ],
+    "usage_context": [
+      "식생활교육 방문",
+      "교육 현장 점검"
+    ]
+  },
+  "binder_document": {
+    "visual": {
+      "type": "emoji",
+      "value": "📒"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "바인더",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "법령집",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료집",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "바인더",
+      "책자"
+    ],
+    "usage_context": [
+      "법령집 업데이트",
+      "자료철 관리"
+    ]
+  },
+  "inventory_work": {
+    "visual": {
+      "type": "emoji",
+      "value": "📦"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "재물",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "물품",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "조사",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비품",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "물품관리",
+      "재물조사"
+    ],
+    "usage_context": [
+      "재물조사",
+      "비품 정리"
+    ]
+  },
+  "taxi_service": {
+    "visual": {
+      "type": "emoji",
+      "value": "🚕"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "업무택시",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "교통",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "이동",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "택시앱",
+      "업무이동"
+    ],
+    "usage_context": [
+      "업무택시 등록",
+      "교통서비스 이용"
+    ]
+  },
+  "urgent_notice": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "exclamation-circle",
+      "color": "red"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "공지",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "안내사항",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "주의",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "긴급",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "공지",
+      "주의표시"
+    ],
+    "usage_context": [
+      "중요 안내",
+      "주의 공지"
+    ]
+  },
+  "deadline_management": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "clock",
+      "color": "gray"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "마감",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기한",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "일정관리",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "마감일",
+      "시계"
+    ],
+    "usage_context": [
+      "제출 마감",
+      "일정 기한 관리"
+    ]
+  },
+  "external_admin_system": {
+    "visual": {
+      "type": "emoji",
+      "value": "📠"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "외부시스템",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "행정신청",
+        "specificity": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "토탈서비스",
+        "specificity": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "행정사이트",
+      "외부서비스"
+    ],
+    "usage_context": [
+      "대리인 신청",
+      "외부 행정 시스템 처리"
+    ]
+  },
+  "lunch_promise": {
+    "visual": {
+      "type": "emoji",
+      "value": "🍚"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "점심",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "점심약속",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "점심 약속",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "저녁",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "저녁약속",
+        "specificity": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "저녁 약속",
+        "specificity": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "점심",
+      "저녁"
+    ],
+    "usage_context": [
+      "점심 약속",
+      "저녁 약속"
+    ]
+  }
+}
