@@ -1,10 +1,15 @@
-"""compound subject·workflow 정렬 회귀 테스트.
+"""Recommender semantic contract tests (P2–P6).
 
-Semantic contract smoke tests (modifier / interface / pair tiers) live in the same
-class so they share fixtures; they guard docs/PRD-style intent: interface anchors
-and pair rules must not be drowned by generic modifiers or high workflow_priority
-noise when the title clearly names a channel or tool.
+Maps to ``docs/ARCHITECHURE.md``: P2 ``compound_subject_char_mask``, P3
+``PairRuleEngine`` / ``PairResolution``, P4–P5 meaning expansion and filters,
+P6 unified ``CandidateRow`` ranking and ``BestVisualCandidateMatch`` output.
+
+Each ``TestCase`` subclass guards one **semantic contract** family so failures
+point to the broken philosophy (compound vs pair vs interface vs organize vs
+global rank), not a monolithic class name.
 """
+
+from __future__ import annotations
 
 import unittest
 
@@ -12,15 +17,33 @@ from app.data_loader import load_visual_candidates
 from app.recommender import find_best_visual_candidate_match
 
 
-class RecommenderCompoundTests(unittest.TestCase):
+class RecommenderSemanticTestCase(unittest.TestCase):
+    """Shared catalog fixture and tuple unpack helpers (P7 input slice compatible)."""
+
     @classmethod
-    def setUpClass(cls):
+    def setUpClass(cls) -> None:
         cls._cands = load_visual_candidates()
 
     def _cid(self, title: str) -> str:
         out = find_best_visual_candidate_match(title, self._cands)
         self.assertIsNotNone(out)
-        return out[1]
+        return out.candidate_id
+
+    def _match(self, title: str) -> tuple[str, str]:
+        out = find_best_visual_candidate_match(title, self._cands)
+        self.assertIsNotNone(out)
+        data = out.data
+        v = data.get("visual") or {}
+        val = v.get("value", "")
+        return out.candidate_id, val
+
+
+class CompoundProtectionTests(RecommenderSemanticTestCase):
+    """P2 compound span: 내부 substring은 workflow anchor·dominance·organize subject로 쓰이지 않음.
+
+    ``DOCUMENT_COMPOUND_SUBJECT_TERMS`` 마스크와 meaning occurrence 규칙이
+    교육청·신청서·교육자료 등 복합 명사를 보호하는지 검증한다.
+    """
 
     def test_education_office_budget_negotiation_prefers_meeting(self):
         # compound(교육청) 내부 '교육'이 아니라 끝의 '협의'가 workflow
@@ -34,13 +57,18 @@ class RecommenderCompoundTests(unittest.TestCase):
         # '교육'+'협의' 붙임에서 앞 어근만 막지 않음; 협의 workflow가 meeting
         self.assertEqual(self._cid("교육 협의"), "meeting")
 
-    def _match(self, title: str) -> tuple[str, str]:
-        out = find_best_visual_candidate_match(title, self._cands)
-        self.assertIsNotNone(out)
-        data, cid, *_ = out
-        v = data.get("visual") or {}
-        val = v.get("value", "")
-        return cid, val
+    def test_organize_written_record_respects_compound_subject(self):
+        # ``교육자료`` compound 안의 ``자료``로 organize subject를 쓰지 않음 → 매칭 없음
+        out = find_best_visual_candidate_match("교육자료 정리", self._cands)
+        self.assertIsNone(out)
+
+
+class PairInterpretationTests(RecommenderSemanticTestCase):
+    """P3 declarative pair resolution: prep / confirm_coordination / organize / modify pair track.
+
+    ``PairResolution`` row가 ``pair_rules.json`` 순서·lemma 조건에 맞게 생성되는지,
+    coordination 키워드 없을 때는 pair가 아닌 meaning 경로로 떨어지는지 검증한다.
+    """
 
     def test_prep_document_material(self):
         for title in (
@@ -88,7 +116,106 @@ class RecommenderCompoundTests(unittest.TestCase):
         self.assertEqual(self._cid("다음주 출근 일정 전화 확인"), "phone_call")
 
     def test_confirm_document_review_without_coordination_keywords(self):
+        # coordination 키워드 없음 → P3 confirm row 없음 → meaning ``document_review``
         self.assertEqual(self._cid("보고서 확인"), "document_review")
+
+
+class InterfaceDominanceTests(RecommenderSemanticTestCase):
+    """INTERFACE anchor + P6 rank: 채널·도구가 시간·긴급·저녁 등 modifier와 직책 토큰보다 우선.
+
+    제목에 인터페이스 앵커가 있을 때 ``interface_dominance_effective``·specificity
+    쪽 계약이 ``workflow_priority`` 노이즈에 밀리지 않는지, 직책은
+    ``PERSON_CONTEXT_MODIFIER_TERMS`` 처리로 채널을 가리지 않는지 검증한다.
+    """
+
+    def test_modifier_suppression_prefers_mail_over_lunch_context(self):
+        # ``점심``은 LOW_SPECIFICITY; ``메일`` 앵커가 있으면 채널 workflow가 우선
+        cid, val = self._match("점심 메일 확인")
+        self.assertEqual(cid, "mail_action")
+        self.assertEqual(val, "📧")
+
+    def test_modifier_suppression_prefers_messenger_over_evening_context(self):
+        cid, val = self._match("저녁 카톡 확인")
+        self.assertEqual(cid, "messenger_chat")
+        self.assertEqual(val, "💬")
+
+    def test_modifier_suppression_prefers_phone_over_urgent_modifier(self):
+        # ``긴급``은 urgent_notice 후보에도 걸리지만 ``전화`` 인터페이스가 우선
+        cid, val = self._match("긴급 전화 문의")
+        self.assertEqual(cid, "phone_call")
+        self.assertEqual(val, "📞")
+
+    def test_people_context_does_not_beat_phone_interface(self):
+        cid, val = self._match("과장님 전화 문의")
+        self.assertEqual(cid, "phone_call")
+        self.assertEqual(val, "📞")
+
+    def test_people_context_does_not_beat_mail_interface(self):
+        cid, val = self._match("대표 메일 전달")
+        self.assertEqual(cid, "mail_action")
+        self.assertEqual(val, "📧")
+
+    def test_people_context_does_not_beat_messenger_interface(self):
+        cid, val = self._match("팀장 카톡 확인")
+        self.assertEqual(cid, "messenger_chat")
+        self.assertEqual(val, "💬")
+
+
+class ModifySemanticTests(RecommenderSemanticTestCase):
+    """P3 modify pair: (action=수정, subject=…) + interface dominance vs 서면 subject."""
+
+    def test_modify_document_subjects_use_document_edit(self):
+        for title in ("보고서 수정", "회의자료 수정", "공문 수정", "신청서 수정"):
+            cid, val = self._match(title)
+            self.assertEqual(cid, "document_edit", msg=title)
+            self.assertEqual(val, "📝", msg=title)
+
+    def test_modify_spreadsheet_subject(self):
+        cid, val = self._match("엑셀 수정")
+        self.assertEqual(cid, "spreadsheet_work")
+        self.assertEqual(val, "grid-rectangle-2x3")
+
+    def test_modify_form_subject(self):
+        cid, val = self._match("네이버폼 수정")
+        self.assertEqual(cid, "survey_form")
+        self.assertEqual(val, "checkmark-circle")
+
+    def test_modify_code_subject(self):
+        for title in ("코드 수정", "Cursor 버그 수정", "VSCode 설정 반영 수정"):
+            cid, val = self._match(title)
+            self.assertEqual(cid, "coding", msg=title)
+            self.assertEqual(val, "angle-brackets-solidus", msg=title)
+
+    def test_modify_settings_and_shell_subject(self):
+        cid, val = self._match("설정 수정")
+        self.assertEqual(cid, "terminal_work")
+        self.assertEqual(val, "command-line-rectangle")
+        cid2, val2 = self._match("터미널 PATH 수정")
+        self.assertEqual(cid2, "terminal_work")
+        self.assertEqual(val2, "command-line-rectangle")
+
+    def test_modify_written_record_defers_when_spreadsheet_anchor_present(self):
+        cid, val = self._match("엑셀 보고서 수정")
+        self.assertEqual(cid, "spreadsheet_work")
+        self.assertEqual(val, "grid-rectangle-2x3")
+
+    def test_modify_written_record_respects_compound_inner_material(self):
+        # ``출장보고서`` 안의 ``보고서`` substring으로는 modify subject를 쓰지 않음
+        out = find_best_visual_candidate_match("출장보고서 수정", self._cands)
+        self.assertIsNone(out)
+
+    def test_modify_action_alone_does_not_imply_document(self):
+        out = find_best_visual_candidate_match("내용 수정", self._cands)
+        self.assertIsNone(out)
+
+
+class OrganizeSemanticTests(RecommenderSemanticTestCase):
+    """P3 organize pair + P6: (action=정리, subject=…) 와 meaning·인터페이스 충돌.
+
+    ``organize`` ``PairResolution``이 폴더·회의실·알림·서면 자료 등에 대해 기대
+    ``candidate_id``를 내고, 인터페이스 앵커가 있을 때 서면 subject organize가
+    spreadsheet / survey / terminal meaning을 가리지 않는지 검증한다.
+    """
 
     def test_organize_pair_subject_resolution(self):
         cases = {
@@ -108,49 +235,11 @@ class RecommenderCompoundTests(unittest.TestCase):
             self.assertEqual(val, expect_visual, msg=title)
 
     def test_organize_spreadsheet_still_wins_with_excel_anchor(self):
+        # compound 밖 ``엑셀`` + ``정리``: organize ``자료``가 스프레드시트 meaning에 밀리지 않음
         cid, val = self._match("교육 신청 현황 엑셀 정리")
         self.assertEqual(cid, "spreadsheet_work")
         self.assertEqual(val, "grid-rectangle-2x3")
 
-    def test_organize_written_record_respects_compound_subject(self):
-        out = find_best_visual_candidate_match("교육자료 정리", self._cands)
-        self.assertIsNone(out)
-
-    # --- Modifier suppression: time/urgency LOW terms must not beat INTERFACE anchors ---
-    def test_modifier_suppression_prefers_mail_over_lunch_context(self):
-        # ``점심``은 LOW_SPECIFICITY; 제목에 ``메일`` 앵커가 있으면 채널 workflow가 우선
-        cid, val = self._match("점심 메일 확인")
-        self.assertEqual(cid, "mail_action")
-        self.assertEqual(val, "📧")
-
-    def test_modifier_suppression_prefers_messenger_over_evening_context(self):
-        cid, val = self._match("저녁 카톡 확인")
-        self.assertEqual(cid, "messenger_chat")
-        self.assertEqual(val, "💬")
-
-    def test_modifier_suppression_prefers_phone_over_urgent_modifier(self):
-        # ``긴급``은 urgent_notice 후보에도 걸리지만 ``전화`` 인터페이스가 우선
-        cid, val = self._match("긴급 전화 문의")
-        self.assertEqual(cid, "phone_call")
-        self.assertEqual(val, "📞")
-
-    # --- People vs interface: role tokens alone must not steal channel icons ---
-    def test_people_context_does_not_beat_phone_interface(self):
-        cid, val = self._match("과장님 전화 문의")
-        self.assertEqual(cid, "phone_call")
-        self.assertEqual(val, "📞")
-
-    def test_people_context_does_not_beat_mail_interface(self):
-        cid, val = self._match("대표 메일 전달")
-        self.assertEqual(cid, "mail_action")
-        self.assertEqual(val, "📧")
-
-    def test_people_context_does_not_beat_messenger_interface(self):
-        cid, val = self._match("팀장 카톡 확인")
-        self.assertEqual(cid, "messenger_chat")
-        self.assertEqual(val, "💬")
-
-    # --- Interface dominance over organize/document-style subjects ---
     def test_interface_anchor_beats_organize_written_record_for_spreadsheet(self):
         # organize ``자료+정리``보다 엑셀 meaning(인터페이스 dominance)이 앞서야 함
         cid, val = self._match("엑셀 자료 정리")
@@ -167,12 +256,13 @@ class RecommenderCompoundTests(unittest.TestCase):
         self.assertEqual(cid, "terminal_work")
         self.assertEqual(val, "command-line-rectangle")
 
-    # --- Pair tier / workflow_priority vs interface: rule_tier 유지 + UI 앵커 우선 정렬 ---
-    def test_pair_organize_spreadsheet_unchanged_for_education_status_sheet(self):
-        # pair organize가 스프레드시트 meaning을 가리지 않는 기존 계약(회귀)
-        cid, val = self._match("교육 신청 현황 엑셀 정리")
-        self.assertEqual(cid, "spreadsheet_work")
-        self.assertEqual(val, "grid-rectangle-2x3")
+
+class RankingContractTests(RecommenderSemanticTestCase):
+    """P6 unified ranking: ``CandidateRow`` sort — pair tier vs meaning, wp vs dominance, overlap.
+
+    ``rule_tier``(pair track)과 meaning track의 상대 우선, ``workflow_priority``와
+    인터페이스 앵커 정렬, 복합 제목에서의 안정 선택(semantic overlap)을 검증한다.
+    """
 
     def test_prep_document_subject_outranks_event_when_shared_prep_lemma(self):
         # prep 규칙 순서상 ``자료+준비``가 ``행사+준비``보다 먼저 — 문서 준비 우선 계약
@@ -186,8 +276,8 @@ class RecommenderCompoundTests(unittest.TestCase):
         self.assertEqual(cid, "spreadsheet_work")
         self.assertEqual(val, "grid-rectangle-2x3")
 
-    # --- Stacked signals: confirm pair > generic modifiers; prep > executive noise ---
     def test_confirm_coordination_stable_under_person_and_meal_modifiers(self):
+        # P3 confirm pair(row tier)이 점심·직책 modifier 위에 안정적으로 유지
         cid, val = self._match("과장님 점심 카톡 일정 확인")
         self.assertEqual(cid, "messenger_chat")
         self.assertEqual(val, "💬")
@@ -202,6 +292,12 @@ class RecommenderCompoundTests(unittest.TestCase):
         cid, val = self._match("긴급 회의자료 메일 전달")
         self.assertEqual(cid, "mail_action")
         self.assertEqual(val, "📧")
+
+    def test_organize_and_modify_both_present_modify_pair_rank_contract(self):
+        # P3에서 organize·modify row가 같이 올라올 때 sort_secondary_wp 계약(modify=4 > organize=3)
+        cid, val = self._match("회의자료 정리 및 수정")
+        self.assertEqual(cid, "document_edit")
+        self.assertEqual(val, "📝")
 
 
 if __name__ == "__main__":

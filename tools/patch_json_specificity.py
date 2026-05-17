@@ -3,16 +3,13 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
+from app.data_loader import DATA_DIR
 from app.specificity import infer_specificity, interface_dominance, workflow_specificity_for_sample_case
 
 
-ROOT = Path(__file__).resolve().parent.parent
-
-
 def patch_visual_candidates() -> None:
-    path = ROOT / "visual_candidates.json"
+    path = DATA_DIR / "visual_candidates.json"
     raw = json.loads(path.read_text(encoding="utf-8"))
     out: dict = {
         "meta": {
@@ -57,7 +54,7 @@ def patch_visual_candidates() -> None:
 
 
 def patch_sample_cases() -> None:
-    path = ROOT / "sample_cases.json"
+    path = DATA_DIR / "sample_cases.json"
     cases = json.loads(path.read_text(encoding="utf-8"))
     for case in cases:
         if isinstance(case, dict):

@@ -1,7 +1,8 @@
-from typing import Any, Optional
+from typing import Any, NamedTuple, Optional
 
+from app.candidate_row import CandidateRow
 from app.data_loader import load_pair_rules
-from app.pair_engine import PairRuleEngine
+from app.pair_engine import PairResolution, PairRuleEngine
 from app.specificity import (
     PERSON_CONTEXT_MODIFIER_TERMS,
     compound_subject_char_mask,
@@ -21,6 +22,21 @@ DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS = frozenset({"document_edit", "document_revi
 _pair_engine: PairRuleEngine | None = None
 
 
+class BestVisualCandidateMatch(NamedTuple):
+    """P7 input slice: winning catalog entry plus debug sort dimensions (tuple-compatible).
+
+    ``workflow_priority`` mirrors ``data[\"workflow_priority\"]`` (catalog anchor strength; ARCH §8),
+    not the pair-rule ``sort_secondary_wp`` slot.
+    """
+
+    data: dict[str, Any]
+    candidate_id: str
+    matched: str
+    workflow_priority: int
+    keyword_specificity: int
+    interface_dominance_effective: int
+
+
 def _get_pair_engine() -> PairRuleEngine:
     global _pair_engine
     if _pair_engine is None:
@@ -34,6 +50,20 @@ def find_exact_title_match(title: str, cases: list[dict[str, Any]]) -> Optional[
         if case.get("title", "").strip() == key:
             return case
     return None
+
+
+def _candidate_row_from_pair_resolution(pr: PairResolution) -> CandidateRow:
+    return CandidateRow(
+        rule_tier=pr.rule_tier,
+        sort_secondary_wp=pr.sort_secondary_wp,
+        interface_dominance_effective=pr.interface_dominance_effective,
+        keyword_specificity=pr.keyword_specificity,
+        match_position_in_title=0,
+        matched_keyword_length=len(pr.matched),
+        matched=pr.matched,
+        candidate_id=pr.candidate_id,
+        data=pr.data,
+    )
 
 
 def _local_meaning_better(
@@ -101,17 +131,21 @@ def _pick_best_meaning_for_candidate(
 def find_best_visual_candidate_match(
     title: str,
     candidates: dict[str, Any],
-) -> Optional[tuple[dict[str, Any], str, str, int, int, int]]:
+) -> Optional[BestVisualCandidateMatch]:
     """
-    정렬: rule_tier → sort_secondary_wp(legacy workflow_priority tie) → interface_dominance
-    → specificity → 제목 위치 → 키워드 길이 → candidate_id
+    P6 sort (see docs/ARCHITECHURE.md §8.3): ``rule_tier`` first, then branch on UI anchor.
 
-    Pair rules (prep, confirm_coordination, organize) emit rows with rule_tier from
-    data/pair_rules.json; meaning-only rows use rule_tier=0. Action ``정리`` is not a
-    single meaning keyword: ``organize`` resolves (action=정리, subject=…) before
-    generic meaning rows, so document icons are not implied by ``정리`` alone.
-    Returned workflow_priority int is data[\"workflow_priority\"] (docs/PRD.md anchor strength),
-    not the legacy sort boost.
+    - **No UI anchor in title**: ``-rule_tier`` → ``-sort_secondary_wp`` → ``-interface_dominance_effective``
+      → ``-keyword_specificity`` → position / length / ``candidate_id``.
+    - **UI anchor present**: ``-rule_tier`` → dominance & specificity **before**
+      ``-sort_secondary_wp`` so channel/tool beats catalog anchor-strength noise.
+
+    ``CandidateRow.sort_secondary_wp`` is one **integer slot** for P6: meaning rows load it from
+    ``data[\"workflow_priority\"]`` (catalog anchor strength); pair rows load ``sort_secondary_wp``
+    from ``pair_rules.json`` (rule tie-break only — different semantic contract).
+
+    ``BestVisualCandidateMatch.workflow_priority`` echoes **catalog** ``data[\"workflow_priority\"]``
+    for API/debug (pair synthetic rows still carry ``workflow_priority`` inside ``data`` when set).
 
     compound subject 내부 substring은 매칭·interface dominance에서 제외.
     """
@@ -120,22 +154,10 @@ def find_best_visual_candidate_match(
     cov = compound_subject_char_mask(canonical)
     title_has_ui = title_contains_interface_anchor(key_title)
     title_has_doc_wf = title_has_document_workflow_signal(key_title)
-    rows: list[tuple[int, int, int, int, int, int, str, str, dict[str, Any]]] = []
+    rows: list[CandidateRow] = []
 
     for pr in _get_pair_engine().iter_matches(canonical, candidates):
-        rows.append(
-            (
-                pr.rule_tier,
-                pr.sort_secondary_wp,
-                pr.interface_dominance_effective,
-                pr.keyword_specificity,
-                0,
-                len(pr.matched),
-                pr.matched,
-                pr.candidate_id,
-                pr.data,
-            )
-        )
+        rows.append(_candidate_row_from_pair_resolution(pr))
 
     for cid, data in candidates.items():
         if cid == "meta" or not isinstance(data, dict):
@@ -163,44 +185,65 @@ def find_best_visual_candidate_match(
             sort_wp = 0
 
         rows.append(
-            (
-                0,
-                sort_wp,
-                dom_e,
-                spec,
-                pos,
-                ln,
-                matched,
-                cid,
-                data,
+            CandidateRow(
+                rule_tier=0,
+                sort_secondary_wp=sort_wp,
+                interface_dominance_effective=dom_e,
+                keyword_specificity=spec,
+                match_position_in_title=pos,
+                matched_keyword_length=ln,
+                matched=matched,
+                candidate_id=cid,
+                data=data,
             )
         )
 
     if not rows:
         return None
 
-    def _pos_key_row(
-        r: tuple[int, int, int, int, int, int, str, str, dict[str, Any]],
-    ) -> int:
-        _rt, _swp, dom_e, spec, pos, _ln, _matched, cid, _data = r
-        if cid in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS and dom_e == 0 and spec <= 1:
-            return -pos
-        return pos
+    def _pos_key_row(r: CandidateRow) -> int:
+        if (
+            r.candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS
+            and r.interface_dominance_effective == 0
+            and r.keyword_specificity <= 1
+        ):
+            return -r.match_position_in_title
+        return r.match_position_in_title
 
-    def _row_sort_key(
-        r: tuple[int, int, int, int, int, int, str, str, dict[str, Any]],
-    ) -> tuple[int, int, int, int, int, int, str]:
-        """rule_tier → (UI 제목이면 dominance·specificity 우선) → workflow_priority → 위치…"""
-        rt, swp, dom_e, spec, pos, ln, matched, cid, _data = r
+    def _row_sort_key(r: CandidateRow) -> tuple[int, int, int, int, int, int, str]:
+        """P6 key; UI title reorders dominance/specificity vs ``sort_secondary_wp`` (see module docstring)."""
         if title_has_ui:
-            return (-rt, -dom_e, -spec, -swp, _pos_key_row(r), -ln, cid)
-        return (-rt, -swp, -dom_e, -spec, _pos_key_row(r), -ln, cid)
+            return (
+                -r.rule_tier,
+                -r.interface_dominance_effective,
+                -r.keyword_specificity,
+                -r.sort_secondary_wp,
+                _pos_key_row(r),
+                -r.matched_keyword_length,
+                r.candidate_id,
+            )
+        return (
+            -r.rule_tier,
+            -r.sort_secondary_wp,
+            -r.interface_dominance_effective,
+            -r.keyword_specificity,
+            _pos_key_row(r),
+            -r.matched_keyword_length,
+            r.candidate_id,
+        )
 
     rows.sort(key=_row_sort_key)
-    _rt, _swp, dom_e, spec, _pos, _ln, matched, cid, data = rows[0]
-    wp_out_raw = data.get("workflow_priority", 0)
+    best = rows[0]
+    wp_out_raw = best.data.get("workflow_priority", 0)
     try:
         wp_out = int(wp_out_raw)
     except (TypeError, ValueError):
         wp_out = 0
-    return (data, cid, matched, wp_out, spec, dom_e)
+    return BestVisualCandidateMatch(
+        data=best.data,
+        candidate_id=best.candidate_id,
+        matched=best.matched,
+        workflow_priority=wp_out,
+        keyword_specificity=best.keyword_specificity,
+        interface_dominance_effective=best.interface_dominance_effective,
+    )
