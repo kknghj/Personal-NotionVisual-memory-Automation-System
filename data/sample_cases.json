@@ -1,0 +1,224 @@
+[
+  {
+    "title": "과장님 식사 당번 메일",
+    "visual": {
+      "type": "emoji",
+      "value": "📧"
+    },
+    "workflow_type": "email_communication",
+    "pair_context": {
+      "action": "안내",
+      "subject": "식사당번"
+    },
+    "modifier": [
+      "과장님"
+    ],
+    "focus": "메일 발송",
+    "interface_memory": [
+      "메일",
+      "아웃룩"
+    ],
+    "cognitive_mode": [
+      "communication",
+      "notification"
+    ],
+    "reason": "과장님보다 메일 발송 행동이 핵심",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "점심 카톡 확인",
+    "visual": {
+      "type": "emoji",
+      "value": "💬"
+    },
+    "workflow_type": "messenger_communication",
+    "pair_context": {
+      "action": "확인",
+      "subject": "카톡"
+    },
+    "modifier": [
+      "점심"
+    ],
+    "focus": "카카오톡 확인",
+    "interface_memory": [
+      "카카오톡",
+      "메신저"
+    ],
+    "cognitive_mode": [
+      "communication",
+      "messenger_check"
+    ],
+    "reason": "점심보다 카카오톡 확인 행동이 핵심",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "회의자료 확인",
+    "visual": {
+      "type": "emoji",
+      "value": "📄"
+    },
+    "workflow_type": "document_review",
+    "pair_context": {
+      "action": "확인",
+      "subject": "회의자료"
+    },
+    "focus": "문서 검토",
+    "interface_memory": [
+      "문서확인",
+      "검토"
+    ],
+    "cognitive_mode": [
+      "review",
+      "document_check"
+    ],
+    "reason": "회의보다 자료 검토 행동이 핵심",
+    "workflow_specificity": 1
+  },
+  {
+    "title": "교육 신청 현황 엑셀 정리",
+    "visual": {
+      "type": "notion_icon",
+      "value": "grid-rectangle-2x3",
+      "color": "green"
+    },
+    "workflow_type": "spreadsheet_workflow",
+    "pair_context": {
+      "action": "정리",
+      "subject": "엑셀 현황"
+    },
+    "modifier": [
+      "교육신청"
+    ],
+    "focus": "엑셀 테이블 정리",
+    "interface_memory": [
+      "엑셀",
+      "스프레드시트",
+      "테이블UI"
+    ],
+    "cognitive_mode": [
+      "데이터정리",
+      "테이블작업"
+    ],
+    "reason": "데이터 테이블 정리 작업 중심",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "과장님 QR 인증",
+    "visual": {
+      "type": "notion_icon",
+      "value": "qr-code"
+    },
+    "workflow_type": "qr_authentication",
+    "pair_context": {
+      "action": "인증",
+      "subject": "QR"
+    },
+    "modifier": [
+      "과장님"
+    ],
+    "focus": "QR 출퇴근 인증",
+    "interface_memory": [
+      "QR",
+      "출퇴근인증"
+    ],
+    "cognitive_mode": [
+      "authentication",
+      "system_check"
+    ],
+    "reason": "과장님보다 QR 인증 인터페이스가 핵심",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "면접자료 준비",
+    "visual": {
+      "type": "emoji",
+      "value": "📄"
+    },
+    "workflow_type": "document_preparation",
+    "pair_context": {
+      "action": "준비",
+      "subject": "면접자료"
+    },
+    "focus": "문서 준비",
+    "interface_memory": [
+      "자료준비",
+      "문서작업"
+    ],
+    "cognitive_mode": [
+      "document_work",
+      "preparation"
+    ],
+    "reason": "준비 대상이 자료이므로 document workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "행사 준비",
+    "visual": {
+      "type": "emoji",
+      "value": "🎉"
+    },
+    "workflow_type": "event_preparation",
+    "pair_context": {
+      "action": "준비",
+      "subject": "행사"
+    },
+    "focus": "행사 준비",
+    "interface_memory": [
+      "행사운영",
+      "이벤트준비"
+    ],
+    "cognitive_mode": [
+      "event_mode",
+      "preparation"
+    ],
+    "reason": "준비 대상이 행사이므로 event workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "바탕화면 폴더 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "📁"
+    },
+    "workflow_type": "folder_organization",
+    "pair_context": {
+      "action": "정리",
+      "subject": "폴더"
+    },
+    "focus": "폴더 구조 정리",
+    "interface_memory": [
+      "파일탐색기",
+      "폴더구조"
+    ],
+    "cognitive_mode": [
+      "digital_cleanup",
+      "organization"
+    ],
+    "reason": "정리 대상이 파일/폴더이므로 folder workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "카톡 알림 정리",
+    "visual": {
+      "type": "notion_icon",
+      "value": "bell-notification",
+      "color": "yellow"
+    },
+    "workflow_type": "notification_cleanup",
+    "pair_context": {
+      "action": "정리",
+      "subject": "알림"
+    },
+    "focus": "알림 정리",
+    "interface_memory": [
+      "푸시알림",
+      "알림센터"
+    ],
+    "cognitive_mode": [
+      "notification_management",
+      "cleanup"
+    ],
+    "reason": "정리 대상이 알림이므로 notification workflow",
+    "workflow_specificity": 2
+  }
+]

@@ -284,6 +284,35 @@ def meaning_has_noncompound_occurrence(canonical: str, phrase: str, cov: list[bo
     return False
 
 
+def organize_subject_term_occurrence_ok(canonical: str, term: str, cov: list[bool]) -> bool:
+    """organize (정리) subject: compound 내부의 *부분* 매칭만 막고, 복합어 전체가 subject이면 허용.
+
+    예: ``회의자료`` 안의 ``자료``는 거부, 단독 ``보고서``+``정리``는 ``보고서``가 복합 사전 항목이어도 허용.
+    """
+    p = term.strip()
+    if not p or p not in canonical:
+        return False
+    for j in _substring_starts(canonical, p):
+        L = len(p)
+        if not _occurrence_hits_compound(cov, j, L):
+            return True
+        inner_of_longer = False
+        for w in DOCUMENT_COMPOUND_SUBJECT_SORTED:
+            if not w or len(w) <= L:
+                continue
+            for s in _substring_starts(canonical, w):
+                if s <= j and j + L <= s + len(w) and (s < j or j + L < s + len(w)):
+                    inner_of_longer = True
+                    break
+            if inner_of_longer:
+                break
+        if inner_of_longer:
+            continue
+        if canonical[j : j + L] == p:
+            return True
+    return False
+
+
 def first_meaning_occurrence_index(canonical: str, phrase: str, cov: list[bool], prefer_last: bool) -> int:
     """compound 밖 occurrence 인덱스. 없으면 10**9."""
     p = phrase.strip()
@@ -337,20 +366,25 @@ PERSON_CONTEXT_MODIFIER_TERMS: frozenset[str] = frozenset(
 )
 
 
-def title_contains_interface_anchor(title: str) -> bool:
-    """제목에 INTERFACE anchor가 있고, compound subject 안에만 있는 매칭은 제외."""
-    c = _canonical_title_text(title)
-    if not c:
+def canonical_has_interface_anchor_noncompound(canonical: str) -> bool:
+    """이미 canonical(공백 제거)일 때: INTERFACE anchor가 compound 밖에 있으면 True."""
+    if not canonical:
         return False
-    cov = compound_subject_char_mask(c)
+    cov = compound_subject_char_mask(canonical)
     for a in _INTERFACE_SORTED:
-        if not a or a not in c:
+        if not a or a not in canonical:
             continue
-        for j in _substring_starts(c, a):
+        for j in _substring_starts(canonical, a):
             if _occurrence_hits_compound(cov, j, len(a)):
                 continue
             return True
     return False
+
+
+def title_contains_interface_anchor(title: str) -> bool:
+    """제목에 INTERFACE anchor가 있고, compound subject 안에만 있는 매칭은 제외."""
+    c = _canonical_title_text(title)
+    return canonical_has_interface_anchor_noncompound(c)
 
 
 def title_has_document_workflow_signal(title: str) -> bool:

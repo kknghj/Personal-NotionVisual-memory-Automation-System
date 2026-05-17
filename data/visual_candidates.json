@@ -149,11 +149,6 @@
         "interface_dominance": 0
       },
       {
-        "text": "수정",
-        "specificity": 1,
-        "interface_dominance": 0
-      },
-      {
         "text": "기입",
         "specificity": 1,
         "interface_dominance": 0
@@ -190,8 +185,7 @@
     ],
     "usage_context": [
       "회의록 수정",
-      "기안 작성",
-      "자료 정리"
+      "기안 작성"
     ]
   },
   "document_review": {
@@ -1168,7 +1162,7 @@
 "notification_cleanup": {
 "visual": {
 "type": "notion_icon",
-"value": "bell",
+"value": "bell-notification",
 "color": "yellow"
 },
 "workflow_priority": 2,

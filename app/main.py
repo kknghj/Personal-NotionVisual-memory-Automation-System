@@ -48,8 +48,8 @@ _INDEX_HTML = """<!DOCTYPE html>
 <body>
   <h1>노션 일정 제목 → visual 추천</h1>
   <p>
-    ① <code>sample_cases.json</code> 제목 <strong>완전 일치</strong> 시 해당 visual·reason 사용.<br/>
-    ② 없으면 <code>visual_candidates.json</code>의 <strong>meaning</strong> 키워드가 제목에 포함되는지 본 뒤,
+    ① <code>data/sample_cases.json</code> 제목 <strong>완전 일치</strong> 시 해당 visual·reason 사용.<br/>
+    ② 없으면 <code>data/visual_candidates.json</code>의 <strong>meaning</strong> 키워드가 제목에 포함되는지 본 뒤,
     키워드 <strong>workflow_priority</strong> → <strong>interface dominance</strong> → <strong>specificity</strong> →
     제목에서의 위치 → 키워드 길이 순으로 후보를 고릅니다
     (점심·저녁 같은 시간 modifier, 과장님·대표·팀장 같은 person modifier가
@@ -156,7 +156,7 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
         reason = (
             raw_reason.strip()
             if isinstance(raw_reason, str) and raw_reason.strip()
-            else "sample_cases.json의 제목과 정확히 일치하는 사례의 visual을 사용합니다."
+            else "data/sample_cases.json의 제목과 정확히 일치하는 사례의 visual을 사용합니다."
         )
         wfs = case.get("workflow_specificity")
         if isinstance(wfs, int):
@@ -167,7 +167,7 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
     if cand is None:
         raise HTTPException(
             status_code=404,
-            detail="sample_cases 및 visual_candidates meaning 키워드와 일치하는 항목이 없습니다.",
+            detail="data/sample_cases 및 data/visual_candidates meaning 키워드와 일치하는 항목이 없습니다.",
         )
 
     data, cid, matched, wp, kspec, idom = cand
@@ -175,10 +175,10 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
     if not visual or not isinstance(visual, dict):
         raise HTTPException(
             status_code=500,
-            detail="선택된 visual_candidates 항목에 visual 필드가 없습니다.",
+            detail="선택된 data/visual_candidates 항목에 visual 필드가 없습니다.",
         )
     reason = (
-        "sample_cases에 같은 제목이 없어 visual_candidates로 매칭했습니다. "
+        "data/sample_cases에 같은 제목이 없어 data/visual_candidates로 매칭했습니다. "
         f"제목에 meaning「{matched}」가 포함되어 후보「{cid}」를 선택했습니다 "
         f"(정렬: interface_dominance={idom}, keyword_specificity={kspec}, workflow_priority={wp})."
     )

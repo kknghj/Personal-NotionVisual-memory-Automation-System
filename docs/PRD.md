@@ -1,6 +1,8 @@
 # PRD  
 ## Personal Notion Visual Memory Automation System
 
+> **문서 위치**: `docs/PRD.md`. 철학·원칙 전개는 [`workflow_philosophy.md`](workflow_philosophy.md), 파이프라인 개략은 [`ARCHITECHURE.md`](ARCHITECHURE.md), 에이전트용 축약 규칙은 [`.cursor/rules/icon_system.md`](../.cursor/rules/icon_system.md).
+
 ---
 
 # 1. 프로젝트 개요
@@ -345,9 +347,11 @@ compound noun 내부 substring을
 
 # 5. 핵심 데이터 구조
 
+JSON 데이터셋(본 장에서 서술하는 `data/sample_cases.json`, `data/visual_candidates.json`, `data/feedback_log.json` 등)은 저장소에서 **`data/`** 디렉터리 아래 단일 경로로 관리한다. 선언적 페어 규칙은 `data/pair_rules.json`을 사용한다.
+
 ---
 
-# 5-1. sample_cases.json
+# 5-1. data/sample_cases.json
 
 ## 역할
 
@@ -379,7 +383,7 @@ compound noun 내부 substring을
 
 ## 핵심 특징
 
-sample_cases는:
+`data/sample_cases.json`은:
 단순 title-example 데이터가 아니다.
 
 각 사례는:
@@ -430,7 +434,7 @@ sample_cases는:
 
 ---
 
-# 5-2. visual_candidates.json
+# 5-2. data/visual_candidates.json
 
 ## 역할
 
@@ -455,7 +459,7 @@ AI가:
 
 ## 핵심 특징
 
-visual_candidates는:
+`data/visual_candidates.json`은:
 단순 keyword dictionary가 아니다.
 
 각 visual은:
@@ -526,7 +530,7 @@ visual_candidates는:
 
 ---
 
-# 5-3. feedback_log.json
+# 5-3. data/feedback_log.json
 
 ## 역할
 
@@ -548,7 +552,7 @@ AI의 일반 추론보다:
 
 ## 핵심 특징
 
-feedback_log는:
+`data/feedback_log.json`은:
 단순 correction log가 아니다.
 
 다음을 함께 기록한다:
@@ -664,7 +668,7 @@ modifier/context/개인적 상황 vocabulary
 ---
 
 ## 1단계
-sample_cases exact match
+data/sample_cases.json exact match
 
 예:
 ```text
@@ -676,7 +680,7 @@ sample_cases exact match
 ---
 
 ## 2단계
-visual_candidates keyword matching
+data/visual_candidates.json keyword matching
 
 예:
 ```text
@@ -1042,9 +1046,9 @@ icon 없는 일정 탐색
 ↓
 일정 제목 분석
 ↓
-sample_cases 검색
+data/sample_cases.json 검색
 ↓
-visual_candidates 검색
+data/visual_candidates.json 검색
 ↓
 workflow_priority 비교
 ↓
@@ -1054,7 +1058,7 @@ GPT 추론
 ↓
 사용자 수정 가능
 ↓
-feedback 저장
+data/feedback_log.json 저장
 ↓
 Notion icon 자동 반영
 ```
@@ -1068,10 +1072,10 @@ Notion icon 자동 반영
 | 1 | Cursor 프로젝트 초기화 |
 | 2 | FastAPI 서버 구축 |
 | 3 | 추천 엔진 MVP |
-| 4 | sample_cases matching |
-| 5 | visual_candidates matching |
+| 4 | data/sample_cases.json matching |
+| 5 | data/visual_candidates.json matching |
 | 6 | GPT fallback |
-| 7 | feedback 저장 |
+| 7 | data/feedback_log.json 저장 |
 | 8 | Notion API 연결 |
 | 9 | 자동 실행 |
 | 10 | 개발일지 자동화 |

@@ -1,14 +1,34 @@
-"""Declarative pair rules (prep, confirm+coordination) evaluated before meaning matching."""
+"""Declarative pair rules (prep, confirm+coordination, organize, modify) evaluated before meaning matching."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Optional
+
+from app.specificity import (
+    canonical_has_interface_anchor_noncompound,
+    compound_subject_char_mask,
+    organize_subject_term_occurrence_ok,
+)
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class PairResolution:
-    """Outcome of a pair rule hit. rule_tier sorts above meaning-only rows."""
+    """P3 declarative pair rule hit — one resolved (action, subject) interpretation.
+
+    This is **not** a P6 ranking row: it has no title occurrence position or length
+    for the unified sort tuple; those are supplied when projecting into
+    ``CandidateRow`` (pair rows use position ``0`` and ``len(matched)``).
+
+    Fields (see docs/ARCHITECHURE.md §P3):
+    - ``data``: visual_candidates-shaped payload (synthetic or copied from a candidate).
+    - ``candidate_id`` / ``matched``: which catalog entry and which literal matched span.
+    - ``rule_tier``: global sort boost for pair track vs meaning-only (``rule_tier=0``).
+    - ``sort_secondary_wp``: P6 integer read from rule JSON (``sort_secondary_wp`` key);
+      **rule tie-break / phase ordering**, not the catalog ``workflow_priority`` 1/2/3 scale
+      unless authors intentionally reuse the same numbers.
+    - ``keyword_specificity`` / ``interface_dominance_effective``: same semantics as meaning rows.
+    """
 
     data: dict[str, Any]
     candidate_id: str
@@ -39,7 +59,7 @@ class PairRuleEngine:
         canonical: str,
         candidates: dict[str, Any],
     ) -> list[PairResolution]:
-        """Legacy order: prep row first (if any), then confirm row (if any). Both may apply."""
+        """Order: prep → confirm → organize → modify (각 네임스페이스당 최대 1 row)."""
         out: list[PairResolution] = []
         rule_tier = self._rule_tier_int()
 
@@ -52,6 +72,18 @@ class PairRuleEngine:
         cc = self._rules.get("confirm_coordination")
         if isinstance(cc, dict):
             r = self._try_confirm_coordination(canonical, candidates, cc, rule_tier)
+            if r is not None:
+                out.append(r)
+
+        org = self._rules.get("organize")
+        if isinstance(org, dict):
+            r = self._try_organize(canonical, org, rule_tier)
+            if r is not None:
+                out.append(r)
+
+        mod = self._rules.get("modify")
+        if isinstance(mod, dict):
+            r = self._try_modify(canonical, mod, rule_tier)
             if r is not None:
                 out.append(r)
 
@@ -73,13 +105,13 @@ class PairRuleEngine:
             rtype = rule.get("type")
             if rtype == "document_subjects":
                 res = self._prep_document_subjects(canonical, rule, lemma, rule_tier)
-            elif rtype == "substring":
+            elif rtype == "subject_match":
                 res = self._prep_substring(canonical, rule, lemma, rule_tier)
-            elif rtype == "setting_and_event_or_ievent":
+            elif rtype == "event_setup_resolution":
                 res = self._prep_setting_event(canonical, rule, lemma, rule_tier)
-            elif rtype == "food_first_hit_ordered":
+            elif rtype == "food_subject_resolution":
                 res = self._prep_food_ordered(canonical, rule, lemma, rule_tier)
-            elif rtype == "event_tail_first_hit":
+            elif rtype == "event_subject_resolution":
                 res = self._prep_event_tail(canonical, rule, lemma, rule_tier)
             else:
                 res = None
@@ -327,3 +359,168 @@ class PairRuleEngine:
                         return cid
         d = cc.get("default_candidate_id")
         return str(d) if isinstance(d, str) else "messenger_chat"
+
+    def _try_organize(
+        self,
+        canonical: str,
+        organize: dict[str, Any],
+        rule_tier: int,
+    ) -> Optional[PairResolution]:
+        """(action=정리, subject=…) — subject 토큰은 compound subject span 밖에서만 인정."""
+        lemma = organize.get("action_lemma", "정리")
+        if not isinstance(lemma, str) or lemma not in canonical:
+            return None
+
+        cov = compound_subject_char_mask(canonical)
+        for rule in organize.get("rules", []):
+            if not isinstance(rule, dict):
+                continue
+            rtype = rule.get("type")
+            if rtype == "phrase_substrings":
+                res = self._organize_phrase_substrings(canonical, rule, lemma, rule_tier)
+            elif rtype == "subject_terms_noncompound":
+                res = self._organize_subject_terms(canonical, rule, lemma, rule_tier, cov)
+            else:
+                res = None
+            if res is not None:
+                return res
+        return None
+
+    def _organize_phrase_substrings(
+        self,
+        canonical: str,
+        rule: dict[str, Any],
+        lemma: str,
+        rule_tier: int,
+    ) -> Optional[PairResolution]:
+        phrases = rule.get("phrases")
+        if not isinstance(phrases, list):
+            return None
+        for ph in _sorted_terms_length_desc([str(p) for p in phrases]):
+            if ph and ph in canonical:
+                matched = str(rule.get("matched_template", "{phrase}+{lemma}")).replace(
+                    "{phrase}", ph
+                ).replace("{lemma}", lemma)
+                return self._prep_resolution(
+                    rule=rule,
+                    candidate_id=str(rule.get("candidate_id", "")),
+                    matched=matched,
+                    data=self._synthetic_prep_data(rule, rule.get("visual", {})),
+                    rule_tier=rule_tier,
+                )
+        return None
+
+    def _organize_subject_terms(
+        self,
+        canonical: str,
+        rule: dict[str, Any],
+        lemma: str,
+        rule_tier: int,
+        cov: list[bool],
+    ) -> Optional[PairResolution]:
+        terms = rule.get("terms")
+        if not isinstance(terms, list):
+            return None
+        for term in _sorted_terms_length_desc([str(t) for t in terms]):
+            if not term:
+                continue
+            if not organize_subject_term_occurrence_ok(canonical, term, cov):
+                continue
+            if (
+                rule.get("semantic") == "organize_subject_written_record"
+                and canonical_has_interface_anchor_noncompound(canonical)
+            ):
+                # 엑셀/폼/터미널 등 UI 앵커가 있으면 ``자료+정리`` 같은 서면 subject organize는
+                # meaning 단계(스프레드시트 등)에 맡긴다.
+                continue
+            tpl = str(rule.get("matched_template", "{term}+{lemma}"))
+            matched = tpl.replace("{term}", term).replace("{lemma}", lemma)
+            return self._prep_resolution(
+                rule=rule,
+                candidate_id=str(rule.get("candidate_id", "")),
+                matched=matched,
+                data=self._synthetic_prep_data(rule, rule.get("visual", {})),
+                rule_tier=rule_tier,
+            )
+        return None
+
+    def _try_modify(
+        self,
+        canonical: str,
+        modify: dict[str, Any],
+        rule_tier: int,
+    ) -> Optional[PairResolution]:
+        """(action=수정, subject=…) — organize와 동일한 subject compound 규칙."""
+        lemma = modify.get("action_lemma", "수정")
+        if not isinstance(lemma, str) or lemma not in canonical:
+            return None
+
+        cov = compound_subject_char_mask(canonical)
+        for rule in modify.get("rules", []):
+            if not isinstance(rule, dict):
+                continue
+            rtype = rule.get("type")
+            if rtype == "phrase_substrings":
+                res = self._modify_phrase_substrings(canonical, rule, lemma, rule_tier)
+            elif rtype == "subject_terms_noncompound":
+                res = self._modify_subject_terms(canonical, rule, lemma, rule_tier, cov)
+            else:
+                res = None
+            if res is not None:
+                return res
+        return None
+
+    def _modify_phrase_substrings(
+        self,
+        canonical: str,
+        rule: dict[str, Any],
+        lemma: str,
+        rule_tier: int,
+    ) -> Optional[PairResolution]:
+        phrases = rule.get("phrases")
+        if not isinstance(phrases, list):
+            return None
+        for ph in _sorted_terms_length_desc([str(p) for p in phrases]):
+            if ph and ph in canonical:
+                matched = str(rule.get("matched_template", "{phrase}+{lemma}")).replace(
+                    "{phrase}", ph
+                ).replace("{lemma}", lemma)
+                return self._prep_resolution(
+                    rule=rule,
+                    candidate_id=str(rule.get("candidate_id", "")),
+                    matched=matched,
+                    data=self._synthetic_prep_data(rule, rule.get("visual", {})),
+                    rule_tier=rule_tier,
+                )
+        return None
+
+    def _modify_subject_terms(
+        self,
+        canonical: str,
+        rule: dict[str, Any],
+        lemma: str,
+        rule_tier: int,
+        cov: list[bool],
+    ) -> Optional[PairResolution]:
+        terms = rule.get("terms")
+        if not isinstance(terms, list):
+            return None
+        for term in _sorted_terms_length_desc([str(t) for t in terms]):
+            if not term:
+                continue
+            if not organize_subject_term_occurrence_ok(canonical, term, cov):
+                continue
+            if rule.get("skip_when_interface_anchor_noncompound") and canonical_has_interface_anchor_noncompound(
+                canonical
+            ):
+                continue
+            tpl = str(rule.get("matched_template", "{term}+{lemma}"))
+            matched = tpl.replace("{term}", term).replace("{lemma}", lemma)
+            return self._prep_resolution(
+                rule=rule,
+                candidate_id=str(rule.get("candidate_id", "")),
+                matched=matched,
+                data=self._synthetic_prep_data(rule, rule.get("visual", {})),
+                rule_tier=rule_tier,
+            )
+        return None
