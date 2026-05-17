@@ -106,8 +106,11 @@ def find_best_visual_candidate_match(
     정렬: rule_tier → sort_secondary_wp(legacy workflow_priority tie) → interface_dominance
     → specificity → 제목 위치 → 키워드 길이 → candidate_id
 
-    pair rule hits use rule_tier from pair_rules.json; meaning-only rows use rule_tier=0.
-    Returned workflow_priority int is data[\"workflow_priority\"] (PRD anchor strength),
+    Pair rules (prep, confirm_coordination, organize) emit rows with rule_tier from
+    data/pair_rules.json; meaning-only rows use rule_tier=0. Action ``정리`` is not a
+    single meaning keyword: ``organize`` resolves (action=정리, subject=…) before
+    generic meaning rows, so document icons are not implied by ``정리`` alone.
+    Returned workflow_priority int is data[\"workflow_priority\"] (docs/PRD.md anchor strength),
     not the legacy sort boost.
 
     compound subject 내부 substring은 매칭·interface dominance에서 제외.
@@ -150,6 +153,9 @@ def find_best_visual_candidate_match(
             continue
 
         dom_e, spec, pos, ln, matched = best_local
+        if title_has_ui and matched.strip() in PERSON_CONTEXT_MODIFIER_TERMS:
+            # 인터페이스 앵커가 있을 때 직책·상대만으로는 채널 후보를 대표하지 않음
+            continue
         wp_raw = data.get("workflow_priority", 0)
         try:
             sort_wp = int(wp_raw)
@@ -181,7 +187,16 @@ def find_best_visual_candidate_match(
             return -pos
         return pos
 
-    rows.sort(key=lambda r: (-r[0], -r[1], -r[2], -r[3], _pos_key_row(r), -r[5], r[7]))
+    def _row_sort_key(
+        r: tuple[int, int, int, int, int, int, str, str, dict[str, Any]],
+    ) -> tuple[int, int, int, int, int, int, str]:
+        """rule_tier → (UI 제목이면 dominance·specificity 우선) → workflow_priority → 위치…"""
+        rt, swp, dom_e, spec, pos, ln, matched, cid, _data = r
+        if title_has_ui:
+            return (-rt, -dom_e, -spec, -swp, _pos_key_row(r), -ln, cid)
+        return (-rt, -swp, -dom_e, -spec, _pos_key_row(r), -ln, cid)
+
+    rows.sort(key=_row_sort_key)
     _rt, _swp, dom_e, spec, _pos, _ln, matched, cid, data = rows[0]
     wp_out_raw = data.get("workflow_priority", 0)
     try:
