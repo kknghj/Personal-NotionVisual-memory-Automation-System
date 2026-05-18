@@ -3,7 +3,7 @@
     "schema_version": 3,
     "meaning_format": {
       "text": "string",
-      "specificity": "int (1=일반 행동, 2=업무 개념·중간, 3=인터페이스·도구·채널)",
+      "workflow_anchor_density": "int (1=일반 행동, 2=업무 개념·중간, 3=인터페이스·도구·채널)",
       "interface_dominance": "int (1=키워드에 interface anchor 부분문자열 포함)"
     }
   },
@@ -16,27 +16,27 @@
     "meaning": [
       {
         "text": "메일",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "안내",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "공지",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "발송",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "전달",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -59,27 +59,27 @@
     "meaning": [
       {
         "text": "전화",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "통화",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "연락",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "문의",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "확인",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -102,27 +102,27 @@
     "meaning": [
       {
         "text": "카카오톡",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "카톡",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "채팅",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "메신저",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "협의",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -145,37 +145,37 @@
     "meaning": [
       {
         "text": "작성",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "기입",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "기안",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "송부",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "요청",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "제출",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "공문",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -197,22 +197,22 @@
     "meaning": [
       {
         "text": "검토",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "확인",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "열람",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "전달",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -235,37 +235,37 @@
     "meaning": [
       {
         "text": "급여",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "수당",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "성과급",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "복리",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "여비",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "정산",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "출장비",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       }
     ],
@@ -289,27 +289,27 @@
     "meaning": [
       {
         "text": "엑셀",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "스프레드시트",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "테이블",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "데이터정리",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "표",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -334,27 +334,27 @@
     "meaning": [
       {
         "text": "네이버폼",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "설문",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "접수",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "체크",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "응답",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -378,27 +378,27 @@
     "meaning": [
       {
         "text": "코딩",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "구현",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "개발",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "자동화",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "API",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       }
     ],
@@ -423,27 +423,27 @@
     "meaning": [
       {
         "text": "터미널",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "명령어",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "실행",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "세팅",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "환경구축",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       }
     ],
@@ -468,17 +468,17 @@
     "meaning": [
       {
         "text": "QR",
-        "specificity": 3,
+        "workflow_anchor_density": 3,
         "interface_dominance": 1
       },
       {
         "text": "인증",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "출퇴근",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -500,22 +500,22 @@
     "meaning": [
       {
         "text": "과장님",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "대표",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "상사",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "면담",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -537,22 +537,22 @@
     "meaning": [
       {
         "text": "회의",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "간담회",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "협의",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "대면",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -574,22 +574,22 @@
     "meaning": [
       {
         "text": "브레인스토밍",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "생각",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "구상",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "아이디어",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -611,27 +611,27 @@
     "meaning": [
       {
         "text": "시스템",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "승인",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "전산",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "PC",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "행정처리",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       }
     ],
@@ -654,22 +654,22 @@
     "meaning": [
       {
         "text": "보안",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "근무명령",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "잠금",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "보호",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -691,12 +691,12 @@
     "meaning": [
       {
         "text": "식사 약속",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "회식",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -718,37 +718,37 @@
   "meaning": [
     {
       "text": "교육현장",
-      "specificity": 2,
+      "workflow_anchor_density": 2,
       "interface_dominance": 0
     },
     {
       "text": "현장교육",
-      "specificity": 2,
+      "workflow_anchor_density": 2,
       "interface_dominance": 0
     },
     {
       "text": "강사",
-      "specificity": 2,
+      "workflow_anchor_density": 2,
       "interface_dominance": 0
     },
     {
       "text": "수업",
-      "specificity": 2,
+      "workflow_anchor_density": 2,
       "interface_dominance": 0
     },
     {
       "text": "강의",
-      "specificity": 2,
+      "workflow_anchor_density": 2,
       "interface_dominance": 0
     },
     {
       "text": "교육방문",
-      "specificity": 2,
+      "workflow_anchor_density": 2,
       "interface_dominance": 0
     },
     {
       "text": "출강",
-      "specificity": 2,
+      "workflow_anchor_density": 2,
       "interface_dominance": 0
     }
   ],
@@ -773,17 +773,17 @@
     "meaning": [
       {
         "text": "바인더",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "법령집",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "자료집",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -805,22 +805,22 @@
     "meaning": [
       {
         "text": "재물",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "물품",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "조사",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "비품",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -842,17 +842,17 @@
     "meaning": [
       {
         "text": "업무택시",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "교통",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "이동",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -875,22 +875,22 @@
     "meaning": [
       {
         "text": "공지",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "안내사항",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "주의",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "긴급",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -913,17 +913,17 @@
     "meaning": [
       {
         "text": "마감",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "기한",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "일정관리",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -945,17 +945,17 @@
     "meaning": [
       {
         "text": "외부시스템",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "행정신청",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
         "text": "토탈서비스",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       }
     ],
@@ -977,32 +977,32 @@
     "meaning": [
       {
         "text": "점심",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "점심약속",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "점심 약속",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "저녁",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "저녁약속",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       },
       {
         "text": "저녁 약속",
-        "specificity": 1,
+        "workflow_anchor_density": 1,
         "interface_dominance": 0
       }
     ],
@@ -1024,17 +1024,17 @@
     "meaning": [
       {
         "text": "폴더",
-        "specificity": 2,
+        "workflow_anchor_density": 2,
         "interface_dominance": 0
       },
       {
 "text": "파일",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "드라이브",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 }
 ],
@@ -1058,12 +1058,12 @@
 "meaning": [
 {
 "text": "회의실",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "정돈",
-"specificity": 1,
+"workflow_anchor_density": 1,
 "interface_dominance": 0
 }
 ],
@@ -1086,12 +1086,12 @@
 "meaning": [
 {
 "text": "사무실",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "청소",
-"specificity": 1,
+"workflow_anchor_density": 1,
 "interface_dominance": 0
 }
 ],
@@ -1114,12 +1114,12 @@
 "meaning": [
 {
 "text": "방",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "청소",
-"specificity": 1,
+"workflow_anchor_density": 1,
 "interface_dominance": 0
 }
 ],
@@ -1141,12 +1141,12 @@
 "meaning": [
 {
 "text": "캐비넷",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "서랍",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 }
 ],
@@ -1169,12 +1169,12 @@
 "meaning": [
 {
 "text": "알림",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "알림센터",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 }
 ],
@@ -1196,17 +1196,17 @@
 "meaning": [
 {
 "text": "음식",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "도시락",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "간식",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 }
 ],
@@ -1228,17 +1228,17 @@
 "meaning": [
 {
 "text": "행사",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "이벤트",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 },
 {
 "text": "부스",
-"specificity": 2,
+"workflow_anchor_density": 2,
 "interface_dominance": 0
 }
 ],

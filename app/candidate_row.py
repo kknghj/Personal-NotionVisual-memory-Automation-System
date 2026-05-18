@@ -33,8 +33,8 @@ class CandidateRow:
     interface_dominance_effective: int
     """UI/channel signal strength after compound masking (**semantic**, used as sort key)."""
 
-    keyword_specificity: int
-    """Keyword specificity tier (**semantic** from meaning inference or rule JSON; used as sort key)."""
+    keyword_workflow_anchor_density: int
+    """Keyword workflow anchor density tier (**semantic** from meaning inference or rule JSON; used as sort key)."""
 
     match_position_in_title: int
     """Canonical index of matched span (**sorting / evidence**; pair rows use 0)."""

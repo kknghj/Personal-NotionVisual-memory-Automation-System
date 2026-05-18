@@ -21,7 +21,7 @@
     "interface_memory": ["string"],
     "cognitive_mode": ["string"],
     "reason": "string",
-    "workflow_specificity": 1
+    "workflow_anchor_density": 1
   }
 ]
 ```
@@ -49,7 +49,7 @@ exact layer에서는 수행되지 않습니다.
 이 기능들은
 sample_cases exact match 이후의 semantic pipeline에서만 수행됩니다.
 
-그 외 필드(`workflow_type`, `pair_context`, …)는 메타·학습·문서용으로 두어도 되며, `app/main.py`의 exact match 응답에서는 주로 `visual`과 `reason`·`workflow_specificity`만 쓰입니다.
+그 외 필드(`workflow_type`, `pair_context`, …)는 메타·학습·문서용으로 두어도 되며, `app/main.py`의 exact match 응답에서는 주로 `visual`과 `reason`·`workflow_anchor_density`만 쓰입니다.
 
 ## 금지: 래퍼 루트
 

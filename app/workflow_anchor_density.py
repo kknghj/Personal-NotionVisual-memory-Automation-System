@@ -1,4 +1,4 @@
-"""meaning·제목의 workflow/interface 구체성(specificity) 추론.
+"""meaning·제목의 workflow/interface 구체성(workflow_anchor_density) 추론.
 
 1 = 일반 행동·포괄 표현
 2 = 업무 개념·중간 행동 (도구명까지는 아닌 카테고리·분기점)
@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Any, Iterator
 
-# 실제 인터페이스 / 도구 / 채널 (specificity=3, interface dominance=1)
+# 실제 인터페이스 / 도구 / 채널 (workflow_anchor_density=3, interface dominance=1)
 INTERFACE_ANCHOR_TERMS: frozenset[str] = frozenset(
     {
         "엑셀",
@@ -27,8 +27,8 @@ INTERFACE_ANCHOR_TERMS: frozenset[str] = frozenset(
     }
 )
 
-# 업무 개념·중간 행동 (specificity=2) — HIGH에서 내려온 포괄 개념 등
-MID_SPECIFICITY_TERMS: frozenset[str] = frozenset(
+# 업무 개념·중간 행동 (workflow_anchor_density=2) — HIGH에서 내려온 포괄 개념 등
+MID_WORKFLOW_ANCHOR_DENSITY_TERMS: frozenset[str] = frozenset(
     {
         "개발",
         "구현",
@@ -50,8 +50,8 @@ MID_SPECIFICITY_TERMS: frozenset[str] = frozenset(
     }
 )
 
-# 일반 행동·포괄 표현 (specificity=1)
-LOW_SPECIFICITY_TERMS: frozenset[str] = frozenset(
+# 일반 행동·포괄 표현 (workflow_anchor_density=1)
+LOW_WORKFLOW_ANCHOR_DENSITY_TERMS: frozenset[str] = frozenset(
     {
         "정리",
         "작성",
@@ -224,8 +224,8 @@ def _sorted_terms(terms: frozenset[str]) -> tuple[str, ...]:
 
 
 _INTERFACE_SORTED = _sorted_terms(INTERFACE_ANCHOR_TERMS)
-_MID_SORTED = _sorted_terms(MID_SPECIFICITY_TERMS)
-_LOW_SORTED = _sorted_terms(LOW_SPECIFICITY_TERMS)
+_MID_DENSITY_SORTED = _sorted_terms(MID_WORKFLOW_ANCHOR_DENSITY_TERMS)
+_LOW_DENSITY_SORTED = _sorted_terms(LOW_WORKFLOW_ANCHOR_DENSITY_TERMS)
 _DOCUMENT_WORKFLOW_SIGNAL_SORTED = _sorted_terms(DOCUMENT_WORKFLOW_SIGNAL_TERMS)
 DOCUMENT_COMPOUND_SUBJECT_SORTED = _sorted_terms(DOCUMENT_COMPOUND_SUBJECT_TERMS)
 
@@ -403,22 +403,22 @@ def interface_dominance(text: str) -> int:
     return 1 if any(a and a in t for a in _INTERFACE_SORTED) else 0
 
 
-def infer_specificity(text: str) -> int:
+def infer_workflow_anchor_density(text: str) -> int:
     """substring 우선: anchor ⊂ t → 3, MID ⊂ t → 2, LOW ⊂ t → 1, 그 외 2."""
     t = text.strip()
     if not t:
         return 1
     if any(a and a in t for a in _INTERFACE_SORTED):
         return 3
-    if any(m and m in t for m in _MID_SORTED):
+    if any(m and m in t for m in _MID_DENSITY_SORTED):
         return 2
-    if any(low and low in t for low in _LOW_SORTED):
+    if any(low and low in t for low in _LOW_DENSITY_SORTED):
         return 1
     return 2
 
 
 def iter_meaning_entries(meanings: Any) -> Iterator[tuple[str, int, int]]:
-    """각 meaning에 대해 (text, specificity, interface_dominance)."""
+    """각 meaning에 대해 (text, workflow_anchor_density, interface_dominance)."""
     if not isinstance(meanings, list):
         yield from ()
         return
@@ -426,8 +426,8 @@ def iter_meaning_entries(meanings: Any) -> Iterator[tuple[str, int, int]]:
         if isinstance(item, str):
             s = item.strip()
             if s:
-                sp = infer_specificity(s)
-                yield s, sp, interface_dominance(s)
+                density = infer_workflow_anchor_density(s)
+                yield s, density, interface_dominance(s)
             continue
         if isinstance(item, dict):
             raw = item.get("text") or item.get("term") or item.get("value")
@@ -436,14 +436,14 @@ def iter_meaning_entries(meanings: Any) -> Iterator[tuple[str, int, int]]:
             s = raw.strip()
             if not s:
                 continue
-            sp_override = item.get("specificity")
-            if sp_override is None:
-                sp = infer_specificity(s)
+            density_override = item.get("workflow_anchor_density")
+            if density_override is None:
+                density = infer_workflow_anchor_density(s)
             else:
                 try:
-                    sp = int(sp_override)
+                    density = int(density_override)
                 except (TypeError, ValueError):
-                    sp = infer_specificity(s)
+                    density = infer_workflow_anchor_density(s)
             dom_o = item.get("interface_dominance")
             if dom_o is None:
                 dom = interface_dominance(s)
@@ -452,11 +452,11 @@ def iter_meaning_entries(meanings: Any) -> Iterator[tuple[str, int, int]]:
                     dom = int(dom_o)
                 except (TypeError, ValueError):
                     dom = interface_dominance(s)
-            yield s, sp, dom
+            yield s, density, dom
 
 
-def workflow_specificity_for_sample_case(case: dict[str, Any]) -> int:
-    """sample_cases 한 건에 붙일 대표 specificity (메타·학습 신호용)."""
+def workflow_anchor_density_for_sample_case(case: dict[str, Any]) -> int:
+    """sample_cases 한 건에 붙일 대표 workflow_anchor_density (메타·학습 신호용)."""
     title = str(case.get("title", ""))
     focus = str(case.get("focus", ""))
     mem = case.get("interface_memory") or []
@@ -466,7 +466,7 @@ def workflow_specificity_for_sample_case(case: dict[str, Any]) -> int:
     if any(a and a in blob for a in _INTERFACE_SORTED):
         return 3
 
-    low_hits = sum(1 for lt in _LOW_SORTED if len(lt) >= 2 and lt in blob)
+    low_hits = sum(1 for lt in _LOW_DENSITY_SORTED if len(lt) >= 2 and lt in blob)
     if low_hits >= 2 and not any(
         a in blob for a in ("급여시스템", "네이버", "엑셀", "메일", "QR", "카카오", "카톡", "전화", "VSCode", "Cursor", "CLI", "터미널")
     ):

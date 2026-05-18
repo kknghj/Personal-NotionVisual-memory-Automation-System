@@ -1,11 +1,15 @@
-"""sample_cases / visual_candidates에 specificity 필드를 반영."""
+"""sample_cases / visual_candidates에 workflow_anchor_density 필드를 반영."""
 
 from __future__ import annotations
 
 import json
 
 from app.data_loader import DATA_DIR
-from app.specificity import infer_specificity, interface_dominance, workflow_specificity_for_sample_case
+from app.workflow_anchor_density import (
+    infer_workflow_anchor_density,
+    interface_dominance,
+    workflow_anchor_density_for_sample_case,
+)
 
 
 def patch_visual_candidates() -> None:
@@ -16,7 +20,7 @@ def patch_visual_candidates() -> None:
             "schema_version": 3,
             "meaning_format": {
                 "text": "string",
-                "specificity": "int (1=일반 행동, 2=업무 개념·중간, 3=인터페이스·도구·채널)",
+                "workflow_anchor_density": "int (1=일반 행동, 2=업무 개념·중간, 3=인터페이스·도구·채널)",
                 "interface_dominance": "int (1=키워드에 interface anchor 부분문자열 포함)",
             },
         }
@@ -43,7 +47,7 @@ def patch_visual_candidates() -> None:
                     new_meanings.append(
                         {
                             "text": text,
-                            "specificity": infer_specificity(text),
+                            "workflow_anchor_density": infer_workflow_anchor_density(text),
                             "interface_dominance": interface_dominance(text),
                         }
                     )
@@ -58,7 +62,7 @@ def patch_sample_cases() -> None:
     cases = json.loads(path.read_text(encoding="utf-8"))
     for case in cases:
         if isinstance(case, dict):
-            case["workflow_specificity"] = workflow_specificity_for_sample_case(case)
+            case["workflow_anchor_density"] = workflow_anchor_density_for_sample_case(case)
     path.write_text(json.dumps(cases, ensure_ascii=False, indent=4) + "\n", encoding="utf-8")
 
 
