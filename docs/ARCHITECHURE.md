@@ -3,7 +3,7 @@
 
 **경로**: `docs/ARCHITECHURE.md`. 제품 스펙·철학은 [`PRD.md`](PRD.md), [`workflow_philosophy.md`](workflow_philosophy.md) 참고.
 
-이 문서는 **현재 구현**(`app/main.py`, `app/data_loader.py`, `app/recommender.py`, `app/pair_engine.py`, `app/specificity.py`)의 호출 순서와 데이터 계약을 기준으로 한다.
+이 문서는 **현재 구현**(`app/main.py`, `app/data_loader.py`, `app/recommender.py`, `app/pair_engine.py`, `app/workflow_resolution.py`)의 호출 순서와 데이터 계약을 기준으로 한다.
 
 ---
 
@@ -12,8 +12,8 @@
 | 단계 | 구현 위치 (주) |
 |------|----------------|
 | **P0 — Exact case lookup** | `main.recommend_icon` → `recommender.find_exact_title_match` |
-| **P1 — Title canonicalization** | `specificity._canonical_title_text` |
-| **P2 — Compound span indexing** | `specificity.compound_subject_char_mask` |
+| **P1 — Title canonicalization** | `workflow_resolution._canonical_title_text` |
+| **P2 — Compound span indexing** | `workflow_resolution.compound_subject_char_mask` |
 | **P3 — Declarative pair resolution** | `pair_engine.PairRuleEngine.iter_matches` |
 | **P4 — Meaning-based candidate expansion** | `recommender.find_best_visual_candidate_match` (루프 + `_pick_best_meaning_for_candidate`) |
 | **P5 — Global candidate filtering** | 동일 함수 내 (급여·의미 없음 등) |
@@ -30,7 +30,7 @@
 
 - **역할**: 제목이 `data/sample_cases.json`의 어떤 항목과 **공백 trim 후 문자열 완전 일치**하면, 그 레코드의 `visual`·`reason`을 그대로 반환하고 **이후 단계를 전부 생략**.
 - **성격**: 사용자 truth source에 가까운 **오버라이드** — 골든 케이스·운영에서 확정한 제목→visual·회귀 테스트용 고정 답. P1 canonical·P2 compound·P3 pair·P4 meaning·P6 rank는 **호출되지 않음** (`main.recommend_icon`에서 `find_best_visual_candidate_match` 분기 자체를 타지 않음).
-- **데이터 계약 (런타임)**: JSON **루트는 반드시 평면 배열** `[{...}, {...}]` 이다. 각 원소는 최소 **`title`(비어 있지 않은 문자열)** 과 **`visual`** (`type` ∈ `emoji` \| `notion_icon`, `value` 비어 있지 않음)을 가진 객체. 그 외 필드(`workflow_type`, `pair_context`, `workflow_specificity` 등)는 메타·응답 보강용으로 선택.
+- **데이터 계약 (런타임)**: JSON **루트는 반드시 평면 배열** `[{...}, {...}]` 이다. 각 원소는 최소 **`title`(비어 있지 않은 문자열)** 과 **`visual`** (`type` ∈ `emoji` \| `notion_icon`, `value` 비어 있지 않음)을 가진 객체. 그 외 필드(`workflow_type`, `pair_context`, `workflow_resolution` 등)는 메타·응답 보강용으로 선택.
 - **로더**: `app.data_loader.load_sample_cases()`가 파일을 읽은 뒤 `validate_flat_sample_cases`로 위 형태를 검증한다. 구버전 래퍼(`sample_case_schema`, `recommended_updates` 키)가 있으면 **즉시 `ValueError`** — 런타임이 여러 JSON 모양을 암묵적으로 흡수하지 않도록 한계를 둔다.
 - **스키마 문서**: 필드 설명·예시·금지 형태는 [`sample_cases_schema.md`](sample_cases_schema.md)에만 둔다 (`sample_cases.json` 안에 스키마 객체를 넣지 않음).
 - **코드 경로**: `get_sample_cases()`(모듈 캐시) → `recommender.find_exact_title_match(title, cases)` — 케이스의 `case["title"].strip()` 과 요청 `title.strip()`만 비교 (**P1 `_canonical_title_text` 미사용**).
@@ -56,7 +56,7 @@
 ### P4 — Meaning-based candidate expansion
 
 - **역할**: 각 `visual_candidates` 항목(`workflow_priority` 있음, `meta` 제외)에 대해, **compound 밖에서 잡히는 meaning** 중 로컬 최선을 하나 고른 뒤 글로벌 테이블의 한 row로 올림.
-- **성격**: 키워드 포함 + 위치·specificity·dominance를 row 필드로 인코딩 (정렬은 P6).
+- **성격**: 키워드 포함 + 위치·workflow_resolution·dominance를 row 필드로 인코딩 (정렬은 P6).
 
 ### P5 — Global candidate filtering
 
@@ -71,7 +71,7 @@
 #### organize vs modify (동시 P3 hit)
 
 - 한 제목에 ``정리``와 ``수정``이 모두 있으면 **각각** P3에서 row가 나올 수 있다 (둘 다 `rule_tier` 동일).
-- **계약**: `pair_rules.json`에서 **`modify` 규칙은 `sort_secondary_wp: 4`**, **`organize`는 `3`**을 쓴다. 제목에 UI 앵커가 없을 때 P6 키는 ``-rule_tier`` 다음에 ``-sort_secondary_wp``가 오므로, 동률이면 **modify 트랙이 organize보다 앞선다** (이후 ``interface_dominance_effective`` → ``keyword_specificity`` → …로 계속 비교).
+- **계약**: `pair_rules.json`에서 **`modify` 규칙은 `sort_secondary_wp: 4`**, **`organize`는 `3`**을 쓴다. 제목에 UI 앵커가 없을 때 P6 키는 ``-rule_tier`` 다음에 ``-sort_secondary_wp``가 오므로, 동률이면 **modify 트랙이 organize보다 앞선다** (이후 ``interface_dominance_effective`` → ``keyword_workflow_resolution`` → …로 계속 비교).
 
 ### P7 — Visual materialization
 
@@ -85,7 +85,7 @@
 
 | | |
 |--|--|
-| **입력** | `title: str`, `cases: list[dict]` — 각 dict는 런타임에서 **`title`·`visual` 필수** (로더가 검증). 선택: `reason`, `workflow_specificity`, 기타 메타 |
+| **입력** | `title: str`, `cases: list[dict]` — 각 dict는 런타임에서 **`title`·`visual` 필수** (로더가 검증). 선택: `reason`, `workflow_resolution`, 기타 메타 |
 | **출력** | 매칭 시 해당 `dict` 전체, 없으면 `None` |
 | **불변식** | P0 히트 시 **P1–P6·catalog 경로 미실행**; `main`에서 바로 `RecommendResponse` 조립 (P7의 “row에서 visual 꺼내기”가 아니라 **케이스 dict의 `visual` 직접 사용**) |
 | **전제** | `data/sample_cases.json`이 평면 배열이 아니면 앱 기동 시 `load_sample_cases()` 단계에서 실패 |
@@ -103,13 +103,13 @@
 |--|--|
 | **입력** | `canonical: str`, `candidates: dict` (`visual_candidates` 전체) |
 | **출력** | `list[PairResolution]` — prep / confirm / organize / modify 네임스페이스당 최대 1개씩 (합쳐 최대 4개) |
-| **PairResolution 필드** | `data`, `candidate_id`, `matched`, `rule_tier`, `sort_secondary_wp`, `keyword_specificity`, `interface_dominance_effective` |
+| **PairResolution 필드** | `data`, `candidate_id`, `matched`, `rule_tier`, `sort_secondary_wp`, `keyword_workflow_resolution`, `interface_dominance_effective` |
 
 ### P4–P6 (통합 row)
 
 내부 표현은 ``app.candidate_row.CandidateRow`` (frozen dataclass). 의미적 필드 순은 기존 9-튜플과 동일:
 
-`rule_tier`, `sort_secondary_wp`, `interface_dominance_effective`, `keyword_specificity`, `match_position_in_title`, `matched_keyword_length`, `matched`, `candidate_id`, `data`
+`rule_tier`, `sort_secondary_wp`, `interface_dominance_effective`, `keyword_workflow_resolution`, `match_position_in_title`, `matched_keyword_length`, `matched`, `candidate_id`, `data`
 
 - Pair 출신: ``PairResolution``을 ``_candidate_row_from_pair_resolution``으로 투영 — `match_position_in_title=0`, `matched_keyword_length=len(matched)`, `sort_secondary_wp`는 규칙 JSON 기준.
 - Meaning 출신: `rule_tier=0`, `sort_secondary_wp=int(data["workflow_priority"])` (**catalog anchor strength**가 P6 슬롯으로 복사됨 — §8), 나머지는 `_pick_best_meaning_for_candidate` 산출.
@@ -120,7 +120,7 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 
 | | |
 |--|--|
-| **입력** | 우승 ``CandidateRow``에서 잘린 ``BestVisualCandidateMatch`` (또는 동일 순서의 6-튜플 언팩): ``data``, ``candidate_id``, ``matched``, ``workflow_priority``, ``keyword_specificity``, ``interface_dominance_effective`` |
+| **입력** | 우승 ``CandidateRow``에서 잘린 ``BestVisualCandidateMatch`` (또는 동일 순서의 6-튜플 언팩): ``data``, ``candidate_id``, ``matched``, ``workflow_priority``, ``keyword_workflow_resolution``, ``interface_dominance_effective`` |
 | **출력** | `RecommendResponse(visual, reason)` |
 
 ---
@@ -130,10 +130,10 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 | Modifier 종류 | 처리 위치 | 동작 |
 |-----------------|-----------|------|
 | **직책·상대 역할** (`PERSON_CONTEXT_MODIFIER_TERMS`) | **P4** `_pick_best_meaning_for_candidate` | 제목에 **compound 밖 interface anchor**가 있으면 (`title_contains_interface_anchor`), meaning 후보 풀에서 해당 키워드 매칭을 제외해 채널·도구 쪽이 이기도록 함. |
-| **시간·식사 등** (점심/저녁 등) | **P4** (간접) | `meaning` 문자열의 `infer_specificity` / 리스트 내 다른 키워드와 **같은 로컬 정렬**로 경쟁; 별도 “modifier 단계” 없음. |
+| **시간·식사 등** (점심/저녁 등) | **P4** (간접) | `meaning` 문자열의 `infer_workflow_resolution` / 리스트 내 다른 키워드와 **같은 로컬 정렬**로 경쟁; 별도 “modifier 단계” 없음. |
 | **Interface anchor** | **P2 + P4** | compound 안에만 걸리면 dominance 0; 제목 전체에 anchor가 있는지는 `title_contains_interface_anchor`로 person 필터 트리거. |
 
-정리: **modifier는 독립 파이프라인 단계가 아니라**, compound 마스크 + meaning 풀 필터 + specificity/dominance 숫자로 흡수됨.
+정리: **modifier는 독립 파이프라인 단계가 아니라**, compound 마스크 + meaning 풀 필터 + workflow_resolution/dominance 숫자로 흡수됨.
 
 ---
 
@@ -222,9 +222,9 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 | **workflow_priority** (JSON) | ● | △ | ``visual_candidates.json`` 항목 필드. 철학·PRD: **workflow 기억 anchor 강도** (1 강한 interface/workflow … 3 modifier/context). **의미 계약의 기준점**. |
 | **sort_secondary_wp** (런타임) | 소스에 따라 다름 | ● | ``CandidateRow`` / ``PairResolution``의 **P6용 정수 슬롯 하나**. Meaning 행: ``int(data["workflow_priority"])``를 **그대로 복사**해 정렬에 사용. Pair 행: ``pair_rules.json``의 **별도** 키 ``sort_secondary_wp`` (예: modify 4 vs organize 3). **같은 필드명이지만 pair 쪽은 catalog 철학의 1/2/3과 동일 스케일이 아닐 수 있음**. |
 | **interface_dominance_effective** | ● | ● | Meaning: occurrence·compound 반영 후 ``effective_interface_dominance_for_occurrence``. Pair: 규칙 JSON. **UI/채널 우선권**을 표현하는 **의미 신호**이며 동시에 정렬 키. |
-| **keyword_specificity** | ● | ● | Meaning: specificity 추론·JSON. Pair: 규칙. modifier vs anchor 쪽 힌트; **정렬 키**. |
+| **keyword_workflow_resolution** | ● | ● | Meaning: workflow_resolution 추론·JSON. Pair: 규칙. modifier vs anchor 쪽 힌트; **정렬 키**. |
 
-**정리**: “semantic만” / “sorting만” 이분법이 되는 것은 **rule_tier**(트랙 구분)와 **순수 tie-break**(위치·길이·id) 쪽에 가깝고, **dominance / specificity / catalog workflow_priority** 는 **의미를 숫자로 인코딩한 뒤 그 숫자로 비교**하는 패턴이다.
+**정리**: “semantic만” / “sorting만” 이분법이 되는 것은 **rule_tier**(트랙 구분)와 **순수 tie-break**(위치·길이·id) 쪽에 가깝고, **dominance / workflow_resolution / catalog workflow_priority** 는 **의미를 숫자로 인코딩한 뒤 그 숫자로 비교**하는 패턴이다.
 
 ### 8.2 `workflow_priority` 단순화·이름 제안 (데이터 계약)
 
@@ -244,8 +244,8 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 |------|-----------|
 | ``rule_tier`` | Pair vs meaning **최우선 구분**. |
 | ``sort_secondary_wp`` | **통합 P6 슬롯**: meaning=anchor strength, pair=rule tie-break. |
-| ``interface_dominance_effective`` / ``keyword_specificity`` | 의미 기반 비교; **제목에 UI 앵커가 있으면** 둘이 ``sort_secondary_wp`` 앞으로 당겨짐 (``recommender._row_sort_key``). |
-| ``match_position_in_title`` / ``matched_keyword_length`` | 제목 내 위치·글자 수 **tie-break**; ``document_edit`` / ``document_review`` 저 dominance·저 specificity일 때 위치 비교 반전 (`_pos_key_row`). |
+| ``interface_dominance_effective`` / ``keyword_workflow_resolution`` | 의미 기반 비교; **제목에 UI 앵커가 있으면** 둘이 ``sort_secondary_wp`` 앞으로 당겨짐 (``recommender._row_sort_key``). |
+| ``match_position_in_title`` / ``matched_keyword_length`` | 제목 내 위치·글자 수 **tie-break**; ``document_edit`` / ``document_review`` 저 dominance·저 workflow_resolution일 때 위치 비교 반전 (`_pos_key_row`). |
 | ``matched`` / ``candidate_id`` / ``data`` | 근거 문자열·정체·페이로드; 마지막은 ``candidate_id`` 문자열 순. |
 
 ### 8.5 P6 실제 비교 순서 (구현 = `recommender._row_sort_key`)
@@ -257,7 +257,7 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 1. ``rule_tier``  
 2. ``sort_secondary_wp`` (meaning: catalog anchor strength; pair: rule int)  
 3. ``interface_dominance_effective``  
-4. ``keyword_specificity``  
+4. ``keyword_workflow_resolution``
 5. ``match_position_in_title`` (특수 후보는 ``_pos_key_row``로 부호 조정)  
 6. ``matched_keyword_length``  
 7. ``candidate_id`` (문자열)
@@ -266,7 +266,7 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 
 1. ``rule_tier``  
 2. ``interface_dominance_effective``  
-3. ``keyword_specificity``  
+3. ``keyword_workflow_resolution``
 4. ``sort_secondary_wp``  
 5. 위치 → 길이 → ``candidate_id`` (동일)
 
@@ -280,7 +280,7 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 | 카탈로그 앵커 강도 | **workflow anchor strength** / **catalog anchor level** | ``visual_candidates[].workflow_priority`` |
 | P6 정수 슬롯 (통합) | **secondary rank int** (맥락에 따라 “anchor strength” 또는 “rule tie-break”) | ``CandidateRow.sort_secondary_wp`` |
 | UI 신호 | **interface dominance (effective)** | ``interface_dominance_effective`` |
-| 키워드 날카로움 | **keyword specificity** | ``keyword_specificity`` |
+| 키워드 workflow 해상도 | **keyword workflow resolution** | ``keyword_workflow_resolution`` |
 | 제목 내 위치 / 길이 | **match position**, **matched span length** | ``match_position_in_title``, ``matched_keyword_length`` |
 
 **한 줄 요약**: ``rule_tier`` = **트랙(규칙 vs meaning)**; catalog ``workflow_priority`` = **의미(앵커 강도)** — meaning 행에서는 ``sort_secondary_wp``로 P6에 복사됨; pair 행의 ``sort_secondary_wp`` = **규칙 전용 tie-break**; ``interface_dominance_effective`` = **UI/채널 우선권**(B 모드에서 앵커 강도보다 앞).
@@ -366,7 +366,7 @@ main.py
   ├─ get_sample_cases() → data_loader.load_sample_cases (검증된 평면 배열)
   ├─ find_exact_title_match (P0)
   └─ find_best_visual_candidate_match (P1–P6)
-        ├─ specificity: canonical, compound, modifiers, dominance
+        ├─ workflow_resolution: canonical, compound, modifiers, dominance
         ├─ pair_engine: PairRuleEngine (P3)
         └─ visual_candidates JSON (P4–P6)
 ```

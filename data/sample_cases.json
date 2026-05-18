@@ -23,7 +23,7 @@
       "notification"
     ],
     "reason": "과장님보다 메일 발송 행동이 핵심",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "점심 카톡 확인",
@@ -49,7 +49,7 @@
       "messenger_check"
     ],
     "reason": "점심보다 카카오톡 확인 행동이 핵심",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "회의자료 확인",
@@ -72,7 +72,7 @@
       "document_check"
     ],
     "reason": "회의보다 자료 검토 행동이 핵심",
-    "workflow_specificity": 1
+    "workflow_resolution": 1
   },
   {
     "title": "교육 신청 현황 엑셀 정리",
@@ -100,7 +100,7 @@
       "테이블작업"
     ],
     "reason": "데이터 테이블 정리 작업 중심",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "과장님 QR 인증",
@@ -126,7 +126,7 @@
       "system_check"
     ],
     "reason": "과장님보다 QR 인증 인터페이스가 핵심",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "면접자료 준비",
@@ -149,7 +149,7 @@
       "preparation"
     ],
     "reason": "준비 대상이 자료이므로 document workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "행사 준비",
@@ -172,7 +172,7 @@
       "preparation"
     ],
     "reason": "준비 대상이 행사이므로 event workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "바탕화면 폴더 정리",
@@ -195,7 +195,7 @@
       "organization"
     ],
     "reason": "정리 대상이 파일/폴더이므로 folder workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "카톡 알림 정리",
@@ -219,7 +219,7 @@
       "cleanup"
     ],
     "reason": "정리 대상이 알림이므로 notification workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "노션 자동화 Docs 보완",
@@ -247,7 +247,7 @@
       "automation_context"
     ],
     "reason": "보완 대상이 Docs 문서이므로 document workflow",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "업무 일정 정리",
@@ -270,7 +270,7 @@
       "schedule_management"
     ],
     "reason": "정리 대상이 업무 일정이므로 schedule workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "한비 결혼식 참석",
@@ -296,7 +296,7 @@
       "attendance"
     ],
     "reason": "참석 대상이 결혼식 행사이므로 event workflow",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "연가 등록",
@@ -319,7 +319,7 @@
       "system_input"
     ],
     "reason": "등록 대상이 연가이므로 administrative workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "초과근무 상신",
@@ -342,7 +342,7 @@
       "approval_request"
     ],
     "reason": "상신 대상이 초과근무이므로 approval workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "행자위 채널 조정",
@@ -368,7 +368,7 @@
       "system_adjustment"
     ],
     "reason": "조정 대상이 채널이므로 media device workflow",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "식생활교육 예산 집행액 계산",
@@ -396,7 +396,7 @@
       "budget_management"
     ],
     "reason": "계산 대상이 예산 집행액이므로 calculation workflow",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "러닝 약속",
@@ -419,7 +419,7 @@
       "activity_planning"
     ],
     "reason": "약속 대상이 러닝 활동이므로 schedule workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "누리집 현행화",
@@ -442,7 +442,7 @@
       "web_management"
     ],
     "reason": "현행화 대상이 누리집이므로 website update workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "바인더 현행화",
@@ -465,7 +465,7 @@
       "physical_organization"
     ],
     "reason": "현행화 대상이 바인더 자료이므로 document organization workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "숙직 근무",
@@ -488,7 +488,7 @@
       "duty_mode"
     ],
     "reason": "업무가 숙직 근무 수행이므로 duty workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "ppt 최종본 확인",
@@ -513,7 +513,7 @@
       "presentation_check"
     ],
     "reason": "확인 대상이 ppt 최종본이므로 presentation review workflow",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "부서 시계 교체",
@@ -539,7 +539,7 @@
       "replacement"
     ],
     "reason": "교체 대상이 부서 비품이므로 facility workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "인사과 문의",
@@ -562,7 +562,7 @@
       "inquiry"
     ],
     "reason": "문의 대상이 인사과이므로 communication workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "회의 참석",
@@ -585,7 +585,7 @@
       "attendance"
     ],
     "reason": "참석 대상이 회의이므로 meeting workflow",
-    "workflow_specificity": 1
+    "workflow_resolution": 1
   },
   {
     "title": "회의실 세팅",
@@ -609,7 +609,7 @@
       "meeting_preparation"
     ],
     "reason": "세팅 대상이 회의실이므로 facility setup workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "전세자금 일부 상환",
@@ -635,7 +635,7 @@
       "payment"
     ],
     "reason": "상환 대상이 전세자금이므로 finance workflow",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "월급여 입력",
@@ -658,7 +658,7 @@
       "payroll_management"
     ],
     "reason": "입력 대상이 월급여이므로 payroll data workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "일정 송부",
@@ -681,7 +681,7 @@
       "schedule_sharing"
     ],
     "reason": "송부 대상이 일정이므로 email communication workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "AI 교육 참석",
@@ -707,7 +707,7 @@
       "attendance"
     ],
     "reason": "참석 대상이 AI 교육이므로 training workflow",
-    "workflow_specificity": 3
+    "workflow_resolution": 3
   },
   {
     "title": "간식 픽업",
@@ -730,7 +730,7 @@
       "pickup"
     ],
     "reason": "픽업 대상이 간식이므로 pickup workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   },
   {
     "title": "부서 환경 정비",
@@ -757,6 +757,6 @@
       "cleanup"
     ],
     "reason": "정비 대상이 부서 환경이므로 workspace cleanup workflow",
-    "workflow_specificity": 2
+    "workflow_resolution": 2
   }
 ]

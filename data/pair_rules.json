@@ -23,7 +23,7 @@
         "matched_template": "{term}+준비",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -34,7 +34,7 @@
         "matched_literal": "부스+준비",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -46,7 +46,7 @@
         "matched_literal": "세팅+준비",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -65,7 +65,7 @@
         ],
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -76,7 +76,7 @@
         "matched_template": "{term}+준비",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       }
     ]
@@ -102,7 +102,7 @@
     "default_candidate_id": "messenger_chat",
     "matched_literal": "확인+coordination",
     "sort_secondary_wp": 3,
-    "keyword_specificity": 2,
+    "keyword_workflow_resolution": 2,
     "interface_dominance_effective": 0
   },
   "organize": {
@@ -125,7 +125,7 @@
         "matched_template": "{phrase}",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -137,7 +137,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -149,7 +149,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -161,7 +161,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -173,7 +173,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -185,7 +185,7 @@
         "matched_template": "{phrase}",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -206,7 +206,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 3,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       }
     ]
@@ -224,7 +224,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 4,
-        "keyword_specificity": 3,
+        "keyword_workflow_resolution": 3,
         "interface_dominance_effective": 1
       },
       {
@@ -236,7 +236,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 4,
-        "keyword_specificity": 3,
+        "keyword_workflow_resolution": 3,
         "interface_dominance_effective": 1
       },
       {
@@ -248,7 +248,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 4,
-        "keyword_specificity": 3,
+        "keyword_workflow_resolution": 3,
         "interface_dominance_effective": 1
       },
       {
@@ -260,7 +260,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 4,
-        "keyword_specificity": 3,
+        "keyword_workflow_resolution": 3,
         "interface_dominance_effective": 1
       },
       {
@@ -272,7 +272,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 4,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       },
       {
@@ -301,7 +301,7 @@
         "matched_template": "{term}+{lemma}",
         "workflow_priority": 2,
         "sort_secondary_wp": 4,
-        "keyword_specificity": 2,
+        "keyword_workflow_resolution": 2,
         "interface_dominance_effective": 0
       }
     ]

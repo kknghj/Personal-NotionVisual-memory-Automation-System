@@ -3,7 +3,7 @@ from typing import Any, NamedTuple, Optional
 from app.candidate_row import CandidateRow
 from app.data_loader import load_pair_rules
 from app.pair_engine import PairResolution, PairRuleEngine
-from app.specificity import (
+from app.workflow_resolution import (
     PERSON_CONTEXT_MODIFIER_TERMS,
     compound_subject_char_mask,
     effective_interface_dominance_for_occurrence,
@@ -33,7 +33,7 @@ class BestVisualCandidateMatch(NamedTuple):
     candidate_id: str
     matched: str
     workflow_priority: int
-    keyword_specificity: int
+    keyword_workflow_resolution: int
     interface_dominance_effective: int
 
 
@@ -57,7 +57,7 @@ def _candidate_row_from_pair_resolution(pr: PairResolution) -> CandidateRow:
         rule_tier=pr.rule_tier,
         sort_secondary_wp=pr.sort_secondary_wp,
         interface_dominance_effective=pr.interface_dominance_effective,
-        keyword_specificity=pr.keyword_specificity,
+        keyword_workflow_resolution=pr.keyword_workflow_resolution,
         match_position_in_title=0,
         matched_keyword_length=len(pr.matched),
         matched=pr.matched,
@@ -71,13 +71,13 @@ def _local_meaning_better(
     best: tuple[int, int, int, int, str],
     candidate_id: str,
 ) -> bool:
-    """interface_dominance → specificity → 위치 → 길이 (후보 내부)."""
-    dom, spec, pos, ln, _t = cand
-    bdom, bspec, bpos, bln, _bt = best
+    """interface_dominance → workflow_resolution → 위치 → 길이 (후보 내부)."""
+    dom, resolution, pos, ln, _t = cand
+    bdom, bresolution, bpos, bln, _bt = best
     if dom != bdom:
         return dom > bdom
-    if spec != bspec:
-        return spec > bspec
+    if resolution != bresolution:
+        return resolution > bresolution
     if candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS:
         if pos != bpos:
             return pos > bpos
@@ -102,7 +102,7 @@ def _pick_best_meaning_for_candidate(
     """
     prefer_last = candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS
     matches: list[tuple[int, int, int, int, str]] = []
-    for text, spec, dom in iter_meaning_entries(meanings):
+    for text, resolution, dom in iter_meaning_entries(meanings):
         if not meaning_has_noncompound_occurrence(canonical, text, cov):
             continue
         pos = first_meaning_occurrence_index(canonical, text, cov, prefer_last)
@@ -110,7 +110,7 @@ def _pick_best_meaning_for_candidate(
             continue
         dom_e = effective_interface_dominance_for_occurrence(canonical, text, dom, pos, cov)
         ln = len(text.strip())
-        matches.append((dom_e, spec, pos, ln, text))
+        matches.append((dom_e, resolution, pos, ln, text))
 
     if not matches:
         return None
@@ -136,8 +136,8 @@ def find_best_visual_candidate_match(
     P6 sort (see docs/ARCHITECHURE.md §8.3): ``rule_tier`` first, then branch on UI anchor.
 
     - **No UI anchor in title**: ``-rule_tier`` → ``-sort_secondary_wp`` → ``-interface_dominance_effective``
-      → ``-keyword_specificity`` → position / length / ``candidate_id``.
-    - **UI anchor present**: ``-rule_tier`` → dominance & specificity **before**
+      → ``-keyword_workflow_resolution`` → position / length / ``candidate_id``.
+    - **UI anchor present**: ``-rule_tier`` → dominance & workflow_resolution **before**
       ``-sort_secondary_wp`` so channel/tool beats catalog anchor-strength noise.
 
     ``CandidateRow.sort_secondary_wp`` is one **integer slot** for P6: meaning rows load it from
@@ -174,7 +174,7 @@ def find_best_visual_candidate_match(
         if best_local is None:
             continue
 
-        dom_e, spec, pos, ln, matched = best_local
+        dom_e, resolution, pos, ln, matched = best_local
         if title_has_ui and matched.strip() in PERSON_CONTEXT_MODIFIER_TERMS:
             # 인터페이스 앵커가 있을 때 직책·상대만으로는 채널 후보를 대표하지 않음
             continue
@@ -189,7 +189,7 @@ def find_best_visual_candidate_match(
                 rule_tier=0,
                 sort_secondary_wp=sort_wp,
                 interface_dominance_effective=dom_e,
-                keyword_specificity=spec,
+                keyword_workflow_resolution=resolution,
                 match_position_in_title=pos,
                 matched_keyword_length=ln,
                 matched=matched,
@@ -205,18 +205,18 @@ def find_best_visual_candidate_match(
         if (
             r.candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS
             and r.interface_dominance_effective == 0
-            and r.keyword_specificity <= 1
+            and r.keyword_workflow_resolution <= 1
         ):
             return -r.match_position_in_title
         return r.match_position_in_title
 
     def _row_sort_key(r: CandidateRow) -> tuple[int, int, int, int, int, int, str]:
-        """P6 key; UI title reorders dominance/specificity vs ``sort_secondary_wp`` (see module docstring)."""
+        """P6 key; UI title reorders dominance/workflow_resolution vs ``sort_secondary_wp`` (see module docstring)."""
         if title_has_ui:
             return (
                 -r.rule_tier,
                 -r.interface_dominance_effective,
-                -r.keyword_specificity,
+                -r.keyword_workflow_resolution,
                 -r.sort_secondary_wp,
                 _pos_key_row(r),
                 -r.matched_keyword_length,
@@ -226,7 +226,7 @@ def find_best_visual_candidate_match(
             -r.rule_tier,
             -r.sort_secondary_wp,
             -r.interface_dominance_effective,
-            -r.keyword_specificity,
+            -r.keyword_workflow_resolution,
             _pos_key_row(r),
             -r.matched_keyword_length,
             r.candidate_id,
@@ -244,6 +244,6 @@ def find_best_visual_candidate_match(
         candidate_id=best.candidate_id,
         matched=best.matched,
         workflow_priority=wp_out,
-        keyword_specificity=best.keyword_specificity,
+        keyword_workflow_resolution=best.keyword_workflow_resolution,
         interface_dominance_effective=best.interface_dominance_effective,
     )
