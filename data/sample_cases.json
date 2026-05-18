@@ -220,5 +220,543 @@
     ],
     "reason": "정리 대상이 알림이므로 notification workflow",
     "workflow_specificity": 2
+  },
+  {
+    "title": "노션 자동화 Docs 보완",
+    "visual": {
+      "type": "notion_icon",
+      "value": "document",
+      "color": "orange"
+    },
+    "workflow_type": "document_automation_update",
+    "pair_context": {
+      "action": "보완",
+      "subject": "Docs"
+    },
+    "modifier": [
+      "노션 자동화"
+    ],
+    "focus": "문서 보완",
+    "interface_memory": [
+      "노션",
+      "Docs",
+      "문서편집"
+    ],
+    "cognitive_mode": [
+      "document_work",
+      "automation_context"
+    ],
+    "reason": "보완 대상이 Docs 문서이므로 document workflow",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "업무 일정 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "📅"
+    },
+    "workflow_type": "schedule_organization",
+    "pair_context": {
+      "action": "정리",
+      "subject": "업무 일정"
+    },
+    "focus": "일정 정리",
+    "interface_memory": [
+      "캘린더",
+      "일정표"
+    ],
+    "cognitive_mode": [
+      "planning",
+      "schedule_management"
+    ],
+    "reason": "정리 대상이 업무 일정이므로 schedule workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "한비 결혼식 참석",
+    "visual": {
+      "type": "emoji",
+      "value": "👰"
+    },
+    "workflow_type": "event_attendance",
+    "pair_context": {
+      "action": "참석",
+      "subject": "결혼식"
+    },
+    "modifier": [
+      "한비"
+    ],
+    "focus": "행사 참석",
+    "interface_memory": [
+      "일정",
+      "초대"
+    ],
+    "cognitive_mode": [
+      "event_mode",
+      "attendance"
+    ],
+    "reason": "참석 대상이 결혼식 행사이므로 event workflow",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "연가 등록",
+    "visual": {
+      "type": "emoji",
+      "value": "💻"
+    },
+    "workflow_type": "leave_registration",
+    "pair_context": {
+      "action": "등록",
+      "subject": "연가"
+    },
+    "focus": "근태 시스템 등록",
+    "interface_memory": [
+      "근태시스템",
+      "전자결재"
+    ],
+    "cognitive_mode": [
+      "administrative_process",
+      "system_input"
+    ],
+    "reason": "등록 대상이 연가이므로 administrative workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "초과근무 상신",
+    "visual": {
+      "type": "emoji",
+      "value": "💻"
+    },
+    "workflow_type": "overtime_request",
+    "pair_context": {
+      "action": "상신",
+      "subject": "초과근무"
+    },
+    "focus": "전자결재 상신",
+    "interface_memory": [
+      "전자결재",
+      "근무신청"
+    ],
+    "cognitive_mode": [
+      "administrative_process",
+      "approval_request"
+    ],
+    "reason": "상신 대상이 초과근무이므로 approval workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "행자위 채널 조정",
+    "visual": {
+      "type": "emoji",
+      "value": "📺"
+    },
+    "workflow_type": "channel_adjustment",
+    "pair_context": {
+      "action": "조정",
+      "subject": "채널"
+    },
+    "modifier": [
+      "행자위"
+    ],
+    "focus": "방송 채널 조정",
+    "interface_memory": [
+      "TV",
+      "채널설정"
+    ],
+    "cognitive_mode": [
+      "facility_support",
+      "system_adjustment"
+    ],
+    "reason": "조정 대상이 채널이므로 media device workflow",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "식생활교육 예산 집행액 계산",
+    "visual": {
+      "type": "notion_icon",
+      "value": "calculator",
+      "color": "blue"
+    },
+    "workflow_type": "budget_calculation",
+    "pair_context": {
+      "action": "계산",
+      "subject": "예산 집행액"
+    },
+    "modifier": [
+      "식생활교육"
+    ],
+    "focus": "예산 집행액 계산",
+    "interface_memory": [
+      "계산기",
+      "예산표",
+      "스프레드시트"
+    ],
+    "cognitive_mode": [
+      "calculation",
+      "budget_management"
+    ],
+    "reason": "계산 대상이 예산 집행액이므로 calculation workflow",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "러닝 약속",
+    "visual": {
+      "type": "emoji",
+      "value": "🏃"
+    },
+    "workflow_type": "personal_appointment",
+    "pair_context": {
+      "action": "약속",
+      "subject": "러닝"
+    },
+    "focus": "운동 약속",
+    "interface_memory": [
+      "캘린더",
+      "약속"
+    ],
+    "cognitive_mode": [
+      "personal_schedule",
+      "activity_planning"
+    ],
+    "reason": "약속 대상이 러닝 활동이므로 schedule workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "누리집 현행화",
+    "visual": {
+      "type": "emoji",
+      "value": "🖥️"
+    },
+    "workflow_type": "website_update",
+    "pair_context": {
+      "action": "현행화",
+      "subject": "누리집"
+    },
+    "focus": "웹사이트 콘텐츠 갱신",
+    "interface_memory": [
+      "누리집",
+      "웹관리"
+    ],
+    "cognitive_mode": [
+      "content_update",
+      "web_management"
+    ],
+    "reason": "현행화 대상이 누리집이므로 website update workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "바인더 현행화",
+    "visual": {
+      "type": "emoji",
+      "value": "📒"
+    },
+    "workflow_type": "binder_update",
+    "pair_context": {
+      "action": "현행화",
+      "subject": "바인더"
+    },
+    "focus": "바인더 자료 갱신",
+    "interface_memory": [
+      "바인더",
+      "자료철"
+    ],
+    "cognitive_mode": [
+      "document_work",
+      "physical_organization"
+    ],
+    "reason": "현행화 대상이 바인더 자료이므로 document organization workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "숙직 근무",
+    "visual": {
+      "type": "emoji",
+      "value": "👮"
+    },
+    "workflow_type": "duty_shift",
+    "pair_context": {
+      "action": "근무",
+      "subject": "숙직"
+    },
+    "focus": "숙직 근무 수행",
+    "interface_memory": [
+      "근무표",
+      "당직"
+    ],
+    "cognitive_mode": [
+      "shift_work",
+      "duty_mode"
+    ],
+    "reason": "업무가 숙직 근무 수행이므로 duty workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "ppt 최종본 확인",
+    "visual": {
+      "type": "notion_icon",
+      "value": "slide-show",
+      "color": "red"
+    },
+    "workflow_type": "presentation_review",
+    "pair_context": {
+      "action": "확인",
+      "subject": "ppt 최종본"
+    },
+    "focus": "프레젠테이션 최종본 검토",
+    "interface_memory": [
+      "PPT",
+      "슬라이드",
+      "검토"
+    ],
+    "cognitive_mode": [
+      "review",
+      "presentation_check"
+    ],
+    "reason": "확인 대상이 ppt 최종본이므로 presentation review workflow",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "부서 시계 교체",
+    "visual": {
+      "type": "emoji",
+      "value": "🕑"
+    },
+    "workflow_type": "equipment_replacement",
+    "pair_context": {
+      "action": "교체",
+      "subject": "시계"
+    },
+    "modifier": [
+      "부서"
+    ],
+    "focus": "비품 교체",
+    "interface_memory": [
+      "비품",
+      "시설관리"
+    ],
+    "cognitive_mode": [
+      "facility_management",
+      "replacement"
+    ],
+    "reason": "교체 대상이 부서 비품이므로 facility workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "인사과 문의",
+    "visual": {
+      "type": "emoji",
+      "value": "📞"
+    },
+    "workflow_type": "phone_inquiry",
+    "pair_context": {
+      "action": "문의",
+      "subject": "인사과"
+    },
+    "focus": "전화 문의",
+    "interface_memory": [
+      "전화",
+      "문의"
+    ],
+    "cognitive_mode": [
+      "communication",
+      "inquiry"
+    ],
+    "reason": "문의 대상이 인사과이므로 communication workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "회의 참석",
+    "visual": {
+      "type": "emoji",
+      "value": "🤝"
+    },
+    "workflow_type": "meeting_attendance",
+    "pair_context": {
+      "action": "참석",
+      "subject": "회의"
+    },
+    "focus": "회의 참석",
+    "interface_memory": [
+      "회의",
+      "일정"
+    ],
+    "cognitive_mode": [
+      "meeting_mode",
+      "attendance"
+    ],
+    "reason": "참석 대상이 회의이므로 meeting workflow",
+    "workflow_specificity": 1
+  },
+  {
+    "title": "회의실 세팅",
+    "visual": {
+      "type": "notion_icon",
+      "value": "baggage-cart",
+      "color": "gray"
+    },
+    "workflow_type": "meeting_room_setup",
+    "pair_context": {
+      "action": "세팅",
+      "subject": "회의실"
+    },
+    "focus": "회의실 준비",
+    "interface_memory": [
+      "회의실",
+      "비품배치"
+    ],
+    "cognitive_mode": [
+      "facility_setup",
+      "meeting_preparation"
+    ],
+    "reason": "세팅 대상이 회의실이므로 facility setup workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "전세자금 일부 상환",
+    "visual": {
+      "type": "emoji",
+      "value": "💵"
+    },
+    "workflow_type": "loan_repayment",
+    "pair_context": {
+      "action": "상환",
+      "subject": "전세자금"
+    },
+    "modifier": [
+      "일부"
+    ],
+    "focus": "자금 상환",
+    "interface_memory": [
+      "은행",
+      "상환"
+    ],
+    "cognitive_mode": [
+      "finance_management",
+      "payment"
+    ],
+    "reason": "상환 대상이 전세자금이므로 finance workflow",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "월급여 입력",
+    "visual": {
+      "type": "emoji",
+      "value": "💴"
+    },
+    "workflow_type": "payroll_input",
+    "pair_context": {
+      "action": "입력",
+      "subject": "월급여"
+    },
+    "focus": "급여 데이터 입력",
+    "interface_memory": [
+      "급여시스템",
+      "입력폼"
+    ],
+    "cognitive_mode": [
+      "data_entry",
+      "payroll_management"
+    ],
+    "reason": "입력 대상이 월급여이므로 payroll data workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "일정 송부",
+    "visual": {
+      "type": "emoji",
+      "value": "📧"
+    },
+    "workflow_type": "schedule_email_communication",
+    "pair_context": {
+      "action": "송부",
+      "subject": "일정"
+    },
+    "focus": "일정 전달",
+    "interface_memory": [
+      "메일",
+      "일정"
+    ],
+    "cognitive_mode": [
+      "communication",
+      "schedule_sharing"
+    ],
+    "reason": "송부 대상이 일정이므로 email communication workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "AI 교육 참석",
+    "visual": {
+      "type": "emoji",
+      "value": "🧑‍🏫"
+    },
+    "workflow_type": "training_attendance",
+    "pair_context": {
+      "action": "참석",
+      "subject": "교육"
+    },
+    "modifier": [
+      "AI"
+    ],
+    "focus": "교육 참석",
+    "interface_memory": [
+      "교육일정",
+      "강의"
+    ],
+    "cognitive_mode": [
+      "learning",
+      "attendance"
+    ],
+    "reason": "참석 대상이 AI 교육이므로 training workflow",
+    "workflow_specificity": 3
+  },
+  {
+    "title": "간식 픽업",
+    "visual": {
+      "type": "emoji",
+      "value": "🍰"
+    },
+    "workflow_type": "pickup_task",
+    "pair_context": {
+      "action": "픽업",
+      "subject": "간식"
+    },
+    "focus": "간식 수령",
+    "interface_memory": [
+      "픽업",
+      "수령"
+    ],
+    "cognitive_mode": [
+      "errand",
+      "pickup"
+    ],
+    "reason": "픽업 대상이 간식이므로 pickup workflow",
+    "workflow_specificity": 2
+  },
+  {
+    "title": "부서 환경 정비",
+    "visual": {
+      "type": "notion_icon",
+      "value": "mop-bucket",
+      "color": "gray"
+    },
+    "workflow_type": "workspace_cleanup",
+    "pair_context": {
+      "action": "정비",
+      "subject": "환경"
+    },
+    "modifier": [
+      "부서"
+    ],
+    "focus": "부서 환경 정비",
+    "interface_memory": [
+      "청소도구",
+      "공간정리"
+    ],
+    "cognitive_mode": [
+      "facility_management",
+      "cleanup"
+    ],
+    "reason": "정비 대상이 부서 환경이므로 workspace cleanup workflow",
+    "workflow_specificity": 2
   }
 ]
