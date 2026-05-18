@@ -3,16 +3,25 @@
 workflow_resolution은 제목이 얼마나 구체적인 workflow/interface anchor를
 포함하는지를 나타낸다. 실제 인터페이스 anchor가 많을수록 resolution이 높다.
 
-1 = 일반 행동·포괄 표현
-2 = 업무 개념·중간 행동 (도구명까지는 아닌 카테고리·분기점)
-3 = 인터페이스·도구·채널·workflow anchor (실제 UI/연락 채널 기억)
+**LOW (1)** — 일반 행동·포괄 표현. 특정 도구/채널 없이 “무엇을 하는지”만 말할 때.
+예: 확인, 검토, 작성, 정리, 협의. 장비 일반명(예: PC)도 여기: workflow 분기보다
+배경 명사에 가깝다.
+
+**MID (2)** — 업무 category·workflow branch·처리 흐름의 중간 개념.
+구체 제품명·UI는 아니지만, 이후 단계에서 어떤 계열(통신·인증·전산 등)로 갈지
+가르치는 신호가 LOW보다 강할 때.
+예: 인증, 메신저, 설문, 자동화, API, 전산, 통화(매체 구분 전의 통화 개념).
+
+**HIGH (3)** — 실제 인터페이스·도구·연락 채널·사용자가 떠올릴 수 있는 UI anchor.
+예: 엑셀, 메일, 카톡, QR, CLI, VSCode, 터미널, 전화(통화 매체로서의 채널).
 """
 
 from __future__ import annotations
 
 from typing import Any, Iterator
 
-# 실제 인터페이스 / 도구 / 채널 (workflow_resolution=3, interface dominance=1)
+# HIGH(3): 구체 제품·채널·UI — substring이면 interface_dominance=1, workflow_resolution=3.
+# ("전화"는 통화 채널 앵커; "통화" 단어는 MID에서 ‘통화 매체 미정’ 분기로 둔다.)
 INTERFACE_ANCHOR_TERMS: frozenset[str] = frozenset(
     {
         "엑셀",
@@ -30,30 +39,41 @@ INTERFACE_ANCHOR_TERMS: frozenset[str] = frozenset(
     }
 )
 
-# 업무 개념·중간 행동 (workflow_resolution=2) — HIGH에서 내려온 포괄 개념 등
+# MID(2): 도구명은 아니지만 업무 계열·workflow 분기 신호가 LOW보다 뚜렷할 때.
 MID_WORKFLOW_RESOLUTION_TERMS: frozenset[str] = frozenset(
     {
+        # 개발·전산·자동화 계열
         "개발",
         "구현",
         "자동화",
-        "행정처리",
-        "현장",
-        "수업",
         "API",
         "코딩",
         "환경구축",
+        "전산",
+        "명령어",
+        # 행정·현장·교육 등 업무 무대
+        "행정처리",
+        "현장",
+        "수업",
         "외부시스템",
         "토탈서비스",
         "행정신청",
         "업무택시",
-        "PC",
-        "전산",
-        "명령어",
-        "문의",
+        # 커뮤니케이션·채널 카테고리(슬랙/카톡 등 구체 앱은 HIGH)
+        "메신저",
+        "채팅",
+        "통화",
+        # 인증·시스템·수집·표 구조 — 이후 전자결재/근태/폼·스프레드시트 등으로 갈림
+        "인증",
+        "시스템",
+        "설문",
+        "테이블",
     }
 )
 
-# 일반 행동·포괄 표현 (workflow_resolution=1)
+# LOW(1): 일반 동사·포괄 표현·배경 명사. MID만큼의 ‘어느 계열 업무인가’ 분기력은 없을 때.
+# "문의"는 행동(문의하기)에 가깝고 채널 미지정이 많아 MID보다 LOW에 둠(제목에 메일·전화 등
+# HIGH가 있으면 infer는 3이 됨).
 LOW_WORKFLOW_RESOLUTION_TERMS: frozenset[str] = frozenset(
     {
         "정리",
@@ -103,24 +123,20 @@ LOW_WORKFLOW_RESOLUTION_TERMS: frozenset[str] = frozenset(
         "접수",
         "응답",
         "체크",
-        "설문",
         "표",
-        "테이블",
         "데이터정리",
         "실행",
         "세팅",
         "브레인스토밍",
-        "통화",
-        "채팅",
-        "메신저",
         "강사",
         "점심",
         "점심약속",
         "저녁",
         "저녁약속",
-        "인증",
         "출퇴근",
-        "시스템",
+        # 일반 명사: 특정 시스템·UI 분기보다 ‘장비/매체’ 배경
+        "PC",
+        "문의",
     }
 )
 
@@ -407,7 +423,7 @@ def interface_dominance(text: str) -> int:
 
 
 def infer_workflow_resolution(text: str) -> int:
-    """substring 우선: anchor ⊂ t → 3, MID ⊂ t → 2, LOW ⊂ t → 1, 그 외 2."""
+    """substring 우선: HIGH(3) → MID(2) → LOW(1); 어느 집합에도 없으면 기본 2."""
     t = text.strip()
     if not t:
         return 1

@@ -20,7 +20,7 @@ class PairResolution:
     for the unified sort tuple; those are supplied when projecting into
     ``CandidateRow`` (pair rows use position ``0`` and ``len(matched)``).
 
-    Fields (see docs/ARCHITECHURE.md §P3):
+    Fields (see docs/ARCHITECTURE.md §P3):
     - ``data``: visual_candidates-shaped payload (synthetic or copied from a candidate).
     - ``candidate_id`` / ``matched``: which catalog entry and which literal matched span.
     - ``rule_tier``: global sort boost for pair track vs meaning-only (``rule_tier=0``).

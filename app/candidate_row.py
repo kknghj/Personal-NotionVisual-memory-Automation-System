@@ -10,12 +10,12 @@ from typing import Any
 class CandidateRow:
     """Single competitor in the global P6 sort (pair track + meaning track).
 
-    **Semantic vs sorting (docs/ARCHITECHURE.md §8)**  
+    **Semantic vs sorting (docs/ARCHITECTURE.md §8)**  
     Some fields encode *catalog / rule intent* (what the keyword “means”); others exist
     only so ``_row_sort_key`` can compare rows. The same Python field can carry different
     *sources* — see ``sort_secondary_wp`` doc below.
 
-    Field order matches docs/ARCHITECHURE.md «통합 row» contract.
+    Field order matches docs/ARCHITECTURE.md «통합 row» contract.
     """
 
     rule_tier: int

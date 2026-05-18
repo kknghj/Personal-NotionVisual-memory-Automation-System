@@ -710,60 +710,60 @@
     ]
   },
   "education_fieldwork": {
-  "visual": {
-    "type": "emoji",
-    "value": "👩‍🏫"
+    "visual": {
+      "type": "emoji",
+      "value": "👩‍🏫"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "교육현장",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현장교육",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "강사",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수업",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "강의",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "교육방문",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "출강",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "교육현장",
+      "강의",
+      "수업진행"
+    ],
+    "usage_context": [
+      "식생활교육 방문",
+      "강사 출강",
+      "교육 현장 점검",
+      "수업 진행"
+    ]
   },
-  "workflow_priority": 2,
-  "meaning": [
-    {
-      "text": "교육현장",
-      "workflow_resolution": 2,
-      "interface_dominance": 0
-    },
-    {
-      "text": "현장교육",
-      "workflow_resolution": 2,
-      "interface_dominance": 0
-    },
-    {
-      "text": "강사",
-      "workflow_resolution": 2,
-      "interface_dominance": 0
-    },
-    {
-      "text": "수업",
-      "workflow_resolution": 2,
-      "interface_dominance": 0
-    },
-    {
-      "text": "강의",
-      "workflow_resolution": 2,
-      "interface_dominance": 0
-    },
-    {
-      "text": "교육방문",
-      "workflow_resolution": 2,
-      "interface_dominance": 0
-    },
-    {
-      "text": "출강",
-      "workflow_resolution": 2,
-      "interface_dominance": 0
-    }
-  ],
-  "interface_memory": [
-    "교육현장",
-    "강의",
-    "수업진행"
-  ],
-  "usage_context": [
-    "식생활교육 방문",
-    "강사 출강",
-    "교육 현장 점검",
-    "수업 진행"
-  ]
-},
   "binder_document": {
     "visual": {
       "type": "emoji",
@@ -1017,8 +1017,8 @@
   },
   "folder_organization": {
     "visual": {
-"type": "emoji",
-"value": "📁"
+      "type": "emoji",
+      "value": "📁"
     },
     "workflow_priority": 2,
     "meaning": [
@@ -1028,227 +1028,739 @@
         "interface_dominance": 0
       },
       {
-"text": "파일",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "드라이브",
-"workflow_resolution": 2,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"파일탐색기",
-"폴더구조"
-],
-"usage_context": [
-"바탕화면 폴더 정리",
-"파일 정리",
-"드라이브 정리"
-]
-},
-"room_cleanup": {
-"visual": {
-"type": "notion_icon",
-"value": "chair",
-"color": "gray"
-},
-"workflow_priority": 3,
-"meaning": [
-{
-"text": "회의실",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "정돈",
-"workflow_resolution": 1,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"회의실",
-"자리정리"
-],
-"usage_context": [
-"회의실 정리",
-"회의실 정돈"
-]
-},
-"office_cleanup": {
-"visual": {
-"type": "notion_icon",
-"value": "person-trash-can",
-"color": "gray"
-},
-"workflow_priority": 3,
-"meaning": [
-{
-"text": "사무실",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "청소",
-"workflow_resolution": 1,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"사무실",
-"정리청소"
-],
-"usage_context": [
-"사무실 정리",
-"사무실 청소"
-]
-},
-"room_cleaning": {
-"visual": {
-"type": "notion_icon",
-"value": "mop-bucket",
-"color": "brown"
-},
-"workflow_priority": 3,
-"meaning": [
-{
-"text": "방",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "청소",
-"workflow_resolution": 1,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"방청소",
-"생활정리"
-],
-"usage_context": [
-"방 정리",
-"방 청소"
-]
-},
-"cabinet_organization": {
-"visual": {
-"type": "emoji",
-"value": "🗄️"
-},
-"workflow_priority": 3,
-"meaning": [
-{
-"text": "캐비넷",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "서랍",
-"workflow_resolution": 2,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"캐비넷",
-"보관함"
-],
-"usage_context": [
-"캐비넷 정리",
-"서랍 정리"
-]
-},
-"notification_cleanup": {
-"visual": {
-"type": "notion_icon",
-"value": "bell-notification",
-"color": "yellow"
-},
-"workflow_priority": 2,
-"meaning": [
-{
-"text": "알림",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "알림센터",
-"workflow_resolution": 2,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"알림창",
-"푸시알림"
-],
-"usage_context": [
-"카톡 알림 정리",
-"알림 정리"
-]
-},
-"food_preparation": {
-"visual": {
-"type": "emoji",
-"value": "🍱"
-},
-"workflow_priority": 3,
-"meaning": [
-{
-"text": "음식",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "도시락",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "간식",
-"workflow_resolution": 2,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"식사준비",
-"음식준비"
-],
-"usage_context": [
-"음식 준비",
-"간식 준비"
-]
-},
-"event_preparation": {
-"visual": {
-"type": "emoji",
-"value": "🎉"
-},
-"workflow_priority": 3,
-"meaning": [
-{
-"text": "행사",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "이벤트",
-"workflow_resolution": 2,
-"interface_dominance": 0
-},
-{
-"text": "부스",
-"workflow_resolution": 2,
-"interface_dominance": 0
-}
-],
-"interface_memory": [
-"행사준비",
-"이벤트운영"
-],
-"usage_context": [
-"행사 준비",
-"부스 준비"
-]
-}
+        "text": "파일",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "드라이브",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "파일탐색기",
+      "폴더구조"
+    ],
+    "usage_context": [
+      "바탕화면 폴더 정리",
+      "파일 정리",
+      "드라이브 정리"
+    ]
+  },
+  "room_cleanup": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "chair",
+      "color": "gray"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "회의실",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정돈",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "회의실",
+      "자리정리"
+    ],
+    "usage_context": [
+      "회의실 정리",
+      "회의실 정돈"
+    ]
+  },
+  "office_cleanup": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "person-trash-can",
+      "color": "gray"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "사무실",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "청소",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "사무실",
+      "정리청소"
+    ],
+    "usage_context": [
+      "사무실 정리",
+      "사무실 청소"
+    ]
+  },
+  "room_cleaning": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "mop-bucket",
+      "color": "brown"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "방",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "청소",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "방청소",
+      "생활정리"
+    ],
+    "usage_context": [
+      "방 정리",
+      "방 청소"
+    ]
+  },
+  "cabinet_organization": {
+    "visual": {
+      "type": "emoji",
+      "value": "🗄️"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "캐비넷",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "서랍",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "캐비넷",
+      "보관함"
+    ],
+    "usage_context": [
+      "캐비넷 정리",
+      "서랍 정리"
+    ]
+  },
+  "notification_cleanup": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "bell-notification",
+      "color": "yellow"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "알림",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "알림센터",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "알림창",
+      "푸시알림"
+    ],
+    "usage_context": [
+      "카톡 알림 정리",
+      "알림 정리"
+    ]
+  },
+  "food_preparation": {
+    "visual": {
+      "type": "emoji",
+      "value": "🍱"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "음식",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "도시락",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "간식",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "식사준비",
+      "음식준비"
+    ],
+    "usage_context": [
+      "음식 준비",
+      "간식 준비"
+    ]
+  },
+  "event_preparation": {
+    "visual": {
+      "type": "emoji",
+      "value": "🎉"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "행사",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "이벤트",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "부스",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "행사준비",
+      "이벤트운영"
+    ],
+    "usage_context": [
+      "행사 준비",
+      "부스 준비"
+    ]
+  },
+  "snack_pickup": {
+    "visual": {
+      "type": "emoji",
+      "value": "🍰"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "픽업",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수령",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "간식",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "픽업",
+      "수령"
+    ],
+    "usage_context": [
+      "간식 픽업",
+      "단체 간식 수령"
+    ]
+  },
+  "running_appointment": {
+    "visual": {
+      "type": "emoji",
+      "value": "🏃"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "러닝",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운동",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "약속",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "캘린더",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "캘린더",
+      "약속"
+    ],
+    "usage_context": [
+      "러닝 약속",
+      "운동 모임 일정"
+    ]
+  },
+  "overnight_duty": {
+    "visual": {
+      "type": "emoji",
+      "value": "👮"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "숙직",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "당직",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "근무",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "근무표",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "근무표",
+      "당직"
+    ],
+    "usage_context": [
+      "숙직 근무",
+      "당직 일정 확인"
+    ]
+  },
+  "wedding_attendance": {
+    "visual": {
+      "type": "emoji",
+      "value": "👰"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "결혼식",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "일정",
+      "초대"
+    ],
+    "usage_context": [
+      "결혼식 참석",
+      "지인 결혼식 일정"
+    ]
+  },
+  "housing_loan_repayment": {
+    "visual": {
+      "type": "emoji",
+      "value": "💵"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "전세자금",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "상환",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "은행",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "은행",
+      "상환"
+    ],
+    "usage_context": [
+      "전세자금 상환",
+      "대출 일부 상환"
+    ]
+  },
+  "work_calendar_organization": {
+    "visual": {
+      "type": "emoji",
+      "value": "📅"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "일정",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "업무 일정",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "캘린더",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "캘린더",
+      "일정표"
+    ],
+    "usage_context": [
+      "업무 일정 정리",
+      "주간 일정 정돈"
+    ]
+  },
+  "broadcast_channel_adjust": {
+    "visual": {
+      "type": "emoji",
+      "value": "📺"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "채널",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "조정",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "TV",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "TV",
+      "채널설정"
+    ],
+    "usage_context": [
+      "행자위 채널 조정",
+      "회의실 TV 채널 설정"
+    ]
+  },
+  "budget_line_calculation": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "calculator",
+      "color": "blue"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "계산",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "집행액",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "스프레드시트",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "계산기",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "계산기",
+      "예산표",
+      "스프레드시트"
+    ],
+    "usage_context": [
+      "예산 집행액 계산",
+      "사업 예산 산출"
+    ]
+  },
+  "website_content_refresh": {
+    "visual": {
+      "type": "emoji",
+      "value": "🖥️"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "누리집",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현행화",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "웹관리",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "누리집",
+      "웹관리"
+    ],
+    "usage_context": [
+      "누리집 현행화",
+      "홈페이지 게시물 갱신"
+    ]
+  },
+  "department_clock_replace": {
+    "visual": {
+      "type": "emoji",
+      "value": "🕑"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "시계",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "교체",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비품",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "시설관리",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "비품",
+      "시설관리"
+    ],
+    "usage_context": [
+      "부서 시계 교체",
+      "사무실 비품 교체"
+    ]
+  },
+  "training_session_attendance": {
+    "visual": {
+      "type": "emoji",
+      "value": "🧑‍🏫"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "AI 교육",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "참석",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "AI",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "강의",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "교육일정",
+      "강의"
+    ],
+    "usage_context": [
+      "AI 교육 참석",
+      "사내 교육 세션 참석"
+    ]
+  },
+  "meeting_room_cart_setup": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "baggage-cart",
+      "color": "gray"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "회의실",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "세팅",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비품배치",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "회의실",
+      "비품배치"
+    ],
+    "usage_context": [
+      "회의실 세팅",
+      "행사장 물품 배치"
+    ]
+  },
+  "notion_docs_touchup": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "document",
+      "color": "orange"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "Docs",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "보완",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "노션",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "문서편집",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      }
+    ],
+    "interface_memory": [
+      "노션",
+      "Docs",
+      "문서편집"
+    ],
+    "usage_context": [
+      "노션 Docs 보완",
+      "위키 문서 업데이트"
+    ]
+  },
+  "qr_code_scan_auth": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "qr-code"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "QR",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "인증",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "출퇴근",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "QR",
+      "출퇴근인증"
+    ],
+    "usage_context": [
+      "QR 출퇴근 인증",
+      "과장님 대리 인증"
+    ]
+  },
+  "slide_deck_final_review": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "slide-show",
+      "color": "red"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "ppt",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "슬라이드",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "확인",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "검토",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "PPT",
+      "슬라이드",
+      "검토"
+    ],
+    "usage_context": [
+      "ppt 최종본 확인",
+      "발표 자료 리허설 전 점검"
+    ]
+  }
 }

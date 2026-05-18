@@ -641,7 +641,7 @@
     "title": "월급여 입력",
     "visual": {
       "type": "emoji",
-      "value": "💴"
+      "value": "💰"
     },
     "workflow_type": "payroll_input",
     "pair_context": {

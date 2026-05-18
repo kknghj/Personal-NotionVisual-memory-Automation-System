@@ -133,7 +133,7 @@ def find_best_visual_candidate_match(
     candidates: dict[str, Any],
 ) -> Optional[BestVisualCandidateMatch]:
     """
-    P6 sort (see docs/ARCHITECHURE.md §8.3): ``rule_tier`` first, then branch on UI anchor.
+    P6 sort (see docs/ARCHITECTURE.md §8.3): ``rule_tier`` first, then branch on UI anchor.
 
     - **No UI anchor in title**: ``-rule_tier`` → ``-sort_secondary_wp`` → ``-interface_dominance_effective``
       → ``-keyword_workflow_resolution`` → position / length / ``candidate_id``.

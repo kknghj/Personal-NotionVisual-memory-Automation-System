@@ -1,6 +1,6 @@
 """Recommender semantic contract tests (P2–P6).
 
-Maps to ``docs/ARCHITECHURE.md``: P2 ``compound_subject_char_mask``, P3
+Maps to ``docs/ARCHITECTURE.md``: P2 ``compound_subject_char_mask``, P3
 ``PairRuleEngine`` / ``PairResolution``, P4–P5 meaning expansion and filters,
 P6 unified ``CandidateRow`` ranking and ``BestVisualCandidateMatch`` output.
 

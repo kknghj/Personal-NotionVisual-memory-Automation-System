@@ -1,7 +1,7 @@
 # Architecture — 실제 시맨틱 파이프라인 (코드 기준)
 
 
-**경로**: `docs/ARCHITECHURE.md`. 제품 스펙·철학은 [`PRD.md`](PRD.md), [`workflow_philosophy.md`](workflow_philosophy.md) 참고.
+**경로**: `docs/ARCHITECTURE.md`. 제품 스펙·철학은 [`PRD.md`](PRD.md), [`workflow_philosophy.md`](workflow_philosophy.md), **추천 의미·workflow 계층(backbone)** 은 [`workflow_ontology.md`](workflow_ontology.md) 참고.
 
 이 문서는 **현재 구현**(`app/main.py`, `app/data_loader.py`, `app/recommender.py`, `app/pair_engine.py`, `app/workflow_resolution.py`)의 호출 순서와 데이터 계약을 기준으로 한다.
 
@@ -21,6 +21,23 @@
 | **P7 — Visual materialization** | `main`에서 `Visual` 생성 |
 
 “pair interpretation”은 코드에 클래스명으로 존재하지 않으며, **P3 Declarative pair resolution** + **P4에서의 meaning 매칭**으로 나누는 것이 구현과 일치한다.
+
+### 1.1 Ontology (meaning) layer와 파이프라인
+
+**Semantic / meaning layer:** [`workflow_ontology.md`](workflow_ontology.md) — **workflow category**, **sub workflow**, **lifecycle**, **related category**, **채널·nuance** 를 정리한 **실무 기반 recommendation meaning model**이다. **고정 taxonomy가 아니라** `feedback_log`·후보 진화·튜닝에 따라 **evolving** 한다는 전제는 ontology 문서 상단에 적혀 있다.
+
+**목표로 하는 통합 흐름**(ontology를 **명시적 슬롯**으로 둘 때의 참조; 일부는 구현됨, 일부는 로드맵):
+
+1. **title**  
+2. **P1–P2** — canonicalization, compound span  
+3. **workflow / interface 신호** — interface anchor·문서 workflow 신호 등 (`workflow_resolution`·필터와 연동)  
+4. **ontology 슬라이스** — *목표:* primary category, sub-workflow, optional lifecycle stage, related categories  
+5. **후보 풀** — P3 pair + P4 meaning (현재 의미는 JSON에 **분산**)  
+6. **P5–P6** — 필터·랭킹  
+7. **P7** — visual  
+8. **feedback** — ontology 슬라이스를 남기면 계열 내 nuance·충돌을 **데이터로** 볼 수 있음  
+
+지금 코드에서는 **4번이 전용 모듈로 분리되어 있지 않고** P3·P4 필드에 **흡수**되어 있다. ontology 문서는 그 **meaning layer**를 읽는 backbone 역할을 한다.
 
 ---
 

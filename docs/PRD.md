@@ -1,7 +1,7 @@
 # PRD  
 ## Personal Notion Visual Memory Automation System
 
-> **문서 위치**: `docs/PRD.md`. 철학·원칙 전개는 [`workflow_philosophy.md`](workflow_philosophy.md), 파이프라인 개략은 [`ARCHITECHURE.md`](ARCHITECHURE.md), 에이전트용 축약 규칙은 [`.cursor/rules/icon_system.md`](../.cursor/rules/icon_system.md).
+> **문서 위치**: `docs/PRD.md`. 철학·원칙 전개는 [`workflow_philosophy.md`](workflow_philosophy.md), **추천 의미·workflow 계층(backbone)** 은 [`workflow_ontology.md`](workflow_ontology.md), 파이프라인 개략은 [`ARCHITECTURE.md`](ARCHITECTURE.md), 에이전트용 축약 규칙은 [`.cursor/rules/icon_system.md`](../.cursor/rules/icon_system.md).
 
 ---
 
@@ -83,6 +83,18 @@ Personal Notion Visual Memory Automation System
 # “workflow 해석(interpreting workflow intention)”
 
 을 목표로 한다.
+
+---
+
+## 2-1. Workflow ontology와 추천 의미 모델
+
+추천은 **단어 포함(keyword matching)만**으로 끝나지 않는다. 제목의 단어는 **workflow meaning**(어떤 업무 영역인지, 문서 lifecycle의 어디인지, 전화·메신저·메일 등 **communication nuance**, 제목에 드러나는 **interface anchor**)를 띄우는 단서이고, `visual_candidates`의 `meaning`·`workflow_resolution`·`workflow_priority`와 compound·pair 규칙은 그 의미를 **규칙과 순위로 구현**하는 층이다.
+
+프로젝트는 이 의미 축을 한곳에 정리한 **[`workflow_ontology.md`](workflow_ontology.md)** 를 **추천 철학의 backbone**(공통 언어)로 둔다. 상위 **workflow category**, **sub workflow**, **lifecycle stage**, **related category**(한 제목이 두 축일 때의 보조 태그) 등을 여기서 정의·조정한다.
+
+이 ontology는 **절대적인 단일 taxonomy 표준**이 아니라, **`feedback_log`**, **후보 데이터 진화**, **`workflow_resolution` 튜닝**, 실제 **추천 충돌·사용자 선택 패턴**에 맞춰 **계속 고쳐 쓰는 living document**에 가깝다. 구현이 앞서가면 문서를 그에 맞게 줄인다.
+
+계층·후보 매핑 방향·로그 필드 제안의 상세는 **`workflow_ontology.md`** 본문을 따른다.
 
 ---
 
@@ -435,6 +447,8 @@ JSON 데이터셋(본 장에서 서술하는 `data/sample_cases.json`, `data/vis
 ---
 
 # 5-2. data/visual_candidates.json
+
+후보 항목이 **어느 workflow meaning 영역에 속하는지**는 [`workflow_ontology.md`](workflow_ontology.md)의 계층·메타데이터 방향과 맞추어 읽는다(ontology는 **evolving** 문서다).
 
 ## 역할
 

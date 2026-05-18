@@ -1,6 +1,6 @@
 # workflow philosophy
 
-> **위치**: `docs/workflow_philosophy.md`. 요구사항·데이터 구조는 [`PRD.md`](PRD.md), 에이전트용 규칙 요약은 [`.cursor/rules/icon_system.md`](../.cursor/rules/icon_system.md).
+> **위치**: `docs/workflow_philosophy.md`. 요구사항·데이터 구조는 [`PRD.md`](PRD.md), **workflow meaning 계층(backbone, living)** 은 [`workflow_ontology.md`](workflow_ontology.md), 에이전트용 규칙 요약은 [`.cursor/rules/icon_system.md`](../.cursor/rules/icon_system.md).
 
 이 프로젝트는 일반 아이콘 추천기가 아니라
 사용자의 행동 회상 시스템이다.
@@ -195,7 +195,7 @@ modifier/context/개인적 상황
 ### 9.1 런타임에서의 대응 (semantic vs sorting)
 
 - **Semantic (데이터 계약)**: ``visual_candidates.json``의 필드 이름 ``workflow_priority`` — 위 1·2·3 철학이 **카탈로그 작성 규약**이다. 문서·리뷰 시에는 **workflow anchor strength** / **catalog anchor level** 같은 표현을 병기하면 혼동이 줄어든다.
-- **Sorting mechanics**: P6 통합 정렬에서 같은 숫자가 ``CandidateRow.sort_secondary_wp`` 슬롯에 **복사**되어, meaning 행끼리 또는 pair와의 **tie-break**에 쓰인다. 이 슬롯은 **pair 규칙**에서는 ``pair_rules.json``의 **별도** 키 ``sort_secondary_wp``(예: modify vs organize 순서)에서 오므로, **“이름은 비슷하지만 pair 쪽 값은 catalog 1/2/3 스케일과 동일하지 않을 수 있다”**는 점이 혼동의 원인이었다. 상세 비교 순서는 [`ARCHITECHURE.md`](ARCHITECHURE.md) §8.5 참고.
+- **Sorting mechanics**: P6 통합 정렬에서 같은 숫자가 ``CandidateRow.sort_secondary_wp`` 슬롯에 **복사**되어, meaning 행끼리 또는 pair와의 **tie-break**에 쓰인다. 이 슬롯은 **pair 규칙**에서는 ``pair_rules.json``의 **별도** 키 ``sort_secondary_wp``(예: modify vs organize 순서)에서 오므로, **“이름은 비슷하지만 pair 쪽 값은 catalog 1/2/3 스케일과 동일하지 않을 수 있다”**는 점이 혼동의 원인이었다. 상세 비교 순서는 [`ARCHITECTURE.md`](ARCHITECTURE.md) §8.5 참고.
 
 --------------------------------------------------
 
