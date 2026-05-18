@@ -123,13 +123,13 @@ class PairInterpretationTests(RecommenderSemanticTestCase):
 class InterfaceDominanceTests(RecommenderSemanticTestCase):
     """INTERFACE anchor + P6 rank: 채널·도구가 시간·긴급·저녁 등 modifier와 직책 토큰보다 우선.
 
-    제목에 인터페이스 앵커가 있을 때 ``interface_dominance_effective``·workflow_anchor_density
+    제목에 인터페이스 앵커가 있을 때 ``interface_dominance_effective``·workflow_resolution
     쪽 계약이 ``workflow_priority`` 노이즈에 밀리지 않는지, 직책은
     ``PERSON_CONTEXT_MODIFIER_TERMS`` 처리로 채널을 가리지 않는지 검증한다.
     """
 
     def test_modifier_suppression_prefers_mail_over_lunch_context(self):
-        # ``점심``은 LOW_WORKFLOW_ANCHOR_DENSITY; ``메일`` 앵커가 있으면 채널 workflow가 우선
+        # ``점심``은 LOW_WORKFLOW_RESOLUTION; ``메일`` 앵커가 있으면 채널 workflow가 우선
         cid, val = self._match("점심 메일 확인")
         self.assertEqual(cid, "mail_action")
         self.assertEqual(val, "📧")

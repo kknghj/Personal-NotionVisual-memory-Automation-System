@@ -50,7 +50,7 @@ _INDEX_HTML = """<!DOCTYPE html>
   <p>
     ① <code>data/sample_cases.json</code> 제목 <strong>완전 일치</strong> 시 해당 visual·reason 사용.<br/>
     ② 없으면 <code>data/visual_candidates.json</code>의 <strong>meaning</strong> 키워드가 제목에 포함되는지 본 뒤,
-    키워드 <strong>workflow_priority</strong> → <strong>interface dominance</strong> → <strong>workflow_anchor_density</strong> →
+    키워드 <strong>workflow_priority</strong> → <strong>interface dominance</strong> → <strong>workflow_resolution</strong> →
     제목에서의 위치 → 키워드 길이 순으로 후보를 고릅니다
     (점심·저녁 같은 시간 modifier, 과장님·대표·팀장 같은 person modifier가
     카톡·메일·전화 등 채널 anchor보다 앞서지 않도록 함).<br/>
@@ -158,9 +158,9 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
             if isinstance(raw_reason, str) and raw_reason.strip()
             else "data/sample_cases.json의 제목과 정확히 일치하는 사례의 visual을 사용합니다."
         )
-        wfs = case.get("workflow_anchor_density")
+        wfs = case.get("workflow_resolution")
         if isinstance(wfs, int):
-            reason = f"{reason} (기록된 workflow_anchor_density={wfs})"
+            reason = f"{reason} (기록된 workflow_resolution={wfs})"
         return RecommendResponse(visual=Visual(**visual), reason=reason)
 
     cand = find_best_visual_candidate_match(body.title, get_visual_candidates())
@@ -170,7 +170,7 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
             detail="data/sample_cases 및 data/visual_candidates meaning 키워드와 일치하는 항목이 없습니다.",
         )
 
-    data, cid, matched, wp, kdensity, idom = cand
+    data, cid, matched, wp, kres, idom = cand
     visual = data.get("visual")
     if not visual or not isinstance(visual, dict):
         raise HTTPException(
@@ -180,6 +180,6 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
     reason = (
         "data/sample_cases에 같은 제목이 없어 data/visual_candidates로 매칭했습니다. "
         f"제목에 meaning「{matched}」가 포함되어 후보「{cid}」를 선택했습니다 "
-        f"(정렬: interface_dominance={idom}, keyword_workflow_anchor_density={kdensity}, workflow_priority={wp})."
+        f"(정렬: interface_dominance={idom}, keyword_workflow_resolution={kres}, workflow_priority={wp})."
     )
     return RecommendResponse(visual=Visual(**visual), reason=reason)

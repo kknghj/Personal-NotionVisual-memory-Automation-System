@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Optional
 
-from app.workflow_anchor_density import (
+from app.workflow_resolution import (
     canonical_has_interface_anchor_noncompound,
     compound_subject_char_mask,
     organize_subject_term_occurrence_ok,
@@ -27,7 +27,7 @@ class PairResolution:
     - ``sort_secondary_wp``: P6 integer read from rule JSON (``sort_secondary_wp`` key);
       **rule tie-break / phase ordering**, not the catalog ``workflow_priority`` 1/2/3 scale
       unless authors intentionally reuse the same numbers.
-    - ``keyword_workflow_anchor_density`` / ``interface_dominance_effective``: same semantics as meaning rows.
+    - ``keyword_workflow_resolution`` / ``interface_dominance_effective``: same semantics as meaning rows.
     """
 
     data: dict[str, Any]
@@ -35,7 +35,7 @@ class PairResolution:
     matched: str
     rule_tier: int
     sort_secondary_wp: int
-    keyword_workflow_anchor_density: int
+    keyword_workflow_resolution: int
     interface_dominance_effective: int
 
 
@@ -277,12 +277,12 @@ class PairRuleEngine:
         data: dict[str, Any],
         rule_tier: int,
     ) -> PairResolution:
-        density_raw = rule.get("keyword_workflow_anchor_density", 2)
+        resolution_raw = rule.get("keyword_workflow_resolution", 2)
         dom = rule.get("interface_dominance_effective", 0)
         try:
-            density = int(density_raw)
+            resolution = int(resolution_raw)
         except (TypeError, ValueError):
-            density = 2
+            resolution = 2
         try:
             dom_i = int(dom)
         except (TypeError, ValueError):
@@ -293,7 +293,7 @@ class PairRuleEngine:
             matched=matched,
             rule_tier=rule_tier,
             sort_secondary_wp=self._sort_secondary_wp(rule),
-            keyword_workflow_anchor_density=density,
+            keyword_workflow_resolution=resolution,
             interface_dominance_effective=dom_i,
         )
 
@@ -321,12 +321,12 @@ class PairRuleEngine:
         data = dict(base)
         matched = str(cc.get("matched_literal", f"{lemma}+coordination"))
 
-        density_raw = cc.get("keyword_workflow_anchor_density", 2)
+        resolution_raw = cc.get("keyword_workflow_resolution", 2)
         dom = cc.get("interface_dominance_effective", 0)
         try:
-            density = int(density_raw)
+            resolution = int(resolution_raw)
         except (TypeError, ValueError):
-            density = 2
+            resolution = 2
         try:
             dom_i = int(dom)
         except (TypeError, ValueError):
@@ -340,7 +340,7 @@ class PairRuleEngine:
             matched=matched,
             rule_tier=rule_tier,
             sort_secondary_wp=sswp,
-            keyword_workflow_anchor_density=density,
+            keyword_workflow_resolution=resolution,
             interface_dominance_effective=dom_i,
         )
 

@@ -498,12 +498,12 @@ AI가:
     "meaning": [
       {
         "text": "엑셀",
-        "workflow_anchor_density": 3,
+        "workflow_resolution": 3,
         "interface_dominance": 10
       },
       {
         "text": "스프레드시트",
-        "workflow_anchor_density": 3,
+        "workflow_resolution": 3,
         "interface_dominance": 10
       }
     ],
