@@ -29,7 +29,7 @@
       "workflow_fit": ["document"],
       "object_type": "document",
       "interaction_mode": "review_confirm",
-      "visibility": "team_internal",
+      "visibility": "internal",
       "tone": "formal"
     }
   }
