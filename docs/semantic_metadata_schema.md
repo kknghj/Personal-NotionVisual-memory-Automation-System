@@ -143,7 +143,9 @@ type SemanticMetadata = {
   "setup_prepare",
   "input_process",
   "attend_participate",
-  "call_message",
+  "call",
+  "message",
+  "meeting",
   "authenticate_access",
   "move_transport"
 ]
@@ -193,7 +195,7 @@ type SemanticMetadata = {
 3. `semantic_metadata`는 이 흐름을 대체하지 않고, 후보 row의 `data["semantic_metadata"]`로 같이 운반된다.
 4. 이후 recommendation engine은 다음처럼 사용할 수 있다.
    - 제목에서 추론한 category와 `workflow_fit`이 같으면 score boost
-   - 제목에 UI/channel anchor가 있으면 `object_type=message` 또는 `interaction_mode=call_message` 후보를 보조 boost
+   - 제목에 UI/channel anchor가 있으면 `interaction_mode=call`, `message`, `meeting`을 modality별로 보조 boost
    - `visibility=external_public` 후보는 `게시`, `공고`, `누리집` 같은 공개 신호가 있을 때만 boost
    - `tone=urgent` 후보는 `긴급`, `주의`, `마감` 같은 신호와 결합할 때만 boost
    - `related_categories`는 primary category가 아니므로 hard match가 아니라 약한 bridge score로만 사용
