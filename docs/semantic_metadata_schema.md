@@ -170,12 +170,9 @@ type SemanticMetadata = {
 ```json
 [
   "neutral",
-  "routine",
   "formal",
-  "collaborative",
   "urgent",
-  "sensitive",
-  "celebratory"
+  "sensitive"
 ]
 ```
 
@@ -229,7 +226,7 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
       "object_type": "message",
       "interaction_mode": "send_share",
       "visibility": "team_internal",
-      "tone": "routine",
+      "tone": "neutral",
       "related_categories": ["document"]
     }
   }
@@ -248,7 +245,7 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
       "object_type": "spreadsheet",
       "interaction_mode": "input_process",
       "visibility": "team_internal",
-      "tone": "routine",
+      "tone": "neutral",
       "related_categories": ["tracking"]
     }
   }
