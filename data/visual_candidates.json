@@ -298,7 +298,14 @@
       "예질 과장님 보고",
       "시장님 보고자료 수정",
       "최종안 보고"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["document", "communication"],
+      "object_type": "document",
+      "interaction_mode": "meeting",
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "document_request": {
     "visual": {
@@ -345,7 +352,14 @@
     "usage_context": [
       "자료요청 공문",
       "협조요청서 작성"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["document", "communication"],
+      "object_type": "document",
+      "interaction_mode": "request_delegate",
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "verbal_request": {
     "visual": {
@@ -377,7 +391,14 @@
     "usage_context": [
       "대면 요청",
       "구두 요청"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["communication", "document"],
+      "object_type": "message",
+      "interaction_mode": "meeting",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "mail_request": {
     "visual": {
@@ -409,7 +430,14 @@
     "usage_context": [
       "메일 요청",
       "회신 요청"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["communication", "document"],
+      "object_type": "message",
+      "interaction_mode": "message",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "phone_request": {
     "visual": {
@@ -436,7 +464,14 @@
     "usage_context": [
       "전화 요청",
       "통화 요청"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["communication", "document"],
+      "object_type": "message",
+      "interaction_mode": "call",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "collaborative_request": {
     "visual": {
@@ -473,7 +508,14 @@
     "usage_context": [
       "수정 요청",
       "업무 부탁"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["document", "communication"],
+      "object_type": "document",
+      "interaction_mode": "request_delegate",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "approval_request": {
     "visual": {
@@ -510,7 +552,14 @@
     "usage_context": [
       "결재 요청",
       "결재 받기"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["document", "communication"],
+      "object_type": "document",
+      "interaction_mode": "approve_signoff",
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "approval_review": {
     "visual": {
@@ -823,7 +872,14 @@
     "usage_context": [
       "공지 게시",
       "자료 공개 게시"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["broadcast_notice", "communication", "document"],
+      "object_type": "notice",
+      "interaction_mode": "publish_distribute",
+      "visibility": "public",
+      "tone": "formal"
+    }
   },
   "publication_announcement": {
     "visual": {
@@ -855,7 +911,14 @@
     "usage_context": [
       "채용 공고 게시",
       "공지 게시"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["broadcast_notice", "communication", "document"],
+      "object_type": "notice",
+      "interaction_mode": "publish_distribute",
+      "visibility": "public",
+      "tone": "formal"
+    }
   },
   "publication_bulletin_update": {
     "visual": {
@@ -887,7 +950,14 @@
     "usage_context": [
       "게시판 등록",
       "게시판 업데이트"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["web_publication", "broadcast_notice", "document"],
+      "object_type": "web_content",
+      "interaction_mode": "publish_distribute",
+      "visibility": "public",
+      "tone": "formal"
+    }
   },
   "publication_pinned_notice": {
     "visual": {
@@ -919,7 +989,14 @@
     "usage_context": [
       "상단 고정공지",
       "공지 핀고정"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["broadcast_notice", "web_publication", "document"],
+      "object_type": "notice",
+      "interaction_mode": "publish_distribute",
+      "visibility": "public",
+      "tone": "formal"
+    }
   },
   "mail_sharing": {
     "visual": {
@@ -945,7 +1022,14 @@
     ],
     "usage_context": [
       "메일 공유"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["communication", "document"],
+      "object_type": "message",
+      "interaction_mode": "send_share",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "credential_sharing": {
     "visual": {
@@ -982,7 +1066,14 @@
     "usage_context": [
       "부서 암호 공유",
       "비밀번호 공유"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["system_admin", "communication"],
+      "object_type": "credential",
+      "interaction_mode": "send_share",
+      "visibility": "internal",
+      "tone": "sensitive"
+    }
   },
   "information_sharing": {
     "visual": {
@@ -1014,7 +1105,14 @@
     "usage_context": [
       "정보 공유",
       "내용 공유"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["communication", "document"],
+      "object_type": "message",
+      "interaction_mode": "send_share",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "document_sharing": {
     "visual": {
@@ -1046,7 +1144,14 @@
     "usage_context": [
       "문서 공유",
       "자료 공유"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["document", "communication", "digital_storage"],
+      "object_type": "document",
+      "interaction_mode": "send_share",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "status_check": {
     "visual": {
