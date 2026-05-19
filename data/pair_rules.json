@@ -83,6 +83,7 @@
   },
   "confirm_coordination": {
     "action_lemma": "확인",
+    "action_lemmas": ["확인", "조율", "협의"],
     "coordination_keywords": [
       "가능여부",
       "재택근무",
@@ -100,7 +101,7 @@
       { "if_any": ["카톡", "카카오톡", "메신저", "채팅"], "candidate_id": "messenger_chat" }
     ],
     "default_candidate_id": "messenger_chat",
-    "matched_literal": "확인+coordination",
+    "matched_template": "{lemma}+coordination",
     "sort_secondary_wp": 3,
     "keyword_workflow_resolution": 2,
     "interface_dominance_effective": 0

@@ -124,6 +124,21 @@
         "text": "협의",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "일정조율",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "시간협의",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "참석여부확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -288,12 +303,22 @@
   "document_request": {
     "visual": {
       "type": "emoji",
-      "value": "📨"
+      "value": "📄"
     },
     "workflow_priority": 2,
     "meaning": [
       {
         "text": "자료요청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "문서요청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "서류요청",
         "workflow_resolution": 2,
         "interface_dominance": 0
       },
@@ -322,7 +347,242 @@
       "협조요청서 작성"
     ]
   },
-  "document_approval": {
+  "verbal_request": {
+    "visual": {
+      "type": "emoji",
+      "value": "🗣️"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "대면요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "구두요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "직접요청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "대면 요청",
+      "구두 부탁"
+    ],
+    "usage_context": [
+      "대면 요청",
+      "구두 요청"
+    ]
+  },
+  "mail_request": {
+    "visual": {
+      "type": "emoji",
+      "value": "📧"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "메일요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "메일로요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "회신요청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "메일",
+      "회신 요청"
+    ],
+    "usage_context": [
+      "메일 요청",
+      "회신 요청"
+    ]
+  },
+  "phone_request": {
+    "visual": {
+      "type": "emoji",
+      "value": "📞"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "전화요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "통화요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "전화",
+      "통화 요청"
+    ],
+    "usage_context": [
+      "전화 요청",
+      "통화 요청"
+    ]
+  },
+  "collaborative_request": {
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "수정요청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "업무부탁",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "처리부탁",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "업무요청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "업무 부탁",
+      "수정 요청"
+    ],
+    "usage_context": [
+      "수정 요청",
+      "업무 부탁"
+    ]
+  },
+  "approval_request": {
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "결재요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "결재받기",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "승인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "상신요청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "결재 요청",
+      "승인 요청"
+    ],
+    "usage_context": [
+      "결재 요청",
+      "결재 받기"
+    ]
+  },
+  "approval_review": {
+    "visual": {
+      "type": "emoji",
+      "value": "📄"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "결재검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "승인검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "결재내용확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "결재 문서 검토",
+      "승인 검토"
+    ],
+    "usage_context": [
+      "결재 검토",
+      "승인 검토"
+    ]
+  },
+  "document_signature": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "signature",
+      "color": "blue"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "결재하기",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "승인하기",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "사인",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "서명",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "서명",
+      "결재 버튼"
+    ],
+    "usage_context": [
+      "결재하기",
+      "사인"
+    ]
+  },
+  "final_approval": {
     "visual": {
       "type": "emoji",
       "value": "✅"
@@ -330,28 +590,28 @@
     "workflow_priority": 2,
     "meaning": [
       {
-        "text": "결재요청",
-        "workflow_resolution": 2,
+        "text": "최종승인",
+        "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
-        "text": "결재",
-        "workflow_resolution": 2,
+        "text": "최종결재",
+        "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
-        "text": "승인처리",
+        "text": "승인완료",
         "workflow_resolution": 2,
         "interface_dominance": 0
       }
     ],
     "interface_memory": [
-      "결재선",
-      "승인 처리"
+      "최종 승인",
+      "승인 완료"
     ],
     "usage_context": [
-      "결재요청",
-      "승인처리 문서"
+      "최종 승인",
+      "승인 완료"
     ]
   },
   "press_distribution": {
@@ -786,6 +1046,166 @@
     "usage_context": [
       "문서 공유",
       "자료 공유"
+    ]
+  },
+  "status_check": {
+    "visual": {
+      "type": "emoji",
+      "value": "📊"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "신청현황확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현황확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "상태확인",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "현황판",
+      "상태 확인"
+    ],
+    "usage_context": [
+      "신청 현황 확인",
+      "상태 확인"
+    ]
+  },
+  "progress_monitoring": {
+    "visual": {
+      "type": "emoji",
+      "value": "🚦"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "진행상황체크",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "진행상황",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "진행상태",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "진행 상황",
+      "상태 모니터링"
+    ],
+    "usage_context": [
+      "진행 상황 체크",
+      "진행 상태 모니터링"
+    ]
+  },
+  "allocation_tracking": {
+    "visual": {
+      "type": "emoji",
+      "value": "📋"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "강사배정현황",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "배정현황",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "배정상태",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "배정표",
+      "담당자 현황"
+    ],
+    "usage_context": [
+      "강사 배정 현황",
+      "담당자 배정 상태"
+    ]
+  },
+  "response_tracking": {
+    "visual": {
+      "type": "emoji",
+      "value": "📬"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "응답현황",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "회신현황",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "답변현황",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "응답 현황",
+      "회신 상태"
+    ],
+    "usage_context": [
+      "응답 현황",
+      "회신 현황"
+    ]
+  },
+  "budget_tracking": {
+    "visual": {
+      "type": "emoji",
+      "value": "💰"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "예산집행현황",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "집행현황",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "집행상황",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "예산 집행",
+      "집행 현황"
+    ],
+    "usage_context": [
+      "예산 집행 현황",
+      "집행 상황 확인"
     ]
   },
   "salary_system": {

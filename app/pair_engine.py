@@ -304,8 +304,8 @@ class PairRuleEngine:
         cc: dict[str, Any],
         rule_tier: int,
     ) -> Optional[PairResolution]:
-        lemma = cc.get("action_lemma", "확인")
-        if not isinstance(lemma, str) or lemma not in canonical:
+        lemma = self._first_matching_lemma(canonical, cc, "확인")
+        if lemma is None:
             return None
         kws = cc.get("coordination_keywords")
         if not isinstance(kws, list) or not any(
@@ -319,7 +319,11 @@ class PairRuleEngine:
             return None
 
         data = dict(base)
-        matched = str(cc.get("matched_literal", f"{lemma}+coordination"))
+        matched_template = cc.get("matched_template")
+        if isinstance(matched_template, str) and matched_template:
+            matched = matched_template.replace("{lemma}", lemma)
+        else:
+            matched = str(cc.get("matched_literal", f"{lemma}+coordination"))
 
         resolution_raw = cc.get("keyword_workflow_resolution", 2)
         dom = cc.get("interface_dominance_effective", 0)
@@ -343,6 +347,18 @@ class PairRuleEngine:
             keyword_workflow_resolution=resolution,
             interface_dominance_effective=dom_i,
         )
+
+    def _first_matching_lemma(self, canonical: str, block: dict[str, Any], default: str) -> Optional[str]:
+        lemmas = block.get("action_lemmas")
+        if isinstance(lemmas, list):
+            for item in lemmas:
+                if isinstance(item, str) and item and item in canonical:
+                    return item
+
+        lemma = block.get("action_lemma", default)
+        if isinstance(lemma, str) and lemma in canonical:
+            return lemma
+        return None
 
     def _resolve_confirm_channel(self, canonical: str, cc: dict[str, Any]) -> str:
         rules = cc.get("channel_rules")
