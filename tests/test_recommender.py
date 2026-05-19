@@ -108,6 +108,8 @@ class PairInterpretationTests(RecommenderSemanticTestCase):
             "시간 확인",
             "재택근무 일정 확인",
             "가능 여부 확인",
+            "일정 조율",
+            "시간 협의",
         ):
             cid, _ = self._match(title)
             self.assertEqual(cid, "messenger_chat", msg=title)
@@ -207,6 +209,115 @@ class ModifySemanticTests(RecommenderSemanticTestCase):
     def test_modify_action_alone_does_not_imply_document(self):
         out = find_best_visual_candidate_match("내용 수정", self._cands)
         self.assertIsNone(out)
+
+
+class DocumentLifecycleExpansionTests(RecommenderSemanticTestCase):
+    """Expanded ontology: request / approval / tracking plus document lifecycle leaves."""
+
+    def test_reporting_is_hierarchical_communication_not_plain_review(self):
+        cases = {
+            "초안 팀장님 보고": ("document_reporting", "🗣️"),
+            "예질 과장님 보고": ("document_reporting", "🗣️"),
+            "시장님 보고자료 수정": ("document_reporting", "🗣️"),
+            "최종안 보고": ("document_reporting", "🗣️"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+    def test_report_document_subject_still_allows_plain_document_review(self):
+        cid, val = self._match("보고서 확인")
+        self.assertEqual(cid, "document_review")
+        self.assertEqual(val, "📄")
+
+    def test_request_uses_delegation_object_and_channel(self):
+        cases = {
+            "자료 요청": ("document_request", "📄"),
+            "수정 요청": ("collaborative_request", "📝"),
+            "업무 부탁": ("collaborative_request", "📝"),
+            "회신 요청": ("mail_request", "📧"),
+            "대면 요청": ("verbal_request", "🗣️"),
+            "전화 요청": ("phone_request", "📞"),
+            "메일 요청": ("mail_request", "📧"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+    def test_approval_distinguishes_request_from_signoff(self):
+        cases = {
+            "결재 요청": ("approval_request", "📝"),
+            "결재 받기": ("approval_request", "📝"),
+            "승인 검토": ("approval_review", "📄"),
+            "결재하기": ("document_signature", "signature"),
+            "사인": ("document_signature", "signature"),
+            "최종 승인": ("final_approval", "✅"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+    def test_distribution_visual_tracks_distributed_object_identity(self):
+        cases = {
+            "주간보도자료 배포": ("press_distribution", "📰"),
+            "책자 배포": ("booklet_distribution", "📔"),
+            "책자 배부": ("booklet_distribution", "📔"),
+            "앱 신규 버전 배포": ("app_release", "alien-pixel"),
+            "일반 문서 배포": ("document_distribution", "📄"),
+            "메일 배포": ("mail_distribution", "📧"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+    def test_publication_distinguishes_action_from_context_object(self):
+        cid, val = self._match("공지 게시")
+        self.assertEqual(cid, "publication_announcement")
+        self.assertEqual(val, "📌")
+
+        cid2, val2 = self._match("게시판 등록")
+        self.assertEqual(cid2, "publication_bulletin_update")
+        self.assertEqual(val2, "📌")
+
+        cid3, val3 = self._match("상단 고정공지")
+        self.assertEqual(cid3, "publication_pinned_notice")
+        self.assertEqual(val3, "📌")
+
+        cid4, val4 = self._match("공고번호 확인")
+        self.assertEqual(cid4, "document_review")
+        self.assertEqual(val4, "📄")
+
+        out = find_best_visual_candidate_match("게시판", self._cands)
+        self.assertIsNone(out)
+
+    def test_sharing_uses_channel_and_shared_object(self):
+        cases = {
+            "메일 공유": ("mail_sharing", "📧"),
+            "정보 공유": ("information_sharing", "💡"),
+            "부서 암호 공유": ("credential_sharing", "🔑"),
+            "문서 공유": ("document_sharing", "📄"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+    def test_tracking_is_status_awareness_not_plain_document_review(self):
+        cases = {
+            "신청 현황 확인": ("status_check", "📊"),
+            "예산 집행 현황": ("budget_tracking", "💰"),
+            "강사 배정 현황": ("allocation_tracking", "📋"),
+            "진행 상황 체크": ("progress_monitoring", "🚦"),
+            "응답 현황": ("response_tracking", "📬"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
 
 
 class OrganizeSemanticTests(RecommenderSemanticTestCase):
