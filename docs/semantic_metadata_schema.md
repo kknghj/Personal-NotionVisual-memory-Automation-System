@@ -156,15 +156,13 @@ type SemanticMetadata = {
 
 ### `visibility`
 
-노출 범위는 추천 충돌에서 중요하다. 예를 들어 `publication_*` 후보는 `external_public`, 내부 문서 검토는 `team_internal` 또는 `organization_internal`이 자연스럽다.
+노출 범위는 추천 충돌에서 중요하다. 공개 게시 후보는 `public`, 내부 업무 후보는 `internal`, 개인 일정·비공개 메모 후보는 `private`이 자연스럽다.
 
 ```json
 [
   "private",
-  "team_internal",
-  "organization_internal",
-  "external_public",
-  "system_only"
+  "internal",
+  "public"
 ]
 ```
 
@@ -192,7 +190,7 @@ type SemanticMetadata = {
    - `candidate.workflow_fit ∩ inferred_categories`가 비어 있지 않으면 score boost
    - `workflow_fit[0]`과 inferred primary category가 같으면 추가 boost
    - 제목에 UI/channel anchor가 있으면 `interaction_mode=call`, `message`, `meeting`을 modality별로 보조 boost
-   - `visibility=external_public` 후보는 `게시`, `공고`, `누리집` 같은 공개 신호가 있을 때만 boost
+   - `visibility=public` 후보는 `게시`, `공고`, `누리집` 같은 공개 신호가 있을 때만 boost
    - `tone=urgent` 후보는 `긴급`, `주의`, `마감` 같은 신호와 결합할 때만 boost
 
 Pair/synthetic row는 두 방식 중 하나로 연결한다.
@@ -222,7 +220,7 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
       "workflow_fit": ["communication", "document"],
       "object_type": "message",
       "interaction_mode": "send_share",
-      "visibility": "team_internal",
+      "visibility": "internal",
       "tone": "neutral"
     }
   }
@@ -240,7 +238,7 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
       "workflow_fit": ["tabular_data", "tracking"],
       "object_type": "spreadsheet",
       "interaction_mode": "input_process",
-      "visibility": "team_internal",
+      "visibility": "internal",
       "tone": "neutral"
     }
   }
@@ -258,7 +256,7 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
       "workflow_fit": ["broadcast_notice", "communication", "document"],
       "object_type": "notice",
       "interaction_mode": "publish_distribute",
-      "visibility": "external_public",
+      "visibility": "public",
       "tone": "formal"
     }
   }
@@ -276,7 +274,7 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
       "workflow_fit": ["tracking", "tabular_data"],
       "object_type": "status_record",
       "interaction_mode": "monitor_track",
-      "visibility": "organization_internal",
+      "visibility": "internal",
       "tone": "neutral"
     }
   }
