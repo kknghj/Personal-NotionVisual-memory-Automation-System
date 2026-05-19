@@ -300,9 +300,9 @@
       "최종안 보고"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document", "communication"],
+      "workflow_fit": ["document"],
       "object_type": "document",
-      "interaction_mode": "meeting",
+      "interaction_mode": "report_brief",
       "visibility": "internal",
       "tone": "formal"
     }
@@ -354,7 +354,7 @@
       "협조요청서 작성"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document", "communication"],
+      "workflow_fit": ["document"],
       "object_type": "document",
       "interaction_mode": "request_delegate",
       "visibility": "internal",
@@ -393,9 +393,9 @@
       "구두 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication", "document"],
+      "workflow_fit": ["communication"],
       "object_type": "message",
-      "interaction_mode": "meeting",
+      "interaction_mode": "request_delegate",
       "visibility": "internal",
       "tone": "neutral"
     }
@@ -432,9 +432,9 @@
       "회신 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication", "document"],
+      "workflow_fit": ["communication"],
       "object_type": "message",
-      "interaction_mode": "message",
+      "interaction_mode": "request_delegate",
       "visibility": "internal",
       "tone": "neutral"
     }
@@ -466,9 +466,9 @@
       "통화 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication", "document"],
+      "workflow_fit": ["communication"],
       "object_type": "message",
-      "interaction_mode": "call",
+      "interaction_mode": "request_delegate",
       "visibility": "internal",
       "tone": "neutral"
     }
@@ -510,7 +510,7 @@
       "업무 부탁"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document", "communication"],
+      "workflow_fit": ["document"],
       "object_type": "document",
       "interaction_mode": "request_delegate",
       "visibility": "internal",
@@ -554,7 +554,7 @@
       "결재 받기"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document", "communication"],
+      "workflow_fit": ["document"],
       "object_type": "document",
       "interaction_mode": "approve_signoff",
       "visibility": "internal",
@@ -874,7 +874,7 @@
       "자료 공개 게시"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice", "communication", "document"],
+      "workflow_fit": ["broadcast_notice", "document"],
       "object_type": "notice",
       "interaction_mode": "publish_distribute",
       "visibility": "public",
@@ -913,7 +913,7 @@
       "공지 게시"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice", "communication", "document"],
+      "workflow_fit": ["broadcast_notice", "document"],
       "object_type": "notice",
       "interaction_mode": "publish_distribute",
       "visibility": "public",
@@ -1024,7 +1024,7 @@
       "메일 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication", "document"],
+      "workflow_fit": ["communication"],
       "object_type": "message",
       "interaction_mode": "send_share",
       "visibility": "internal",
@@ -1068,7 +1068,7 @@
       "비밀번호 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["system_admin", "communication"],
+      "workflow_fit": ["system_admin"],
       "object_type": "credential",
       "interaction_mode": "send_share",
       "visibility": "internal",
@@ -1107,7 +1107,7 @@
       "내용 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication", "document"],
+      "workflow_fit": ["communication"],
       "object_type": "message",
       "interaction_mode": "send_share",
       "visibility": "internal",
@@ -1146,7 +1146,7 @@
       "자료 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document", "communication", "digital_storage"],
+      "workflow_fit": ["document", "digital_storage"],
       "object_type": "document",
       "interaction_mode": "send_share",
       "visibility": "internal",
