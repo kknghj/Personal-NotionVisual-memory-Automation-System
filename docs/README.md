@@ -7,6 +7,7 @@
 | [docs/PRD.md](PRD.md) | 요구사항, 데이터 구조, 추천 로직 |
 | [docs/workflow_philosophy.md](workflow_philosophy.md) | workflow 기반 철학·원칙 |
 | [docs/workflow_ontology.md](workflow_ontology.md) | **추천 의미 backbone**: workflow category·lifecycle·related 축 (living model, 고정 표준 아님) |
+| [docs/semantic_metadata_schema.md](semantic_metadata_schema.md) | `visual_candidates` 위에 붙일 최소 `semantic_metadata` schema |
 | [docs/ARCHITECTURE.md](ARCHITECTURE.md) | 처리 파이프라인(P0–P7), **meaning layer** 위치 |
 
 에디터·에이전트용 축약 규칙은 `.cursor/rules/icon_system.md`에서 관리한다.
