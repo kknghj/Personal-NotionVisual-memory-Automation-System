@@ -14,5 +14,6 @@
 |------|------|
 | [docs/PRD.md](docs/PRD.md) | 요구사항·데이터·추천 원칙 |
 | [docs/workflow_ontology.md](docs/workflow_ontology.md) | Workflow meaning 모델·계층·로그 연결 방향 |
+| [docs/semantic_metadata_schema.md](docs/semantic_metadata_schema.md) | Recommendation reasoning용 최소 `semantic_metadata` schema |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | 구현 파이프라인 (P0–P7) + meaning layer 위치 |
 | [docs/README.md](docs/README.md) | `docs/` 인덱스 |
