@@ -135,6 +135,7 @@ type SemanticMetadata = {
 ```json
 [
   "create_edit",
+  "report_brief",
   "review_confirm",
   "request_delegate",
   "approve_signoff",
@@ -148,7 +149,6 @@ type SemanticMetadata = {
   "attend_participate",
   "call",
   "message",
-  "meeting",
   "authenticate_access",
   "move_transport"
 ]
@@ -189,7 +189,7 @@ type SemanticMetadata = {
 4. 이후 recommendation engine은 다음처럼 사용할 수 있다.
    - `candidate.workflow_fit ∩ inferred_categories`가 비어 있지 않으면 score boost
    - `workflow_fit[0]`과 inferred primary category가 같으면 추가 boost
-   - 제목에 UI/channel anchor가 있으면 `interaction_mode=call`, `message`, `meeting`을 modality별로 보조 boost
+   - 제목에 UI/channel anchor가 있으면 `interaction_mode=call`, `message`를 direct communication action으로 보조 boost
    - `visibility=public` 후보는 `게시`, `공고`, `누리집` 같은 공개 신호가 있을 때만 boost
    - `tone=urgent` 후보는 `긴급`, `주의`, `마감` 같은 신호와 결합할 때만 boost
 
@@ -253,7 +253,7 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
 {
   "publication_posting": {
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice", "communication", "document"],
+      "workflow_fit": ["broadcast_notice", "document"],
       "object_type": "notice",
       "interaction_mode": "publish_distribute",
       "visibility": "public",
