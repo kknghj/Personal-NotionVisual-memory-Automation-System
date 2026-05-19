@@ -36,6 +36,7 @@ INTERFACE_ANCHOR_TERMS: frozenset[str] = frozenset(
         "CLI",
         "터미널",
         "스프레드시트",
+        "앱",
     }
 )
 
@@ -68,6 +69,13 @@ MID_WORKFLOW_RESOLUTION_TERMS: frozenset[str] = frozenset(
         "시스템",
         "설문",
         "테이블",
+        "배포",
+        "배부",
+        "공유",
+        "게시",
+        "공개",
+        "상신",
+        "브리핑",
     }
 )
 
@@ -137,6 +145,11 @@ LOW_WORKFLOW_RESOLUTION_TERMS: frozenset[str] = frozenset(
         # 일반 명사: 특정 시스템·UI 분기보다 ‘장비/매체’ 배경
         "PC",
         "문의",
+        "설명",
+        "공고",
+        "노출",
+        "등록",
+        "결재",
     }
 )
 
@@ -218,6 +231,9 @@ DOCUMENT_COMPOUND_SUBJECT_TERMS: frozenset[str] = frozenset(
         "승인현황",
         # 기안
         "기안문",
+        # 게시·공고 계열 object/context: 내부 action-like substring만으로 publication으로 보지 않음
+        "공고번호",
+        "게시판",
     }
 )
 
@@ -291,13 +307,21 @@ def _occurrence_hits_compound(cov: list[bool], start: int, length: int) -> bool:
     return any(cov[start + k] for k in range(length))
 
 
+def _occurrence_is_fully_compound(cov: list[bool], start: int, length: int) -> bool:
+    if start < 0 or length <= 0 or start + length > len(cov):
+        return True
+    return all(cov[start + k] for k in range(length))
+
+
 def meaning_has_noncompound_occurrence(canonical: str, phrase: str, cov: list[bool]) -> bool:
-    """compound subject span 밖에서만 meaning occurrence를 인정(내부 substring은 workflow로 보지 않음)."""
+    """compound subject 내부 substring은 막고, 명시적 object+action phrase는 허용한다."""
     p = phrase.strip()
     if not p or p not in canonical:
         return False
     for j in _substring_starts(canonical, p):
-        if _occurrence_hits_compound(cov, j, len(p)):
+        if _occurrence_hits_compound(cov, j, len(p)) and _occurrence_is_fully_compound(
+            cov, j, len(p)
+        ):
             continue
         return True
     return False
@@ -339,7 +363,9 @@ def first_meaning_occurrence_index(canonical: str, phrase: str, cov: list[bool],
         return 10**9
     valid: list[int] = []
     for j in _substring_starts(canonical, p):
-        if _occurrence_hits_compound(cov, j, len(p)):
+        if _occurrence_hits_compound(cov, j, len(p)) and _occurrence_is_fully_compound(
+            cov, j, len(p)
+        ):
             continue
         valid.append(j)
     if not valid:
@@ -381,6 +407,7 @@ PERSON_CONTEXT_MODIFIER_TERMS: frozenset[str] = frozenset(
         "원장",
         "교장",
         "이사",
+        "시장님",
     }
 )
 

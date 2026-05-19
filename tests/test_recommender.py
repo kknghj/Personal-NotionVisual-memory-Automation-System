@@ -209,6 +209,73 @@ class ModifySemanticTests(RecommenderSemanticTestCase):
         self.assertIsNone(out)
 
 
+class DocumentLifecycleExpansionTests(RecommenderSemanticTestCase):
+    """Expanded document ontology: reporting / distribution / publication / sharing."""
+
+    def test_reporting_is_hierarchical_communication_not_plain_review(self):
+        cases = {
+            "초안 팀장님 보고": ("document_reporting", "🗣️"),
+            "예질 과장님 보고": ("document_reporting", "🗣️"),
+            "시장님 보고자료 수정": ("document_reporting", "🗣️"),
+            "최종안 보고": ("document_reporting", "🗣️"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+    def test_report_document_subject_still_allows_plain_document_review(self):
+        cid, val = self._match("보고서 확인")
+        self.assertEqual(cid, "document_review")
+        self.assertEqual(val, "📄")
+
+    def test_distribution_visual_tracks_distributed_object_identity(self):
+        cases = {
+            "주간보도자료 배포": ("press_distribution", "📰"),
+            "책자 배포": ("booklet_distribution", "📔"),
+            "책자 배부": ("booklet_distribution", "📔"),
+            "앱 신규 버전 배포": ("app_release", "alien-pixel"),
+            "일반 문서 배포": ("document_distribution", "📄"),
+            "메일 배포": ("mail_distribution", "📧"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+    def test_publication_distinguishes_action_from_context_object(self):
+        cid, val = self._match("공지 게시")
+        self.assertEqual(cid, "publication_announcement")
+        self.assertEqual(val, "📌")
+
+        cid2, val2 = self._match("게시판 등록")
+        self.assertEqual(cid2, "publication_bulletin_update")
+        self.assertEqual(val2, "📌")
+
+        cid3, val3 = self._match("상단 고정공지")
+        self.assertEqual(cid3, "publication_pinned_notice")
+        self.assertEqual(val3, "📌")
+
+        cid4, val4 = self._match("공고번호 확인")
+        self.assertEqual(cid4, "document_review")
+        self.assertEqual(val4, "📄")
+
+        out = find_best_visual_candidate_match("게시판", self._cands)
+        self.assertIsNone(out)
+
+    def test_sharing_uses_channel_and_shared_object(self):
+        cases = {
+            "메일 공유": ("mail_sharing", "📧"),
+            "정보 공유": ("information_sharing", "💡"),
+            "부서 암호 공유": ("credential_sharing", "🔑"),
+            "문서 공유": ("document_sharing", "📄"),
+        }
+        for title, (expect_cid, expect_visual) in cases.items():
+            cid, val = self._match(title)
+            self.assertEqual(cid, expect_cid, msg=title)
+            self.assertEqual(val, expect_visual, msg=title)
+
+
 class OrganizeSemanticTests(RecommenderSemanticTestCase):
     """P3 organize pair + P6: (action=정리, subject=…) 와 meaning·인터페이스 충돌.
 
