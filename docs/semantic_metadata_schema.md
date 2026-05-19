@@ -26,12 +26,11 @@
     "interface_memory": ["문서 열람 화면"],
     "usage_context": ["보고서 확인", "자료 검토"],
     "semantic_metadata": {
-      "workflow_fit": "document",
+      "workflow_fit": ["document"],
       "object_type": "document",
       "interaction_mode": "review_confirm",
       "visibility": "team_internal",
-      "tone": "formal",
-      "related_categories": []
+      "tone": "formal"
     }
   }
 }
@@ -43,33 +42,37 @@
 
 | 필드 | 타입 | 필수 | 목적 |
 | --- | --- | --- | --- |
-| `workflow_fit` | `string enum` | 예 | 후보의 primary workflow category. `workflow_ontology.md`의 top-level slug를 사용한다. |
+| `workflow_fit` | `array<string enum>` | 예 | 후보가 걸치는 workflow category 목록. 첫 번째 값을 primary로 해석한다. |
 | `object_type` | `string enum` | 예 | 사용자가 실제로 다루는 대상의 종류. 같은 action이라도 문서·표·시스템·공간을 구분한다. |
 | `interaction_mode` | `string enum` | 예 | 후보가 대표하는 행동 방식. scoring에서 제목의 action 신호와 후보 성격을 맞추는 축이다. |
 | `visibility` | `string enum` | 예 | 결과물이나 행동이 노출되는 범위. 내부 처리, 조직 공지, 외부 공개를 구분한다. |
 | `tone` | `string enum` | 예 | 후보가 암시하는 업무 분위기. urgent/formal/sensitive 같은 scoring prior에 사용한다. |
-| `related_categories` | `array<string enum>` | 예 | primary는 아니지만 함께 고려할 top-level category 목록. 없으면 빈 배열. |
 
 ### 타입 계약
 
 ```ts
 type SemanticMetadata = {
-  workflow_fit: WorkflowCategory;
+  workflow_fit: WorkflowCategory[];
   object_type: ObjectType;
   interaction_mode: InteractionMode;
   visibility: Visibility;
   tone: Tone;
-  related_categories: WorkflowCategory[];
 };
 ```
 
-`related_categories`에는 `workflow_fit`과 같은 값을 넣지 않는다. sub-workflow(`document.review` 등)는 이 최소 schema에 넣지 않고, 필요하면 ontology 문서나 별도 후속 필드에서 다룬다.
+`workflow_fit`은 비어 있으면 안 된다. 첫 번째 원소가 primary fit이고, 두 번째 이후는 같은 후보가 함께 걸치는 secondary fit이다. 중복 값은 넣지 않는다. sub-workflow(`document.review` 등)는 이 최소 schema에 넣지 않고, 필요하면 ontology 문서나 별도 후속 필드에서 다룬다.
 
 ## 3. Enum 후보
 
 ### `workflow_fit`
 
-`workflow_ontology.md`의 top-level category를 그대로 쓴다.
+값은 `workflow_ontology.md`의 top-level category를 그대로 쓴다. 예:
+
+```json
+["broadcast_notice", "communication", "document"]
+```
+
+위 예시는 `broadcast_notice`를 primary로 해석하고, `communication`과 `document`도 같은 후보의 fit으로 scoring에 사용할 수 있다는 뜻이다. enum 후보:
 
 ```json
 [
@@ -178,14 +181,6 @@ type SemanticMetadata = {
 ]
 ```
 
-### `related_categories`
-
-값은 `workflow_fit`과 같은 `WorkflowCategory` enum 배열이다. 예:
-
-```json
-["communication", "tracking"]
-```
-
 ## 4. 현재 프로젝트 구조와의 연결
 
 현재 추천 경로는 `ARCHITECTURE.md`의 P0-P7 구조를 따른다.
@@ -194,11 +189,11 @@ type SemanticMetadata = {
 2. P6 ranking이 `workflow_priority`, `interface_dominance_effective`, `keyword_workflow_resolution` 등 현재 숫자 신호로 1위를 고른다.
 3. `semantic_metadata`는 이 흐름을 대체하지 않고, 후보 row의 `data["semantic_metadata"]`로 같이 운반된다.
 4. 이후 recommendation engine은 다음처럼 사용할 수 있다.
-   - 제목에서 추론한 category와 `workflow_fit`이 같으면 score boost
+   - `candidate.workflow_fit ∩ inferred_categories`가 비어 있지 않으면 score boost
+   - `workflow_fit[0]`과 inferred primary category가 같으면 추가 boost
    - 제목에 UI/channel anchor가 있으면 `interaction_mode=call`, `message`, `meeting`을 modality별로 보조 boost
    - `visibility=external_public` 후보는 `게시`, `공고`, `누리집` 같은 공개 신호가 있을 때만 boost
    - `tone=urgent` 후보는 `긴급`, `주의`, `마감` 같은 신호와 결합할 때만 boost
-   - `related_categories`는 primary category가 아니므로 hard match가 아니라 약한 bridge score로만 사용
 
 Pair/synthetic row는 두 방식 중 하나로 연결한다.
 
@@ -224,12 +219,11 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
 {
   "mail_action": {
     "semantic_metadata": {
-      "workflow_fit": "communication",
+      "workflow_fit": ["communication", "document"],
       "object_type": "message",
       "interaction_mode": "send_share",
       "visibility": "team_internal",
-      "tone": "neutral",
-      "related_categories": ["document"]
+      "tone": "neutral"
     }
   }
 }
@@ -243,12 +237,11 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
 {
   "spreadsheet_work": {
     "semantic_metadata": {
-      "workflow_fit": "tabular_data",
+      "workflow_fit": ["tabular_data", "tracking"],
       "object_type": "spreadsheet",
       "interaction_mode": "input_process",
       "visibility": "team_internal",
-      "tone": "neutral",
-      "related_categories": ["tracking"]
+      "tone": "neutral"
     }
   }
 }
@@ -262,12 +255,11 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
 {
   "publication_posting": {
     "semantic_metadata": {
-      "workflow_fit": "document",
+      "workflow_fit": ["broadcast_notice", "communication", "document"],
       "object_type": "notice",
       "interaction_mode": "publish_distribute",
       "visibility": "external_public",
-      "tone": "formal",
-      "related_categories": ["web_publication", "broadcast_notice"]
+      "tone": "formal"
     }
   }
 }
@@ -281,23 +273,22 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
 {
   "progress_monitoring": {
     "semantic_metadata": {
-      "workflow_fit": "tracking",
+      "workflow_fit": ["tracking", "tabular_data"],
       "object_type": "status_record",
       "interaction_mode": "monitor_track",
       "visibility": "organization_internal",
-      "tone": "neutral",
-      "related_categories": ["tabular_data"]
+      "tone": "neutral"
     }
   }
 }
 ```
 
-현황·진행·응답 같은 제목은 문서나 표 후보와 붙기 쉽다. `workflow_fit=tracking`은 “무엇을 작성하는가”보다 “상태를 본다”는 category inference를 가능하게 한다.
+현황·진행·응답 같은 제목은 문서나 표 후보와 붙기 쉽다. `workflow_fit[0]=tracking`은 “무엇을 작성하는가”보다 “상태를 본다”는 category inference를 가능하게 한다.
 
 ## 7. 적용 원칙
 
 - 먼저 모든 후보에 완벽히 채우려 하지 말고, 충돌이 잦은 후보군부터 붙인다.
 - enum은 feedback과 테스트에서 실제로 쓰일 때만 늘린다.
-- `related_categories`는 보조 축이다. primary category가 흔들릴 때마다 related로 숨기지 않는다.
+- `workflow_fit[0]`은 primary fit이다. primary category가 흔들릴 때마다 순서를 바꾸지 말고, 사용자 선택 로그로 검증한다.
 - `semantic_metadata` 값만으로 retrieval 결과를 만들지 않는다. retrieval은 계속 `meaning`과 pair rules가 담당한다.
 - scoring에 넣을 때는 hard rule보다 작은 boost/penalty부터 시작한다.
