@@ -692,7 +692,14 @@
     ],
     "usage_context": [
       "주간보도자료 배포"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["broadcast_notice", "document"],
+      "object_type": "document",
+      "interaction_mode": "publish_distribute",
+      "visibility": "public",
+      "tone": "formal"
+    }
   },
   "booklet_distribution": {
     "visual": {
@@ -719,7 +726,14 @@
     "usage_context": [
       "책자 배포",
       "책자 배부"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["document"],
+      "object_type": "document",
+      "interaction_mode": "publish_distribute",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "app_release": {
     "visual": {
@@ -756,7 +770,14 @@
     ],
     "usage_context": [
       "앱 신규 버전 배포"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["engineering"],
+      "object_type": "code",
+      "interaction_mode": "publish_distribute",
+      "visibility": "public",
+      "tone": "neutral"
+    }
   },
   "document_distribution": {
     "visual": {
@@ -798,7 +819,14 @@
     "usage_context": [
       "일반 문서 배포",
       "자료 배부"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["document"],
+      "object_type": "document",
+      "interaction_mode": "publish_distribute",
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "mail_distribution": {
     "visual": {
@@ -835,7 +863,14 @@
     "usage_context": [
       "메일 배포",
       "자료 메일 발송"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": ["broadcast_notice"],
+      "object_type": "message",
+      "interaction_mode": "publish_distribute",
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "publication_posting": {
     "visual": {
