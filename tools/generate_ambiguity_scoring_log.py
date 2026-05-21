@@ -16,7 +16,6 @@ DEFAULT_TEST_SET = Path("tests/ambiguity/ambiguity_test_set.json")
 DEFAULT_OUTPUT_DIR = Path("tests/ambiguity/ambiguity_results")
 TOP_N = 5
 HIGH_AMBIGUITY_THRESHOLD = 0.05
-RANK_DIMENSIONS = 7
 
 
 def _load_titles(path: Path) -> list[str]:
@@ -65,14 +64,15 @@ def _final_scores(rows: Sequence[CandidateRow], title_has_ui: bool) -> dict[str,
         return {}
     components = _component_scores(rows, title_has_ui)
     base = len(rows) + 1
-    max_score = sum((base - 1) * base**power for power in range(RANK_DIMENSIONS))
+    rank_dimensions = len(components[0])
+    max_score = sum((base - 1) * base**power for power in range(rank_dimensions))
     scores: dict[str, float] = {}
     for row, row_components in zip(rows, components, strict=True):
         weighted = sum(
             component * base**power
             for component, power in zip(
                 row_components,
-                reversed(range(RANK_DIMENSIONS)),
+                reversed(range(rank_dimensions)),
                 strict=True,
             )
         )
@@ -111,6 +111,10 @@ def _matched_rules(row: CandidateRow, title_has_ui: bool) -> list[str]:
         elif rule == secondary_rule and row.sort_secondary_wp:
             rules.append(rule)
 
+    if row.semantic_bonus:
+        rules.append("semantic_metadata_bonus")
+    if row.generic_token_penalty:
+        rules.append("generic_token_suppression_applied")
     rules.append("rank_tiebreak.match_position")
     rules.append("rank_tiebreak.matched_keyword_length")
     return rules
@@ -141,6 +145,10 @@ def _why_scored(row: CandidateRow, title_has_ui: bool) -> list[str]:
         )
     if title_has_ui:
         reasons.append("title has interface anchor, so dominance/resolution rank before secondary rank")
+    if row.semantic_match_reason:
+        reasons.extend(row.semantic_match_reason)
+    if row.generic_token_reason:
+        reasons.extend(row.generic_token_reason)
 
     reasons.append(f"match_position={_pos_key_row(row)} used as deterministic tie-break")
     reasons.append(f"matched_keyword_length={row.matched_keyword_length} used as tie-break")
@@ -159,6 +167,9 @@ def _no_candidate_entry(title: str) -> dict[str, Any]:
                 "candidate": None,
                 "final_score": None,
                 "ambiguity_gap": None,
+                "semantic_bonus": 0,
+                "semantic_match_reason": [],
+                "semantic_metadata_fields_matched": [],
                 "why_scored": [
                     "no candidate row generated from pair rules or meaning token matches"
                 ],
@@ -189,6 +200,9 @@ def _title_log(title: str, candidates: dict[str, Any]) -> dict[str, Any]:
                 "candidate": row.candidate_id,
                 "final_score": scores[row.candidate_id],
                 "ambiguity_gap": gap,
+                "semantic_bonus": row.semantic_bonus,
+                "semantic_match_reason": list(row.semantic_match_reason),
+                "semantic_metadata_fields_matched": list(row.semantic_metadata_fields_matched),
                 "why_scored": _why_scored(row, title_has_ui),
                 "matched_rules": _matched_rules(row, title_has_ui),
             }

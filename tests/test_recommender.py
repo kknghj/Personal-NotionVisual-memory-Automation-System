@@ -410,6 +410,26 @@ class RankingContractTests(RecommenderSemanticTestCase):
         self.assertEqual(cid, "document_edit")
         self.assertEqual(val, "📝")
 
+    def test_semantic_metadata_bonus_expands_ambiguity_coverage(self):
+        cases = {
+            "운영계획 공유": "document_sharing",
+            "결과서 공유": "document_sharing",
+            "집계결과 공유": "document_sharing",
+            "점검자료 전송": "document_distribution",
+            "게시 승인 요청": "approval_request",
+        }
+        for title, expect_cid in cases.items():
+            self.assertEqual(self._cid(title), expect_cid, msg=title)
+
+    def test_generic_token_suppression_defers_to_workflow_compounds(self):
+        cases = {
+            "채팅방 공지 등록": "notice_posting",
+            "행사자료 송부": "document_distribution",
+            "강사비 지급 요청": "document_request",
+        }
+        for title, expect_cid in cases.items():
+            self.assertEqual(self._cid(title), expect_cid, msg=title)
+
 
 if __name__ == "__main__":
     unittest.main()

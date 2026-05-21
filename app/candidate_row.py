@@ -50,3 +50,18 @@ class CandidateRow:
 
     data: dict[str, Any]
     """Full ``visual_candidates`` entry or synthetic P3 payload (**payload**)."""
+
+    semantic_bonus: int = 0
+    """Workflow metadata compatibility bonus used before low-level tie-breaks."""
+
+    semantic_match_reason: tuple[str, ...] = ()
+    """Human-readable semantic compatibility reasons for diagnostics."""
+
+    semantic_metadata_fields_matched: tuple[str, ...] = ()
+    """Candidate metadata fields that matched title-level semantic signals."""
+
+    generic_token_penalty: int = 0
+    """Penalty flag for standalone generic token matches."""
+
+    generic_token_reason: tuple[str, ...] = ()
+    """Human-readable generic token suppression reasons for diagnostics."""

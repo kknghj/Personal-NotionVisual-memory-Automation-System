@@ -2,7 +2,9 @@ from typing import Any, NamedTuple, Optional
 
 from app.candidate_row import CandidateRow
 from app.data_loader import load_pair_rules
+from app.generic_tokens import generic_token_suppression_reason
 from app.pair_engine import PairResolution, PairRuleEngine
+from app.semantic_scoring import semantic_compatibility
 from app.workflow_resolution import (
     PERSON_CONTEXT_MODIFIER_TERMS,
     compound_subject_char_mask,
@@ -141,13 +143,15 @@ def _pos_key_row(r: CandidateRow) -> int:
 def _row_sort_key(
     r: CandidateRow,
     title_has_ui: bool,
-) -> tuple[int, int, int, int, int, int, str]:
+) -> tuple[int, int, int, int, int, int, int, int, str]:
     """P6 key; UI titles prioritize interface signals before anchor strength."""
     if title_has_ui:
         return (
             -r.rule_tier,
             -r.interface_dominance_effective,
             -r.keyword_workflow_resolution,
+            -r.semantic_bonus,
+            r.generic_token_penalty,
             -r.sort_secondary_wp,
             _pos_key_row(r),
             -r.matched_keyword_length,
@@ -155,9 +159,11 @@ def _row_sort_key(
         )
     return (
         -r.rule_tier,
-        -r.sort_secondary_wp,
+        -r.semantic_bonus,
+        r.generic_token_penalty,
         -r.interface_dominance_effective,
         -r.keyword_workflow_resolution,
+        -r.sort_secondary_wp,
         _pos_key_row(r),
         -r.matched_keyword_length,
         r.candidate_id,
@@ -219,6 +225,10 @@ def rank_visual_candidate_rows(
             sort_wp = int(wp_raw)
         except (TypeError, ValueError):
             sort_wp = 0
+        semantic_bonus, semantic_reasons, semantic_fields = semantic_compatibility(
+            key_title, data.get("semantic_metadata")
+        )
+        generic_reasons = generic_token_suppression_reason(key_title, matched)
 
         rows.append(
             CandidateRow(
@@ -231,6 +241,11 @@ def rank_visual_candidate_rows(
                 matched=matched,
                 candidate_id=cid,
                 data=data,
+                semantic_bonus=semantic_bonus,
+                semantic_match_reason=semantic_reasons,
+                semantic_metadata_fields_matched=semantic_fields,
+                generic_token_penalty=1 if generic_reasons else 0,
+                generic_token_reason=generic_reasons,
             )
         )
 
