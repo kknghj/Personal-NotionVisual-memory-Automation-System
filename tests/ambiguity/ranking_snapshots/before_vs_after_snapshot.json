@@ -231,7 +231,16 @@
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": true
+      "suppression_applied": true,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:검토결과",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "generic_noise_reduction",
@@ -391,7 +400,16 @@
       ],
       "top_semantic_bonus": 10,
       "semantic_bonus_total": 27,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:결과보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -447,7 +465,19 @@
       ],
       "top_semantic_bonus": 9,
       "semantic_bonus_total": 16,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:결과보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": true,
     "change_type": "semantic_improvement",
@@ -499,7 +529,14 @@
       ],
       "top_semantic_bonus": 10,
       "semantic_bonus_total": 10,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.0,
+      "workflow_stage_source": "",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -549,7 +586,14 @@
       ],
       "top_semantic_bonus": 8,
       "semantic_bonus_total": 8,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.0,
+      "workflow_stage_source": "",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -865,7 +909,19 @@
       ],
       "top_semantic_bonus": 9,
       "semantic_bonus_total": 16,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:교육결과보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": true,
     "change_type": "semantic_improvement",
@@ -1417,7 +1473,14 @@
       "top5_candidates": [],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.0,
+      "workflow_stage_source": "",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -2889,7 +2952,16 @@
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": true
+      "suppression_applied": true,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:운영결과",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "generic_noise_reduction",
@@ -3097,7 +3169,14 @@
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "contextual:운영현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -3309,7 +3388,16 @@
       ],
       "top_semantic_bonus": 7,
       "semantic_bonus_total": 7,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:점검결과",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -3467,7 +3555,19 @@
       ],
       "top_semantic_bonus": 9,
       "semantic_bonus_total": 16,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:정산결과보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": true,
     "change_type": "semantic_improvement",
@@ -3727,7 +3827,19 @@
       ],
       "top_semantic_bonus": 9,
       "semantic_bonus_total": 9,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:진행상황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
     },
     "changed": false,
     "change_type": "semantic_improvement",
@@ -3777,7 +3889,16 @@
       ],
       "top_semantic_bonus": 7,
       "semantic_bonus_total": 7,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:집계결과",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -3989,7 +4110,14 @@
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -4099,7 +4227,20 @@
       ],
       "top_semantic_bonus": 9,
       "semantic_bonus_total": 16,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "final",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.75,
+      "workflow_stage_source": "keyword:최종결과보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "final",
+        "result"
+      ]
     },
     "changed": true,
     "change_type": "semantic_improvement",
@@ -4207,7 +4348,16 @@
       ],
       "top_semantic_bonus": 5,
       "semantic_bonus_total": 5,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:추진실적",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -4259,7 +4409,16 @@
       ],
       "top_semantic_bonus": 3,
       "semantic_bonus_total": 3,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:추진현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -4523,7 +4682,16 @@
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": true
+      "suppression_applied": true,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:행사결과",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -4791,7 +4959,14 @@
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -4999,7 +5174,16 @@
       ],
       "top_semantic_bonus": 5,
       "semantic_bonus_total": 5,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:활동결과",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -5107,7 +5291,16 @@
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
-      "suppression_applied": false
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:회의결과",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
     },
     "changed": false,
     "change_type": "stable",

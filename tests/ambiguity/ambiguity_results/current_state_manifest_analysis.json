@@ -1,0 +1,813 @@
+{
+  "log_path": "tests/ambiguity/ambiguity_results/2026-05-21_current_state_workflow_stage_log.json",
+  "manifest_path": "tests/ambiguity/reporting_current_state_manifest.json",
+  "group_summaries": {
+    "reporting_stage_cases": {
+      "count": 34,
+      "expected_behavior_ok_rate": 1.0,
+      "near_reporting_tie_count": 0,
+      "cases": [
+        {
+          "title": "주간 영업 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "서버 장애 대응 현황 공유",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "예산 집행 현황 점검 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting",
+            "budget_tracking"
+          ]
+        },
+        {
+          "title": "프로젝트 진행 현황 정리",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "신규 채용 검토 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting",
+            "document_review",
+            "slide_deck_final_review"
+          ]
+        },
+        {
+          "title": "계약 협상 진행 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "재고 관리 현황 업데이트",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "콘텐츠 제작 현황 공유",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "행사 준비 현황 중간보고",
+          "expected_ambiguity_level": "low",
+          "actual_top_candidate": "prep_paired_event_party",
+          "inferred_workflow_stage": "interim",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            "prep_paired_event_party",
+            "document_reporting",
+            "event_preparation"
+          ]
+        },
+        {
+          "title": "광고 캠페인 운영 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "생산 라인 점검 현황 정리",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "매장 운영 현황 일일보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "보안 취약점 조치 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting",
+            "security_work"
+          ]
+        },
+        {
+          "title": "교육 신청 접수 현황 공유",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "survey_form",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            "survey_form"
+          ]
+        },
+        {
+          "title": "시스템 개발 진행 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting",
+            "coding",
+            "system_work"
+          ]
+        },
+        {
+          "title": "협력사 대응 현황 업데이트",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "감사 지적사항 조치 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "부서별 업무 추진 현황 정리",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "입찰 참여 현황 내부보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "신규 서비스 테스트 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "언론 대응 현황 일일보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "데이터 이관 작업 현황 공유",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "해외 지사 운영 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "클레임 처리 진행 현황 정리",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "연구 과제 수행 현황 중간보고",
+          "expected_ambiguity_level": "low",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": "interim",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "자산 관리 현황 점검 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "위험 요소 대응 현황 공유",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "업무 자동화 구축 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting",
+            "coding"
+          ]
+        },
+        {
+          "title": "현장 안전관리 운영 현황 정리",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "학부모강사 활동현황표 수합",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "spreadsheet_work",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "spreadsheet_work",
+            "education_fieldwork"
+          ]
+        },
+        {
+          "title": "주요사업 추진현황 주간회의 자료 작성",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_edit",
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_edit"
+          ]
+        },
+        {
+          "title": "법령제도 개선 건의과제 추진현황 현행화 안내",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "website_content_refresh",
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            "website_content_refresh",
+            "mail_action"
+          ]
+        },
+        {
+          "title": "보험 가입현황 제출",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_edit",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            "document_edit"
+          ]
+        },
+        {
+          "title": "비상소집 응소자 현황 제출",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_edit",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            "document_edit"
+          ]
+        }
+      ]
+    },
+    "status_ambiguity_cases": {
+      "count": 7,
+      "expected_behavior_ok_rate": 1.0,
+      "near_reporting_tie_count": 0,
+      "cases": [
+        {
+          "title": "고객 민원 처리 현황 확인",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "status_check",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "status_check",
+            "document_review",
+            "slide_deck_final_review",
+            "phone_call"
+          ]
+        },
+        {
+          "title": "비영리민간단체 전수조사 현황 회신",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "inventory_work",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            "inventory_work"
+          ]
+        },
+        {
+          "title": "미처리 민원 현황 확인",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "status_check",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "status_check",
+            "document_review",
+            "slide_deck_final_review",
+            "phone_call"
+          ]
+        },
+        {
+          "title": "교육청 급식담당자 현황 조사",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "inventory_work",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "inventory_work"
+          ]
+        },
+        {
+          "title": "다기능사무기기 보유현황 제출",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "document_edit",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            "document_edit"
+          ]
+        },
+        {
+          "title": "부서별 현황 자료 공유",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "document_sharing",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_sharing"
+          ]
+        },
+        {
+          "title": "전국 식생활교육 현황 보고",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        }
+      ]
+    },
+    "result_lifecycle_cases": {
+      "count": 4,
+      "expected_behavior_ok_rate": 0.75,
+      "near_reporting_tie_count": 0,
+      "cases": [
+        {
+          "title": "사업 운영 결과 현황 보고",
+          "expected_ambiguity_level": "low",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": "result",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": true,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "교육 운영 결과 현황 정리",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": "result",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "점검 결과 현황 공유",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": "result",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "성과 분석 결과 현황 보고",
+          "expected_ambiguity_level": "low",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": false,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        }
+      ]
+    },
+    "intentionally_ambiguous_cases": {
+      "count": 4,
+      "expected_behavior_ok_rate": 0.75,
+      "near_reporting_tie_count": 0,
+      "cases": [
+        {
+          "title": "전국 식생활교육 현황 보고",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "주간 영업 현황 보고",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": null,
+          "workflow_stage_ambiguous": true,
+          "workflow_stage_confidence": 0.2,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        },
+        {
+          "title": "프로젝트 진행 현황 정리",
+          "expected_ambiguity_level": "high",
+          "actual_top_candidate": null,
+          "inferred_workflow_stage": "progress",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": false,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": false,
+          "top_in_likely_competitors": false,
+          "top5": [
+            null
+          ]
+        },
+        {
+          "title": "사업 운영 결과 현황 보고",
+          "expected_ambiguity_level": "medium",
+          "actual_top_candidate": "document_reporting",
+          "inferred_workflow_stage": "result",
+          "workflow_stage_ambiguous": false,
+          "workflow_stage_confidence": 0.85,
+          "workflow_stage_mismatch": true,
+          "near_reporting_tie": false,
+          "expected_behavior_ok": true,
+          "top_in_likely_competitors": true,
+          "top5": [
+            "document_reporting"
+          ]
+        }
+      ]
+    }
+  },
+  "false_certainty_cases": [
+    {
+      "title": "프로젝트 진행 현황 정리",
+      "expected_ambiguity_level": "high",
+      "actual_top_candidate": null,
+      "inferred_workflow_stage": "progress",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_mismatch": false,
+      "near_reporting_tie": false,
+      "expected_behavior_ok": false,
+      "top_in_likely_competitors": false,
+      "top5": [
+        null
+      ]
+    }
+  ],
+  "false_certainty_count": 1,
+  "keyword_overfit_to_reporting": {},
+  "required_case_checklist": {
+    "전국 식생활교육 현황 보고": "document_reporting",
+    "사업 운영 결과 현황 보고": "document_reporting",
+    "부서별 현황 자료 공유": "document_sharing",
+    "주요사업 추진현황 주간회의 자료 작성": "document_edit",
+    "보험 가입현황 제출": "document_edit",
+    "비상소집 응소자 현황 제출": "document_edit"
+  }
+}

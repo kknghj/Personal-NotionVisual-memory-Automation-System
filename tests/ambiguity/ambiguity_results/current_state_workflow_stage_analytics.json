@@ -1,0 +1,31 @@
+{
+  "total_rows": 145,
+  "stage_observation_rows": 66,
+  "reporting_subset_rows": 24,
+  "workflow_stage_confusion_matrix": {
+    "inferred=null -> top=document_reporting": 15,
+    "inferred=final -> top=result_reporting": 1,
+    "inferred=interim -> top=document_reporting": 1,
+    "inferred=progress -> top=document_reporting": 3,
+    "inferred=result -> top=document_reporting": 1,
+    "inferred=result -> top=result_reporting": 3
+  },
+  "progress_result_cross_confusion": 1,
+  "ambiguous_token_frequency": {
+    "contextual:운영현황": 5,
+    "ambiguous:현황": 31
+  },
+  "hyeonhwang_title_count": 49,
+  "ambiguous_stage_count": 36,
+  "stage_mismatch_count": 1,
+  "stage_mismatch_rate": 0.015,
+  "confidence_distribution": {
+    "0.76-1.0": 26,
+    "0.0-0.2": 39,
+    "0.66-0.75": 1
+  },
+  "confidence_calibration": {
+    "labeled_count": 0,
+    "accuracy_by_bucket": {}
+  }
+}

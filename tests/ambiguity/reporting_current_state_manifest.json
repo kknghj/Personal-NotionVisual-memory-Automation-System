@@ -1,0 +1,355 @@
+{
+  "source": "reporting_current_state_set.txt",
+  "description": "Grouped reporting/현황 experiment cases with expected ambiguity and workflow_stage behavior.",
+  "reporting_stage_cases": [
+    {
+      "title": "주간 영업 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring", "result_reporting"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "현황+보고; progress vs monitoring 경쟁"
+    },
+    {
+      "title": "서버 장애 대응 현황 공유",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_sharing", "progress_monitoring", "status_check"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "공유 action; reporting보다 sharing/tracking"
+    },
+    {
+      "title": "예산 집행 현황 점검 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "budget_tracking", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "집행+현황+보고"
+    },
+    {
+      "title": "프로젝트 진행 현황 정리",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "progress_monitoring", "folder_organization"],
+      "expected_workflow_stage_behavior": "progress_or_null",
+      "notes": "정리 pair; reporting 과적합 위험"
+    },
+    {
+      "title": "신규 채용 검토 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "document_review", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "검토+현황+보고"
+    },
+    {
+      "title": "계약 협상 진행 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "meeting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "progress",
+      "notes": "진행 현황 명시"
+    },
+    {
+      "title": "재고 관리 현황 업데이트",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "progress_monitoring", "status_check"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "업데이트; reporting 아님"
+    },
+    {
+      "title": "콘텐츠 제작 현황 공유",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_sharing", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "공유 중심"
+    },
+    {
+      "title": "행사 준비 현황 중간보고",
+      "expected_ambiguity_level": "low",
+      "likely_competing_candidates": ["document_reporting", "result_reporting", "event_preparation"],
+      "expected_workflow_stage_behavior": "interim",
+      "notes": "중간보고 명시"
+    },
+    {
+      "title": "광고 캠페인 운영 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "운영 현황"
+    },
+    {
+      "title": "생산 라인 점검 현황 정리",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "정리; reporting boundary"
+    },
+    {
+      "title": "매장 운영 현황 일일보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "일일보고"
+    },
+    {
+      "title": "보안 취약점 조치 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "조치 현황"
+    },
+    {
+      "title": "교육 신청 접수 현황 공유",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_sharing", "status_check", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "접수 현황"
+    },
+    {
+      "title": "시스템 개발 진행 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "coding", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "progress",
+      "notes": "진행 현황"
+    },
+    {
+      "title": "협력사 대응 현황 업데이트",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "업데이트"
+    },
+    {
+      "title": "감사 지적사항 조치 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": ""
+    },
+    {
+      "title": "부서별 업무 추진 현황 정리",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "progress_or_null",
+      "notes": "추진 현황+정리"
+    },
+    {
+      "title": "입찰 참여 현황 내부보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "내부보고"
+    },
+    {
+      "title": "신규 서비스 테스트 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": ""
+    },
+    {
+      "title": "언론 대응 현황 일일보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "press_distribution"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": ""
+    },
+    {
+      "title": "데이터 이관 작업 현황 공유",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_sharing", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "공유"
+    },
+    {
+      "title": "해외 지사 운영 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "운영 현황"
+    },
+    {
+      "title": "클레임 처리 진행 현황 정리",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "progress",
+      "notes": "진행+정리"
+    },
+    {
+      "title": "연구 과제 수행 현황 중간보고",
+      "expected_ambiguity_level": "low",
+      "likely_competing_candidates": ["document_reporting", "result_reporting"],
+      "expected_workflow_stage_behavior": "interim",
+      "notes": "중간보고"
+    },
+    {
+      "title": "자산 관리 현황 점검 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "inventory_work", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": ""
+    },
+    {
+      "title": "위험 요소 대응 현황 공유",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_sharing", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "공유"
+    },
+    {
+      "title": "업무 자동화 구축 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_reporting", "coding", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": ""
+    },
+    {
+      "title": "현장 안전관리 운영 현황 정리",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "document_reporting"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "정리"
+    },
+    {
+      "title": "학부모강사 활동현황표 수합",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["spreadsheet_work", "document_edit", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "수합; 제출/보고 아님"
+    },
+    {
+      "title": "주요사업 추진현황 주간회의 자료 작성",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_edit", "document_reporting", "meeting"],
+      "expected_workflow_stage_behavior": "progress",
+      "notes": "필수 케이스; 작성+추진현황"
+    },
+    {
+      "title": "법령제도 개선 건의과제 추진현황 현행화 안내",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["mail_action", "document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "progress",
+      "notes": "추진현황+안내"
+    },
+    {
+      "title": "보험 가입현황 제출",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_submission", "status_check", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "필수 케이스; 제출은 reporting 아님"
+    },
+    {
+      "title": "비상소집 응소자 현황 제출",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["document_submission", "status_check", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "ambiguous_or_null",
+      "notes": "필수 케이스"
+    }
+  ],
+  "status_ambiguity_cases": [
+    {
+      "title": "고객 민원 처리 현황 확인",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["document_review", "status_check", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "확인=review; 현황=tracking"
+    },
+    {
+      "title": "비영리민간단체 전수조사 현황 회신",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["mail_action", "status_check", "document_review"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "회신; monitoring"
+    },
+    {
+      "title": "미처리 민원 현황 확인",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["status_check", "response_tracking", "document_review"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "응답/현황 tracking"
+    },
+    {
+      "title": "교육청 급식담당자 현황 조사",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["inventory_work", "status_check", "document_edit"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "조사; reporting 아님"
+    },
+    {
+      "title": "다기능사무기기 보유현황 제출",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["document_submission", "inventory_work", "status_check"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "제출+현황"
+    },
+    {
+      "title": "부서별 현황 자료 공유",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["document_sharing", "progress_monitoring", "document_reporting"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "필수 케이스; 공유+현황"
+    },
+    {
+      "title": "전국 식생활교육 현황 보고",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["document_reporting", "result_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "필수 케이스; intentionally ambiguous"
+    }
+  ],
+  "result_lifecycle_cases": [
+    {
+      "title": "사업 운영 결과 현황 보고",
+      "expected_ambiguity_level": "low",
+      "likely_competing_candidates": ["result_reporting", "document_reporting"],
+      "expected_workflow_stage_behavior": "result",
+      "notes": "필수 케이스; 결과+현황+보고"
+    },
+    {
+      "title": "교육 운영 결과 현황 정리",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["result_reporting", "document_edit", "document_reporting"],
+      "expected_workflow_stage_behavior": "result",
+      "notes": "결과+정리"
+    },
+    {
+      "title": "점검 결과 현황 공유",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["result_reporting", "document_sharing", "document_reporting"],
+      "expected_workflow_stage_behavior": "result",
+      "notes": "결과+공유"
+    },
+    {
+      "title": "성과 분석 결과 현황 보고",
+      "expected_ambiguity_level": "low",
+      "likely_competing_candidates": ["result_reporting", "document_reporting"],
+      "expected_workflow_stage_behavior": "result",
+      "notes": "결과+보고"
+    }
+  ],
+  "intentionally_ambiguous_cases": [
+    {
+      "title": "전국 식생활교육 현황 보고",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["document_reporting", "result_reporting", "progress_monitoring", "status_check"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "false certainty 탐지용; progress/result/monitoring 동시 가능"
+    },
+    {
+      "title": "주간 영업 현황 보고",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["document_reporting", "progress_monitoring", "result_reporting"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "false certainty 탐지"
+    },
+    {
+      "title": "프로젝트 진행 현황 정리",
+      "expected_ambiguity_level": "high",
+      "likely_competing_candidates": ["document_edit", "document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "null",
+      "notes": "정리 vs 보고"
+    },
+    {
+      "title": "사업 운영 결과 현황 보고",
+      "expected_ambiguity_level": "medium",
+      "likely_competing_candidates": ["result_reporting", "document_reporting", "progress_monitoring"],
+      "expected_workflow_stage_behavior": "result",
+      "notes": "결과 있으나 현황으로 monitoring 해석도 가능"
+    }
+  ]
+}

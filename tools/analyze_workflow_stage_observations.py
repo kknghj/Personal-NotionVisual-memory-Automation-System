@@ -103,7 +103,10 @@ def analyze(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "reporting_subset_rows": len(reporting_rows),
         "workflow_stage_confusion_matrix": {
             f"inferred={inferred or 'null'} -> top={top}": count
-            for (inferred, top), count in sorted(confusion.items())
+            for (inferred, top), count in sorted(
+                confusion.items(),
+                key=lambda item: (str(item[0][0]), str(item[0][1])),
+            )
         },
         "progress_result_cross_confusion": progress_result_confusion,
         "ambiguous_token_frequency": dict(ambiguous_sources),

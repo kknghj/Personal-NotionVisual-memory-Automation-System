@@ -1,13 +1,37 @@
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 from statistics import mean
 from typing import Any
 
-LATEST_LOG = Path("tests/ambiguity/ambiguity_results/2026-05-21_workflow_stage_scoring_log.json")
+DEFAULT_AFTER_LOG = Path(
+    "tests/ambiguity/ambiguity_results/2026-05-21_current_state_workflow_stage_log.json"
+)
+DEFAULT_BEFORE_LOG = Path("tests/ambiguity/ambiguity_results/2026-05-21_0519_scoring_log.json")
 RESULTS_DIR = Path("tests/ambiguity/ambiguity_results")
 SNAPSHOT_DIR = Path("tests/ambiguity/ranking_snapshots")
+
+STAGE_LOG_FIELDS = (
+    "inferred_workflow_stage",
+    "matched_workflow_stage",
+    "workflow_stage_confidence",
+    "workflow_stage_source",
+    "workflow_stage_ambiguous",
+    "workflow_stage_mismatch",
+    "inferred_workflow_stages_all",
+)
+
+TRACKING_CANDIDATES = frozenset(
+    {
+        "status_check",
+        "progress_monitoring",
+        "allocation_tracking",
+        "response_tracking",
+        "budget_tracking",
+    }
+)
 
 WORKFLOW_CANDIDATES = frozenset(
     {
@@ -50,6 +74,122 @@ def _previous_log_path(latest: Path) -> Path:
     if not previous:
         raise FileNotFoundError(f"No previous scoring log found before {latest}")
     return previous[-1]
+
+
+def _stage_fields(item: dict[str, Any]) -> dict[str, Any]:
+    return {key: item[key] for key in STAGE_LOG_FIELDS if key in item}
+
+
+def _false_certainty_cases(after_items: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
+    cases: list[dict[str, Any]] = []
+    for title, row in after_items.items():
+        if "workflow_stage_confidence" not in row:
+            continue
+        conf = float(row.get("workflow_stage_confidence") or 0.0)
+        ambiguous = bool(row.get("workflow_stage_ambiguous"))
+        inferred = row.get("inferred_workflow_stage")
+        if conf >= 0.8 and ambiguous:
+            cases.append(
+                {
+                    "title": title,
+                    "kind": "high_confidence_but_ambiguous_flag",
+                    "confidence": conf,
+                    "inferred_workflow_stage": inferred,
+                    "top_candidate": row.get("top_candidate"),
+                }
+            )
+        if conf >= 0.8 and inferred and "현황" in title.replace(" ", "") and not any(
+            token in title for token in ("진행상황", "추진현황", "결과", "중간보고")
+        ):
+            cases.append(
+                {
+                    "title": title,
+                    "kind": "high_confidence_hyeonhwang_without_clear_stage_phrase",
+                    "confidence": conf,
+                    "inferred_workflow_stage": inferred,
+                    "workflow_stage_source": row.get("workflow_stage_source"),
+                    "top_candidate": row.get("top_candidate"),
+                }
+            )
+    return cases
+
+
+def _workflow_stage_experiment_analysis(
+    snapshots: list[dict[str, Any]],
+    after_items: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    reporting = _reporting_pair_snapshots(snapshots)
+    hyeonhwang_rows = [
+        row for title, row in after_items.items() if "현황" in title.replace(" ", "")
+    ]
+    null_stage = sum(1 for row in hyeonhwang_rows if row.get("inferred_workflow_stage") is None)
+    ambiguous_flag = sum(1 for row in hyeonhwang_rows if row.get("workflow_stage_ambiguous"))
+    mismatches = [
+        {
+            "title": title,
+            "inferred": row.get("inferred_workflow_stage"),
+            "top": row.get("top_candidate"),
+            "matched": row.get("matched_workflow_stage"),
+            "confidence": row.get("workflow_stage_confidence"),
+        }
+        for title, row in after_items.items()
+        if row.get("workflow_stage_mismatch")
+    ]
+    tracking_to_reporting = [
+        item
+        for item in snapshots
+        if item["after"]["top_candidate"] in {"document_reporting", "result_reporting"}
+        and item["before"]["top_candidate"] in TRACKING_CANDIDATES
+        and item["changed"]
+    ]
+    submit_share_collapse = [
+        item["title"]
+        for item in snapshots
+        if any(kw in item["title"] for kw in ("제출", "공유", "정리"))
+        and item["after"]["top_candidate"] in {"document_reporting", "result_reporting"}
+        and item["changed"]
+    ]
+    stage_bonus_precision = {"aligned": 0, "misaligned": 0, "not_applicable": 0}
+    for _title, row in after_items.items():
+        inferred = row.get("inferred_workflow_stage")
+        top = row.get("top_candidate")
+        if inferred is None:
+            stage_bonus_precision["not_applicable"] += 1
+            continue
+        if top == "document_reporting" and inferred in {"progress", "interim"}:
+            stage_bonus_precision["aligned"] += 1
+        elif top == "result_reporting" and inferred in {"result", "final"}:
+            stage_bonus_precision["aligned"] += 1
+        elif top in {"document_reporting", "result_reporting"}:
+            stage_bonus_precision["misaligned"] += 1
+        else:
+            stage_bonus_precision["not_applicable"] += 1
+
+    return {
+        **reporting,
+        "hyeonhwang_title_count": len(hyeonhwang_rows),
+        "hyeonhwang_null_inferred_count": null_stage,
+        "hyeonhwang_null_inferred_rate": round(null_stage / len(hyeonhwang_rows), 3)
+        if hyeonhwang_rows
+        else None,
+        "hyeonhwang_ambiguous_flag_count": ambiguous_flag,
+        "workflow_stage_mismatch_cases": mismatches[:20],
+        "workflow_stage_mismatch_count": len(mismatches),
+        "false_certainty_cases": _false_certainty_cases(after_items)[:20],
+        "false_certainty_count": len(_false_certainty_cases(after_items)),
+        "tracking_to_reporting_regressions": [
+            {
+                "title": item["title"],
+                "before": item["before"]["top_candidate"],
+                "after": item["after"]["top_candidate"],
+            }
+            for item in tracking_to_reporting[:15]
+        ],
+        "tracking_to_reporting_count": len(tracking_to_reporting),
+        "submit_share_organize_reporting_flips": submit_share_collapse[:15],
+        "submit_share_organize_reporting_flip_count": len(submit_share_collapse),
+        "stage_top_candidate_alignment": stage_bonus_precision,
+    }
 
 
 def _ranking_rows(item: dict[str, Any]) -> list[dict[str, Any]]:
@@ -305,7 +445,7 @@ def _summarize(snapshots: list[dict[str, Any]], regressions: list[dict[str, Any]
     return {
         "source_logs": {
             "before": "",
-            "after": str(LATEST_LOG),
+            "after": "",
         },
         "movement_metrics": {
             "total_titles": len(snapshots),
@@ -375,15 +515,23 @@ def _summarize(snapshots: list[dict[str, Any]], regressions: list[dict[str, Any]
             "add semantic metadata to legacy candidates still relying on raw token rank",
             "review near-zero gap publication/request overlaps before turning snapshots into hard regression gates",
         ],
-        "workflow_stage_ambiguity_analysis": _reporting_pair_snapshots(snapshots),
+        "workflow_stage_ambiguity_analysis": {},
     }
 
 
-def generate_snapshots(latest_log: Path = LATEST_LOG) -> dict[str, Any]:
-    previous_log = _previous_log_path(latest_log)
-    before_items = {item["title"]: item for item in _load_json(previous_log)}
-    after_items = {item["title"]: item for item in _load_json(latest_log)}
-    titles = sorted(before_items.keys() | after_items.keys())
+def generate_snapshots(
+    after_log: Path = DEFAULT_AFTER_LOG,
+    *,
+    before_log: Path | None = None,
+    titles_filter: set[str] | None = None,
+) -> dict[str, Any]:
+    before_path = before_log or _previous_log_path(after_log)
+    before_items = {item["title"]: item for item in _load_json(before_path)}
+    after_items = {item["title"]: item for item in _load_json(after_log)}
+    if titles_filter is not None:
+        titles = sorted(titles_filter)
+    else:
+        titles = sorted(before_items.keys() | after_items.keys())
 
     snapshots: list[dict[str, Any]] = []
     improvements: list[dict[str, Any]] = []
@@ -416,6 +564,7 @@ def generate_snapshots(latest_log: Path = LATEST_LOG) -> dict[str, Any]:
                 "top_semantic_bonus": _top_semantic_bonus(after),
                 "semantic_bonus_total": _semantic_bonus_total(after),
                 "suppression_applied": _suppression_applied(after),
+                **_stage_fields(after),
             },
             "changed": _top_candidate(before) != _top_candidate(after),
             "change_type": change_type,
@@ -460,7 +609,17 @@ def generate_snapshots(latest_log: Path = LATEST_LOG) -> dict[str, Any]:
         regressions.extend(_regression_risks(snapshot, before, after))
 
     summary = _summarize(snapshots, regressions)
-    summary["source_logs"]["before"] = str(previous_log)
+    summary["source_logs"]["before"] = str(before_path)
+    summary["source_logs"]["after"] = str(after_log)
+    summary["comparison_scope"] = {
+        "before_title_count": len(before_items),
+        "after_title_count": len(after_items),
+        "compared_title_count": len(titles),
+        "intersection_only": titles_filter is not None,
+    }
+    summary["workflow_stage_ambiguity_analysis"] = _workflow_stage_experiment_analysis(
+        snapshots, after_items
+    )
 
     SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
     _write_json(SNAPSHOT_DIR / "before_vs_after_snapshot.json", snapshots)
@@ -471,7 +630,21 @@ def generate_snapshots(latest_log: Path = LATEST_LOG) -> dict[str, Any]:
 
 
 def main() -> None:
-    summary = generate_snapshots()
+    parser = argparse.ArgumentParser(description="Generate before/after ranking snapshots.")
+    parser.add_argument("--after", type=Path, default=DEFAULT_AFTER_LOG)
+    parser.add_argument("--before", type=Path, default=DEFAULT_BEFORE_LOG)
+    parser.add_argument(
+        "--intersection-only",
+        action="store_true",
+        help="Compare only titles present in both logs (fair regression on legacy set).",
+    )
+    args = parser.parse_args()
+    titles_filter = None
+    if args.intersection_only:
+        before_items = {item["title"] for item in _load_json(args.before)}
+        after_items = {item["title"] for item in _load_json(args.after)}
+        titles_filter = before_items & after_items
+    summary = generate_snapshots(args.after, before_log=args.before, titles_filter=titles_filter)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 
