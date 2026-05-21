@@ -1,0 +1,4706 @@
+[
+  {
+    "title": "회의자료 메일 공유",
+    "top_candidate": "mail_sharing",
+    "ambiguity_gap": 0.007,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_sharing",
+        "final_score": 0.507,
+        "ambiguity_gap": 0.007,
+        "why_scored": [
+          "'메일공유' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.007,
+        "why_scored": [
+          "'메일' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "교육안내 발송",
+    "top_candidate": "mail_action",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "결과보고 전달",
+    "top_candidate": "document_reporting",
+    "ambiguity_gap": 0.002,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_reporting",
+        "final_score": 0.534,
+        "ambiguity_gap": 0.002,
+        "why_scored": [
+          "'보고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_review",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.002,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.002,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "강사 명단 공유",
+    "top_candidate": "education_fieldwork",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "education_fieldwork",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'강사' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "행사자료 송부",
+    "top_candidate": "event_preparation",
+    "ambiguity_gap": 0.06,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "event_preparation",
+        "final_score": 0.562,
+        "ambiguity_gap": 0.06,
+        "why_scored": [
+          "'행사' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.06,
+        "why_scored": [
+          "'송부' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "신청서 메일 발송",
+    "top_candidate": "mail_distribution",
+    "ambiguity_gap": 0.007,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_distribution",
+        "final_score": 0.507,
+        "ambiguity_gap": 0.007,
+        "why_scored": [
+          "'메일발송' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.007,
+        "why_scored": [
+          "'메일' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "공문 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'공문' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "보도자료 배포",
+    "top_candidate": "press_distribution",
+    "ambiguity_gap": 0.009,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "press_distribution",
+        "final_score": 0.509,
+        "ambiguity_gap": 0.009,
+        "why_scored": [
+          "'보도자료배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=6 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.009,
+        "why_scored": [
+          "'자료배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "점검자료 전송",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "만족도조사 링크 안내",
+    "top_candidate": "mail_action",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=7 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "운영계획 공유",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "일정표 발송",
+    "top_candidate": "work_calendar_organization",
+    "ambiguity_gap": 0.033,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "work_calendar_organization",
+        "final_score": 0.534,
+        "ambiguity_gap": 0.033,
+        "why_scored": [
+          "'일정' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "spreadsheet_work",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.033,
+        "why_scored": [
+          "'표' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=1 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.033,
+        "why_scored": [
+          "'발송' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "협조문 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "교육자료 배부",
+    "top_candidate": "document_distribution",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'배부' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "결과서 공유",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "안내문 송부",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'송부' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "회의록 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "제출자료 메일 안내",
+    "top_candidate": "mail_action",
+    "ambiguity_gap": 0.066,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_action",
+        "final_score": 0.574,
+        "ambiguity_gap": 0.066,
+        "why_scored": [
+          "'메일' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.508,
+        "ambiguity_gap": 0.066,
+        "why_scored": [
+          "'제출' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "주간업무자료 공유",
+    "top_candidate": "document_sharing",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_sharing",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'자료공유' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "참석자 명단 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "training_session_attendance",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'참석' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "점검결과 공유",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "운영현황 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "교육결과 보고",
+    "top_candidate": "document_reporting",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_reporting",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'보고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "만족도 결과 공유",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "추진현황 제출",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'제출' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "행사결과 전달",
+    "top_candidate": "event_preparation",
+    "ambiguity_gap": 0.033,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "event_preparation",
+        "final_score": 0.565,
+        "ambiguity_gap": 0.033,
+        "why_scored": [
+          "'행사' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_review",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.033,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.033,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "정산결과 보고",
+    "top_candidate": "document_reporting",
+    "ambiguity_gap": 0.054,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_reporting",
+        "final_score": 0.556,
+        "ambiguity_gap": 0.054,
+        "why_scored": [
+          "'보고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "salary_system",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.054,
+        "why_scored": [
+          "'정산' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "참석현황 공유",
+    "top_candidate": "training_session_attendance",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "training_session_attendance",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'참석' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "검토결과 안내",
+    "top_candidate": "mail_action",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "실적자료 제출",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'제출' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "회의결과 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "meeting",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'회의' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "진행상황 보고",
+    "top_candidate": "progress_monitoring",
+    "ambiguity_gap": 0.003,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "progress_monitoring",
+        "final_score": 0.503,
+        "ambiguity_gap": 0.003,
+        "why_scored": [
+          "'진행상황' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_reporting",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.003,
+        "why_scored": [
+          "'보고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "집계결과 공유",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "활동결과 제출",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'제출' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "분석자료 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "추진실적 공유",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "운영결과 안내",
+    "top_candidate": "mail_action",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "검토의견 공유",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "최종결과 보고",
+    "top_candidate": "document_reporting",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_reporting",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'보고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "현황자료 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "강사비 지급 요청",
+    "top_candidate": "education_fieldwork",
+    "ambiguity_gap": 0.004,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "education_fieldwork",
+        "final_score": 0.506,
+        "ambiguity_gap": 0.004,
+        "why_scored": [
+          "'강사' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.004,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "행사계획 승인 요청",
+    "top_candidate": "event_preparation",
+    "ambiguity_gap": 0.019,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "event_preparation",
+        "final_score": 0.521,
+        "ambiguity_gap": 0.019,
+        "why_scored": [
+          "'행사' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "approval_request",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.019,
+        "why_scored": [
+          "'승인요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.019,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "system_work",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.019,
+        "why_scored": [
+          "'승인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "수정사항 검토 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_review",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'검토' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "slide_deck_final_review",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'검토' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "예산 사용 승인 요청",
+    "top_candidate": "approval_request",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "approval_request",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "system_work",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "교육일정 협조 요청",
+    "top_candidate": "work_calendar_organization",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "work_calendar_organization",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'일정' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_request",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'협조요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "공문 결재 요청",
+    "top_candidate": "approval_request",
+    "ambiguity_gap": 0.005,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "approval_request",
+        "final_score": 0.507,
+        "ambiguity_gap": 0.005,
+        "why_scored": [
+          "'결재요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.005,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "보도자료 검토 요청",
+    "top_candidate": "press_distribution",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "press_distribution",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'보도자료' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "document_review",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'검토' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "slide_deck_final_review",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'검토' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "참석 협조 요청",
+    "top_candidate": "document_request",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_request",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'협조요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "training_session_attendance",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'참석' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "결과보고 승인 요청",
+    "top_candidate": "approval_request",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "approval_request",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_reporting",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'보고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "system_work",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "신청내용 확인 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.52,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_review",
+        "final_score": 0.52,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'확인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "slide_deck_final_review",
+        "final_score": 0.52,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'확인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "phone_call",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'확인' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "계획안 수정 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": 0.225,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.725,
+        "ambiguity_gap": 0.225,
+        "why_scored": [
+          "'계획안+수정' matched from pair rule",
+          "pair rule tier placed this row above meaning-only rows",
+          "pair sort_secondary_wp=4 applied",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=6 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "pair_rule_tier",
+          "pair_rule.sort_secondary_wp",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "collaborative_request",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.225,
+        "why_scored": [
+          "'수정요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "자료 제출 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "추가 검토 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_review",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'검토' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "slide_deck_final_review",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'검토' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "회의 참석 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "meeting",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'회의' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "training_session_attendance",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'참석' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "정산 승인 요청",
+    "top_candidate": "approval_request",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "approval_request",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "system_work",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "운영계획 결재 요청",
+    "top_candidate": "approval_request",
+    "ambiguity_gap": 0.005,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "approval_request",
+        "final_score": 0.507,
+        "ambiguity_gap": 0.005,
+        "why_scored": [
+          "'결재요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.005,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "안내문 확인 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": 0.0,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.514,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_review",
+        "final_score": 0.514,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'확인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "slide_deck_final_review",
+        "final_score": 0.514,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'확인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 5,
+        "candidate": "phone_call",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "why_scored": [
+          "'확인' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "일정 조정 요청",
+    "top_candidate": "broadcast_channel_adjust",
+    "ambiguity_gap": 0.029,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "broadcast_channel_adjust",
+        "final_score": 0.531,
+        "ambiguity_gap": 0.029,
+        "why_scored": [
+          "'조정' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "work_calendar_organization",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.029,
+        "why_scored": [
+          "'일정' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "document_edit",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.029,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "게시 승인 요청",
+    "top_candidate": "approval_request",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "approval_request",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "publication_posting",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "system_work",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'승인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "강사 배정 요청",
+    "top_candidate": "education_fieldwork",
+    "ambiguity_gap": 0.004,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "education_fieldwork",
+        "final_score": 0.506,
+        "ambiguity_gap": 0.004,
+        "why_scored": [
+          "'강사' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.004,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "보도자료 게시",
+    "top_candidate": "press_distribution",
+    "ambiguity_gap": 0.003,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "press_distribution",
+        "final_score": 0.503,
+        "ambiguity_gap": 0.003,
+        "why_scored": [
+          "'보도자료' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "publication_posting",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.003,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "공지사항 배포",
+    "top_candidate": "urgent_notice",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "urgent_notice",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_distribution",
+        "final_score": 0.531,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "앱 신규버전 배포",
+    "top_candidate": "app_release",
+    "ambiguity_gap": 0.022,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "app_release",
+        "final_score": 0.522,
+        "ambiguity_gap": 0.022,
+        "why_scored": [
+          "'신규버전배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=1 used as deterministic tie-break",
+          "matched_keyword_length=6 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.022,
+        "why_scored": [
+          "'배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "교육자료 게시",
+    "top_candidate": "publication_posting",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_posting",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "행사안내 공고",
+    "top_candidate": "event_preparation",
+    "ambiguity_gap": 0.032,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "event_preparation",
+        "final_score": 0.565,
+        "ambiguity_gap": 0.032,
+        "why_scored": [
+          "'행사' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "publication_announcement",
+        "final_score": 0.533,
+        "ambiguity_gap": 0.032,
+        "why_scored": [
+          "'공고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "mail_action",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.032,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "업데이트 파일 배포",
+    "top_candidate": "folder_organization",
+    "ambiguity_gap": 0.008,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "folder_organization",
+        "final_score": 0.508,
+        "ambiguity_gap": 0.008,
+        "why_scored": [
+          "'파일' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.008,
+        "why_scored": [
+          "'배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "운영계획 공지",
+    "top_candidate": "urgent_notice",
+    "ambiguity_gap": 0.056,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "urgent_notice",
+        "final_score": 0.556,
+        "ambiguity_gap": 0.056,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.056,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "신청안내 게시",
+    "top_candidate": "publication_posting",
+    "ambiguity_gap": 0.06,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_posting",
+        "final_score": 0.562,
+        "ambiguity_gap": 0.06,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.06,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "결과자료 배포",
+    "top_candidate": "document_distribution",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'자료배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "홍보물 게시",
+    "top_candidate": "publication_posting",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_posting",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "신규서식 배포",
+    "top_candidate": "document_distribution",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "만족도조사 공고",
+    "top_candidate": "publication_announcement",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_announcement",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'공고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "정책자료 게시",
+    "top_candidate": "publication_posting",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_posting",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "앱 업데이트 공지",
+    "top_candidate": "urgent_notice",
+    "ambiguity_gap": 0.006,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "urgent_notice",
+        "final_score": 0.506,
+        "ambiguity_gap": 0.006,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.006,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "행사포스터 배포",
+    "top_candidate": "event_preparation",
+    "ambiguity_gap": 0.064,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "event_preparation",
+        "final_score": 0.564,
+        "ambiguity_gap": 0.064,
+        "why_scored": [
+          "'행사' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.064,
+        "why_scored": [
+          "'배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "공문 게시",
+    "top_candidate": "publication_posting",
+    "ambiguity_gap": 0.004,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_posting",
+        "final_score": 0.506,
+        "ambiguity_gap": 0.004,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.004,
+        "why_scored": [
+          "'공문' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "배너 이미지 게시",
+    "top_candidate": "publication_posting",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_posting",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "프로그램 배포",
+    "top_candidate": "document_distribution",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_distribution",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'배포' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "서비스 점검 공지",
+    "top_candidate": "urgent_notice",
+    "ambiguity_gap": 0.056,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "urgent_notice",
+        "final_score": 0.556,
+        "ambiguity_gap": 0.056,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.056,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "안내자료 게시",
+    "top_candidate": "publication_posting",
+    "ambiguity_gap": 0.06,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "publication_posting",
+        "final_score": 0.562,
+        "ambiguity_gap": 0.06,
+        "why_scored": [
+          "'게시' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.502,
+        "ambiguity_gap": 0.06,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "네이버폼 신청 안내",
+    "top_candidate": "survey_form",
+    "ambiguity_gap": 0.077,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "survey_form",
+        "final_score": 0.577,
+        "ambiguity_gap": 0.077,
+        "why_scored": [
+          "'네이버폼' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.077,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "QR 출석 등록",
+    "top_candidate": "qr_code_scan_auth",
+    "ambiguity_gap": 0.006,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "qr_code_scan_auth",
+        "final_score": 0.506,
+        "ambiguity_gap": 0.006,
+        "why_scored": [
+          "'QR' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "qr_auth",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.006,
+        "why_scored": [
+          "'QR' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "줌 링크 전달",
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_review",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "엑셀 취합 요청",
+    "top_candidate": "spreadsheet_work",
+    "ambiguity_gap": 0.066,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "spreadsheet_work",
+        "final_score": 0.574,
+        "ambiguity_gap": 0.066,
+        "why_scored": [
+          "'엑셀' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.508,
+        "ambiguity_gap": 0.066,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "구글드라이브 공유",
+    "top_candidate": "folder_organization",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "folder_organization",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'드라이브' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "카카오톡 공지 전달",
+    "top_candidate": "messenger_chat",
+    "ambiguity_gap": 0.023,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "messenger_chat",
+        "final_score": 0.524,
+        "ambiguity_gap": 0.023,
+        "why_scored": [
+          "'카카오톡' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_review",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.023,
+        "why_scored": [
+          "'전달' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "urgent_notice",
+        "final_score": 0.501,
+        "ambiguity_gap": 0.023,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.023,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "메일링 리스트 발송",
+    "top_candidate": "mail_distribution",
+    "ambiguity_gap": 0.007,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_distribution",
+        "final_score": 0.507,
+        "ambiguity_gap": 0.007,
+        "why_scored": [
+          "'메일링' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=3 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.007,
+        "why_scored": [
+          "'메일' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "title has interface anchor, so dominance/resolution rank before secondary rank",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "workflow_priority",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "설문폼 수정 요청",
+    "top_candidate": "collaborative_request",
+    "ambiguity_gap": 0.001,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "collaborative_request",
+        "final_score": 0.533,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'수정요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "survey_form",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.001,
+        "why_scored": [
+          "'설문' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "슬랙 채널 안내",
+    "top_candidate": "broadcast_channel_adjust",
+    "ambiguity_gap": 0.064,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "broadcast_channel_adjust",
+        "final_score": 0.564,
+        "ambiguity_gap": 0.064,
+        "why_scored": [
+          "'채널' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.064,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "노션 일정 공유",
+    "top_candidate": "notion_docs_touchup",
+    "ambiguity_gap": 0.027,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "notion_docs_touchup",
+        "final_score": 0.527,
+        "ambiguity_gap": 0.027,
+        "why_scored": [
+          "'노션' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "work_calendar_organization",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.027,
+        "why_scored": [
+          "'일정' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "화상회의 링크 안내",
+    "top_candidate": "meeting",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "meeting",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'회의' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "채팅방 공지 등록",
+    "top_candidate": "room_cleaning",
+    "ambiguity_gap": 0.021,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "room_cleaning",
+        "final_score": 0.541,
+        "ambiguity_gap": 0.021,
+        "why_scored": [
+          "'방' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=1 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "urgent_notice",
+        "final_score": 0.52,
+        "ambiguity_gap": 0.021,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "messenger_chat",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.021,
+        "why_scored": [
+          "'채팅' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.021,
+        "why_scored": [
+          "'공지' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=3 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "시트 입력 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-4 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "파일 업로드 안내",
+    "top_candidate": "folder_organization",
+    "ambiguity_gap": 0.064,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "folder_organization",
+        "final_score": 0.564,
+        "ambiguity_gap": 0.064,
+        "why_scored": [
+          "'파일' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.064,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "캘린더 일정 공유",
+    "top_candidate": "running_appointment",
+    "ambiguity_gap": 0.056,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "running_appointment",
+        "final_score": 0.556,
+        "ambiguity_gap": 0.056,
+        "why_scored": [
+          "'캘린더' matched from visual_candidates meaning",
+          "workflow_priority=3 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=3 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "work_calendar_organization",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.056,
+        "why_scored": [
+          "'캘린더' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "interface_dominance_effective=1 boosted UI/channel relevance",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=3 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "interface_dominance_effective",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "참가폼 제출 요청",
+    "top_candidate": "document_edit",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "링크트리 수정 안내",
+    "top_candidate": "mail_action",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "mail_action",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'안내' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "깃허브 이슈 등록",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "드라이브 폴더 공유",
+    "top_candidate": "folder_organization",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "folder_organization",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'드라이브' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "온라인 신청 접수",
+    "top_candidate": "survey_form",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "survey_form",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "why_scored": [
+          "'접수' matched from visual_candidates meaning",
+          "workflow_priority=1 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=5 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  }
+]
