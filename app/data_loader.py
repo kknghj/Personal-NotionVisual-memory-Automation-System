@@ -108,3 +108,27 @@ def load_pair_rules() -> dict[str, Any]:
     path = pair_rules_path()
     with path.open(encoding="utf-8") as f:
         return json.load(f)
+
+
+def load_feedback_log() -> list[dict[str, Any]]:
+    """Load feedback log array; returns [] if file is missing."""
+    path = feedback_log_path()
+    if not path.is_file():
+        return []
+    with path.open(encoding="utf-8") as f:
+        raw = json.load(f)
+    if not isinstance(raw, list):
+        raise ValueError("data/feedback_log.json must be a JSON array at the root")
+    return raw
+
+
+def append_feedback_log_entry(entry: dict[str, Any]) -> None:
+    """Append one feedback event and rewrite ``data/feedback_log.json``."""
+    path = feedback_log_path()
+    log = load_feedback_log()
+    log.append(entry)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(log, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )

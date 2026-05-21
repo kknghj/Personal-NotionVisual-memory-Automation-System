@@ -10,6 +10,7 @@ from typing import Any
 from app.candidate_row import CandidateRow
 from app.data_loader import load_visual_candidates
 from app.recommender import _pos_key_row, _row_sort_key, rank_visual_candidate_rows
+from app.workflow_stage_observation import attach_workflow_stage_to_log_entry
 from app.workflow_resolution import title_contains_interface_anchor
 
 DEFAULT_TEST_SET = Path("tests/ambiguity/ambiguity_test_set.json")
@@ -263,7 +264,10 @@ def _default_output_path(output_dir: Path, now: datetime) -> Path:
 def generate_log(test_set: Path, output_path: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     titles = _load_titles(test_set)
     candidates = load_visual_candidates()
-    logs = [_title_log(title, candidates) for title in titles]
+    logs = [
+        attach_workflow_stage_to_log_entry(_title_log(title, candidates), candidates)
+        for title in titles
+    ]
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(logs, ensure_ascii=False, indent=2) + "\n",
