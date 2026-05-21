@@ -39,6 +39,7 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
 FIELD_WEIGHTS: dict[str, int] = {
     "interaction_mode": 3,
     "workflow_fit": 2,
+    "workflow_stage": 2,
     "publish_distribute": 2,
     "send_share": 2,
     "request_approval": 2,
@@ -46,6 +47,40 @@ FIELD_WEIGHTS: dict[str, int] = {
     "visibility": 1,
     "tone": 1,
 }
+
+# Longer phrases first so e.g. ``최종결과`` wins over bare ``결과``.
+WORKFLOW_STAGE_TITLE_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("final", ("최종결과보고", "최종결과", "최종보고", "최종안", "종료보고", "마감보고")),
+    ("result", (
+        "결과보고",
+        "결과자료보고",
+        "집계결과보고",
+        "운영결과보고",
+        "정산결과보고",
+        "교육결과보고",
+        "출장결과",
+        "현장결과",
+        "활동결과",
+        "행사결과",
+        "회의결과",
+        "검토결과",
+        "점검결과",
+        "운영결과",
+        "교육결과",
+        "정산결과",
+        "집계결과",
+    )),
+    ("interim", ("중간보고", "중간점검", "중간결과", "중간")),
+    ("progress", (
+        "진행상황",
+        "진행현황",
+        "진행상태",
+        "추진현황",
+        "추진상황",
+        "진행보고",
+        "추진실적",
+    )),
+)
 
 
 def _as_values(value: Any) -> set[str]:
@@ -58,12 +93,28 @@ def _as_values(value: Any) -> set[str]:
     return set()
 
 
+def infer_title_workflow_stages(title: str) -> set[str]:
+    """Infer reporting lifecycle stages from title text.
+
+    ``현황`` alone is intentionally omitted (ambiguous across progress/result/tracking).
+    """
+    canonical = _canonical_title_text(title)
+    stages: set[str] = set()
+    for stage, terms in WORKFLOW_STAGE_TITLE_TERMS:
+        if any(term in canonical for term in terms):
+            stages.add(stage)
+    return stages
+
+
 def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
     canonical = _canonical_title_text(title)
     signals: dict[str, set[str]] = {}
     for field, value, terms in TITLE_SIGNAL_RULES:
         if any(term in canonical for term in terms):
             signals.setdefault(field, set()).add(value)
+    stages = infer_title_workflow_stages(title)
+    if stages:
+        signals["workflow_stage"] = stages
     return signals
 
 
