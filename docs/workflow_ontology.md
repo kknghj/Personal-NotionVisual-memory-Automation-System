@@ -242,9 +242,11 @@ document
 ├─ collaborative      [stage: iterate]             → notion_docs_touchup
 ├─ archive_reference  [stage: maintain]            → binder_document
 ├─ presentation       [stage: review|finalize]     → slide_deck_final_review
-├─ reporting          [stage: report]              → document_reporting
+├─ reporting          [stage: report]              → document_reporting, result_reporting
 ├─ request
 │  ├─ document_request       [stage: request]      → document_request
+│  ├─ review_request         [stage: request]      → review_request
+│  ├─ submission_request     [stage: submit]       → submission_request, document_submission
 │  ├─ verbal_request         [stage: request]      → verbal_request
 │  ├─ mail_request           [stage: request]      → mail_request
 │  ├─ phone_request          [stage: request]      → phone_request
@@ -261,8 +263,8 @@ document
 │  ├─ document_distribution   [stage: distribute]  → document_distribution
 │  └─ mail_distribution       [stage: distribute]  → mail_distribution
 ├─ publication
-│  ├─ posting                 [stage: publish]     → publication_posting
-│  ├─ announcement            [stage: publish]     → publication_announcement
+│  ├─ posting                 [stage: publish]     → publication_posting, public_posting
+│  ├─ announcement            [stage: publish]     → publication_announcement, notice_posting
 │  ├─ bulletin_update         [stage: publish]     → publication_bulletin_update
 │  └─ pinned_notice           [stage: pin]         → publication_pinned_notice
 ├─ sharing

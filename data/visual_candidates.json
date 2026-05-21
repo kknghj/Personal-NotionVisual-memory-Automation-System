@@ -287,6 +287,31 @@
         "text": "보고",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "최종결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정산결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "교육결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -297,11 +322,74 @@
       "초안 팀장님 보고",
       "예질 과장님 보고",
       "시장님 보고자료 수정",
-      "최종안 보고"
+      "최종안 보고",
+      "결과보고 전달",
+      "운영결과 보고",
+      "최종결과 보고"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document"],
+      "workflow_fit": [
+        "document"
+      ],
       "object_type": "document",
+      "interaction_mode": "report_brief",
+      "visibility": "internal",
+      "tone": "formal"
+    }
+  },
+  "result_reporting": {
+    "visual": {
+      "type": "emoji",
+      "value": "🗣️"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "결과자료보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "집계결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "최종결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정산결과보고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "결과 보고",
+      "보고라인"
+    ],
+    "usage_context": [
+      "결과보고 전달",
+      "집계결과 보고",
+      "정산결과 보고"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document",
+        "tracking"
+      ],
+      "object_type": "result_document",
       "interaction_mode": "report_brief",
       "visibility": "internal",
       "tone": "formal"
@@ -343,6 +431,16 @@
         "text": "요청서작성",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "지급요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "강사비지급요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -351,12 +449,175 @@
     ],
     "usage_context": [
       "자료요청 공문",
-      "협조요청서 작성"
+      "협조요청서 작성",
+      "강사비 지급 요청",
+      "지급 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document"],
+      "workflow_fit": [
+        "document"
+      ],
       "object_type": "document",
       "interaction_mode": "request_delegate",
+      "visibility": "internal",
+      "tone": "formal",
+      "request_approval": "action_request"
+    }
+  },
+  "review_request": {
+    "visual": {
+      "type": "emoji",
+      "value": "📄"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "검토요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "확인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수정사항검토요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "보도자료검토요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "안내문확인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "신청내용확인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "검토 요청",
+      "확인 요청"
+    ],
+    "usage_context": [
+      "수정사항 검토 요청",
+      "보도자료 검토 요청",
+      "안내문 확인 요청"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "review_request",
+      "request_approval": "review_request",
+      "visibility": "internal",
+      "tone": "formal"
+    }
+  },
+  "submission_request": {
+    "visual": {
+      "type": "emoji",
+      "value": "📄"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "제출요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료제출요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "서류제출요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "참가폼제출요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "제출 요청",
+      "자료 제출 요청"
+    ],
+    "usage_context": [
+      "자료 제출 요청",
+      "참가폼 제출 요청"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "submission_request",
+      "request_approval": "submission_request",
+      "visibility": "internal",
+      "tone": "formal"
+    }
+  },
+  "document_submission": {
+    "visual": {
+      "type": "emoji",
+      "value": "📄"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "자료제출",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "실적자료제출",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "추진현황제출",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "활동결과제출",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "참가폼제출",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "제출 문서",
+      "제출함"
+    ],
+    "usage_context": [
+      "실적자료 제출",
+      "추진현황 제출",
+      "활동결과 제출"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "submission_request",
+      "request_approval": "submission_request",
       "visibility": "internal",
       "tone": "formal"
     }
@@ -393,7 +654,9 @@
       "구두 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication"],
+      "workflow_fit": [
+        "communication"
+      ],
       "object_type": "message",
       "interaction_mode": "request_delegate",
       "visibility": "internal",
@@ -432,7 +695,9 @@
       "회신 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication"],
+      "workflow_fit": [
+        "communication"
+      ],
       "object_type": "message",
       "interaction_mode": "request_delegate",
       "visibility": "internal",
@@ -466,7 +731,9 @@
       "통화 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication"],
+      "workflow_fit": [
+        "communication"
+      ],
       "object_type": "message",
       "interaction_mode": "request_delegate",
       "visibility": "internal",
@@ -510,7 +777,9 @@
       "업무 부탁"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document"],
+      "workflow_fit": [
+        "document"
+      ],
       "object_type": "document",
       "interaction_mode": "request_delegate",
       "visibility": "internal",
@@ -543,6 +812,31 @@
         "text": "상신요청",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "게시승인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "게시승인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "행사계획승인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "예산사용승인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정산승인요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -551,14 +845,20 @@
     ],
     "usage_context": [
       "결재 요청",
-      "결재 받기"
+      "결재 받기",
+      "게시 승인 요청",
+      "행사계획 승인 요청",
+      "정산 승인 요청"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document"],
+      "workflow_fit": [
+        "document"
+      ],
       "object_type": "document",
-      "interaction_mode": "approve_signoff",
+      "interaction_mode": "request_approval",
       "visibility": "internal",
-      "tone": "formal"
+      "tone": "formal",
+      "request_approval": "approval_request"
     }
   },
   "approval_review": {
@@ -694,11 +994,15 @@
       "주간보도자료 배포"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice", "document"],
+      "workflow_fit": [
+        "broadcast_notice",
+        "document"
+      ],
       "object_type": "document",
       "interaction_mode": "publish_distribute",
       "visibility": "public",
-      "tone": "formal"
+      "tone": "formal",
+      "publish_distribute": "distribution"
     }
   },
   "booklet_distribution": {
@@ -728,11 +1032,14 @@
       "책자 배부"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document"],
+      "workflow_fit": [
+        "document"
+      ],
       "object_type": "document",
       "interaction_mode": "publish_distribute",
       "visibility": "internal",
-      "tone": "neutral"
+      "tone": "neutral",
+      "publish_distribute": "distribution"
     }
   },
   "app_release": {
@@ -772,11 +1079,14 @@
       "앱 신규 버전 배포"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["engineering"],
+      "workflow_fit": [
+        "engineering"
+      ],
       "object_type": "code",
       "interaction_mode": "publish_distribute",
       "visibility": "public",
-      "tone": "neutral"
+      "tone": "neutral",
+      "publish_distribute": "distribution"
     }
   },
   "document_distribution": {
@@ -810,6 +1120,46 @@
         "text": "배부",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "자료송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료전송",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "문서송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "문서전송",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "점검자료전송",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "점검자료송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "안내자료배포",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "결과자료배포",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -818,14 +1168,20 @@
     ],
     "usage_context": [
       "일반 문서 배포",
-      "자료 배부"
+      "자료 배부",
+      "점검자료 전송",
+      "안내자료 배포",
+      "결과자료 배포"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document"],
+      "workflow_fit": [
+        "document"
+      ],
       "object_type": "document",
       "interaction_mode": "publish_distribute",
       "visibility": "internal",
-      "tone": "formal"
+      "tone": "formal",
+      "publish_distribute": "distribution"
     }
   },
   "mail_distribution": {
@@ -854,6 +1210,31 @@
         "text": "메일링",
         "workflow_resolution": 3,
         "interface_dominance": 1
+      },
+      {
+        "text": "메일송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "메일전송",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "자료메일발송",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "안내메일발송",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "메일링리스트발송",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
       }
     ],
     "interface_memory": [
@@ -862,14 +1243,20 @@
     ],
     "usage_context": [
       "메일 배포",
-      "자료 메일 발송"
+      "자료 메일 발송",
+      "안내메일 발송",
+      "메일링 리스트 발송"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice"],
+      "workflow_fit": [
+        "broadcast_notice",
+        "communication"
+      ],
       "object_type": "message",
       "interaction_mode": "publish_distribute",
       "visibility": "internal",
-      "tone": "formal"
+      "tone": "formal",
+      "publish_distribute": "distribution"
     }
   },
   "publication_posting": {
@@ -898,6 +1285,31 @@
         "text": "노출",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "공지게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "안내게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공문게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정책자료게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -906,12 +1318,73 @@
     ],
     "usage_context": [
       "공지 게시",
-      "자료 공개 게시"
+      "자료 공개 게시",
+      "공문 게시",
+      "정책자료 게시"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice", "document"],
+      "workflow_fit": [
+        "broadcast_notice",
+        "document"
+      ],
       "object_type": "notice",
-      "interaction_mode": "publish_distribute",
+      "interaction_mode": "publish_post",
+      "visibility": "public",
+      "tone": "formal",
+      "publish_distribute": "posting"
+    }
+  },
+  "public_posting": {
+    "visual": {
+      "type": "emoji",
+      "value": "📌"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "공개게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료공개게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정책자료게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "홍보물게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "배너이미지게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "공개 게시",
+      "대외 노출"
+    ],
+    "usage_context": [
+      "정책자료 게시",
+      "홍보물 게시",
+      "배너 이미지 게시"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "web_publication",
+        "broadcast_notice",
+        "document"
+      ],
+      "object_type": "notice",
+      "interaction_mode": "publish_post",
+      "publish_distribute": "posting",
       "visibility": "public",
       "tone": "formal"
     }
@@ -937,6 +1410,21 @@
         "text": "공고",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "공지사항공고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "행사안내공고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "만족도조사공고",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -948,9 +1436,74 @@
       "공지 게시"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice", "document"],
+      "workflow_fit": [
+        "broadcast_notice",
+        "document"
+      ],
       "object_type": "notice",
-      "interaction_mode": "publish_distribute",
+      "interaction_mode": "publish_post",
+      "visibility": "public",
+      "tone": "formal",
+      "publish_distribute": "posting"
+    }
+  },
+  "notice_posting": {
+    "visual": {
+      "type": "emoji",
+      "value": "📌"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "공지사항게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "안내문게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "서비스점검공지",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영계획공지",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공지등록",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "채팅방공지등록",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "공지 게시",
+      "공지사항"
+    ],
+    "usage_context": [
+      "공지사항 게시",
+      "서비스 점검 공지",
+      "운영계획 공지",
+      "채팅방 공지 등록",
+      "공지 등록"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "broadcast_notice",
+        "document"
+      ],
+      "object_type": "notice",
+      "interaction_mode": "publish_post",
+      "publish_distribute": "posting",
       "visibility": "public",
       "tone": "formal"
     }
@@ -987,7 +1540,11 @@
       "게시판 업데이트"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["web_publication", "broadcast_notice", "document"],
+      "workflow_fit": [
+        "web_publication",
+        "broadcast_notice",
+        "document"
+      ],
       "object_type": "web_content",
       "interaction_mode": "publish_distribute",
       "visibility": "public",
@@ -1026,7 +1583,11 @@
       "공지 핀고정"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["broadcast_notice", "web_publication", "document"],
+      "workflow_fit": [
+        "broadcast_notice",
+        "web_publication",
+        "document"
+      ],
       "object_type": "notice",
       "interaction_mode": "publish_distribute",
       "visibility": "public",
@@ -1049,6 +1610,21 @@
         "text": "메일로공유",
         "workflow_resolution": 3,
         "interface_dominance": 1
+      },
+      {
+        "text": "회의자료메일공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "자료메일공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "결과메일공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
       }
     ],
     "interface_memory": [
@@ -1056,14 +1632,20 @@
       "공유 수신자"
     ],
     "usage_context": [
-      "메일 공유"
+      "메일 공유",
+      "회의자료 메일 공유",
+      "자료 메일 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication"],
+      "workflow_fit": [
+        "communication",
+        "document"
+      ],
       "object_type": "message",
       "interaction_mode": "send_share",
       "visibility": "internal",
-      "tone": "neutral"
+      "tone": "neutral",
+      "send_share": "mail"
     }
   },
   "credential_sharing": {
@@ -1103,7 +1685,9 @@
       "비밀번호 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["system_admin"],
+      "workflow_fit": [
+        "system_admin"
+      ],
       "object_type": "credential",
       "interaction_mode": "send_share",
       "visibility": "internal",
@@ -1142,7 +1726,9 @@
       "내용 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["communication"],
+      "workflow_fit": [
+        "communication"
+      ],
       "object_type": "message",
       "interaction_mode": "send_share",
       "visibility": "internal",
@@ -1170,6 +1756,36 @@
         "text": "파일공유",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "운영계획공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "결과서공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "집계결과공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "점검결과공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "추진실적공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현황자료공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -1178,14 +1794,22 @@
     ],
     "usage_context": [
       "문서 공유",
-      "자료 공유"
+      "자료 공유",
+      "운영계획 공유",
+      "결과서 공유",
+      "집계결과 공유",
+      "추진실적 공유"
     ],
     "semantic_metadata": {
-      "workflow_fit": ["document", "digital_storage"],
+      "workflow_fit": [
+        "document",
+        "digital_storage"
+      ],
       "object_type": "document",
       "interaction_mode": "send_share",
       "visibility": "internal",
-      "tone": "neutral"
+      "tone": "neutral",
+      "send_share": "document"
     }
   },
   "status_check": {
