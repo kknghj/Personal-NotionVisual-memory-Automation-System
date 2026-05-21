@@ -244,19 +244,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [
-      "result",
-      "final"
-    ],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:결과보고",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -986,15 +973,7 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": null,
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.0,
-    "workflow_stage_source": "",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": []
+    ]
   },
   {
     "title": "안내문 송부",
@@ -1337,16 +1316,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:점검결과",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -1401,15 +1370,7 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": null,
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.2,
-    "workflow_stage_source": "contextual:운영현황",
-    "workflow_stage_ambiguous": true,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": []
+    ]
   },
   {
     "title": "교육결과 보고",
@@ -1496,19 +1457,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [
-      "result",
-      "final"
-    ],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:교육결과보고",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -1530,15 +1478,7 @@
         ],
         "matched_rules": []
       }
-    ],
-    "inferred_workflow_stage": null,
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.0,
-    "workflow_stage_source": "",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": []
+    ]
   },
   {
     "title": "추진현황 제출",
@@ -1598,16 +1538,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "progress",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:추진현황",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "progress"
     ]
   },
   {
@@ -1687,16 +1617,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:행사결과",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -1807,19 +1727,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [
-      "result",
-      "final"
-    ],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:정산결과보고",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -1851,15 +1758,7 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": null,
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.2,
-    "workflow_stage_source": "ambiguous:현황",
-    "workflow_stage_ambiguous": true,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": []
+    ]
   },
   {
     "title": "검토결과 안내",
@@ -1892,16 +1791,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:검토결과",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -2048,16 +1937,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:회의결과",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -2130,19 +2009,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "progress",
-    "matched_workflow_stage": [
-      "progress",
-      "interim"
-    ],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:진행상황",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "progress"
     ]
   },
   {
@@ -2189,16 +2055,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:집계결과",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -2262,16 +2118,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:활동결과",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -2369,16 +2215,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "progress",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:추진실적",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "progress"
     ]
   },
   {
@@ -2412,16 +2248,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:운영결과",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -2530,20 +2356,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "final",
-    "matched_workflow_stage": [
-      "result",
-      "final"
-    ],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.75,
-    "workflow_stage_source": "keyword:최종결과보고",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "final",
-      "result"
     ]
   },
   {
@@ -2598,15 +2410,7 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": null,
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.2,
-    "workflow_stage_source": "ambiguous:현황",
-    "workflow_stage_ambiguous": true,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": []
+    ]
   },
   {
     "title": "강사비 지급 요청",
@@ -3598,16 +3402,6 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": "result",
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.85,
-    "workflow_stage_source": "keyword:결과보고",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": [
-      "result"
     ]
   },
   {
@@ -5363,15 +5157,7 @@
           "rank_tiebreak.matched_keyword_length"
         ]
       }
-    ],
-    "inferred_workflow_stage": null,
-    "matched_workflow_stage": [],
-    "user_confirmed_workflow_stage": "",
-    "workflow_stage_confidence": 0.0,
-    "workflow_stage_source": "",
-    "workflow_stage_ambiguous": false,
-    "workflow_stage_mismatch": false,
-    "inferred_workflow_stages_all": []
+    ]
   },
   {
     "title": "홍보물 게시",
