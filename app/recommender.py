@@ -128,10 +128,46 @@ def _pick_best_meaning_for_candidate(
     return best
 
 
-def find_best_visual_candidate_match(
+def _pos_key_row(r: CandidateRow) -> int:
+    if (
+        r.candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS
+        and r.interface_dominance_effective == 0
+        and r.keyword_workflow_resolution <= 1
+    ):
+        return -r.match_position_in_title
+    return r.match_position_in_title
+
+
+def _row_sort_key(
+    r: CandidateRow,
+    title_has_ui: bool,
+) -> tuple[int, int, int, int, int, int, str]:
+    """P6 key; UI titles prioritize interface signals before anchor strength."""
+    if title_has_ui:
+        return (
+            -r.rule_tier,
+            -r.interface_dominance_effective,
+            -r.keyword_workflow_resolution,
+            -r.sort_secondary_wp,
+            _pos_key_row(r),
+            -r.matched_keyword_length,
+            r.candidate_id,
+        )
+    return (
+        -r.rule_tier,
+        -r.sort_secondary_wp,
+        -r.interface_dominance_effective,
+        -r.keyword_workflow_resolution,
+        _pos_key_row(r),
+        -r.matched_keyword_length,
+        r.candidate_id,
+    )
+
+
+def rank_visual_candidate_rows(
     title: str,
     candidates: dict[str, Any],
-) -> Optional[BestVisualCandidateMatch]:
+) -> list[CandidateRow]:
     """
     P6 sort (see docs/ARCHITECTURE.md §8.3): ``rule_tier`` first, then branch on UI anchor.
 
@@ -198,41 +234,18 @@ def find_best_visual_candidate_match(
             )
         )
 
+    rows.sort(key=lambda r: _row_sort_key(r, title_has_ui))
+    return rows
+
+
+def find_best_visual_candidate_match(
+    title: str,
+    candidates: dict[str, Any],
+) -> Optional[BestVisualCandidateMatch]:
+    """Return the top P6-ranked visual candidate for ``title``."""
+    rows = rank_visual_candidate_rows(title, candidates)
     if not rows:
         return None
-
-    def _pos_key_row(r: CandidateRow) -> int:
-        if (
-            r.candidate_id in DOCUMENT_WORKFLOW_LOCAL_COMPARE_IDS
-            and r.interface_dominance_effective == 0
-            and r.keyword_workflow_resolution <= 1
-        ):
-            return -r.match_position_in_title
-        return r.match_position_in_title
-
-    def _row_sort_key(r: CandidateRow) -> tuple[int, int, int, int, int, int, str]:
-        """P6 key; UI title reorders dominance/workflow_resolution vs ``sort_secondary_wp`` (see module docstring)."""
-        if title_has_ui:
-            return (
-                -r.rule_tier,
-                -r.interface_dominance_effective,
-                -r.keyword_workflow_resolution,
-                -r.sort_secondary_wp,
-                _pos_key_row(r),
-                -r.matched_keyword_length,
-                r.candidate_id,
-            )
-        return (
-            -r.rule_tier,
-            -r.sort_secondary_wp,
-            -r.interface_dominance_effective,
-            -r.keyword_workflow_resolution,
-            _pos_key_row(r),
-            -r.matched_keyword_length,
-            r.candidate_id,
-        )
-
-    rows.sort(key=_row_sort_key)
     best = rows[0]
     wp_out_raw = best.data.get("workflow_priority", 0)
     try:
