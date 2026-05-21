@@ -49,6 +49,14 @@ FIELD_WEIGHTS: dict[str, int] = {
 }
 
 # Longer phrases first so e.g. ``최종결과`` wins over bare ``결과``.
+WORKFLOW_STAGE_AMBIGUOUS_TERMS: frozenset[str] = frozenset({"현황"})
+WORKFLOW_STAGE_CONTEXTUAL_TERMS: tuple[tuple[str, str], ...] = (
+    ("contextual:운영현황", "운영현황"),
+    ("contextual:신청현황", "신청현황"),
+    ("contextual:배정현황", "배정현황"),
+)
+WORKFLOW_STAGE_PRIMARY_ORDER: tuple[str, ...] = ("final", "result", "interim", "progress")
+
 WORKFLOW_STAGE_TITLE_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("final", ("최종결과보고", "최종결과", "최종보고", "최종안", "종료보고", "마감보고")),
     ("result", (
@@ -93,17 +101,79 @@ def _as_values(value: Any) -> set[str]:
     return set()
 
 
+def _workflow_stage_term_hits(canonical: str) -> list[tuple[str, str, int]]:
+    """Return (stage, matched_term, term_length) for each rule hit."""
+    hits: list[tuple[str, str, int]] = []
+    for stage, terms in WORKFLOW_STAGE_TITLE_TERMS:
+        for term in terms:
+            if term and term in canonical:
+                hits.append((stage, term, len(term)))
+    return hits
+
+
 def infer_title_workflow_stages(title: str) -> set[str]:
     """Infer reporting lifecycle stages from title text.
 
     ``현황`` alone is intentionally omitted (ambiguous across progress/result/tracking).
     """
+    return {stage for stage, _term, _ln in _workflow_stage_term_hits(_canonical_title_text(title))}
+
+
+def _pick_primary_workflow_stage(stages: set[str]) -> str | None:
+    for stage in WORKFLOW_STAGE_PRIMARY_ORDER:
+        if stage in stages:
+            return stage
+    return None
+
+
+def infer_workflow_stage_detail(title: str) -> dict[str, Any]:
+    """Lightweight stage inference for feedback_log / calibration (not a hard rule)."""
     canonical = _canonical_title_text(title)
-    stages: set[str] = set()
-    for stage, terms in WORKFLOW_STAGE_TITLE_TERMS:
-        if any(term in canonical for term in terms):
-            stages.add(stage)
-    return stages
+    hits = _workflow_stage_term_hits(canonical)
+    stages = {stage for stage, _term, _ln in hits}
+
+    ambiguous_token: str | None = None
+    if not stages:
+        for token in WORKFLOW_STAGE_AMBIGUOUS_TERMS:
+            if token in canonical:
+                ambiguous_token = token
+                break
+
+    if ambiguous_token and not stages:
+        contextual_source = ""
+        for source, phrase in WORKFLOW_STAGE_CONTEXTUAL_TERMS:
+            if phrase in canonical:
+                contextual_source = source
+                break
+        return {
+            "inferred_workflow_stage": None,
+            "inferred_workflow_stages_all": [],
+            "workflow_stage_confidence": 0.2,
+            "workflow_stage_source": contextual_source or f"ambiguous:{ambiguous_token}",
+            "workflow_stage_ambiguous": True,
+        }
+
+    if not stages:
+        return {
+            "inferred_workflow_stage": None,
+            "inferred_workflow_stages_all": [],
+            "workflow_stage_confidence": 0.0,
+            "workflow_stage_source": "",
+            "workflow_stage_ambiguous": False,
+        }
+
+    best_hit = max(hits, key=lambda item: item[2])
+    _stage, best_term, best_len = best_hit
+    confidence = 0.85 if best_len >= 4 else 0.65
+    if len(stages) > 1:
+        confidence = min(confidence, 0.75)
+    return {
+        "inferred_workflow_stage": _pick_primary_workflow_stage(stages),
+        "inferred_workflow_stages_all": sorted(stages),
+        "workflow_stage_confidence": confidence,
+        "workflow_stage_source": f"keyword:{best_term}",
+        "workflow_stage_ambiguous": False,
+    }
 
 
 def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
