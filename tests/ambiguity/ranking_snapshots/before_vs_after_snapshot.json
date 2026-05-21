@@ -1,0 +1,5348 @@
+[
+  {
+    "title": "QR 출석 등록",
+    "before": {
+      "top_candidate": "qr_code_scan_auth",
+      "ambiguity_gap": 0.006,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "qr_code_scan_auth",
+        "qr_auth"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "qr_code_scan_auth",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "qr_code_scan_auth",
+        "qr_auth"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "강사 명단 공유",
+    "before": {
+      "top_candidate": "education_fieldwork",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "education_fieldwork"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "education_fieldwork",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "education_fieldwork"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "강사 배정 요청",
+    "before": {
+      "top_candidate": "education_fieldwork",
+      "ambiguity_gap": 0.004,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "education_fieldwork",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.017,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_edit",
+        "education_fieldwork"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "강사비 지급 요청",
+    "before": {
+      "top_candidate": "education_fieldwork",
+      "ambiguity_gap": 0.004,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "education_fieldwork",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_request",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_request",
+        "document_edit",
+        "education_fieldwork"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_request"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "검토결과 안내",
+    "before": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "검토의견 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "게시 승인 요청",
+    "before": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "approval_request",
+        "publication_posting",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "approval_request",
+        "publication_posting",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 20,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 20
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "결과보고 승인 요청",
+    "before": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "approval_request",
+        "document_reporting",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.014,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "approval_request",
+        "document_reporting",
+        "result_reporting",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 25,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 25
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "결과보고 전달",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.002,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_reporting",
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "document_reporting",
+        "result_reporting",
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 14,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 7,
+      "total_delta": 14
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "결과서 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_sharing"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "결과자료 배포",
+    "before": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 8
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "계획안 수정 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.225,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_edit",
+        "collaborative_request"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.112,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_edit",
+        "collaborative_request"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 6,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 6
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "공문 게시",
+    "before": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": 0.004,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "publication_posting",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "publication_posting",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "공문 결재 요청",
+    "before": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.005,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "공문 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_review",
+        "document_edit",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_review",
+        "document_edit",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "공지사항 배포",
+    "before": {
+      "top_candidate": "urgent_notice",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "urgent_notice",
+        "document_distribution",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.031,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_distribution",
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "교육결과 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "result_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 14,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 7,
+      "total_delta": 14
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "교육안내 발송",
+    "before": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "교육일정 협조 요청",
+    "before": {
+      "top_candidate": "work_calendar_organization",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "work_calendar_organization",
+        "document_request",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_request",
+      "ambiguity_gap": 0.031,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_request",
+        "work_calendar_organization",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "교육자료 게시",
+    "before": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "교육자료 배부",
+    "before": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 8
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "구글드라이브 공유",
+    "before": {
+      "top_candidate": "folder_organization",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "folder_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "folder_organization",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "folder_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "깃허브 이슈 등록",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "네이버폼 신청 안내",
+    "before": {
+      "top_candidate": "survey_form",
+      "ambiguity_gap": 0.077,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "survey_form",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "survey_form",
+      "ambiguity_gap": 0.076,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "survey_form",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "노션 일정 공유",
+    "before": {
+      "top_candidate": "notion_docs_touchup",
+      "ambiguity_gap": 0.027,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "notion_docs_touchup",
+        "work_calendar_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "notion_docs_touchup",
+      "ambiguity_gap": 0.008,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "notion_docs_touchup",
+        "work_calendar_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "드라이브 폴더 공유",
+    "before": {
+      "top_candidate": "folder_organization",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "folder_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "folder_organization",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "folder_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "링크트리 수정 안내",
+    "before": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "만족도 결과 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "만족도조사 공고",
+    "before": {
+      "top_candidate": "publication_announcement",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "publication_announcement"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "publication_announcement",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "publication_announcement"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "만족도조사 링크 안내",
+    "before": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "메일링 리스트 발송",
+    "before": {
+      "top_candidate": "mail_distribution",
+      "ambiguity_gap": 0.007,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_distribution",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_distribution",
+      "ambiguity_gap": 0.007,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_distribution",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 8
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "배너 이미지 게시",
+    "before": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "public_posting",
+      "ambiguity_gap": 0.002,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "public_posting",
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 20,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "public_posting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 20
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "보도자료 검토 요청",
+    "before": {
+      "top_candidate": "press_distribution",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "press_distribution",
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "review_request",
+      "ambiguity_gap": 0.014,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "review_request",
+        "press_distribution",
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 11,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "review_request"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 11
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "보도자료 게시",
+    "before": {
+      "top_candidate": "press_distribution",
+      "ambiguity_gap": 0.003,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "press_distribution",
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "publication_posting",
+        "press_distribution"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 15,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 15
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "보도자료 배포",
+    "before": {
+      "top_candidate": "press_distribution",
+      "ambiguity_gap": 0.009,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "press_distribution",
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "press_distribution",
+      "ambiguity_gap": 0.002,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "press_distribution",
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 16,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 16
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "분석자료 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "서비스 점검 공지",
+    "before": {
+      "top_candidate": "urgent_notice",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "notice_posting",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "notice_posting",
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "notice_posting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 3,
+      "total_delta": 3
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "설문폼 수정 요청",
+    "before": {
+      "top_candidate": "collaborative_request",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "collaborative_request",
+        "document_edit",
+        "survey_form"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "collaborative_request",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "collaborative_request",
+        "document_edit",
+        "survey_form"
+      ],
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 3,
+      "total_delta": 3
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "수정사항 검토 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "review_request",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "review_request",
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "review_request"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "슬랙 채널 안내",
+    "before": {
+      "top_candidate": "broadcast_channel_adjust",
+      "ambiguity_gap": 0.064,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "broadcast_channel_adjust",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "broadcast_channel_adjust",
+      "ambiguity_gap": 0.022,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "broadcast_channel_adjust",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "시트 입력 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "신규서식 배포",
+    "before": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "신청내용 확인 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "review_request",
+      "ambiguity_gap": 0.014,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "review_request",
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "review_request"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "신청서 메일 발송",
+    "before": {
+      "top_candidate": "mail_distribution",
+      "ambiguity_gap": 0.007,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_distribution",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_distribution",
+      "ambiguity_gap": 0.007,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_distribution",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 8
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "신청안내 게시",
+    "before": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": 0.06,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "publication_posting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": 0.077,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "publication_posting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "실적자료 제출",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_submission",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_submission"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 8
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "안내문 송부",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_edit",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.019,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_edit",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "안내문 확인 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review",
+        "mail_action",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "review_request",
+      "ambiguity_gap": 0.011,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "review_request",
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [
+        "review_request"
+      ],
+      "exited_top5": [
+        "mail_action"
+      ]
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 8
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "안내자료 게시",
+    "before": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": 0.06,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "publication_posting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": 0.077,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "publication_posting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "앱 신규버전 배포",
+    "before": {
+      "top_candidate": "app_release",
+      "ambiguity_gap": 0.022,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "app_release",
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "app_release",
+      "ambiguity_gap": 0.019,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "app_release",
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "앱 업데이트 공지",
+    "before": {
+      "top_candidate": "urgent_notice",
+      "ambiguity_gap": 0.006,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "urgent_notice",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "업데이트 파일 배포",
+    "before": {
+      "top_candidate": "folder_organization",
+      "ambiguity_gap": 0.008,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "folder_organization",
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.054,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_distribution",
+        "folder_organization"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "엑셀 취합 요청",
+    "before": {
+      "top_candidate": "spreadsheet_work",
+      "ambiguity_gap": 0.066,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "spreadsheet_work",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "spreadsheet_work",
+      "ambiguity_gap": 0.073,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "spreadsheet_work",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "예산 사용 승인 요청",
+    "before": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "온라인 신청 접수",
+    "before": {
+      "top_candidate": "survey_form",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "survey_form"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "survey_form",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "survey_form"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "운영결과 안내",
+    "before": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "운영계획 결재 요청",
+    "before": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.005,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "운영계획 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_sharing"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "운영계획 공지",
+    "before": {
+      "top_candidate": "urgent_notice",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "notice_posting",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "notice_posting",
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "notice_posting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 3,
+      "total_delta": 3
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "운영현황 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "일정 조정 요청",
+    "before": {
+      "top_candidate": "broadcast_channel_adjust",
+      "ambiguity_gap": 0.029,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "broadcast_channel_adjust",
+        "work_calendar_organization",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "work_calendar_organization",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "work_calendar_organization",
+        "broadcast_channel_adjust",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "ranking_shift",
+    "change_labels": [
+      "ranking_shift"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate changed without a clear semantic improvement signal"
+    ]
+  },
+  {
+    "title": "일정표 발송",
+    "before": {
+      "top_candidate": "work_calendar_organization",
+      "ambiguity_gap": 0.033,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "work_calendar_organization",
+        "spreadsheet_work",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "work_calendar_organization",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "work_calendar_organization",
+        "spreadsheet_work",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "자료 제출 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "submission_request",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "submission_request",
+        "document_submission",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 16,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 2,
+      "entered_top5": [
+        "document_submission",
+        "submission_request"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 16
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "점검결과 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_sharing"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 7,
+      "total_delta": 7
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "점검자료 전송",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_distribution"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 9,
+      "total_delta": 9
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "정산 승인 요청",
+    "before": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "정산결과 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.054,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "salary_system"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_reporting",
+        "result_reporting",
+        "salary_system"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 14,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 7,
+      "total_delta": 14
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "정책자료 게시",
+    "before": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "public_posting",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "public_posting",
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 20,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "public_posting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 20
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "제출자료 메일 안내",
+    "before": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.066,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_action",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.073,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_action",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "주간업무자료 공유",
+    "before": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "줌 링크 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "진행상황 보고",
+    "before": {
+      "top_candidate": "progress_monitoring",
+      "ambiguity_gap": 0.003,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "progress_monitoring",
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "progress_monitoring"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 7,
+      "total_delta": 7
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "집계결과 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_sharing"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 7,
+      "total_delta": 7
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "참가폼 제출 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "submission_request",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "submission_request",
+        "document_submission",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 2,
+      "entered_top5": [
+        "document_submission",
+        "submission_request"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "참석 협조 요청",
+    "before": {
+      "top_candidate": "document_request",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_request",
+        "document_edit",
+        "training_session_attendance"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_request",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_request",
+        "document_edit",
+        "training_session_attendance"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "참석자 명단 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_review",
+        "training_session_attendance",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_review",
+        "training_session_attendance",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "참석현황 공유",
+    "before": {
+      "top_candidate": "training_session_attendance",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "training_session_attendance"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "training_session_attendance",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "training_session_attendance"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "채팅방 공지 등록",
+    "before": {
+      "top_candidate": "room_cleaning",
+      "ambiguity_gap": 0.021,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "room_cleaning",
+        "urgent_notice",
+        "messenger_chat",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "notice_posting",
+      "ambiguity_gap": 0.014,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "notice_posting",
+        "urgent_notice",
+        "messenger_chat",
+        "mail_action",
+        "room_cleaning"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction",
+      "semantic_improvement",
+      "interface_anchor_recovery",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "notice_posting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 8,
+      "total_delta": 8
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced",
+      "workflow semantic candidate won or gained stronger evidence",
+      "interface/channel anchor affected ranking movement",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "최종결과 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "result_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 14,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 7,
+      "total_delta": 14
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "추가 검토 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "review_request",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "review_request",
+        "document_edit",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "review_request"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "추진실적 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_sharing"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "추진현황 제출",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_submission",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_submission"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 3,
+      "total_delta": 3
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "카카오톡 공지 전달",
+    "before": {
+      "top_candidate": "messenger_chat",
+      "ambiguity_gap": 0.023,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "messenger_chat",
+        "document_review",
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "messenger_chat",
+      "ambiguity_gap": 0.024,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "messenger_chat",
+        "document_review",
+        "urgent_notice",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "캘린더 일정 공유",
+    "before": {
+      "top_candidate": "running_appointment",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "running_appointment",
+        "work_calendar_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "running_appointment",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "running_appointment",
+        "work_calendar_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "파일 업로드 안내",
+    "before": {
+      "top_candidate": "folder_organization",
+      "ambiguity_gap": 0.064,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "folder_organization",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "folder_organization",
+      "ambiguity_gap": 0.022,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "folder_organization",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "프로그램 배포",
+    "before": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  },
+  {
+    "title": "행사결과 전달",
+    "before": {
+      "top_candidate": "event_preparation",
+      "ambiguity_gap": 0.033,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "event_preparation",
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_review",
+        "mail_action",
+        "event_preparation"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced"
+    ]
+  },
+  {
+    "title": "행사계획 승인 요청",
+    "before": {
+      "top_candidate": "event_preparation",
+      "ambiguity_gap": 0.019,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "event_preparation",
+        "approval_request",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "approval_request",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "approval_request",
+        "document_edit",
+        "system_work",
+        "event_preparation"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "행사안내 공고",
+    "before": {
+      "top_candidate": "event_preparation",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "event_preparation",
+        "publication_announcement",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "publication_announcement",
+      "ambiguity_gap": 0.039,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "publication_announcement",
+        "event_preparation",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "행사자료 송부",
+    "before": {
+      "top_candidate": "event_preparation",
+      "ambiguity_gap": 0.06,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "event_preparation",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_distribution",
+        "document_edit",
+        "event_preparation"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_distribution"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 9,
+      "total_delta": 9
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "행사포스터 배포",
+    "before": {
+      "top_candidate": "event_preparation",
+      "ambiguity_gap": 0.064,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "event_preparation",
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.071,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_distribution",
+        "event_preparation"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": true
+    },
+    "changed": true,
+    "change_type": "generic_noise_reduction",
+    "change_labels": [
+      "generic_noise_reduction",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "generic token leakage reduced",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "현황자료 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "협조문 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "홍보물 게시",
+    "before": {
+      "top_candidate": "publication_posting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "public_posting",
+      "ambiguity_gap": 0.002,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "public_posting",
+        "publication_posting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 20,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "public_posting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 20
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "화상회의 링크 안내",
+    "before": {
+      "top_candidate": "meeting",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "meeting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "meeting",
+      "ambiguity_gap": 0.019,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "meeting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": true,
+      "changed": true
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "활동결과 제출",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_submission",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "document_submission"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "회의 참석 요청",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_edit",
+        "meeting",
+        "training_session_attendance"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_edit",
+        "meeting",
+        "training_session_attendance"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "회의결과 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_review",
+        "meeting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_review",
+        "meeting",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "회의록 전달",
+    "before": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_review",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "회의자료 메일 공유",
+    "before": {
+      "top_candidate": "mail_sharing",
+      "ambiguity_gap": 0.007,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_sharing",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "mail_sharing",
+      "ambiguity_gap": 0.007,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "mail_sharing",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 10,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence"
+    ]
+  }
+]

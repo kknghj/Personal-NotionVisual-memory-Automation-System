@@ -1,0 +1,342 @@
+[
+  {
+    "title": "게시 승인 요청",
+    "before": "approval_request",
+    "after": "approval_request",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": 0.001,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "결과보고 전달",
+    "before": "document_reporting",
+    "after": "document_reporting",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": 0.002,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "계획안 수정 요청",
+    "before": "document_edit",
+    "after": "document_edit",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.225,
+    "after_ambiguity_gap": 0.112
+  },
+  {
+    "title": "교육결과 보고",
+    "before": "document_reporting",
+    "after": "document_reporting",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "배너 이미지 게시",
+    "before": "publication_posting",
+    "after": "public_posting",
+    "regression_type": "semantic_bonus_overreach_risk",
+    "severity": "medium",
+    "reason": "semantic bonus changed top1 but rank gap is near-zero",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.002
+  },
+  {
+    "title": "배너 이미지 게시",
+    "before": "publication_posting",
+    "after": "public_posting",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.002
+  },
+  {
+    "title": "분석자료 전달",
+    "before": "document_review",
+    "after": "document_review",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "서비스 점검 공지",
+    "before": "urgent_notice",
+    "after": "notice_posting",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.056,
+    "after_ambiguity_gap": 0.032
+  },
+  {
+    "title": "슬랙 채널 안내",
+    "before": "broadcast_channel_adjust",
+    "after": "broadcast_channel_adjust",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.064,
+    "after_ambiguity_gap": 0.022
+  },
+  {
+    "title": "안내문 송부",
+    "before": "document_edit",
+    "after": "document_edit",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.019
+  },
+  {
+    "title": "운영계획 공지",
+    "before": "urgent_notice",
+    "after": "notice_posting",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.056,
+    "after_ambiguity_gap": 0.032
+  },
+  {
+    "title": "운영현황 전달",
+    "before": "document_review",
+    "after": "document_review",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "일정 조정 요청",
+    "before": "broadcast_channel_adjust",
+    "after": "work_calendar_organization",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.029,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "일정표 발송",
+    "before": "work_calendar_organization",
+    "after": "work_calendar_organization",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.033,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "자료 제출 요청",
+    "before": "document_edit",
+    "after": "submission_request",
+    "regression_type": "semantic_bonus_overreach_risk",
+    "severity": "medium",
+    "reason": "semantic bonus changed top1 but rank gap is near-zero",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "자료 제출 요청",
+    "before": "document_edit",
+    "after": "submission_request",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "정산결과 보고",
+    "before": "document_reporting",
+    "after": "document_reporting",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.054,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "정산결과 보고",
+    "before": "document_reporting",
+    "after": "document_reporting",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": 0.054,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "정책자료 게시",
+    "before": "publication_posting",
+    "after": "public_posting",
+    "regression_type": "semantic_bonus_overreach_risk",
+    "severity": "medium",
+    "reason": "semantic bonus changed top1 but rank gap is near-zero",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "정책자료 게시",
+    "before": "publication_posting",
+    "after": "public_posting",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "줌 링크 전달",
+    "before": "document_review",
+    "after": "document_review",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "참가폼 제출 요청",
+    "before": "document_edit",
+    "after": "submission_request",
+    "regression_type": "semantic_bonus_overreach_risk",
+    "severity": "medium",
+    "reason": "semantic bonus changed top1 but rank gap is near-zero",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "참가폼 제출 요청",
+    "before": "document_edit",
+    "after": "submission_request",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "최종결과 보고",
+    "before": "document_reporting",
+    "after": "document_reporting",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "캘린더 일정 공유",
+    "before": "running_appointment",
+    "after": "running_appointment",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.056,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "파일 업로드 안내",
+    "before": "folder_organization",
+    "after": "folder_organization",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.064,
+    "after_ambiguity_gap": 0.022
+  },
+  {
+    "title": "행사결과 전달",
+    "before": "event_preparation",
+    "after": "document_review",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.033,
+    "after_ambiguity_gap": 0.0
+  },
+  {
+    "title": "행사자료 송부",
+    "before": "event_preparation",
+    "after": "document_distribution",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.06,
+    "after_ambiguity_gap": 0.032
+  },
+  {
+    "title": "현황자료 전달",
+    "before": "document_review",
+    "after": "document_review",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "협조문 전달",
+    "before": "document_review",
+    "after": "document_review",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.001
+  },
+  {
+    "title": "홍보물 게시",
+    "before": "publication_posting",
+    "after": "public_posting",
+    "regression_type": "semantic_bonus_overreach_risk",
+    "severity": "medium",
+    "reason": "semantic bonus changed top1 but rank gap is near-zero",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.002
+  },
+  {
+    "title": "홍보물 게시",
+    "before": "publication_posting",
+    "after": "public_posting",
+    "regression_type": "ontology_overlap_hotspot",
+    "severity": "low",
+    "reason": "neighbor workflow candidates are almost tied",
+    "before_ambiguity_gap": null,
+    "after_ambiguity_gap": 0.002
+  },
+  {
+    "title": "화상회의 링크 안내",
+    "before": "meeting",
+    "after": "meeting",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.019
+  },
+  {
+    "title": "회의록 전달",
+    "before": "document_review",
+    "after": "document_review",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.001
+  }
+]
