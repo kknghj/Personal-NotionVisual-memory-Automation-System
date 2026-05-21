@@ -289,27 +289,22 @@
         "interface_dominance": 0
       },
       {
-        "text": "결과보고",
+        "text": "진행상황보고",
         "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
-        "text": "운영결과보고",
+        "text": "진행보고",
         "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
-        "text": "최종결과보고",
+        "text": "추진현황보고",
         "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
-        "text": "정산결과보고",
-        "workflow_resolution": 3,
-        "interface_dominance": 0
-      },
-      {
-        "text": "교육결과보고",
+        "text": "중간보고",
         "workflow_resolution": 3,
         "interface_dominance": 0
       }
@@ -323,9 +318,9 @@
       "예질 과장님 보고",
       "시장님 보고자료 수정",
       "최종안 보고",
-      "결과보고 전달",
-      "운영결과 보고",
-      "최종결과 보고"
+      "식생활교육 신청 절차 개선 진행상황 보고",
+      "진행상황 보고",
+      "전국 식생활교육 현황 보고"
     ],
     "semantic_metadata": {
       "workflow_fit": [
@@ -334,7 +329,11 @@
       "object_type": "document",
       "interaction_mode": "report_brief",
       "visibility": "internal",
-      "tone": "formal"
+      "tone": "formal",
+      "workflow_stage": [
+        "progress",
+        "interim"
+      ]
     }
   },
   "result_reporting": {
@@ -382,7 +381,10 @@
     "usage_context": [
       "결과보고 전달",
       "집계결과 보고",
-      "정산결과 보고"
+      "정산결과 보고",
+      "식생활교육 강사양성 현장 출장 결과 보고",
+      "교육결과 보고",
+      "최종결과 보고"
     ],
     "semantic_metadata": {
       "workflow_fit": [
@@ -392,7 +394,11 @@
       "object_type": "result_document",
       "interaction_mode": "report_brief",
       "visibility": "internal",
-      "tone": "formal"
+      "tone": "formal",
+      "workflow_stage": [
+        "result",
+        "final"
+      ]
     }
   },
   "document_request": {

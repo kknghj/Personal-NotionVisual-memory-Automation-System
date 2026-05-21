@@ -47,6 +47,7 @@
 | `interaction_mode` | `string enum` | 예 | 후보가 대표하는 행동 방식. scoring에서 제목의 action 신호와 후보 성격을 맞추는 축이다. |
 | `visibility` | `string enum` | 예 | 결과물이나 행동이 노출되는 범위. 내부 처리, 조직 공지, 외부 공개를 구분한다. |
 | `tone` | `string enum` | 예 | 후보가 암시하는 업무 분위기. urgent/formal/sensitive 같은 scoring prior에 사용한다. |
+| `workflow_stage` | `array<string enum>` | 선택 | reporting 계열 후보의 lifecycle: `progress`, `interim`, `result`, `final`. 제목 신호와 교집합 시 soft bonus (§8.1 `workflow_ontology.md`). |
 
 ### 타입 계약
 

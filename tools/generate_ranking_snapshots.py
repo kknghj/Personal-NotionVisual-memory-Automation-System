@@ -5,7 +5,7 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
-LATEST_LOG = Path("tests/ambiguity/ambiguity_results/2026-05-21_0519_scoring_log.json")
+LATEST_LOG = Path("tests/ambiguity/ambiguity_results/2026-05-21_workflow_stage_scoring_log.json")
 RESULTS_DIR = Path("tests/ambiguity/ambiguity_results")
 SNAPSHOT_DIR = Path("tests/ambiguity/ranking_snapshots")
 
@@ -197,6 +197,61 @@ def _improvement_score(snapshot: dict[str, Any]) -> int:
     return score
 
 
+def _reporting_pair_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+    """Metrics focused on document_reporting vs result_reporting disambiguation."""
+    reporting_keywords = ("보고", "진행상황", "현황", "결과", "추진")
+    subset = [
+        item
+        for item in snapshots
+        if any(kw in item["title"] for kw in reporting_keywords)
+        and (
+            "document_reporting" in item["before"]["top5_candidates"]
+            or "result_reporting" in item["before"]["top5_candidates"]
+            or "document_reporting" in item["after"]["top5_candidates"]
+            or "result_reporting" in item["after"]["top5_candidates"]
+        )
+    ]
+    confusion_before = 0
+    confusion_after = 0
+    separated_after = 0
+    for item in subset:
+        before_top5 = item["before"]["top5_candidates"][:2]
+        after_top5 = item["after"]["top5_candidates"][:2]
+        before_pair = (
+            len(before_top5) >= 2
+            and before_top5[0] in {"document_reporting", "result_reporting"}
+            and before_top5[1] in {"document_reporting", "result_reporting"}
+            and isinstance(item["before"]["ambiguity_gap"], int | float)
+            and item["before"]["ambiguity_gap"] <= 0.005
+        )
+        after_pair = (
+            len(after_top5) >= 2
+            and after_top5[0] in {"document_reporting", "result_reporting"}
+            and after_top5[1] in {"document_reporting", "result_reporting"}
+            and isinstance(item["after"]["ambiguity_gap"], int | float)
+            and item["after"]["ambiguity_gap"] <= 0.005
+        )
+        if before_pair:
+            confusion_before += 1
+        if after_pair:
+            confusion_after += 1
+        if before_pair and not after_pair:
+            separated_after += 1
+    return {
+        "titles_in_reporting_focus_set": len(subset),
+        "near_tied_reporting_pair_before": confusion_before,
+        "near_tied_reporting_pair_after": confusion_after,
+        "near_tied_pairs_resolved": separated_after,
+        "top_candidate_flips_between_reporting_pair": sum(
+            1
+            for item in subset
+            if item["changed"]
+            and {item["before"]["top_candidate"], item["after"]["top_candidate"]}
+            == {"document_reporting", "result_reporting"}
+        ),
+    }
+
+
 def _summarize(snapshots: list[dict[str, Any]], regressions: list[dict[str, Any]]) -> dict[str, Any]:
     before_gaps = [item["before"]["ambiguity_gap"] for item in snapshots if isinstance(item["before"]["ambiguity_gap"], int | float)]
     after_gaps = [item["after"]["ambiguity_gap"] for item in snapshots if isinstance(item["after"]["ambiguity_gap"], int | float)]
@@ -316,10 +371,11 @@ def _summarize(snapshots: list[dict[str, Any]], regressions: list[dict[str, Any]
             if any(risk["title"] == item["title"] and risk["regression_type"] == "ontology_overlap_hotspot" for risk in regressions)
         ][:20],
         "next_tuning_priorities": [
-            "separate near-tied reporting/result_reporting boundaries with stronger lifecycle metadata",
+            "tune ambiguous 현황-only titles with feedback labels before hard stage rules",
             "add semantic metadata to legacy candidates still relying on raw token rank",
             "review near-zero gap publication/request overlaps before turning snapshots into hard regression gates",
         ],
+        "workflow_stage_ambiguity_analysis": _reporting_pair_snapshots(snapshots),
     }
 
 

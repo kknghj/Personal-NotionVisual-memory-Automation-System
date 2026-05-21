@@ -82,5 +82,26 @@ class DistributionSemanticMetadataTests(unittest.TestCase):
         self.assertEqual(document_distribution["publish_distribute"], "distribution")
 
 
+class ReportingWorkflowStageMetadataTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls._cands = load_visual_candidates()
+
+    def test_reporting_candidates_expose_workflow_stage_without_extra_ids(self) -> None:
+        document_reporting = self._cands["document_reporting"]["semantic_metadata"]
+        result_reporting = self._cands["result_reporting"]["semantic_metadata"]
+        self.assertEqual(document_reporting["workflow_stage"], ["progress", "interim"])
+        self.assertEqual(result_reporting["workflow_stage"], ["result", "final"])
+
+    def test_document_reporting_does_not_retain_result_only_meaning_tokens(self) -> None:
+        texts = {
+            entry["text"]
+            for entry in self._cands["document_reporting"]["meaning"]
+            if isinstance(entry, dict) and isinstance(entry.get("text"), str)
+        }
+        self.assertNotIn("결과보고", texts)
+        self.assertIn("진행상황보고", texts)
+
+
 if __name__ == "__main__":
     unittest.main()

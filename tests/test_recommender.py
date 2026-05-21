@@ -226,6 +226,19 @@ class DocumentLifecycleExpansionTests(RecommenderSemanticTestCase):
             self.assertEqual(cid, expect_cid, msg=title)
             self.assertEqual(val, expect_visual, msg=title)
 
+    def test_workflow_stage_separates_progress_and_result_reporting(self):
+        cases = {
+            "식생활교육 신청 절차 개선 진행상황 보고": "document_reporting",
+            "진행상황 보고": "document_reporting",
+            "식생활교육 강사양성 현장 출장 결과 보고": "result_reporting",
+            "교육결과 보고": "result_reporting",
+            "정산결과 보고": "result_reporting",
+            "최종결과 보고": "result_reporting",
+            "결과보고 전달": "result_reporting",
+        }
+        for title, expect_cid in cases.items():
+            self.assertEqual(self._cid(title), expect_cid, msg=title)
+
     def test_report_document_subject_still_allows_plain_document_review(self):
         cid, val = self._match("보고서 확인")
         self.assertEqual(cid, "document_review")
