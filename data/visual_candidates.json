@@ -3514,5 +3514,175 @@
       "ppt 최종본 확인",
       "발표 자료 리허설 전 점검"
     ]
+  },
+  "status_summary": {
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "현황정리",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "진행현황정리",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "추진현황정리",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현황자료작성",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "내부자료작성",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "메모/문서에 현재 상태를 정리하는 장면",
+      "회의나 공유 전에 현황을 보기 좋게 정돈하는 작업"
+    ],
+    "usage_context": [
+      "현황 정리",
+      "진행 현황 정리",
+      "추진 현황 자료 작성",
+      "내부 현황자료 작성"
+    ],
+    "semantic_metadata": {
+      "category": "status_work",
+      "object_type": "status_document",
+      "action": "organize_summarize",
+      "workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "interaction_mode": "organize",
+      "tone": "neutral"
+    }
+  },
+  "status_sharing": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "현황공유",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "진행현황공유",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "추진현황공유",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "대응현황공유",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "관계자공유",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현황자료공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "현재 상태를 관계자에게 보내거나 공유하는 장면",
+      "특정 채널은 정해지지 않았지만 공유 행위가 중심인 상황"
+    ],
+    "usage_context": [
+      "현황 공유",
+      "진행 현황 공유",
+      "대응 현황 공유",
+      "관계자 공유"
+    ],
+    "semantic_metadata": {
+      "category": "status_work",
+      "object_type": "status_update",
+      "action": "share_status",
+      "workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "interaction_mode": "send_share",
+      "tone": "neutral"
+    }
+  },
+  "status_update": {
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "현황업데이트",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "진행현황업데이트",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "관리현황업데이트",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "처리현황업데이트",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "접수현황업데이트",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "기존 상태값이나 현황표를 최신 정보로 갱신하는 장면",
+      "기록을 새로 반영하거나 업데이트하는 작업"
+    ],
+    "usage_context": [
+      "현황 업데이트",
+      "진행 현황 업데이트",
+      "관리 현황 업데이트",
+      "처리 현황 업데이트"
+    ],
+    "semantic_metadata": {
+      "category": "status_work",
+      "object_type": "status_record",
+      "action": "update_status",
+      "workflow_stage": [
+        "progress"
+      ],
+      "interaction_mode": "update_record",
+      "tone": "neutral"
+    }
   }
 }

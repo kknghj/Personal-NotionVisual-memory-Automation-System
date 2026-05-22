@@ -1,0 +1,44 @@
+[
+  {
+    "title": "프로젝트 진행 현황 정리",
+    "top_candidate": "status_summary",
+    "ambiguity_gap": null,
+    "top5_candidates": [
+      "status_summary"
+    ]
+  },
+  {
+    "title": "서버 장애 대응 현황 공유",
+    "top_candidate": "status_sharing",
+    "ambiguity_gap": null,
+    "top5_candidates": [
+      "status_sharing"
+    ]
+  },
+  {
+    "title": "재고 관리 현황 업데이트",
+    "top_candidate": "status_update",
+    "ambiguity_gap": null,
+    "top5_candidates": [
+      "status_update"
+    ]
+  },
+  {
+    "title": "분기별 예산 집행 현황 정리",
+    "top_candidate": "status_summary",
+    "ambiguity_gap": 0.054,
+    "top5_candidates": [
+      "status_summary",
+      "budget_tracking"
+    ]
+  },
+  {
+    "title": "부서별 현황 자료 공유",
+    "top_candidate": "document_sharing",
+    "ambiguity_gap": 0.056,
+    "top5_candidates": [
+      "document_sharing",
+      "status_sharing"
+    ]
+  }
+]
