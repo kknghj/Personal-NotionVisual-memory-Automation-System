@@ -65,6 +65,10 @@ PROGRESS_STRONG_TERMS: frozenset[str] = frozenset({"진행상황", "추진상황
 PROGRESS_MODERATE_TERMS: frozenset[str] = frozenset({"진행현황", "추진현황", "진행상태"})
 RESULT_STATUS_REPORTING_SOFT_BONUS = 1
 RESULT_STATUS_COMPOUND_CONFIDENCE = 0.68
+STATUS_WORK_SOFT_BONUS = 1
+STATUS_WORK_ACTION_UPDATE = "update_status"
+STATUS_WORK_ACTION_SHARE = "share_status"
+STATUS_WORK_ACTION_SUMMARIZE = "organize_summarize"
 
 WORKFLOW_STAGE_TITLE_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("final", ("최종결과보고", "최종결과", "최종보고", "최종안", "종료보고", "마감보고")),
@@ -130,6 +134,22 @@ def detect_result_status_reporting_compound(title: str) -> dict[str, str] | None
 
 def is_result_status_reporting_compound(title: str) -> bool:
     return detect_result_status_reporting_compound(title) is not None
+
+
+def detect_status_work_action(title: str) -> str | None:
+    """현황+정리/공유/업데이트 without 결과+현황 reporting compound."""
+    if is_result_status_reporting_compound(title):
+        return None
+    canonical = _canonical_title_text(title)
+    if "현황" not in canonical:
+        return None
+    if "업데이트" in canonical:
+        return STATUS_WORK_ACTION_UPDATE
+    if "공유" in canonical:
+        return STATUS_WORK_ACTION_SHARE
+    if any(term in canonical for term in ("정리", "작성")):
+        return STATUS_WORK_ACTION_SUMMARIZE
+    return None
 
 
 def _workflow_stage_term_hits(canonical: str) -> list[tuple[str, str, int]]:
@@ -286,6 +306,16 @@ def semantic_compatibility(
             if "workflow_stage" not in fields:
                 fields.append("workflow_stage")
             reasons.append("workflow_stage compound result+현황 soft boost")
+        return score, tuple(reasons), tuple(fields)
+
+    status_action = detect_status_work_action(title)
+    if status_action:
+        action_values = _as_values(semantic_metadata.get("action"))
+        if status_action in action_values:
+            score += STATUS_WORK_SOFT_BONUS
+            if "action" not in fields:
+                fields.append("action")
+            reasons.append(f"action status_work {status_action} soft boost")
 
     return score, tuple(reasons), tuple(fields)
 

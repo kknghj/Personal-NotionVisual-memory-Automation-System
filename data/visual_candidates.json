@@ -3602,6 +3602,11 @@
         "text": "관계자공유",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "현황자료공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [

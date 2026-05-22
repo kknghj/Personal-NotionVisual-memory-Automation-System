@@ -4,7 +4,11 @@ from __future__ import annotations
 
 import unittest
 
-from app.semantic_scoring import infer_title_workflow_stages, semantic_compatibility
+from app.semantic_scoring import (
+    detect_status_work_action,
+    infer_title_workflow_stages,
+    semantic_compatibility,
+)
 
 
 class WorkflowStageInferenceTests(unittest.TestCase):
@@ -51,6 +55,24 @@ class WorkflowStageSemanticBonusTests(unittest.TestCase):
         self.assertIn("interaction_mode", fields)
         self.assertNotIn("workflow_stage", fields)
         self.assertGreater(score, 0)
+
+    def test_status_work_action_soft_boost(self) -> None:
+        score, reasons, fields = semantic_compatibility(
+            "재고 관리 현황 업데이트",
+            {"action": "update_status", "category": "status_work"},
+        )
+        self.assertGreaterEqual(score, 1)
+        self.assertIn("action", fields)
+        self.assertTrue(any("status_work" in reason for reason in reasons))
+
+    def test_status_work_boost_suppressed_for_result_compound(self) -> None:
+        self.assertIsNone(detect_status_work_action("점검 결과 현황 공유"))
+        score, reasons, _fields = semantic_compatibility(
+            "점검 결과 현황 공유",
+            {"action": "share_status", "category": "status_work"},
+        )
+        self.assertFalse(any("status_work" in reason for reason in reasons))
+        self.assertEqual(score, 0)
 
 
 if __name__ == "__main__":
