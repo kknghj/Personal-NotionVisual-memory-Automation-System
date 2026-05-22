@@ -52,6 +52,66 @@
     ]
   },
   {
+    "title": "감사 지적사항 조치 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "강사 명단 공유",
     "before": {
       "top_candidate": "education_fieldwork",
@@ -377,13 +437,13 @@
       "ranking_depth": 5,
       "top5_candidates": [
         "approval_request",
-        "document_reporting",
         "result_reporting",
+        "document_reporting",
         "document_edit",
         "system_work"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 25,
+      "semantic_bonus_total": 27,
       "suppression_applied": false
     },
     "after": {
@@ -424,7 +484,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 2
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -438,18 +498,18 @@
   {
     "title": "결과보고 전달",
     "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.02,
       "high_ambiguity": true,
       "ranking_depth": 4,
       "top5_candidates": [
-        "document_reporting",
         "result_reporting",
+        "document_reporting",
         "document_review",
         "mail_action"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 16,
       "suppression_applied": false
     },
     "after": {
@@ -479,21 +539,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -501,8 +560,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -620,6 +678,68 @@
     ]
   },
   {
+    "title": "계약 협상 진행 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "compound:진행+현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "계획안 수정 요청",
     "before": {
       "top_candidate": "document_edit",
@@ -646,6 +766,69 @@
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 6,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "고객 민원 처리 현황 확인",
+    "before": {
+      "top_candidate": "status_check",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "status_check",
+        "document_review",
+        "slide_deck_final_review",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "status_check",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "status_check",
+        "document_review",
+        "slide_deck_final_review",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -884,18 +1067,201 @@
     ]
   },
   {
-    "title": "교육결과 보고",
+    "title": "광고 캠페인 운영 현황 보고",
     "before": {
       "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_reporting",
-        "result_reporting"
+        "document_reporting"
       ],
       "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "contextual:운영현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "교육 신청 접수 현황 공유",
+    "before": {
+      "top_candidate": "survey_form",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "survey_form"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "survey_form",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "survey_form"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "교육 운영 결과 현황 정리",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "result_reporting"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+정리",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 5,
+      "total_delta": 5
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "교육결과 보고",
+    "before": {
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "result_reporting",
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 16,
       "suppression_applied": false
     },
     "after": {
@@ -923,21 +1289,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -945,8 +1310,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -1154,6 +1518,63 @@
     ]
   },
   {
+    "title": "교육청 급식담당자 현황 조사",
+    "before": {
+      "top_candidate": "inventory_work",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "inventory_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "inventory_work",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "inventory_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "구글드라이브 공유",
     "before": {
       "top_candidate": "folder_organization",
@@ -1328,6 +1749,116 @@
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "다기능사무기기 보유현황 제출",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "데이터 이관 작업 현황 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -1607,6 +2138,66 @@
     ]
   },
   {
+    "title": "매장 운영 현황 일일보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "contextual:운영현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "메일링 리스트 발송",
     "before": {
       "top_candidate": "mail_distribution",
@@ -1633,6 +2224,69 @@
       "top_semantic_bonus": 8,
       "semantic_bonus_total": 8,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "미처리 민원 현황 확인",
+    "before": {
+      "top_candidate": "status_check",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "status_check",
+        "document_review",
+        "slide_deck_final_review",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "status_check",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "status_check",
+        "document_review",
+        "slide_deck_final_review",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -1704,6 +2358,67 @@
     "suppression_change": {
       "before": false,
       "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "법령제도 개선 건의과제 추진현황 현행화 안내",
+    "before": {
+      "top_candidate": "website_content_refresh",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "website_content_refresh",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "after": {
+      "top_candidate": "website_content_refresh",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "website_content_refresh",
+        "mail_action"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "contextual:추진현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": true,
+      "after": true,
       "changed": false
     },
     "notes": [
@@ -1873,6 +2588,237 @@
     ]
   },
   {
+    "title": "보안 취약점 조치 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "security_work"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "security_work"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "보험 가입현황 제출",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "부서별 업무 추진 현황 정리",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "compound:진행+현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "부서별 현황 자료 공유",
+    "before": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_sharing"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "분석자료 전달",
     "before": {
       "top_candidate": "document_review",
@@ -1899,6 +2845,293 @@
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "비상소집 응소자 현황 제출",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "비영리민간단체 전수조사 현황 회신",
+    "before": {
+      "top_candidate": "inventory_work",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "inventory_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "inventory_work",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "inventory_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "사업 운영 결과 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "result_reporting",
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 3,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "생산 라인 점검 현황 정리",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "서버 장애 대응 현황 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -2033,6 +3266,73 @@
     ]
   },
   {
+    "title": "성과 분석 결과 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "result_reporting",
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
+    },
+    "changed": true,
+    "change_type": "semantic_improvement",
+    "change_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 3,
+      "total_delta": 10
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
     "title": "수정사항 검토 요청",
     "before": {
       "top_candidate": "review_request",
@@ -2141,6 +3441,72 @@
     ]
   },
   {
+    "title": "시스템 개발 진행 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.031,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_reporting",
+        "coding",
+        "system_work"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.031,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_reporting",
+        "coding",
+        "system_work"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "compound:진행+현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "시트 입력 요청",
     "before": {
       "top_candidate": "document_edit",
@@ -2165,6 +3531,130 @@
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "신규 서비스 테스트 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "신규 채용 검토 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_reporting",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "document_reporting",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -2721,6 +4211,66 @@
     ]
   },
   {
+    "title": "언론 대응 현황 일일보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "업데이트 파일 배포",
     "before": {
       "top_candidate": "document_distribution",
@@ -2747,6 +4297,68 @@
       "top_semantic_bonus": 5,
       "semantic_bonus_total": 5,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "업무 자동화 구축 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "coding"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "coding"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -2825,6 +4437,68 @@
     ]
   },
   {
+    "title": "연구 과제 수행 현황 중간보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "interim",
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:중간보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "interim"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "예산 사용 승인 요청",
     "before": {
       "top_candidate": "approval_request",
@@ -2853,6 +4527,68 @@
       "top_semantic_bonus": 10,
       "semantic_bonus_total": 10,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "예산 집행 현황 점검 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.054,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "budget_tracking"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": 0.054,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_reporting",
+        "budget_tracking"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
     },
     "changed": false,
     "change_type": "stable",
@@ -3203,6 +4939,59 @@
     ]
   },
   {
+    "title": "위험 요소 대응 현황 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "일정 조정 요청",
     "before": {
       "top_candidate": "work_calendar_organization",
@@ -3311,6 +5100,66 @@
     ]
   },
   {
+    "title": "입찰 참여 현황 내부보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "자료 제출 요청",
     "before": {
       "top_candidate": "submission_request",
@@ -3362,6 +5211,245 @@
     },
     "notes": [
       "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "자산 관리 현황 점검 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "재고 관리 현황 업데이트",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "전국 식생활교육 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "점검 결과 현황 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "result_reporting"
+      ],
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+공유",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "result_reporting"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 6,
+      "total_delta": 6
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
     ]
   },
   {
@@ -3530,17 +5618,17 @@
   {
     "title": "정산결과 보고",
     "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.032,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
-        "document_reporting",
         "result_reporting",
+        "document_reporting",
         "salary_system"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 16,
       "suppression_applied": false
     },
     "after": {
@@ -3569,21 +5657,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3591,8 +5678,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -3700,6 +5786,66 @@
     ]
   },
   {
+    "title": "주간 영업 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "주간업무자료 공유",
     "before": {
       "top_candidate": "document_sharing",
@@ -3724,6 +5870,65 @@
       "top_semantic_bonus": 10,
       "semantic_bonus_total": 10,
       "suppression_applied": false
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "주요사업 추진현황 주간회의 자료 작성",
+    "before": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_edit",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_edit"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "contextual:추진현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
     },
     "changed": false,
     "change_type": "stable",
@@ -3805,15 +6010,15 @@
     "title": "진행상황 보고",
     "before": {
       "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.056,
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
         "document_reporting",
         "progress_monitoring"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
       "suppression_applied": false
     },
     "after": {
@@ -3842,9 +6047,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -3853,8 +6058,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3862,7 +6067,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4204,16 +6409,16 @@
   {
     "title": "최종결과 보고",
     "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "document_reporting",
-        "result_reporting"
+        "result_reporting",
+        "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 16,
       "suppression_applied": false
     },
     "after": {
@@ -4242,21 +6447,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4264,8 +6468,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4412,8 +6615,8 @@
       "suppression_applied": false,
       "inferred_workflow_stage": "progress",
       "matched_workflow_stage": [],
-      "workflow_stage_confidence": 0.85,
-      "workflow_stage_source": "keyword:추진현황",
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "contextual:추진현황",
       "workflow_stage_ambiguous": false,
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": [
@@ -4553,6 +6756,114 @@
     ]
   },
   {
+    "title": "콘텐츠 제작 현황 공유",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "클레임 처리 진행 현황 정리",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "compound:진행+현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "파일 업로드 안내",
     "before": {
       "top_candidate": "folder_organization",
@@ -4648,6 +6959,243 @@
     "suppression_change": {
       "before": false,
       "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "프로젝트 진행 현황 정리",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "progress",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.55,
+      "workflow_stage_source": "compound:진행+현황",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "progress"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "학부모강사 활동현황표 수합",
+    "before": {
+      "top_candidate": "spreadsheet_work",
+      "ambiguity_gap": 0.016,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "spreadsheet_work",
+        "education_fieldwork"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true
+    },
+    "after": {
+      "top_candidate": "spreadsheet_work",
+      "ambiguity_gap": 0.016,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "spreadsheet_work",
+        "education_fieldwork"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": true,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": true,
+      "after": true,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "해외 지사 운영 현황 보고",
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [
+        "progress",
+        "interim"
+      ],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "contextual:운영현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "행사 준비 현황 중간보고",
+    "before": {
+      "top_candidate": "prep_paired_event_party",
+      "ambiguity_gap": 0.093,
+      "high_ambiguity": false,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "prep_paired_event_party",
+        "document_reporting",
+        "event_preparation"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 9,
+      "suppression_applied": true
+    },
+    "after": {
+      "top_candidate": "prep_paired_event_party",
+      "ambiguity_gap": 0.093,
+      "high_ambiguity": false,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "prep_paired_event_party",
+        "document_reporting",
+        "event_preparation"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 9,
+      "suppression_applied": true,
+      "inferred_workflow_stage": "interim",
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.85,
+      "workflow_stage_source": "keyword:중간보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "interim"
+      ]
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": true,
+      "after": true,
       "changed": false
     },
     "notes": [
@@ -4934,6 +7482,59 @@
     ]
   },
   {
+    "title": "현장 안전관리 운영 현황 정리",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "contextual:운영현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
     "title": "현황자료 전달",
     "before": {
       "top_candidate": "document_review",
@@ -4957,6 +7558,59 @@
         "document_review",
         "mail_action"
       ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.2,
+      "workflow_stage_source": "ambiguous:현황",
+      "workflow_stage_ambiguous": true,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "협력사 대응 현황 업데이트",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false,
