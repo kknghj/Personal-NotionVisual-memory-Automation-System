@@ -297,11 +297,8 @@
     "false_certainty_count": 0,
     "tracking_to_reporting_regressions": [],
     "tracking_to_reporting_count": 0,
-    "submit_share_organize_reporting_flips": [
-      "교육 운영 결과 현황 정리",
-      "점검 결과 현황 공유"
-    ],
-    "submit_share_organize_reporting_flip_count": 2,
+    "submit_share_organize_reporting_flips": [],
+    "submit_share_organize_reporting_flip_count": 0,
     "stage_top_candidate_alignment": {
       "aligned": 12,
       "misaligned": 0,

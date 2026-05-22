@@ -6,6 +6,8 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
+from app.semantic_scoring import is_result_status_reporting_compound
+
 DEFAULT_AFTER_LOG = Path(
     "tests/ambiguity/ambiguity_results/2026-05-21_current_state_workflow_stage_log.json"
 )
@@ -148,6 +150,7 @@ def _workflow_stage_experiment_analysis(
         if any(kw in item["title"] for kw in ("제출", "공유", "정리"))
         and item["after"]["top_candidate"] in {"document_reporting", "result_reporting"}
         and item["changed"]
+        and not is_result_status_reporting_compound(item["title"])
     ]
     stage_bonus_precision = {"aligned": 0, "misaligned": 0, "not_applicable": 0}
     for _title, row in after_items.items():
