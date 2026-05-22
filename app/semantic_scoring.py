@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from collections.abc import Iterable
 from typing import Any
 
@@ -57,6 +58,14 @@ WORKFLOW_STAGE_CONTEXTUAL_TERMS: tuple[tuple[str, str], ...] = (
 )
 WORKFLOW_STAGE_PRIMARY_ORDER: tuple[str, ...] = ("final", "result", "interim", "progress")
 
+RESULT_STATUS_REPORTING_ACTION_TERMS: frozenset[str] = frozenset(
+    {"보고", "정리", "공유", "자료", "제출"},
+)
+PROGRESS_STRONG_TERMS: frozenset[str] = frozenset({"진행상황", "추진상황"})
+PROGRESS_MODERATE_TERMS: frozenset[str] = frozenset({"진행현황", "추진현황", "진행상태"})
+RESULT_STATUS_REPORTING_SOFT_BONUS = 1
+RESULT_STATUS_COMPOUND_CONFIDENCE = 0.68
+
 WORKFLOW_STAGE_TITLE_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("final", ("최종결과보고", "최종결과", "최종보고", "최종안", "종료보고", "마감보고")),
     ("result", (
@@ -101,6 +110,28 @@ def _as_values(value: Any) -> set[str]:
     return set()
 
 
+def _title_has_spaced_progress_status(title: str) -> bool:
+    return bool(re.search(r"진행\s+현황", title) or re.search(r"추진\s+현황", title))
+
+
+def detect_result_status_reporting_compound(title: str) -> dict[str, str] | None:
+    """결과+현황+reporting/document action without overfitting bare 현황 or 결과 alone."""
+    canonical = _canonical_title_text(title)
+    if "결과" not in canonical or "현황" not in canonical:
+        return None
+    action = next(
+        (term for term in RESULT_STATUS_REPORTING_ACTION_TERMS if term in canonical),
+        None,
+    )
+    if not action:
+        return None
+    return {"action": action, "source": f"compound:결과+현황+{action}"}
+
+
+def is_result_status_reporting_compound(title: str) -> bool:
+    return detect_result_status_reporting_compound(title) is not None
+
+
 def _workflow_stage_term_hits(canonical: str) -> list[tuple[str, str, int]]:
     """Return (stage, matched_term, term_length) for each rule hit."""
     hits: list[tuple[str, str, int]] = []
@@ -116,7 +147,10 @@ def infer_title_workflow_stages(title: str) -> set[str]:
 
     ``현황`` alone is intentionally omitted (ambiguous across progress/result/tracking).
     """
-    return {stage for stage, _term, _ln in _workflow_stage_term_hits(_canonical_title_text(title))}
+    stages = {stage for stage, _term, _ln in _workflow_stage_term_hits(_canonical_title_text(title))}
+    if detect_result_status_reporting_compound(title):
+        stages.add("result")
+    return stages
 
 
 def _pick_primary_workflow_stage(stages: set[str]) -> str | None:
@@ -126,11 +160,31 @@ def _pick_primary_workflow_stage(stages: set[str]) -> str | None:
     return None
 
 
+def _calibrate_progress_confidence(
+    title: str,
+    best_term: str,
+    base_confidence: float,
+) -> tuple[float, str]:
+    if best_term in PROGRESS_STRONG_TERMS:
+        return base_confidence, f"keyword:{best_term}"
+    if best_term in PROGRESS_MODERATE_TERMS:
+        source = (
+            "compound:진행+현황"
+            if _title_has_spaced_progress_status(title)
+            else f"contextual:{best_term}"
+        )
+        return 0.55, source
+    return base_confidence, f"keyword:{best_term}"
+
+
 def infer_workflow_stage_detail(title: str) -> dict[str, Any]:
     """Lightweight stage inference for feedback_log / calibration (not a hard rule)."""
     canonical = _canonical_title_text(title)
+    compound = detect_result_status_reporting_compound(title)
     hits = _workflow_stage_term_hits(canonical)
     stages = {stage for stage, _term, _ln in hits}
+    if compound:
+        stages.add("result")
 
     ambiguous_token: str | None = None
     if not stages:
@@ -138,6 +192,18 @@ def infer_workflow_stage_detail(title: str) -> dict[str, Any]:
             if token in canonical:
                 ambiguous_token = token
                 break
+
+    if compound and "result" in stages:
+        confidence = RESULT_STATUS_COMPOUND_CONFIDENCE
+        if len(stages) > 1:
+            confidence = min(confidence, 0.72)
+        return {
+            "inferred_workflow_stage": "result",
+            "inferred_workflow_stages_all": sorted(stages),
+            "workflow_stage_confidence": confidence,
+            "workflow_stage_source": compound["source"],
+            "workflow_stage_ambiguous": False,
+        }
 
     if ambiguous_token and not stages:
         contextual_source = ""
@@ -163,15 +229,18 @@ def infer_workflow_stage_detail(title: str) -> dict[str, Any]:
         }
 
     best_hit = max(hits, key=lambda item: item[2])
-    _stage, best_term, best_len = best_hit
+    stage, best_term, best_len = best_hit
     confidence = 0.85 if best_len >= 4 else 0.65
+    source = f"keyword:{best_term}"
+    if stage == "progress":
+        confidence, source = _calibrate_progress_confidence(title, best_term, confidence)
     if len(stages) > 1:
         confidence = min(confidence, 0.75)
     return {
         "inferred_workflow_stage": _pick_primary_workflow_stage(stages),
         "inferred_workflow_stages_all": sorted(stages),
         "workflow_stage_confidence": confidence,
-        "workflow_stage_source": f"keyword:{best_term}",
+        "workflow_stage_source": source,
         "workflow_stage_ambiguous": False,
     }
 
@@ -209,6 +278,14 @@ def semantic_compatibility(
         score += FIELD_WEIGHTS.get(field, 1)
         fields.append(field)
         reasons.append(f"{field} matched {', '.join(matched)}")
+
+    if is_result_status_reporting_compound(title):
+        stage_values = _as_values(semantic_metadata.get("workflow_stage"))
+        if "result" in stage_values or "final" in stage_values:
+            score += RESULT_STATUS_REPORTING_SOFT_BONUS
+            if "workflow_stage" not in fields:
+                fields.append("workflow_stage")
+            reasons.append("workflow_stage compound result+현황 soft boost")
 
     return score, tuple(reasons), tuple(fields)
 

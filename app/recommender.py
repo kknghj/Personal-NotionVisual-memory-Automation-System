@@ -4,7 +4,7 @@ from app.candidate_row import CandidateRow
 from app.data_loader import load_pair_rules
 from app.generic_tokens import generic_token_suppression_reason
 from app.pair_engine import PairResolution, PairRuleEngine
-from app.semantic_scoring import semantic_compatibility
+from app.semantic_scoring import is_result_status_reporting_compound, semantic_compatibility
 from app.workflow_resolution import (
     PERSON_CONTEXT_MODIFIER_TERMS,
     compound_subject_char_mask,
@@ -248,6 +248,41 @@ def rank_visual_candidate_rows(
                 generic_token_reason=generic_reasons,
             )
         )
+
+    if is_result_status_reporting_compound(key_title):
+        result_data = candidates.get("result_reporting")
+        if isinstance(result_data, dict) and not any(
+            row.candidate_id == "result_reporting" for row in rows
+        ):
+            result_pos = canonical.find("결과")
+            if result_pos < 0:
+                result_pos = 0
+            semantic_bonus, semantic_reasons, semantic_fields = semantic_compatibility(
+                key_title, result_data.get("semantic_metadata")
+            )
+            wp_raw = result_data.get("workflow_priority", 0)
+            try:
+                sort_wp = int(wp_raw)
+            except (TypeError, ValueError):
+                sort_wp = 0
+            rows.append(
+                CandidateRow(
+                    rule_tier=0,
+                    sort_secondary_wp=sort_wp,
+                    interface_dominance_effective=0,
+                    keyword_workflow_resolution=2,
+                    match_position_in_title=result_pos,
+                    matched_keyword_length=2,
+                    matched="결과",
+                    candidate_id="result_reporting",
+                    data=result_data,
+                    semantic_bonus=semantic_bonus,
+                    semantic_match_reason=semantic_reasons,
+                    semantic_metadata_fields_matched=semantic_fields,
+                    generic_token_penalty=0,
+                    generic_token_reason=(),
+                )
+            )
 
     rows.sort(key=lambda r: _row_sort_key(r, title_has_ui))
     return rows

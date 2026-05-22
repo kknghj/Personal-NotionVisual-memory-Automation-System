@@ -113,98 +113,41 @@
     ]
   },
   {
-    "title": "결과보고 전달",
-    "improvement_type": "semantic_improvement",
+    "title": "교육 운영 결과 현황 정리",
+    "improvement_type": "retrieval_improvement",
     "improvement_labels": [
+      "retrieval_improvement",
       "semantic_improvement",
       "workflow_boundary_improvement"
     ],
     "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 4,
-      "top5_candidates": [
-        "document_reporting",
-        "result_reporting",
-        "document_review",
-        "mail_action"
-      ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
       "suppression_applied": false
     },
     "after": {
       "top_candidate": "result_reporting",
-      "ambiguity_gap": 0.02,
-      "high_ambiguity": true,
-      "ranking_depth": 4,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "result_reporting",
-        "document_reporting",
-        "document_review",
-        "mail_action"
-      ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
-      "suppression_applied": false,
-      "inferred_workflow_stage": "result",
-      "matched_workflow_stage": [
-        "result",
-        "final"
-      ],
-      "workflow_stage_confidence": 0.85,
-      "workflow_stage_source": "keyword:결과보고",
-      "workflow_stage_ambiguous": false,
-      "workflow_stage_mismatch": false,
-      "inferred_workflow_stages_all": [
-        "result"
-      ]
-    },
-    "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
-    ]
-  },
-  {
-    "title": "교육결과 보고",
-    "improvement_type": "semantic_improvement",
-    "improvement_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
-    ],
-    "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
-      "top5_candidates": [
-        "document_reporting",
         "result_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
-      "suppression_applied": false
-    },
-    "after": {
-      "top_candidate": "result_reporting",
-      "ambiguity_gap": 0.058,
-      "high_ambiguity": false,
-      "ranking_depth": 2,
-      "top5_candidates": [
-        "result_reporting",
-        "document_reporting"
-      ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false,
       "inferred_workflow_stage": "result",
       "matched_workflow_stage": [
         "result",
         "final"
       ],
-      "workflow_stage_confidence": 0.85,
-      "workflow_stage_source": "keyword:교육결과보고",
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+정리",
       "workflow_stage_ambiguous": false,
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": [
@@ -212,6 +155,7 @@
       ]
     },
     "notes": [
+      "candidate retrieval coverage recovered",
       "workflow semantic candidate won or gained stronger evidence",
       "ranking moved toward explicit workflow boundary"
     ]
@@ -319,6 +263,104 @@
     ]
   },
   {
+    "title": "사업 운영 결과 현황 보고",
+    "improvement_type": "semantic_improvement",
+    "improvement_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "result_reporting",
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
+    "title": "성과 분석 결과 현황 보고",
+    "improvement_type": "semantic_improvement",
+    "improvement_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "before": {
+      "top_candidate": "document_reporting",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "result_reporting",
+        "document_reporting"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
+      "suppression_applied": false,
+      "inferred_workflow_stage": "result",
+      "matched_workflow_stage": [
+        "result",
+        "final"
+      ],
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+보고",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": [
+        "result"
+      ]
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
     "title": "안내문 송부",
     "improvement_type": "generic_noise_reduction",
     "improvement_labels": [
@@ -398,46 +440,41 @@
     ]
   },
   {
-    "title": "정산결과 보고",
-    "improvement_type": "semantic_improvement",
+    "title": "점검 결과 현황 공유",
+    "improvement_type": "retrieval_improvement",
     "improvement_labels": [
+      "retrieval_improvement",
       "semantic_improvement",
       "workflow_boundary_improvement"
     ],
     "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 3,
-      "top5_candidates": [
-        "document_reporting",
-        "result_reporting",
-        "salary_system"
-      ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
       "suppression_applied": false
     },
     "after": {
       "top_candidate": "result_reporting",
-      "ambiguity_gap": 0.032,
-      "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "result_reporting",
-        "document_reporting",
-        "salary_system"
+        "result_reporting"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false,
       "inferred_workflow_stage": "result",
       "matched_workflow_stage": [
         "result",
         "final"
       ],
-      "workflow_stage_confidence": 0.85,
-      "workflow_stage_source": "keyword:정산결과보고",
+      "workflow_stage_confidence": 0.68,
+      "workflow_stage_source": "compound:결과+현황+공유",
       "workflow_stage_ambiguous": false,
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": [
@@ -445,105 +482,7 @@
       ]
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
-    ]
-  },
-  {
-    "title": "진행상황 보고",
-    "improvement_type": "semantic_improvement",
-    "improvement_labels": [
-      "semantic_improvement"
-    ],
-    "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.056,
-      "high_ambiguity": false,
-      "ranking_depth": 2,
-      "top5_candidates": [
-        "document_reporting",
-        "progress_monitoring"
-      ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
-      "suppression_applied": false
-    },
-    "after": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.058,
-      "high_ambiguity": false,
-      "ranking_depth": 2,
-      "top5_candidates": [
-        "document_reporting",
-        "progress_monitoring"
-      ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 9,
-      "suppression_applied": false,
-      "inferred_workflow_stage": "progress",
-      "matched_workflow_stage": [
-        "progress",
-        "interim"
-      ],
-      "workflow_stage_confidence": 0.85,
-      "workflow_stage_source": "keyword:진행상황",
-      "workflow_stage_ambiguous": false,
-      "workflow_stage_mismatch": false,
-      "inferred_workflow_stages_all": [
-        "progress"
-      ]
-    },
-    "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
-    ]
-  },
-  {
-    "title": "최종결과 보고",
-    "improvement_type": "semantic_improvement",
-    "improvement_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
-    ],
-    "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
-      "top5_candidates": [
-        "document_reporting",
-        "result_reporting"
-      ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 14,
-      "suppression_applied": false
-    },
-    "after": {
-      "top_candidate": "result_reporting",
-      "ambiguity_gap": 0.058,
-      "high_ambiguity": false,
-      "ranking_depth": 2,
-      "top5_candidates": [
-        "result_reporting",
-        "document_reporting"
-      ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
-      "suppression_applied": false,
-      "inferred_workflow_stage": "final",
-      "matched_workflow_stage": [
-        "result",
-        "final"
-      ],
-      "workflow_stage_confidence": 0.75,
-      "workflow_stage_source": "keyword:최종결과보고",
-      "workflow_stage_ambiguous": false,
-      "workflow_stage_mismatch": false,
-      "inferred_workflow_stages_all": [
-        "final",
-        "result"
-      ]
-    },
-    "notes": [
+      "candidate retrieval coverage recovered",
       "workflow semantic candidate won or gained stronger evidence",
       "ranking moved toward explicit workflow boundary"
     ]
