@@ -93,6 +93,37 @@ class ReportingWorkflowStageMetadataTests(unittest.TestCase):
         self.assertEqual(document_reporting["workflow_stage"], ["progress", "interim"])
         self.assertEqual(result_reporting["workflow_stage"], ["result", "final"])
 
+    def test_status_workflow_candidates_expose_semantic_metadata(self) -> None:
+        expected = {
+            "status_summary": {
+                "category": "status_work",
+                "object_type": "status_document",
+                "action": "organize_summarize",
+                "workflow_stage": ["progress", "interim"],
+                "interaction_mode": "organize",
+                "tone": "neutral",
+            },
+            "status_sharing": {
+                "category": "status_work",
+                "object_type": "status_update",
+                "action": "share_status",
+                "workflow_stage": ["progress", "interim"],
+                "interaction_mode": "send_share",
+                "tone": "neutral",
+            },
+            "status_update": {
+                "category": "status_work",
+                "object_type": "status_record",
+                "action": "update_status",
+                "workflow_stage": ["progress"],
+                "interaction_mode": "update_record",
+                "tone": "neutral",
+            },
+        }
+        for candidate_id, metadata in expected.items():
+            with self.subTest(candidate_id=candidate_id):
+                self.assertEqual(self._cands[candidate_id]["semantic_metadata"], metadata)
+
     def test_document_reporting_does_not_retain_result_only_meaning_tokens(self) -> None:
         texts = {
             entry["text"]

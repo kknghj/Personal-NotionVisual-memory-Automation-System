@@ -758,5 +758,633 @@
     ],
     "reason": "정비 대상이 부서 환경이므로 workspace cleanup workflow",
     "workflow_resolution": 2
+  },
+  {
+    "title": "프로젝트 진행 현황 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "status_summary",
+    "pair_context": {
+      "action": "정리",
+      "subject": "현황"
+    },
+    "focus": "현황 정리·요약",
+    "interface_memory": [
+      "현황 정리",
+      "내부 현황자료"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "organize_summarize"
+    ],
+    "reason": "현황을 정리·요약·문서화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "부서별 업무 추진 현황 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "status_summary",
+    "pair_context": {
+      "action": "정리",
+      "subject": "현황"
+    },
+    "focus": "현황 정리·요약",
+    "interface_memory": [
+      "현황 정리",
+      "내부 현황자료"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "organize_summarize"
+    ],
+    "reason": "현황을 정리·요약·문서화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "클레임 처리 진행 현황 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "status_summary",
+    "pair_context": {
+      "action": "정리",
+      "subject": "현황"
+    },
+    "focus": "현황 정리·요약",
+    "interface_memory": [
+      "현황 정리",
+      "내부 현황자료"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "organize_summarize"
+    ],
+    "reason": "현황을 정리·요약·문서화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "주요사업 추진현황 주간회의 자료 작성",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "status_summary",
+    "pair_context": {
+      "action": "작성",
+      "subject": "현황"
+    },
+    "focus": "현황 정리·요약",
+    "interface_memory": [
+      "현황 정리",
+      "내부 현황자료"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "organize_summarize"
+    ],
+    "reason": "현황을 정리·요약·문서화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "분기별 예산 집행 현황 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "status_summary",
+    "pair_context": {
+      "action": "정리",
+      "subject": "현황"
+    },
+    "focus": "현황 정리·요약",
+    "interface_memory": [
+      "현황 정리",
+      "내부 현황자료"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "organize_summarize"
+    ],
+    "reason": "현황을 정리·요약·문서화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "협력업체 계약 진행 현황 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "status_summary",
+    "pair_context": {
+      "action": "정리",
+      "subject": "현황"
+    },
+    "focus": "현황 정리·요약",
+    "interface_memory": [
+      "현황 정리",
+      "내부 현황자료"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "organize_summarize"
+    ],
+    "reason": "현황을 정리·요약·문서화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "민원 처리 현황 내부자료 작성",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "status_summary",
+    "pair_context": {
+      "action": "작성",
+      "subject": "현황"
+    },
+    "focus": "현황 정리·요약",
+    "interface_memory": [
+      "현황 정리",
+      "내부 현황자료"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "organize_summarize"
+    ],
+    "reason": "현황을 정리·요약·문서화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "서버 장애 대응 현황 공유",
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_type": "status_sharing",
+    "pair_context": {
+      "action": "공유",
+      "subject": "현황"
+    },
+    "focus": "진행 현황 공유",
+    "interface_memory": [
+      "현황 공유",
+      "관계자 전달"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "send_share"
+    ],
+    "reason": "관계자에게 현재 상태·진행 현황을 공유하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "위험 요소 대응 현황 공유",
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_type": "status_sharing",
+    "pair_context": {
+      "action": "공유",
+      "subject": "현황"
+    },
+    "focus": "진행 현황 공유",
+    "interface_memory": [
+      "현황 공유",
+      "관계자 전달"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "send_share"
+    ],
+    "reason": "관계자에게 현재 상태·진행 현황을 공유하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "콘텐츠 제작 현황 공유",
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_type": "status_sharing",
+    "pair_context": {
+      "action": "공유",
+      "subject": "현황"
+    },
+    "focus": "진행 현황 공유",
+    "interface_memory": [
+      "현황 공유",
+      "관계자 전달"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "send_share"
+    ],
+    "reason": "관계자에게 현재 상태·진행 현황을 공유하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "부서별 현황 자료 공유",
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_type": "status_sharing",
+    "pair_context": {
+      "action": "공유",
+      "subject": "현황"
+    },
+    "focus": "진행 현황 공유",
+    "interface_memory": [
+      "현황 공유",
+      "관계자 전달"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "send_share"
+    ],
+    "reason": "관계자에게 현재 상태·진행 현황을 공유하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "신규 서비스 테스트 현황 공유",
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_type": "status_sharing",
+    "pair_context": {
+      "action": "공유",
+      "subject": "현황"
+    },
+    "focus": "진행 현황 공유",
+    "interface_memory": [
+      "현황 공유",
+      "관계자 전달"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "send_share"
+    ],
+    "reason": "관계자에게 현재 상태·진행 현황을 공유하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "고객 문의 대응 현황 공유",
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_type": "status_sharing",
+    "pair_context": {
+      "action": "공유",
+      "subject": "현황"
+    },
+    "focus": "진행 현황 공유",
+    "interface_memory": [
+      "현황 공유",
+      "관계자 전달"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "send_share"
+    ],
+    "reason": "관계자에게 현재 상태·진행 현황을 공유하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "행사 준비 현황 관계자 공유",
+    "visual": {
+      "type": "notion_icon",
+      "value": "paper airplane",
+      "color": "blue"
+    },
+    "workflow_type": "status_sharing",
+    "pair_context": {
+      "action": "공유",
+      "subject": "현황"
+    },
+    "focus": "진행 현황 공유",
+    "interface_memory": [
+      "현황 공유",
+      "관계자 전달"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "send_share"
+    ],
+    "reason": "관계자에게 현재 상태·진행 현황을 공유하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "재고 관리 현황 업데이트",
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_type": "status_update",
+    "pair_context": {
+      "action": "업데이트",
+      "subject": "현황"
+    },
+    "focus": "현황 갱신",
+    "interface_memory": [
+      "현황 업데이트",
+      "상태 갱신"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "update_record"
+    ],
+    "reason": "기존 현황·상태 정보를 최신화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "고객 문의 처리 현황 업데이트",
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_type": "status_update",
+    "pair_context": {
+      "action": "업데이트",
+      "subject": "현황"
+    },
+    "focus": "현황 갱신",
+    "interface_memory": [
+      "현황 업데이트",
+      "상태 갱신"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "update_record"
+    ],
+    "reason": "기존 현황·상태 정보를 최신화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "시스템 개발 진행 현황 업데이트",
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_type": "status_update",
+    "pair_context": {
+      "action": "업데이트",
+      "subject": "현황"
+    },
+    "focus": "현황 갱신",
+    "interface_memory": [
+      "현황 업데이트",
+      "상태 갱신"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "update_record"
+    ],
+    "reason": "기존 현황·상태 정보를 최신화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "신청 접수 현황 업데이트",
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_type": "status_update",
+    "pair_context": {
+      "action": "업데이트",
+      "subject": "현황"
+    },
+    "focus": "현황 갱신",
+    "interface_memory": [
+      "현황 업데이트",
+      "상태 갱신"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "update_record"
+    ],
+    "reason": "기존 현황·상태 정보를 최신화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "장비 점검 현황 업데이트",
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_type": "status_update",
+    "pair_context": {
+      "action": "업데이트",
+      "subject": "현황"
+    },
+    "focus": "현황 갱신",
+    "interface_memory": [
+      "현황 업데이트",
+      "상태 갱신"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "update_record"
+    ],
+    "reason": "기존 현황·상태 정보를 최신화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "교육 신청 현황 업데이트",
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_type": "status_update",
+    "pair_context": {
+      "action": "업데이트",
+      "subject": "현황"
+    },
+    "focus": "현황 갱신",
+    "interface_memory": [
+      "현황 업데이트",
+      "상태 갱신"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "update_record"
+    ],
+    "reason": "기존 현황·상태 정보를 최신화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "프로젝트 이슈 대응 현황 업데이트",
+    "visual": {
+      "type": "emoji",
+      "value": "🔄"
+    },
+    "workflow_type": "status_update",
+    "pair_context": {
+      "action": "업데이트",
+      "subject": "현황"
+    },
+    "focus": "현황 갱신",
+    "interface_memory": [
+      "현황 업데이트",
+      "상태 갱신"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "update_record"
+    ],
+    "reason": "기존 현황·상태 정보를 최신화하는 작업이 핵심",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "점검 결과 현황 공유",
+    "visual": {
+      "type": "emoji",
+      "value": "🗣️"
+    },
+    "workflow_type": "result_status_boundary",
+    "pair_context": {
+      "action": "공유",
+      "subject": "점검 결과"
+    },
+    "focus": "결과 현황 공유",
+    "interface_memory": [
+      "현황",
+      "경계 케이스"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "boundary_guard"
+    ],
+    "reason": "결과·현황 복합 공유는 보고 계열 유지",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "교육 운영 결과 현황 정리",
+    "visual": {
+      "type": "emoji",
+      "value": "🗣️"
+    },
+    "workflow_type": "result_status_boundary",
+    "pair_context": {
+      "action": "정리",
+      "subject": "운영 결과"
+    },
+    "focus": "결과 현황 정리",
+    "interface_memory": [
+      "현황",
+      "경계 케이스"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "boundary_guard"
+    ],
+    "reason": "결과·현황 복합 정리는 보고 계열 유지",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "전국 식생활교육 현황 보고",
+    "visual": {
+      "type": "emoji",
+      "value": "🗣️"
+    },
+    "workflow_type": "reporting_boundary",
+    "pair_context": {
+      "action": "보고",
+      "subject": "식생활교육 현황"
+    },
+    "focus": "현황 보고",
+    "interface_memory": [
+      "현황",
+      "경계 케이스"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "boundary_guard"
+    ],
+    "reason": "전국 현황 보고는 document/result reporting 판단 유지",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "보험 가입현황 제출",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "submission_boundary",
+    "pair_context": {
+      "action": "제출",
+      "subject": "가입현황"
+    },
+    "focus": "현황 제출",
+    "interface_memory": [
+      "현황",
+      "경계 케이스"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "boundary_guard"
+    ],
+    "reason": "제출 행위는 status_update가 아닌 문서·제출 계열",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "사업 운영 결과 현황 보고",
+    "visual": {
+      "type": "emoji",
+      "value": "🗣️"
+    },
+    "workflow_type": "result_status_boundary",
+    "pair_context": {
+      "action": "보고",
+      "subject": "운영 결과"
+    },
+    "focus": "결과 현황 보고",
+    "interface_memory": [
+      "현황",
+      "경계 케이스"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "boundary_guard"
+    ],
+    "reason": "결과·현황 복합 보고는 result_reporting 유지",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "비상소집 응소자 현황 제출",
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_type": "submission_boundary",
+    "pair_context": {
+      "action": "제출",
+      "subject": "응소자 현황"
+    },
+    "focus": "현황 제출",
+    "interface_memory": [
+      "현황",
+      "경계 케이스"
+    ],
+    "cognitive_mode": [
+      "status_work",
+      "boundary_guard"
+    ],
+    "reason": "제출 행위는 status_update가 아닌 문서·제출 계열",
+    "workflow_resolution": 2
   }
 ]
