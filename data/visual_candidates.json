@@ -47,8 +47,20 @@
     "usage_context": [
       "안내 메일",
       "일정 공지",
-      "자료 전달"
-    ]
+      "자료 전달",
+      "제출자료 메일 안내",
+      "공지 메일 발송"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "communication"
+      ],
+      "object_type": "message",
+      "interaction_mode": "send_share",
+      "visibility": "internal",
+      "tone": "neutral",
+      "send_share": "mail"
+    }
   },
   "phone_call": {
     "visual": {
@@ -111,6 +123,11 @@
         "interface_dominance": 1
       },
       {
+        "text": "슬랙",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
         "text": "채팅",
         "workflow_resolution": 1,
         "interface_dominance": 0
@@ -143,13 +160,26 @@
     ],
     "interface_memory": [
       "카카오톡",
+      "슬랙",
       "채팅창"
     ],
     "usage_context": [
       "카톡 협의",
       "메신저 대화",
-      "일정 조율"
-    ]
+      "일정 조율",
+      "슬랙 채널 안내",
+      "카카오톡 공지 전달"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "communication"
+      ],
+      "object_type": "message",
+      "interaction_mode": "send_share",
+      "visibility": "internal",
+      "tone": "neutral",
+      "send_share": "messenger"
+    }
   },
   "document_edit": {
     "visual": {
@@ -192,6 +222,21 @@
         "text": "공문",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "안내문",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "회의자료",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "검토자료",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -200,8 +245,20 @@
     ],
     "usage_context": [
       "회의록 수정",
-      "기안 작성"
-    ]
+      "기안 작성",
+      "안내문 작성",
+      "회의자료 작성",
+      "검토자료 작성"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "create_edit",
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "document_review": {
     "visual": {
@@ -239,7 +296,19 @@
       "자료 검토",
       "보고자료 확인",
       "법령 검토"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "review_confirm",
+      "document_flow_stage": [
+        "review"
+      ],
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "document_reporting": {
     "visual": {
@@ -467,7 +536,10 @@
       "interaction_mode": "request_delegate",
       "visibility": "internal",
       "tone": "formal",
-      "request_approval": "action_request"
+      "request_approval": "action_request",
+      "document_flow_stage": [
+        "request"
+      ]
     }
   },
   "review_request": {
@@ -524,6 +596,9 @@
       "object_type": "document",
       "interaction_mode": "review_request",
       "request_approval": "review_request",
+      "document_flow_stage": [
+        "request"
+      ],
       "visibility": "internal",
       "tone": "formal"
     }
@@ -570,6 +645,9 @@
       ],
       "object_type": "document",
       "interaction_mode": "submission_request",
+      "document_flow_stage": [
+        "request"
+      ],
       "request_approval": "submission_request",
       "visibility": "internal",
       "tone": "formal"
@@ -606,6 +684,16 @@
         "text": "참가폼제출",
         "workflow_resolution": 3,
         "interface_dominance": 0
+      },
+      {
+        "text": "현황제출",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "가입현황제출",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -622,8 +710,10 @@
         "document"
       ],
       "object_type": "document",
-      "interaction_mode": "submission_request",
-      "request_approval": "submission_request",
+      "interaction_mode": "submit",
+      "document_flow_stage": [
+        "submit"
+      ],
       "visibility": "internal",
       "tone": "formal"
     }
@@ -772,6 +862,16 @@
         "text": "업무요청",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "보완요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료제출보완요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -780,7 +880,8 @@
     ],
     "usage_context": [
       "수정 요청",
-      "업무 부탁"
+      "업무 부탁",
+      "자료 제출 보완 요청"
     ],
     "semantic_metadata": {
       "workflow_fit": [
@@ -788,6 +889,10 @@
       ],
       "object_type": "document",
       "interaction_mode": "request_delegate",
+      "document_flow_stage": [
+        "request"
+      ],
+      "request_approval": "revision_request",
       "visibility": "internal",
       "tone": "neutral"
     }
@@ -862,6 +967,9 @@
       ],
       "object_type": "document",
       "interaction_mode": "request_approval",
+      "document_flow_stage": [
+        "request"
+      ],
       "visibility": "internal",
       "tone": "formal",
       "request_approval": "approval_request"
@@ -888,6 +996,21 @@
         "text": "결재내용확인",
         "workflow_resolution": 3,
         "interface_dominance": 0
+      },
+      {
+        "text": "자료제출검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "제출검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "제출자료검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -896,8 +1019,22 @@
     ],
     "usage_context": [
       "결재 검토",
-      "승인 검토"
-    ]
+      "승인 검토",
+      "자료 제출 검토",
+      "제출 자료 검토"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "review_confirm",
+      "document_flow_stage": [
+        "review"
+      ],
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "document_signature": {
     "visual": {
@@ -935,7 +1072,19 @@
     "usage_context": [
       "결재하기",
       "사인"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "approve_signoff",
+      "document_flow_stage": [
+        "approve"
+      ],
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "final_approval": {
     "visual": {
@@ -958,6 +1107,31 @@
         "text": "승인완료",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "신청승인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료제출승인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "제출승인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "제출후승인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료제출후승인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -966,8 +1140,23 @@
     ],
     "usage_context": [
       "최종 승인",
-      "승인 완료"
-    ]
+      "승인 완료",
+      "신청 승인",
+      "자료 제출 승인"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "approve_signoff",
+      "document_flow_stage": [
+        "approve",
+        "complete"
+      ],
+      "visibility": "internal",
+      "tone": "formal"
+    }
   },
   "press_distribution": {
     "visual": {

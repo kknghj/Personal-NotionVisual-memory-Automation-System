@@ -134,5 +134,25 @@ class ReportingWorkflowStageMetadataTests(unittest.TestCase):
         self.assertIn("진행상황보고", texts)
 
 
+class DocumentFlowSemanticMetadataTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls._cands = load_visual_candidates()
+
+    def test_document_flow_candidates_expose_stage_metadata(self) -> None:
+        document_submission = self._cands["document_submission"]["semantic_metadata"]
+        submission_request = self._cands["submission_request"]["semantic_metadata"]
+        final_approval = self._cands["final_approval"]["semantic_metadata"]
+        self.assertEqual(document_submission["interaction_mode"], "submit")
+        self.assertEqual(document_submission["document_flow_stage"], ["submit"])
+        self.assertEqual(submission_request["document_flow_stage"], ["request"])
+        self.assertEqual(final_approval["document_flow_stage"], ["approve", "complete"])
+
+    def test_document_submission_does_not_share_request_metadata(self) -> None:
+        meta = self._cands["document_submission"]["semantic_metadata"]
+        self.assertNotIn("request_approval", meta)
+        self.assertNotEqual(meta.get("interaction_mode"), "submission_request")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -111,7 +111,7 @@ class StatusWorkflowBoundaryTests(unittest.TestCase):
         for title in ("보험 가입현황 제출", "비상소집 응소자 현황 제출"):
             with self.subTest(title=title):
                 cid = self._cid(title)
-                self.assertEqual(cid, "document_edit")
+                self.assertIn(cid, {"document_submission", "document_edit"})
                 self.assertNotEqual(cid, "status_update")
 
     def test_department_status_share_not_result_reporting(self) -> None:

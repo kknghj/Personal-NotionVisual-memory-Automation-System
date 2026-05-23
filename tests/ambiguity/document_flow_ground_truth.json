@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "description": "Manual labels for document_flow_stage calibration. user_confirmed_* fields are placeholders for human review.",
+  "labels": [
+    {
+      "title": "자료 제출",
+      "expected_candidate": "document_submission",
+      "expected_document_flow_stage": "submit"
+    },
+    {
+      "title": "자료 제출 요청",
+      "expected_candidate": "submission_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "자료 제출 승인",
+      "expected_candidate": "final_approval",
+      "expected_document_flow_stage": "approve"
+    },
+    {
+      "title": "자료 제출 검토",
+      "expected_candidate": "approval_review",
+      "expected_document_flow_stage": "review"
+    },
+    {
+      "title": "자료 제출 보완 요청",
+      "expected_candidate": "collaborative_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "승인 요청",
+      "expected_candidate": "approval_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "결재 요청",
+      "expected_candidate": "approval_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "검토 요청",
+      "expected_candidate": "review_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "신청 승인",
+      "expected_candidate": "final_approval",
+      "expected_document_flow_stage": "complete"
+    },
+    {
+      "title": "최종 승인",
+      "expected_candidate": "final_approval",
+      "expected_document_flow_stage": "complete"
+    },
+    {
+      "title": "자료 제출 후 승인",
+      "expected_candidate": "final_approval",
+      "expected_document_flow_stage": "approve"
+    },
+    {
+      "title": "제출 자료 검토",
+      "expected_candidate": "approval_review",
+      "expected_document_flow_stage": "review"
+    },
+    {
+      "title": "실적자료 제출",
+      "expected_candidate": "document_submission",
+      "expected_document_flow_stage": "submit"
+    },
+    {
+      "title": "참가폼 제출 요청",
+      "expected_candidate": "submission_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "수정사항 검토 요청",
+      "expected_candidate": "review_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "공문 결재 요청",
+      "expected_candidate": "approval_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "게시 승인 요청",
+      "expected_candidate": "approval_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "결재 검토",
+      "expected_candidate": "approval_review",
+      "expected_document_flow_stage": "review"
+    },
+    {
+      "title": "결재하기",
+      "expected_candidate": "document_signature",
+      "expected_document_flow_stage": "approve"
+    },
+    {
+      "title": "보험 가입현황 제출",
+      "expected_candidate": "document_submission",
+      "expected_document_flow_stage": "submit",
+      "notes": "현황+제출은 status_update가 아니라 submit 행위로 해석"
+    }
+  ],
+  "reject_or_return_gap": {
+    "status": "no_candidate",
+    "sample_titles_needing_user_frequency": [
+      "자료 제출 반려",
+      "제출 서류 회송",
+      "보완 후 재제출",
+      "결재 반송"
+    ],
+    "recommendation": "reject_or_return axis only; dedicated candidate after real-title frequency review"
+  }
+}

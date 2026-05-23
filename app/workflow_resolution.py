@@ -31,6 +31,7 @@ INTERFACE_ANCHOR_TERMS: frozenset[str] = frozenset(
         "전화",
         "카카오톡",
         "카톡",
+        "슬랙",
         "Cursor",
         "VSCode",
         "CLI",
