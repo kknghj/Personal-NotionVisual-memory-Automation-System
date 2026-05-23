@@ -1,15 +1,5 @@
 [
   {
-    "title": "게시 승인 요청",
-    "before": "approval_request",
-    "after": "approval_request",
-    "regression_type": "ontology_overlap_hotspot",
-    "severity": "low",
-    "reason": "neighbor workflow candidates are almost tied",
-    "before_ambiguity_gap": 0.0,
-    "after_ambiguity_gap": 0.0
-  },
-  {
     "title": "배너 이미지 게시",
     "before": "public_posting",
     "after": "public_posting",
@@ -20,39 +10,9 @@
     "after_ambiguity_gap": 0.002
   },
   {
-    "title": "설문폼 수정 요청",
-    "before": "collaborative_request",
-    "after": "collaborative_request",
-    "regression_type": "ambiguity_worsened",
-    "severity": "medium",
-    "reason": "top1/top2 gap narrowed materially",
-    "before_ambiguity_gap": 0.032,
-    "after_ambiguity_gap": 0.001
-  },
-  {
-    "title": "자료 제출 요청",
-    "before": "submission_request",
-    "after": "submission_request",
-    "regression_type": "ontology_overlap_hotspot",
-    "severity": "low",
-    "reason": "neighbor workflow candidates are almost tied",
-    "before_ambiguity_gap": 0.0,
-    "after_ambiguity_gap": 0.0
-  },
-  {
     "title": "정책자료 게시",
     "before": "public_posting",
     "after": "public_posting",
-    "regression_type": "ontology_overlap_hotspot",
-    "severity": "low",
-    "reason": "neighbor workflow candidates are almost tied",
-    "before_ambiguity_gap": 0.0,
-    "after_ambiguity_gap": 0.0
-  },
-  {
-    "title": "참가폼 제출 요청",
-    "before": "submission_request",
-    "after": "submission_request",
     "regression_type": "ontology_overlap_hotspot",
     "severity": "low",
     "reason": "neighbor workflow candidates are almost tied",

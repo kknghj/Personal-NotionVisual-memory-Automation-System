@@ -48,6 +48,8 @@
 | `visibility` | `string enum` | 예 | 결과물이나 행동이 노출되는 범위. 내부 처리, 조직 공지, 외부 공개를 구분한다. |
 | `tone` | `string enum` | 예 | 후보가 암시하는 업무 분위기. urgent/formal/sensitive 같은 scoring prior에 사용한다. |
 | `workflow_stage` | `array<string enum>` | 선택 | reporting 계열 후보의 lifecycle: `progress`, `interim`, `result`, `final`. 제목 신호와 교집합 시 soft bonus (§8.1 `workflow_ontology.md`). |
+| `document_flow_stage` | `array<string enum>` | 선택 | document submit/request/review/approve lifecycle: `request`, `submit`, `review`, `approve`, `reject_or_return`, `complete`. 제목 compound signal과 교집합 시 soft bonus (§8.4 `workflow_ontology.md`). |
+| `request_approval` | `string enum` | 선택 | request 계열 sub-axis: `action_request`, `submission_request`, `review_request`, `approval_request`, `revision_request`. |
 
 ### 타입 계약
 
@@ -151,9 +153,47 @@ type SemanticMetadata = {
   "call",
   "message",
   "authenticate_access",
-  "move_transport"
+  "move_transport",
+  "submit",
+  "submission_request",
+  "review_request",
+  "request_approval",
+  "publish_post"
 ]
 ```
+
+### `document_flow_stage`
+
+문서 제출·요청·검토·승인 lifecycle 축이다.
+
+```json
+[
+  "request",
+  "submit",
+  "review",
+  "approve",
+  "reject_or_return",
+  "complete"
+]
+```
+
+**`complete` 범위:** 승인/결재/신청 처리 흐름의 **최종 통과·완료**만 (`최종승인`, `승인완료`, `결재완료` 등 compound). `교육완료`·`작업완료`·`보고완료` 같은 **일반 작업 완료**에는 적용하지 않는다. bare `완료` 단독 추론 금지.
+
+### `request_approval`
+
+`document_flow_stage=request` 안에서 요청 종류를 더 좁힌다.
+
+```json
+[
+  "action_request",
+  "submission_request",
+  "review_request",
+  "approval_request",
+  "revision_request"
+]
+```
+
+**submission vs revision:** `자료 제출 요청`·`보완자료 제출 요청` → `submission_request` (제출할 자료가 핵심). `자료 제출 보완 요청`·`보완 요청`·`수정 요청` → `revision_request` (기존 자료 보완/수정이 핵심). 전용 `revision_request` candidate id 없음 — `collaborative_request`의 metadata로 검증.
 
 ### `visibility`
 
