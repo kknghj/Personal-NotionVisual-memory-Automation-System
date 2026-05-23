@@ -23,6 +23,7 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "자료제출요청",
             "서류제출요청",
             "참가폼제출요청",
+            "보완자료제출요청",
             "보완요청",
             "수정요청",
         ),
@@ -62,7 +63,7 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("send_share", "document", ("문서공유", "자료공유", "파일공유", "운영계획공유", "결과서공유")),
     ("request_approval", "approval_request", ("승인요청", "결재요청", "게시승인요청")),
     ("request_approval", "review_request", ("검토요청", "확인요청")),
-    ("request_approval", "submission_request", ("제출요청", "자료제출요청", "서류제출요청", "참가폼제출요청")),
+    ("request_approval", "submission_request", ("제출요청", "자료제출요청", "서류제출요청", "참가폼제출요청", "보완자료제출요청")),
     ("request_approval", "revision_request", ("보완요청", "수정요청", "자료제출보완요청")),
     ("request_approval", "action_request", ("지급요청", "협조요청", "요청")),
 )
@@ -83,13 +84,20 @@ FIELD_WEIGHTS: dict[str, int] = {
 DOCUMENT_FLOW_STAGE_COMPOUND_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
     (
         "complete",
-        ("최종승인", "최종결재", "승인완료", "신청승인"),
+        (
+            "최종승인",
+            "최종결재",
+            "승인완료",
+            "결재완료",
+            "신청승인",
+        ),
     ),
     (
         "request",
         (
             "자료제출보완요청",
             "제출보완요청",
+            "보완자료제출요청",
             "자료제출요청",
             "서류제출요청",
             "참가폼제출요청",
@@ -362,6 +370,19 @@ DOCUMENT_FLOW_STAGE_FALLBACK_PRIORITY: tuple[str, ...] = (
     "submit",
 )
 
+# ``완료`` alone is not document_flow complete — only approval/decision-flow compounds qualify.
+DOCUMENT_FLOW_NON_APPROVAL_COMPLETE_TERMS: frozenset[str] = frozenset(
+    {
+        "교육완료",
+        "작업완료",
+        "보고완료",
+        "정리완료",
+        "진행완료",
+        "행사완료",
+        "회의완료",
+    }
+)
+
 
 def infer_document_flow_stages(title: str) -> set[str]:
     """Infer document lifecycle stage from title (soft signal, not a hard filter)."""
@@ -377,6 +398,9 @@ def infer_document_flow_stages(title: str) -> set[str]:
 
     if best_stage:
         return {best_stage}
+
+    if canonical in DOCUMENT_FLOW_NON_APPROVAL_COMPLETE_TERMS:
+        return set()
 
     fallback: set[str] = set()
     if "요청" in canonical and any(
@@ -430,6 +454,7 @@ def _apply_document_flow_stage_signals(
                 "자료제출요청",
                 "서류제출요청",
                 "참가폼제출요청",
+                "보완자료제출요청",
             )
         ):
             signals.setdefault("interaction_mode", set()).add("submission_request")

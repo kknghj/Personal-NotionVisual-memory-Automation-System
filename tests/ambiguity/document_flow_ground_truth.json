@@ -13,6 +13,11 @@
       "expected_document_flow_stage": "request"
     },
     {
+      "title": "보완자료 제출 요청",
+      "expected_candidate": "submission_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
       "title": "자료 제출 승인",
       "expected_candidate": "final_approval",
       "expected_document_flow_stage": "approve"
@@ -24,6 +29,17 @@
     },
     {
       "title": "자료 제출 보완 요청",
+      "expected_candidate": "collaborative_request",
+      "expected_document_flow_stage": "request",
+      "notes": "revision_request — 기존 자료 보완/수정 요청"
+    },
+    {
+      "title": "보완 요청",
+      "expected_candidate": "collaborative_request",
+      "expected_document_flow_stage": "request"
+    },
+    {
+      "title": "수정 요청",
       "expected_candidate": "collaborative_request",
       "expected_document_flow_stage": "request"
     },
@@ -49,6 +65,16 @@
     },
     {
       "title": "최종 승인",
+      "expected_candidate": "final_approval",
+      "expected_document_flow_stage": "complete"
+    },
+    {
+      "title": "승인 완료",
+      "expected_candidate": "final_approval",
+      "expected_document_flow_stage": "complete"
+    },
+    {
+      "title": "결재 완료",
       "expected_candidate": "final_approval",
       "expected_document_flow_stage": "complete"
     },

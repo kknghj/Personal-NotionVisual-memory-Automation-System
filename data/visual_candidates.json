@@ -1073,6 +1073,11 @@
         "interface_dominance": 0
       },
       {
+        "text": "결재완료",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
         "text": "신청승인",
         "workflow_resolution": 3,
         "interface_dominance": 0
@@ -1094,7 +1099,8 @@
     ],
     "usage_context": [
       "최종 승인",
-      "승인 완료"
+      "승인 완료",
+      "결재 완료"
     ],
     "semantic_metadata": {
       "workflow_fit": [

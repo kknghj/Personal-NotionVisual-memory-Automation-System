@@ -194,6 +194,145 @@
     ]
   },
   {
+    "title": "보완자료 제출 요청",
+    "top_candidate": "submission_request",
+    "ambiguity_gap": 0.02,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "submission_request",
+        "final_score": 0.56,
+        "ambiguity_gap": 0.02,
+        "semantic_bonus": 11,
+        "semantic_match_reason": [
+          "document_flow_stage matched request",
+          "interaction_mode matched submission_request",
+          "object_type matched document",
+          "request_approval matched submission_request",
+          "workflow_fit matched document"
+        ],
+        "semantic_metadata_fields_matched": [
+          "document_flow_stage",
+          "interaction_mode",
+          "object_type",
+          "request_approval",
+          "workflow_fit"
+        ],
+        "why_scored": [
+          "'자료제출요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "document_flow_stage matched request",
+          "interaction_mode matched submission_request",
+          "object_type matched document",
+          "request_approval matched submission_request",
+          "workflow_fit matched document",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=6 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_submission",
+        "final_score": 0.54,
+        "ambiguity_gap": 0.02,
+        "semantic_bonus": 6,
+        "semantic_match_reason": [
+          "interaction_mode matched submit",
+          "object_type matched document",
+          "workflow_fit matched document"
+        ],
+        "semantic_metadata_fields_matched": [
+          "interaction_mode",
+          "object_type",
+          "workflow_fit"
+        ],
+        "why_scored": [
+          "'자료제출' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "interaction_mode matched submit",
+          "object_type matched document",
+          "workflow_fit matched document",
+          "match_position=2 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "document_edit",
+        "final_score": 0.52,
+        "ambiguity_gap": 0.02,
+        "semantic_bonus": 3,
+        "semantic_match_reason": [
+          "object_type matched document",
+          "workflow_fit matched document"
+        ],
+        "semantic_metadata_fields_matched": [
+          "object_type",
+          "workflow_fit"
+        ],
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "object_type matched document",
+          "workflow_fit matched document",
+          "match_position=-6 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 4,
+        "candidate": "notion_docs_touchup",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.02,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
+        "why_scored": [
+          "'보완' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
     "title": "자료 제출 승인",
     "top_candidate": "final_approval",
     "ambiguity_gap": 0.02,
@@ -627,6 +766,167 @@
           "token_match",
           "workflow_priority",
           "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "보완 요청",
+    "top_candidate": "collaborative_request",
+    "ambiguity_gap": 0.032,
+    "high_ambiguity": true,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "collaborative_request",
+        "final_score": 0.532,
+        "ambiguity_gap": 0.032,
+        "semantic_bonus": 8,
+        "semantic_match_reason": [
+          "document_flow_stage matched request",
+          "interaction_mode matched request_delegate",
+          "request_approval matched revision_request"
+        ],
+        "semantic_metadata_fields_matched": [
+          "document_flow_stage",
+          "interaction_mode",
+          "request_approval"
+        ],
+        "why_scored": [
+          "'보완요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "document_flow_stage matched request",
+          "interaction_mode matched request_delegate",
+          "request_approval matched revision_request",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.032,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=-2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 3,
+        "candidate": "notion_docs_touchup",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.032,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
+        "why_scored": [
+          "'보완' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "수정 요청",
+    "top_candidate": "collaborative_request",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "collaborative_request",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "semantic_bonus": 8,
+        "semantic_match_reason": [
+          "document_flow_stage matched request",
+          "interaction_mode matched request_delegate",
+          "request_approval matched revision_request"
+        ],
+        "semantic_metadata_fields_matched": [
+          "document_flow_stage",
+          "interaction_mode",
+          "request_approval"
+        ],
+        "why_scored": [
+          "'수정요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "document_flow_stage matched request",
+          "interaction_mode matched request_delegate",
+          "request_approval matched revision_request",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "semantic_bonus": 3,
+        "semantic_match_reason": [
+          "interaction_mode matched create_edit"
+        ],
+        "semantic_metadata_fields_matched": [
+          "interaction_mode"
+        ],
+        "why_scored": [
+          "'요청' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "interaction_mode matched create_edit",
+          "match_position=-2 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
           "rank_tiebreak.match_position",
           "rank_tiebreak.matched_keyword_length"
         ]
@@ -1087,6 +1387,118 @@
     "workflow_stage_ambiguous": false,
     "workflow_stage_mismatch": false,
     "inferred_workflow_stages_all": []
+  },
+  {
+    "title": "승인 완료",
+    "top_candidate": "final_approval",
+    "ambiguity_gap": 0.058,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "final_approval",
+        "final_score": 0.558,
+        "ambiguity_gap": 0.058,
+        "semantic_bonus": 7,
+        "semantic_match_reason": [
+          "document_flow_stage matched complete",
+          "interaction_mode matched approve_signoff",
+          "tone matched formal"
+        ],
+        "semantic_metadata_fields_matched": [
+          "document_flow_stage",
+          "interaction_mode",
+          "tone"
+        ],
+        "why_scored": [
+          "'승인완료' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "document_flow_stage matched complete",
+          "interaction_mode matched approve_signoff",
+          "tone matched formal",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
+        "rank": 2,
+        "candidate": "system_work",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.058,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
+        "why_scored": [
+          "'승인' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "결재 완료",
+    "top_candidate": "final_approval",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "final_approval",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "semantic_bonus": 8,
+        "semantic_match_reason": [
+          "document_flow_stage matched complete",
+          "interaction_mode matched approve_signoff",
+          "tone matched formal",
+          "visibility matched internal"
+        ],
+        "semantic_metadata_fields_matched": [
+          "document_flow_stage",
+          "interaction_mode",
+          "tone",
+          "visibility"
+        ],
+        "why_scored": [
+          "'결재완료' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=3 contributed to workflow specificity",
+          "document_flow_stage matched complete",
+          "interaction_mode matched approve_signoff",
+          "tone matched formal",
+          "visibility matched internal",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=4 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ]
   },
   {
     "title": "자료 제출 후 승인",
@@ -2098,6 +2510,105 @@
     "workflow_stage_confidence": 0.2,
     "workflow_stage_source": "ambiguous:현황",
     "workflow_stage_ambiguous": true,
+    "workflow_stage_mismatch": false,
+    "inferred_workflow_stages_all": []
+  },
+  {
+    "title": "교육 완료",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "작업 완료",
+    "top_candidate": null,
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": null,
+        "candidate": null,
+        "final_score": null,
+        "ambiguity_gap": null,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
+        "why_scored": [
+          "no candidate row generated from pair rules or meaning token matches"
+        ],
+        "matched_rules": []
+      }
+    ]
+  },
+  {
+    "title": "보고 완료",
+    "top_candidate": "document_reporting",
+    "ambiguity_gap": null,
+    "high_ambiguity": false,
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate": "document_reporting",
+        "final_score": 0.5,
+        "ambiguity_gap": null,
+        "semantic_bonus": 7,
+        "semantic_match_reason": [
+          "interaction_mode matched report_brief",
+          "tone matched formal",
+          "visibility matched internal",
+          "workflow_fit matched document"
+        ],
+        "semantic_metadata_fields_matched": [
+          "interaction_mode",
+          "tone",
+          "visibility",
+          "workflow_fit"
+        ],
+        "why_scored": [
+          "'보고' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=2 contributed to workflow specificity",
+          "interaction_mode matched report_brief",
+          "tone matched formal",
+          "visibility matched internal",
+          "workflow_fit matched document",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "semantic_metadata_bonus",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      }
+    ],
+    "inferred_workflow_stage": null,
+    "matched_workflow_stage": [
+      "progress",
+      "interim"
+    ],
+    "user_confirmed_workflow_stage": "",
+    "workflow_stage_confidence": 0.0,
+    "workflow_stage_source": "",
+    "workflow_stage_ambiguous": false,
     "workflow_stage_mismatch": false,
     "inferred_workflow_stages_all": []
   }
