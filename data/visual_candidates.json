@@ -192,6 +192,31 @@
         "text": "공문",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "안내문작성",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공지작성",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영계획공지작성",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "검토자료작성",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "회의자료작성",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -200,8 +225,20 @@
     ],
     "usage_context": [
       "회의록 수정",
-      "기안 작성"
-    ]
+      "기안 작성",
+      "안내문 작성",
+      "공지 작성",
+      "검토자료 작성"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "create_edit",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "document_review": {
     "visual": {
@@ -1371,6 +1408,16 @@
         "text": "배너이미지게시",
         "workflow_resolution": 3,
         "interface_dominance": 0
+      },
+      {
+        "text": "홈페이지배너게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "홈페이지게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -1380,7 +1427,8 @@
     "usage_context": [
       "정책자료 게시",
       "홍보물 게시",
-      "배너 이미지 게시"
+      "배너 이미지 게시",
+      "홈페이지 배너 게시"
     ],
     "semantic_metadata": {
       "workflow_fit": [

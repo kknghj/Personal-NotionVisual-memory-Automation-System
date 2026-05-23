@@ -1,42 +1,41 @@
 {
   "source_logs": {
-    "before": "tests/ambiguity/ambiguity_results/2026-05-21_current_state_workflow_stage_calibrated_log.json",
-    "after": "tests/ambiguity/ambiguity_results/2026-05-21_status_candidate_coverage_log.json"
+    "before": "tests/ambiguity/ambiguity_results/2026-05-23_publication_boundary_before_log.json",
+    "after": "tests/ambiguity/ambiguity_results/2026-05-23_publication_boundary_after_log.json"
   },
   "movement_metrics": {
     "total_titles": 157,
-    "top_candidate_changed_count": 25,
-    "no_candidate_before": 26,
+    "top_candidate_changed_count": 1,
+    "no_candidate_before": 3,
     "no_candidate_after": 3,
-    "no_candidate_decrease": 23,
-    "semantic_bonus_total_before": 768,
-    "semantic_bonus_total_after": 848,
-    "semantic_bonus_total_delta": 80,
-    "top_semantic_bonus_applied_before_count": 81,
-    "top_semantic_bonus_applied_after_count": 105,
-    "top_semantic_bonus_applied_delta": 24,
-    "suppression_applied_before_count": 24,
+    "no_candidate_decrease": 0,
+    "semantic_bonus_total_before": 848,
+    "semantic_bonus_total_after": 918,
+    "semantic_bonus_total_delta": 70,
+    "top_semantic_bonus_applied_before_count": 105,
+    "top_semantic_bonus_applied_after_count": 107,
+    "top_semantic_bonus_applied_delta": 2,
+    "suppression_applied_before_count": 25,
     "suppression_applied_after_count": 25,
-    "high_ambiguity_before": 61,
-    "high_ambiguity_after": 62,
-    "high_ambiguity_delta": 1,
-    "average_ambiguity_gap_before": 0.028,
+    "high_ambiguity_before": 62,
+    "high_ambiguity_after": 61,
+    "high_ambiguity_delta": -1,
+    "average_ambiguity_gap_before": 0.032,
     "average_ambiguity_gap_after": 0.032,
-    "average_ranking_depth_before": 1.726,
+    "average_ranking_depth_before": 1.962,
     "average_ranking_depth_after": 1.962,
-    "ranking_depth_delta": 0.236,
-    "titles_with_depth_increase": 28,
-    "titles_with_top2_competition_before": 85,
+    "ranking_depth_delta": 0.0,
+    "titles_with_depth_increase": 0,
+    "titles_with_top2_competition_before": 97,
     "titles_with_top2_competition_after": 97,
-    "ambiguity_gap_improved_count": 0,
-    "ambiguity_gap_worsened_count": 0,
-    "ambiguity_gap_unchanged_count": 85
+    "ambiguity_gap_improved_count": 2,
+    "ambiguity_gap_worsened_count": 3,
+    "ambiguity_gap_unchanged_count": 92
   },
   "change_label_counts": {
-    "generic_noise_reduction": 9,
-    "ranking_shift": 2,
-    "retrieval_improvement": 23,
-    "stable": 124
+    "generic_noise_reduction": 8,
+    "ranking_shift": 1,
+    "stable": 148
   },
   "top_candidate_distribution_after": {
     "app_release": 1,
@@ -44,10 +43,10 @@
     "broadcast_channel_adjust": 1,
     "collaborative_request": 1,
     "document_distribution": 9,
-    "document_edit": 9,
+    "document_edit": 10,
     "document_reporting": 18,
     "document_request": 3,
-    "document_review": 10,
+    "document_review": 9,
     "document_sharing": 7,
     "document_submission": 3,
     "education_fieldwork": 1,
@@ -83,98 +82,107 @@
   },
   "most_improved_top_10": [
     {
-      "title": "행사 준비 현황 관계자 공유",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "prep_paired_event_party",
+      "title": "강사 명단 공유",
+      "change_type": "generic_noise_reduction",
+      "before": "education_fieldwork",
+      "after": "education_fieldwork",
       "notes": [
-        "candidate retrieval coverage recovered",
         "generic token leakage reduced"
       ]
     },
     {
-      "title": "고객 문의 대응 현황 공유",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_sharing",
+      "title": "강사 배정 요청",
+      "change_type": "generic_noise_reduction",
+      "before": "document_edit",
+      "after": "document_edit",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "고객 문의 처리 현황 업데이트",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_update",
+      "title": "검토결과 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "교육 신청 현황 업데이트",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_update",
+      "title": "교육안내 발송",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "데이터 이관 작업 현황 공유",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_sharing",
+      "title": "링크트리 수정 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "민원 처리 현황 내부자료 작성",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_summary",
+      "title": "만족도조사 링크 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "부서별 업무 추진 현황 정리",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_summary",
+      "title": "안내문 송부",
+      "change_type": "generic_noise_reduction",
+      "before": "document_edit",
+      "after": "document_edit",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "분기별 예산 집행 현황 정리",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_summary",
+      "title": "운영결과 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "생산 라인 점검 현황 정리",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_summary",
+      "title": "QR 출석 등록",
+      "change_type": "stable",
+      "before": "qr_code_scan_auth",
+      "after": "qr_code_scan_auth",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "top candidate remained stable"
       ]
     },
     {
-      "title": "서버 장애 대응 현황 공유",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "status_sharing",
+      "title": "감사 지적사항 조치 현황 보고",
+      "change_type": "stable",
+      "before": "document_reporting",
+      "after": "document_reporting",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "top candidate remained stable"
       ]
     }
   ],
   "most_risky_regression_top_10": [
+    {
+      "title": "설문폼 수정 요청",
+      "before": "collaborative_request",
+      "after": "collaborative_request",
+      "regression_type": "ambiguity_worsened",
+      "severity": "medium",
+      "reason": "top1/top2 gap narrowed materially",
+      "before_ambiguity_gap": 0.032,
+      "after_ambiguity_gap": 0.001
+    },
     {
       "title": "게시 승인 요청",
       "before": "approval_request",
@@ -238,8 +246,8 @@
   ],
   "semantic_recommender_assessment": {
     "semantic_rows_increased": true,
-    "retrieval_coverage_improved": true,
-    "candidate_competition_increased": true,
+    "retrieval_coverage_improved": false,
+    "candidate_competition_increased": false,
     "summary": "semantic workflow competition increased: more titles have candidate rows, semantic metadata contributes to ranking, and generic token rows are explicitly dampened"
   },
   "keyword_dominance_remaining_areas": [
@@ -248,7 +256,6 @@
     "강사 배정 요청",
     "검토결과 안내",
     "고객 민원 처리 현황 확인",
-    "공문 전달",
     "교육안내 발송",
     "교육청 급식담당자 현황 조사",
     "구글드라이브 공유",
@@ -262,7 +269,8 @@
     "법령제도 개선 건의과제 추진현황 현행화 안내",
     "보험 가입현황 제출",
     "분석자료 전달",
-    "비상소집 응소자 현황 제출"
+    "비상소집 응소자 현황 제출",
+    "비영리민간단체 전수조사 현황 회신"
   ],
   "ontology_overlap_hotspots": [
     "게시 승인 요청",
@@ -302,7 +310,7 @@
     }
   },
   "comparison_scope": {
-    "before_title_count": 145,
+    "before_title_count": 157,
     "after_title_count": 157,
     "compared_title_count": 157,
     "intersection_only": false

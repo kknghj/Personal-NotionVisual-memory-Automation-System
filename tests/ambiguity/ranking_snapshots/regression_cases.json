@@ -20,6 +20,16 @@
     "after_ambiguity_gap": 0.002
   },
   {
+    "title": "설문폼 수정 요청",
+    "before": "collaborative_request",
+    "after": "collaborative_request",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.032,
+    "after_ambiguity_gap": 0.001
+  },
+  {
     "title": "자료 제출 요청",
     "before": "submission_request",
     "after": "submission_request",

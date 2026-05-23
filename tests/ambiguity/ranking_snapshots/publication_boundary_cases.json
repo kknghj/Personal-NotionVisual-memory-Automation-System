@@ -1,0 +1,61 @@
+[
+  {
+    "title": "운영계획 공지 작성",
+    "top_candidate": "document_edit",
+    "top3": [
+      "document_edit",
+      "notice_posting",
+      "urgent_notice"
+    ]
+  },
+  {
+    "title": "홈페이지 배너 게시",
+    "top_candidate": "public_posting",
+    "top3": [
+      "public_posting",
+      "publication_posting"
+    ]
+  },
+  {
+    "title": "민원 처리 현황 내부자료 작성",
+    "top_candidate": "status_summary",
+    "top3": [
+      "status_summary",
+      "document_edit"
+    ]
+  },
+  {
+    "title": "보도자료 게시",
+    "top_candidate": "publication_posting",
+    "top3": [
+      "publication_posting",
+      "press_distribution"
+    ]
+  },
+  {
+    "title": "보도자료 배포",
+    "top_candidate": "press_distribution",
+    "top3": [
+      "press_distribution",
+      "document_distribution"
+    ]
+  },
+  {
+    "title": "공지 메일 발송",
+    "top_candidate": "mail_distribution",
+    "top3": [
+      "mail_distribution",
+      "mail_action",
+      "urgent_notice"
+    ]
+  },
+  {
+    "title": "공지 카톡 전달",
+    "top_candidate": "messenger_chat",
+    "top3": [
+      "messenger_chat",
+      "document_review",
+      "urgent_notice"
+    ]
+  }
+]
