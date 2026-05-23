@@ -7,7 +7,8 @@ from typing import Any
 from app.workflow_resolution import _canonical_title_text
 
 TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
-    ("interaction_mode", "send_share", ("공유",)),
+    ("interaction_mode", "create_edit", ("작성", "기안", "수정", "편집", "기입")),
+    ("interaction_mode", "send_share", ("공유", "전달")),
     ("interaction_mode", "publish_distribute", ("배포", "배부", "송부", "전송", "발송")),
     ("interaction_mode", "publish_post", ("게시", "공고", "등록")),
     ("interaction_mode", "report_brief", ("보고", "브리핑", "상신")),
@@ -18,7 +19,7 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("workflow_fit", "communication", ("메일", "카카오톡", "카톡", "슬랙", "채팅")),
     ("workflow_fit", "document", ("문서", "자료", "공문", "계획", "보고", "결과", "안내문", "승인요청", "결재요청")),
     ("workflow_fit", "broadcast_notice", ("공지", "공고", "안내", "게시")),
-    ("workflow_fit", "web_publication", ("게시", "공개", "공고")),
+    ("workflow_fit", "web_publication", ("게시", "공개", "공고", "홈페이지", "배너")),
     ("workflow_fit", "tracking", ("현황", "진행상황", "집계", "점검결과", "추진실적")),
     ("object_type", "document", ("문서", "자료", "공문", "계획", "결과서", "보고서", "안내문", "승인요청", "결재요청")),
     ("object_type", "notice", ("공지", "공고", "게시", "안내")),
@@ -69,6 +70,17 @@ STATUS_WORK_SOFT_BONUS = 1
 STATUS_WORK_ACTION_UPDATE = "update_status"
 STATUS_WORK_ACTION_SHARE = "share_status"
 STATUS_WORK_ACTION_SUMMARIZE = "organize_summarize"
+
+
+TRANSFER_INTERACTION_MODES: frozenset[str] = frozenset({"publish_distribute", "send_share"})
+
+
+def title_has_transfer_without_compose(signals: dict[str, set[str]]) -> bool:
+    """Transfer/distribute/share verbs without compose — do not boost create_edit."""
+    modes = signals.get("interaction_mode", set())
+    has_transfer = bool(modes & TRANSFER_INTERACTION_MODES)
+    has_compose = "create_edit" in modes
+    return has_transfer and not has_compose
 
 WORKFLOW_STAGE_TITLE_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("final", ("최종결과보고", "최종결과", "최종보고", "최종안", "종료보고", "마감보고")),
@@ -289,17 +301,16 @@ def semantic_compatibility(
     reasons: list[str] = []
     fields: list[str] = []
 
-    for field in sorted(signals):
-        title_values = signals[field]
-        candidate_values = _as_values(semantic_metadata.get(field))
-        matched = sorted(title_values & candidate_values)
-        if not matched:
-            continue
-        score += FIELD_WEIGHTS.get(field, 1)
-        fields.append(field)
-        reasons.append(f"{field} matched {', '.join(matched)}")
-
     if is_result_status_reporting_compound(title):
+        for field in sorted(signals):
+            title_values = signals[field]
+            candidate_values = _as_values(semantic_metadata.get(field))
+            matched = sorted(title_values & candidate_values)
+            if not matched:
+                continue
+            score += FIELD_WEIGHTS.get(field, 1)
+            fields.append(field)
+            reasons.append(f"{field} matched {', '.join(matched)}")
         stage_values = _as_values(semantic_metadata.get("workflow_stage"))
         if "result" in stage_values or "final" in stage_values:
             score += RESULT_STATUS_REPORTING_SOFT_BONUS
@@ -309,6 +320,29 @@ def semantic_compatibility(
         return score, tuple(reasons), tuple(fields)
 
     status_action = detect_status_work_action(title)
+
+    if title_has_transfer_without_compose(signals):
+        if "create_edit" in _as_values(semantic_metadata.get("interaction_mode")):
+            return 0, (), ()
+
+    for field in sorted(signals):
+        title_values = signals[field]
+        if status_action and field == "interaction_mode" and "create_edit" in title_values:
+            continue
+        candidate_values = _as_values(semantic_metadata.get(field))
+        matched = sorted(title_values & candidate_values)
+        if not matched:
+            continue
+        score += FIELD_WEIGHTS.get(field, 1)
+        fields.append(field)
+        reasons.append(f"{field} matched {', '.join(matched)}")
+
+    if status_action == STATUS_WORK_ACTION_SUMMARIZE:
+        if "create_edit" in _as_values(semantic_metadata.get("interaction_mode")):
+            score = 0
+            reasons = []
+            fields = []
+
     if status_action:
         action_values = _as_values(semantic_metadata.get("action"))
         if status_action in action_values:
