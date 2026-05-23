@@ -1,0 +1,58 @@
+[
+  {
+    "title": "자료 제출",
+    "top_candidate": "document_submission"
+  },
+  {
+    "title": "자료 제출 요청",
+    "top_candidate": "submission_request"
+  },
+  {
+    "title": "자료 제출 검토",
+    "top_candidate": "approval_review"
+  },
+  {
+    "title": "자료 제출 보완 요청",
+    "top_candidate": "collaborative_request"
+  },
+  {
+    "title": "검토 요청",
+    "top_candidate": "review_request"
+  },
+  {
+    "title": "승인 요청",
+    "top_candidate": "approval_request"
+  },
+  {
+    "title": "결재 요청",
+    "top_candidate": "approval_request"
+  },
+  {
+    "title": "최종 승인",
+    "top_candidate": "final_approval"
+  },
+  {
+    "title": "신청 승인",
+    "top_candidate": "final_approval"
+  },
+  {
+    "title": "자료 제출 후 승인",
+    "top_candidate": "final_approval"
+  },
+  {
+    "title": "제출 자료 검토",
+    "top_candidate": "approval_review"
+  },
+  {
+    "title": "결재 검토",
+    "top_candidate": "approval_review"
+  },
+  {
+    "title": "결재하기",
+    "top_candidate": "document_signature"
+  },
+  {
+    "title": "보험 가입현황 제출",
+    "top_candidate": "document_submission"
+  }
+]
