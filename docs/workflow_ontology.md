@@ -491,6 +491,72 @@ tracking
 - **결과+현황 compound** — `is_result_status_reporting_compound()`가 true면 status_work boost **적용 안 함**.
 - **채널 override** — pair/meaning track의 interface anchor가 status_sharing보다 앞서도록 **기존 채널 철학** 유지 (별도 status_sharing penalty 없음).
 
+### 8.3 `publication` / `public` / `notice` boundary
+
+공지·안내·공고·게시·공개·배포·보도자료 계열은 **document lifecycle**, **channel**, **distribution** 후보와 자주 겹친다. 이번 축은 **후보를 늘리기보다** 의미 경계를 ontology·테스트로 고정하는 것이 목표다.
+
+#### 축 정의
+
+| 축 | semantic meaning | 대표 candidate_id | Typical signals |
+|----|------------------|-------------------|-----------------|
+| **notice** | 조직·서비스 **내용을 알림** | `notice_posting`, `urgent_notice`, `publication_pinned_notice` | `공지`, `공지사항`, `점검 공지`, `운영계획 공지`, `고정 공지` |
+| **publication** | **공식 게시·공고·공개 노출** | `publication_posting`, `publication_announcement`, `public_posting`, `publication_bulletin_update` | `게시`, `공고`, `등록`, `공개 모집`, `홈페이지 게시` |
+| **public** *(metadata)* | **외부/대민 대상 visibility** — 행위 후보가 아님 | *(없음 — `semantic_metadata.visibility=public`)* | `공개`, `대외`, `홈페이지`, `누리집` |
+| **distribution** | 산출물 **전달·배포·배부** | `press_distribution`, `booklet_distribution`, `app_release`, `document_distribution`, `mail_distribution` | `배포`, `배부`, `보도자료 배포`, `책자 배부`, `앱 배포`, `메일 발송`(일괄) |
+| **channel** | **전달 수단** — 메일·카톡·문자·메신저 등 | `mail_action`, `mail_sharing`, `messenger_chat`, `phone_call` | `메일`, `이메일`, `카톡`, `메신저`, `전화`, `발송`, `전달`, `공유` |
+
+`public_posting`은 **public visibility를 가진 publication 후보**다. `public`이라는 slug는 **standalone candidate id로 추가하지 않고** `visibility` / `workflow_fit=web_publication` metadata로만 다룬다.
+
+#### Boundary 원칙 (scoring·테스트)
+
+1. **채널 단서 우선** — `메일`/`카톡`/`메신저`/`이메일`/`발송`/`전달`/`공유`가 있으면 channel 계열이 `notice_posting` · `publication_*`보다 앞선다.
+2. **distribution 우선 (배포·배부)** — `배포`/`배부`/`보도자료`/`책자`/`앱` + 전달 동사 → distribution 계열이 publication보다 앞선다.
+3. **publication 우선 (게시·공고)** — `게시`/`공고`/`등록`/`공개 모집`/`홈페이지 게시` → publication 계열. **실제 action phrase**(`공고문 게시`, `모집 공고 게시`)와 object/context 단어(`공고번호`, `게시판`)만은 구분한다.
+4. **document_edit 우선 (작성)** — `안내문`/`회의자료`/`검토자료` **작성**은 document 작성 후보와 경쟁. **단순 `안내` 단어만**으로 publication action으로 보내지 않음.
+5. **`public`은 metadata** — `visibility=public` · `workflow_fit=web_publication` soft signal만 사용. standalone `public` candidate id **미도입**.
+6. **전달·송부·발송 vs 작성** — `전달`/`송부`/`발송` 같은 transfer 신호가 있고 `작성`/`기안`이 없으면 `document_edit`의 `create_edit` semantic boost를 적용하지 않는다 (`공문 전달` → `document_review` 유지).
+
+#### Distinction (핵심)
+
+| 대비 | 구분 |
+|------|------|
+| **notice vs publication** | `notice`는 **알림·안내 내용**. `publication`은 **공식 노출 행위** (`게시`, `공고`, `등록`). |
+| **publication vs distribution** | 산출물 **전달** → distribution. **노출·등록** → publication. |
+| **publication/notice vs channel** | 채널 단서가 있으면 channel 후보 우선. |
+| **publication vs document_edit** | **작성**은 document_edit. transfer 동사만으로 publication/document_edit 승격 금지. |
+| **action phrase vs context object** | `공고번호 확인`/`게시판 확인`은 publication 아님. `공고문 게시`/`홈페이지 공고 게시`는 publication. |
+| **`public` metadata vs candidate** | `공개`/`대외`는 visibility 신호 — 별도 candidate id 없음. |
+
+#### Candidate metadata 매핑 (현재 정책)
+
+| candidate_id | sub_workflow | `interaction_mode` | `publish_distribute` | `visibility` | 비고 |
+|--------------|--------------|--------------------|----------------------|--------------|------|
+| `notice_posting` | publication.announcement | `publish_post` | `posting` | `public` | 공지 **게시** |
+| `publication_announcement` | publication.announcement | `publish_post` | `posting` | `public` | **공고** |
+| `publication_posting` | publication.posting | `publish_post` | `posting` | `public` | 일반 **게시** |
+| `public_posting` | publication.posting | `publish_post` | `posting` | `public` | **대외·홈페이지** (`web_publication`) |
+| `press_distribution` | distribution.press | `publish_distribute` | `distribution` | `public` | 보도자료 **배포** |
+| `document_edit` | edit | `create_edit` | — | `internal` | **작성** (transfer-only title에는 semantic 미적용) |
+| `document_review` | review | `review_confirm` | — | `internal` | **전달·확인·열람** |
+| `mail_action` / `messenger_chat` | channel | `message` | — | — | 채널 surface |
+
+#### `sample_cases` / 테스트 커버리지
+
+- **Boundary titles**는 `sample_cases.json`에 중복 추가하지 않고 테스트에서만 검증한다.
+  - notice vs publication vs document_edit: `tests/test_publication_notice_boundaries.py`
+  - channel: `tests/test_publication_channel_boundaries.py`
+  - distribution: `tests/test_publication_distribution_boundaries.py`
+  - public visibility metadata: `tests/test_public_visibility_metadata.py`
+  - transfer vs create_edit: `tests/test_publication_transfer_boundaries.py`
+  - publication false positive guard: `tests/test_publication_context_guard_boundaries.py`
+
+#### Scoring 연동 원칙 (요약)
+
+- **hard filter 아님** — boundary는 soft `semantic_metadata` · meaning · `semantic_bonus`로 조정.
+- **transfer without compose** — `전달`/`송부`/`발송`/`배포`/`공유` signal + `작성`/`기안` 부재 → `create_edit` candidate semantic **skip**.
+- **context object guard** — `공고번호`/`게시판`은 compound subject; 내부 action substring만으로 publication 매칭하지 않음 (`workflow_resolution.py` guard + 테스트).
+- **`public`** — `visibility=public` metadata match만 가산.
+
 ---
 
 ## 9. Related category (primary / secondary)
