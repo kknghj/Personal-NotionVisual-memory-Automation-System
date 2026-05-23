@@ -301,7 +301,7 @@
       {
         "rank": 1,
         "candidate": "document_distribution",
-        "final_score": 0.571,
+        "final_score": 0.54,
         "ambiguity_gap": 0.032,
         "semantic_bonus": 9,
         "semantic_match_reason": [
@@ -342,26 +342,15 @@
       {
         "rank": 2,
         "candidate": "document_edit",
-        "final_score": 0.539,
+        "final_score": 0.508,
         "ambiguity_gap": 0.032,
-        "semantic_bonus": 4,
-        "semantic_match_reason": [
-          "object_type matched document",
-          "visibility matched internal",
-          "workflow_fit matched document"
-        ],
-        "semantic_metadata_fields_matched": [
-          "object_type",
-          "visibility",
-          "workflow_fit"
-        ],
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
         "why_scored": [
           "'송부' matched from visual_candidates meaning",
           "workflow_priority=2 used as secondary rank",
           "keyword_workflow_resolution=1 contributed to workflow specificity",
-          "object_type matched document",
-          "visibility matched internal",
-          "workflow_fit matched document",
           "match_position=-4 used as deterministic tie-break",
           "matched_keyword_length=2 used as tie-break"
         ],
@@ -369,7 +358,6 @@
           "token_match",
           "workflow_priority",
           "keyword_workflow_resolution",
-          "semantic_metadata_bonus",
           "rank_tiebreak.match_position",
           "rank_tiebreak.matched_keyword_length"
         ]
@@ -478,53 +466,15 @@
   },
   {
     "title": "공문 전달",
-    "top_candidate": "document_edit",
-    "ambiguity_gap": 0.031,
+    "top_candidate": "document_review",
+    "ambiguity_gap": 0.0,
     "high_ambiguity": true,
     "rankings": [
       {
         "rank": 1,
-        "candidate": "document_edit",
-        "final_score": 0.531,
-        "ambiguity_gap": 0.031,
-        "semantic_bonus": 5,
-        "semantic_match_reason": [
-          "object_type matched document",
-          "tone matched neutral",
-          "visibility matched internal",
-          "workflow_fit matched document"
-        ],
-        "semantic_metadata_fields_matched": [
-          "object_type",
-          "tone",
-          "visibility",
-          "workflow_fit"
-        ],
-        "why_scored": [
-          "'공문' matched from visual_candidates meaning",
-          "workflow_priority=2 used as secondary rank",
-          "keyword_workflow_resolution=1 contributed to workflow specificity",
-          "object_type matched document",
-          "tone matched neutral",
-          "visibility matched internal",
-          "workflow_fit matched document",
-          "match_position=0 used as deterministic tie-break",
-          "matched_keyword_length=2 used as tie-break"
-        ],
-        "matched_rules": [
-          "token_match",
-          "workflow_priority",
-          "keyword_workflow_resolution",
-          "semantic_metadata_bonus",
-          "rank_tiebreak.match_position",
-          "rank_tiebreak.matched_keyword_length"
-        ]
-      },
-      {
-        "rank": 2,
         "candidate": "document_review",
         "final_score": 0.5,
-        "ambiguity_gap": 0.031,
+        "ambiguity_gap": 0.0,
         "semantic_bonus": 0,
         "semantic_match_reason": [],
         "semantic_metadata_fields_matched": [],
@@ -544,10 +494,33 @@
         ]
       },
       {
+        "rank": 2,
+        "candidate": "document_edit",
+        "final_score": 0.5,
+        "ambiguity_gap": 0.0,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
+        "why_scored": [
+          "'공문' matched from visual_candidates meaning",
+          "workflow_priority=2 used as secondary rank",
+          "keyword_workflow_resolution=1 contributed to workflow specificity",
+          "match_position=0 used as deterministic tie-break",
+          "matched_keyword_length=2 used as tie-break"
+        ],
+        "matched_rules": [
+          "token_match",
+          "workflow_priority",
+          "keyword_workflow_resolution",
+          "rank_tiebreak.match_position",
+          "rank_tiebreak.matched_keyword_length"
+        ]
+      },
+      {
         "rank": 3,
         "candidate": "mail_action",
         "final_score": 0.5,
-        "ambiguity_gap": 0.031,
+        "ambiguity_gap": 0.0,
         "semantic_bonus": 0,
         "semantic_match_reason": [],
         "semantic_metadata_fields_matched": [],
@@ -1026,35 +999,21 @@
   {
     "title": "안내문 송부",
     "top_candidate": "document_edit",
-    "ambiguity_gap": 0.075,
-    "high_ambiguity": false,
+    "ambiguity_gap": 0.019,
+    "high_ambiguity": true,
     "rankings": [
       {
         "rank": 1,
         "candidate": "document_edit",
-        "final_score": 0.575,
-        "ambiguity_gap": 0.075,
-        "semantic_bonus": 5,
-        "semantic_match_reason": [
-          "object_type matched document",
-          "tone matched neutral",
-          "visibility matched internal",
-          "workflow_fit matched document"
-        ],
-        "semantic_metadata_fields_matched": [
-          "object_type",
-          "tone",
-          "visibility",
-          "workflow_fit"
-        ],
+        "final_score": 0.519,
+        "ambiguity_gap": 0.019,
+        "semantic_bonus": 0,
+        "semantic_match_reason": [],
+        "semantic_metadata_fields_matched": [],
         "why_scored": [
           "'송부' matched from visual_candidates meaning",
           "workflow_priority=2 used as secondary rank",
           "keyword_workflow_resolution=1 contributed to workflow specificity",
-          "object_type matched document",
-          "tone matched neutral",
-          "visibility matched internal",
-          "workflow_fit matched document",
           "match_position=-3 used as deterministic tie-break",
           "matched_keyword_length=2 used as tie-break"
         ],
@@ -1062,7 +1021,6 @@
           "token_match",
           "workflow_priority",
           "keyword_workflow_resolution",
-          "semantic_metadata_bonus",
           "rank_tiebreak.match_position",
           "rank_tiebreak.matched_keyword_length"
         ]
@@ -1071,7 +1029,7 @@
         "rank": 2,
         "candidate": "mail_action",
         "final_score": 0.5,
-        "ambiguity_gap": 0.075,
+        "ambiguity_gap": 0.019,
         "semantic_bonus": 0,
         "semantic_match_reason": [],
         "semantic_metadata_fields_matched": [],

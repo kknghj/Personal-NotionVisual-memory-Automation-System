@@ -235,15 +235,15 @@
     },
     "after": {
       "top_candidate": "document_edit",
-      "ambiguity_gap": 0.075,
-      "high_ambiguity": false,
+      "ambiguity_gap": 0.019,
+      "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
         "document_edit",
         "mail_action"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
       "suppression_applied": true
     },
     "notes": [

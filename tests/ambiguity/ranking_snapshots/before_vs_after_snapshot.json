@@ -1098,33 +1098,33 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "document_edit",
-      "ambiguity_gap": 0.031,
+      "top_candidate": "document_review",
+      "ambiguity_gap": 0.0,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
-        "document_edit",
         "document_review",
+        "document_edit",
         "mail_action"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1132,7 +1132,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4480,15 +4480,15 @@
     },
     "after": {
       "top_candidate": "document_edit",
-      "ambiguity_gap": 0.075,
-      "high_ambiguity": false,
+      "ambiguity_gap": 0.019,
+      "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
         "document_edit",
         "mail_action"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
       "suppression_applied": true
     },
     "changed": false,
@@ -4503,8 +4503,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -8137,7 +8137,7 @@
         "event_preparation"
       ],
       "top_semantic_bonus": 9,
-      "semantic_bonus_total": 13,
+      "semantic_bonus_total": 9,
       "suppression_applied": true
     },
     "changed": false,
@@ -8153,7 +8153,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 4
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,

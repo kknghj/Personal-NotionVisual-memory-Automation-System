@@ -1203,6 +1203,16 @@
         "text": "결과자료배포",
         "workflow_resolution": 3,
         "interface_dominance": 0
+      },
+      {
+        "text": "공문송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공문발송",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [

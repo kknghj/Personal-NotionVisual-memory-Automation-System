@@ -8,7 +8,7 @@ from app.workflow_resolution import _canonical_title_text
 
 TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("interaction_mode", "create_edit", ("작성", "기안", "수정", "편집", "기입")),
-    ("interaction_mode", "send_share", ("공유",)),
+    ("interaction_mode", "send_share", ("공유", "전달")),
     ("interaction_mode", "publish_distribute", ("배포", "배부", "송부", "전송", "발송")),
     ("interaction_mode", "publish_post", ("게시", "공고", "등록")),
     ("interaction_mode", "report_brief", ("보고", "브리핑", "상신")),
@@ -70,6 +70,17 @@ STATUS_WORK_SOFT_BONUS = 1
 STATUS_WORK_ACTION_UPDATE = "update_status"
 STATUS_WORK_ACTION_SHARE = "share_status"
 STATUS_WORK_ACTION_SUMMARIZE = "organize_summarize"
+
+
+TRANSFER_INTERACTION_MODES: frozenset[str] = frozenset({"publish_distribute", "send_share"})
+
+
+def title_has_transfer_without_compose(signals: dict[str, set[str]]) -> bool:
+    """Transfer/distribute/share verbs without compose — do not boost create_edit."""
+    modes = signals.get("interaction_mode", set())
+    has_transfer = bool(modes & TRANSFER_INTERACTION_MODES)
+    has_compose = "create_edit" in modes
+    return has_transfer and not has_compose
 
 WORKFLOW_STAGE_TITLE_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("final", ("최종결과보고", "최종결과", "최종보고", "최종안", "종료보고", "마감보고")),
@@ -309,6 +320,10 @@ def semantic_compatibility(
         return score, tuple(reasons), tuple(fields)
 
     status_action = detect_status_work_action(title)
+
+    if title_has_transfer_without_compose(signals):
+        if "create_edit" in _as_values(semantic_metadata.get("interaction_mode")):
+            return 0, (), ()
 
     for field in sorted(signals):
         title_values = signals[field]
