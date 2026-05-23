@@ -4,7 +4,8 @@ Case notes (competing candidates — not enforced here):
 - ``분기별 예산 집행 현황 정리``: spreadsheet_work may compete with status_summary.
 - ``주요사업 추진현황 주간회의 자료 작성``: document_edit may compete with status_summary.
 - ``부서별 현황 자료 공유``: document_sharing may compete with status_sharing.
-- Channel hints (메일/카톡/외부 공유): mail_sharing / messenger_chat — not in base B titles.
+- Channel hints (메일/카톡/메신저): see ``tests/test_status_channel_boundaries.py``.
+- Formal document writing (보고서/공고문/…): see ``tests/test_status_document_edit_boundaries.py``.
 """
 
 from __future__ import annotations
@@ -121,7 +122,12 @@ class StatusWorkflowBoundaryTests(unittest.TestCase):
 
 
 class StatusWorkflowExactMatchTests(unittest.TestCase):
-    """Runtime exact-match samples for all 28 unique titles (27 JSON rows)."""
+    """Runtime exact-match samples for 27 status-work titles in ``sample_cases.json``.
+
+    Channel- and document-type boundary titles (e.g. ``… 메일 공유``, ``현황 보고서 작성``)
+    are covered in ``test_status_channel_boundaries`` / ``test_status_document_edit_boundaries``
+    only — not duplicated in ``sample_cases.json``.
+    """
 
     EXPECTED_STATUS_TITLES: frozenset[str] = frozenset(
         {
