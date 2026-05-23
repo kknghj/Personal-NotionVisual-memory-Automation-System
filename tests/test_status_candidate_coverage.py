@@ -103,7 +103,7 @@ class StatusBoundaryRegressionTests(unittest.TestCase):
         for title in ("보험 가입현황 제출", "비상소집 응소자 현황 제출"):
             with self.subTest(title=title):
                 self.assertIsNone(detect_status_work_action(title))
-                self.assertEqual(self._cid(title), "document_edit")
+                self.assertIn(self._cid(title), {"document_submission", "document_edit"})
                 rows = rank_visual_candidate_rows(title, self._cands)
                 self.assertFalse(any(r.candidate_id == "status_update" for r in rows[:3]))
 

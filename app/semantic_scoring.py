@@ -15,7 +15,35 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("interaction_mode", "request_delegate", ("요청", "협조요청", "지급요청")),
     ("interaction_mode", "request_approval", ("승인요청", "결재요청", "승인요청", "결재받기")),
     ("interaction_mode", "review_request", ("검토요청", "확인요청")),
-    ("interaction_mode", "submission_request", ("제출요청", "제출")),
+    (
+        "interaction_mode",
+        "submission_request",
+        (
+            "제출요청",
+            "자료제출요청",
+            "서류제출요청",
+            "참가폼제출요청",
+            "보완요청",
+            "수정요청",
+        ),
+    ),
+    (
+        "interaction_mode",
+        "submit",
+        (
+            "자료제출",
+            "실적자료제출",
+            "추진현황제출",
+            "활동결과제출",
+            "참가폼제출",
+        ),
+    ),
+    ("interaction_mode", "review_confirm", ("검토",)),
+    (
+        "interaction_mode",
+        "approve_signoff",
+        ("승인하기", "결재하기", "최종승인", "최종결재", "신청승인"),
+    ),
     ("workflow_fit", "communication", ("메일", "카카오톡", "카톡", "슬랙", "채팅")),
     ("workflow_fit", "document", ("문서", "자료", "공문", "계획", "보고", "결과", "안내문", "승인요청", "결재요청")),
     ("workflow_fit", "broadcast_notice", ("공지", "공고", "안내", "게시")),
@@ -34,12 +62,14 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("send_share", "document", ("문서공유", "자료공유", "파일공유", "운영계획공유", "결과서공유")),
     ("request_approval", "approval_request", ("승인요청", "결재요청", "게시승인요청")),
     ("request_approval", "review_request", ("검토요청", "확인요청")),
-    ("request_approval", "submission_request", ("제출요청", "자료제출")),
+    ("request_approval", "submission_request", ("제출요청", "자료제출요청", "서류제출요청", "참가폼제출요청")),
+    ("request_approval", "revision_request", ("보완요청", "수정요청", "자료제출보완요청")),
     ("request_approval", "action_request", ("지급요청", "협조요청", "요청")),
 )
 
 FIELD_WEIGHTS: dict[str, int] = {
     "interaction_mode": 3,
+    "document_flow_stage": 3,
     "workflow_fit": 2,
     "workflow_stage": 2,
     "publish_distribute": 2,
@@ -49,6 +79,52 @@ FIELD_WEIGHTS: dict[str, int] = {
     "visibility": 1,
     "tone": 1,
 }
+
+DOCUMENT_FLOW_STAGE_COMPOUND_TERMS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    (
+        "complete",
+        ("최종승인", "최종결재", "승인완료", "신청승인"),
+    ),
+    (
+        "request",
+        (
+            "자료제출보완요청",
+            "제출보완요청",
+            "자료제출요청",
+            "서류제출요청",
+            "참가폼제출요청",
+            "제출요청",
+            "검토요청",
+            "확인요청",
+            "승인요청",
+            "결재요청",
+            "보완요청",
+            "수정요청",
+            "신청내용확인요청",
+        ),
+    ),
+    (
+        "approve",
+        ("자료제출승인", "제출승인", "제출후승인", "자료제출후승인", "결재하기", "승인하기"),
+    ),
+    (
+        "review",
+        ("자료제출검토", "제출검토", "제출자료검토", "결재검토", "승인검토"),
+    ),
+    ("reject_or_return", ("반려", "회송", "반송")),
+    (
+        "submit",
+        (
+            "자료제출",
+            "실적자료제출",
+            "추진현황제출",
+            "활동결과제출",
+            "참가폼제출",
+            "현황제출",
+            "가입현황제출",
+        ),
+    ),
+)
 
 # Longer phrases first so e.g. ``최종결과`` wins over bare ``결과``.
 WORKFLOW_STAGE_AMBIGUOUS_TERMS: frozenset[str] = frozenset({"현황"})
@@ -277,6 +353,96 @@ def infer_workflow_stage_detail(title: str) -> dict[str, Any]:
     }
 
 
+DOCUMENT_FLOW_STAGE_FALLBACK_PRIORITY: tuple[str, ...] = (
+    "complete",
+    "request",
+    "approve",
+    "review",
+    "reject_or_return",
+    "submit",
+)
+
+
+def infer_document_flow_stages(title: str) -> set[str]:
+    """Infer document lifecycle stage from title (soft signal, not a hard filter)."""
+    canonical = _canonical_title_text(title)
+
+    best_stage: str | None = None
+    best_len = 0
+    for stage, terms in DOCUMENT_FLOW_STAGE_COMPOUND_TERMS:
+        for term in terms:
+            if term in canonical and len(term) > best_len:
+                best_len = len(term)
+                best_stage = stage
+
+    if best_stage:
+        return {best_stage}
+
+    fallback: set[str] = set()
+    if "요청" in canonical and any(
+        marker in canonical
+        for marker in ("검토", "확인", "승인", "결재", "보완", "수정", "제출", "협조", "지급")
+    ):
+        fallback.add("request")
+    if "제출" in canonical and "요청" not in canonical:
+        fallback.add("submit")
+    if "검토" in canonical or (
+        "확인" in canonical and "요청" not in canonical and "현황" not in canonical
+    ):
+        fallback.add("review")
+    if ("승인" in canonical or "결재" in canonical) and "검토" not in canonical:
+        fallback.add("approve")
+    if any(term in canonical for term in ("반려", "회송", "반송")):
+        fallback.add("reject_or_return")
+
+    for stage in DOCUMENT_FLOW_STAGE_FALLBACK_PRIORITY:
+        if stage in fallback:
+            return {stage}
+    return fallback
+
+
+def _apply_document_flow_stage_signals(
+    title: str,
+    signals: dict[str, set[str]],
+) -> None:
+    stages = infer_document_flow_stages(title)
+    if not stages:
+        return
+
+    signals["document_flow_stage"] = stages
+    canonical = _canonical_title_text(title)
+
+    if "request" in stages:
+        if any(
+            term in canonical
+            for term in ("보완요청", "수정요청", "자료제출보완요청", "제출보완요청")
+        ):
+            signals.setdefault("interaction_mode", set()).add("request_delegate")
+            signals.setdefault("request_approval", set()).add("revision_request")
+        elif any(term in canonical for term in ("검토요청", "확인요청", "신청내용확인요청")):
+            signals.setdefault("interaction_mode", set()).add("review_request")
+        elif any(term in canonical for term in ("승인요청", "결재요청", "게시승인요청")):
+            signals.setdefault("interaction_mode", set()).add("request_approval")
+        elif any(
+            term in canonical
+            for term in (
+                "제출요청",
+                "자료제출요청",
+                "서류제출요청",
+                "참가폼제출요청",
+            )
+        ):
+            signals.setdefault("interaction_mode", set()).add("submission_request")
+        elif "요청" in canonical:
+            signals.setdefault("interaction_mode", set()).add("request_delegate")
+    elif "submit" in stages:
+        signals.setdefault("interaction_mode", set()).add("submit")
+    elif "review" in stages:
+        signals.setdefault("interaction_mode", set()).add("review_confirm")
+    elif "approve" in stages or "complete" in stages:
+        signals.setdefault("interaction_mode", set()).add("approve_signoff")
+
+
 def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
     canonical = _canonical_title_text(title)
     signals: dict[str, set[str]] = {}
@@ -286,6 +452,7 @@ def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
     stages = infer_title_workflow_stages(title)
     if stages:
         signals["workflow_stage"] = stages
+    _apply_document_flow_stage_signals(title, signals)
     return signals
 
 
