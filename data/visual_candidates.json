@@ -20,6 +20,16 @@
         "interface_dominance": 1
       },
       {
+        "text": "이메일",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "아웃룩",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
         "text": "안내",
         "workflow_resolution": 1,
         "interface_dominance": 0
@@ -1336,6 +1346,41 @@
       },
       {
         "text": "파일송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료전달",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공문전달",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "회의자료전달",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "검토자료전달",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "결과자료전달",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "파일전달",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "서류전달",
         "workflow_resolution": 3,
         "interface_dominance": 0
       }

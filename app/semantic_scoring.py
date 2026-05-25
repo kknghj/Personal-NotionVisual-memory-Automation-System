@@ -45,14 +45,14 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "approve_signoff",
         ("승인하기", "결재하기", "최종승인", "최종결재", "신청승인"),
     ),
-    ("workflow_fit", "communication", ("메일", "카카오톡", "카톡", "슬랙", "채팅")),
+    ("workflow_fit", "communication", ("메일", "이메일", "아웃룩", "카카오톡", "카톡", "슬랙", "채팅")),
     ("workflow_fit", "document", ("문서", "자료", "공문", "계획", "보고", "결과", "안내문", "승인요청", "결재요청")),
     ("workflow_fit", "broadcast_notice", ("공지", "공고", "안내", "게시")),
     ("workflow_fit", "web_publication", ("게시", "공개", "공고", "홈페이지", "배너")),
     ("workflow_fit", "tracking", ("현황", "진행상황", "집계", "점검결과", "추진실적")),
     ("object_type", "document", ("문서", "자료", "공문", "계획", "결과서", "보고서", "안내문", "승인요청", "결재요청")),
     ("object_type", "notice", ("공지", "공고", "게시", "안내")),
-    ("object_type", "message", ("메일", "카카오톡", "카톡", "슬랙", "채팅")),
+    ("object_type", "message", ("메일", "이메일", "아웃룩", "카카오톡", "카톡", "슬랙", "채팅")),
     ("visibility", "public", ("게시", "공개", "공고", "공지사항")),
     ("visibility", "internal", ("공유", "전달", "송부", "전송", "보고", "결재", "승인요청")),
     ("tone", "formal", ("공문", "결재", "승인", "보고", "공고", "게시")),
@@ -162,9 +162,22 @@ EXPLICIT_CHANNEL_TERMS: frozenset[str] = frozenset(
     {"메일", "이메일", "아웃룩", "카카오톡", "카톡", "슬랙", "채팅", "메신저"},
 )
 GENERIC_TRANSFER_TERMS: frozenset[str] = frozenset({"전달"})
+# TODO(channel-conflict): ``발송``·``전송``은 mail channel(``mail_action`` meaning)과 겹칠 수 있어
+# ``document_distribution`` formal dispatch boost와 mail channel boost가 동시에 켜질 여지가 있다.
 FORMAL_DISPATCH_TERMS: frozenset[str] = frozenset({"송부", "배부", "배포", "전송", "발송"})
 ACCESS_SHARE_OBJECT_TERMS: frozenset[str] = frozenset(
     {"암호", "비밀번호", "패스워드", "권한", "계정"},
+)
+OBJECT_BOUND_TRANSFER_OBJECT_TERMS: frozenset[str] = frozenset(
+    {
+        "공문",
+        "자료",
+        "회의자료",
+        "검토자료",
+        "결과자료",
+        "파일",
+        "서류",
+    },
 )
 DOCUMENT_TRANSFER_OBJECT_TERMS: frozenset[str] = frozenset(
     {
@@ -187,6 +200,16 @@ MAIL_CHANNEL_CANDIDATE_IDS: frozenset[str] = frozenset(
 )
 TRANSFER_SHARING_SOFT_BONUS = 2
 GENERIC_TRANSFER_MAIL_PENALTY = 2
+
+
+def _title_has_object_bound_transfer(canonical: str) -> bool:
+    """``object + 전달`` compound — not bare ``전달`` alone."""
+    if "전달" not in canonical or _title_has_explicit_channel(canonical):
+        return False
+    return any(
+        f"{obj}전달" in canonical
+        for obj in sorted(OBJECT_BOUND_TRANSFER_OBJECT_TERMS, key=len, reverse=True)
+    )
 
 
 def _title_has_explicit_channel(canonical: str) -> bool:
@@ -238,14 +261,19 @@ def transfer_sharing_semantic_adjustment(
     adj_reasons = list(reasons)
     adj_fields = list(fields)
 
+    has_transfer_action = "전달" in canonical or has_dispatch or has_sharing
     if has_channel and candidate_id in MAIL_CHANNEL_CANDIDATE_IDS:
-        if has_generic_transfer or has_dispatch or has_sharing:
+        if has_transfer_action:
             bonus += TRANSFER_SHARING_SOFT_BONUS
             adj_reasons.append("transfer_sharing explicit channel soft boost")
 
     if "송부" in canonical and candidate_id == "document_distribution":
         bonus += TRANSFER_SHARING_SOFT_BONUS
         adj_reasons.append("transfer_sharing formal dispatch document_distribution soft boost")
+
+    if _title_has_object_bound_transfer(canonical) and candidate_id == "document_distribution":
+        bonus += TRANSFER_SHARING_SOFT_BONUS
+        adj_reasons.append("transfer_sharing object-bound transfer document_distribution soft boost")
 
     if has_sharing and candidate_id == "document_sharing":
         if has_document_object and not has_access_object:

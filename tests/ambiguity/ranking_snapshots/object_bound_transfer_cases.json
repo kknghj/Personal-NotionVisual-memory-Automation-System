@@ -1,0 +1,157 @@
+{
+  "summary": {
+    "approach": "A (compound meanings) + B-lite (object-bound semantic soft boost)",
+    "routing_changes": [
+      "자료 전달",
+      "공문 전달",
+      "회의자료 전달",
+      "검토자료 전달",
+      "결과자료 전달",
+      "파일 전달"
+    ],
+    "unchanged_ambiguous": [
+      "운영현황 전달",
+      "내용 전달",
+      "정보 전달"
+    ],
+    "unchanged_strong_signals": [
+      "결과보고 전달"
+    ],
+    "regressions_preserved": [
+      "메일로 자료 전달 → mail_action",
+      "공문 송부 → document_distribution",
+      "문서 공유 → document_sharing",
+      "암호 공유 → credential_sharing"
+    ]
+  },
+  "cases": [
+    {
+      "title": "자료 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_distribution",
+      "changed": true,
+      "top3": [
+        {"candidate": "document_distribution", "matched": "자료전달", "semantic_bonus": 6},
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "공문 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_distribution",
+      "changed": true,
+      "top3": [
+        {"candidate": "document_distribution", "matched": "공문전달", "semantic_bonus": 7},
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0},
+        {"candidate": "document_edit", "matched": "공문", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "회의자료 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_distribution",
+      "changed": true,
+      "top3": [
+        {"candidate": "document_distribution", "matched": "회의자료전달", "semantic_bonus": 6},
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "검토자료 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_distribution",
+      "changed": true,
+      "top3": [
+        {"candidate": "document_distribution", "matched": "검토자료전달", "semantic_bonus": 6},
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "결과자료 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_distribution",
+      "changed": true,
+      "top3": [
+        {"candidate": "document_distribution", "matched": "결과자료전달", "semantic_bonus": 6},
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "파일 전달",
+      "before_top_candidate": "folder_organization",
+      "after_top_candidate": "document_distribution",
+      "changed": true,
+      "top3": [
+        {"candidate": "document_distribution", "matched": "파일전달", "semantic_bonus": 3},
+        {"candidate": "folder_organization", "matched": "파일", "semantic_bonus": 0},
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "운영현황 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_review",
+      "changed": false,
+      "top3": [
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "결과보고 전달",
+      "before_top_candidate": "result_reporting",
+      "after_top_candidate": "result_reporting",
+      "changed": false,
+      "top3": [
+        {"candidate": "result_reporting", "matched": "결과보고", "semantic_bonus": 9},
+        {"candidate": "document_reporting", "matched": "보고", "semantic_bonus": 7},
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "내용 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_review",
+      "changed": false,
+      "top3": [
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "정보 전달",
+      "before_top_candidate": "document_review",
+      "after_top_candidate": "document_review",
+      "changed": false,
+      "top3": [
+        {"candidate": "document_review", "matched": "전달", "semantic_bonus": 0}
+      ]
+    },
+    {
+      "title": "메일로 자료 전달",
+      "before_top_candidate": "mail_action",
+      "after_top_candidate": "mail_action",
+      "changed": false,
+      "regression": true
+    },
+    {
+      "title": "공문 송부",
+      "before_top_candidate": "document_distribution",
+      "after_top_candidate": "document_distribution",
+      "changed": false,
+      "regression": true
+    },
+    {
+      "title": "문서 공유",
+      "before_top_candidate": "document_sharing",
+      "after_top_candidate": "document_sharing",
+      "changed": false,
+      "regression": true
+    },
+    {
+      "title": "암호 공유",
+      "before_top_candidate": "credential_sharing",
+      "after_top_candidate": "credential_sharing",
+      "changed": false,
+      "regression": true
+    }
+  ]
+}

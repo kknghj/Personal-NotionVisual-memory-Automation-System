@@ -2,7 +2,7 @@
 
 ``전달``/``송부``/``발송`` without ``작성``/``기안`` must not let ``document_edit``
 semantic (create_edit) beat review or distribution candidates.
-``공문 전달`` regression: top1 stays ``document_review`` (not collateral document_edit).
+``공문 전달`` — object-bound transfer routes to ``document_distribution``.
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from app.recommender import find_best_visual_candidate_match, rank_visual_candid
 
 DOCUMENT_EDIT_FORBIDDEN_TOP1 = frozenset({"document_edit"})
 TRANSFER_EXPECTED = {
-    "공문 전달": "document_review",
+    "공문 전달": "document_distribution",
     "공문 송부": "document_distribution",
     "공문 발송": "document_distribution",
 }
@@ -41,12 +41,14 @@ class PublicationTransferBoundaryTests(unittest.TestCase):
                 assert match is not None
                 self.assertEqual(match.candidate_id, expected)
 
-    def test_gongmun_jeondal_regression_document_review(self) -> None:
-        """Collateral from document_edit metadata — intentionally reverted."""
+    def test_gongmun_jeondal_routes_to_document_distribution(self) -> None:
+        """Object-bound ``공문 전달`` beats ``document_edit`` collateral."""
         top3 = self._top_ids("공문 전달", 3)
-        self.assertEqual(top3[0], "document_review", msg=top3)
+        self.assertEqual(top3[0], "document_distribution", msg=top3)
         if "document_edit" in top3:
-            self.assertLess(top3.index("document_review"), top3.index("document_edit"))
+            self.assertLess(top3.index("document_distribution"), top3.index("document_edit"))
+        if "document_review" in top3:
+            self.assertLess(top3.index("document_distribution"), top3.index("document_review"))
 
 
 if __name__ == "__main__":
