@@ -158,6 +158,115 @@ STATUS_WORK_ACTION_SUMMARIZE = "organize_summarize"
 
 TRANSFER_INTERACTION_MODES: frozenset[str] = frozenset({"publish_distribute", "send_share"})
 
+EXPLICIT_CHANNEL_TERMS: frozenset[str] = frozenset(
+    {"메일", "이메일", "아웃룩", "카카오톡", "카톡", "슬랙", "채팅", "메신저"},
+)
+GENERIC_TRANSFER_TERMS: frozenset[str] = frozenset({"전달"})
+FORMAL_DISPATCH_TERMS: frozenset[str] = frozenset({"송부", "배부", "배포", "전송", "발송"})
+ACCESS_SHARE_OBJECT_TERMS: frozenset[str] = frozenset(
+    {"암호", "비밀번호", "패스워드", "권한", "계정"},
+)
+DOCUMENT_TRANSFER_OBJECT_TERMS: frozenset[str] = frozenset(
+    {
+        "문서",
+        "자료",
+        "공문",
+        "계획",
+        "보고",
+        "결과",
+        "안내문",
+        "검토자료",
+        "정산서류",
+        "파일",
+        "링크",
+        "서류",
+    },
+)
+MAIL_CHANNEL_CANDIDATE_IDS: frozenset[str] = frozenset(
+    {"mail_action", "mail_sharing", "mail_distribution"},
+)
+TRANSFER_SHARING_SOFT_BONUS = 2
+GENERIC_TRANSFER_MAIL_PENALTY = 2
+
+
+def _title_has_explicit_channel(canonical: str) -> bool:
+    return any(term in canonical for term in EXPLICIT_CHANNEL_TERMS)
+
+
+def _title_has_formal_dispatch(canonical: str) -> bool:
+    return any(term in canonical for term in FORMAL_DISPATCH_TERMS)
+
+
+def _title_has_generic_transfer_only(canonical: str) -> bool:
+    return (
+        any(term in canonical for term in GENERIC_TRANSFER_TERMS)
+        and not _title_has_explicit_channel(canonical)
+        and not _title_has_formal_dispatch(canonical)
+    )
+
+
+def _title_has_access_share_object(canonical: str) -> bool:
+    return any(term in canonical for term in ACCESS_SHARE_OBJECT_TERMS)
+
+
+def _title_has_document_transfer_object(canonical: str) -> bool:
+    return any(term in canonical for term in DOCUMENT_TRANSFER_OBJECT_TERMS)
+
+
+def transfer_sharing_semantic_adjustment(
+    title: str,
+    candidate_id: str | None,
+    semantic_metadata: dict[str, Any] | None,
+    score: int,
+    reasons: tuple[str, ...],
+    fields: tuple[str, ...],
+) -> tuple[int, tuple[str, ...], tuple[str, ...]]:
+    """Soft bonus/penalty for 전달/송부/공유 policy (channel > object > action > generic)."""
+    if not candidate_id or not semantic_metadata:
+        return score, reasons, fields
+
+    canonical = _canonical_title_text(title)
+    has_channel = _title_has_explicit_channel(canonical)
+    has_dispatch = _title_has_formal_dispatch(canonical)
+    has_sharing = "공유" in canonical
+    has_generic_transfer = _title_has_generic_transfer_only(canonical)
+    has_access_object = _title_has_access_share_object(canonical)
+    has_document_object = _title_has_document_transfer_object(canonical)
+
+    bonus = 0
+    penalty = 0
+    adj_reasons = list(reasons)
+    adj_fields = list(fields)
+
+    if has_channel and candidate_id in MAIL_CHANNEL_CANDIDATE_IDS:
+        if has_generic_transfer or has_dispatch or has_sharing:
+            bonus += TRANSFER_SHARING_SOFT_BONUS
+            adj_reasons.append("transfer_sharing explicit channel soft boost")
+
+    if "송부" in canonical and candidate_id == "document_distribution":
+        bonus += TRANSFER_SHARING_SOFT_BONUS
+        adj_reasons.append("transfer_sharing formal dispatch document_distribution soft boost")
+
+    if has_sharing and candidate_id == "document_sharing":
+        if has_document_object and not has_access_object:
+            bonus += TRANSFER_SHARING_SOFT_BONUS
+            adj_reasons.append("transfer_sharing document object sharing soft boost")
+
+    if has_sharing and candidate_id == "credential_sharing" and has_access_object:
+        bonus += TRANSFER_SHARING_SOFT_BONUS
+        adj_reasons.append("transfer_sharing access/key sharing soft boost")
+
+    if has_sharing and has_access_object and candidate_id == "document_sharing":
+        penalty += TRANSFER_SHARING_SOFT_BONUS
+        adj_reasons.append("transfer_sharing access object demotes document_sharing")
+
+    if has_generic_transfer and not has_channel and candidate_id in MAIL_CHANNEL_CANDIDATE_IDS:
+        penalty += GENERIC_TRANSFER_MAIL_PENALTY
+        adj_reasons.append("transfer_sharing generic transfer demotes mail channel")
+
+    adjusted = max(0, score + bonus - penalty)
+    return adjusted, tuple(adj_reasons), tuple(adj_fields)
+
 
 def title_has_transfer_without_compose(signals: dict[str, set[str]]) -> bool:
     """Transfer/distribute/share verbs without compose — do not boost create_edit."""
@@ -484,6 +593,7 @@ def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
 def semantic_compatibility(
     title: str,
     semantic_metadata: dict[str, Any] | None,
+    candidate_id: str | None = None,
 ) -> tuple[int, tuple[str, ...], tuple[str, ...]]:
     if not semantic_metadata:
         return 0, (), ()
@@ -543,7 +653,14 @@ def semantic_compatibility(
                 fields.append("action")
             reasons.append(f"action status_work {status_action} soft boost")
 
-    return score, tuple(reasons), tuple(fields)
+    return transfer_sharing_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        tuple(reasons),
+        tuple(fields),
+    )
 
 
 def semantic_metadata_with_updates(

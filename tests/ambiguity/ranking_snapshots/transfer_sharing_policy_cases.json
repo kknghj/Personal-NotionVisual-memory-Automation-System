@@ -1,0 +1,250 @@
+[
+  {
+    "title": "자료 전달",
+    "top_candidate": "document_review",
+    "top3": [
+      {
+        "candidate": "document_review",
+        "matched": "전달",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "메일로 자료 전달",
+    "top_candidate": "mail_action",
+    "top3": [
+      {
+        "candidate": "mail_action",
+        "matched": "메일",
+        "semantic_bonus": 0
+      },
+      {
+        "candidate": "document_review",
+        "matched": "전달",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "결과보고 전달",
+    "top_candidate": "result_reporting",
+    "top3": [
+      {
+        "candidate": "result_reporting",
+        "matched": "결과보고",
+        "semantic_bonus": 9
+      },
+      {
+        "candidate": "document_reporting",
+        "matched": "보고",
+        "semantic_bonus": 7
+      },
+      {
+        "candidate": "document_review",
+        "matched": "전달",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "공문 전달",
+    "top_candidate": "document_review",
+    "top3": [
+      {
+        "candidate": "document_review",
+        "matched": "전달",
+        "semantic_bonus": 0
+      },
+      {
+        "candidate": "document_edit",
+        "matched": "공문",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "운영현황 전달",
+    "top_candidate": "document_review",
+    "top3": [
+      {
+        "candidate": "document_review",
+        "matched": "전달",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "공문 송부",
+    "top_candidate": "document_distribution",
+    "top3": [
+      {
+        "candidate": "document_distribution",
+        "matched": "공문송부",
+        "semantic_bonus": 12
+      },
+      {
+        "candidate": "document_edit",
+        "matched": "공문",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "검토자료 송부",
+    "top_candidate": "document_distribution",
+    "top3": [
+      {
+        "candidate": "document_distribution",
+        "matched": "검토자료송부",
+        "semantic_bonus": 11
+      }
+    ]
+  },
+  {
+    "title": "정산서류 송부",
+    "top_candidate": "document_distribution",
+    "top3": [
+      {
+        "candidate": "document_distribution",
+        "matched": "정산서류송부",
+        "semantic_bonus": 8
+      }
+    ]
+  },
+  {
+    "title": "안내문 송부",
+    "top_candidate": "document_distribution",
+    "top3": [
+      {
+        "candidate": "document_distribution",
+        "matched": "안내문송부",
+        "semantic_bonus": 11
+      },
+      {
+        "candidate": "mail_action",
+        "matched": "안내",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "행사자료 송부",
+    "top_candidate": "document_distribution",
+    "top3": [
+      {
+        "candidate": "document_distribution",
+        "matched": "자료송부",
+        "semantic_bonus": 11
+      },
+      {
+        "candidate": "event_preparation",
+        "matched": "행사",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "문서 공유",
+    "top_candidate": "document_sharing",
+    "top3": [
+      {
+        "candidate": "document_sharing",
+        "matched": "문서공유",
+        "semantic_bonus": 12
+      }
+    ]
+  },
+  {
+    "title": "자료 공유",
+    "top_candidate": "document_sharing",
+    "top3": [
+      {
+        "candidate": "document_sharing",
+        "matched": "자료공유",
+        "semantic_bonus": 12
+      }
+    ]
+  },
+  {
+    "title": "링크 공유",
+    "top_candidate": "document_sharing",
+    "top3": [
+      {
+        "candidate": "document_sharing",
+        "matched": "링크공유",
+        "semantic_bonus": 7
+      }
+    ]
+  },
+  {
+    "title": "암호 공유",
+    "top_candidate": "credential_sharing",
+    "top3": [
+      {
+        "candidate": "credential_sharing",
+        "matched": "암호공유",
+        "semantic_bonus": 6
+      }
+    ]
+  },
+  {
+    "title": "계정 권한 공유",
+    "top_candidate": "credential_sharing",
+    "top3": [
+      {
+        "candidate": "credential_sharing",
+        "matched": "계정권한공유",
+        "semantic_bonus": 6
+      }
+    ]
+  },
+  {
+    "title": "운영계획 공유",
+    "top_candidate": "document_sharing",
+    "top3": [
+      {
+        "candidate": "document_sharing",
+        "matched": "운영계획공유",
+        "semantic_bonus": 12
+      }
+    ]
+  },
+  {
+    "title": "회의자료 메일 공유",
+    "top_candidate": "mail_sharing",
+    "top3": [
+      {
+        "candidate": "mail_sharing",
+        "matched": "메일공유",
+        "semantic_bonus": 12
+      },
+      {
+        "candidate": "mail_action",
+        "matched": "메일",
+        "semantic_bonus": 0
+      }
+    ]
+  },
+  {
+    "title": "공문 메일 송부",
+    "top_candidate": "mail_distribution",
+    "top3": [
+      {
+        "candidate": "mail_distribution",
+        "matched": "메일송부",
+        "semantic_bonus": 12
+      },
+      {
+        "candidate": "mail_action",
+        "matched": "메일",
+        "semantic_bonus": 0
+      },
+      {
+        "candidate": "document_distribution",
+        "matched": "송부",
+        "semantic_bonus": 12
+      }
+    ]
+  }
+]
