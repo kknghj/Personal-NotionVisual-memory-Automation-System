@@ -1,8 +1,13 @@
 [
   {
     "title": "자료 전달",
-    "top_candidate": "document_review",
+    "top_candidate": "document_distribution",
     "top3": [
+      {
+        "candidate": "document_distribution",
+        "matched": "자료전달",
+        "semantic_bonus": 6
+      },
       {
         "candidate": "document_review",
         "matched": "전달",
@@ -49,8 +54,13 @@
   },
   {
     "title": "공문 전달",
-    "top_candidate": "document_review",
+    "top_candidate": "document_distribution",
     "top3": [
+      {
+        "candidate": "document_distribution",
+        "matched": "공문전달",
+        "semantic_bonus": 7
+      },
       {
         "candidate": "document_review",
         "matched": "전달",

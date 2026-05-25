@@ -26,6 +26,8 @@ INTERFACE_ANCHOR_TERMS: frozenset[str] = frozenset(
     {
         "엑셀",
         "메일",
+        "이메일",
+        "아웃룩",
         "QR",
         "네이버폼",
         "전화",

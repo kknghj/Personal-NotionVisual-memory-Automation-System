@@ -37,13 +37,15 @@ class TransferSharingSemanticPolicyTests(unittest.TestCase):
         return [row.candidate_id for row in rows[:n]]
 
     def test_generic_transfer_does_not_force_mail_action(self) -> None:
-        """``자료 전달`` — generic transfer; must not top1 ``mail_action``."""
+        """``자료 전달`` — object-bound transfer; must not top1 ``mail_action``."""
         top3 = self._top_ids("자료 전달", 3)
         self.assertNotEqual(top3[0], "mail_action", msg=top3)
+        self.assertEqual(top3[0], "document_distribution", msg=top3)
         match = find_best_visual_candidate_match("자료 전달", self._cands)
         self.assertIsNotNone(match)
         assert match is not None
         self.assertNotEqual(match.candidate_id, "mail_action")
+        self.assertEqual(match.candidate_id, "document_distribution")
 
     def test_channel_plus_transfer_prefers_mail_action(self) -> None:
         top3 = self._top_ids("메일로 자료 전달", 3)
@@ -118,6 +120,75 @@ class TransferSharingSemanticPolicyTests(unittest.TestCase):
         if top3[0] in MAIL_CHANNEL_IDS:
             return
         self.assertEqual(top3[0], "document_distribution")
+
+    def test_mail_channel_synonyms_prefer_mail_candidates(self) -> None:
+        """``이메일``·``아웃룩`` are mail interface anchors like ``메일``."""
+        cases = (
+            "이메일 자료 송부",
+            "아웃룩으로 자료 전달",
+            "이메일 발송",
+            "메일 발송",
+        )
+        for title in cases:
+            with self.subTest(title=title):
+                top3 = self._top_ids(title, 3)
+                self.assertIn(top3[0], MAIL_CHANNEL_IDS, msg=top3)
+                match = find_best_visual_candidate_match(title, self._cands)
+                self.assertIsNotNone(match)
+                assert match is not None
+                self.assertIn(match.candidate_id, MAIL_CHANNEL_IDS)
+
+    def test_object_bound_transfer_routes_to_document_distribution(self) -> None:
+        """``object + 전달`` (no channel) → ``document_distribution``, not ``document_review``."""
+        cases = (
+            "자료 전달",
+            "공문 전달",
+            "회의자료 전달",
+            "검토자료 전달",
+            "결과자료 전달",
+            "파일 전달",
+            "서류 전달",
+        )
+        for title in cases:
+            with self.subTest(title=title):
+                top3 = self._top_ids(title, 3)
+                self.assertEqual(top3[0], "document_distribution", msg=top3)
+                self.assertNotEqual(top3[0], "document_review")
+                match = find_best_visual_candidate_match(title, self._cands)
+                self.assertIsNotNone(match)
+                assert match is not None
+                self.assertEqual(match.candidate_id, "document_distribution")
+
+    def test_ambiguous_transfer_titles_not_forced_to_distribution(self) -> None:
+        """Bare/generic transfer without distribution object stays ambiguous or non-distribution top1."""
+        cases = (
+            ("운영현황 전달", "document_review"),
+            ("내용 전달", "document_review"),
+            ("정보 전달", "document_review"),
+            ("결과보고 전달", "result_reporting"),
+        )
+        for title, expected_top in cases:
+            with self.subTest(title=title):
+                top3 = self._top_ids(title, 3)
+                self.assertEqual(top3[0], expected_top, msg=top3)
+                self.assertNotEqual(top3[0], "document_distribution")
+
+    def test_object_bound_transfer_regressions(self) -> None:
+        """Channel/formal dispatch/sharing policies must survive object-bound routing."""
+        cases = (
+            ("메일로 자료 전달", MAIL_CHANNEL_IDS),
+            ("공문 송부", {"document_distribution"}),
+            ("문서 공유", DOCUMENT_SHARING_IDS),
+            ("암호 공유", ACCESS_SHARING_IDS),
+        )
+        for title, expected_ids in cases:
+            with self.subTest(title=title):
+                top3 = self._top_ids(title, 3)
+                self.assertIn(top3[0], expected_ids, msg=top3)
+                match = find_best_visual_candidate_match(title, self._cands)
+                self.assertIsNotNone(match)
+                assert match is not None
+                self.assertIn(match.candidate_id, expected_ids)
 
 
 if __name__ == "__main__":
