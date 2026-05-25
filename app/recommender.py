@@ -226,7 +226,7 @@ def rank_visual_candidate_rows(
         except (TypeError, ValueError):
             sort_wp = 0
         semantic_bonus, semantic_reasons, semantic_fields = semantic_compatibility(
-            key_title, data.get("semantic_metadata")
+            key_title, data.get("semantic_metadata"), candidate_id=cid
         )
         generic_reasons = generic_token_suppression_reason(key_title, matched)
 

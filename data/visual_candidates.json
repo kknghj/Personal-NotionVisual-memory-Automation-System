@@ -33,11 +33,6 @@
         "text": "발송",
         "workflow_resolution": 1,
         "interface_dominance": 0
-      },
-      {
-        "text": "전달",
-        "workflow_resolution": 1,
-        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -170,11 +165,6 @@
       },
       {
         "text": "기안",
-        "workflow_resolution": 1,
-        "interface_dominance": 0
-      },
-      {
-        "text": "송부",
         "workflow_resolution": 1,
         "interface_dominance": 0
       },
@@ -1323,6 +1313,31 @@
         "text": "공문발송",
         "workflow_resolution": 3,
         "interface_dominance": 0
+      },
+      {
+        "text": "송부",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "검토자료송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "정산서류송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "안내문송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "파일송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -1334,7 +1349,11 @@
       "자료 배부",
       "점검자료 전송",
       "안내자료 배포",
-      "결과자료 배포"
+      "결과자료 배포",
+      "공문 송부",
+      "검토자료 송부",
+      "정산서류 송부",
+      "파일 송부"
     ],
     "semantic_metadata": {
       "workflow_fit": [
@@ -1848,6 +1867,16 @@
         "text": "권한공유",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "계정권한공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "계정공유",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -1856,7 +1885,8 @@
     ],
     "usage_context": [
       "부서 암호 공유",
-      "비밀번호 공유"
+      "비밀번호 공유",
+      "계정 권한 공유"
     ],
     "semantic_metadata": {
       "workflow_fit": [
@@ -1960,6 +1990,11 @@
         "text": "현황자료공유",
         "workflow_resolution": 3,
         "interface_dominance": 0
+      },
+      {
+        "text": "링크공유",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -1969,6 +2004,7 @@
     "usage_context": [
       "문서 공유",
       "자료 공유",
+      "링크 공유",
       "운영계획 공유",
       "결과서 공유",
       "집계결과 공유",
