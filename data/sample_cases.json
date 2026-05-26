@@ -1386,5 +1386,116 @@
     ],
     "reason": "제출 행위는 status_update가 아닌 문서·제출 계열",
     "workflow_resolution": 2
+  },
+  {
+    "title": "일정 알림 정리",
+    "visual": {
+      "type": "notion_icon",
+      "value": "bell-notification",
+      "color": "yellow"
+    },
+    "workflow_type": "notification_cleanup",
+    "pair_context": {
+      "action": "정리",
+      "subject": "일정 알림"
+    },
+    "focus": "알림 정리",
+    "interface_memory": [
+      "알림센터"
+    ],
+    "cognitive_mode": [
+      "notification_management"
+    ],
+    "reason": "일정 알림 스택 정리는 notification_ops",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "신청 안내 메일 발송",
+    "visual": {
+      "type": "emoji",
+      "value": "📧"
+    },
+    "workflow_type": "mail_distribution",
+    "pair_context": {
+      "action": "발송",
+      "subject": "신청 안내"
+    },
+    "focus": "안내 메일 발송",
+    "interface_memory": [
+      "메일"
+    ],
+    "cognitive_mode": [
+      "notification_ops",
+      "one_way_notice"
+    ],
+    "reason": "안내 일괄 발송은 one-way mail dispatch",
+    "workflow_resolution": 3
+  },
+  {
+    "title": "담당자 문의",
+    "visual": {
+      "type": "emoji",
+      "value": "📞"
+    },
+    "workflow_type": "phone_call",
+    "pair_context": {
+      "action": "문의",
+      "subject": "담당자"
+    },
+    "focus": "담당자 문의",
+    "interface_memory": [
+      "전화"
+    ],
+    "cognitive_mode": [
+      "communication",
+      "two_way_inquiry"
+    ],
+    "reason": "담당자 문의는 two-way communication",
+    "workflow_resolution": 2
+  },
+  {
+    "title": "메일 회신",
+    "visual": {
+      "type": "emoji",
+      "value": "📧"
+    },
+    "workflow_type": "mail_action",
+    "pair_context": {
+      "action": "회신",
+      "subject": "메일"
+    },
+    "focus": "메일 회신",
+    "interface_memory": [
+      "메일",
+      "아웃룩"
+    ],
+    "cognitive_mode": [
+      "communication",
+      "two_way_reply"
+    ],
+    "reason": "메일 회신은 communication channel action",
+    "workflow_resolution": 3
+  },
+  {
+    "title": "전화 협의",
+    "visual": {
+      "type": "emoji",
+      "value": "📞"
+    },
+    "workflow_type": "phone_call",
+    "pair_context": {
+      "action": "협의",
+      "subject": "전화"
+    },
+    "focus": "전화 협의",
+    "interface_memory": [
+      "전화앱"
+    ],
+    "cognitive_mode": [
+      "communication",
+      "two_way_coordination"
+    ],
+    "reason": "전화 협의는 two-way communication",
+    "workflow_resolution": 3
   }
 ]

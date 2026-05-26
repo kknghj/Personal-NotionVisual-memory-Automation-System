@@ -289,8 +289,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true,
       "inferred_workflow_stage": "result",
       "matched_workflow_stage": [],
@@ -314,8 +314,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -514,14 +514,13 @@
     },
     "after": {
       "top_candidate": "result_reporting",
-      "ambiguity_gap": 0.02,
+      "ambiguity_gap": 0.032,
       "high_ambiguity": true,
-      "ranking_depth": 4,
+      "ranking_depth": 3,
       "top5_candidates": [
         "result_reporting",
         "document_reporting",
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
       "top_semantic_bonus": 9,
       "semantic_bonus_total": 16,
@@ -546,9 +545,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -585,8 +586,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false,
       "inferred_workflow_stage": null,
       "matched_workflow_stage": [],
@@ -597,9 +598,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -608,8 +609,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -617,7 +618,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -919,8 +920,8 @@
         "status_sharing",
         "phone_call"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 3,
       "suppression_applied": false,
       "inferred_workflow_stage": null,
       "matched_workflow_stage": [
@@ -945,8 +946,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": -3,
+      "total_delta": -2
     },
     "suppression_change": {
       "before": false,
@@ -1202,33 +1203,38 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "document_review",
-      "ambiguity_gap": 0.0,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.032,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
+        "document_distribution",
         "document_review",
-        "document_edit",
-        "mail_action"
+        "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
       "suppression_applied": false
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement",
+      "workflow_boundary_improvement"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
-      "entered_top5": [],
-      "exited_top5": []
+      "entered_top5": [
+        "document_distribution"
+      ],
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 7,
+      "total_delta": 7
     },
     "suppression_change": {
       "before": false,
@@ -1236,7 +1242,8 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
     ]
   },
   {
@@ -1256,33 +1263,33 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "document_distribution",
-      "ambiguity_gap": 0.031,
+      "top_candidate": "urgent_notice",
+      "ambiguity_gap": 0.032,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
-        "document_distribution",
         "urgent_notice",
+        "document_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 14,
       "suppression_applied": false
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "ranking_shift",
     "change_labels": [
-      "stable"
+      "ranking_shift"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 9
     },
     "suppression_change": {
       "before": false,
@@ -1290,7 +1297,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "top candidate changed without a clear semantic improvement signal"
     ]
   },
   {
@@ -1624,8 +1631,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 4,
+      "semantic_bonus_total": 4,
       "suppression_applied": true
     },
     "changed": false,
@@ -1640,8 +1647,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 4,
+      "total_delta": 4
     },
     "suppression_change": {
       "before": true,
@@ -1976,7 +1983,7 @@
     },
     "after": {
       "top_candidate": "survey_form",
-      "ambiguity_gap": 0.076,
+      "ambiguity_gap": 0.07,
       "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
@@ -1984,7 +1991,7 @@
         "mail_action"
       ],
       "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "changed": false,
@@ -2000,7 +2007,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 0
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -2257,8 +2264,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "changed": false,
@@ -2273,8 +2280,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -2410,8 +2417,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "changed": false,
@@ -2426,8 +2433,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -2522,14 +2529,14 @@
         "mail_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -2538,8 +2545,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 9
     },
     "suppression_change": {
       "before": false,
@@ -2547,7 +2554,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -2743,16 +2750,16 @@
       "suppression_applied": true
     },
     "after": {
-      "top_candidate": "website_content_refresh",
-      "ambiguity_gap": 0.02,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.036,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "website_content_refresh",
-        "mail_action"
+        "mail_action",
+        "website_content_refresh"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true,
       "inferred_workflow_stage": "progress",
       "matched_workflow_stage": [],
@@ -2764,20 +2771,20 @@
         "progress"
       ]
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "generic_noise_reduction",
     "change_labels": [
-      "stable"
+      "generic_noise_reduction"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -2785,7 +2792,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "generic token leakage reduced"
     ]
   },
   {
@@ -3160,8 +3167,8 @@
         "document_sharing",
         "status_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 15,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 17,
       "suppression_applied": false,
       "inferred_workflow_stage": null,
       "matched_workflow_stage": [],
@@ -3172,9 +3179,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -3183,8 +3190,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -3192,7 +3199,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -3273,32 +3280,37 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_distribution",
+        "document_review"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement",
+      "workflow_boundary_improvement"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
-      "entered_top5": [],
-      "exited_top5": []
+      "entered_top5": [
+        "document_distribution"
+      ],
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 6,
+      "total_delta": 6
     },
     "suppression_change": {
       "before": false,
@@ -3306,7 +3318,8 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
     ]
   },
   {
@@ -3638,14 +3651,14 @@
         "urgent_notice",
         "mail_action"
       ],
-      "top_semantic_bonus": 3,
-      "semantic_bonus_total": 3,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 14,
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -3654,8 +3667,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 5,
+      "total_delta": 11
     },
     "suppression_change": {
       "before": false,
@@ -3663,7 +3676,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -3856,32 +3869,33 @@
       "suppression_applied": true
     },
     "after": {
-      "top_candidate": "broadcast_channel_adjust",
-      "ambiguity_gap": 0.022,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.034,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "broadcast_channel_adjust",
-        "mail_action"
+        "mail_action",
+        "broadcast_channel_adjust"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
       "suppression_applied": true
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "generic_noise_reduction",
     "change_labels": [
-      "stable"
+      "generic_noise_reduction",
+      "interface_anchor_recovery"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 3,
+      "total_delta": 3
     },
     "suppression_change": {
       "before": true,
@@ -3889,7 +3903,8 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "generic token leakage reduced",
+      "interface/channel anchor affected ranking movement"
     ]
   },
   {
@@ -4502,14 +4517,14 @@
         "mail_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4518,8 +4533,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 9
     },
     "suppression_change": {
       "before": false,
@@ -4527,7 +4542,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -4555,7 +4570,7 @@
         "mail_action"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "changed": false,
@@ -4571,7 +4586,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 0
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -4650,32 +4665,38 @@
       "suppression_applied": true
     },
     "after": {
-      "top_candidate": "document_edit",
-      "ambiguity_gap": 0.019,
-      "high_ambiguity": true,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.077,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "document_edit",
+        "document_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 15,
       "suppression_applied": true
     },
-    "changed": false,
+    "changed": true,
     "change_type": "generic_noise_reduction",
     "change_labels": [
-      "generic_noise_reduction"
+      "generic_noise_reduction",
+      "semantic_improvement",
+      "workflow_boundary_improvement"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
-      "entered_top5": [],
-      "exited_top5": []
+      "entered_top5": [
+        "document_distribution"
+      ],
+      "exited_top5": [
+        "document_edit"
+      ]
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 11,
+      "total_delta": 15
     },
     "suppression_change": {
       "before": true,
@@ -4683,7 +4704,9 @@
       "changed": false
     },
     "notes": [
-      "generic token leakage reduced"
+      "generic token leakage reduced",
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
     ]
   },
   {
@@ -4712,13 +4735,13 @@
       "top5_candidates": [
         "review_request",
         "document_edit",
-        "document_review",
-        "slide_deck_final_review",
-        "phone_call"
+        "phone_call",
+        "mail_action",
+        "document_review"
       ],
       "top_semantic_bonus": 11,
-      "semantic_bonus_total": 15,
-      "suppression_applied": false
+      "semantic_bonus_total": 17,
+      "suppression_applied": true
     },
     "changed": false,
     "change_type": "semantic_improvement",
@@ -4728,17 +4751,21 @@
     "ranking_change": {
       "top_candidate_changed": false,
       "ranking_depth_delta": 0,
-      "entered_top5": [],
-      "exited_top5": []
+      "entered_top5": [
+        "mail_action"
+      ],
+      "exited_top5": [
+        "slide_deck_final_review"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 3,
-      "total_delta": 3
+      "total_delta": 5
     },
     "suppression_change": {
       "before": false,
-      "after": false,
-      "changed": false
+      "after": true,
+      "changed": true
     },
     "notes": [
       "workflow semantic candidate won or gained stronger evidence"
@@ -4769,7 +4796,7 @@
         "mail_action"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "changed": false,
@@ -4785,7 +4812,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 0
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -4865,15 +4892,15 @@
     },
     "after": {
       "top_candidate": "urgent_notice",
-      "ambiguity_gap": 0.001,
+      "ambiguity_gap": 0.007,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
         "urgent_notice",
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "changed": false,
@@ -4888,8 +4915,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 6,
+      "total_delta": 6
     },
     "suppression_change": {
       "before": false,
@@ -5376,8 +5403,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true,
       "inferred_workflow_stage": "result",
       "matched_workflow_stage": [],
@@ -5401,8 +5428,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -5487,14 +5514,14 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5503,8 +5530,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -5512,7 +5539,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -5541,14 +5568,14 @@
         "urgent_notice",
         "mail_action"
       ],
-      "top_semantic_bonus": 3,
-      "semantic_bonus_total": 3,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 14,
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5557,8 +5584,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 5,
+      "total_delta": 11
     },
     "suppression_change": {
       "before": false,
@@ -5566,7 +5593,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -5586,12 +5613,11 @@
     },
     "after": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
@@ -5611,9 +5637,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -5759,33 +5787,33 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "work_calendar_organization",
-      "ambiguity_gap": 0.001,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.03,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
+        "mail_action",
         "work_calendar_organization",
-        "spreadsheet_work",
-        "mail_action"
+        "spreadsheet_work"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
       "suppression_applied": false
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "ranking_shift",
     "change_labels": [
-      "stable"
+      "ranking_shift"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 3,
+      "total_delta": 3
     },
     "suppression_change": {
       "before": false,
@@ -5793,7 +5821,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "top candidate changed without a clear semantic improvement signal"
     ]
   },
   {
@@ -6516,8 +6544,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
       "suppression_applied": false,
       "inferred_workflow_stage": "result",
       "matched_workflow_stage": [],
@@ -6530,9 +6558,9 @@
       ]
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6541,8 +6569,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -6550,7 +6578,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -6855,8 +6883,8 @@
         "mail_action",
         "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 4,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 7,
       "suppression_applied": false
     },
     "changed": false,
@@ -6871,8 +6899,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 3,
+      "total_delta": 3
     },
     "suppression_change": {
       "before": false,
@@ -6965,14 +6993,14 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6981,8 +7009,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -6990,7 +7018,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -7069,12 +7097,11 @@
     },
     "after": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
@@ -7087,9 +7114,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -7190,8 +7219,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
       "suppression_applied": false,
       "inferred_workflow_stage": "result",
       "matched_workflow_stage": [],
@@ -7204,9 +7233,9 @@
       ]
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -7215,8 +7244,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -7224,7 +7253,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -7355,11 +7384,10 @@
       "top_candidate": "document_review",
       "ambiguity_gap": 0.0,
       "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_review",
-        "training_session_attendance",
-        "mail_action"
+        "training_session_attendance"
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
@@ -7372,9 +7400,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -7476,13 +7506,13 @@
       "ranking_depth": 5,
       "top5_candidates": [
         "notice_posting",
-        "urgent_notice",
         "messenger_chat",
+        "urgent_notice",
         "mail_action",
         "room_cleaning"
       ],
       "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "semantic_bonus_total": 10,
       "suppression_applied": true
     },
     "changed": false,
@@ -7498,7 +7528,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 0
+      "total_delta": 2
     },
     "suppression_change": {
       "before": true,
@@ -7828,17 +7858,17 @@
     },
     "after": {
       "top_candidate": "messenger_chat",
-      "ambiguity_gap": 0.024,
+      "ambiguity_gap": 0.023,
       "high_ambiguity": true,
       "ranking_depth": 4,
       "top5_candidates": [
         "messenger_chat",
-        "document_review",
         "urgent_notice",
+        "document_review",
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 10,
       "suppression_applied": false
     },
     "changed": false,
@@ -7853,8 +7883,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 3,
+      "total_delta": 10
     },
     "suppression_change": {
       "before": false,
@@ -8055,32 +8085,32 @@
       "suppression_applied": true
     },
     "after": {
-      "top_candidate": "folder_organization",
-      "ambiguity_gap": 0.022,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.034,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "folder_organization",
-        "mail_action"
+        "mail_action",
+        "folder_organization"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "generic_noise_reduction",
     "change_labels": [
-      "stable"
+      "generic_noise_reduction"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -8088,7 +8118,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "generic token leakage reduced"
     ]
   },
   {
@@ -8523,12 +8553,11 @@
     },
     "after": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.0,
+      "ambiguity_gap": 0.016,
       "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_review",
-        "mail_action",
         "event_preparation"
       ],
       "top_semantic_bonus": 0,
@@ -8551,9 +8580,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -8642,16 +8673,16 @@
     },
     "after": {
       "top_candidate": "publication_announcement",
-      "ambiguity_gap": 0.039,
+      "ambiguity_gap": 0.04,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
         "publication_announcement",
-        "event_preparation",
-        "mail_action"
+        "mail_action",
+        "event_preparation"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "changed": false,
@@ -8667,7 +8698,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 0
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -8696,32 +8727,33 @@
     },
     "after": {
       "top_candidate": "document_distribution",
-      "ambiguity_gap": 0.032,
-      "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ambiguity_gap": 0.075,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_distribution",
-        "document_edit",
         "event_preparation"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 9,
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "document_edit"
+      ]
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": true,
@@ -8729,7 +8761,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   },
   {
@@ -8860,16 +8892,16 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_distribution",
+        "document_review"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false,
       "inferred_workflow_stage": null,
       "matched_workflow_stage": [],
@@ -8879,20 +8911,25 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement",
+      "workflow_boundary_improvement"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
-      "entered_top5": [],
-      "exited_top5": []
+      "entered_top5": [
+        "document_distribution"
+      ],
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 6,
+      "total_delta": 6
     },
     "suppression_change": {
       "before": false,
@@ -8900,7 +8937,8 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
     ]
   },
   {
@@ -9041,12 +9079,11 @@
     },
     "after": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
@@ -9059,9 +9096,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -9144,32 +9183,33 @@
       "suppression_applied": true
     },
     "after": {
-      "top_candidate": "meeting",
-      "ambiguity_gap": 0.019,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.037,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "meeting",
-        "mail_action"
+        "mail_action",
+        "meeting"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "generic_noise_reduction",
     "change_labels": [
-      "stable"
+      "generic_noise_reduction",
+      "interface_anchor_recovery"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 1,
+      "total_delta": 1
     },
     "suppression_change": {
       "before": true,
@@ -9177,7 +9217,8 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "generic token leakage reduced",
+      "interface/channel anchor affected ranking movement"
     ]
   },
   {
@@ -9315,11 +9356,10 @@
       "top_candidate": "document_review",
       "ambiguity_gap": 0.0,
       "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_review",
-        "meeting",
-        "mail_action"
+        "meeting"
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
@@ -9341,9 +9381,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -9375,12 +9417,11 @@
     },
     "after": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
@@ -9393,9 +9434,11 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
+      "ranking_depth_delta": -1,
       "entered_top5": [],
-      "exited_top5": []
+      "exited_top5": [
+        "mail_action"
+      ]
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -9434,14 +9477,14 @@
         "mail_sharing",
         "mail_action"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "stable",
+    "change_type": "semantic_improvement",
     "change_labels": [
-      "stable"
+      "semantic_improvement"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -9450,8 +9493,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 7
     },
     "suppression_change": {
       "before": false,
@@ -9459,7 +9502,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "workflow semantic candidate won or gained stronger evidence"
     ]
   }
 ]
