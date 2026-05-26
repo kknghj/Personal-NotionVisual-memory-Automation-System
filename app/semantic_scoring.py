@@ -4,6 +4,7 @@ import re
 from collections.abc import Iterable
 from typing import Any
 
+from app.notification_semantic import notification_communication_semantic_adjustment
 from app.workflow_resolution import _canonical_title_text
 
 TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
@@ -46,6 +47,10 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         ("승인하기", "결재하기", "최종승인", "최종결재", "신청승인"),
     ),
     ("workflow_fit", "communication", ("메일", "이메일", "아웃룩", "카카오톡", "카톡", "슬랙", "채팅")),
+    ("workflow_fit", "notification_ops", ("알림", "푸시알림", "알림센터", "마감알림", "일정알림", "카톡알림")),
+    ("interaction_mode", "one_way_notice", ("알림",)),
+    ("interaction_mode", "two_way_reply", ("회신",)),
+    ("interaction_mode", "two_way_inquiry", ("문의",)),
     ("workflow_fit", "document", ("문서", "자료", "공문", "계획", "보고", "결과", "안내문", "승인요청", "결재요청")),
     ("workflow_fit", "broadcast_notice", ("공지", "공고", "안내", "게시")),
     ("workflow_fit", "web_publication", ("게시", "공개", "공고", "홈페이지", "배너")),
@@ -659,6 +664,12 @@ def semantic_compatibility(
         title_values = signals[field]
         if status_action and field == "interaction_mode" and "create_edit" in title_values:
             continue
+        if (
+            status_action
+            and field == "interaction_mode"
+            and title_values & {"two_way_inquiry", "two_way_reply", "two_way_coordination"}
+        ):
+            continue
         candidate_values = _as_values(semantic_metadata.get(field))
         matched = sorted(title_values & candidate_values)
         if not matched:
@@ -681,13 +692,21 @@ def semantic_compatibility(
                 fields.append("action")
             reasons.append(f"action status_work {status_action} soft boost")
 
-    return transfer_sharing_semantic_adjustment(
+    score, reasons, fields = transfer_sharing_semantic_adjustment(
         title,
         candidate_id,
         semantic_metadata,
         score,
         tuple(reasons),
         tuple(fields),
+    )
+    return notification_communication_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
     )
 
 

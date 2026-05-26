@@ -53,7 +53,24 @@
       "안내 메일",
       "일정 공지",
       "자료 전달"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "communication",
+        "notification_ops"
+      ],
+      "channel": "email",
+      "interaction_mode": [
+        "publish_distribute",
+        "two_way_reply"
+      ],
+      "semantic_role": "channel_action",
+      "communication_direction": [
+        "one_way",
+        "two_way"
+      ],
+      "tone": "neutral"
+    }
   },
   "phone_call": {
     "visual": {
@@ -96,7 +113,21 @@
       "전화 문의",
       "일정 확인",
       "예약 연락"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "communication"
+      ],
+      "channel": "phone",
+      "interaction_mode": [
+        "two_way_voice",
+        "two_way_inquiry",
+        "two_way_coordination"
+      ],
+      "semantic_role": "direct_contact",
+      "communication_direction": "two_way",
+      "tone": "neutral"
+    }
   },
   "messenger_chat": {
     "visual": {
@@ -154,7 +185,20 @@
       "카톡 협의",
       "메신저 대화",
       "일정 조율"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "communication"
+      ],
+      "channel": "messenger",
+      "interaction_mode": [
+        "two_way_coordination",
+        "two_way_inquiry"
+      ],
+      "semantic_role": "conversation",
+      "communication_direction": "two_way",
+      "tone": "neutral"
+    }
   },
   "document_edit": {
     "visual": {
@@ -2893,6 +2937,16 @@
         "text": "긴급",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "교육일정안내",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "일정안내",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -2901,8 +2955,19 @@
     ],
     "usage_context": [
       "중요 안내",
-      "주의 공지"
-    ]
+      "주의 공지",
+      "교육 일정 안내"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "notification_ops"
+      ],
+      "interaction_mode": "one_way_notice",
+      "object_type": "notice",
+      "semantic_role": "institutional_alert",
+      "communication_direction": "one_way",
+      "tone": "neutral"
+    }
   },
   "deadline_management": {
     "visual": {
@@ -3177,6 +3242,21 @@
         "text": "알림센터",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "카톡알림",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "일정알림",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "마감알림",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -3186,7 +3266,16 @@
     "usage_context": [
       "카톡 알림 정리",
       "알림 정리"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "notification_ops"
+      ],
+      "interaction_mode": "one_way_notice",
+      "semantic_role": "notification_management",
+      "communication_direction": "one_way",
+      "tone": "neutral"
+    }
   },
   "food_preparation": {
     "visual": {

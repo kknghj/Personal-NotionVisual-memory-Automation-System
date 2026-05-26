@@ -220,6 +220,13 @@ def rank_visual_candidate_rows(
         if title_has_ui and matched.strip() in PERSON_CONTEXT_MODIFIER_TERMS:
             # 인터페이스 앵커가 있을 때 직책·상대만으로는 채널 후보를 대표하지 않음
             continue
+        if (
+            cid == "messenger_chat"
+            and "알림" in canonical
+            and matched.strip() in {"카톡", "카카오톡", "메신저", "채팅"}
+        ):
+            # §8.5 notification_ops: channel-only match must not beat alert workflow
+            continue
         wp_raw = data.get("workflow_priority", 0)
         try:
             sort_wp = int(wp_raw)

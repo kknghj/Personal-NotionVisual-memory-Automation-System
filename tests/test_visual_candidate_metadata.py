@@ -134,5 +134,53 @@ class ReportingWorkflowStageMetadataTests(unittest.TestCase):
         self.assertIn("진행상황보고", texts)
 
 
+class NotificationCommunicationMetadataTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls._cands = load_visual_candidates()
+
+    def test_channel_and_notification_candidates_expose_metadata(self) -> None:
+        expected = {
+            "notification_cleanup": {
+                "workflow_fit": ["notification_ops"],
+                "interaction_mode": "one_way_notice",
+                "semantic_role": "notification_management",
+                "communication_direction": "one_way",
+                "tone": "neutral",
+            },
+            "mail_action": {
+                "workflow_fit": ["communication", "notification_ops"],
+                "channel": "email",
+                "interaction_mode": ["publish_distribute", "two_way_reply"],
+                "semantic_role": "channel_action",
+                "communication_direction": ["one_way", "two_way"],
+                "tone": "neutral",
+            },
+            "messenger_chat": {
+                "workflow_fit": ["communication"],
+                "channel": "messenger",
+                "interaction_mode": ["two_way_coordination", "two_way_inquiry"],
+                "semantic_role": "conversation",
+                "communication_direction": "two_way",
+                "tone": "neutral",
+            },
+            "phone_call": {
+                "workflow_fit": ["communication"],
+                "channel": "phone",
+                "interaction_mode": [
+                    "two_way_voice",
+                    "two_way_inquiry",
+                    "two_way_coordination",
+                ],
+                "semantic_role": "direct_contact",
+                "communication_direction": "two_way",
+                "tone": "neutral",
+            },
+        }
+        for candidate_id, metadata in expected.items():
+            with self.subTest(candidate_id=candidate_id):
+                self.assertEqual(self._cands[candidate_id]["semantic_metadata"], metadata)
+
+
 if __name__ == "__main__":
     unittest.main()
