@@ -422,6 +422,8 @@
       ],
       "object_type": "document",
       "interaction_mode": "report_brief",
+      "semantic_role": "hierarchy_reporting",
+      "operational_state": "briefing",
       "visibility": "internal",
       "tone": "formal",
       "workflow_stage": [
@@ -487,6 +489,8 @@
       ],
       "object_type": "result_document",
       "interaction_mode": "report_brief",
+      "semantic_role": "result_reporting",
+      "operational_state": "briefing",
       "visibility": "internal",
       "tone": "formal",
       "workflow_stage": [
@@ -2142,6 +2146,21 @@
         "interface_dominance": 0
       },
       {
+        "text": "운영현황확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "처리현황확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "민원처리현황확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
         "text": "상태확인",
         "workflow_resolution": 2,
         "interface_dominance": 0
@@ -2153,8 +2172,20 @@
     ],
     "usage_context": [
       "신청 현황 확인",
-      "상태 확인"
-    ]
+      "운영 현황 확인",
+      "상태 확인",
+      "고객 민원 처리 현황 확인"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "tracking"
+      ],
+      "object_type": "status_record",
+      "interaction_mode": "status_monitor",
+      "semantic_role": "status_check",
+      "operational_state": "monitoring",
+      "tone": "neutral"
+    }
   },
   "progress_monitoring": {
     "visual": {
@@ -2165,6 +2196,16 @@
     "meaning": [
       {
         "text": "진행상황체크",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "추진현황",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "사업추진현황",
         "workflow_resolution": 3,
         "interface_dominance": 0
       },
@@ -2185,8 +2226,22 @@
     ],
     "usage_context": [
       "진행 상황 체크",
-      "진행 상태 모니터링"
-    ]
+      "진행 상태 모니터링",
+      "사업 추진 현황"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "tracking"
+      ],
+      "object_type": "status_record",
+      "interaction_mode": "status_monitor",
+      "semantic_role": "progress_monitoring",
+      "operational_state": "monitoring",
+      "workflow_stage": [
+        "progress"
+      ],
+      "tone": "neutral"
+    }
   },
   "allocation_tracking": {
     "visual": {
@@ -3889,22 +3944,32 @@
     "meaning": [
       {
         "text": "현황정리",
-        "workflow_resolution": 2,
+        "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
         "text": "진행현황정리",
-        "workflow_resolution": 2,
+        "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
         "text": "추진현황정리",
-        "workflow_resolution": 2,
+        "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
         "text": "현황자료작성",
-        "workflow_resolution": 2,
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "추진현황자료작성",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "회의자료작성",
+        "workflow_resolution": 3,
         "interface_dominance": 0
       },
       {
@@ -4041,8 +4106,13 @@
     ],
     "semantic_metadata": {
       "category": "status_work",
+      "workflow_fit": [
+        "tracking"
+      ],
       "object_type": "status_record",
       "action": "update_status",
+      "semantic_role": "status_update",
+      "operational_state": "refresh",
       "workflow_stage": [
         "progress"
       ],

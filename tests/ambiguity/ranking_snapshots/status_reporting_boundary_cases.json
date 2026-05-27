@@ -1,0 +1,14 @@
+[
+  {"title": "운영 현황 확인", "top_candidate": "status_check"},
+  {"title": "진행 현황 보고", "top_candidate": "document_reporting"},
+  {"title": "결과 현황 보고", "top_candidate": "result_reporting"},
+  {"title": "신청 현황 공유", "top_candidate": "status_sharing"},
+  {"title": "고객 민원 처리 현황 확인", "top_candidate": "status_check"},
+  {"title": "사업 추진 현황", "top_candidate": "progress_monitoring"},
+  {"title": "실적 보고", "top_candidate": "document_reporting"},
+  {"title": "진행상황 보고", "top_candidate": "document_reporting"},
+  {"title": "운영 현황 정리", "top_candidate": "status_summary"},
+  {"title": "전국 식생활교육 현황 보고", "top_candidate": "document_reporting"},
+  {"title": "보고서 검토", "top_candidate": "document_review"},
+  {"title": "검토 결과 보고", "top_candidate": "result_reporting"}
+]

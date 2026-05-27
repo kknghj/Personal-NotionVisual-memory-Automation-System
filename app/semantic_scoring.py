@@ -9,6 +9,10 @@ from app.reporting_review_semantic import (
     refine_reporting_review_title_signals,
     reporting_review_semantic_adjustment,
 )
+from app.status_reporting_semantic import (
+    refine_status_reporting_title_signals,
+    status_reporting_semantic_adjustment,
+)
 from app.workflow_resolution import _canonical_title_text
 
 TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
@@ -59,6 +63,10 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("workflow_fit", "broadcast_notice", ("공지", "공고", "안내", "게시")),
     ("workflow_fit", "web_publication", ("게시", "공개", "공고", "홈페이지", "배너")),
     ("workflow_fit", "tracking", ("현황", "진행상황", "집계", "점검결과", "추진실적")),
+    ("interaction_mode", "status_monitor", ("현황확인", "상태확인", "현황체크", "진행상태")),
+    ("operational_state", "monitoring", ("현황", "진행상황", "상태", "체크", "확인")),
+    ("operational_state", "briefing", ("보고", "브리핑", "상신", "실적")),
+    ("operational_state", "refresh", ("업데이트",)),
     ("object_type", "document", ("문서", "자료", "공문", "계획", "결과서", "보고서", "안내문", "승인요청", "결재요청")),
     ("object_type", "notice", ("공지", "공고", "게시", "안내")),
     ("object_type", "message", ("메일", "이메일", "아웃룩", "카카오톡", "카톡", "슬랙", "채팅")),
@@ -80,6 +88,7 @@ TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
 FIELD_WEIGHTS: dict[str, int] = {
     "interaction_mode": 3,
     "document_flow_stage": 3,
+    "operational_state": 2,
     "workflow_fit": 2,
     "workflow_stage": 2,
     "publish_distribute": 2,
@@ -625,6 +634,7 @@ def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
         signals["workflow_stage"] = stages
     _apply_document_flow_stage_signals(title, signals)
     refine_reporting_review_title_signals(canonical, signals)
+    refine_status_reporting_title_signals(canonical, signals)
     return signals
 
 
@@ -713,7 +723,15 @@ def semantic_compatibility(
         reasons,
         fields,
     )
-    return reporting_review_semantic_adjustment(
+    score, reasons, fields = reporting_review_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    return status_reporting_semantic_adjustment(
         title,
         candidate_id,
         semantic_metadata,

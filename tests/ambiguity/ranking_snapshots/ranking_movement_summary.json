@@ -1,59 +1,72 @@
 {
   "source_logs": {
-    "before": "tests\\ambiguity\\ambiguity_results\\2026-05-27_reporting_review_boundary_before_log.json",
-    "after": "tests\\ambiguity\\ambiguity_results\\2026-05-27_reporting_review_boundary_after_log.json"
+    "before": "tests\\ambiguity\\ambiguity_results\\2026-05-27_status_reporting_boundary_before_log.json",
+    "after": "tests\\ambiguity\\ambiguity_results\\2026-05-27_status_reporting_boundary_after_log.json"
   },
   "movement_metrics": {
-    "total_titles": 20,
+    "total_titles": 16,
     "top_candidate_changed_count": 1,
-    "no_candidate_before": 0,
+    "no_candidate_before": 1,
     "no_candidate_after": 0,
-    "no_candidate_decrease": 0,
-    "semantic_bonus_total_before": 203,
-    "semantic_bonus_total_after": 364,
-    "semantic_bonus_total_delta": 161,
-    "top_semantic_bonus_applied_before_count": 15,
-    "top_semantic_bonus_applied_after_count": 19,
-    "top_semantic_bonus_applied_delta": 4,
-    "suppression_applied_before_count": 1,
-    "suppression_applied_after_count": 1,
-    "high_ambiguity_before": 12,
-    "high_ambiguity_after": 11,
-    "high_ambiguity_delta": -1,
-    "average_ambiguity_gap_before": 0.035,
-    "average_ambiguity_gap_after": 0.04,
-    "average_ranking_depth_before": 2.4,
-    "average_ranking_depth_after": 2.4,
-    "ranking_depth_delta": 0.0,
-    "titles_with_depth_increase": 0,
-    "titles_with_top2_competition_before": 17,
-    "titles_with_top2_competition_after": 17,
+    "no_candidate_decrease": 1,
+    "semantic_bonus_total_before": 198,
+    "semantic_bonus_total_after": 279,
+    "semantic_bonus_total_delta": 81,
+    "top_semantic_bonus_applied_before_count": 13,
+    "top_semantic_bonus_applied_after_count": 16,
+    "top_semantic_bonus_applied_delta": 3,
+    "suppression_applied_before_count": 0,
+    "suppression_applied_after_count": 0,
+    "high_ambiguity_before": 4,
+    "high_ambiguity_after": 4,
+    "high_ambiguity_delta": 0,
+    "average_ambiguity_gap_before": 0.039,
+    "average_ambiguity_gap_after": 0.043,
+    "average_ranking_depth_before": 1.875,
+    "average_ranking_depth_after": 1.938,
+    "ranking_depth_delta": 0.062,
+    "titles_with_depth_increase": 1,
+    "titles_with_top2_competition_before": 9,
+    "titles_with_top2_competition_after": 9,
     "ambiguity_gap_improved_count": 2,
-    "ambiguity_gap_worsened_count": 1,
-    "ambiguity_gap_unchanged_count": 14
+    "ambiguity_gap_worsened_count": 0,
+    "ambiguity_gap_unchanged_count": 7
   },
   "change_label_counts": {
-    "ranking_shift": 1,
-    "semantic_improvement": 4,
-    "stable": 15
+    "retrieval_improvement": 1,
+    "semantic_improvement": 7,
+    "stable": 8
   },
   "top_candidate_distribution_after": {
-    "collaborative_request": 1,
-    "document_distribution": 3,
-    "document_edit": 2,
-    "document_reporting": 1,
-    "document_review": 3,
-    "document_sharing": 1,
-    "mail_action": 2,
-    "notification_cleanup": 1,
-    "result_reporting": 3,
-    "review_request": 1,
-    "slide_deck_final_review": 1,
-    "submission_request": 1
+    "document_reporting": 4,
+    "document_review": 2,
+    "progress_monitoring": 1,
+    "result_reporting": 4,
+    "status_check": 2,
+    "status_sharing": 1,
+    "status_summary": 2
   },
   "most_improved_top_10": [
     {
+      "title": "사업 추진 현황",
+      "change_type": "retrieval_improvement",
+      "before": null,
+      "after": "progress_monitoring",
+      "notes": [
+        "candidate retrieval coverage recovered"
+      ]
+    },
+    {
       "title": "검토 결과 보고",
+      "change_type": "semantic_improvement",
+      "before": "result_reporting",
+      "after": "result_reporting",
+      "notes": [
+        "workflow semantic candidate won or gained stronger evidence"
+      ]
+    },
+    {
+      "title": "결과 현황 보고",
       "change_type": "semantic_improvement",
       "before": "result_reporting",
       "after": "result_reporting",
@@ -71,10 +84,28 @@
       ]
     },
     {
-      "title": "식생활교육 강사양성 현장 출장 결과 보고",
+      "title": "실적 보고",
       "change_type": "semantic_improvement",
-      "before": "result_reporting",
-      "after": "result_reporting",
+      "before": "document_reporting",
+      "after": "document_reporting",
+      "notes": [
+        "workflow semantic candidate won or gained stronger evidence"
+      ]
+    },
+    {
+      "title": "전국 식생활교육 현황 보고",
+      "change_type": "semantic_improvement",
+      "before": "document_reporting",
+      "after": "document_reporting",
+      "notes": [
+        "workflow semantic candidate won or gained stronger evidence"
+      ]
+    },
+    {
+      "title": "진행 현황 보고",
+      "change_type": "semantic_improvement",
+      "before": "document_reporting",
+      "after": "document_reporting",
       "notes": [
         "workflow semantic candidate won or gained stronger evidence"
       ]
@@ -89,55 +120,19 @@
       ]
     },
     {
-      "title": "ppt 최종본 확인",
+      "title": "고객 민원 처리 현황 확인",
       "change_type": "stable",
-      "before": "slide_deck_final_review",
-      "after": "slide_deck_final_review",
+      "before": "status_check",
+      "after": "status_check",
       "notes": [
         "top candidate remained stable"
       ]
     },
     {
-      "title": "결과 보고 작성",
-      "change_type": "ranking_shift",
-      "before": "result_reporting",
-      "after": "document_edit",
-      "notes": [
-        "top candidate changed without a clear semantic improvement signal"
-      ]
-    },
-    {
-      "title": "공문 송부",
+      "title": "보고서 검토",
       "change_type": "stable",
-      "before": "document_distribution",
-      "after": "document_distribution",
-      "notes": [
-        "top candidate remained stable"
-      ]
-    },
-    {
-      "title": "공문 전달",
-      "change_type": "stable",
-      "before": "document_distribution",
-      "after": "document_distribution",
-      "notes": [
-        "top candidate remained stable"
-      ]
-    },
-    {
-      "title": "메일 회신",
-      "change_type": "stable",
-      "before": "mail_action",
-      "after": "mail_action",
-      "notes": [
-        "top candidate remained stable"
-      ]
-    },
-    {
-      "title": "메일로 자료 전달",
-      "change_type": "stable",
-      "before": "mail_action",
-      "after": "mail_action",
+      "before": "document_review",
+      "after": "document_review",
       "notes": [
         "top candidate remained stable"
       ]
@@ -146,8 +141,8 @@
   "most_risky_regression_top_10": [],
   "semantic_recommender_assessment": {
     "semantic_rows_increased": true,
-    "retrieval_coverage_improved": false,
-    "candidate_competition_increased": false,
+    "retrieval_coverage_improved": true,
+    "candidate_competition_increased": true,
     "summary": "semantic workflow competition increased: more titles have candidate rows, semantic metadata contributes to ranking, and generic token rows are explicitly dampened"
   },
   "keyword_dominance_remaining_areas": [],
@@ -158,15 +153,15 @@
     "review near-zero gap publication/request overlaps before turning snapshots into hard regression gates"
   ],
   "workflow_stage_ambiguity_analysis": {
-    "titles_in_reporting_focus_set": 5,
+    "titles_in_reporting_focus_set": 8,
     "near_tied_reporting_pair_before": 0,
     "near_tied_reporting_pair_after": 0,
     "near_tied_pairs_resolved": 0,
     "top_candidate_flips_between_reporting_pair": 0,
-    "hyeonhwang_title_count": 0,
-    "hyeonhwang_null_inferred_count": 0,
-    "hyeonhwang_null_inferred_rate": null,
-    "hyeonhwang_ambiguous_flag_count": 0,
+    "hyeonhwang_title_count": 10,
+    "hyeonhwang_null_inferred_count": 5,
+    "hyeonhwang_null_inferred_rate": 0.5,
+    "hyeonhwang_ambiguous_flag_count": 5,
     "workflow_stage_mismatch_cases": [],
     "workflow_stage_mismatch_count": 0,
     "false_certainty_cases": [],
@@ -176,15 +171,15 @@
     "submit_share_organize_reporting_flips": [],
     "submit_share_organize_reporting_flip_count": 0,
     "stage_top_candidate_alignment": {
-      "aligned": 4,
+      "aligned": 6,
       "misaligned": 0,
-      "not_applicable": 16
+      "not_applicable": 10
     }
   },
   "comparison_scope": {
-    "before_title_count": 20,
-    "after_title_count": 20,
-    "compared_title_count": 20,
+    "before_title_count": 16,
+    "after_title_count": 16,
+    "compared_title_count": 16,
     "intersection_only": false
   }
 }

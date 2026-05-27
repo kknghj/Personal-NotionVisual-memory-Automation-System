@@ -113,11 +113,58 @@ class ReportingWorkflowStageMetadataTests(unittest.TestCase):
             },
             "status_update": {
                 "category": "status_work",
+                "workflow_fit": ["tracking"],
                 "object_type": "status_record",
                 "action": "update_status",
+                "semantic_role": "status_update",
+                "operational_state": "refresh",
                 "workflow_stage": ["progress"],
                 "interaction_mode": "update_record",
                 "tone": "neutral",
+            },
+        }
+        for candidate_id, metadata in expected.items():
+            with self.subTest(candidate_id=candidate_id):
+                self.assertEqual(self._cands[candidate_id]["semantic_metadata"], metadata)
+
+    def test_tracking_and_reporting_candidates_expose_operational_state(self) -> None:
+        expected = {
+            "status_check": {
+                "workflow_fit": ["tracking"],
+                "object_type": "status_record",
+                "interaction_mode": "status_monitor",
+                "semantic_role": "status_check",
+                "operational_state": "monitoring",
+                "tone": "neutral",
+            },
+            "progress_monitoring": {
+                "workflow_fit": ["tracking"],
+                "object_type": "status_record",
+                "interaction_mode": "status_monitor",
+                "semantic_role": "progress_monitoring",
+                "operational_state": "monitoring",
+                "workflow_stage": ["progress"],
+                "tone": "neutral",
+            },
+            "document_reporting": {
+                "workflow_fit": ["document"],
+                "object_type": "document",
+                "interaction_mode": "report_brief",
+                "semantic_role": "hierarchy_reporting",
+                "operational_state": "briefing",
+                "visibility": "internal",
+                "tone": "formal",
+                "workflow_stage": ["progress", "interim"],
+            },
+            "result_reporting": {
+                "workflow_fit": ["document", "tracking"],
+                "object_type": "result_document",
+                "interaction_mode": "report_brief",
+                "semantic_role": "result_reporting",
+                "operational_state": "briefing",
+                "visibility": "internal",
+                "tone": "formal",
+                "workflow_stage": ["result", "final"],
             },
         }
         for candidate_id, metadata in expected.items():

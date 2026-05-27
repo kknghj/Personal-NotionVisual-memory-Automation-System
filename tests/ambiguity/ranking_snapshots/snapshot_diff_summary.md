@@ -2,7 +2,7 @@
 
 - before: `tests\ambiguity\ranking_snapshots\before_vs_after_snapshot.json`
 - after: `tests\ambiguity\ranking_snapshots\before_vs_after_snapshot.json`
-- compared titles: 20
+- compared titles: 16
 
 ## changed top1
 
