@@ -5,6 +5,10 @@ from collections.abc import Iterable
 from typing import Any
 
 from app.notification_semantic import notification_communication_semantic_adjustment
+from app.reporting_review_semantic import (
+    refine_reporting_review_title_signals,
+    reporting_review_semantic_adjustment,
+)
 from app.workflow_resolution import _canonical_title_text
 
 TITLE_SIGNAL_RULES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
@@ -620,6 +624,7 @@ def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
     if stages:
         signals["workflow_stage"] = stages
     _apply_document_flow_stage_signals(title, signals)
+    refine_reporting_review_title_signals(canonical, signals)
     return signals
 
 
@@ -700,7 +705,15 @@ def semantic_compatibility(
         tuple(reasons),
         tuple(fields),
     )
-    return notification_communication_semantic_adjustment(
+    score, reasons, fields = notification_communication_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    return reporting_review_semantic_adjustment(
         title,
         candidate_id,
         semantic_metadata,

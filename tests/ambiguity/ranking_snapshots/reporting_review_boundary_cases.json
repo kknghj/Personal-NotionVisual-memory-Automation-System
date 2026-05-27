@@ -1,0 +1,12 @@
+[
+  {"title": "결과보고 전달", "top_candidate": "result_reporting"},
+  {"title": "보고서 검토", "top_candidate": "document_review"},
+  {"title": "검토 결과 보고", "top_candidate": "result_reporting"},
+  {"title": "최종 검토 요청", "top_candidate": "review_request"},
+  {"title": "보고자료 확인", "top_candidate": "document_review"},
+  {"title": "결과 보고 작성", "top_candidate": "document_edit"},
+  {"title": "보고서 수정 요청", "top_candidate": "document_edit"},
+  {"title": "ppt 최종본 확인", "top_candidate": "slide_deck_final_review"},
+  {"title": "진행상황 보고", "top_candidate": "document_reporting"},
+  {"title": "법령 검토", "top_candidate": "document_review"}
+]

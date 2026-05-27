@@ -134,6 +134,37 @@ class ReportingWorkflowStageMetadataTests(unittest.TestCase):
         self.assertIn("진행상황보고", texts)
 
 
+class ReportingReviewMetadataTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls._cands = load_visual_candidates()
+
+    def test_review_candidates_expose_semantic_metadata(self) -> None:
+        expected = {
+            "document_review": {
+                "workflow_fit": ["document"],
+                "object_type": "document",
+                "interaction_mode": "review_confirm",
+                "document_flow_stage": ["review"],
+                "semantic_role": "document_review",
+                "visibility": "internal",
+                "tone": "neutral",
+            },
+            "slide_deck_final_review": {
+                "workflow_fit": ["document"],
+                "object_type": "presentation",
+                "interaction_mode": "review_confirm",
+                "document_flow_stage": ["review", "finalize"],
+                "semantic_role": "presentation_review",
+                "visibility": "internal",
+                "tone": "neutral",
+            },
+        }
+        for candidate_id, metadata in expected.items():
+            with self.subTest(candidate_id=candidate_id):
+                self.assertEqual(self._cands[candidate_id]["semantic_metadata"], metadata)
+
+
 class NotificationCommunicationMetadataTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

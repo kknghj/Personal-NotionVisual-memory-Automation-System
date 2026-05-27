@@ -320,7 +320,20 @@
       "자료 검토",
       "보고자료 확인",
       "법령 검토"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "review_confirm",
+      "document_flow_stage": [
+        "review"
+      ],
+      "semantic_role": "document_review",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "document_reporting": {
     "visual": {
@@ -3851,7 +3864,21 @@
     "usage_context": [
       "ppt 최종본 확인",
       "발표 자료 리허설 전 점검"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "presentation",
+      "interaction_mode": "review_confirm",
+      "document_flow_stage": [
+        "review",
+        "finalize"
+      ],
+      "semantic_role": "presentation_review",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "status_summary": {
     "visual": {
