@@ -16,6 +16,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from app.feedback_event import validate_feedback_event
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
@@ -137,7 +139,8 @@ def load_feedback_log() -> list[dict[str, Any]]:
 
 
 def append_feedback_log_entry(entry: dict[str, Any]) -> None:
-    """Append one feedback event and rewrite ``data/feedback_log.json``."""
+    """Append one validated feedback event and rewrite ``data/feedback_log.json``."""
+    validate_feedback_event(entry)
     path = feedback_log_path()
     log = load_feedback_log()
     log.append(entry)

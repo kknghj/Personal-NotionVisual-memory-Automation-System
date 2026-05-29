@@ -83,6 +83,15 @@ class FeedbackLogLoadingTests(unittest.TestCase):
             on_disk = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(on_disk, log)
 
+    def test_append_rejects_invalid_entry(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "feedback_log.json"
+            path.write_text("[]\n", encoding="utf-8")
+            with patch("app.data_loader.feedback_log_path", return_value=path):
+                with self.assertRaises(ValueError):
+                    append_feedback_log_entry({"event_type": "ambiguity_scoring"})
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8")), [])
+
 
 class FeedbackEventValidationTests(unittest.TestCase):
     def test_valid_event(self) -> None:
