@@ -18,6 +18,7 @@ from app.recommendation_logging import (
     append_recommendation_log,
     build_recommendation_log_entry,
     log_recommendation_execution,
+    _new_recommendation_id,
 )
 from app.recommender import find_best_visual_candidate_match
 
@@ -89,6 +90,29 @@ class RecommendationLoggingTests(unittest.TestCase):
         self.assertTrue(row["fallback_used"])
         self.assertFalse(row["no_candidate"])
         self.assertEqual(row["recommendation_path"], "sample_cases_exact_match")
+        self.assertIsNone(row["top_candidate"])
+        vis = row["recommended_visual"]
+        self.assertIsInstance(vis, dict)
+        self.assertEqual(vis["type"], "emoji")
+        self.assertEqual(vis["value"], "💬")
+
+    def test_recommendation_ids_are_unique(self) -> None:
+        with patch(
+            "app.main.log_recommendation_execution",
+            side_effect=self._log_to_temp,
+        ):
+            recommend_icon(RecommendRequest(title="점심 카톡 확인"))
+            recommend_icon(RecommendRequest(title="보고서 확인"))
+        ids = [row["recommendation_id"] for row in self._read_lines()]
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_logging_failure_does_not_break_recommendation(self) -> None:
+        with patch(
+            "app.recommendation_logging.append_recommendation_log",
+            side_effect=OSError("disk full"),
+        ):
+            res = recommend_icon(RecommendRequest(title="보고서 확인"))
+        self.assertEqual(res.visual.value, "📄")
 
     def test_no_candidate_logged_before_404(self) -> None:
         title = "교육자료 정리"
@@ -103,11 +127,13 @@ class RecommendationLoggingTests(unittest.TestCase):
         self.assertTrue(row["no_candidate"])
         self.assertFalse(row["fallback_used"])
         self.assertIsNone(row["top_candidate"])
+        self.assertIsNone(row["recommended_visual"])
 
     def test_catalog_path_includes_top_three_candidates_with_scores(self) -> None:
         cands = load_visual_candidates()
         entry = build_recommendation_log_entry(
             "보고서 확인",
+            recommendation_id=_new_recommendation_id(),
             catalog_match=find_best_visual_candidate_match("보고서 확인", cands),
             candidates=cands,
         )

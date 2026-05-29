@@ -1,8 +1,17 @@
-"""Append-only recommendation observation logs (JSONL). Does not alter ranking."""
+"""Append-only recommendation observation logs (JSONL). Does not alter ranking.
+
+``candidates[].score`` and ``ambiguity_gap`` are **ranking observation calibration**
+values (same weighted lexicographic projection as offline ambiguity scoring logs).
+They are **not** P6 ``_row_sort_key`` tuple scores and do not drive which candidate wins.
+
+Use ``recommendation_id`` to correlate a later ``feedback_log`` event with this run.
+"""
 
 from __future__ import annotations
 
 import json
+import logging
+import uuid
 from collections.abc import Sequence
 from datetime import UTC, datetime
 from pathlib import Path
@@ -12,12 +21,15 @@ from app.candidate_row import CandidateRow
 from app.recommender import BestVisualCandidateMatch, _row_sort_key, rank_visual_candidate_rows
 from app.workflow_resolution import infer_workflow_resolution
 
+logger = logging.getLogger(__name__)
+
 DEFAULT_LOG_PATH = Path("logs/recommendation_log.jsonl")
 TOP_CANDIDATES = 3
 HIGH_AMBIGUITY_THRESHOLD = 0.05
 
 REQUIRED_LOG_FIELDS: frozenset[str] = frozenset(
     {
+        "recommendation_id",
         "timestamp",
         "input_title",
         "resolved_workflow",
@@ -31,12 +43,32 @@ REQUIRED_LOG_FIELDS: frozenset[str] = frozenset(
         "semantic_bonus_applied",
         "top_semantic_bonus",
         "recommendation_path",
+        "recommended_visual",
     }
 )
 
 
 def _utc_timestamp() -> str:
     return datetime.now(UTC).isoformat().replace("+00:00", "Z")
+
+
+def _new_recommendation_id() -> str:
+    return str(uuid.uuid4())
+
+
+def _recommended_visual_payload(visual: Any) -> dict[str, Any] | None:
+    """Minimal visual slice returned to the client (for later feedback comparison)."""
+    if not isinstance(visual, dict):
+        return None
+    vtype = visual.get("type")
+    value = visual.get("value")
+    if not isinstance(vtype, str) or not isinstance(value, str):
+        return None
+    out: dict[str, Any] = {"type": vtype, "value": value}
+    color = visual.get("color")
+    if isinstance(color, str) and color.strip():
+        out["color"] = color
+    return out
 
 
 def _dedupe_rows(rows: Sequence[CandidateRow]) -> list[CandidateRow]:
@@ -64,7 +96,11 @@ def _component_scores(rows: Sequence[CandidateRow], title_has_ui: bool) -> list[
     return components
 
 
-def _final_scores(rows: Sequence[CandidateRow], title_has_ui: bool) -> dict[str, float]:
+def _observation_calibration_scores(
+    rows: Sequence[CandidateRow],
+    title_has_ui: bool,
+) -> dict[str, float]:
+    """Map candidate_id → calibration score in (0.5, 1.0] for log ambiguity analysis only."""
     if not rows:
         return {}
     components = _component_scores(rows, title_has_ui)
@@ -110,10 +146,11 @@ def _catalog_ranking_snapshot(
         }
 
     title_has_ui = _title_has_ui_anchor(key_title)
-    scores = _final_scores(rows, title_has_ui)
+    calibration = _observation_calibration_scores(rows, title_has_ui)
     top_rows = rows[:TOP_CANDIDATES]
-    rank1 = scores[top_rows[0].candidate_id]
-    rank2 = scores[top_rows[1].candidate_id] if len(top_rows) > 1 else None
+    rank1 = calibration[top_rows[0].candidate_id]
+    rank2 = calibration[top_rows[1].candidate_id] if len(top_rows) > 1 else None
+    # Gap between top-1 and top-2 calibration scores (not P6 tuple distance).
     gap = round(rank1 - rank2, 3) if rank2 is not None else None
     is_ambiguous = gap is not None and gap <= HIGH_AMBIGUITY_THRESHOLD
 
@@ -123,7 +160,8 @@ def _catalog_ranking_snapshot(
             {
                 "rank": rank,
                 "candidate_id": row.candidate_id,
-                "score": scores[row.candidate_id],
+                # calibration score for ranking observation / ambiguity tooling
+                "score": calibration[row.candidate_id],
                 "semantic_bonus": row.semantic_bonus,
                 "semantic_match_reason": list(row.semantic_match_reason),
                 "semantic_metadata_fields_matched": list(row.semantic_metadata_fields_matched),
@@ -163,17 +201,21 @@ def _workflow_resolution_payload(
 def build_recommendation_log_entry(
     title: str,
     *,
+    recommendation_id: str,
     case: dict[str, Any] | None = None,
     catalog_match: BestVisualCandidateMatch | None = None,
     candidates: dict[str, Any] | None = None,
+    recommended_visual: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build one JSON object for a recommendation execution (without timestamp)."""
     key_title = title.strip()
     entry: dict[str, Any] = {
+        "recommendation_id": recommendation_id,
         "input_title": key_title,
         "resolved_workflow": infer_workflow_resolution(key_title),
         "fallback_used": False,
         "no_candidate": False,
+        "recommended_visual": recommended_visual,
     }
 
     if case is not None:
@@ -189,6 +231,8 @@ def build_recommendation_log_entry(
         stored = case.get("workflow_resolution")
         if isinstance(stored, int):
             entry["resolved_workflow"] = stored
+        if recommended_visual is None:
+            entry["recommended_visual"] = _recommended_visual_payload(case.get("visual"))
         return entry
 
     assert candidates is not None
@@ -201,6 +245,8 @@ def build_recommendation_log_entry(
     )
     if catalog_match is not None:
         entry["top_candidate"] = catalog_match.candidate_id
+        if recommended_visual is None:
+            entry["recommended_visual"] = _recommended_visual_payload(catalog_match.data.get("visual"))
     return entry
 
 
@@ -223,14 +269,34 @@ def log_recommendation_execution(
     case: dict[str, Any] | None = None,
     catalog_match: BestVisualCandidateMatch | None = None,
     candidates: dict[str, Any] | None = None,
+    recommended_visual: dict[str, Any] | None = None,
     log_path: Path | None = None,
-) -> None:
-    """Record one recommendation run immediately before returning the API result."""
-    body = build_recommendation_log_entry(
-        title,
-        case=case,
-        catalog_match=catalog_match,
-        candidates=candidates,
-    )
-    body["timestamp"] = _utc_timestamp()
-    append_recommendation_log(body, log_path=log_path)
+) -> str | None:
+    """Record one recommendation run immediately before returning the API result.
+
+    Logging failures are logged as warnings and do not propagate (recommendation API
+    stability over strict log durability at this stage).
+
+    Returns ``recommendation_id`` when the log line was written, else ``None``.
+    """
+    recommendation_id = _new_recommendation_id()
+    try:
+        body = build_recommendation_log_entry(
+            title,
+            recommendation_id=recommendation_id,
+            case=case,
+            catalog_match=catalog_match,
+            candidates=candidates,
+            recommended_visual=recommended_visual,
+        )
+        body["timestamp"] = _utc_timestamp()
+        append_recommendation_log(body, log_path=log_path)
+    except Exception:
+        logger.warning(
+            "recommendation log append failed (recommendation_id=%s)",
+            recommendation_id,
+            exc_info=True,
+        )
+        return None
+    return recommendation_id
+

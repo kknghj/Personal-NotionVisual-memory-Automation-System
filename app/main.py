@@ -163,7 +163,11 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
         if isinstance(wfs, int):
             reason = f"{reason} (기록된 workflow_resolution={wfs})"
         response = RecommendResponse(visual=Visual(**visual), reason=reason)
-        log_recommendation_execution(body.title, case=case)
+        log_recommendation_execution(
+            body.title,
+            case=case,
+            recommended_visual=response.visual.model_dump(exclude_none=True),
+        )
         return response
 
     visual_candidates = get_visual_candidates()
@@ -192,5 +196,6 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
         body.title,
         catalog_match=cand,
         candidates=visual_candidates,
+        recommended_visual=response.visual.model_dump(exclude_none=True),
     )
     return response
