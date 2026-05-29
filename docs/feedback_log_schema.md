@@ -112,7 +112,7 @@ Slice 인덱스: [`feedback_observations/README.md`](feedback_observations/READM
 ## Related docs
 
 - Workflow meaning model: [`workflow_ontology.md`](workflow_ontology.md) §11
-- Product data mention: [`PRD.md`](PRD.md) §5-3 (관측 로그 관점으로 해석; training dataset로 즉시 쓰지 않음)
+- Product data mention: [`PRD.md`](PRD.md) §5-3 (observation-first; aligned with this doc)
 - Examples: `data/feedback_log_examples.json`
 
 ---

@@ -548,40 +548,60 @@ AI가:
 
 ## 역할
 
-GPT 추천 결과와
-실제 사용자 수정 내역을 저장한다.
+`data/feedback_log.json`은 **관측 로그(observation log)** 이다.  
+추천 API·오프라인 scoring·(후속) 사용자 UI에서 일어난 **사실**을 시간순으로 남긴다.
+
+**training dataset이 아니다.** 로그 한 건이 곧바로 가중치·penalty·hard rule을 바꾸지 않는다.
+
+스키마·철학: [`feedback_log_schema.md`](feedback_log_schema.md)
 
 ---
 
-## 목적
+## 목적 (observation first, policy later)
 
-AI의 일반 추론보다:
-실제 사용자의 선택 패턴을 우선 학습한다.
+### 지금 (기록)
 
-즉:
-사용자의 workflow 기억 구조를
-점진적으로 personalization한다.
+* 시스템이 **무엇을 추천**했는지 (`recommended_candidate_id`, visual, reason 등 — 후속 필드 확장)
+* **어떤 후보**가 상위에 있었는지 (ranking 요약 — 후속)
+* 사용자가 **무엇을 선택·수정**했는지 (`user_selected_*`, correction 이벤트 — 후속 UI)
+* **semantic observation slice** (예: `workflow_stage` ambiguity·mismatch — 부분 구현, scoring log export)
+* 분석·회귀·calibration을 위한 **증거(evidence)** 보존
+
+### 나중 (정책 결정 — 미구현)
+
+반복 패턴이 쌓인 뒤에만, 사람이 검토하고 다음을 **검토할지** 결정한다:
+
+* ontology·`visual_candidates` 수정
+* soft calibration·bonus/penalty **실험**
+* reranking feature·개인화 설정
+* hard filter 도입 여부
+
+즉 **개인화(personalization)** 는 가능한 **후속 목표**이지, 로그 적재와 동시에 일어나지 않는다.
 
 ---
 
 ## 핵심 특징
 
-`data/feedback_log.json`은:
-단순 correction log가 아니다.
+단순 “correction만 모은 파일”이 아니라, **추천 맥락 + 선택/수정 + (선택) semantic slice**를 한 이벤트로 묶는다.
 
-다음을 함께 기록한다:
+기록 대상 예 (Layer A·B — 구현은 단계적으로):
 
-* GPT 추천 visual
-* 사용자 최종 선택 visual
-* 어떤 modifier가 있었는지
-* 어떤 workflow pair였는지
-* 어떤 keyword 충돌이 있었는지
+* 추천 visual·후보 id
+* 사용자 최종 선택 visual·후보 id
+* 변경 여부·변경 유형 (`user_correction` 등 — 후속)
+* modifier·workflow pair·keyword 충돌 맥락 (`input_context` — 후속)
+* reporting 축 `workflow_stage` 관측 ([`feedback_observations/workflow_stage.md`](feedback_observations/workflow_stage.md))
 
-즉:
+---
 
-# “사용자 workflow 기억 보정 데이터”
+## 현재 구현 범위 (요약)
 
-역할을 수행한다.
+| 항목 | 상태 |
+|------|------|
+| `feedback_log.json` placeholder (`[]`) | ✓ |
+| `append_feedback_log_entry()` | 코드만; live API/UI 미연동 |
+| ambiguity scoring → export | ✓ |
+| penalty / rerank / hard filter / ML / Notion pipeline | **하지 않음** |
 
 ---
 
@@ -1008,12 +1028,11 @@ emoji와 notion icon은
 이다.
 
 따라서:
-AI 추론보다
-실제 사용자의 수정 결과를 우선 학습한다.
+**평가·튜닝 시** AI 일반 추론보다 실제 사용자 선택·수정을 우선한다.
 
 즉:
-사용자의 실제 선택 패턴이
-최종 truth source가 된다.
+사용자의 실제 선택 패턴이 **ground truth** 로 쓰이지만,  
+`feedback_log`에 기록된다고 해서 **즉시 학습·랭킹 변경이 일어나지는 않는다** (관측 후 정책 결정).
 
 ---
 
@@ -1072,9 +1091,9 @@ GPT 추론
 ↓
 사용자 수정 가능
 ↓
-data/feedback_log.json 저장
+data/feedback_log.json 에 관측 이벤트 기록 (후속; 현재 미연동)
 ↓
-Notion icon 자동 반영
+Notion icon 자동 반영 (후속)
 ```
 
 ---
@@ -1089,7 +1108,7 @@ Notion icon 자동 반영
 | 4 | data/sample_cases.json matching |
 | 5 | data/visual_candidates.json matching |
 | 6 | GPT fallback |
-| 7 | data/feedback_log.json 저장 |
+| 7 | data/feedback_log.json 관측 적재 (API/UI 연동 후속) |
 | 8 | Notion API 연결 |
 | 9 | 자동 실행 |
 | 10 | 개발일지 자동화 |

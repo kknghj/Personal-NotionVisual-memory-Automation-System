@@ -176,7 +176,7 @@
 
 | 항목 | 분류 | 이유 |
 |------|------|------|
-| **feedback_log + user_confirmed 축적** | immediately useful | calibration ground truth; penalty 전제 |
+| **feedback_log + user_confirmed 축적** | immediately useful | observation·calibration ground truth (penalty/rerank는 후속 검토) |
 | **현황/결과복합 contextual rule (soft only)** | immediately useful | `성과 분석 결과 현황`, `사업 운영 결과 현황` 정렬 |
 | **`진행현황` vs `진행 현황` disambiguation** | immediately useful | false certainty 1건 직접 해결 |
 | **monitoring/tracking ontology 분리 문서화** | immediately useful | 현황+확인/제출 케이스는 이미 tracking/edit 승 |
@@ -212,4 +212,4 @@ python3 tools/analyze_current_state_experiment.py \
 | **Scoring** | soft bonus + observation 로그; hard filter/penalty 보류 |
 | **Ambiguity** | `현황` null 전략 유효; 복합 phrase rule은 점진 추가 |
 | **Regression** | tracking/제출/공유 붕괴 없음 — scope 통제 성공 |
-| **Future** | feedback-driven calibration → weighted rerank feature → 제한적 penalty 실험 |
+| **Future** | observation 축적 → 분석·검토 → (선택) calibration / weighted rerank / 제한적 penalty **실험** |

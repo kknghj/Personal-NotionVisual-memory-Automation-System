@@ -49,7 +49,7 @@
 |------|------|------|--------------|
 | **Hard filter** | 경계 선명 | metadata 없는 제목·약한 신호에서 후보 소실 (false negative) | **미채택** |
 | **Soft semantic bonus** | 기존 P6 키 유지, sparse metadata 대응 | gap이 작으면 여전히 tie 가능 | **채택** (+2, `workflow_fit`과 동급) |
-| **Weighted rerank feature** | 로그·학습에 유리 | 별도 feature 파이프라인·캘리브레이션 필요 | **후속** (feedback_log에 stage 필드 축적 후) |
+| **Weighted rerank feature** | 관측·분석 후 feature화에 유리 | 별도 feature 파이프라인·캘리브레이션 필요 | **후속** (`feedback_log`에 stage 관측 축적 후) |
 
 **Ambiguity penalty**는 이번에 **도입하지 않음**. stage 불일치만으로 감점하면 “보고”만 있는 제목에서 `document_reporting`이 과도하게 깎일 수 있음. 대신 **result 전용 meaning 중복 제거**로 retrieval collision을 먼저 줄임.
 
@@ -131,7 +131,7 @@
 1. `feedback_log`에 `inferred_workflow_stage` / `matched_workflow_stage` 기록 — **구현됨** (`docs/feedback_observations/workflow_stage.md`, `app/workflow_stage_observation.py`).
 2. `현황 보고`류 소량 라벨링 후, 맥락 규칙(연례·집계 vs 추진)만 **선택적** bonus.
 3. ambiguity test set에 예시 3건(식생활 진행/출장 결과/전국 현황) 추가.
-4. stage 불일치 **penalty**는 feedback 검증 후 0.5~1 수준으로만 실험.
+4. stage 불일치 **penalty**는 `feedback_log` 관측·라벨 검증 **후** 0.5~1 수준으로만 **오프라인 실험** (런타임 자동 적용 아님).
 
 ### 4.6 독립 ontology 축 vs lifecycle metadata 축소
 

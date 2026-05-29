@@ -36,7 +36,7 @@
 }
 ```
 
-`semantic_metadata`는 retrieval hit를 만들지 않는다. 후보 row가 P3 pair 또는 P4 meaning으로 생성된 뒤, P6 ranking 또는 이후 category-aware scoring에서 tie-break, penalty, explanation, feedback aggregation에 사용할 수 있는 후보 속성이다.
+`semantic_metadata`는 retrieval hit를 만들지 않는다. 후보 row가 P3 pair 또는 P4 meaning으로 생성된 뒤, P6 ranking 또는 이후 category-aware scoring에서 tie-break, penalty, explanation, `feedback_log` **관측 집계**에 사용할 수 있는 후보 속성이다 (로그는 training·자동 rerank 입력이 아님).
 
 ## 2. 필드 정의
 
@@ -328,6 +328,6 @@ Pair/synthetic row는 두 방식 중 하나로 연결한다.
 
 - 먼저 모든 후보에 완벽히 채우려 하지 말고, 충돌이 잦은 후보군부터 붙인다.
 - enum은 feedback과 테스트에서 실제로 쓰일 때만 늘린다.
-- `workflow_fit[0]`은 primary fit이다. primary category가 흔들릴 때마다 순서를 바꾸지 말고, 사용자 선택 로그로 검증한다.
+- `workflow_fit[0]`은 primary fit이다. primary category가 흔들릴 때마다 순서를 바꾸지 말고, `feedback_log` **관측**과 수동 검토로 검증한 뒤 ontology를 조정한다.
 - `semantic_metadata` 값만으로 retrieval 결과를 만들지 않는다. retrieval은 계속 `meaning`과 pair rules가 담당한다.
 - scoring에 넣을 때는 hard rule보다 작은 boost/penalty부터 시작한다.
