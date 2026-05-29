@@ -9,16 +9,12 @@ from pathlib import Path
 from typing import Any
 
 from app.data_loader import append_feedback_log_entry, feedback_log_path
+from app.feedback_event import build_ambiguity_scoring_event
 
 
 def _scoring_row_to_feedback_entry(row: dict[str, Any], recorded_at: str) -> dict[str, Any]:
     top = row.get("top_candidate")
-    return {
-        "event_type": "ambiguity_scoring",
-        "recorded_at": recorded_at,
-        "title": row.get("title", ""),
-        "recommended_candidate_id": top if isinstance(top, str) else "",
-        "user_selected_candidate_id": "",
+    workflow_stage = {
         "inferred_workflow_stage": row.get("inferred_workflow_stage"),
         "matched_workflow_stage": row.get("matched_workflow_stage") or [],
         "user_confirmed_workflow_stage": row.get("user_confirmed_workflow_stage") or "",
@@ -28,6 +24,13 @@ def _scoring_row_to_feedback_entry(row: dict[str, Any], recorded_at: str) -> dic
         "workflow_stage_mismatch": row.get("workflow_stage_mismatch", False),
         "inferred_workflow_stages_all": row.get("inferred_workflow_stages_all") or [],
     }
+    return build_ambiguity_scoring_event(
+        recorded_at=recorded_at,
+        title=str(row.get("title", "")),
+        recommended_candidate_id=top if isinstance(top, str) else "",
+        user_selected_candidate_id="",
+        workflow_stage=workflow_stage,
+    )
 
 
 def export_from_scoring_log(
