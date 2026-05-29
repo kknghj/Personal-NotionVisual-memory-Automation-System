@@ -6,6 +6,8 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
+from app.feedback_event import normalize_feedback_event
+
 DEFAULT_AFTER_LOG = Path(
     "tests/ambiguity/ambiguity_results/2026-05-21_current_state_workflow_stage_log.json"
 )
@@ -77,17 +79,21 @@ def _previous_log_path(latest: Path) -> Path:
 
 
 def _stage_fields(item: dict[str, Any]) -> dict[str, Any]:
-    return {key: item[key] for key in STAGE_LOG_FIELDS if key in item}
+    normalized = normalize_feedback_event(item)
+    workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
+    return {key: workflow_stage[key] for key in STAGE_LOG_FIELDS if key in workflow_stage}
 
 
 def _false_certainty_cases(after_items: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     cases: list[dict[str, Any]] = []
     for title, row in after_items.items():
-        if "workflow_stage_confidence" not in row:
+        normalized = normalize_feedback_event(row)
+        workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
+        if "workflow_stage_confidence" not in workflow_stage:
             continue
-        conf = float(row.get("workflow_stage_confidence") or 0.0)
-        ambiguous = bool(row.get("workflow_stage_ambiguous"))
-        inferred = row.get("inferred_workflow_stage")
+        conf = float(workflow_stage.get("workflow_stage_confidence") or 0.0)
+        ambiguous = bool(workflow_stage.get("workflow_stage_ambiguous"))
+        inferred = workflow_stage.get("inferred_workflow_stage")
         if conf >= 0.8 and ambiguous:
             cases.append(
                 {
@@ -107,7 +113,7 @@ def _false_certainty_cases(after_items: dict[str, dict[str, Any]]) -> list[dict[
                     "kind": "high_confidence_hyeonhwang_without_clear_stage_phrase",
                     "confidence": conf,
                     "inferred_workflow_stage": inferred,
-                    "workflow_stage_source": row.get("workflow_stage_source"),
+                    "workflow_stage_source": workflow_stage.get("workflow_stage_source"),
                     "top_candidate": row.get("top_candidate"),
                 }
             )
@@ -122,19 +128,30 @@ def _workflow_stage_experiment_analysis(
     hyeonhwang_rows = [
         row for title, row in after_items.items() if "현황" in title.replace(" ", "")
     ]
-    null_stage = sum(1 for row in hyeonhwang_rows if row.get("inferred_workflow_stage") is None)
-    ambiguous_flag = sum(1 for row in hyeonhwang_rows if row.get("workflow_stage_ambiguous"))
-    mismatches = [
-        {
-            "title": title,
-            "inferred": row.get("inferred_workflow_stage"),
-            "top": row.get("top_candidate"),
-            "matched": row.get("matched_workflow_stage"),
-            "confidence": row.get("workflow_stage_confidence"),
-        }
-        for title, row in after_items.items()
-        if row.get("workflow_stage_mismatch")
-    ]
+    null_stage = 0
+    ambiguous_flag = 0
+    for row in hyeonhwang_rows:
+        normalized = normalize_feedback_event(row)
+        workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
+        if workflow_stage.get("inferred_workflow_stage") is None:
+            null_stage += 1
+        if workflow_stage.get("workflow_stage_ambiguous"):
+            ambiguous_flag += 1
+    mismatches = []
+    for title, row in after_items.items():
+        normalized = normalize_feedback_event(row)
+        workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
+        if not workflow_stage.get("workflow_stage_mismatch"):
+            continue
+        mismatches.append(
+            {
+                "title": title,
+                "inferred": workflow_stage.get("inferred_workflow_stage"),
+                "top": row.get("top_candidate"),
+                "matched": workflow_stage.get("matched_workflow_stage"),
+                "confidence": workflow_stage.get("workflow_stage_confidence"),
+            }
+        )
     tracking_to_reporting = [
         item
         for item in snapshots
@@ -151,7 +168,9 @@ def _workflow_stage_experiment_analysis(
     ]
     stage_bonus_precision = {"aligned": 0, "misaligned": 0, "not_applicable": 0}
     for _title, row in after_items.items():
-        inferred = row.get("inferred_workflow_stage")
+        normalized = normalize_feedback_event(row)
+        workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
+        inferred = workflow_stage.get("inferred_workflow_stage")
         top = row.get("top_candidate")
         if inferred is None:
             stage_bonus_precision["not_applicable"] += 1
