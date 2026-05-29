@@ -128,7 +128,7 @@
 
 ### 4.5 추천 다음 단계
 
-1. `feedback_log`에 `inferred_workflow_stage` / `matched_workflow_stage` 기록 — **구현됨** (`docs/feedback_log_schema.md`, `app/workflow_stage_observation.py`).
+1. `feedback_log`에 `inferred_workflow_stage` / `matched_workflow_stage` 기록 — **구현됨** (`docs/feedback_observations/workflow_stage.md`, `app/workflow_stage_observation.py`).
 2. `현황 보고`류 소량 라벨링 후, 맥락 규칙(연례·집계 vs 추진)만 **선택적** bonus.
 3. ambiguity test set에 예시 3건(식생활 진행/출장 결과/전국 현황) 추가.
 4. stage 불일치 **penalty**는 feedback 검증 후 0.5~1 수준으로만 실험.

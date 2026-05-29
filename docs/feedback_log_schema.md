@@ -1,182 +1,124 @@
-# feedback_log schema — workflow_stage observations
+# feedback_log architecture
 
-`data/feedback_log.json`은 사용자 선택·추천 결과·ontology 슬라이스를 축적하는 **선택적** 배열 JSON이다.  
-`workflow_stage`는 **reporting 계열 optional semantic axis**이며, global mandatory taxonomy·hard filter가 **아니다**.
+`data/feedback_log.json`은 추천·선택·수정이 **실제로 어떻게 일어났는지**를 쌓는 **관측 로그(observation log)** 이다.
+
+## Philosophy
+
+| 원칙 | 의미 |
+|------|------|
+| **observation first** | 사실(추천, 후보, 선택, 변경, 추론 신호)을 먼저 기록한다. |
+| **policy later** | 로그로 무엇을 학습·튜닝할지는 **나중에** 결정한다. |
+
+`feedback_log`는:
+
+- **an observation log** — 무엇이 일어났는지의 기록
+- **not a training dataset** — 곧바로 가중치·penalty·hard rule의 입력으로 쓰이지 않는다
+
+개인용 추천 시스템 규모에 맞게 **가볍게** 유지한다. (단일 JSON 배열 파일, enterprise analytics 아님.)
 
 ---
 
-## 1. Logging 위치 (현재 단계)
+## Storage
 
-| 우선순위 | 위치 | 현재 상태 | 역할 |
-|----------|------|-----------|------|
-| 1 | **Ambiguity scoring log** | **구현됨** | `tools/generate_ambiguity_scoring_log.py`가 제목별 observation 필드를 붙임. 대량 regression·calibration에 적합. |
-| 2 | Recommendation result log | **스키마만** | `/recommend-icon` 응답 후 동일 `build_workflow_stage_observation()` 호출 가능 (API 필드 확장은 후속). |
-| 3 | User override / correction | **스키마만** | `user_confirmed_workflow_stage` + `workflow_stage_source: manual_label`. |
-| 4 | Feedback collection pipeline | **후속** | Notion UI·배치 적재 시 `append_feedback_log_entry()` 사용. |
-
-**원칙:** lightweight observation, analytics-ready, future rerank feature extraction.  
-관련 제목·reporting 후보가 있을 때만 필드를 채워 **로그 노이즈·sparsity 부담**을 줄인다.
-
----
-
-## 2. Event 공통 형태
-
-```json
-{
-  "event_type": "ambiguity_scoring",
-  "recorded_at": "2026-05-21T12:00:00Z",
-  "title": "교육결과 보고",
-  "recommended_candidate_id": "result_reporting",
-  "user_selected_candidate_id": "",
-  "inferred_workflow_stage": "result",
-  "matched_workflow_stage": ["result", "final"],
-  "user_confirmed_workflow_stage": "",
-  "workflow_stage_confidence": 0.85,
-  "workflow_stage_source": "keyword:교육결과",
-  "workflow_stage_ambiguous": false,
-  "workflow_stage_mismatch": false,
-  "inferred_workflow_stages_all": ["result"]
-}
-```
-
-| 필드 | 필수 | 설명 |
-|------|------|------|
-| `event_type` | ✓ | `ambiguity_scoring` \| `recommendation` \| `user_correction` |
-| `recorded_at` | ✓ | ISO-8601 UTC |
-| `title` | ✓ | 일정 제목 |
-| `recommended_candidate_id` | 선택 | 시스템 1위 후보 |
-| `user_selected_candidate_id` | 선택 | 사용자 최종 선택 (없으면 `""`) |
-
-### 2.1 workflow_stage optional fields
-
-| 필드 | 타입 | 설명 |
-|------|------|------|
-| `inferred_workflow_stage` | `string \| null` | 제목 keyword/context 기반 **시스템 1차 추론** (`progress` \| `interim` \| `result` \| `final`). ambiguous면 `null`. |
-| `matched_workflow_stage` | `string[]` | 선택된 후보 `semantic_metadata.workflow_stage` 허용 목록 |
-| `user_confirmed_workflow_stage` | `string` | 사람 라벨 (검증·ground truth). 없으면 `""` |
-| `workflow_stage_confidence` | `number` | 0.0–1.0 heuristic (hard rule 아님) |
-| `workflow_stage_source` | `string` | 추론 근거 (아래 표) |
-| `workflow_stage_ambiguous` | `boolean` | `현황` 등으로 stage 단정 불가 |
-| `workflow_stage_mismatch` | `boolean` | `(confirmed \|\| inferred)` ∉ `matched_workflow_stage` (reporting 후보만) |
-| `inferred_workflow_stages_all` | `string[]` | 복수 stage 추론 시 전체 (분석용) |
-
-### 2.2 `workflow_stage_source` 값
-
-| 패턴 | 예 |
+| 항목 | 값 |
 |------|-----|
-| `keyword:{term}` | `keyword:진행상황`, `keyword:결과보고` |
-| `ambiguous:{token}` | `ambiguous:현황` |
-| `contextual:{phrase}` | `contextual:운영현황` (현황 단독·compound 힌트) |
-| `manual_label` | 사용자 확정 라벨 이벤트 |
-| `""` | reporting 축과 무관하거나 stage 신호 없음 |
+| 경로 | `data/feedback_log.json` |
+| 형식 | JSON **배열** 루트 (`[ ... ]`) |
+| 로더 | `app/data_loader.py` — `load_feedback_log()`, `append_feedback_log_entry()` |
+| 예시 | `data/feedback_log_examples.json` |
 
-### 2.3 Confidence heuristic (현재)
-
-| 상황 | confidence |
-|------|------------|
-| 긴 keyword match (len ≥ 4) | 0.85 |
-| 짧은 keyword (예: `중간`) | 0.65 |
-| 복수 stage 동시 추론 | ≤ 0.75 |
-| ambiguous `현황` (stage null) | 0.2 |
-| 신호 없음 | 0.0 |
+Phase 0: 파일은 유효한 빈 배열 `[]` 로 초기화한다. (0-byte 파일은 `json.load` 실패 가능.)
 
 ---
 
-## 3. 정책 — ambiguous / mismatch
+## Architecture: Layer A + Layer B
 
-### A. Ambiguous inferred stage
+### Layer A — Common feedback event
 
-`현황`만 있고 progress/result/interim/final keyword가 없을 때:
+모든 `event_type`에 공통으로 적용되는 **이벤트 봉투(envelope)** 개념이다.  
+구현 시 필드명·중첩 구조는 진화할 수 있으나, 기록해야 할 **의미 단위**는 아래와 같다.
 
-```json
-{
-  "inferred_workflow_stage": null,
-  "matched_workflow_stage": ["progress", "interim"],
-  "workflow_stage_confidence": 0.2,
-  "workflow_stage_source": "ambiguous:현황",
-  "workflow_stage_ambiguous": true,
-  "workflow_stage_mismatch": false
-}
-```
+| 개념 | 설명 |
+|------|------|
+| **Identity** | `event_type`, `recorded_at` (ISO-8601 UTC) |
+| **Context** | `title` (일정 제목 등); 필요 시 `input_context` (modifier·pair 힌트 등, 후속) |
+| **Recommendation** | 시스템이 제안한 것 — `recommended_candidate_id`, `recommended_visual` (후속), 상위 N 요약 `ranking_summary` (후속) |
+| **User selection** | 사용자가 고른 것 — `user_selected_candidate_id`, `user_selected_visual` (후속) |
+| **Correction** | 추천과 다른 최종 선택 — `changed`, `change_type`, `selection_source` (후속) |
+| **Provenance** | `source_surface` — 이벤트가 어디서 기록됐는지 (예: `ambiguity_scoring_log`, `recommend_api`, `notion_ui`) |
+| **Notes** | `reason` (시스템), `user_note` (사용자, 후속) |
 
-`운영현황`·`신청현황` 등은 stage를 붙이지 않고 `workflow_stage_source: contextual:운영현황` 등으로 **패턴만** 기록한다.
+**필수/선택 구현 상태:** Layer A 전체 envelope는 **문서화됨**. `event_type`·`recorded_at`·`title`·`recommended_candidate_id`·`user_selected_candidate_id` 정도만 export 경로에서 쓰인다. 나머지 Layer A 필드는 **후속 PR**에서 추가한다.
 
-### B. Mismatch case
+향후 호환을 위해 `schema_version` 같은 버전 필드를 둘 수 있다 (아직 필수 아님).
 
-시스템이 `progress`로 추론했는데 1위가 `result_reporting`일 때:
+### Layer B — Optional semantic observation slices
 
-```json
-{
-  "title": "…진행상황 보고…",
-  "inferred_workflow_stage": "progress",
-  "recommended_candidate_id": "result_reporting",
-  "matched_workflow_stage": ["result", "final"],
-  "workflow_stage_mismatch": true,
-  "workflow_stage_confidence": 0.85,
-  "workflow_stage_source": "keyword:진행상황"
-}
-```
+ontology·의미 축별 **선택적** 관측 블록이다. 이벤트마다 0개 이상.
 
-향후 penalty 실험·false negative 분석·ontology refinement 입력으로 사용한다.
+- 후보 전역에 slice를 **강제하지 않는다.**
+- slice 없이도 유효한 feedback 이벤트이다.
 
----
+| Slice | 문서 | 상태 |
+|-------|------|------|
+| `workflow_stage` | [`feedback_observations/workflow_stage.md`](feedback_observations/workflow_stage.md) | **부분 구현** (scoring log·export·builder) |
+| `semantic_boundary` | (미작성) | 계획만 |
+| `interface_channel` | (미작성) | 계획만 |
+| `visual_preference` | (미작성) | 계획만 |
 
-## 4. Logging examples
-
-예시 파일: `data/feedback_log_examples.json`  
-코드: `app/workflow_stage_observation.py`, `app/semantic_scoring.infer_workflow_stage_detail()`
+Slice 인덱스: [`feedback_observations/README.md`](feedback_observations/README.md)
 
 ---
 
-## 5. Analytics (future-compatible)
+## Event types (vocabulary)
 
-`tools/analyze_workflow_stage_observations.py`가 scoring log 또는 `feedback_log.json`에서 집계:
-
-- **confusion matrix** — `inferred_workflow_stage` × `recommended_candidate_id` (reporting subset)
-- **progress ↔ result confusion** — off-diagonal count
-- **ambiguous token frequency** — `workflow_stage_source` prefix `ambiguous:` / `contextual:`
-- **현황 usage distribution** — 제목에 `현황` 포함 비율 vs ambiguous 비율
-- **stage mismatch rate** — `workflow_stage_mismatch` 비율
-- **confidence calibration** — confirmed label 있을 때 confidence bucket별 accuracy
-
-현재 단계: **구조·스크립트만** 제공. 대시보드·자동 penalty 연동은 **불필요**.
+| `event_type` | 의미 | 구현 상태 |
+|--------------|------|-----------|
+| `ambiguity_scoring` | 오프라인 ambiguity scoring log에서 export된 관측 | **부분** — scoring log + `tools/export_feedback_observations_from_scoring_log.py` |
+| `recommendation` | 라이브 추천 API가 응답을 낸 순간 | **후속** — `/recommend-icon` 미연동 |
+| `user_selection` | 사용자가 추천을 그대로 수락 | **후속** — UI 없음 |
+| `user_correction` | 사용자가 추천과 다르게 수정 | **후속** — 예시만 `feedback_log_examples.json` |
+| `manual_label` | 사람이 semantic 라벨을 붙임 | **후속** |
+| `batch_import` | 도구가 일괄 적재 | **후속** |
 
 ---
 
-## 6. 구현 범위 vs 후속
+## What exists today (summary)
 
-| 항목 | 지금 | 후속 |
-|------|------|------|
-| Schema + observation builder | ✓ | — |
-| Ambiguity log attachment | ✓ | — |
-| `feedback_log.json` append API | ✓ (`append_feedback_log_entry`) | UI 연동 |
-| Recommendation API 필드 | 문서화만 | `RecommendResponse` extension |
-| Penalty / rerank from log | **하지 않음** | feedback 축적 후 |
-| User labeling UI | **하지 않음** | manual_label 적재 |
-
-### 가치 평가 (현재)
-
-- reporting/result_reporting **ambiguity 감소 검증**을 scoring log만으로 재현 가능.
-- `현황`·mismatch를 **명시적 필드**로 쌓아 ground truth·penalty 실험 기반 마련.
-- candidate explosion·hard filter 없이 **soft calibration** 철학 유지.
-
-### 아직 불필요한 것
-
-- 전역 mandatory `workflow_stage` on 모든 candidates
-- Hard filter / automatic penalty from log
-- 별도 `interim_reporting` candidate ids
-- 실시간 Notion feedback pipeline (스키마만 준비)
+| 구성요소 | 상태 |
+|----------|------|
+| `data/feedback_log.json` | `[]` placeholder |
+| `append_feedback_log_entry()` | 코드 있음; **프로덕션 write path 거의 없음** |
+| `workflow_stage` slice | scoring log attachment + export + `app/workflow_stage_observation.py` |
+| Live recommendation / user feedback 적재 | **없음** |
 
 ---
 
-## 7. 재현
+## Out of scope (current system)
 
-```bash
-python3 tools/generate_ambiguity_scoring_log.py \
-  --output tests/ambiguity/ambiguity_results/latest_scoring_log.json
-python3 tools/analyze_workflow_stage_observations.py \
-  tests/ambiguity/ambiguity_results/latest_scoring_log.json
-python3 tools/export_feedback_observations_from_scoring_log.py \
-  --scoring-log tests/ambiguity/ambiguity_results/latest_scoring_log.json \
-  --output data/feedback_log.json
-```
+`feedback_log`는 **현재** 다음을 **하지 않는다**:
+
+- scoring **penalty** 자동 적용
+- **reranking** 가중치 실시간 변경
+- 후보 **hard filter**
+- **ML training** 파이프라인
+- **Notion** 실시간 feedback pipeline
+- 대시보드·라벨링 UI
+
+이들은 로그가 쌓인 뒤에도 **정책 결정이 별도**여야 한다.
+
+---
+
+## Related docs
+
+- Workflow meaning model: [`workflow_ontology.md`](workflow_ontology.md) §11
+- Product data mention: [`PRD.md`](PRD.md) §5-3 (관측 로그 관점으로 해석; training dataset로 즉시 쓰지 않음)
+- Examples: `data/feedback_log_examples.json`
+
+---
+
+## Reproduce workflow_stage path (today)
+
+`workflow_stage` slice만 다루는 상세·필드·정책·분석 명령은 전용 문서에 있다:
+
+→ [`feedback_observations/workflow_stage.md`](feedback_observations/workflow_stage.md)
