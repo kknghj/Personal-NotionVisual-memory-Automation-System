@@ -9,20 +9,22 @@ from pathlib import Path
 from typing import Any
 
 from app.data_loader import append_feedback_log_entry, feedback_log_path
-from app.feedback_event import build_ambiguity_scoring_event
+from app.feedback_event import build_ambiguity_scoring_event, normalize_feedback_event
 
 
 def _scoring_row_to_feedback_entry(row: dict[str, Any], recorded_at: str) -> dict[str, Any]:
     top = row.get("top_candidate")
+    normalized = normalize_feedback_event(row)
+    workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
     workflow_stage = {
-        "inferred_workflow_stage": row.get("inferred_workflow_stage"),
-        "matched_workflow_stage": row.get("matched_workflow_stage") or [],
-        "user_confirmed_workflow_stage": row.get("user_confirmed_workflow_stage") or "",
-        "workflow_stage_confidence": row.get("workflow_stage_confidence", 0.0),
-        "workflow_stage_source": row.get("workflow_stage_source") or "",
-        "workflow_stage_ambiguous": row.get("workflow_stage_ambiguous", False),
-        "workflow_stage_mismatch": row.get("workflow_stage_mismatch", False),
-        "inferred_workflow_stages_all": row.get("inferred_workflow_stages_all") or [],
+        "inferred_workflow_stage": workflow_stage.get("inferred_workflow_stage"),
+        "matched_workflow_stage": workflow_stage.get("matched_workflow_stage") or [],
+        "user_confirmed_workflow_stage": workflow_stage.get("user_confirmed_workflow_stage") or "",
+        "workflow_stage_confidence": workflow_stage.get("workflow_stage_confidence", 0.0),
+        "workflow_stage_source": workflow_stage.get("workflow_stage_source") or "",
+        "workflow_stage_ambiguous": workflow_stage.get("workflow_stage_ambiguous", False),
+        "workflow_stage_mismatch": workflow_stage.get("workflow_stage_mismatch", False),
+        "inferred_workflow_stages_all": workflow_stage.get("inferred_workflow_stages_all") or [],
     }
     return build_ambiguity_scoring_event(
         recorded_at=recorded_at,
@@ -48,7 +50,12 @@ def export_from_scoring_log(
     for row in rows:
         if not isinstance(row, dict):
             continue
-        if "inferred_workflow_stage" not in row and "workflow_stage_ambiguous" not in row:
+        normalized = normalize_feedback_event(row)
+        workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
+        if (
+            "inferred_workflow_stage" not in workflow_stage
+            and "workflow_stage_ambiguous" not in workflow_stage
+        ):
             continue
         entry = _scoring_row_to_feedback_entry(row, recorded_at)
         entries.append(entry)

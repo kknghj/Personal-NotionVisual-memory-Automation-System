@@ -8,6 +8,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from app.feedback_event import normalize_feedback_event
+
 MANIFEST_PATH = Path("tests/ambiguity/reporting_current_state_manifest.json")
 
 
@@ -56,9 +58,11 @@ def analyze(log_path: Path) -> dict[str, Any]:
             title = case["title"]
             row = log.get(title, {})
             actual_top = row.get("top_candidate")
-            inferred = row.get("inferred_workflow_stage")
-            ambiguous = row.get("workflow_stage_ambiguous")
-            conf = float(row.get("workflow_stage_confidence") or 0.0)
+            normalized = normalize_feedback_event(row)
+            workflow_stage = normalized.get("observations", {}).get("workflow_stage", {})
+            inferred = workflow_stage.get("inferred_workflow_stage")
+            ambiguous = workflow_stage.get("workflow_stage_ambiguous")
+            conf = float(workflow_stage.get("workflow_stage_confidence") or 0.0)
             expected = case.get("expected_workflow_stage_behavior", "")
             expected_ok = True
             if expected in {"null", "ambiguous_or_null"}:
@@ -81,7 +85,7 @@ def analyze(log_path: Path) -> dict[str, Any]:
                     "inferred_workflow_stage": inferred,
                     "workflow_stage_ambiguous": ambiguous,
                     "workflow_stage_confidence": conf,
-                    "workflow_stage_mismatch": row.get("workflow_stage_mismatch"),
+                    "workflow_stage_mismatch": workflow_stage.get("workflow_stage_mismatch"),
                     "near_reporting_tie": _near_reporting_tie(row),
                     "expected_behavior_ok": expected_ok,
                     "top_in_likely_competitors": top_in_likely,
