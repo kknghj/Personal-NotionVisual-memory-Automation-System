@@ -42,7 +42,7 @@ Phase 0: 파일은 유효한 빈 배열 `[]` 로 초기화한다. (0-byte 파일
 |------|------|
 | **Identity** | `event_type`, `recorded_at` (ISO-8601 UTC) |
 | **Context** | `title` (일정 제목 등); 필요 시 `input_context` (modifier·pair 힌트 등, 후속) |
-| **Recommendation** | 시스템이 제안한 것 — `recommended_candidate_id`, `recommended_visual` (후속), 상위 N 요약 `ranking_summary` (후속) |
+| **Recommendation** | 시스템이 제안한 것 — `recommended_candidate_id`, `recommended_visual` (후속), 상위 N 요약 `ranking_summary` (후속); 상관 키 `recommendation_id` (JSONL 관측 로그와 동일 UUID) |
 | **User selection** | 사용자가 고른 것 — `user_selected_candidate_id`, `user_selected_visual` (후속) |
 | **Correction** | 추천과 다른 최종 선택 — `changed`, `change_type`, `selection_source` (후속) |
 | **Provenance** | `source_surface` — 이벤트가 어디서 기록됐는지 (예: `ambiguity_scoring_log`, `recommend_api`, `notion_ui`) |
@@ -75,7 +75,7 @@ Slice 인덱스: [`feedback_observations/README.md`](feedback_observations/READM
 | `event_type` | 의미 | 구현 상태 |
 |--------------|------|-----------|
 | `ambiguity_scoring` | 오프라인 ambiguity scoring log에서 export된 관측 | **부분** — scoring log + `tools/export_feedback_observations_from_scoring_log.py` |
-| `recommendation` | 라이브 추천 API가 응답을 낸 순간 | **후속** — `/recommend-icon` 미연동 |
+| `recommendation` | 라이브 추천 API가 응답을 낸 순간 | **후속** — JSONL에 기록됨; `feedback_log`에는 `recommendation_id`로 상관 예정 |
 | `user_selection` | 사용자가 추천을 그대로 수락 | **후속** — UI 없음 |
 | `user_correction` | 사용자가 추천과 다르게 수정 | **후속** — 예시만 `feedback_log_examples.json` |
 | `manual_label` | 사람이 semantic 라벨을 붙임 | **후속** |
@@ -90,7 +90,8 @@ Slice 인덱스: [`feedback_observations/README.md`](feedback_observations/READM
 | `data/feedback_log.json` | `[]` placeholder |
 | `append_feedback_log_entry()` | 코드 있음; **프로덕션 write path 거의 없음** |
 | `workflow_stage` slice | scoring log attachment + export + `app/workflow_stage_observation.py` |
-| Live recommendation / user feedback 적재 | **없음** |
+| Live recommendation JSONL | **부분** — `logs/recommendation_log.jsonl` (`recommendation_id` per run; gitignored) |
+| Live recommendation / user feedback 적재 | **없음** (`feedback_log` array append 미연동) |
 
 ---
 
