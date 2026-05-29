@@ -111,14 +111,28 @@ def load_pair_rules() -> dict[str, Any]:
 
 
 def load_feedback_log() -> list[dict[str, Any]]:
-    """Load feedback log array; returns [] if file is missing."""
+    """Load feedback log array.
+
+    Missing, empty, or whitespace-only file → ``[]``.
+    Invalid JSON or non-array root → ``ValueError``.
+    """
     path = feedback_log_path()
     if not path.is_file():
         return []
-    with path.open(encoding="utf-8") as f:
-        raw = json.load(f)
+    text = path.read_text(encoding="utf-8")
+    if not text.strip():
+        return []
+    try:
+        raw = json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise ValueError(
+            f"data/feedback_log.json: invalid JSON: {exc}"
+        ) from exc
     if not isinstance(raw, list):
-        raise ValueError("data/feedback_log.json must be a JSON array at the root")
+        raise ValueError(
+            "data/feedback_log.json must be a JSON array at the root "
+            f"(list of event objects), got {type(raw).__name__}."
+        )
     return raw
 
 
