@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 
 from app.data_loader import load_sample_cases, load_visual_candidates
 from app.models import RecommendRequest, RecommendResponse, Visual
+from app.recommendation_logging import log_recommendation_execution
 from app.recommender import find_best_visual_candidate_match, find_exact_title_match
 
 app = FastAPI(title="Notion Icon Automation", version="0.1.0")
@@ -161,10 +162,14 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
         wfs = case.get("workflow_resolution")
         if isinstance(wfs, int):
             reason = f"{reason} (기록된 workflow_resolution={wfs})"
-        return RecommendResponse(visual=Visual(**visual), reason=reason)
+        response = RecommendResponse(visual=Visual(**visual), reason=reason)
+        log_recommendation_execution(body.title, case=case)
+        return response
 
-    cand = find_best_visual_candidate_match(body.title, get_visual_candidates())
+    visual_candidates = get_visual_candidates()
+    cand = find_best_visual_candidate_match(body.title, visual_candidates)
     if cand is None:
+        log_recommendation_execution(body.title, candidates=visual_candidates)
         raise HTTPException(
             status_code=404,
             detail="data/sample_cases 및 data/visual_candidates meaning 키워드와 일치하는 항목이 없습니다.",
@@ -182,4 +187,10 @@ def recommend_icon(body: RecommendRequest) -> RecommendResponse:
         f"제목에 meaning「{matched}」가 포함되어 후보「{cid}」를 선택했습니다 "
         f"(정렬: interface_dominance={idom}, keyword_workflow_resolution={kres}, workflow_priority={wp})."
     )
-    return RecommendResponse(visual=Visual(**visual), reason=reason)
+    response = RecommendResponse(visual=Visual(**visual), reason=reason)
+    log_recommendation_execution(
+        body.title,
+        catalog_match=cand,
+        candidates=visual_candidates,
+    )
+    return response
