@@ -35,7 +35,7 @@
 5. **후보 풀** — P3 pair + P4 meaning (현재 의미는 JSON에 **분산**)  
 6. **P5–P6** — 필터·랭킹  
 7. **P7** — visual  
-8. **feedback** — ontology 슬라이스를 남기면 계열 내 nuance·충돌을 **데이터로** 볼 수 있음  
+8. **feedback (observation)** — `feedback_log`에 ontology·semantic slice를 남기면 계열 내 nuance·충돌 **증거**를 쌓을 수 있음 (즉시 scoring 변경 아님)  
 
 지금 코드에서는 **4번이 전용 모듈로 분리되어 있지 않고** P3·P4 필드에 **흡수**되어 있다. ontology 문서는 그 **meaning layer**를 읽는 backbone 역할을 한다.
 
@@ -318,7 +318,7 @@ P6 우승 후 API 경로로 넘길 때는 ``app.recommender.BestVisualCandidateM
 1. **Generic action registry**: `action_lemma`를 하드코딩 섹션名이 아니라 `actions: [{lemma, phases: [...]}]` 형태로 일반화; P3를 플러그인 체인으로 분리.  
 2. **Pair vs Meaning 통합 스키마**: 두 트랙 모두 `CandidateRow`로 정규화해 **동일 필터 파이프** 통과.  
 3. **Modifier를 1급 객체로**: `ModifierExtractor` 단계를 P2–P3 사이에 두고, person/time/location 태그를 row에 붙여 필터에서 명시적으로 소비.  
-4. **학습 레이어**: `feedback_log.json`을 P6 이후에 붙여 가중치 조정(현재는 미연결).  
+4. **Observation / policy layer (후속)**: `feedback_log.json`으로 P6 이후 추천·선택·slice를 **기록**하고, 충분한 증거가 있을 때만 ontology·scoring **정책**을 검토한다 (현재는 적재·분석 경로만 부분 구현; 가중치·penalty·rerank 자동 반영 없음).  
 5. **Exact match 정책 확장 (선택)**: 현재 P0는 **`strip()`만**. 필요 시 전각·연속 공백 등 **명시적 normalize 한 단계**를 `find_exact_title_match` 앞에 두되, catalog 경로(P1)와 **동일 규칙을 공유하지 않을지** 문서로 계약을 고정한다.
 
 ---
