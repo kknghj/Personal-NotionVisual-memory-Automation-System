@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20260531</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="371703ed-64a7-802c-99ec-c6982d1a1cea" class="page sans"><header><h1 class="page-title" dir="auto">20260531</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:6.881720430107527%"/><col style="width:28.49462365591398%"/><col style="width:16.881720430107528%"/><col style="width:15.483870967741936%"/><col style="width:10.75268817204301%"/><col style="width:21.505376344086017%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/numero_gray.svg" style="width:14px;height:14px;display:block"/></span>ID</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>제목</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>추천</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>최종</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/hashtag_gray.svg" style="width:14px;height:14px;display:block"/></span>확신도</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>메모</th></tr></thead><tbody><tr id="371703ed-64a7-80bb-9a80-f306cf5a7dcc"><td class="cell-krc:">1</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780bb9a80f306cf5a7dcc?pvs=21">교육청 회의 오찬 장소 정하기</a></td><td class="cell-{~Ys">🤝</td><td class="cell-&gt;|pB">🍴</td><td class="cell-ibox">90%</td><td class="cell-eSFS">회의는 맥락이고 실제 행동은 오찬 장소 선정</td></tr><tr id="371703ed-64a7-8079-9e21-d28b196a60df"><td class="cell-krc:">2</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780799e21d28b196a60df?pvs=21">식생활교육 보도자료 확인</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">📰</td><td class="cell-ibox">90%</td><td class="cell-eSFS">확인의 대상인 보도자료에 중점</td></tr><tr id="371703ed-64a7-80bf-b759-cd49aab04f9a"><td class="cell-krc:">3</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780bfb759cd49aab04f9a?pvs=21">회의실 예약</a></td><td class="cell-{~Ys">chair (gray)</td><td class="cell-&gt;|pB">💻</td><td class="cell-ibox">80%</td><td class="cell-eSFS">회의 당일 회의실 세팅이 아닌 행정 내부 시스템에 의한 예약이 실제 행동임</td></tr><tr id="371703ed-64a7-8082-a55a-d2d6a7a40c0a"><td class="cell-krc:">4</td><td class="cell-title"><a href="https://www.notion.so/AI-371703ed64a78082a55ad2d6a7a40c0a?pvs=21">지피터스 AI 스터디 신청</a></td><td class="cell-{~Ys"><strong>🧑‍🏫</strong></td><td class="cell-&gt;|pB">robot (orange)</td><td class="cell-ibox">60%</td><td class="cell-eSFS">스터디 대상에 중점, 지피터스라는 회사의 대표 색이 orange 임.</td></tr><tr id="371703ed-64a7-80a3-bf40-cb3b347c5bc0"><td class="cell-krc:">5</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780a3bf40cb3b347c5bc0?pvs=21">알뜰폰 할인 종료일</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">day calendar</td><td class="cell-ibox">60%</td><td class="cell-eSFS">혜택 마감일을 특정함</td></tr><tr id="371703ed-64a7-80a4-ba8e-d255f81e4f47"><td class="cell-krc:">7</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780a4ba8ed255f81e4f47?pvs=21">본인인증화면 수정 제안</a></td><td class="cell-{~Ys">qr-code</td><td class="cell-&gt;|pB"><strong>📞 or 📧</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">화면을 수정해달라는 제안을 전화로 하는 행동임</td></tr><tr id="371703ed-64a7-8081-a9d9-cc6216721ac3"><td class="cell-krc:">8</td><td class="cell-title"><a href="https://www.notion.so/4-9-24-371703ed64a78081a9d9cc6216721ac3?pvs=21">4/9, 24 출장 여비 등록</a></td><td class="cell-{~Ys"><strong>💰</strong></td><td class="cell-&gt;|pB">💻</td><td class="cell-ibox">80%</td><td class="cell-eSFS">출장 여비 등록은 급여 관련 업무가 아니며, 개인적 출장 내역을 행정 내부 시스템으로 등록하는 행위임</td></tr><tr id="371703ed-64a7-80eb-936b-fb276051ccfd"><td class="cell-krc:">9</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780eb936bfb276051ccfd?pvs=21">자치구 담당자 공문 안내 협조 요청</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📧</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">공문을 전파해줄 것을 메일로 요청하는 것이 실제 행위임</td></tr><tr id="371703ed-64a7-8058-8f6f-f474ce0a751c"><td class="cell-krc:">10</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780588f6ff474ce0a751c?pvs=21">인사 상담</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">👥</td><td class="cell-ibox">90%</td><td class="cell-eSFS">상사랑 둘이서 인사 관련 상담하는 것이 실제 행위</td></tr><tr id="371703ed-64a7-8074-be34-fc9bc01d30a9"><td class="cell-krc:">11</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a78074be34fc9bc01d30a9?pvs=21">민방위 대피 훈련</a></td><td class="cell-{~Ys">mop-bucket (brown)</td><td class="cell-&gt;|pB">person running (green)</td><td class="cell-ibox">90%</td><td class="cell-eSFS">긴급시 외부로 대피 훈련하는 것이 실제 행위, 초록색 비상탈출구에서 연상</td></tr><tr id="371703ed-64a7-809c-a43b-dd4538fb9ed0"><td class="cell-krc:">12</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a7809ca43bdd4538fb9ed0?pvs=21">보도자료 초안 검토 요청</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📧 or 📞</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">홍보 담당자에게 전화 혹은 이메일로 초안 검토를 요청하는 것이 실제 행위</td></tr><tr id="371703ed-64a7-8073-ae00-eab1a3d7136f"><td class="cell-krc:">13</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a78073ae00eab1a3d7136f?pvs=21">서울시 누리집 분야별 새소식 게시글 예약</a></td><td class="cell-{~Ys"><strong>📌</strong></td><td class="cell-&gt;|pB">social media post (blue)</td><td class="cell-ibox">40%</td><td class="cell-eSFS">온라인 게시판을 떠오르는 아이콘(서울시 누리집 대표 색이 파란색임)</td></tr><tr id="371703ed-64a7-80f0-b89a-c5f97106866c"><td class="cell-krc:">14</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780f0b89ac5f97106866c?pvs=21">식생활교육 배너, 포스터 제작</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">🎨</td><td class="cell-ibox">80%</td><td class="cell-eSFS">배너, 포스터 등 홍보물은 문서가 아닌 시각매체이며, 제작 행위에 중점을 둠</td></tr><tr id="371703ed-64a7-800f-9e1a-d5ddbcc8676f"><td class="cell-krc:">15</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a7800f9e1ad5ddbcc8676f?pvs=21">생활폐기물 처리</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">🚮</td><td class="cell-ibox">90%</td><td class="cell-eSFS">쓰레기를 버리는 행위에 중점</td></tr><tr id="371703ed-64a7-80c0-b314-d3ec958974c1"><td class="cell-krc:">16</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780c0b314d3ec958974c1?pvs=21">창의 정책 홍보 영상 제출</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB">🎥</td><td class="cell-ibox">80%</td><td class="cell-eSFS">제출 대상인 영상에 중점</td></tr><tr id="371703ed-64a7-80e6-9ba5-cdad5df13020"><td class="cell-krc:">17</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780e69ba5cdad5df13020?pvs=21">초근 결재</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">💻</td><td class="cell-ibox">90%</td><td class="cell-eSFS">초과근무 결재는 행정 내부 시스템을 통한 행위임</td></tr><tr id="371703ed-64a7-80d2-9995-c3698d5ea3f4"><td class="cell-krc:">18</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780d29995c3698d5ea3f4?pvs=21">커피, 차 픽업</a></td><td class="cell-{~Ys"><strong>🍰</strong></td><td class="cell-&gt;|pB">coffee paper cup (brown)</td><td class="cell-ibox">70%</td><td class="cell-eSFS">종이 일회용 음료를 픽업하는 것이므로 케이크가 아닌 음료잔 선택(커피색인 갈색 연상)</td></tr><tr id="371703ed-64a7-8048-9dfb-d2affb82a9f6"><td class="cell-krc:">19</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780489dfbd2affb82a9f6?pvs=21">초단기근로자 간식 관련 전달</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">🍬 or 🗣️</td><td class="cell-ibox">50%</td><td class="cell-eSFS">탕비실의 간식 구매를 담당하는 근로자에게 간식 구매 관련 사항을 전달하는 행위 혹은 간식을 떠오르는 사탕에 중점을 둠</td></tr><tr id="371703ed-64a7-8024-9b6c-f6896e93c756"><td class="cell-krc:">20</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780249b6cf6896e93c756?pvs=21">과일간식 짐 차에 싣기</a></td><td class="cell-{~Ys"><strong>🍱</strong></td><td class="cell-&gt;|pB">🍇 or 📦</td><td class="cell-ibox">60%</td><td class="cell-eSFS">도시락은 과일간식의 이미지와 거리가 멈. 과일 이모지 혹은 과일간식을 포장한 상자 연상</td></tr><tr id="371703ed-64a7-802f-940e-cb7d9b5ed3bf"><td class="cell-krc:">21</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a7802f940ecb7d9b5ed3bf?pvs=21">재택 필요 자료 드라이브 업로드</a></td><td class="cell-{~Ys"><strong>📁</strong></td><td class="cell-&gt;|pB">folder arrow up (yellow)</td><td class="cell-ibox">70%</td><td class="cell-eSFS">업로드 행위에 중점, 노란색 폴더 연상.</td></tr><tr id="371703ed-64a7-8000-9b6b-e61cf73ca527"><td class="cell-krc:">22</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780009b6be61cf73ca527?pvs=21">교류 자기소개서 송부</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📧 or 📄</strong></td><td class="cell-ibox">50%</td><td class="cell-eSFS">자기소개서 문서 자체에 중점을 둘 수도 있고, 메일을 통한 송부에 중점을 둘 수 있음</td></tr><tr id="371703ed-64a7-807d-b24b-eb465de3c8b7"><td class="cell-krc:">23</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a7807db24beb465de3c8b7?pvs=21">노션 강의 수강</a></td><td class="cell-{~Ys">document (orange)</td><td class="cell-&gt;|pB">🧑‍🏫 or notion</td><td class="cell-ibox">60%</td><td class="cell-eSFS">강의 수강 행위 혹은 강의의 주제에 중점을 둠</td></tr><tr id="371703ed-64a7-80d5-a733-f4f4ee767b75"><td class="cell-krc:">24</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780d5a733f4f4ee767b75?pvs=21">식생활교육 민원 전화 답변</a></td><td class="cell-{~Ys"><strong>📞</strong></td><td class="cell-&gt;|pB"><strong>📞</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr><tr id="371703ed-64a7-80c9-a985-e60c78085978"><td class="cell-krc:">25</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780c9a985e60c78085978?pvs=21">식생활교육 민원 답변</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">📞 or 📝 or 💻</td><td class="cell-ibox">40%</td><td class="cell-eSFS">민원이 전화일 수 있고, 문서 작성일 수 있고, 행정 내부 시스템을 통한 처리일 수 있음</td></tr><tr id="371703ed-64a7-803b-a088-c57678558cc9"><td class="cell-krc:">26</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a7803ba088c57678558cc9?pvs=21">강의 취소 공문 송부</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄</strong></td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="371703ed-64a7-8035-b15c-fc77bf7f419c"><td class="cell-krc:">27</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a78035b15cfc77bf7f419c?pvs=21">업무 인수인계</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">dot arrow right arc</td><td class="cell-ibox">70%</td><td class="cell-eSFS">전 담당자에서 현 담당자에게로 옮긴다는 이미지 연상</td></tr><tr id="371703ed-64a7-8061-9bc3-f62a26ffdf67"><td class="cell-krc:">28</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780619bc3f62a26ffdf67?pvs=21">보안서약서 캐비넷 비치</a></td><td class="cell-{~Ys">🗄️</td><td class="cell-&gt;|pB">🗄️ or hat sunglasses</td><td class="cell-ibox">50%</td><td class="cell-eSFS">모자와 선글라스를 낀 얼굴에서 보안성을 연상. 또는 문서를 놓는 장소를 중점.</td></tr><tr id="371703ed-64a7-80be-a927-fcbc0b8b9cfe"><td class="cell-krc:">29</td><td class="cell-title"><a href="https://www.notion.so/11-371703ed64a780bea927fcbc0b8b9cfe?pvs=21">윈도우11 업데이트 안내</a></td><td class="cell-{~Ys"><strong>📧</strong></td><td class="cell-&gt;|pB">📧 or computer window</td><td class="cell-ibox">60%</td><td class="cell-eSFS">메일을 통한 안내 혹은 업데이트 대상에 중점.</td></tr><tr id="371703ed-64a7-8041-b61d-cf0c1cdc867e"><td class="cell-krc:">30</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a78041b61dcf0c1cdc867e?pvs=21">세출예산 사업설명서 마감</a></td><td class="cell-{~Ys">clock (grey)</td><td class="cell-&gt;|pB">clock (grey)</td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="371703ed-64a7-8047-bcf1-e7ec85d7f9a1"><td class="cell-krc:">31</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a78047bcf1e7ec85d7f9a1?pvs=21">신규 명함 제작 신청</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">identification card</td><td class="cell-ibox">80%</td><td class="cell-eSFS">제작 신청 대상에 중점.</td></tr><tr id="371703ed-64a7-80fc-87f3-f7257c611349"><td class="cell-krc:">32</td><td class="cell-title"><a href="https://www.notion.so/PC-371703ed64a780fc87f3f7257c611349?pvs=21">PC 셧다운 해제 신청</a></td><td class="cell-{~Ys"><strong>💻</strong></td><td class="cell-&gt;|pB"><strong>💻</strong></td><td class="cell-ibox">90%</td><td class="cell-eSFS"></td></tr><tr id="371703ed-64a7-8088-a60b-f9c610c02c94"><td class="cell-krc:">33</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a78088a60bf9c610c02c94?pvs=21">바인더 법령 조례집 업데이트</a></td><td class="cell-{~Ys"><strong>📒</strong></td><td class="cell-&gt;|pB"><strong>📒</strong></td><td class="cell-ibox">90%</td><td class="cell-eSFS"></td></tr><tr id="371703ed-64a7-800f-8947-da90078873d8"><td class="cell-krc:">34</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a7800f8947da90078873d8?pvs=21">합동점검 예질 질문 구상</a></td><td class="cell-{~Ys"><strong>🧠</strong></td><td class="cell-&gt;|pB"><strong>🧠</strong></td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="371703ed-64a7-8057-b901-c532849fdf15"><td class="cell-krc:">35</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a78057b901c532849fdf15?pvs=21">합동점검 예질 질문 고민</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB"><strong>🧠</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">이 제목에서 ‘고민’은 무언가를 구상한다는 의미로 두뇌를 연상함.</td></tr><tr id="371703ed-64a7-800e-a289-e6c9ecb9953a"><td class="cell-krc:">36</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a7800ea289e6c9ecb9953a?pvs=21">을지훈련 매트리스 상태 확인</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">🛏️</td><td class="cell-ibox">80%</td><td class="cell-eSFS">문서 작업이 아닌 매트리스라는 물품 상태 확인하는 것으로, 매트리스와 비슷한 침대 이미지  활용</td></tr><tr id="371703ed-64a7-80f5-a47c-dcb7a6e4bd64"><td class="cell-krc:">37</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780f5a47cdcb7a6e4bd64?pvs=21">헌혈 학습시간 인정 상신</a></td><td class="cell-{~Ys"><strong>🗣️</strong></td><td class="cell-&gt;|pB">📄 or 🩸 </td><td class="cell-ibox">40%</td><td class="cell-eSFS">공문 상신이라는 문서 작업에 중점. 혹은 헌혈의 이미지 연상</td></tr><tr id="371703ed-64a7-80d2-8d23-eb0940d6a8fb"><td class="cell-krc:">38</td><td class="cell-title"><a href="https://www.notion.so/371703ed64a780d28d23eb0940d6a8fb?pvs=21">비상소집훈련 참석</a></td><td class="cell-{~Ys"><strong>🧑‍🏫</strong></td><td class="cell-&gt;|pB">🚨</td><td class="cell-ibox">100%</td><td class="cell-eSFS">사이렌 이미지가 비상소집을 연상시킴.</td></tr><tr id="371703ed-64a7-8011-bbfe-cd893e790983"><td class="cell-krc:">39</td><td class="cell-title"><a href="https://www.notion.so/AI-371703ed64a78011bbfecd893e790983?pvs=21">AI서울챗 사용 교육 참여</a></td><td class="cell-{~Ys"><strong>🧑‍🏫</strong></td><td class="cell-&gt;|pB"><strong>🧑‍🏫</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr></tbody></table></div><br/><br/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

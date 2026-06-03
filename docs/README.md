@@ -9,6 +9,7 @@
 | [docs/workflow_ontology.md](workflow_ontology.md) | **추천 의미 backbone**: workflow category·lifecycle·related 축 (living model, 고정 표준 아님) |
 | [docs/semantic_metadata_schema.md](semantic_metadata_schema.md) | `visual_candidates` 위에 붙일 최소 `semantic_metadata` schema |
 | [docs/ARCHITECTURE.md](ARCHITECTURE.md) | 처리 파이프라인(P0–P7), **meaning layer** 위치 |
+| [docs/p5_override_pattern_analysis.md](p5_override_pattern_analysis.md) | P5-A: `primary_pattern` vs `gap_type` 해석 기준 |
 
 에디터·에이전트용 축약 규칙은 `.cursor/rules/icon_system.md`에서 관리한다.
 

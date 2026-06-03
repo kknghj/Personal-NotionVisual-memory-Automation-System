@@ -103,6 +103,36 @@
         "text": "확인",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "민원응대",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "민원답변",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "신청민원",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "전화민원",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "전화답변",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "문의응대",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -112,7 +142,9 @@
     "usage_context": [
       "전화 문의",
       "일정 확인",
-      "예약 연락"
+      "예약 연락",
+      "교육 신청 민원 전화 응대",
+      "민원 전화 답변"
     ],
     "semantic_metadata": {
       "workflow_fit": [
@@ -2701,6 +2733,26 @@
         "interface_dominance": 0
       },
       {
+        "text": "고민",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "질문고민",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "예질질문고민",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "아이디어고민",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
         "text": "아이디어",
         "workflow_resolution": 1,
         "interface_dominance": 0
@@ -2712,7 +2764,9 @@
     ],
     "usage_context": [
       "아이디어 구상",
-      "개선 의견 생각"
+      "개선 의견 생각",
+      "질문 아이디어 고민",
+      "점검 질문 구상"
     ]
   },
   "system_work": {
@@ -2746,16 +2800,54 @@
         "text": "행정처리",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "초근",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "초과근무",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "초과근무결재",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "초근결재",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "전산결재",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "행정시스템등록",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "내부시스템결재",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
       "행정시스템",
-      "PC설정"
+      "PC설정",
+      "전산결재"
     ],
     "usage_context": [
       "시스템 승인",
       "PC 설정",
-      "행정 시스템 처리"
+      "행정 시스템 처리",
+      "초과근무 전산 결재",
+      "행정 내부 시스템 등록"
     ]
   },
   "security_work": {
@@ -3059,15 +3151,32 @@
         "text": "일정관리",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "마감일",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "만료일",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
+      },
+      {
+        "text": "혜택마감",
+        "workflow_resolution": 1,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
       "마감일",
-      "시계"
+      "시계",
+      "만료일"
     ],
     "usage_context": [
       "제출 마감",
-      "일정 기한 관리"
+      "일정 기한 관리",
+      "혜택 만료 확인"
     ]
   },
   "external_admin_system": {
@@ -3590,15 +3699,38 @@
         "text": "캘린더",
         "workflow_resolution": 3,
         "interface_dominance": 1
+      },
+      {
+        "text": "종료일",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "할인종료",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "혜택마감",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "만료일",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
       "캘린더",
-      "일정표"
+      "일정표",
+      "종료일"
     ],
     "usage_context": [
       "업무 일정 정리",
-      "주간 일정 정돈"
+      "주간 일정 정돈",
+      "할인 혜택 종료일 확인",
+      "혜택 마감일 특정"
     ]
   },
   "broadcast_channel_adjust": {
@@ -4117,6 +4249,267 @@
         "progress"
       ],
       "interaction_mode": "update_record",
+      "tone": "neutral"
+    }
+  },
+  "hr_consultation": {
+    "visual": {
+      "type": "emoji",
+      "value": "👥"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "인사상담",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "인사면담",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "HR상담",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "상사상담",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "인사고충상담",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "인사 상담",
+      "HR 면담"
+    ],
+    "usage_context": [
+      "상사와 인사 관련 1:1 상담",
+      "인사 고충 면담",
+      "HR 담당자 상담"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "hr"
+      ],
+      "object_type": "consultation",
+      "interaction_mode": "two_way_meeting",
+      "semantic_role": "hr_consultation",
+      "tone": "neutral"
+    }
+  },
+  "creative_production": {
+    "visual": {
+      "type": "emoji",
+      "value": "🎨"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "배너제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "포스터제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "팝업제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "카드뉴스제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "책표지제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "시각물제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "홍보물제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "2D 홍보물",
+      "시각 매체 제작"
+    ],
+    "usage_context": [
+      "배너·포스터 등 2D 홍보물 제작",
+      "팝업·카드뉴스 시각물 제작",
+      "책표지 디자인 제작"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "creative"
+      ],
+      "object_type": "visual_media",
+      "media_format": "2d_static",
+      "interaction_mode": "produce_asset",
+      "semantic_role": "creative_production",
+      "tone": "neutral"
+    }
+  },
+  "handover": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "dot arrow right arc",
+      "color": "blue"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "인수인계",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "업무인수인계",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "업무이관",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "담당자 인수인계",
+      "업무 이관"
+    ],
+    "usage_context": [
+      "전임자에서 후임자로 업무 인수인계",
+      "담당자 변경에 따른 업무 넘김"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "operations"
+      ],
+      "object_type": "handover",
+      "interaction_mode": "transfer_responsibility",
+      "semantic_role": "work_handover",
+      "tone": "neutral"
+    }
+  },
+  "business_card_order": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "identification card",
+      "color": "gray"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "명함제작",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "신규명함",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "명함발급",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "명함신청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "명함제작신청",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "명함 제작",
+      "신규 명함"
+    ],
+    "usage_context": [
+      "신규 명함 제작 신청",
+      "명함 발급·제작 요청"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "admin"
+      ],
+      "object_type": "business_card",
+      "interaction_mode": "request_order",
+      "semantic_role": "business_card_order",
+      "tone": "neutral"
+    }
+  },
+  "waste_disposal": {
+    "visual": {
+      "type": "emoji",
+      "value": "🚮"
+    },
+    "workflow_priority": 3,
+    "meaning": [
+      {
+        "text": "생활폐기물",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "폐기물처리",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "쓰레기처리",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "분리수거",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "쓰레기버리기",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "쓰레기통",
+      "분리수거"
+    ],
+    "usage_context": [
+      "생활폐기물 처리",
+      "사무실 분리수거",
+      "쓰레기 버리기"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "facilities"
+      ],
+      "object_type": "waste",
+      "interaction_mode": "dispose",
+      "semantic_role": "waste_disposal",
       "tone": "neutral"
     }
   }

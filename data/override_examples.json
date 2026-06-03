@@ -1,0 +1,461 @@
+[
+  {
+    "id": 1,
+    "title": "교육청 회의 오찬 장소 정하기",
+    "recommended_visual": "🤝",
+    "final_visual": "🍴",
+    "confidence": 90,
+    "note": "회의는 맥락이고 실제 행동은 오찬 장소 선정",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 2,
+    "title": "식생활교육 보도자료 확인",
+    "recommended_visual": "📄",
+    "final_visual": "📰",
+    "confidence": 90,
+    "note": "확인의 대상인 보도자료에 중점",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 3,
+    "title": "회의실 예약",
+    "recommended_visual": "chair (gray)",
+    "final_visual": "💻",
+    "confidence": 80,
+    "note": "회의 당일 회의실 세팅이 아닌 행정 내부 시스템에 의한 예약이 실제 행동임",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 4,
+    "title": "지피터스 AI 스터디 신청",
+    "recommended_visual": "🧑‍🏫",
+    "final_visual": "robot (orange)",
+    "confidence": 60,
+    "note": "스터디 대상에 중점, 지피터스라는 회사의 대표 색이 orange 임.",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 5,
+    "title": "알뜰폰 할인 종료일",
+    "recommended_visual": "없음",
+    "final_visual": "day calendar",
+    "confidence": 60,
+    "note": "혜택 마감일을 특정함",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 7,
+    "title": "본인인증화면 수정 제안",
+    "recommended_visual": "qr-code",
+    "final_visual": "📞 or 📧",
+    "confidence": 60,
+    "note": "화면을 수정해달라는 제안을 전화로 하는 행동임",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 8,
+    "title": "4/9, 24 출장 여비 등록",
+    "recommended_visual": "💰",
+    "final_visual": "💻",
+    "confidence": 80,
+    "note": "출장 여비 등록은 급여 관련 업무가 아니며, 개인적 출장 내역을 행정 내부 시스템으로 등록하는 행위임",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 9,
+    "title": "자치구 담당자 공문 안내 협조 요청",
+    "recommended_visual": "📄",
+    "final_visual": "📧",
+    "confidence": 60,
+    "note": "공문을 전파해줄 것을 메일로 요청하는 것이 실제 행위임",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 10,
+    "title": "인사 상담",
+    "recommended_visual": "없음",
+    "final_visual": "👥",
+    "confidence": 90,
+    "note": "상사랑 둘이서 인사 관련 상담하는 것이 실제 행위",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 11,
+    "title": "민방위 대피 훈련",
+    "recommended_visual": "mop-bucket (brown)",
+    "final_visual": "person running (green)",
+    "confidence": 90,
+    "note": "긴급시 외부로 대피 훈련하는 것이 실제 행위, 초록색 비상탈출구에서 연상",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 12,
+    "title": "보도자료 초안 검토 요청",
+    "recommended_visual": "📄",
+    "final_visual": "📧 or 📞",
+    "confidence": 60,
+    "note": "홍보 담당자에게 전화 혹은 이메일로 초안 검토를 요청하는 것이 실제 행위",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 13,
+    "title": "서울시 누리집 분야별 새소식 게시글 예약",
+    "recommended_visual": "📌",
+    "final_visual": "social media post (blue)",
+    "confidence": 40,
+    "note": "온라인 게시판을 떠오르는 아이콘(서울시 누리집 대표 색이 파란색임)",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 14,
+    "title": "식생활교육 배너, 포스터 제작",
+    "recommended_visual": "없음",
+    "final_visual": "🎨",
+    "confidence": 80,
+    "note": "배너, 포스터 등 홍보물은 문서가 아닌 시각매체이며, 제작 행위에 중점을 둠",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 15,
+    "title": "생활폐기물 처리",
+    "recommended_visual": "없음",
+    "final_visual": "🚮",
+    "confidence": 90,
+    "note": "쓰레기를 버리는 행위에 중점",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 16,
+    "title": "창의 정책 홍보 영상 제출",
+    "recommended_visual": "📝",
+    "final_visual": "🎥",
+    "confidence": 80,
+    "note": "제출 대상인 영상에 중점",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 17,
+    "title": "초근 결재",
+    "recommended_visual": "없음",
+    "final_visual": "💻",
+    "confidence": 90,
+    "note": "초과근무 결재는 행정 내부 시스템을 통한 행위임",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 18,
+    "title": "커피, 차 픽업",
+    "recommended_visual": "🍰",
+    "final_visual": "coffee paper cup (brown)",
+    "confidence": 70,
+    "note": "종이 일회용 음료를 픽업하는 것이므로 케이크가 아닌 음료잔 선택(커피색인 갈색 연상)",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 19,
+    "title": "초단기근로자 간식 관련 전달",
+    "recommended_visual": "📄",
+    "final_visual": "🍬 or 🗣️",
+    "confidence": 50,
+    "note": "탕비실의 간식 구매를 담당하는 근로자에게 간식 구매 관련 사항을 전달하는 행위 혹은 간식을 떠오르는 사탕에 중점을 둠",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 20,
+    "title": "과일간식 짐 차에 싣기",
+    "recommended_visual": "🍱",
+    "final_visual": "🍇 or 📦",
+    "confidence": 60,
+    "note": "도시락은 과일간식의 이미지와 거리가 멈. 과일 이모지 혹은 과일간식을 포장한 상자 연상",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 21,
+    "title": "재택 필요 자료 드라이브 업로드",
+    "recommended_visual": "📁",
+    "final_visual": "folder arrow up (yellow)",
+    "confidence": 70,
+    "note": "업로드 행위에 중점, 노란색 폴더 연상.",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 22,
+    "title": "교류 자기소개서 송부",
+    "recommended_visual": "📄",
+    "final_visual": "📧 or 📄",
+    "confidence": 50,
+    "note": "자기소개서 문서 자체에 중점을 둘 수도 있고, 메일을 통한 송부에 중점을 둘 수 있음",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 23,
+    "title": "노션 강의 수강",
+    "recommended_visual": "document (orange)",
+    "final_visual": "🧑‍🏫 or notion",
+    "confidence": 60,
+    "note": "강의 수강 행위 혹은 강의의 주제에 중점을 둠",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 24,
+    "title": "식생활교육 민원 전화 답변",
+    "recommended_visual": "📞",
+    "final_visual": "📞",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 25,
+    "title": "식생활교육 민원 답변",
+    "recommended_visual": "없음",
+    "final_visual": "📞 or 📝 or 💻",
+    "confidence": 40,
+    "note": "민원이 전화일 수 있고, 문서 작성일 수 있고, 행정 내부 시스템을 통한 처리일 수 있음",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 26,
+    "title": "강의 취소 공문 송부",
+    "recommended_visual": "📄",
+    "final_visual": "📄",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 27,
+    "title": "업무 인수인계",
+    "recommended_visual": "없음",
+    "final_visual": "dot arrow right arc",
+    "confidence": 70,
+    "note": "전 담당자에서 현 담당자에게로 옮긴다는 이미지 연상",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 28,
+    "title": "보안서약서 캐비넷 비치",
+    "recommended_visual": "🗄️",
+    "final_visual": "🗄️ or hat sunglasses",
+    "confidence": 50,
+    "note": "모자와 선글라스를 낀 얼굴에서 보안성을 연상. 또는 문서를 놓는 장소를 중점.",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 29,
+    "title": "윈도우11 업데이트 안내",
+    "recommended_visual": "📧",
+    "final_visual": "📧 or computer window",
+    "confidence": 60,
+    "note": "메일을 통한 안내 혹은 업데이트 대상에 중점.",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 30,
+    "title": "세출예산 사업설명서 마감",
+    "recommended_visual": "clock (grey)",
+    "final_visual": "clock (grey)",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 31,
+    "title": "신규 명함 제작 신청",
+    "recommended_visual": "없음",
+    "final_visual": "identification card",
+    "confidence": 80,
+    "note": "제작 신청 대상에 중점.",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 32,
+    "title": "PC 셧다운 해제 신청",
+    "recommended_visual": "💻",
+    "final_visual": "💻",
+    "confidence": 90,
+    "note": "",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 33,
+    "title": "바인더 법령 조례집 업데이트",
+    "recommended_visual": "📒",
+    "final_visual": "📒",
+    "confidence": 90,
+    "note": "",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 34,
+    "title": "합동점검 예질 질문 구상",
+    "recommended_visual": "🧠",
+    "final_visual": "🧠",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 35,
+    "title": "합동점검 예질 질문 고민",
+    "recommended_visual": "없음",
+    "final_visual": "🧠",
+    "confidence": 60,
+    "note": "이 제목에서 ‘고민’은 무언가를 구상한다는 의미로 두뇌를 연상함.",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 36,
+    "title": "을지훈련 매트리스 상태 확인",
+    "recommended_visual": "📄",
+    "final_visual": "🛏️",
+    "confidence": 80,
+    "note": "문서 작업이 아닌 매트리스라는 물품 상태 확인하는 것으로, 매트리스와 비슷한 침대 이미지  활용",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 37,
+    "title": "헌혈 학습시간 인정 상신",
+    "recommended_visual": "🗣️",
+    "final_visual": "📄 or 🩸",
+    "confidence": 40,
+    "note": "공문 상신이라는 문서 작업에 중점. 혹은 헌혈의 이미지 연상",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 38,
+    "title": "비상소집훈련 참석",
+    "recommended_visual": "🧑‍🏫",
+    "final_visual": "🚨",
+    "confidence": 100,
+    "note": "사이렌 이미지가 비상소집을 연상시킴.",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 39,
+    "title": "AI서울챗 사용 교육 참여",
+    "recommended_visual": "🧑‍🏫",
+    "final_visual": "🧑‍🏫",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260531"
+  },
+  {
+    "id": 40,
+    "title": "표창 제작시기 확인",
+    "recommended_visual": "📄",
+    "final_visual": "calendar",
+    "confidence": 50,
+    "note": "일반적으로 일정 확인은 확인 대상에 중점을 두나, 표창에 적절한 것이 없어 달력 아이콘 선택함",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 41,
+    "title": "탕비실 간식 선호 조사",
+    "recommended_visual": "🍱",
+    "final_visual": "🍬",
+    "confidence": 60,
+    "note": "간식은 사탕이나 케이크 이모지가 적절함",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 42,
+    "title": "분리수거",
+    "recommended_visual": "없음",
+    "final_visual": "🚮",
+    "confidence": 90,
+    "note": "분리수거는 쓰레기 처리와 유사함",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 43,
+    "title": "협의회 다과 준비",
+    "recommended_visual": "🍰",
+    "final_visual": "🍰 or 🛒",
+    "confidence": 50,
+    "note": "케이크 이모지도 가능하며, 다과를 마트에서 산다는 행위에서 쇼핑 카트를 연상하기도 함",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 44,
+    "title": "26년 예산 협의",
+    "recommended_visual": "🤝",
+    "final_visual": "🤝",
+    "confidence": 70,
+    "note": "",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 45,
+    "title": "을지연습 교육 참석",
+    "recommended_visual": "🧑‍🏫",
+    "final_visual": "🧑‍🏫",
+    "confidence": 90,
+    "note": "",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 46,
+    "title": "식생활교육 신청 민원 응대",
+    "recommended_visual": "없음",
+    "final_visual": "📞",
+    "confidence": 60,
+    "note": "교육 신청 민원은 보통 전화임. 그러나 민원의 인터페이스에 따라 다른 이모지가 올 수도 있음",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 47,
+    "title": "교육청 주무관 안내 협조 요청",
+    "recommended_visual": "📄",
+    "final_visual": "📞",
+    "confidence": 30,
+    "note": "전화로 하기 때문임. 그러나 공문으로 협조 요청시 문서 이모지가 적절할 수 있음",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 48,
+    "title": "누리집 식생활교육 신청 공지 게시",
+    "recommended_visual": "📌",
+    "final_visual": "📌",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 49,
+    "title": "영유아담당관 협조 공문 임시글 작성",
+    "recommended_visual": "📝",
+    "final_visual": "📝",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 50,
+    "title": "공문 수신자 지정 관련 알아보기",
+    "recommended_visual": "📝",
+    "final_visual": "user squares (grey)",
+    "confidence": 90,
+    "note": "지정해야 할 ‘수신자’를 확인하는 것으로 이를 연상하는 아이콘 사용함.",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 51,
+    "title": "공익감사단 4월 수당 신청",
+    "recommended_visual": "💰",
+    "final_visual": "📝",
+    "confidence": 80,
+    "note": "해당 업무는 salary system에 해당하지 않으며, 감사과에 수당 지급 요청 공문을 보내야하는 업무를 연상하는 이모지 사용함",
+    "source": "notion_export_20260603"
+  },
+  {
+    "id": 52,
+    "title": "단기위탁 교육 신청 문의",
+    "recommended_visual": "📞",
+    "final_visual": "💬",
+    "confidence": 40,
+    "note": "메신저를 통했기 때문임. 전화 문의라면 전화기 이모지 사용했을 것임.",
+    "source": "notion_export_20260603"
+  }
+]
