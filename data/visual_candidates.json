@@ -90,8 +90,33 @@
         "interface_dominance": 0
       },
       {
-        "text": "연락",
-        "workflow_resolution": 1,
+        "text": "담당자와연락",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "예약연락",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "전화연락",
+        "workflow_resolution": 3,
+        "interface_dominance": 1
+      },
+      {
+        "text": "연락문의",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "연락확인",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "연락응대",
+        "workflow_resolution": 2,
         "interface_dominance": 0
       },
       {
@@ -4511,6 +4536,418 @@
       "interaction_mode": "dispose",
       "semantic_role": "waste_disposal",
       "tone": "neutral"
+    }
+  },
+  "train_reservation": {
+    "visual": {
+      "type": "emoji",
+      "value": "🚄"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "기차표",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "KTX",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기차표예매",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "KTX예매",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기차예매",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "열차",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기차",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "승차권",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "기차표 예매",
+      "KTX 예매"
+    ],
+    "usage_context": [
+      "기차표 예매",
+      "세종 출장 KTX 예매",
+      "열차 승차권 예매"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "mobility"
+      ],
+      "object_type": "vehicle_service",
+      "interaction_mode": "input_process",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "flight_reservation": {
+    "visual": {
+      "type": "emoji",
+      "value": "✈️"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "비행기",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비행기예매",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "항공권",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "항공예매",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "항공",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비행편",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "항공권 예매",
+      "비행기 예매"
+    ],
+    "usage_context": [
+      "제주도 비행기 예매",
+      "출장 항공권 예매",
+      "비행편 예매"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "mobility"
+      ],
+      "object_type": "vehicle_service",
+      "interaction_mode": "input_process",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "lodging_reservation": {
+    "visual": {
+      "type": "emoji",
+      "value": "🏨"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "숙소",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "숙소예약",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "호텔",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "호텔예약",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "숙박",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "숙소 예약",
+      "호텔 예약"
+    ],
+    "usage_context": [
+      "부산 출장 숙소 예약",
+      "출장 숙박 예약",
+      "호텔 예약"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "mobility"
+      ],
+      "object_type": "vehicle_service",
+      "interaction_mode": "input_process",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "emergency_drill": {
+    "visual": {
+      "type": "emoji",
+      "value": "🚨"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "민방위",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비상소집",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비상소집훈련",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비상훈련",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "대피훈련",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "민방위대피",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "대피",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "사이렌",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "비상",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "비상 대피",
+      "민방위 훈련"
+    ],
+    "usage_context": [
+      "민방위 대피 훈련",
+      "비상소집훈련 참석",
+      "대피 훈련"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "facility_physical"
+      ],
+      "object_type": "physical_space",
+      "interaction_mode": "attend_participate",
+      "visibility": "internal",
+      "tone": "urgent"
+    }
+  },
+  "organization_chart": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "network",
+      "color": "gray"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "조직도",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "조직도정비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "연락처정비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "조직도수정",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "조직도작성",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "조직체계",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "연락망",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "연락체계",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "조직구성",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "담당자현행화",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "조직도",
+      "연락망"
+    ],
+    "usage_context": [
+      "센터 조직도 및 연락처 정비",
+      "조직도 수정",
+      "조직도 작성"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document",
+        "system_admin"
+      ],
+      "object_type": "document",
+      "interaction_mode": "create_edit",
+      "visibility": "internal",
+      "tone": "formal"
+    }
+  },
+  "web_posting": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "social media post",
+      "color": "blue"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "누리집",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "게시글",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "게시글예약",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "누리집새소식",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "새소식게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "웹게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "온라인게시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "새소식",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "포스팅",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "홈페이지",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "웹사이트",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "누리집",
+      "웹 게시"
+    ],
+    "usage_context": [
+      "서울시 누리집 분야별 새소식 게시글 예약",
+      "누리집 새소식 게시",
+      "홈페이지 게시글 예약"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "web_publication",
+        "broadcast_notice"
+      ],
+      "object_type": "notice",
+      "interaction_mode": "publish_post",
+      "publish_distribute": "posting",
+      "visibility": "public",
+      "tone": "formal"
     }
   }
 }
