@@ -3487,29 +3487,61 @@
     "workflow_priority": 3,
     "meaning": [
       {
+        "text": "도시락준비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "음식준비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "식사준비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "급식준비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "도시락",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
         "text": "음식",
         "workflow_resolution": 2,
         "interface_dominance": 0
       },
       {
-        "text": "도시락",
-        "workflow_resolution": 2,
-        "interface_dominance": 0
-      },
-      {
-        "text": "간식",
+        "text": "식사",
         "workflow_resolution": 2,
         "interface_dominance": 0
       }
     ],
     "interface_memory": [
       "식사준비",
-      "음식준비"
+      "음식준비",
+      "도시락준비"
     ],
     "usage_context": [
-      "음식 준비",
-      "간식 준비"
-    ]
+      "도시락 준비",
+      "식사 준비",
+      "급식 준비",
+      "음식 준비"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "food_logistics"
+      ],
+      "object_type": "food_item",
+      "interaction_mode": "setup_prepare",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "event_preparation": {
     "visual": {
@@ -3548,8 +3580,13 @@
       "type": "emoji",
       "value": "🍰"
     },
-    "workflow_priority": 3,
+    "workflow_priority": 2,
     "meaning": [
+      {
+        "text": "간식픽업",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
       {
         "text": "픽업",
         "workflow_resolution": 1,
@@ -3573,7 +3610,16 @@
     "usage_context": [
       "간식 픽업",
       "단체 간식 수령"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "food_logistics"
+      ],
+      "object_type": "food_item",
+      "interaction_mode": "move_transport",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "running_appointment": {
     "visual": {
@@ -4948,6 +4994,216 @@
       "publish_distribute": "posting",
       "visibility": "public",
       "tone": "formal"
+    }
+  },
+  "snack_item": {
+    "visual": {
+      "type": "emoji",
+      "value": "🍬"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "탕비실간식",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "간식선호",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "탕비실",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "사탕",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "과자",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "간식",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "탕비실",
+      "간식"
+    ],
+    "usage_context": [
+      "탕비실 간식 선호 조사",
+      "간식 구매",
+      "사탕 과자"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "food_logistics"
+      ],
+      "object_type": "food_item",
+      "interaction_mode": "monitor_track",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "fruit_snack": {
+    "visual": {
+      "type": "emoji",
+      "value": "🍇"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "과일간식",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "과일배부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "과일",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "과일간식",
+      "과일"
+    ],
+    "usage_context": [
+      "과일간식 짐 차에 싣기",
+      "과일 배부",
+      "과일 배송"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "food_logistics"
+      ],
+      "object_type": "food_item",
+      "interaction_mode": "move_transport",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "package_loading": {
+    "visual": {
+      "type": "emoji",
+      "value": "📦"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "차에싣기",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "짐싣기",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료포장",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "포장",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운반",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "적재",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "포장",
+      "적재"
+    ],
+    "usage_context": [
+      "짐 싣기",
+      "자료 포장",
+      "차에 싣기"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "food_logistics",
+        "facility_physical"
+      ],
+      "object_type": "equipment_asset",
+      "interaction_mode": "move_transport",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "beverage_pickup": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "coffee paper cup",
+      "color": "brown"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "커피픽업",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "차픽업",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "음료픽업",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "테이크아웃",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "커피",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "커피 픽업",
+      "음료 픽업"
+    ],
+    "usage_context": [
+      "커피, 차 픽업",
+      "커피 픽업",
+      "음료 픽업"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "food_logistics"
+      ],
+      "object_type": "food_item",
+      "interaction_mode": "move_transport",
+      "visibility": "internal",
+      "tone": "neutral"
     }
   }
 }

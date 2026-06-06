@@ -20,16 +20,6 @@
     "after_ambiguity_gap": 0.0
   },
   {
-    "title": "추진현황 제출",
-    "before": "document_submission",
-    "after": "document_submission",
-    "regression_type": "ambiguity_worsened",
-    "severity": "medium",
-    "reason": "top1/top2 gap narrowed materially",
-    "before_ambiguity_gap": 0.058,
-    "after_ambiguity_gap": 0.0
-  },
-  {
     "title": "홍보물 게시",
     "before": "public_posting",
     "after": "public_posting",

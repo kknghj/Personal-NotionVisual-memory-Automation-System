@@ -544,5 +544,25 @@
   },
   {
     "title": "결재하기"
+  },
+  {
+    "title": "탕비실 간식 선호 조사",
+    "case_group": "p5b_food_snack"
+  },
+  {
+    "title": "과일간식 짐 차에 싣기",
+    "case_group": "p5b_food_snack"
+  },
+  {
+    "title": "커피, 차 픽업",
+    "case_group": "p5b_food_snack"
+  },
+  {
+    "title": "도시락 준비",
+    "case_group": "p5b_food_snack"
+  },
+  {
+    "title": "식사 준비",
+    "case_group": "p5b_food_snack"
   }
 ]

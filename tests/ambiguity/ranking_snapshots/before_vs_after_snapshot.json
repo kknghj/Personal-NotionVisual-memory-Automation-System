@@ -61,8 +61,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -88,9 +88,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -99,8 +99,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -108,7 +108,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -277,8 +277,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "after": {
@@ -314,8 +314,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 1
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -376,7 +376,7 @@
     "title": "게시 승인 요청",
     "before": {
       "top_candidate": "approval_request",
-      "ambiguity_gap": 0.0,
+      "ambiguity_gap": 0.02,
       "high_ambiguity": true,
       "ranking_depth": 4,
       "top5_candidates": [
@@ -385,8 +385,8 @@
         "document_edit",
         "system_work"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 20,
+      "top_semantic_bonus": 13,
+      "semantic_bonus_total": 27,
       "suppression_applied": false
     },
     "after": {
@@ -405,9 +405,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -416,8 +416,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -425,25 +425,25 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "결과보고 승인 요청",
     "before": {
-      "top_candidate": "approval_request",
+      "top_candidate": "result_reporting",
       "ambiguity_gap": 0.014,
       "high_ambiguity": true,
       "ranking_depth": 5,
       "top5_candidates": [
-        "approval_request",
         "result_reporting",
         "document_reporting",
+        "approval_request",
         "document_edit",
         "system_work"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 27,
+      "top_semantic_bonus": 16,
+      "semantic_bonus_total": 48,
       "suppression_applied": false
     },
     "after": {
@@ -474,21 +474,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 21
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -496,25 +495,23 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "결과보고 전달",
     "before": {
       "top_candidate": "result_reporting",
-      "ambiguity_gap": 0.02,
+      "ambiguity_gap": 0.032,
       "high_ambiguity": true,
-      "ranking_depth": 4,
+      "ranking_depth": 3,
       "top5_candidates": [
         "result_reporting",
         "document_reporting",
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
+      "top_semantic_bonus": 16,
+      "semantic_bonus_total": 30,
       "suppression_applied": false
     },
     "after": {
@@ -544,21 +541,19 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 14
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -566,7 +561,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -579,8 +574,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -593,63 +588,6 @@
       ],
       "top_semantic_bonus": 12,
       "semantic_bonus_total": 12,
-      "suppression_applied": false,
-      "inferred_workflow_stage": null,
-      "matched_workflow_stage": [],
-      "workflow_stage_confidence": 0.0,
-      "workflow_stage_source": "",
-      "workflow_stage_ambiguous": false,
-      "workflow_stage_mismatch": false,
-      "inferred_workflow_stages_all": []
-    },
-    "changed": false,
-    "change_type": "semantic_improvement",
-    "change_labels": [
-      "semantic_improvement"
-    ],
-    "ranking_change": {
-      "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
-      "entered_top5": [],
-      "exited_top5": []
-    },
-    "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
-    },
-    "suppression_change": {
-      "before": false,
-      "after": false,
-      "changed": false
-    },
-    "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
-    ]
-  },
-  {
-    "title": "결과자료 배포",
-    "before": {
-      "top_candidate": "document_distribution",
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 1,
-      "top5_candidates": [
-        "document_distribution"
-      ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
-      "suppression_applied": false
-    },
-    "after": {
-      "top_candidate": "document_distribution",
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 1,
-      "top5_candidates": [
-        "document_distribution"
-      ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
       "suppression_applied": false,
       "inferred_workflow_stage": null,
       "matched_workflow_stage": [],
@@ -684,15 +622,79 @@
     ]
   },
   {
-    "title": "결재 검토",
+    "title": "결과자료 배포",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "document_distribution",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_distribution"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_distribution",
+        "snack_item"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
+      "suppression_applied": false,
+      "inferred_workflow_stage": null,
+      "matched_workflow_stage": [],
+      "workflow_stage_confidence": 0.0,
+      "workflow_stage_source": "",
+      "workflow_stage_ambiguous": false,
+      "workflow_stage_mismatch": false,
+      "inferred_workflow_stages_all": []
+    },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "snack_item"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "결재 검토",
+    "before": {
+      "top_candidate": "approval_review",
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "approval_review",
+        "document_review",
+        "slide_deck_final_review"
+      ],
+      "top_semantic_bonus": 13,
+      "semantic_bonus_total": 37,
       "suppression_applied": false
     },
     "after": {
@@ -709,24 +711,20 @@
       "semantic_bonus_total": 37,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 3,
-      "entered_top5": [
-        "approval_review",
-        "document_review",
-        "slide_deck_final_review"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 13,
-      "total_delta": 37
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -734,19 +732,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "결재하기",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "document_signature",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "document_signature"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
       "suppression_applied": false
     },
     "after": {
@@ -761,22 +761,20 @@
       "semantic_bonus_total": 8,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "document_signature"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 8,
-      "total_delta": 8
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -784,7 +782,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -797,8 +795,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 9,
+      "top_semantic_bonus": 21,
+      "semantic_bonus_total": 21,
       "suppression_applied": false
     },
     "after": {
@@ -826,9 +824,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -837,8 +835,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -846,7 +844,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -861,7 +859,7 @@
         "collaborative_request"
       ],
       "top_semantic_bonus": 0,
-      "semantic_bonus_total": 6,
+      "semantic_bonus_total": 11,
       "suppression_applied": false
     },
     "after": {
@@ -890,7 +888,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 5
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -904,13 +902,16 @@
   {
     "title": "고객 문의 대응 현황 공유",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "status_sharing",
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "status_sharing",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 3,
       "suppression_applied": false
     },
     "after": {
@@ -936,23 +937,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "phone_call",
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 3
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -960,19 +958,22 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "고객 문의 처리 현황 업데이트",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "status_update",
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "status_update",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -997,23 +998,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "phone_call",
-        "status_update"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1021,14 +1019,14 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "고객 민원 처리 현황 확인",
     "before": {
       "top_candidate": "status_check",
-      "ambiguity_gap": 0.0,
+      "ambiguity_gap": 0.02,
       "high_ambiguity": true,
       "ranking_depth": 4,
       "top5_candidates": [
@@ -1037,8 +1035,8 @@
         "slide_deck_final_review",
         "phone_call"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -1075,8 +1073,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1099,7 +1097,7 @@
         "document_edit"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "semantic_bonus_total": 13,
       "suppression_applied": false
     },
     "after": {
@@ -1128,7 +1126,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 3
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1150,8 +1148,8 @@
         "approval_request",
         "document_edit"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 13,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -1168,9 +1166,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -1179,8 +1177,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1188,23 +1186,23 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "공문 전달",
     "before": {
-      "top_candidate": "document_review",
-      "ambiguity_gap": 0.0,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.032,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
+        "document_distribution",
         "document_review",
-        "document_edit",
-        "mail_action"
+        "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -1221,25 +1219,20 @@
       "semantic_bonus_total": 12,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
-      "entered_top5": [
-        "document_distribution"
-      ],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "entered_top5": [],
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1247,24 +1240,23 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "공지사항 배포",
     "before": {
-      "top_candidate": "document_distribution",
-      "ambiguity_gap": 0.031,
+      "top_candidate": "urgent_notice",
+      "ambiguity_gap": 0.032,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
-        "document_distribution",
         "urgent_notice",
+        "document_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 14,
       "suppression_applied": false
     },
     "after": {
@@ -1281,20 +1273,20 @@
       "semantic_bonus_total": 14,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 9
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1302,7 +1294,63 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "과일간식 짐 차에 싣기",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "fruit_snack",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "fruit_snack",
+        "package_loading",
+        "snack_item",
+        "snack_pickup"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 4,
+      "entered_top5": [
+        "fruit_snack",
+        "package_loading",
+        "snack_item",
+        "snack_pickup"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered"
     ]
   },
   {
@@ -1315,8 +1363,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -1342,9 +1390,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -1353,8 +1401,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1362,21 +1410,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "교육 신청 접수 현황 공유",
     "before": {
-      "top_candidate": "survey_form",
-      "ambiguity_gap": null,
+      "top_candidate": "status_sharing",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
+        "status_sharing",
         "survey_form"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -1402,22 +1451,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1425,19 +1472,21 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "교육 신청 현황 업데이트",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_update",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_update"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -1461,22 +1510,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_update"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1484,19 +1531,22 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "교육 운영 결과 현황 정리",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.054,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "result_reporting",
+        "status_summary"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -1524,25 +1574,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement",
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "result_reporting",
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1550,9 +1595,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered",
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -1566,8 +1609,8 @@
         "result_reporting",
         "document_reporting"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
+      "top_semantic_bonus": 16,
+      "semantic_bonus_total": 30,
       "suppression_applied": false
     },
     "after": {
@@ -1596,9 +1639,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -1607,8 +1650,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 14
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -1616,7 +1659,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -1629,8 +1672,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 4,
+      "semantic_bonus_total": 4,
       "suppression_applied": true
     },
     "after": {
@@ -1657,8 +1700,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 4,
-      "total_delta": 4
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -1838,11 +1881,12 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "inventory_work",
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 1,
+      "top_candidate": "food_preparation",
+      "ambiguity_gap": 0.002,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
       "top5_candidates": [
+        "food_preparation",
         "inventory_work"
       ],
       "top_semantic_bonus": 0,
@@ -1856,15 +1900,17 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "ranking_shift",
     "change_labels": [
-      "stable"
+      "ranking_shift"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
-      "ranking_depth_delta": 0,
-      "entered_top5": [],
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 1,
+      "entered_top5": [
+        "food_preparation"
+      ],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -1877,7 +1923,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "top candidate changed without a clear semantic improvement signal"
     ]
   },
   {
@@ -1980,7 +2026,7 @@
     "title": "네이버폼 신청 안내",
     "before": {
       "top_candidate": "survey_form",
-      "ambiguity_gap": 0.076,
+      "ambiguity_gap": 0.07,
       "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
@@ -1988,7 +2034,7 @@
         "mail_action"
       ],
       "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "after": {
@@ -2017,7 +2063,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 1
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -2083,15 +2129,16 @@
   {
     "title": "다기능사무기기 보유현황 제출",
     "before": {
-      "top_candidate": "document_edit",
-      "ambiguity_gap": null,
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
+        "document_submission",
         "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -2114,23 +2161,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "document_submission"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2138,20 +2182,21 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "데이터 이관 작업 현황 공유",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_sharing",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_sharing"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -2176,6 +2221,55 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "도시락 준비",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "prep_paired_food_bento",
+      "ambiguity_gap": 0.165,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "prep_paired_food_bento",
+        "food_preparation"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
     "changed": true,
     "change_type": "retrieval_improvement",
     "change_labels": [
@@ -2183,15 +2277,16 @@
     ],
     "ranking_change": {
       "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
+      "ranking_depth_delta": 2,
       "entered_top5": [
-        "status_sharing"
+        "food_preparation",
+        "prep_paired_food_bento"
       ],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2262,8 +2357,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "after": {
@@ -2290,8 +2385,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 1
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -2415,8 +2510,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "after": {
@@ -2443,8 +2538,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 1
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -2465,8 +2560,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -2492,9 +2587,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -2503,8 +2598,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2512,7 +2607,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -2526,8 +2621,8 @@
         "mail_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -2544,9 +2639,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -2555,8 +2650,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 9
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2564,14 +2659,14 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "미처리 민원 현황 확인",
     "before": {
       "top_candidate": "status_check",
-      "ambiguity_gap": 0.0,
+      "ambiguity_gap": 0.02,
       "high_ambiguity": true,
       "ranking_depth": 4,
       "top5_candidates": [
@@ -2580,8 +2675,8 @@
         "slide_deck_final_review",
         "phone_call"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -2618,8 +2713,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2633,13 +2728,16 @@
   {
     "title": "민원 처리 현황 내부자료 작성",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "status_summary",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "status_summary",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -2665,23 +2763,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "document_edit",
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2689,7 +2784,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -2747,16 +2842,17 @@
   {
     "title": "법령제도 개선 건의과제 추진현황 현행화 안내",
     "before": {
-      "top_candidate": "website_content_refresh",
-      "ambiguity_gap": 0.02,
+      "top_candidate": "progress_monitoring",
+      "ambiguity_gap": 0.04,
       "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ranking_depth": 3,
       "top5_candidates": [
-        "website_content_refresh",
-        "mail_action"
+        "progress_monitoring",
+        "mail_action",
+        "website_content_refresh"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 13,
       "suppression_applied": true
     },
     "after": {
@@ -2784,22 +2880,20 @@
         "progress"
       ]
     },
-    "changed": true,
-    "change_type": "generic_noise_reduction",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "generic_noise_reduction"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "progress_monitoring"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 13
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -2807,7 +2901,7 @@
       "changed": false
     },
     "notes": [
-      "generic token leakage reduced"
+      "top candidate remained stable"
     ]
   },
   {
@@ -2819,13 +2913,13 @@
       "ranking_depth": 5,
       "top5_candidates": [
         "review_request",
-        "press_distribution",
-        "document_edit",
         "document_review",
-        "slide_deck_final_review"
+        "slide_deck_final_review",
+        "press_distribution",
+        "document_edit"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 11,
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 28,
       "suppression_applied": false
     },
     "after": {
@@ -2845,9 +2939,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -2856,8 +2950,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 17
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2865,7 +2959,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -2983,8 +3077,8 @@
         "document_reporting",
         "security_work"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -3011,9 +3105,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -3022,8 +3116,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3031,21 +3125,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "보험 가입현황 제출",
     "before": {
-      "top_candidate": "document_edit",
-      "ambiguity_gap": null,
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
+        "document_submission",
         "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -3068,23 +3163,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "document_submission"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3092,20 +3184,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "부서별 업무 추진 현황 정리",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "status_summary",
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "status_summary",
+        "progress_monitoring"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
       "suppression_applied": false
     },
     "after": {
@@ -3133,23 +3227,20 @@
         "progress"
       ]
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "progress_monitoring",
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 8,
-      "total_delta": 8
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3157,21 +3248,22 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "부서별 현황 자료 공유",
     "before": {
       "top_candidate": "document_sharing",
-      "ambiguity_gap": null,
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
-        "document_sharing"
+        "document_sharing",
+        "status_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -3195,21 +3287,19 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_sharing"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3217,19 +3307,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "분기별 예산 집행 현황 정리",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "status_summary",
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "status_summary",
+        "budget_tracking"
+      ],
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -3255,23 +3348,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "budget_tracking",
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3279,22 +3369,22 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "분석자료 전달",
     "before": {
-      "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_distribution",
+        "document_review"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 11,
       "suppression_applied": false
     },
     "after": {
@@ -3310,25 +3400,20 @@
       "semantic_bonus_total": 11,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
-      "entered_top5": [
-        "document_distribution"
-      ],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "entered_top5": [],
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 11
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3336,22 +3421,23 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "비상소집 응소자 현황 제출",
     "before": {
-      "top_candidate": "document_edit",
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 1,
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.031,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
       "top5_candidates": [
+        "document_submission",
+        "emergency_drill",
         "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -3375,24 +3461,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "document_submission",
-        "emergency_drill"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3400,8 +3482,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -3464,15 +3545,16 @@
   {
     "title": "사업 운영 결과 현황 보고",
     "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": null,
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
+        "result_reporting",
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 21,
       "suppression_applied": false
     },
     "after": {
@@ -3500,23 +3582,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "result_reporting"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 14
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3524,20 +3603,21 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "생산 라인 점검 현황 정리",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_summary",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_summary"
+      ],
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 11,
       "suppression_applied": false
     },
     "after": {
@@ -3562,22 +3642,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 11,
-      "total_delta": 11
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3585,19 +3663,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "서버 장애 대응 현황 공유",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_sharing",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_sharing"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -3622,22 +3702,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3645,7 +3723,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -3660,8 +3738,8 @@
         "urgent_notice",
         "mail_action"
       ],
-      "top_semantic_bonus": 3,
-      "semantic_bonus_total": 3,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 14,
       "suppression_applied": false
     },
     "after": {
@@ -3679,9 +3757,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -3690,8 +3768,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 11
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3699,7 +3777,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -3714,8 +3792,8 @@
         "document_edit",
         "survey_form"
       ],
-      "top_semantic_bonus": 3,
-      "semantic_bonus_total": 3,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 11,
       "suppression_applied": false
     },
     "after": {
@@ -3744,8 +3822,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 8
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3759,15 +3837,16 @@
   {
     "title": "성과 분석 결과 현황 보고",
     "before": {
-      "top_candidate": "document_reporting",
-      "ambiguity_gap": null,
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
+        "result_reporting",
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 21,
       "suppression_applied": false
     },
     "after": {
@@ -3795,23 +3874,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "result_reporting"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 14
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3819,8 +3895,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -3836,8 +3911,8 @@
         "document_review",
         "slide_deck_final_review"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -3856,9 +3931,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -3867,8 +3942,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3876,22 +3951,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "슬랙 채널 안내",
     "before": {
-      "top_candidate": "broadcast_channel_adjust",
-      "ambiguity_gap": 0.022,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.034,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "broadcast_channel_adjust",
-        "mail_action"
+        "mail_action",
+        "broadcast_channel_adjust"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
       "suppression_applied": true
     },
     "after": {
@@ -3907,21 +3982,20 @@
       "semantic_bonus_total": 3,
       "suppression_applied": true
     },
-    "changed": true,
+    "changed": false,
     "change_type": "generic_noise_reduction",
     "change_labels": [
-      "generic_noise_reduction",
-      "interface_anchor_recovery"
+      "generic_noise_reduction"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 3
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -3929,8 +4003,7 @@
       "changed": false
     },
     "notes": [
-      "generic token leakage reduced",
-      "interface/channel anchor affected ranking movement"
+      "generic token leakage reduced"
     ]
   },
   {
@@ -3945,8 +4018,8 @@
         "coding",
         "system_work"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 9,
+      "top_semantic_bonus": 21,
+      "semantic_bonus_total": 21,
       "suppression_applied": false
     },
     "after": {
@@ -3976,9 +4049,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -3987,8 +4060,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3996,19 +4069,23 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "시스템 개발 진행 현황 업데이트",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_candidate": "status_update",
+      "ambiguity_gap": 0.031,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "status_update",
+        "coding",
+        "system_work"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
       "suppression_applied": false
     },
     "after": {
@@ -4036,24 +4113,20 @@
         "progress"
       ]
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 3,
-      "entered_top5": [
-        "coding",
-        "status_update",
-        "system_work"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4061,7 +4134,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4115,7 +4188,7 @@
     ]
   },
   {
-    "title": "신규 서비스 테스트 현황 공유",
+    "title": "식사 준비",
     "before": {
       "top_candidate": null,
       "ambiguity_gap": null,
@@ -4124,6 +4197,60 @@
       "top5_candidates": [],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "prep_paired_food_snack",
+      "ambiguity_gap": 0.165,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "prep_paired_food_snack",
+        "food_preparation"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 2,
+      "entered_top5": [
+        "food_preparation",
+        "prep_paired_food_snack"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered"
+    ]
+  },
+  {
+    "title": "신규 서비스 테스트 현황 공유",
+    "before": {
+      "top_candidate": "status_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_sharing"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -4148,22 +4275,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4171,7 +4296,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4184,8 +4309,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -4211,9 +4336,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4222,8 +4347,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4231,7 +4356,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4246,8 +4371,8 @@
         "document_review",
         "slide_deck_final_review"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 25,
       "suppression_applied": false
     },
     "after": {
@@ -4275,9 +4400,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4286,8 +4411,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 18
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4295,7 +4420,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4351,13 +4476,16 @@
   {
     "title": "신청 승인",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "final_approval",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "final_approval",
+        "system_work"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
       "suppression_applied": false
     },
     "after": {
@@ -4373,23 +4501,20 @@
       "semantic_bonus_total": 7,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "final_approval",
-        "system_work"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4397,19 +4522,22 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "신청 접수 현황 업데이트",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "status_update",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "status_update",
+        "survey_form"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -4434,23 +4562,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "status_update",
-        "survey_form"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4458,7 +4583,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4475,8 +4600,8 @@
         "slide_deck_final_review",
         "phone_call"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
       "suppression_applied": false
     },
     "after": {
@@ -4496,9 +4621,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4507,8 +4632,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 3
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4516,7 +4641,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4530,8 +4655,8 @@
         "mail_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -4548,9 +4673,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4559,8 +4684,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 9
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4568,7 +4693,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4583,7 +4708,7 @@
         "mail_action"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "after": {
@@ -4612,7 +4737,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 1
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -4634,8 +4759,8 @@
         "document_submission",
         "document_edit"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -4652,9 +4777,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4663,8 +4788,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 4
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4672,22 +4797,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "안내문 송부",
     "before": {
-      "top_candidate": "document_edit",
-      "ambiguity_gap": 0.019,
-      "high_ambiguity": true,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.077,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "document_edit",
+        "document_distribution",
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 15,
       "suppression_applied": true
     },
     "after": {
@@ -4703,26 +4828,20 @@
       "semantic_bonus_total": 15,
       "suppression_applied": true
     },
-    "changed": true,
-    "change_type": "generic_noise_reduction",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "generic_noise_reduction",
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
-      "entered_top5": [
-        "document_distribution"
-      ],
-      "exited_top5": [
-        "document_edit"
-      ]
+      "entered_top5": [],
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 11,
-      "total_delta": 15
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -4730,16 +4849,14 @@
       "changed": false
     },
     "notes": [
-      "generic token leakage reduced",
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "안내문 확인 요청",
     "before": {
       "top_candidate": "review_request",
-      "ambiguity_gap": 0.011,
+      "ambiguity_gap": 0.01,
       "high_ambiguity": true,
       "ranking_depth": 5,
       "top5_candidates": [
@@ -4749,8 +4866,8 @@
         "slide_deck_final_review",
         "phone_call"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 23,
       "suppression_applied": false
     },
     "after": {
@@ -4770,9 +4887,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4781,8 +4898,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 15
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4790,7 +4907,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -4805,7 +4922,7 @@
         "mail_action"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "after": {
@@ -4834,7 +4951,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 1
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -4901,15 +5018,15 @@
     "title": "앱 업데이트 공지",
     "before": {
       "top_candidate": "urgent_notice",
-      "ambiguity_gap": 0.001,
+      "ambiguity_gap": 0.007,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
         "urgent_notice",
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -4937,8 +5054,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4959,8 +5076,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -4986,9 +5103,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -4997,8 +5114,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5006,7 +5123,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5072,8 +5189,8 @@
         "document_reporting",
         "coding"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -5100,9 +5217,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5111,8 +5228,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5120,7 +5237,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5185,8 +5302,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 9,
+      "top_semantic_bonus": 21,
+      "semantic_bonus_total": 21,
       "suppression_applied": false
     },
     "after": {
@@ -5214,9 +5331,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5225,8 +5342,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5234,7 +5351,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5249,8 +5366,8 @@
         "document_edit",
         "system_work"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 13,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -5268,9 +5385,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5279,8 +5396,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5288,7 +5405,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5302,8 +5419,8 @@
         "document_reporting",
         "budget_tracking"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -5330,9 +5447,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5341,8 +5458,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5350,7 +5467,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5413,8 +5530,8 @@
       "top5_candidates": [
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "after": {
@@ -5450,8 +5567,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 1
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -5473,8 +5590,8 @@
         "approval_request",
         "document_edit"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 13,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -5491,9 +5608,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5502,8 +5619,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5511,7 +5628,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5524,8 +5641,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -5541,9 +5658,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5552,8 +5669,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5561,7 +5678,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5576,8 +5693,8 @@
         "urgent_notice",
         "mail_action"
       ],
-      "top_semantic_bonus": 3,
-      "semantic_bonus_total": 3,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 14,
       "suppression_applied": false
     },
     "after": {
@@ -5595,9 +5712,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5606,8 +5723,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 11
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5615,19 +5732,18 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "운영현황 전달",
     "before": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
@@ -5659,11 +5775,9 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
       "top_delta": 0,
@@ -5681,13 +5795,15 @@
   {
     "title": "위험 요소 대응 현황 공유",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_sharing",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_sharing"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -5712,22 +5828,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5735,7 +5849,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5795,17 +5909,17 @@
   {
     "title": "일정표 발송",
     "before": {
-      "top_candidate": "work_calendar_organization",
-      "ambiguity_gap": 0.001,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.03,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
+        "mail_action",
         "work_calendar_organization",
-        "spreadsheet_work",
-        "mail_action"
+        "spreadsheet_work"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 3,
       "suppression_applied": false
     },
     "after": {
@@ -5822,20 +5936,20 @@
       "semantic_bonus_total": 3,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 3
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5843,7 +5957,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
@@ -5856,8 +5970,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -5883,9 +5997,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -5894,8 +6008,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5903,19 +6017,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "자료 제출",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_submission",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -5931,25 +6048,20 @@
       "semantic_bonus_total": 12,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement",
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "document_edit",
-        "document_submission"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 9,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5957,21 +6069,25 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered",
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "자료 제출 검토",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_candidate": "approval_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "approval_review",
+        "document_review",
+        "slide_deck_final_review",
+        "document_submission",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 14,
+      "semantic_bonus_total": 50,
       "suppression_applied": false
     },
     "after": {
@@ -5990,26 +6106,20 @@
       "semantic_bonus_total": 50,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 5,
-      "entered_top5": [
-        "approval_review",
-        "document_edit",
-        "document_review",
-        "document_submission",
-        "slide_deck_final_review"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 14,
-      "total_delta": 50
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6017,19 +6127,24 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "자료 제출 보완 요청",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_candidate": "collaborative_request",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "collaborative_request",
+        "document_submission",
+        "document_edit",
+        "notion_docs_touchup"
+      ],
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 20,
       "suppression_applied": false
     },
     "after": {
@@ -6047,25 +6162,20 @@
       "semantic_bonus_total": 20,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 4,
-      "entered_top5": [
-        "collaborative_request",
-        "document_edit",
-        "document_submission",
-        "notion_docs_touchup"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 11,
-      "total_delta": 20
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6073,19 +6183,24 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "자료 제출 승인",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_candidate": "final_approval",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "final_approval",
+        "document_submission",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 20,
       "suppression_applied": false
     },
     "after": {
@@ -6103,25 +6218,20 @@
       "semantic_bonus_total": 20,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 4,
-      "entered_top5": [
-        "document_edit",
-        "document_submission",
-        "final_approval",
-        "system_work"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 10,
-      "total_delta": 20
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6129,14 +6239,14 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "자료 제출 요청",
     "before": {
       "top_candidate": "submission_request",
-      "ambiguity_gap": 0.0,
+      "ambiguity_gap": 0.031,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
@@ -6144,8 +6254,8 @@
         "document_submission",
         "document_edit"
       ],
-      "top_semantic_bonus": 8,
-      "semantic_bonus_total": 16,
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 20,
       "suppression_applied": false
     },
     "after": {
@@ -6163,9 +6273,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6174,8 +6284,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 4
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6183,19 +6293,24 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "자료 제출 후 승인",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_candidate": "final_approval",
+      "ambiguity_gap": 0.02,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "final_approval",
+        "document_submission",
+        "document_edit",
+        "system_work"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 20,
       "suppression_applied": false
     },
     "after": {
@@ -6213,25 +6328,20 @@
       "semantic_bonus_total": 20,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 4,
-      "entered_top5": [
-        "document_edit",
-        "document_submission",
-        "final_approval",
-        "system_work"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 10,
-      "total_delta": 20
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6239,7 +6349,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -6252,8 +6362,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -6279,9 +6389,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6290,8 +6400,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6299,19 +6409,21 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "장비 점검 현황 업데이트",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_update",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_update"
+      ],
+      "top_semantic_bonus": 10,
+      "semantic_bonus_total": 10,
       "suppression_applied": false
     },
     "after": {
@@ -6335,22 +6447,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_update"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 10,
-      "total_delta": 10
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6358,19 +6468,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "재고 관리 현황 업데이트",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_update",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_update"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -6394,22 +6506,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_update"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6417,7 +6527,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -6430,8 +6540,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -6457,9 +6567,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6468,8 +6578,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6477,19 +6587,22 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "점검 결과 현황 공유",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "result_reporting",
+      "ambiguity_gap": 0.056,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "result_reporting",
+        "status_sharing"
+      ],
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 10,
       "suppression_applied": false
     },
     "after": {
@@ -6517,25 +6630,20 @@
         "result"
       ]
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement",
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "result_reporting",
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 10
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6543,9 +6651,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered",
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
@@ -6558,8 +6664,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
       "suppression_applied": false
     },
     "after": {
@@ -6584,9 +6690,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6595,8 +6701,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6604,7 +6710,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -6669,8 +6775,8 @@
         "document_edit",
         "system_work"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 13,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -6688,9 +6794,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6699,8 +6805,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6708,7 +6814,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -6723,8 +6829,8 @@
         "document_reporting",
         "salary_system"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
+      "top_semantic_bonus": 16,
+      "semantic_bonus_total": 30,
       "suppression_applied": false
     },
     "after": {
@@ -6754,9 +6860,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6765,8 +6871,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 14
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6774,7 +6880,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -6832,13 +6938,18 @@
   {
     "title": "제출 자료 검토",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_candidate": "approval_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "approval_review",
+        "document_review",
+        "slide_deck_final_review",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 14,
+      "semantic_bonus_total": 44,
       "suppression_applied": false
     },
     "after": {
@@ -6856,25 +6967,20 @@
       "semantic_bonus_total": 44,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 4,
-      "entered_top5": [
-        "approval_review",
-        "document_edit",
-        "document_review",
-        "slide_deck_final_review"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 14,
-      "total_delta": 44
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6882,22 +6988,22 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "제출자료 메일 안내",
     "before": {
       "top_candidate": "mail_action",
-      "ambiguity_gap": 0.073,
+      "ambiguity_gap": 0.067,
       "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
         "mail_action",
         "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 7,
       "suppression_applied": false
     },
     "after": {
@@ -6925,8 +7031,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6947,8 +7053,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -6974,9 +7080,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -6985,8 +7091,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -6994,7 +7100,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7007,8 +7113,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -7024,9 +7130,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -7035,8 +7141,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7044,21 +7150,23 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "주요사업 추진현황 주간회의 자료 작성",
     "before": {
-      "top_candidate": "document_edit",
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 1,
+      "top_candidate": "status_summary",
+      "ambiguity_gap": 0.031,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
       "top5_candidates": [
+        "status_summary",
+        "progress_monitoring",
         "document_edit"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
       "suppression_applied": false
     },
     "after": {
@@ -7087,23 +7195,20 @@
         "progress"
       ]
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "progress_monitoring",
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 8,
-      "total_delta": 8
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7111,22 +7216,21 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "줌 링크 전달",
     "before": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 2,
       "suppression_applied": false
     },
     "after": {
@@ -7148,15 +7252,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7178,8 +7280,8 @@
         "document_reporting",
         "progress_monitoring"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 9,
+      "top_semantic_bonus": 16,
+      "semantic_bonus_total": 22,
       "suppression_applied": false
     },
     "after": {
@@ -7208,9 +7310,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -7219,8 +7321,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 13
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7228,7 +7330,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7241,8 +7343,8 @@
       "top5_candidates": [
         "document_sharing"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 9,
       "suppression_applied": false
     },
     "after": {
@@ -7267,9 +7369,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -7278,8 +7380,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7287,14 +7389,14 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "참가폼 제출 요청",
     "before": {
       "top_candidate": "submission_request",
-      "ambiguity_gap": 0.0,
+      "ambiguity_gap": 0.031,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
@@ -7302,8 +7404,8 @@
         "document_submission",
         "document_edit"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 11,
       "suppression_applied": false
     },
     "after": {
@@ -7321,9 +7423,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -7332,8 +7434,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 1
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7341,7 +7443,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7402,16 +7504,15 @@
     "title": "참석자 명단 전달",
     "before": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_review",
-        "training_session_attendance",
-        "mail_action"
+        "training_session_attendance"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 2,
       "suppression_applied": false
     },
     "after": {
@@ -7434,15 +7535,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7456,15 +7555,16 @@
   {
     "title": "참석현황 공유",
     "before": {
-      "top_candidate": "training_session_attendance",
-      "ambiguity_gap": null,
+      "top_candidate": "status_sharing",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
+        "status_sharing",
         "training_session_attendance"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -7490,22 +7590,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7513,7 +7611,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7525,13 +7623,13 @@
       "ranking_depth": 5,
       "top5_candidates": [
         "notice_posting",
-        "urgent_notice",
         "messenger_chat",
+        "urgent_notice",
         "mail_action",
         "room_cleaning"
       ],
       "top_semantic_bonus": 8,
-      "semantic_bonus_total": 8,
+      "semantic_bonus_total": 10,
       "suppression_applied": true
     },
     "after": {
@@ -7563,7 +7661,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 2
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -7577,13 +7675,16 @@
   {
     "title": "최종 승인",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "final_approval",
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "final_approval",
+        "system_work"
+      ],
+      "top_semantic_bonus": 7,
+      "semantic_bonus_total": 7,
       "suppression_applied": false
     },
     "after": {
@@ -7606,23 +7707,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "final_approval",
-        "system_work"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7630,7 +7728,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7644,8 +7742,8 @@
         "result_reporting",
         "document_reporting"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 16,
+      "top_semantic_bonus": 16,
+      "semantic_bonus_total": 30,
       "suppression_applied": false
     },
     "after": {
@@ -7675,9 +7773,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -7686,8 +7784,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": 14
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7695,7 +7793,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7707,12 +7805,12 @@
       "ranking_depth": 4,
       "top5_candidates": [
         "review_request",
-        "document_edit",
         "document_review",
-        "slide_deck_final_review"
+        "slide_deck_final_review",
+        "document_edit"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 14,
       "suppression_applied": false
     },
     "after": {
@@ -7731,9 +7829,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -7742,8 +7840,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 9
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7751,7 +7849,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7817,15 +7915,16 @@
     "title": "추진현황 제출",
     "before": {
       "top_candidate": "document_submission",
-      "ambiguity_gap": 0.058,
-      "high_ambiguity": false,
-      "ranking_depth": 2,
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
       "top5_candidates": [
         "document_submission",
+        "progress_monitoring",
         "document_edit"
       ],
-      "top_semantic_bonus": 3,
-      "semantic_bonus_total": 3,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -7852,21 +7951,19 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "progress_monitoring"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 9
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7874,7 +7971,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7886,12 +7983,12 @@
       "ranking_depth": 4,
       "top5_candidates": [
         "messenger_chat",
-        "document_review",
         "urgent_notice",
+        "document_review",
         "mail_action"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 3,
+      "semantic_bonus_total": 12,
       "suppression_applied": false
     },
     "after": {
@@ -7921,8 +8018,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7986,7 +8083,7 @@
     ]
   },
   {
-    "title": "콘텐츠 제작 현황 공유",
+    "title": "커피, 차 픽업",
     "before": {
       "top_candidate": null,
       "ambiguity_gap": null,
@@ -7995,6 +8092,60 @@
       "top5_candidates": [],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "beverage_pickup",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "beverage_pickup",
+        "snack_pickup"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "changed": true,
+    "change_type": "retrieval_improvement",
+    "change_labels": [
+      "retrieval_improvement"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": true,
+      "ranking_depth_delta": 2,
+      "entered_top5": [
+        "beverage_pickup",
+        "snack_pickup"
+      ],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "candidate retrieval coverage recovered"
+    ]
+  },
+  {
+    "title": "콘텐츠 제작 현황 공유",
+    "before": {
+      "top_candidate": "status_sharing",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_sharing"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -8019,22 +8170,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -8042,19 +8191,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "클레임 처리 진행 현황 정리",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_summary",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_summary"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
       "suppression_applied": false
     },
     "after": {
@@ -8081,6 +8232,56 @@
         "progress"
       ]
     },
+    "changed": false,
+    "change_type": "stable",
+    "change_labels": [
+      "stable"
+    ],
+    "ranking_change": {
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
+      "exited_top5": []
+    },
+    "semantic_bonus_change": {
+      "top_delta": 0,
+      "total_delta": 0
+    },
+    "suppression_change": {
+      "before": false,
+      "after": false,
+      "changed": false
+    },
+    "notes": [
+      "top candidate remained stable"
+    ]
+  },
+  {
+    "title": "탕비실 간식 선호 조사",
+    "before": {
+      "top_candidate": null,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 0,
+      "top5_candidates": [],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "snack_item",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "snack_item",
+        "snack_pickup",
+        "inventory_work"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
     "changed": true,
     "change_type": "retrieval_improvement",
     "change_labels": [
@@ -8088,15 +8289,17 @@
     ],
     "ranking_change": {
       "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
+      "ranking_depth_delta": 3,
       "entered_top5": [
-        "status_summary"
+        "inventory_work",
+        "snack_item",
+        "snack_pickup"
       ],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 8,
-      "total_delta": 8
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -8110,16 +8313,16 @@
   {
     "title": "파일 업로드 안내",
     "before": {
-      "top_candidate": "folder_organization",
-      "ambiguity_gap": 0.022,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.034,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "folder_organization",
-        "mail_action"
+        "mail_action",
+        "folder_organization"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "after": {
@@ -8135,20 +8338,20 @@
       "semantic_bonus_total": 1,
       "suppression_applied": true
     },
-    "changed": true,
+    "changed": false,
     "change_type": "generic_noise_reduction",
     "change_labels": [
       "generic_noise_reduction"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 1
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -8212,13 +8415,15 @@
   {
     "title": "프로젝트 이슈 대응 현황 업데이트",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_update",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_update"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -8242,22 +8447,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_update"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -8265,19 +8468,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "프로젝트 진행 현황 정리",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_summary",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_summary"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
       "suppression_applied": false
     },
     "after": {
@@ -8304,22 +8509,20 @@
         "progress"
       ]
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 8,
-      "total_delta": 8
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -8327,7 +8530,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -8399,8 +8602,8 @@
       "top5_candidates": [
         "document_reporting"
       ],
-      "top_semantic_bonus": 7,
-      "semantic_bonus_total": 7,
+      "top_semantic_bonus": 19,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -8426,9 +8629,9 @@
       "inferred_workflow_stages_all": []
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -8437,8 +8640,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 12,
-      "total_delta": 12
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -8446,20 +8649,24 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "행사 준비 현황 관계자 공유",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "prep_paired_event_party",
+      "ambiguity_gap": 0.094,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "prep_paired_event_party",
+        "status_sharing",
+        "event_preparation"
+      ],
       "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
-      "suppression_applied": false
+      "semantic_bonus_total": 5,
+      "suppression_applied": true
     },
     "after": {
       "top_candidate": "prep_paired_event_party",
@@ -8482,34 +8689,28 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement",
-      "generic_noise_reduction"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 3,
-      "entered_top5": [
-        "event_preparation",
-        "prep_paired_event_party",
-        "status_sharing"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 5
+      "total_delta": 0
     },
     "suppression_change": {
-      "before": false,
+      "before": true,
       "after": true,
-      "changed": true
+      "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered",
-      "generic token leakage reduced"
+      "top candidate remained stable"
     ]
   },
   {
@@ -8525,7 +8726,7 @@
         "event_preparation"
       ],
       "top_semantic_bonus": 0,
-      "semantic_bonus_total": 9,
+      "semantic_bonus_total": 21,
       "suppression_applied": true
     },
     "after": {
@@ -8564,7 +8765,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 12
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -8579,16 +8780,15 @@
     "title": "행사결과 전달",
     "before": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ambiguity_gap": 0.071,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_review",
-        "mail_action",
         "event_preparation"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 4,
+      "semantic_bonus_total": 4,
       "suppression_applied": true
     },
     "after": {
@@ -8620,15 +8820,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 4,
-      "total_delta": 4
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -8652,8 +8850,8 @@
         "system_work",
         "event_preparation"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 13,
+      "semantic_bonus_total": 17,
       "suppression_applied": true
     },
     "after": {
@@ -8672,9 +8870,9 @@
       "suppression_applied": true
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -8683,8 +8881,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -8692,23 +8890,23 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "행사안내 공고",
     "before": {
       "top_candidate": "publication_announcement",
-      "ambiguity_gap": 0.039,
+      "ambiguity_gap": 0.04,
       "high_ambiguity": true,
       "ranking_depth": 3,
       "top5_candidates": [
         "publication_announcement",
-        "event_preparation",
-        "mail_action"
+        "mail_action",
+        "event_preparation"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "after": {
@@ -8738,7 +8936,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 1
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -8753,16 +8951,15 @@
     "title": "행사자료 송부",
     "before": {
       "top_candidate": "document_distribution",
-      "ambiguity_gap": 0.032,
-      "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ambiguity_gap": 0.075,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_distribution",
-        "document_edit",
         "event_preparation"
       ],
-      "top_semantic_bonus": 9,
-      "semantic_bonus_total": 9,
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 11,
       "suppression_applied": true
     },
     "after": {
@@ -8779,21 +8976,19 @@
       "suppression_applied": true
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "document_edit"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -8801,7 +8996,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -8859,13 +9054,15 @@
   {
     "title": "현장 안전관리 운영 현황 정리",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_summary",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_summary"
+      ],
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -8890,22 +9087,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -8913,22 +9108,22 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "현황자료 전달",
     "before": {
-      "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
+      "top_candidate": "document_distribution",
+      "ambiguity_gap": 0.058,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_distribution",
+        "document_review"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 6,
+      "semantic_bonus_total": 6,
       "suppression_applied": false
     },
     "after": {
@@ -8951,25 +9146,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "semantic_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement",
-      "workflow_boundary_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
-      "entered_top5": [
-        "document_distribution"
-      ],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "entered_top5": [],
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 6,
-      "total_delta": 6
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -8977,20 +9167,21 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence",
-      "ranking moved toward explicit workflow boundary"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "협력사 대응 현황 업데이트",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_update",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_update"
+      ],
+      "top_semantic_bonus": 5,
+      "semantic_bonus_total": 5,
       "suppression_applied": false
     },
     "after": {
@@ -9014,22 +9205,20 @@
       "workflow_stage_mismatch": false,
       "inferred_workflow_stages_all": []
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_update"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 5,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9037,19 +9226,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "협력업체 계약 진행 현황 정리",
     "before": {
-      "top_candidate": null,
+      "top_candidate": "status_summary",
       "ambiguity_gap": null,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "status_summary"
+      ],
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 8,
       "suppression_applied": false
     },
     "after": {
@@ -9076,22 +9267,20 @@
         "progress"
       ]
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "status_summary"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 8,
-      "total_delta": 8
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9099,22 +9288,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "협조문 전달",
     "before": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 2,
       "suppression_applied": false
     },
     "after": {
@@ -9136,15 +9324,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9210,16 +9396,16 @@
   {
     "title": "화상회의 링크 안내",
     "before": {
-      "top_candidate": "meeting",
-      "ambiguity_gap": 0.019,
+      "top_candidate": "mail_action",
+      "ambiguity_gap": 0.037,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "meeting",
-        "mail_action"
+        "mail_action",
+        "meeting"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 1,
+      "semantic_bonus_total": 1,
       "suppression_applied": true
     },
     "after": {
@@ -9235,21 +9421,20 @@
       "semantic_bonus_total": 1,
       "suppression_applied": true
     },
-    "changed": true,
+    "changed": false,
     "change_type": "generic_noise_reduction",
     "change_labels": [
-      "generic_noise_reduction",
-      "interface_anchor_recovery"
+      "generic_noise_reduction"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 1,
-      "total_delta": 1
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": true,
@@ -9257,8 +9442,7 @@
       "changed": false
     },
     "notes": [
-      "generic token leakage reduced",
-      "interface/channel anchor affected ranking movement"
+      "generic token leakage reduced"
     ]
   },
   {
@@ -9272,8 +9456,8 @@
         "document_submission",
         "document_edit"
       ],
-      "top_semantic_bonus": 5,
-      "semantic_bonus_total": 5,
+      "top_semantic_bonus": 8,
+      "semantic_bonus_total": 10,
       "suppression_applied": false
     },
     "after": {
@@ -9299,9 +9483,9 @@
       ]
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -9310,8 +9494,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 3,
-      "total_delta": 5
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9319,7 +9503,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   },
   {
@@ -9380,16 +9564,15 @@
     "title": "회의결과 전달",
     "before": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.0,
-      "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ambiguity_gap": 0.056,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
       "top5_candidates": [
         "document_review",
-        "meeting",
-        "mail_action"
+        "meeting"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 4,
+      "semantic_bonus_total": 4,
       "suppression_applied": false
     },
     "after": {
@@ -9421,15 +9604,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 4,
-      "total_delta": 4
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9444,15 +9625,14 @@
     "title": "회의록 전달",
     "before": {
       "top_candidate": "document_review",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
       "top5_candidates": [
-        "document_review",
-        "mail_action"
+        "document_review"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 2,
       "suppression_applied": false
     },
     "after": {
@@ -9474,15 +9654,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": -1,
+      "ranking_depth_delta": 0,
       "entered_top5": [],
-      "exited_top5": [
-        "mail_action"
-      ]
+      "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9504,8 +9682,8 @@
         "mail_sharing",
         "mail_action"
       ],
-      "top_semantic_bonus": 10,
-      "semantic_bonus_total": 10,
+      "top_semantic_bonus": 12,
+      "semantic_bonus_total": 17,
       "suppression_applied": false
     },
     "after": {
@@ -9522,9 +9700,9 @@
       "suppression_applied": false
     },
     "changed": false,
-    "change_type": "semantic_improvement",
+    "change_type": "stable",
     "change_labels": [
-      "semantic_improvement"
+      "stable"
     ],
     "ranking_change": {
       "top_candidate_changed": false,
@@ -9533,8 +9711,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9542,7 +9720,7 @@
       "changed": false
     },
     "notes": [
-      "workflow semantic candidate won or gained stronger evidence"
+      "top candidate remained stable"
     ]
   }
 ]
