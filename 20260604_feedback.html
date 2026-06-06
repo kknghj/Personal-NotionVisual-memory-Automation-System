@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20260604</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="374703ed-64a7-80c2-814f-f17d4b443af1" class="page sans"><header><h1 class="page-title" dir="auto">20260604</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:6.881720430107527%"/><col style="width:28.49462365591398%"/><col style="width:16.881720430107528%"/><col style="width:15.483870967741936%"/><col style="width:10.75268817204301%"/><col style="width:21.505376344086017%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/numero_gray.svg" style="width:14px;height:14px;display:block"/></span>ID</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>제목</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>추천</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>최종</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/hashtag_gray.svg" style="width:14px;height:14px;display:block"/></span>확신도</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>메모</th></tr></thead><tbody><tr id="374703ed-64a7-8043-9bef-d3d198e83060"><td class="cell-krc:">2</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780439befd3d198e83060?pvs=21">바이브코딩 아이디어 브레인스토밍</a></td><td class="cell-{~Ys">angle-brackets-solidus (blue)</td><td class="cell-&gt;|pB">🧠</td><td class="cell-ibox">90%</td><td class="cell-eSFS">아이디어를 구상하는 행위에 중점을 둠</td></tr><tr id="374703ed-64a7-807b-9dbe-dc5f07081f0d"><td class="cell-krc:">3</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7807b9dbedc5f07081f0d?pvs=21">제주도 비행기 예매</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">✈️ or ticket airplane (blue)</td><td class="cell-ibox">70%</td><td class="cell-eSFS">비행기 혹은 티켓을 연상하는 이모지 사용함</td></tr><tr id="374703ed-64a7-805a-8c03-daad5843c584"><td class="cell-krc:">4</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7805a8c03daad5843c584?pvs=21">기차표 예매</a></td><td class="cell-{~Ys">grid-rectangle-2x3 (green)</td><td class="cell-&gt;|pB">🚄</td><td class="cell-ibox">80%</td><td class="cell-eSFS">기차 표 예매, KTX 예매는 고속열차 이모지 사용함</td></tr><tr id="374703ed-64a7-804f-9a0a-ea02754c22e6"><td class="cell-krc:">5</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7804f9a0aea02754c22e6?pvs=21">교육 만족도조사 네이버폼 제작</a></td><td class="cell-{~Ys">checkmark-circle (green)</td><td class="cell-&gt;|pB">checkmark-circle (green)</td><td class="cell-ibox">95%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-8086-b0ae-fc09fc8d1e4b"><td class="cell-krc:">6</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78086b0aefc09fc8d1e4b?pvs=21">정보 공개 접수 확인</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">💻</td><td class="cell-ibox">90%</td><td class="cell-eSFS">정보공개 청구 확인은 행정 내부 시스템 이용함</td></tr><tr id="374703ed-64a7-8050-8a43-db96df12d25b"><td class="cell-krc:">7</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780508a43db96df12d25b?pvs=21">바이브코딩 인강 수강</a></td><td class="cell-{~Ys">angle-brackets-solidus (blue)</td><td class="cell-&gt;|pB">🧑‍🏫 or angle-brackets-solidus (blue)</td><td class="cell-ibox">50%</td><td class="cell-eSFS">교육 수강 자체에 중점을 두거나 교육 주제에 중점을 둠</td></tr><tr id="374703ed-64a7-806c-bd82-e71101e135ad"><td class="cell-krc:">8</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7806cbd82e71101e135ad?pvs=21">과업지시서 작성</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB"><strong>📝</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80fe-8853-f05111deecc5"><td class="cell-krc:">9</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780fe8853f05111deecc5?pvs=21">정기 보안 감사 제출</a></td><td class="cell-{~Ys"><strong>🔐</strong></td><td class="cell-&gt;|pB">🔐 or <strong>📝</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">보안 관련 업무 혹은 문서 작성 및 제출 자체에 중점.</td></tr><tr id="374703ed-64a7-801d-be62-e390e5e4bf18"><td class="cell-krc:">10</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7801dbe62e390e5e4bf18?pvs=21">월급여 마감</a></td><td class="cell-{~Ys"><strong>💰</strong></td><td class="cell-&gt;|pB"><strong>💰</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80c5-9849-d22f1d6f907c"><td class="cell-krc:">11</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780c59849d22f1d6f907c?pvs=21">센터장 정례회의 자료 작성</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB"><strong>📝</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80c7-819c-e3d4348e7f22"><td class="cell-krc:">12</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780c7819ce3d4348e7f22?pvs=21">과장 주재 주간회의 참석</a></td><td class="cell-{~Ys"><strong>🤝</strong></td><td class="cell-&gt;|pB">people meeting</td><td class="cell-ibox">70%</td><td class="cell-eSFS">부서, 기관 내부자들만 참석하는 회의는  악수 이모지보다 노션 아이콘 people meeting을 좀더 선호함</td></tr><tr id="374703ed-64a7-8004-8ec3-ea16fa3bfc7c"><td class="cell-krc:">13</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780048ec3ea16fa3bfc7c?pvs=21">운영평가 회의 일정 조율</a></td><td class="cell-{~Ys"><strong>💬</strong></td><td class="cell-&gt;|pB"><strong>💬,</strong>📞,<strong>📅</strong></td><td class="cell-ibox">40%</td><td class="cell-eSFS">조율하는 수단에 따라 여러 이모지 사용 가능. ‘일정’ 자체에 중점을 두어 달력 이모지 사용 가능.</td></tr><tr id="374703ed-64a7-8030-892c-c7d5dd86dd18"><td class="cell-krc:">14</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78030892cc7d5dd86dd18?pvs=21">센터 실무자 간담회 개최</a></td><td class="cell-{~Ys"><strong>🤝</strong></td><td class="cell-&gt;|pB">🤝, people meeting</td><td class="cell-ibox">60%</td><td class="cell-eSFS">기관 외부자들이 포함될 경우 🤝를 좀더 선호하나, people meeting도 가능함</td></tr><tr id="374703ed-64a7-808c-aef4-fa04969418f0"><td class="cell-krc:">15</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7808caef4fa04969418f0?pvs=21">위원회 국장 인사말씀 작성</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB"><strong>📝</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-8048-b453-e93695f1c0ee"><td class="cell-krc:">16</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78048b453e93695f1c0ee?pvs=21">하반기 사업 추진회의 참석</a></td><td class="cell-{~Ys"><strong>🤝</strong></td><td class="cell-&gt;|pB">🤝, people meeting</td><td class="cell-ibox"></td><td class="cell-eSFS">참석자 구성, 회의 종류에 따라 두 개 중 하나 선택하여 사용.</td></tr><tr id="374703ed-64a7-8008-a00e-cb274b96c27b"><td class="cell-krc:">17</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78008a00ecb274b96c27b?pvs=21">평가위원회 회의 일정 확정</a></td><td class="cell-{~Ys"><strong>📅</strong></td><td class="cell-&gt;|pB"><strong>📅</strong></td><td class="cell-ibox">70%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-8064-a49c-e860ead572b8"><td class="cell-krc:">18</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78064a49ce860ead572b8?pvs=21">센터 운영현황 보고서 작성</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB"><strong>📝</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80c7-8bec-f259525e12b0"><td class="cell-krc:">19</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780c78becf259525e12b0?pvs=21">과장님 요청자료 보고(센터 이용실적)</a></td><td class="cell-{~Ys"><strong>🗣️</strong></td><td class="cell-&gt;|pB">🗣️</td><td class="cell-ibox">90%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-8006-bc63-c1ad81d6a42a"><td class="cell-krc:">20</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78006bc63c1ad81d6a42a?pvs=21">민원 처리결과 보고</a></td><td class="cell-{~Ys"><strong>🗣️</strong></td><td class="cell-&gt;|pB"><strong>🗣️</strong></td><td class="cell-ibox">90%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-8089-ad14-e51dbe7ef641"><td class="cell-krc:">21</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78089ad14e51dbe7ef641?pvs=21">예산 집행현황 보고</a></td><td class="cell-{~Ys"><strong>🗣️</strong></td><td class="cell-&gt;|pB"><strong>🗣️</strong></td><td class="cell-ibox">90%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80d3-ac50-ffbe5e4d7779"><td class="cell-krc:">22</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780d3ac50ffbe5e4d7779?pvs=21">센터별 운영실적 취합</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB"><strong>📊, 📄</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">‘실적’에 초점을 맞출 경우 그래프 이모지를, 일반적인 취합 행동에 초점을 맞출 경우 종이 이모지를 선호함</td></tr><tr id="374703ed-64a7-8079-98d2-de6955ff238f"><td class="cell-krc:">23</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7807998d2de6955ff238f?pvs=21">운영지침 공문 발송</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">document arrow right (red)</td><td class="cell-ibox">90%</td><td class="cell-eSFS">‘공문 발송/송부’행위는 종이 이모지와 구분하여 노션 아이콘 document arrow right (red) 사용.</td></tr><tr id="374703ed-64a7-803e-896b-e21e1fae96c1"><td class="cell-krc:">24</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7803e896be21e1fae96c1?pvs=21">실적자료 제출 독촉</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">📞</td><td class="cell-ibox">80%</td><td class="cell-eSFS">자료 독촉은 보통 전화 통화를 통해 이루어짐.</td></tr><tr id="374703ed-64a7-80f0-aec8-fc3cb622d15c"><td class="cell-krc:">25</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780f0aec8fc3cb622d15c?pvs=21">결과보고서 제출 요청</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">📞, <strong>💬, </strong>📧</td><td class="cell-ibox">60%</td><td class="cell-eSFS">일반적인 제출 요청은 전화, 메신저, 이메일을 사용함. 간혹 공문을 발송할 때도 있음(이 경우 ‘제출 요청 공문 송부’라고 명시함)</td></tr><tr id="374703ed-64a7-80dc-ab6e-dd60c2c42d19"><td class="cell-krc:">26</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780dcab6edd60c2c42d19?pvs=21">센터별 안내문 송부</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄</strong> ,document arrow right (red)</td><td class="cell-ibox">60%</td><td class="cell-eSFS">공문 송부인 경우 document arrow right를, 그 외 일반적인 송부는 종이 이모지 선호</td></tr><tr id="374703ed-64a7-8078-a25c-c1850253151f"><td class="cell-krc:">27</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78078a25cc1850253151f?pvs=21">예산 변경 승인 요청</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB">💻, <strong>📝</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">변경 승인 작업이 행정 내부 시스템으로 처리될 경우와 타 부서에 공문 송부가 필요한 경우에 따라 두 가지 중 하나 선택함</td></tr><tr id="374703ed-64a7-803b-bde2-d2688c998470"><td class="cell-krc:">28</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7803bbde2d2688c998470?pvs=21">센터 운영 계획 검토</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄</strong></td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80bd-8e7b-fbe9f3f21ee5"><td class="cell-krc:">29</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780bd8e7bfbe9f3f21ee5?pvs=21">위탁계약 변경안 검토</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄</strong></td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80f7-9a6e-ca4145d43fd5"><td class="cell-krc:">30</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780f79a6eca4145d43fd5?pvs=21">민원 답변 초안 검토</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄</strong></td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-809c-85bb-cef72f76f7be"><td class="cell-krc:">31</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7809c85bbcef72f76f7be?pvs=21">민원 답변 초안 팀장 보고</a></td><td class="cell-{~Ys"><strong>🗣️</strong></td><td class="cell-&gt;|pB"><strong>🗣️</strong></td><td class="cell-ibox">90%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-8015-a1ad-cc379583ae82"><td class="cell-krc:">32</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78015a1adcc379583ae82?pvs=21">식생활교육 운영안 검토</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄</strong></td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-807c-a32d-fa8ab83e4607"><td class="cell-krc:">33</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7807ca32dfa8ab83e4607?pvs=21">홍보물 시안 검토</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">photo landscape</td><td class="cell-ibox">80%</td><td class="cell-eSFS">홍모물 류를 검토하는 작업은 노션 아이콘인 photo landscape 선호.(비쥬얼 후보 추가가 필요함)</td></tr><tr id="374703ed-64a7-8080-b1ad-ca9038efcdb0"><td class="cell-krc:">34</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78080b1adca9038efcdb0?pvs=21">홍보물 시안 수정 요청</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB">📞, <strong>💬</strong>, 📧, photo landscape</td><td class="cell-ibox">60%</td><td class="cell-eSFS">수정 요청의 수단에 따라 전화, 메신저, 이메일 이모지 사용. 홍보물을 연상하는 photo landscape 도 사용 가능</td></tr><tr id="374703ed-64a7-8040-98e0-c4536bac5f7f"><td class="cell-krc:">35</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7804098e0c4536bac5f7f?pvs=21">예산 집행 부진 사유 제출</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB"><strong>📝</strong></td><td class="cell-ibox">70%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-801b-8ded-c92d00996621"><td class="cell-krc:">36</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7801b8dedc92d00996621?pvs=21">세금계산서 검토</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB">reciept (grey)</td><td class="cell-ibox">80%</td><td class="cell-eSFS">세금계산서는 문서가 아닌 영수증의 일종으로 인지함</td></tr><tr id="374703ed-64a7-80fd-8153-fd9ead65c2c3"><td class="cell-krc:">37</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780fd8153fd9ead65c2c3?pvs=21">운영비 집행현황 확인</a></td><td class="cell-{~Ys"><strong>📊</strong></td><td class="cell-&gt;|pB"><strong>📊, 📄</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">예산 집행 현황에 초점을 맞출 경우 그래프 이모지, 일반적인 보고서로 판단할 경우 종이 이모지.</td></tr><tr id="374703ed-64a7-80bc-badf-c08074d2a6ad"><td class="cell-krc:">38</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780bcbadfc08074d2a6ad?pvs=21">위원회 회의 수당 지급</a></td><td class="cell-{~Ys"><strong>💰</strong></td><td class="cell-&gt;|pB">💻</td><td class="cell-ibox">70%</td><td class="cell-eSFS">위원회 참석, 회의, 검토 수당은 급여 업무와 무관하며, 행정 내부 시스템을 이용해 처리함</td></tr><tr id="374703ed-64a7-80a5-a48f-c501051938ef"><td class="cell-krc:">39</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780a5a48fc501051938ef?pvs=21">강사료 지급 요청</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄, 📝</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">일반적으로 타부서에 강사료 지급 요청 공문을 송부하므로 문서 작성 혹은 강사료 지급 관련 서류 검토를 연상하는 이모지 사용.</td></tr><tr id="374703ed-64a7-80c4-9660-c3660a7941e6"><td class="cell-krc:">40</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780c49660c3660a7941e6?pvs=21">교육 참석자 명단 취합</a></td><td class="cell-{~Ys"><strong>🧑‍🏫</strong></td><td class="cell-&gt;|pB"><strong>🧑‍🏫, 📄</strong></td><td class="cell-ibox">50%</td><td class="cell-eSFS">강사 자체에 초점을 두거나, 명단 문서에 초점을 둠</td></tr><tr id="374703ed-64a7-809c-b062-cf7a92704b85"><td class="cell-krc:">41</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7809cb062cf7a92704b85?pvs=21">강사 섭외 후보 추리기</a></td><td class="cell-{~Ys"><strong>🧑‍🏫</strong></td><td class="cell-&gt;|pB"><strong>🧑‍🏫, 📄</strong></td><td class="cell-ibox">50%</td><td class="cell-eSFS">강사 자체에 초점을 두거나, 강사 프로필 문서 검토 행위에 초점을 둠.</td></tr><tr id="374703ed-64a7-806a-ab5c-cd40769e9fde"><td class="cell-krc:">42</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7806aab5ccd40769e9fde?pvs=21">강사 섭외 진행</a></td><td class="cell-{~Ys"><strong>🧑‍🏫</strong></td><td class="cell-&gt;|pB"><strong>🧑‍🏫, 📧, 📞</strong></td><td class="cell-ibox">50%</td><td class="cell-eSFS">강사 자체에 초점을 두거나, 섭외 행위 방식에 따라 여러 이모지 사용</td></tr><tr id="374703ed-64a7-8039-885c-d2afa3926094"><td class="cell-krc:">43</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78039885cd2afa3926094?pvs=21">행사 결과보고 작성</a></td><td class="cell-{~Ys"><strong>📝</strong></td><td class="cell-&gt;|pB"><strong>📝</strong></td><td class="cell-ibox">100%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80d0-8d60-e2232ffdb2cb"><td class="cell-krc:">44</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780d08d60e2232ffdb2cb?pvs=21">현장교육 모니터링 출장</a></td><td class="cell-{~Ys"><strong>👩‍🏫</strong></td><td class="cell-&gt;|pB">💼</td><td class="cell-ibox">90%</td><td class="cell-eSFS">출장은 대부분 suitcase 이모지를 선호함</td></tr><tr id="374703ed-64a7-80c2-81e4-c26bfbea166a"><td class="cell-krc:">45</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780c281e4c26bfbea166a?pvs=21">현장교육 세팅 지원</a></td><td class="cell-{~Ys"><strong>👩‍🏫</strong></td><td class="cell-&gt;|pB">💼, <strong>👩‍🏫</strong></td><td class="cell-ibox">30%</td><td class="cell-eSFS">세팅 업무를 위한 출장이므로 출장 이모지 사용. 경우에 따라 교육 관련 이모지 사용 가능.</td></tr><tr id="374703ed-64a7-805a-b11b-e954e4bafb5a"><td class="cell-krc:">46</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7805ab11be954e4bafb5a?pvs=21">센터 문의사항 회신</a></td><td class="cell-{~Ys"><strong>📞</strong></td><td class="cell-&gt;|pB"><strong>💬, 📧, 📞</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">회신 수단에 따라 여러 이모지 사용 가능</td></tr><tr id="374703ed-64a7-8078-81f7-fa90adb860af"><td class="cell-krc:">47</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7807881f7fa90adb860af?pvs=21">전화 민원 처리</a></td><td class="cell-{~Ys"><strong>📞</strong></td><td class="cell-&gt;|pB"><strong>📞</strong></td><td class="cell-ibox"></td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80bb-8249-eaade8c7e241"><td class="cell-krc:">48</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780bb8249eaade8c7e241?pvs=21">운영 관련 질의 응답</a></td><td class="cell-{~Ys">checkmark-circle (green)</td><td class="cell-&gt;|pB">speech bubbles (blue)</td><td class="cell-ibox">70%</td><td class="cell-eSFS">질문에 답변을 다는 것을 묻고 답하는 말풍선으로 연상.</td></tr><tr id="374703ed-64a7-8014-a3e4-d30500cee2a1"><td class="cell-krc:">49</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78014a3e4d30500cee2a1?pvs=21">기관 요청사항 검토</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄, checkmark list</strong></td><td class="cell-ibox">70%</td><td class="cell-eSFS">일반적인 문서 검토이면 종이 이모지 선호. 요청사항 준수 여부를 체크하는 업무이면 checkmark list 선호.</td></tr><tr id="374703ed-64a7-8071-8aed-d189e3715969"><td class="cell-krc:">50</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780718aedd189e3715969?pvs=21">강사단 평가회 사전 준비 사항 리스트</a></td><td class="cell-{~Ys"><strong>👩‍🏫</strong></td><td class="cell-&gt;|pB">checkmark list (red)</td><td class="cell-ibox">90%</td><td class="cell-eSFS">행사 관련 전반적인 사항을 확인하는 류의 제목에서는 checkmark list 선호.</td></tr><tr id="374703ed-64a7-8048-8aee-f83563447244"><td class="cell-krc:">51</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780488aeef83563447244?pvs=21">민원 접수현황 확인</a></td><td class="cell-{~Ys"><strong>📊</strong></td><td class="cell-&gt;|pB"><strong>📊</strong></td><td class="cell-ibox">80%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-80fc-b9b5-cc10484a2d57"><td class="cell-krc:">52</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780fcb9b5cc10484a2d57?pvs=21">센터별 현황 업데이트</a></td><td class="cell-{~Ys"><strong>🔄</strong></td><td class="cell-&gt;|pB"><strong>🔄, 📝</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">업데이트를 연상하는 이모지를 사용하거나 자료 수정 행위를 연상하는 이모지 사용.</td></tr><tr id="374703ed-64a7-80e7-a388-d6b9e4a0cfd1"><td class="cell-krc:">53</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780e7a388d6b9e4a0cfd1?pvs=21">운영평가 일정 안내</a></td><td class="cell-{~Ys">exclamation-circle (red)</td><td class="cell-&gt;|pB"><strong>💬, 📧, 📞</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">일정 안내는 보통 메신저, 메일, 전화를 통해 처리됨.</td></tr><tr id="374703ed-64a7-8042-bf7e-efe57013359a"><td class="cell-krc:">54</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78042bf7eefe57013359a?pvs=21">센터 방문점검 실시</a></td><td class="cell-{~Ys">mop-bucket (brown)</td><td class="cell-&gt;|pB">💼 or 📋</td><td class="cell-ibox">50%</td><td class="cell-eSFS">센터로의 출장을 연상하는 서류가방 이모지 혹은 현장 점검을 연상하는 클립보드 이모지 사용함</td></tr><tr id="374703ed-64a7-8098-b6c8-d0bdf3c2b393"><td class="cell-krc:">55</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a78098b6c8d0bdf3c2b393?pvs=21">센터 조직도 및 연락처 정비</a></td><td class="cell-{~Ys"><strong>📞</strong></td><td class="cell-&gt;|pB">network</td><td class="cell-ibox">70%</td><td class="cell-eSFS">노션 아이콘 network 모양이 조직도를 연상시킴. 연락처 현행화에서는 전화 이모지를 사용하지 않는 것을 선호함.</td></tr><tr id="374703ed-64a7-80ba-8d65-e30baafecf3d"><td class="cell-krc:">56</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a780ba8d65e30baafecf3d?pvs=21">위탁기관 변경사항 확인</a></td><td class="cell-{~Ys"><strong>📄</strong></td><td class="cell-&gt;|pB"><strong>📄</strong></td><td class="cell-ibox">70%</td><td class="cell-eSFS"></td></tr><tr id="374703ed-64a7-803a-b4a2-dbaf15df1aa7"><td class="cell-krc:">57</td><td class="cell-title"><a href="https://www.notion.so/KTX-374703ed64a7803ab4a2dbaf15df1aa7?pvs=21">세종 출장 KTX 예매</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">🚄</td><td class="cell-ibox">90%</td><td class="cell-eSFS">기차 표 예매, KTX 예매는 고속열차 이모지 사용함</td></tr><tr id="374703ed-64a7-803c-b435-d23cfeb0fe85"><td class="cell-krc:">58</td><td class="cell-title"><a href="https://www.notion.so/374703ed64a7803cb435d23cfeb0fe85?pvs=21">부산 출장 숙소 예약</a></td><td class="cell-{~Ys">없음</td><td class="cell-&gt;|pB">🏨</td><td class="cell-ibox">80%</td><td class="cell-eSFS">숙소, 숙박을 연상하는 호텔 이모지를 사용함</td></tr><tr id="375703ed-64a7-800a-a29d-f26ebe93f21e"><td class="cell-krc:">59</td><td class="cell-title"><a href="https://www.notion.so/375703ed64a7800aa29df26ebe93f21e?pvs=21">국장님 출장여비 지급부서 알아보기</a></td><td class="cell-{~Ys"><strong>💰</strong></td><td class="cell-&gt;|pB">❔, <strong>💰</strong></td><td class="cell-ibox">60%</td><td class="cell-eSFS">긴급하지 않으며, 업무 시작 전 알아봐야 하는 일들은 하얀색 물음표 이모지를 선호함. 급여 관련 업무로도 볼 수 있음</td></tr></tbody></table></div><br/><br/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

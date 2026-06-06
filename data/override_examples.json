@@ -457,5 +457,527 @@
     "confidence": 40,
     "note": "메신저를 통했기 때문임. 전화 문의라면 전화기 이모지 사용했을 것임.",
     "source": "notion_export_20260603"
+  },
+  {
+    "id": 53,
+    "title": "바이브코딩 아이디어 브레인스토밍",
+    "recommended_visual": "angle-brackets-solidus (blue)",
+    "final_visual": "🧠",
+    "confidence": 90,
+    "note": "아이디어를 구상하는 행위에 중점을 둠",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 54,
+    "title": "제주도 비행기 예매",
+    "recommended_visual": "없음",
+    "final_visual": "✈️ or ticket airplane (blue)",
+    "confidence": 70,
+    "note": "비행기 혹은 티켓을 연상하는 이모지 사용함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 55,
+    "title": "기차표 예매",
+    "recommended_visual": "grid-rectangle-2x3 (green)",
+    "final_visual": "🚄",
+    "confidence": 80,
+    "note": "기차 표 예매, KTX 예매는 고속열차 이모지 사용함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 56,
+    "title": "교육 만족도조사 네이버폼 제작",
+    "recommended_visual": "checkmark-circle (green)",
+    "final_visual": "checkmark-circle (green)",
+    "confidence": 95,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 57,
+    "title": "정보 공개 접수 확인",
+    "recommended_visual": "📄",
+    "final_visual": "💻",
+    "confidence": 90,
+    "note": "정보공개 청구 확인은 행정 내부 시스템 이용함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 58,
+    "title": "바이브코딩 인강 수강",
+    "recommended_visual": "angle-brackets-solidus (blue)",
+    "final_visual": "🧑‍🏫 or angle-brackets-solidus (blue)",
+    "confidence": 50,
+    "note": "교육 수강 자체에 중점을 두거나 교육 주제에 중점을 둠",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 59,
+    "title": "과업지시서 작성",
+    "recommended_visual": "📝",
+    "final_visual": "📝",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 60,
+    "title": "정기 보안 감사 제출",
+    "recommended_visual": "🔐",
+    "final_visual": "🔐 or 📝",
+    "confidence": 60,
+    "note": "보안 관련 업무 혹은 문서 작성 및 제출 자체에 중점.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 61,
+    "title": "월급여 마감",
+    "recommended_visual": "💰",
+    "final_visual": "💰",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 62,
+    "title": "센터장 정례회의 자료 작성",
+    "recommended_visual": "📝",
+    "final_visual": "📝",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 63,
+    "title": "과장 주재 주간회의 참석",
+    "recommended_visual": "🤝",
+    "final_visual": "people meeting",
+    "confidence": 70,
+    "note": "부서, 기관 내부자들만 참석하는 회의는  악수 이모지보다 노션 아이콘 people meeting을 좀더 선호함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 64,
+    "title": "운영평가 회의 일정 조율",
+    "recommended_visual": "💬",
+    "final_visual": "💬 or 📞 or 📅",
+    "confidence": 40,
+    "note": "조율하는 수단에 따라 여러 이모지 사용 가능. ‘일정’ 자체에 중점을 두어 달력 이모지 사용 가능.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 65,
+    "title": "센터 실무자 간담회 개최",
+    "recommended_visual": "🤝",
+    "final_visual": "🤝 or people meeting",
+    "confidence": 60,
+    "note": "기관 외부자들이 포함될 경우 🤝를 좀더 선호하나, people meeting도 가능함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 66,
+    "title": "위원회 국장 인사말씀 작성",
+    "recommended_visual": "📝",
+    "final_visual": "📝",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 67,
+    "title": "하반기 사업 추진회의 참석",
+    "recommended_visual": "🤝",
+    "final_visual": "🤝 or people meeting",
+    "confidence": null,
+    "note": "참석자 구성, 회의 종류에 따라 두 개 중 하나 선택하여 사용.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 68,
+    "title": "평가위원회 회의 일정 확정",
+    "recommended_visual": "📅",
+    "final_visual": "📅",
+    "confidence": 70,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 69,
+    "title": "센터 운영현황 보고서 작성",
+    "recommended_visual": "📝",
+    "final_visual": "📝",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 70,
+    "title": "과장님 요청자료 보고(센터 이용실적)",
+    "recommended_visual": "🗣️",
+    "final_visual": "🗣️",
+    "confidence": 90,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 71,
+    "title": "민원 처리결과 보고",
+    "recommended_visual": "🗣️",
+    "final_visual": "🗣️",
+    "confidence": 90,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 72,
+    "title": "예산 집행현황 보고",
+    "recommended_visual": "🗣️",
+    "final_visual": "🗣️",
+    "confidence": 90,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 73,
+    "title": "센터별 운영실적 취합",
+    "recommended_visual": "없음",
+    "final_visual": "📊 or 📄",
+    "confidence": 60,
+    "note": "‘실적’에 초점을 맞출 경우 그래프 이모지를, 일반적인 취합 행동에 초점을 맞출 경우 종이 이모지를 선호함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 74,
+    "title": "운영지침 공문 발송",
+    "recommended_visual": "📄",
+    "final_visual": "document arrow right (red)",
+    "confidence": 90,
+    "note": "‘공문 발송/송부’행위는 종이 이모지와 구분하여 노션 아이콘 document arrow right (red) 사용.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 75,
+    "title": "실적자료 제출 독촉",
+    "recommended_visual": "📄",
+    "final_visual": "📞",
+    "confidence": 80,
+    "note": "자료 독촉은 보통 전화 통화를 통해 이루어짐.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 76,
+    "title": "결과보고서 제출 요청",
+    "recommended_visual": "📄",
+    "final_visual": "📞 or 💬 or 📧",
+    "confidence": 60,
+    "note": "일반적인 제출 요청은 전화, 메신저, 이메일을 사용함. 간혹 공문을 발송할 때도 있음(이 경우 ‘제출 요청 공문 송부’라고 명시함)",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 77,
+    "title": "센터별 안내문 송부",
+    "recommended_visual": "📄",
+    "final_visual": "📄 or document arrow right (red)",
+    "confidence": 60,
+    "note": "공문 송부인 경우 document arrow right를, 그 외 일반적인 송부는 종이 이모지 선호",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 78,
+    "title": "예산 변경 승인 요청",
+    "recommended_visual": "📝",
+    "final_visual": "💻 or 📝",
+    "confidence": 60,
+    "note": "변경 승인 작업이 행정 내부 시스템으로 처리될 경우와 타 부서에 공문 송부가 필요한 경우에 따라 두 가지 중 하나 선택함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 79,
+    "title": "센터 운영 계획 검토",
+    "recommended_visual": "📄",
+    "final_visual": "📄",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 80,
+    "title": "위탁계약 변경안 검토",
+    "recommended_visual": "📄",
+    "final_visual": "📄",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 81,
+    "title": "민원 답변 초안 검토",
+    "recommended_visual": "📄",
+    "final_visual": "📄",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 82,
+    "title": "민원 답변 초안 팀장 보고",
+    "recommended_visual": "🗣️",
+    "final_visual": "🗣️",
+    "confidence": 90,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 83,
+    "title": "식생활교육 운영안 검토",
+    "recommended_visual": "📄",
+    "final_visual": "📄",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 84,
+    "title": "홍보물 시안 검토",
+    "recommended_visual": "📄",
+    "final_visual": "photo landscape",
+    "confidence": 80,
+    "note": "홍모물 류를 검토하는 작업은 노션 아이콘인 photo landscape 선호.(비쥬얼 후보 추가가 필요함)",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 85,
+    "title": "홍보물 시안 수정 요청",
+    "recommended_visual": "📝",
+    "final_visual": "📞 or 💬 or 📧 or photo landscape",
+    "confidence": 60,
+    "note": "수정 요청의 수단에 따라 전화, 메신저, 이메일 이모지 사용. 홍보물을 연상하는 photo landscape 도 사용 가능",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 86,
+    "title": "예산 집행 부진 사유 제출",
+    "recommended_visual": "📝",
+    "final_visual": "📝",
+    "confidence": 70,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 87,
+    "title": "세금계산서 검토",
+    "recommended_visual": "📄",
+    "final_visual": "reciept (grey)",
+    "confidence": 80,
+    "note": "세금계산서는 문서가 아닌 영수증의 일종으로 인지함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 88,
+    "title": "운영비 집행현황 확인",
+    "recommended_visual": "📊",
+    "final_visual": "📊 or 📄",
+    "confidence": 60,
+    "note": "예산 집행 현황에 초점을 맞출 경우 그래프 이모지, 일반적인 보고서로 판단할 경우 종이 이모지.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 89,
+    "title": "위원회 회의 수당 지급",
+    "recommended_visual": "💰",
+    "final_visual": "💻",
+    "confidence": 70,
+    "note": "위원회 참석, 회의, 검토 수당은 급여 업무와 무관하며, 행정 내부 시스템을 이용해 처리함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 90,
+    "title": "강사료 지급 요청",
+    "recommended_visual": "📄",
+    "final_visual": "📄 or 📝",
+    "confidence": 60,
+    "note": "일반적으로 타부서에 강사료 지급 요청 공문을 송부하므로 문서 작성 혹은 강사료 지급 관련 서류 검토를 연상하는 이모지 사용.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 91,
+    "title": "교육 참석자 명단 취합",
+    "recommended_visual": "🧑‍🏫",
+    "final_visual": "🧑‍🏫 or 📄",
+    "confidence": 50,
+    "note": "강사 자체에 초점을 두거나, 명단 문서에 초점을 둠",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 92,
+    "title": "강사 섭외 후보 추리기",
+    "recommended_visual": "🧑‍🏫",
+    "final_visual": "🧑‍🏫 or 📄",
+    "confidence": 50,
+    "note": "강사 자체에 초점을 두거나, 강사 프로필 문서 검토 행위에 초점을 둠.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 93,
+    "title": "강사 섭외 진행",
+    "recommended_visual": "🧑‍🏫",
+    "final_visual": "🧑‍🏫 or 📧 or 📞",
+    "confidence": 50,
+    "note": "강사 자체에 초점을 두거나, 섭외 행위 방식에 따라 여러 이모지 사용",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 94,
+    "title": "행사 결과보고 작성",
+    "recommended_visual": "📝",
+    "final_visual": "📝",
+    "confidence": 100,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 95,
+    "title": "현장교육 모니터링 출장",
+    "recommended_visual": "👩‍🏫",
+    "final_visual": "💼",
+    "confidence": 90,
+    "note": "출장은 대부분 suitcase 이모지를 선호함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 96,
+    "title": "현장교육 세팅 지원",
+    "recommended_visual": "👩‍🏫",
+    "final_visual": "💼 or 👩‍🏫",
+    "confidence": 30,
+    "note": "세팅 업무를 위한 출장이므로 출장 이모지 사용. 경우에 따라 교육 관련 이모지 사용 가능.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 97,
+    "title": "센터 문의사항 회신",
+    "recommended_visual": "📞",
+    "final_visual": "💬 or 📧 or 📞",
+    "confidence": 60,
+    "note": "회신 수단에 따라 여러 이모지 사용 가능",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 98,
+    "title": "전화 민원 처리",
+    "recommended_visual": "📞",
+    "final_visual": "📞",
+    "confidence": null,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 99,
+    "title": "운영 관련 질의 응답",
+    "recommended_visual": "checkmark-circle (green)",
+    "final_visual": "speech bubbles (blue)",
+    "confidence": 70,
+    "note": "질문에 답변을 다는 것을 묻고 답하는 말풍선으로 연상.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 100,
+    "title": "기관 요청사항 검토",
+    "recommended_visual": "📄",
+    "final_visual": "📄 or checkmark list",
+    "confidence": 70,
+    "note": "일반적인 문서 검토이면 종이 이모지 선호. 요청사항 준수 여부를 체크하는 업무이면 checkmark list 선호.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 101,
+    "title": "강사단 평가회 사전 준비 사항 리스트",
+    "recommended_visual": "👩‍🏫",
+    "final_visual": "checkmark list (red)",
+    "confidence": 90,
+    "note": "행사 관련 전반적인 사항을 확인하는 류의 제목에서는 checkmark list 선호.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 102,
+    "title": "민원 접수현황 확인",
+    "recommended_visual": "📊",
+    "final_visual": "📊",
+    "confidence": 80,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 103,
+    "title": "센터별 현황 업데이트",
+    "recommended_visual": "🔄",
+    "final_visual": "🔄 or 📝",
+    "confidence": 60,
+    "note": "업데이트를 연상하는 이모지를 사용하거나 자료 수정 행위를 연상하는 이모지 사용.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 104,
+    "title": "운영평가 일정 안내",
+    "recommended_visual": "exclamation-circle (red)",
+    "final_visual": "💬 or 📧 or 📞",
+    "confidence": 60,
+    "note": "일정 안내는 보통 메신저, 메일, 전화를 통해 처리됨.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 105,
+    "title": "센터 방문점검 실시",
+    "recommended_visual": "mop-bucket (brown)",
+    "final_visual": "💼 or 📋",
+    "confidence": 50,
+    "note": "센터로의 출장을 연상하는 서류가방 이모지 혹은 현장 점검을 연상하는 클립보드 이모지 사용함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 106,
+    "title": "센터 조직도 및 연락처 정비",
+    "recommended_visual": "📞",
+    "final_visual": "network",
+    "confidence": 70,
+    "note": "노션 아이콘 network 모양이 조직도를 연상시킴. 연락처 현행화에서는 전화 이모지를 사용하지 않는 것을 선호함.",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 107,
+    "title": "위탁기관 변경사항 확인",
+    "recommended_visual": "📄",
+    "final_visual": "📄",
+    "confidence": 70,
+    "note": "",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 108,
+    "title": "세종 출장 KTX 예매",
+    "recommended_visual": "없음",
+    "final_visual": "🚄",
+    "confidence": 90,
+    "note": "기차 표 예매, KTX 예매는 고속열차 이모지 사용함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 109,
+    "title": "부산 출장 숙소 예약",
+    "recommended_visual": "없음",
+    "final_visual": "🏨",
+    "confidence": 80,
+    "note": "숙소, 숙박을 연상하는 호텔 이모지를 사용함",
+    "source": "notion_export_20260604"
+  },
+  {
+    "id": 110,
+    "title": "국장님 출장여비 지급부서 알아보기",
+    "recommended_visual": "💰",
+    "final_visual": "❔ or 💰",
+    "confidence": 60,
+    "note": "긴급하지 않으며, 업무 시작 전 알아봐야 하는 일들은 하얀색 물음표 이모지를 선호함. 급여 관련 업무로도 볼 수 있음",
+    "source": "notion_export_20260604"
   }
 ]
