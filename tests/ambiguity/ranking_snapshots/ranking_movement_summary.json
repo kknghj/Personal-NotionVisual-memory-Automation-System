@@ -1,42 +1,41 @@
 {
   "source_logs": {
     "before": "tests\\ambiguity\\ambiguity_results\\2026-06-06_p5b_catalog_fixes_scoring_log.json",
-    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-06_1557_scoring_log.json"
+    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-06_p5b_metadata_backlog_fix5_scoring_log.json"
   },
   "movement_metrics": {
-    "total_titles": 172,
-    "top_candidate_changed_count": 6,
-    "no_candidate_before": 8,
+    "total_titles": 177,
+    "top_candidate_changed_count": 10,
+    "no_candidate_before": 13,
     "no_candidate_after": 3,
-    "no_candidate_decrease": 5,
+    "no_candidate_decrease": 10,
     "semantic_bonus_total_before": 1850,
-    "semantic_bonus_total_after": 1850,
-    "semantic_bonus_total_delta": 0,
+    "semantic_bonus_total_after": 1950,
+    "semantic_bonus_total_delta": 100,
     "top_semantic_bonus_applied_before_count": 144,
-    "top_semantic_bonus_applied_after_count": 144,
-    "top_semantic_bonus_applied_delta": 0,
+    "top_semantic_bonus_applied_after_count": 147,
+    "top_semantic_bonus_applied_delta": 3,
     "suppression_applied_before_count": 25,
     "suppression_applied_after_count": 25,
     "high_ambiguity_before": 60,
-    "high_ambiguity_after": 64,
-    "high_ambiguity_delta": 4,
+    "high_ambiguity_after": 69,
+    "high_ambiguity_delta": 9,
     "average_ambiguity_gap_before": 0.039,
-    "average_ambiguity_gap_after": 0.04,
-    "average_ranking_depth_before": 1.971,
-    "average_ranking_depth_after": 2.058,
-    "ranking_depth_delta": 0.087,
-    "titles_with_depth_increase": 7,
+    "average_ambiguity_gap_after": 0.038,
+    "average_ranking_depth_before": 1.915,
+    "average_ranking_depth_after": 2.113,
+    "ranking_depth_delta": 0.198,
+    "titles_with_depth_increase": 14,
     "titles_with_top2_competition_before": 107,
-    "titles_with_top2_competition_after": 114,
+    "titles_with_top2_competition_after": 118,
     "ambiguity_gap_improved_count": 0,
-    "ambiguity_gap_worsened_count": 0,
-    "ambiguity_gap_unchanged_count": 107
+    "ambiguity_gap_worsened_count": 4,
+    "ambiguity_gap_unchanged_count": 103
   },
   "change_label_counts": {
     "generic_noise_reduction": 10,
-    "ranking_shift": 1,
-    "retrieval_improvement": 5,
-    "stable": 156
+    "retrieval_improvement": 10,
+    "stable": 157
   },
   "top_candidate_distribution_after": {
     "app_release": 1,
@@ -44,20 +43,22 @@
     "approval_review": 3,
     "beverage_pickup": 1,
     "collaborative_request": 2,
+    "document_dispatch": 1,
     "document_distribution": 12,
     "document_edit": 4,
     "document_reporting": 18,
     "document_request": 3,
-    "document_review": 7,
+    "document_review": 9,
     "document_sharing": 7,
     "document_signature": 1,
     "document_submission": 7,
+    "drive_file_upload": 1,
     "education_fieldwork": 1,
     "final_approval": 4,
     "folder_organization": 2,
-    "food_preparation": 1,
     "fruit_snack": 1,
-    "inventory_work": 1,
+    "internal_meeting": 1,
+    "inventory_work": 2,
     "mail_action": 10,
     "mail_distribution": 2,
     "mail_sharing": 1,
@@ -99,6 +100,15 @@
       ]
     },
     {
+      "title": "과장 주재 주간회의 참석",
+      "change_type": "retrieval_improvement",
+      "before": null,
+      "after": "internal_meeting",
+      "notes": [
+        "candidate retrieval coverage recovered"
+      ]
+    },
+    {
       "title": "도시락 준비",
       "change_type": "retrieval_improvement",
       "before": null,
@@ -108,10 +118,46 @@
       ]
     },
     {
+      "title": "세금계산서 검토",
+      "change_type": "retrieval_improvement",
+      "before": null,
+      "after": "document_review",
+      "notes": [
+        "candidate retrieval coverage recovered"
+      ]
+    },
+    {
       "title": "식사 준비",
       "change_type": "retrieval_improvement",
       "before": null,
       "after": "prep_paired_food_snack",
+      "notes": [
+        "candidate retrieval coverage recovered"
+      ]
+    },
+    {
+      "title": "식생활교육 보도자료 확인",
+      "change_type": "retrieval_improvement",
+      "before": null,
+      "after": "document_review",
+      "notes": [
+        "candidate retrieval coverage recovered"
+      ]
+    },
+    {
+      "title": "운영지침 공문 발송",
+      "change_type": "retrieval_improvement",
+      "before": null,
+      "after": "document_dispatch",
+      "notes": [
+        "candidate retrieval coverage recovered"
+      ]
+    },
+    {
+      "title": "재택 필요 자료 드라이브 업로드",
+      "change_type": "retrieval_improvement",
+      "before": null,
+      "after": "drive_file_upload",
       "notes": [
         "candidate retrieval coverage recovered"
       ]
@@ -133,54 +179,19 @@
       "notes": [
         "candidate retrieval coverage recovered"
       ]
-    },
-    {
-      "title": "강사 명단 공유",
-      "change_type": "generic_noise_reduction",
-      "before": "education_fieldwork",
-      "after": "education_fieldwork",
-      "notes": [
-        "generic token leakage reduced"
-      ]
-    },
-    {
-      "title": "강사 배정 요청",
-      "change_type": "generic_noise_reduction",
-      "before": "document_edit",
-      "after": "document_edit",
-      "notes": [
-        "generic token leakage reduced"
-      ]
-    },
-    {
-      "title": "검토결과 안내",
-      "change_type": "generic_noise_reduction",
-      "before": "mail_action",
-      "after": "mail_action",
-      "notes": [
-        "generic token leakage reduced"
-      ]
-    },
-    {
-      "title": "교육안내 발송",
-      "change_type": "generic_noise_reduction",
-      "before": "mail_action",
-      "after": "mail_action",
-      "notes": [
-        "generic token leakage reduced"
-      ]
-    },
-    {
-      "title": "링크트리 수정 안내",
-      "change_type": "generic_noise_reduction",
-      "before": "mail_action",
-      "after": "mail_action",
-      "notes": [
-        "generic token leakage reduced"
-      ]
     }
   ],
   "most_risky_regression_top_10": [
+    {
+      "title": "보도자료 게시",
+      "before": "publication_posting",
+      "after": "publication_posting",
+      "regression_type": "ambiguity_worsened",
+      "severity": "medium",
+      "reason": "top1/top2 gap narrowed materially",
+      "before_ambiguity_gap": 0.058,
+      "after_ambiguity_gap": 0.032
+    },
     {
       "title": "정책자료 게시",
       "before": "public_posting",
@@ -213,7 +224,7 @@
     }
   ],
   "semantic_recommender_assessment": {
-    "semantic_rows_increased": false,
+    "semantic_rows_increased": true,
     "retrieval_coverage_improved": true,
     "candidate_competition_increased": true,
     "summary": "semantic workflow competition increased: more titles have candidate rows, semantic metadata contributes to ranking, and generic token rows are explicitly dampened"
@@ -223,6 +234,7 @@
     "강사 명단 공유",
     "강사 배정 요청",
     "과일간식 짐 차에 싣기",
+    "과장 주재 주간회의 참석",
     "교육청 급식담당자 현황 조사",
     "구글드라이브 공유",
     "노션 일정 공유",
@@ -235,10 +247,9 @@
     "온라인 신청 접수",
     "운영현황 전달",
     "일정 조정 요청",
+    "재택 필요 자료 드라이브 업로드",
     "캘린더 일정 공유",
-    "커피, 차 픽업",
-    "탕비실 간식 선호 조사",
-    "학부모강사 활동현황표 수합"
+    "커피, 차 픽업"
   ],
   "ontology_overlap_hotspots": [
     "배너 이미지 게시",
@@ -271,13 +282,13 @@
     "stage_top_candidate_alignment": {
       "aligned": 13,
       "misaligned": 0,
-      "not_applicable": 159
+      "not_applicable": 164
     }
   },
   "comparison_scope": {
     "before_title_count": 167,
-    "after_title_count": 172,
-    "compared_title_count": 172,
+    "after_title_count": 177,
+    "compared_title_count": 177,
     "intersection_only": false
   }
 }

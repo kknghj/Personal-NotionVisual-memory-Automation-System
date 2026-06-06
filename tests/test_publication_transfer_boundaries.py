@@ -16,7 +16,7 @@ DOCUMENT_EDIT_FORBIDDEN_TOP1 = frozenset({"document_edit"})
 TRANSFER_EXPECTED = {
     "공문 전달": "document_distribution",
     "공문 송부": "document_distribution",
-    "공문 발송": "document_distribution",
+    "공문 발송": "document_dispatch",
 }
 
 

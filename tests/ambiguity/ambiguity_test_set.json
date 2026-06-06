@@ -564,5 +564,25 @@
   {
     "title": "식사 준비",
     "case_group": "p5b_food_snack"
+  },
+  {
+    "title": "운영지침 공문 발송",
+    "case_group": "p5b_metadata_backlog_fix5"
+  },
+  {
+    "title": "식생활교육 보도자료 확인",
+    "case_group": "p5b_metadata_backlog_fix5"
+  },
+  {
+    "title": "재택 필요 자료 드라이브 업로드",
+    "case_group": "p5b_metadata_backlog_fix5"
+  },
+  {
+    "title": "과장 주재 주간회의 참석",
+    "case_group": "p5b_metadata_backlog_fix5"
+  },
+  {
+    "title": "세금계산서 검토",
+    "case_group": "p5b_metadata_backlog_fix5"
   }
 ]

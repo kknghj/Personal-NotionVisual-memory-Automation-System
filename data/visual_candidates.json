@@ -1255,6 +1255,16 @@
         "text": "보도자료",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "보도자료확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "보도자료검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -1262,7 +1272,9 @@
       "언론 배포"
     ],
     "usage_context": [
-      "주간보도자료 배포"
+      "주간보도자료 배포",
+      "보도자료 확인",
+      "보도자료 검토"
     ],
     "semantic_metadata": {
       "workflow_fit": [
@@ -5204,6 +5216,249 @@
       "interaction_mode": "move_transport",
       "visibility": "internal",
       "tone": "neutral"
+    }
+  },
+  "document_dispatch": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "document arrow right",
+      "color": "red"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "운영지침공문발송",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공문발송",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "공문송부",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "지침공문발송",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "공문 발송",
+      "문서 송부"
+    ],
+    "usage_context": [
+      "운영지침 공문 발송",
+      "공문 송부",
+      "공문 발송"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "publish_distribute",
+      "visibility": "internal",
+      "tone": "formal",
+      "publish_distribute": "distribution",
+      "semantic_role": "document_dispatch"
+    }
+  },
+  "press_release_review": {
+    "visual": {
+      "type": "emoji",
+      "value": "📰"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "보도자료확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "보도자료검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "보도자료",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "보도자료",
+      "보도자료 확인"
+    ],
+    "usage_context": [
+      "식생활교육 보도자료 확인",
+      "보도자료 확인",
+      "보도자료 검토"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "broadcast_notice",
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "review_confirm",
+      "document_flow_stage": [
+        "review"
+      ],
+      "operational_state": "monitoring",
+      "semantic_role": "press_release_review",
+      "visibility": "internal",
+      "tone": "formal"
+    }
+  },
+  "drive_file_upload": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "folder arrow up",
+      "color": "yellow"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "드라이브업로드",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "자료업로드",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "필요자료업로드",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "드라이브",
+      "파일 업로드"
+    ],
+    "usage_context": [
+      "재택 필요 자료 드라이브 업로드",
+      "드라이브 업로드",
+      "파일 업로드"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "digital_storage"
+      ],
+      "object_type": "filesystem_tree",
+      "interaction_mode": "upload_submit",
+      "visibility": "internal",
+      "tone": "neutral",
+      "semantic_role": "drive_upload"
+    }
+  },
+  "internal_meeting": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "people meeting"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "주간회의참석",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "주간회의",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "부서회의참석",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기관회의참석",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "주간회의",
+      "회의 참석"
+    ],
+    "usage_context": [
+      "과장 주재 주간회의 참석",
+      "주간회의 참석",
+      "부서 회의 참석"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "operations"
+      ],
+      "object_type": "meeting",
+      "interaction_mode": "attend_participate",
+      "visibility": "internal",
+      "tone": "neutral",
+      "semantic_role": "institutional_meeting"
+    }
+  },
+  "tax_invoice_review": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "receipt",
+      "color": "gray"
+    },
+    "workflow_priority": 2,
+    "meaning": [
+      {
+        "text": "세금계산서검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "세금계산서",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "계산서검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "영수증검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "세금계산서",
+      "영수증"
+    ],
+    "usage_context": [
+      "세금계산서 검토",
+      "세금계산서 확인",
+      "영수증 검토"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document",
+        "operations"
+      ],
+      "object_type": "document",
+      "interaction_mode": "review_confirm",
+      "document_flow_stage": [
+        "review"
+      ],
+      "semantic_role": "tax_invoice_review",
+      "visibility": "internal",
+      "tone": "formal"
     }
   }
 }
