@@ -138,7 +138,8 @@
     "title": "공문 결재 요청"
   },
   {
-    "title": "보도자료 검토 요청"
+    "title": "보도자료 검토 요청",
+    "case_group": "boundary_pilot_tracking"
   },
   {
     "title": "참석 협조 요청"
@@ -207,7 +208,8 @@
     "title": "결과자료 배포"
   },
   {
-    "title": "홍보물 게시"
+    "title": "홍보물 게시",
+    "case_group": "boundary_pilot_tracking"
   },
   {
     "title": "신규서식 배포"
@@ -216,7 +218,8 @@
     "title": "만족도조사 공고"
   },
   {
-    "title": "정책자료 게시"
+    "title": "정책자료 게시",
+    "case_group": "boundary_pilot_tracking"
   },
   {
     "title": "앱 업데이트 공지"
@@ -297,7 +300,8 @@
     "title": "드라이브 폴더 공유"
   },
   {
-    "title": "온라인 신청 접수"
+    "title": "온라인 신청 접수",
+    "case_group": "boundary_pilot_tracking"
   },
   {
     "title": "주간 영업 현황 보고",
@@ -522,7 +526,8 @@
     "title": "자료 제출 승인"
   },
   {
-    "title": "자료 제출 검토"
+    "title": "자료 제출 검토",
+    "case_group": "boundary_pilot_tracking"
   },
   {
     "title": "자료 제출 보완 요청"
@@ -584,5 +589,57 @@
   {
     "title": "세금계산서 검토",
     "case_group": "p5b_metadata_backlog_fix5"
+  },
+  {
+    "title": "행사자료 메일 송부",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "점검자료 메일 송부",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "결과자료 메일 발송",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "본인인증화면 수정 제안",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "로그인 화면 수정",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "신청화면 수정 요청",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "네이버폼 신청 접수",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "구글폼 신청 접수",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "안내문 게시",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "자료 검토 요청",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "계획서 검토 요청",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "자료제출검토",
+    "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "제출자료검토",
+    "case_group": "boundary_pilot_tracking"
   }
 ]
