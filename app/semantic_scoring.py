@@ -4,6 +4,8 @@ import re
 from collections.abc import Iterable
 from typing import Any
 
+from app.form_interface_semantic import form_interface_semantic_adjustment
+from app.interface_ui_semantic import interface_ui_semantic_adjustment
 from app.notification_semantic import notification_communication_semantic_adjustment
 from app.reporting_review_semantic import (
     refine_reporting_review_title_signals,
@@ -286,8 +288,13 @@ def transfer_sharing_semantic_adjustment(
             adj_reasons.append("transfer_sharing explicit channel soft boost")
 
     if "송부" in canonical and candidate_id == "document_distribution":
-        bonus += TRANSFER_SHARING_SOFT_BONUS
-        adj_reasons.append("transfer_sharing formal dispatch document_distribution soft boost")
+        if has_channel:
+            adj_reasons.append(
+                "transfer_sharing channel+dispatch withholds document_distribution boost"
+            )
+        else:
+            bonus += TRANSFER_SHARING_SOFT_BONUS
+            adj_reasons.append("transfer_sharing formal dispatch document_distribution soft boost")
 
     if _title_has_object_bound_transfer(canonical) and candidate_id == "document_distribution":
         bonus += TRANSFER_SHARING_SOFT_BONUS
@@ -716,6 +723,22 @@ def semantic_compatibility(
         tuple(fields),
     )
     score, reasons, fields = notification_communication_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    score, reasons, fields = interface_ui_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    score, reasons, fields = form_interface_semantic_adjustment(
         title,
         candidate_id,
         semantic_metadata,

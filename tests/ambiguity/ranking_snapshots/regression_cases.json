@@ -1,5 +1,15 @@
 [
   {
+    "title": "교육 신청 접수 현황 공유",
+    "before": "status_sharing",
+    "after": "status_sharing",
+    "regression_type": "ambiguity_worsened",
+    "severity": "medium",
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.031
+  },
+  {
     "title": "배너 이미지 게시",
     "before": "public_posting",
     "after": "public_posting",
@@ -10,14 +20,14 @@
     "after_ambiguity_gap": 0.002
   },
   {
-    "title": "세금계산서 검토",
-    "before": "document_review",
-    "after": "tax_invoice_review",
-    "regression_type": "semantic_bonus_overreach_risk",
+    "title": "신청 접수 현황 업데이트",
+    "before": "status_update",
+    "after": "status_update",
+    "regression_type": "ambiguity_worsened",
     "severity": "medium",
-    "reason": "semantic bonus changed top1 but rank gap is near-zero",
-    "before_ambiguity_gap": 0.0,
-    "after_ambiguity_gap": 0.0
+    "reason": "top1/top2 gap narrowed materially",
+    "before_ambiguity_gap": 0.058,
+    "after_ambiguity_gap": 0.031
   },
   {
     "title": "정책자료 게시",

@@ -1,41 +1,42 @@
 {
   "source_logs": {
-    "before": "tests\\ambiguity\\ambiguity_results\\2026-06-06_p5b_metadata_backlog_fix5_scoring_log.json",
-    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-07_object_specific_review_boundary_pilot_scoring_log.json"
+    "before": "tests\\ambiguity\\ambiguity_results\\2026-06-07_object_specific_review_boundary_pilot_scoring_log.json",
+    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-07_form_interface_boundary_pilot_scoring_log.json"
   },
   "movement_metrics": {
     "total_titles": 177,
-    "top_candidate_changed_count": 2,
+    "top_candidate_changed_count": 1,
     "no_candidate_before": 3,
     "no_candidate_after": 3,
     "no_candidate_decrease": 0,
     "semantic_bonus_total_before": 1950,
-    "semantic_bonus_total_after": 1950,
-    "semantic_bonus_total_delta": 0,
+    "semantic_bonus_total_after": 1955,
+    "semantic_bonus_total_delta": 5,
     "top_semantic_bonus_applied_before_count": 147,
-    "top_semantic_bonus_applied_after_count": 147,
-    "top_semantic_bonus_applied_delta": 0,
+    "top_semantic_bonus_applied_after_count": 148,
+    "top_semantic_bonus_applied_delta": 1,
     "suppression_applied_before_count": 25,
     "suppression_applied_after_count": 25,
     "high_ambiguity_before": 69,
-    "high_ambiguity_after": 69,
-    "high_ambiguity_delta": 0,
+    "high_ambiguity_after": 71,
+    "high_ambiguity_delta": 2,
     "average_ambiguity_gap_before": 0.038,
     "average_ambiguity_gap_after": 0.038,
     "average_ranking_depth_before": 2.113,
-    "average_ranking_depth_after": 2.113,
-    "ranking_depth_delta": 0.0,
-    "titles_with_depth_increase": 0,
+    "average_ranking_depth_after": 2.13,
+    "ranking_depth_delta": 0.017,
+    "titles_with_depth_increase": 3,
     "titles_with_top2_competition_before": 118,
-    "titles_with_top2_competition_after": 118,
+    "titles_with_top2_competition_after": 119,
     "ambiguity_gap_improved_count": 0,
-    "ambiguity_gap_worsened_count": 0,
-    "ambiguity_gap_unchanged_count": 118
+    "ambiguity_gap_worsened_count": 2,
+    "ambiguity_gap_unchanged_count": 116
   },
   "change_label_counts": {
     "generic_noise_reduction": 10,
-    "ranking_shift": 2,
-    "stable": 165
+    "semantic_improvement": 1,
+    "stable": 166,
+    "workflow_boundary_improvement": 1
   },
   "top_candidate_distribution_after": {
     "app_release": 1,
@@ -51,7 +52,7 @@
     "document_review": 7,
     "document_sharing": 7,
     "document_signature": 1,
-    "document_submission": 7,
+    "document_submission": 8,
     "drive_file_upload": 1,
     "education_fieldwork": 1,
     "final_approval": 4,
@@ -86,12 +87,22 @@
     "status_summary": 9,
     "status_update": 8,
     "submission_request": 2,
-    "survey_form": 2,
+    "survey_form": 1,
     "tax_invoice_review": 1,
     "urgent_notice": 2,
     "work_calendar_organization": 1
   },
   "most_improved_top_10": [
+    {
+      "title": "온라인 신청 접수",
+      "change_type": "semantic_improvement",
+      "before": "survey_form",
+      "after": "document_submission",
+      "notes": [
+        "workflow semantic candidate won or gained stronger evidence",
+        "ranking moved toward explicit workflow boundary"
+      ]
+    },
     {
       "title": "강사 명단 공유",
       "change_type": "generic_noise_reduction",
@@ -172,27 +183,28 @@
       "notes": [
         "generic token leakage reduced"
       ]
-    },
-    {
-      "title": "화상회의 링크 안내",
-      "change_type": "generic_noise_reduction",
-      "before": "mail_action",
-      "after": "mail_action",
-      "notes": [
-        "generic token leakage reduced"
-      ]
     }
   ],
   "most_risky_regression_top_10": [
     {
-      "title": "세금계산서 검토",
-      "before": "document_review",
-      "after": "tax_invoice_review",
-      "regression_type": "semantic_bonus_overreach_risk",
+      "title": "교육 신청 접수 현황 공유",
+      "before": "status_sharing",
+      "after": "status_sharing",
+      "regression_type": "ambiguity_worsened",
       "severity": "medium",
-      "reason": "semantic bonus changed top1 but rank gap is near-zero",
-      "before_ambiguity_gap": 0.0,
-      "after_ambiguity_gap": 0.0
+      "reason": "top1/top2 gap narrowed materially",
+      "before_ambiguity_gap": 0.058,
+      "after_ambiguity_gap": 0.031
+    },
+    {
+      "title": "신청 접수 현황 업데이트",
+      "before": "status_update",
+      "after": "status_update",
+      "regression_type": "ambiguity_worsened",
+      "severity": "medium",
+      "reason": "top1/top2 gap narrowed materially",
+      "before_ambiguity_gap": 0.058,
+      "after_ambiguity_gap": 0.031
     },
     {
       "title": "정책자료 게시",
@@ -226,9 +238,9 @@
     }
   ],
   "semantic_recommender_assessment": {
-    "semantic_rows_increased": false,
+    "semantic_rows_increased": true,
     "retrieval_coverage_improved": false,
-    "candidate_competition_increased": false,
+    "candidate_competition_increased": true,
     "summary": "semantic workflow competition increased: more titles have candidate rows, semantic metadata contributes to ranking, and generic token rows are explicitly dampened"
   },
   "keyword_dominance_remaining_areas": [
@@ -246,12 +258,12 @@
     "시트 입력 요청",
     "식사 준비",
     "엑셀 취합 요청",
-    "온라인 신청 접수",
     "운영현황 전달",
     "일정 조정 요청",
     "재택 필요 자료 드라이브 업로드",
     "캘린더 일정 공유",
-    "커피, 차 픽업"
+    "커피, 차 픽업",
+    "탕비실 간식 선호 조사"
   ],
   "ontology_overlap_hotspots": [
     "배너 이미지 게시",

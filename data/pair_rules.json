@@ -277,6 +277,30 @@
         "interface_dominance_effective": 0
       },
       {
+        "semantic": "modify_subject_auth_screen",
+        "type": "subject_terms_noncompound",
+        "terms": ["본인인증화면", "인증화면"],
+        "candidate_id": "qr_code_scan_auth",
+        "visual": { "type": "notion_icon", "value": "qr-code" },
+        "matched_template": "{term}+{lemma}",
+        "workflow_priority": 2,
+        "sort_secondary_wp": 4,
+        "keyword_workflow_resolution": 3,
+        "interface_dominance_effective": 0
+      },
+      {
+        "semantic": "modify_subject_login_screen",
+        "type": "subject_terms_noncompound",
+        "terms": ["로그인화면", "로그인페이지"],
+        "candidate_id": "coding",
+        "visual": { "type": "notion_icon", "value": "angle-brackets-solidus", "color": "blue" },
+        "matched_template": "{term}+{lemma}",
+        "workflow_priority": 2,
+        "sort_secondary_wp": 4,
+        "keyword_workflow_resolution": 3,
+        "interface_dominance_effective": 0
+      },
+      {
         "semantic": "modify_subject_written_record",
         "type": "subject_terms_noncompound",
         "terms": [

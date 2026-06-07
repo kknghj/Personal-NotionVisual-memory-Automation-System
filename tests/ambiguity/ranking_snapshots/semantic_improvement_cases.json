@@ -251,6 +251,43 @@
     ]
   },
   {
+    "title": "온라인 신청 접수",
+    "improvement_type": "semantic_improvement",
+    "improvement_labels": [
+      "semantic_improvement",
+      "workflow_boundary_improvement"
+    ],
+    "before": {
+      "top_candidate": "survey_form",
+      "ambiguity_gap": null,
+      "high_ambiguity": false,
+      "ranking_depth": 1,
+      "top5_candidates": [
+        "survey_form"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "document_submission",
+      "ambiguity_gap": 0.059,
+      "high_ambiguity": false,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "document_submission",
+        "survey_form"
+      ],
+      "top_semantic_bonus": 4,
+      "semantic_bonus_total": 4,
+      "suppression_applied": false
+    },
+    "notes": [
+      "workflow semantic candidate won or gained stronger evidence",
+      "ranking moved toward explicit workflow boundary"
+    ]
+  },
+  {
     "title": "운영결과 안내",
     "improvement_type": "generic_noise_reduction",
     "improvement_labels": [

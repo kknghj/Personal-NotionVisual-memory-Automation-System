@@ -777,6 +777,16 @@
         "text": "가입현황제출",
         "workflow_resolution": 3,
         "interface_dominance": 0
+      },
+      {
+        "text": "신청서접수",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "신청접수",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
