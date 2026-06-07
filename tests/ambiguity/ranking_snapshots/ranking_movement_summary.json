@@ -1,41 +1,41 @@
 {
   "source_logs": {
-    "before": "tests\\ambiguity\\ambiguity_results\\2026-06-06_p5b_catalog_fixes_scoring_log.json",
-    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-06_p5b_metadata_backlog_fix5_scoring_log.json"
+    "before": "tests\\ambiguity\\ambiguity_results\\2026-06-06_p5b_metadata_backlog_fix5_scoring_log.json",
+    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-07_object_specific_review_boundary_pilot_scoring_log.json"
   },
   "movement_metrics": {
     "total_titles": 177,
-    "top_candidate_changed_count": 10,
-    "no_candidate_before": 13,
+    "top_candidate_changed_count": 2,
+    "no_candidate_before": 3,
     "no_candidate_after": 3,
-    "no_candidate_decrease": 10,
-    "semantic_bonus_total_before": 1850,
+    "no_candidate_decrease": 0,
+    "semantic_bonus_total_before": 1950,
     "semantic_bonus_total_after": 1950,
-    "semantic_bonus_total_delta": 100,
-    "top_semantic_bonus_applied_before_count": 144,
+    "semantic_bonus_total_delta": 0,
+    "top_semantic_bonus_applied_before_count": 147,
     "top_semantic_bonus_applied_after_count": 147,
-    "top_semantic_bonus_applied_delta": 3,
+    "top_semantic_bonus_applied_delta": 0,
     "suppression_applied_before_count": 25,
     "suppression_applied_after_count": 25,
-    "high_ambiguity_before": 60,
+    "high_ambiguity_before": 69,
     "high_ambiguity_after": 69,
-    "high_ambiguity_delta": 9,
-    "average_ambiguity_gap_before": 0.039,
+    "high_ambiguity_delta": 0,
+    "average_ambiguity_gap_before": 0.038,
     "average_ambiguity_gap_after": 0.038,
-    "average_ranking_depth_before": 1.915,
+    "average_ranking_depth_before": 2.113,
     "average_ranking_depth_after": 2.113,
-    "ranking_depth_delta": 0.198,
-    "titles_with_depth_increase": 14,
-    "titles_with_top2_competition_before": 107,
+    "ranking_depth_delta": 0.0,
+    "titles_with_depth_increase": 0,
+    "titles_with_top2_competition_before": 118,
     "titles_with_top2_competition_after": 118,
     "ambiguity_gap_improved_count": 0,
-    "ambiguity_gap_worsened_count": 4,
-    "ambiguity_gap_unchanged_count": 103
+    "ambiguity_gap_worsened_count": 0,
+    "ambiguity_gap_unchanged_count": 118
   },
   "change_label_counts": {
     "generic_noise_reduction": 10,
-    "retrieval_improvement": 10,
-    "stable": 157
+    "ranking_shift": 2,
+    "stable": 165
   },
   "top_candidate_distribution_after": {
     "app_release": 1,
@@ -48,7 +48,7 @@
     "document_edit": 4,
     "document_reporting": 18,
     "document_request": 3,
-    "document_review": 9,
+    "document_review": 7,
     "document_sharing": 7,
     "document_signature": 1,
     "document_submission": 7,
@@ -70,6 +70,7 @@
     "prep_paired_food_bento": 1,
     "prep_paired_food_snack": 1,
     "press_distribution": 1,
+    "press_release_review": 1,
     "progress_monitoring": 1,
     "public_posting": 3,
     "publication_announcement": 2,
@@ -86,111 +87,112 @@
     "status_update": 8,
     "submission_request": 2,
     "survey_form": 2,
+    "tax_invoice_review": 1,
     "urgent_notice": 2,
     "work_calendar_organization": 1
   },
   "most_improved_top_10": [
     {
-      "title": "과일간식 짐 차에 싣기",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "fruit_snack",
+      "title": "강사 명단 공유",
+      "change_type": "generic_noise_reduction",
+      "before": "education_fieldwork",
+      "after": "education_fieldwork",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "과장 주재 주간회의 참석",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "internal_meeting",
+      "title": "강사 배정 요청",
+      "change_type": "generic_noise_reduction",
+      "before": "document_edit",
+      "after": "document_edit",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "도시락 준비",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "prep_paired_food_bento",
+      "title": "검토결과 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "세금계산서 검토",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "document_review",
+      "title": "교육안내 발송",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "식사 준비",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "prep_paired_food_snack",
+      "title": "링크트리 수정 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "식생활교육 보도자료 확인",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "document_review",
+      "title": "만족도조사 링크 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "운영지침 공문 발송",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "document_dispatch",
+      "title": "슬랙 채널 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "재택 필요 자료 드라이브 업로드",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "drive_file_upload",
+      "title": "운영결과 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "커피, 차 픽업",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "beverage_pickup",
+      "title": "파일 업로드 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "탕비실 간식 선호 조사",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "snack_item",
+      "title": "화상회의 링크 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     }
   ],
   "most_risky_regression_top_10": [
     {
-      "title": "보도자료 게시",
-      "before": "publication_posting",
-      "after": "publication_posting",
-      "regression_type": "ambiguity_worsened",
+      "title": "세금계산서 검토",
+      "before": "document_review",
+      "after": "tax_invoice_review",
+      "regression_type": "semantic_bonus_overreach_risk",
       "severity": "medium",
-      "reason": "top1/top2 gap narrowed materially",
-      "before_ambiguity_gap": 0.058,
-      "after_ambiguity_gap": 0.032
+      "reason": "semantic bonus changed top1 but rank gap is near-zero",
+      "before_ambiguity_gap": 0.0,
+      "after_ambiguity_gap": 0.0
     },
     {
       "title": "정책자료 게시",
@@ -224,9 +226,9 @@
     }
   ],
   "semantic_recommender_assessment": {
-    "semantic_rows_increased": true,
-    "retrieval_coverage_improved": true,
-    "candidate_competition_increased": true,
+    "semantic_rows_increased": false,
+    "retrieval_coverage_improved": false,
+    "candidate_competition_increased": false,
     "summary": "semantic workflow competition increased: more titles have candidate rows, semantic metadata contributes to ranking, and generic token rows are explicitly dampened"
   },
   "keyword_dominance_remaining_areas": [
@@ -286,7 +288,7 @@
     }
   },
   "comparison_scope": {
-    "before_title_count": 167,
+    "before_title_count": 177,
     "after_title_count": 177,
     "compared_title_count": 177,
     "intersection_only": false

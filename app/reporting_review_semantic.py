@@ -37,6 +37,21 @@ REVIEW_CANDIDATE_IDS = frozenset(
         "approval_review",
     }
 )
+GENERIC_DOCUMENT_REVIEW_ID = "document_review"
+OBJECT_SPECIFIC_REVIEW_CANDIDATE_IDS = frozenset(
+    {
+        "press_release_review",
+        "tax_invoice_review",
+    }
+)
+OBJECT_SPECIFIC_REVIEW_OBJECT_TERMS: frozenset[str] = frozenset(
+    {
+        "보도자료",
+        "세금계산서",
+        "영수증",
+        "계산서",
+    }
+)
 REPORTING_CANDIDATE_IDS = frozenset(
     {
         "document_reporting",
@@ -115,6 +130,14 @@ def _title_has_reporting_brief(canonical: str) -> bool:
             return False
         return True
     return False
+
+
+def _title_has_object_specific_review_compound(canonical: str) -> bool:
+    """Object noun + 검토/확인 in title — maps to object-specific review catalog entries."""
+    return any(
+        obj in canonical and any(f"{obj}{action}" in canonical for action in ("검토", "확인"))
+        for obj in OBJECT_SPECIFIC_REVIEW_OBJECT_TERMS
+    )
 
 
 def _title_has_review_action(canonical: str) -> bool:
@@ -198,9 +221,18 @@ def reporting_review_semantic_adjustment(
             adj_reasons.append("reporting_review reporting transfer demotes generic review")
 
     if has_review and not has_reporting:
+        has_object_review = _title_has_object_specific_review_compound(canonical)
         if candidate_id in REVIEW_CANDIDATE_IDS:
+            if has_object_review and candidate_id == GENERIC_DOCUMENT_REVIEW_ID:
+                adj_reasons.append(
+                    "object_specific_review compound withholds generic document_review boost"
+                )
+            else:
+                bonus += REPORTING_REVIEW_SOFT_BONUS
+                adj_reasons.append("reporting_review review action soft boost")
+        elif has_object_review and candidate_id in OBJECT_SPECIFIC_REVIEW_CANDIDATE_IDS:
             bonus += REPORTING_REVIEW_SOFT_BONUS
-            adj_reasons.append("reporting_review review action soft boost")
+            adj_reasons.append("object_specific_review compound soft boost")
         if candidate_id in REPORTING_CANDIDATE_IDS:
             penalty += REPORTING_REVIEW_PENALTY
             adj_reasons.append("reporting_review review action demotes reporting")

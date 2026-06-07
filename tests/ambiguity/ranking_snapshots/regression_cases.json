@@ -10,14 +10,14 @@
     "after_ambiguity_gap": 0.002
   },
   {
-    "title": "보도자료 게시",
-    "before": "publication_posting",
-    "after": "publication_posting",
-    "regression_type": "ambiguity_worsened",
+    "title": "세금계산서 검토",
+    "before": "document_review",
+    "after": "tax_invoice_review",
+    "regression_type": "semantic_bonus_overreach_risk",
     "severity": "medium",
-    "reason": "top1/top2 gap narrowed materially",
-    "before_ambiguity_gap": 0.058,
-    "after_ambiguity_gap": 0.032
+    "reason": "semantic bonus changed top1 but rank gap is near-zero",
+    "before_ambiguity_gap": 0.0,
+    "after_ambiguity_gap": 0.0
   },
   {
     "title": "정책자료 게시",

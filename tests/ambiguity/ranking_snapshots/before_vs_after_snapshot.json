@@ -625,11 +625,12 @@
     "title": "결과자료 배포",
     "before": {
       "top_candidate": "document_distribution",
-      "ambiguity_gap": null,
+      "ambiguity_gap": 0.058,
       "high_ambiguity": false,
-      "ranking_depth": 1,
+      "ranking_depth": 2,
       "top5_candidates": [
-        "document_distribution"
+        "document_distribution",
+        "snack_item"
       ],
       "top_semantic_bonus": 8,
       "semantic_bonus_total": 8,
@@ -662,10 +663,8 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "snack_item"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -1300,11 +1299,16 @@
   {
     "title": "과일간식 짐 차에 싣기",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "top_candidate": "fruit_snack",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "fruit_snack",
+        "package_loading",
+        "snack_item",
+        "snack_pickup"
+      ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
@@ -1324,20 +1328,15 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 4,
-      "entered_top5": [
-        "fruit_snack",
-        "package_loading",
-        "snack_item",
-        "snack_pickup"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -1350,17 +1349,21 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "과장 주재 주간회의 참석",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "top_candidate": "internal_meeting",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "internal_meeting",
+        "meeting",
+        "training_session_attendance"
+      ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
@@ -1379,19 +1382,15 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 3,
-      "entered_top5": [
-        "internal_meeting",
-        "meeting",
-        "training_session_attendance"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -1404,7 +1403,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -2299,11 +2298,14 @@
   {
     "title": "도시락 준비",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "prep_paired_food_bento",
+      "ambiguity_gap": 0.165,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "prep_paired_food_bento",
+        "food_preparation"
+      ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
@@ -2321,18 +2323,15 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "food_preparation",
-        "prep_paired_food_bento"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -2345,7 +2344,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -2959,18 +2958,18 @@
     "title": "보도자료 검토 요청",
     "before": {
       "top_candidate": "review_request",
-      "ambiguity_gap": 0.014,
+      "ambiguity_gap": 0.011,
       "high_ambiguity": true,
       "ranking_depth": 5,
       "top5_candidates": [
         "review_request",
+        "press_release_review",
         "document_review",
         "slide_deck_final_review",
-        "press_distribution",
-        "document_edit"
+        "press_distribution"
       ],
       "top_semantic_bonus": 11,
-      "semantic_bonus_total": 28,
+      "semantic_bonus_total": 31,
       "suppression_applied": false
     },
     "after": {
@@ -2997,16 +2996,12 @@
     "ranking_change": {
       "top_candidate_changed": false,
       "ranking_depth_delta": 0,
-      "entered_top5": [
-        "press_release_review"
-      ],
-      "exited_top5": [
-        "document_edit"
-      ]
+      "entered_top5": [],
+      "exited_top5": []
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 3
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3021,15 +3016,16 @@
     "title": "보도자료 게시",
     "before": {
       "top_candidate": "publication_posting",
-      "ambiguity_gap": 0.058,
-      "high_ambiguity": false,
-      "ranking_depth": 2,
+      "ambiguity_gap": 0.032,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
       "top5_candidates": [
         "publication_posting",
-        "press_distribution"
+        "press_distribution",
+        "press_release_review"
       ],
       "top_semantic_bonus": 10,
-      "semantic_bonus_total": 15,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -3053,15 +3049,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "press_release_review"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 4
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3076,15 +3070,16 @@
     "title": "보도자료 배포",
     "before": {
       "top_candidate": "press_distribution",
-      "ambiguity_gap": 0.002,
+      "ambiguity_gap": 0.001,
       "high_ambiguity": true,
-      "ranking_depth": 2,
+      "ranking_depth": 3,
       "top5_candidates": [
         "press_distribution",
-        "document_distribution"
+        "document_distribution",
+        "press_release_review"
       ],
       "top_semantic_bonus": 8,
-      "semantic_bonus_total": 16,
+      "semantic_bonus_total": 19,
       "suppression_applied": false
     },
     "after": {
@@ -3108,15 +3103,13 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "press_release_review"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 3
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -3962,16 +3955,6 @@
   {
     "title": "세금계산서 검토",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
-      "suppression_applied": false
-    },
-    "after": {
       "top_candidate": "document_review",
       "ambiguity_gap": 0.0,
       "high_ambiguity": true,
@@ -3986,25 +3969,35 @@
       "semantic_bonus_total": 28,
       "suppression_applied": false
     },
+    "after": {
+      "top_candidate": "tax_invoice_review",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "tax_invoice_review",
+        "slide_deck_final_review",
+        "document_review",
+        "budget_line_calculation"
+      ],
+      "top_semantic_bonus": 11,
+      "semantic_bonus_total": 28,
+      "suppression_applied": false
+    },
     "changed": true,
-    "change_type": "retrieval_improvement",
+    "change_type": "ranking_shift",
     "change_labels": [
-      "retrieval_improvement"
+      "ranking_shift"
     ],
     "ranking_change": {
       "top_candidate_changed": true,
-      "ranking_depth_delta": 4,
-      "entered_top5": [
-        "budget_line_calculation",
-        "document_review",
-        "slide_deck_final_review",
-        "tax_invoice_review"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 11,
-      "total_delta": 28
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4012,7 +4005,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate changed without a clear semantic improvement signal"
     ]
   },
   {
@@ -4307,11 +4300,14 @@
   {
     "title": "식사 준비",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
+      "top_candidate": "prep_paired_food_snack",
+      "ambiguity_gap": 0.165,
       "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "prep_paired_food_snack",
+        "food_preparation"
+      ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
@@ -4329,18 +4325,15 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "food_preparation",
-        "prep_paired_food_snack"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -4353,22 +4346,12 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
     "title": "식생활교육 보도자료 확인",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
-      "suppression_applied": false
-    },
-    "after": {
       "top_candidate": "document_review",
       "ambiguity_gap": 0.014,
       "high_ambiguity": true,
@@ -4384,26 +4367,36 @@
       "semantic_bonus_total": 41,
       "suppression_applied": false
     },
+    "after": {
+      "top_candidate": "press_release_review",
+      "ambiguity_gap": 0.014,
+      "high_ambiguity": true,
+      "ranking_depth": 5,
+      "top5_candidates": [
+        "press_release_review",
+        "slide_deck_final_review",
+        "document_review",
+        "press_distribution",
+        "phone_call"
+      ],
+      "top_semantic_bonus": 16,
+      "semantic_bonus_total": 41,
+      "suppression_applied": false
+    },
     "changed": true,
-    "change_type": "retrieval_improvement",
+    "change_type": "ranking_shift",
     "change_labels": [
-      "retrieval_improvement"
+      "ranking_shift"
     ],
     "ranking_change": {
       "top_candidate_changed": true,
-      "ranking_depth_delta": 5,
-      "entered_top5": [
-        "document_review",
-        "phone_call",
-        "press_distribution",
-        "press_release_review",
-        "slide_deck_final_review"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 14,
-      "total_delta": 41
+      "top_delta": 2,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -4411,7 +4404,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate changed without a clear semantic improvement signal"
     ]
   },
   {
@@ -5913,13 +5906,18 @@
   {
     "title": "운영지침 공문 발송",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_candidate": "document_dispatch",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 4,
+      "top5_candidates": [
+        "document_dispatch",
+        "document_distribution",
+        "mail_action",
+        "document_edit"
+      ],
+      "top_semantic_bonus": 9,
+      "semantic_bonus_total": 21,
       "suppression_applied": false
     },
     "after": {
@@ -5937,25 +5935,20 @@
       "semantic_bonus_total": 21,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 4,
-      "entered_top5": [
-        "document_dispatch",
-        "document_distribution",
-        "document_edit",
-        "mail_action"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 9,
-      "total_delta": 21
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -5963,7 +5956,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -6764,11 +6757,14 @@
   {
     "title": "재택 필요 자료 드라이브 업로드",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "top_candidate": "drive_file_upload",
+      "ambiguity_gap": 0.002,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "drive_file_upload",
+        "folder_organization"
+      ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
@@ -6786,18 +6782,15 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "drive_file_upload",
-        "folder_organization"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -6810,7 +6803,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -7440,12 +7433,13 @@
     "title": "주요사업 추진현황 주간회의 자료 작성",
     "before": {
       "top_candidate": "status_summary",
-      "ambiguity_gap": 0.031,
+      "ambiguity_gap": 0.02,
       "high_ambiguity": true,
-      "ranking_depth": 3,
+      "ranking_depth": 4,
       "top5_candidates": [
         "status_summary",
         "progress_monitoring",
+        "internal_meeting",
         "document_edit"
       ],
       "top_semantic_bonus": 8,
@@ -7486,10 +7480,8 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "internal_meeting"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -8371,11 +8363,14 @@
   {
     "title": "커피, 차 픽업",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "top_candidate": "beverage_pickup",
+      "ambiguity_gap": 0.001,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "beverage_pickup",
+        "snack_pickup"
+      ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
@@ -8393,18 +8388,15 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 2,
-      "entered_top5": [
-        "beverage_pickup",
-        "snack_pickup"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -8417,7 +8409,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
@@ -8545,11 +8537,15 @@
   {
     "title": "탕비실 간식 선호 조사",
     "before": {
-      "top_candidate": null,
-      "ambiguity_gap": null,
-      "high_ambiguity": false,
-      "ranking_depth": 0,
-      "top5_candidates": [],
+      "top_candidate": "snack_item",
+      "ambiguity_gap": 0.0,
+      "high_ambiguity": true,
+      "ranking_depth": 3,
+      "top5_candidates": [
+        "snack_item",
+        "snack_pickup",
+        "inventory_work"
+      ],
       "top_semantic_bonus": 0,
       "semantic_bonus_total": 0,
       "suppression_applied": false
@@ -8568,19 +8564,15 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "retrieval_improvement",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "retrieval_improvement"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 3,
-      "entered_top5": [
-        "inventory_work",
-        "snack_item",
-        "snack_pickup"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -8593,7 +8585,7 @@
       "changed": false
     },
     "notes": [
-      "candidate retrieval coverage recovered"
+      "top candidate remained stable"
     ]
   },
   {
