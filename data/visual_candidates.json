@@ -2803,6 +2803,26 @@
         "text": "아이디어",
         "workflow_resolution": 1,
         "interface_dominance": 0
+      },
+      {
+        "text": "아이디어브레인스토밍",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "아이디어구상",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "기획브레인스토밍",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "바이브코딩아이디어",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -2813,7 +2833,9 @@
       "아이디어 구상",
       "개선 의견 생각",
       "질문 아이디어 고민",
-      "점검 질문 구상"
+      "점검 질문 구상",
+      "바이브코딩 아이디어 브레인스토밍",
+      "기획 브레인스토밍"
     ]
   },
   "system_work": {
@@ -3812,6 +3834,46 @@
         "text": "만료일",
         "workflow_resolution": 2,
         "interface_dominance": 0
+      },
+      {
+        "text": "할인종료일",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "혜택종료일",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "서비스만료일",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "제작시기확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "시행시기확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "발송시기확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "표창제작시기",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "제작일정확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
       }
     ],
     "interface_memory": [
@@ -3823,7 +3885,9 @@
       "업무 일정 정리",
       "주간 일정 정돈",
       "할인 혜택 종료일 확인",
-      "혜택 마감일 특정"
+      "혜택 마감일 특정",
+      "표창 제작시기 확인",
+      "제작 일정 확인"
     ]
   },
   "broadcast_channel_adjust": {
@@ -5467,6 +5531,479 @@
         "review"
       ],
       "semantic_role": "tax_invoice_review",
+      "visibility": "internal",
+      "tone": "formal"
+    }
+  },
+  "performance_aggregation": {
+    "visual": {
+      "type": "emoji",
+      "value": "📊"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "센터별운영실적취합",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영실적취합",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "실적취합",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "실적집계",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영실적집계",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영실적",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "센터실적",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "운영 실적",
+      "실적 취합"
+    ],
+    "usage_context": [
+      "센터별 운영실적 취합",
+      "분기 실적 집계",
+      "월간 운영 실적 취합"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "reporting",
+        "tracking"
+      ],
+      "object_type": "performance_data",
+      "interaction_mode": "aggregate_collect",
+      "semantic_role": "performance_aggregation",
+      "operational_state": "monitoring",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "evacuation_drill": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "person running",
+      "color": "green"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "민방위대피훈련",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "민방위대피",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "외부대피훈련",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "대피훈련실시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "대피훈련",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "대피 훈련",
+      "민방위 대피"
+    ],
+    "usage_context": [
+      "민방위 대피 훈련",
+      "외부 대피 훈련 실시",
+      "대피 훈련 참석"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "facility_physical"
+      ],
+      "object_type": "physical_space",
+      "interaction_mode": "attend_participate",
+      "semantic_role": "evacuation_drill",
+      "visibility": "internal",
+      "tone": "urgent"
+    }
+  },
+  "promotional_material_review": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "photo landscape",
+      "color": "grey"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "홍보물시안검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "홍보물검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "시안검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "홍보물시안",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "배너시안검토",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "배너검토",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "포스터검토",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "홍보물 시안",
+      "시안 검토"
+    ],
+    "usage_context": [
+      "홍보물 시안 검토",
+      "배너 시안 확인",
+      "포스터 초안 검토"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "creative"
+      ],
+      "object_type": "visual_media",
+      "media_format": "2d_static",
+      "interaction_mode": "review_confirm",
+      "document_flow_stage": [
+        "review"
+      ],
+      "semantic_role": "promotional_review",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "inquiry_response": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "speech bubbles",
+      "color": "blue"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "운영관련질의응답",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "질의응답",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영질의응답",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "질문답변",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "문의응답",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "운영질의",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "질의 응답",
+      "문의 답변"
+    ],
+    "usage_context": [
+      "운영 관련 질의 응답",
+      "업무 문의 답변",
+      "센터 운영 질의 처리"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "communication"
+      ],
+      "object_type": "conversation",
+      "interaction_mode": "two_way_inquiry",
+      "communication_direction": "two_way",
+      "semantic_role": "inquiry_response",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "event_preparation_checklist": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "checkmark list",
+      "color": "red"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "사전준비사항리스트",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "사전준비사항",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "준비사항리스트",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "평가회사전준비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "행사사전준비",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "사전준비",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "사전 준비",
+      "준비 사항"
+    ],
+    "usage_context": [
+      "강사단 평가회 사전 준비 사항 리스트",
+      "행사 사전 점검 리스트",
+      "평가회 준비 사항 확인"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "event_ops"
+      ],
+      "object_type": "checklist",
+      "interaction_mode": "status_monitor",
+      "semantic_role": "event_preparation",
+      "operational_state": "pre_event",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "site_inspection_visit": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "clipboard",
+      "color": "grey"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "센터방문점검",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "센터방문점검실시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "방문점검실시",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현장점검",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "방문점검",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "센터점검",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "방문 점검",
+      "현장 점검"
+    ],
+    "usage_context": [
+      "센터 방문점검 실시",
+      "교육센터 현장 점검",
+      "시설 방문 점검"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "field_ops"
+      ],
+      "object_type": "physical_site",
+      "interaction_mode": "inspect_verify",
+      "semantic_role": "site_inspection",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "document_recipient_lookup": {
+    "visual": {
+      "type": "notion_icon",
+      "value": "user squares",
+      "color": "grey"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "공문수신자",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수신자지정",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수신자조회",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수신자확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수신처확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "공문 수신자",
+      "수신자 지정"
+    ],
+    "usage_context": [
+      "공문 수신자 지정 관련 알아보기",
+      "수신자 지정 방법 확인",
+      "수신처 확인"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "lookup_verify",
+      "semantic_role": "document_recipient_lookup",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
+  },
+  "allowance_request_document": {
+    "visual": {
+      "type": "emoji",
+      "value": "📝"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "수당신청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수당지급신청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "수당지급요청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "위원수당신청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "강사수당신청",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "수당 신청 공문",
+      "수당 지급 요청"
+    ],
+    "usage_context": [
+      "공익감사단 수당 신청",
+      "위원 수당 지급 신청",
+      "강사 수당 지급 요청 공문"
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "document"
+      ],
+      "object_type": "document",
+      "interaction_mode": "create_edit",
+      "semantic_role": "allowance_request",
       "visibility": "internal",
       "tone": "formal"
     }

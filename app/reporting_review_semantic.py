@@ -35,6 +35,7 @@ REVIEW_CANDIDATE_IDS = frozenset(
         "document_review",
         "slide_deck_final_review",
         "approval_review",
+        "promotional_material_review",
     }
 )
 GENERIC_DOCUMENT_REVIEW_ID = "document_review"

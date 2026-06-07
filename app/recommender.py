@@ -4,6 +4,14 @@ from app.candidate_row import CandidateRow
 from app.data_loader import load_pair_rules
 from app.generic_tokens import generic_token_suppression_reason
 from app.pair_engine import PairResolution, PairRuleEngine
+from app.admin_system_semantic import (
+    admin_system_boundary_active,
+    admin_system_injection_match,
+)
+from app.meal_venue_context_semantic import (
+    meal_venue_boundary_active,
+    meal_venue_injection_match,
+)
 from app.semantic_scoring import is_result_status_reporting_compound, semantic_compatibility
 from app.workflow_resolution import (
     PERSON_CONTEXT_MODIFIER_TERMS,
@@ -255,6 +263,76 @@ def rank_visual_candidate_rows(
                 generic_token_reason=generic_reasons,
             )
         )
+
+    if admin_system_boundary_active(key_title):
+        system_data = candidates.get("system_work")
+        if isinstance(system_data, dict) and not any(
+            row.candidate_id == "system_work" for row in rows
+        ):
+            matched, pos, ln = admin_system_injection_match(key_title)
+            semantic_bonus, semantic_reasons, semantic_fields = semantic_compatibility(
+                key_title,
+                system_data.get("semantic_metadata"),
+                candidate_id="system_work",
+            )
+            wp_raw = system_data.get("workflow_priority", 0)
+            try:
+                sort_wp = int(wp_raw)
+            except (TypeError, ValueError):
+                sort_wp = 0
+            rows.append(
+                CandidateRow(
+                    rule_tier=0,
+                    sort_secondary_wp=sort_wp,
+                    interface_dominance_effective=0,
+                    keyword_workflow_resolution=2,
+                    match_position_in_title=pos,
+                    matched_keyword_length=ln,
+                    matched=matched,
+                    candidate_id="system_work",
+                    data=system_data,
+                    semantic_bonus=semantic_bonus,
+                    semantic_match_reason=semantic_reasons,
+                    semantic_metadata_fields_matched=semantic_fields,
+                    generic_token_penalty=0,
+                    generic_token_reason=(),
+                )
+            )
+
+    if meal_venue_boundary_active(key_title):
+        food_data = candidates.get("food_meeting")
+        if isinstance(food_data, dict) and not any(
+            row.candidate_id == "food_meeting" for row in rows
+        ):
+            matched, pos, ln = meal_venue_injection_match(key_title)
+            semantic_bonus, semantic_reasons, semantic_fields = semantic_compatibility(
+                key_title,
+                food_data.get("semantic_metadata"),
+                candidate_id="food_meeting",
+            )
+            wp_raw = food_data.get("workflow_priority", 0)
+            try:
+                sort_wp = int(wp_raw)
+            except (TypeError, ValueError):
+                sort_wp = 0
+            rows.append(
+                CandidateRow(
+                    rule_tier=0,
+                    sort_secondary_wp=sort_wp,
+                    interface_dominance_effective=0,
+                    keyword_workflow_resolution=1,
+                    match_position_in_title=pos,
+                    matched_keyword_length=ln,
+                    matched=matched,
+                    candidate_id="food_meeting",
+                    data=food_data,
+                    semantic_bonus=semantic_bonus,
+                    semantic_match_reason=semantic_reasons,
+                    semantic_metadata_fields_matched=semantic_fields,
+                    generic_token_penalty=0,
+                    generic_token_reason=(),
+                )
+            )
 
     if is_result_status_reporting_compound(key_title):
         result_data = candidates.get("result_reporting")

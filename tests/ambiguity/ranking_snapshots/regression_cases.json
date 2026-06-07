@@ -11,12 +11,12 @@
   },
   {
     "title": "안내문 게시",
-    "before": null,
+    "before": "notice_posting",
     "after": "notice_posting",
     "regression_type": "ontology_overlap_hotspot",
     "severity": "low",
     "reason": "neighbor workflow candidates are almost tied",
-    "before_ambiguity_gap": null,
+    "before_ambiguity_gap": 0.0,
     "after_ambiguity_gap": 0.0
   },
   {

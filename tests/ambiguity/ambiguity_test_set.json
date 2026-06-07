@@ -641,5 +641,49 @@
   {
     "title": "제출자료검토",
     "case_group": "boundary_pilot_tracking"
+  },
+  {
+    "title": "센터별 운영실적 취합",
+    "case_group": "p5b_sprint1_candidate_expansion"
+  },
+  {
+    "title": "민방위 대피 훈련",
+    "case_group": "p5b_sprint1_candidate_expansion"
+  },
+  {
+    "title": "홍보물 시안 검토",
+    "case_group": "p5b_sprint1_candidate_expansion"
+  },
+  {
+    "title": "운영 관련 질의 응답",
+    "case_group": "p5b_sprint1_candidate_expansion"
+  },
+  {
+    "title": "강사단 평가회 사전 준비 사항 리스트",
+    "case_group": "p5b_sprint1_candidate_expansion"
+  },
+  {
+    "title": "센터 방문점검 실시",
+    "case_group": "p5b_sprint1_candidate_expansion"
+  },
+  {
+    "title": "공문 수신자 지정 관련 알아보기",
+    "case_group": "p5b_sprint2_candidate_expansion"
+  },
+  {
+    "title": "공익감사단 4월 수당 신청",
+    "case_group": "p5b_sprint2_candidate_expansion"
+  },
+  {
+    "title": "알뜰폰 할인 종료일",
+    "case_group": "p5b_sprint2_candidate_expansion"
+  },
+  {
+    "title": "표창 제작시기 확인",
+    "case_group": "p5b_sprint2_candidate_expansion"
+  },
+  {
+    "title": "바이브코딩 아이디어 브레인스토밍",
+    "case_group": "p5b_sprint2_candidate_expansion"
   }
 ]

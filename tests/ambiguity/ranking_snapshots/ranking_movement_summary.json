@@ -1,55 +1,54 @@
 {
   "source_logs": {
-    "before": "tests\\ambiguity\\ambiguity_results\\2026-06-07_form_interface_boundary_pilot_scoring_log.json",
-    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-07_boundary_pilot_tracking_scoring_log.json"
+    "before": "tests\\ambiguity\\ambiguity_results\\2026-06-07_admin_meal_boundary_pilot_before_scoring_log.json",
+    "after": "tests\\ambiguity\\ambiguity_results\\2026-06-07_admin_meal_boundary_pilot_after_scoring_log.json"
   },
   "movement_metrics": {
-    "total_titles": 190,
-    "top_candidate_changed_count": 13,
-    "no_candidate_before": 16,
+    "total_titles": 201,
+    "top_candidate_changed_count": 0,
+    "no_candidate_before": 3,
     "no_candidate_after": 3,
-    "no_candidate_decrease": 13,
-    "semantic_bonus_total_before": 1955,
-    "semantic_bonus_total_after": 2202,
-    "semantic_bonus_total_delta": 247,
-    "top_semantic_bonus_applied_before_count": 148,
-    "top_semantic_bonus_applied_after_count": 157,
-    "top_semantic_bonus_applied_delta": 9,
-    "suppression_applied_before_count": 25,
-    "suppression_applied_after_count": 27,
-    "high_ambiguity_before": 71,
-    "high_ambiguity_after": 80,
-    "high_ambiguity_delta": 9,
-    "average_ambiguity_gap_before": 0.038,
-    "average_ambiguity_gap_after": 0.037,
-    "average_ranking_depth_before": 1.984,
-    "average_ranking_depth_after": 2.189,
-    "ranking_depth_delta": 0.205,
-    "titles_with_depth_increase": 13,
-    "titles_with_top2_competition_before": 119,
-    "titles_with_top2_competition_after": 131,
+    "no_candidate_decrease": 0,
+    "semantic_bonus_total_before": 2263,
+    "semantic_bonus_total_after": 2263,
+    "semantic_bonus_total_delta": 0,
+    "top_semantic_bonus_applied_before_count": 159,
+    "top_semantic_bonus_applied_after_count": 159,
+    "top_semantic_bonus_applied_delta": 0,
+    "suppression_applied_before_count": 30,
+    "suppression_applied_after_count": 30,
+    "high_ambiguity_before": 88,
+    "high_ambiguity_after": 88,
+    "high_ambiguity_delta": 0,
+    "average_ambiguity_gap_before": 0.036,
+    "average_ambiguity_gap_after": 0.036,
+    "average_ranking_depth_before": 2.194,
+    "average_ranking_depth_after": 2.194,
+    "ranking_depth_delta": 0.0,
+    "titles_with_depth_increase": 0,
+    "titles_with_top2_competition_before": 140,
+    "titles_with_top2_competition_after": 140,
     "ambiguity_gap_improved_count": 0,
     "ambiguity_gap_worsened_count": 0,
-    "ambiguity_gap_unchanged_count": 119
+    "ambiguity_gap_unchanged_count": 140
   },
   "change_label_counts": {
-    "generic_noise_reduction": 12,
-    "interface_anchor_recovery": 4,
-    "retrieval_improvement": 13,
-    "semantic_improvement": 6,
-    "stable": 167,
-    "workflow_boundary_improvement": 7
+    "generic_noise_reduction": 10,
+    "stable": 191
   },
   "top_candidate_distribution_after": {
+    "allowance_request_document": 1,
     "app_release": 1,
     "approval_request": 6,
     "approval_review": 5,
     "beverage_pickup": 1,
+    "brainstorming": 1,
     "coding": 1,
     "collaborative_request": 3,
     "document_dispatch": 1,
     "document_distribution": 12,
     "document_edit": 4,
+    "document_recipient_lookup": 1,
     "document_reporting": 18,
     "document_request": 3,
     "document_review": 7,
@@ -58,9 +57,12 @@
     "document_submission": 9,
     "drive_file_upload": 1,
     "education_fieldwork": 1,
+    "evacuation_drill": 1,
+    "event_preparation_checklist": 1,
     "final_approval": 4,
     "folder_organization": 2,
     "fruit_snack": 1,
+    "inquiry_response": 1,
     "internal_meeting": 1,
     "inventory_work": 2,
     "mail_action": 10,
@@ -70,12 +72,14 @@
     "none": 3,
     "notice_posting": 4,
     "notion_docs_touchup": 1,
+    "performance_aggregation": 1,
     "prep_paired_event_party": 2,
     "prep_paired_food_bento": 1,
     "prep_paired_food_snack": 1,
     "press_distribution": 1,
     "press_release_review": 1,
     "progress_monitoring": 1,
+    "promotional_material_review": 1,
     "public_posting": 3,
     "publication_announcement": 2,
     "publication_posting": 5,
@@ -83,6 +87,7 @@
     "result_reporting": 9,
     "review_request": 7,
     "running_appointment": 1,
+    "site_inspection_visit": 1,
     "snack_item": 1,
     "spreadsheet_work": 2,
     "status_check": 2,
@@ -93,128 +98,109 @@
     "survey_form": 2,
     "tax_invoice_review": 1,
     "urgent_notice": 2,
-    "work_calendar_organization": 1
+    "work_calendar_organization": 3
   },
   "most_improved_top_10": [
     {
-      "title": "안내문 게시",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "notice_posting",
+      "title": "강사 명단 공유",
+      "change_type": "generic_noise_reduction",
+      "before": "education_fieldwork",
+      "after": "education_fieldwork",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "generic token leakage reduced",
-        "workflow semantic candidate won or gained stronger evidence",
-        "ranking moved toward explicit workflow boundary"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "행사자료 메일 송부",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "mail_distribution",
+      "title": "강사 배정 요청",
+      "change_type": "generic_noise_reduction",
+      "before": "document_edit",
+      "after": "document_edit",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "generic token leakage reduced",
-        "workflow semantic candidate won or gained stronger evidence",
-        "interface/channel anchor affected ranking movement",
-        "ranking moved toward explicit workflow boundary"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "결과자료 메일 발송",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "mail_distribution",
+      "title": "검토결과 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "workflow semantic candidate won or gained stronger evidence",
-        "interface/channel anchor affected ranking movement",
-        "ranking moved toward explicit workflow boundary"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "계획서 검토 요청",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "review_request",
+      "title": "교육안내 발송",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "workflow semantic candidate won or gained stronger evidence",
-        "ranking moved toward explicit workflow boundary"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "자료 검토 요청",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "review_request",
+      "title": "링크트리 수정 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "workflow semantic candidate won or gained stronger evidence",
-        "ranking moved toward explicit workflow boundary"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "점검자료 메일 송부",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "mail_distribution",
+      "title": "만족도조사 링크 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "workflow semantic candidate won or gained stronger evidence",
-        "interface/channel anchor affected ranking movement",
-        "ranking moved toward explicit workflow boundary"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "구글폼 신청 접수",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "document_submission",
+      "title": "슬랙 채널 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "ranking moved toward explicit workflow boundary"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "네이버폼 신청 접수",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "survey_form",
+      "title": "운영결과 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered",
-        "interface/channel anchor affected ranking movement"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "로그인 화면 수정",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "coding",
+      "title": "파일 업로드 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     },
     {
-      "title": "본인인증화면 수정 제안",
-      "change_type": "retrieval_improvement",
-      "before": null,
-      "after": "qr_code_scan_auth",
+      "title": "화상회의 링크 안내",
+      "change_type": "generic_noise_reduction",
+      "before": "mail_action",
+      "after": "mail_action",
       "notes": [
-        "candidate retrieval coverage recovered"
+        "generic token leakage reduced"
       ]
     }
   ],
   "most_risky_regression_top_10": [
     {
       "title": "안내문 게시",
-      "before": null,
+      "before": "notice_posting",
       "after": "notice_posting",
       "regression_type": "ontology_overlap_hotspot",
       "severity": "low",
       "reason": "neighbor workflow candidates are almost tied",
-      "before_ambiguity_gap": null,
+      "before_ambiguity_gap": 0.0,
       "after_ambiguity_gap": 0.0
     },
     {
@@ -249,15 +235,17 @@
     }
   ],
   "semantic_recommender_assessment": {
-    "semantic_rows_increased": true,
-    "retrieval_coverage_improved": true,
-    "candidate_competition_increased": true,
+    "semantic_rows_increased": false,
+    "retrieval_coverage_improved": false,
+    "candidate_competition_increased": false,
     "summary": "semantic workflow competition increased: more titles have candidate rows, semantic metadata contributes to ranking, and generic token rows are explicitly dampened"
   },
   "keyword_dominance_remaining_areas": [
     "QR 출석 등록",
     "강사 명단 공유",
     "강사 배정 요청",
+    "강사단 평가회 사전 준비 사항 리스트",
+    "공익감사단 4월 수당 신청",
     "과일간식 짐 차에 싣기",
     "과장 주재 주간회의 참석",
     "교육청 급식담당자 현황 조사",
@@ -268,13 +256,11 @@
     "도시락 준비",
     "드라이브 폴더 공유",
     "로그인 화면 수정",
+    "민방위 대피 훈련",
+    "바이브코딩 아이디어 브레인스토밍",
     "본인인증화면 수정 제안",
     "비영리민간단체 전수조사 현황 회신",
-    "시트 입력 요청",
-    "식사 준비",
-    "엑셀 취합 요청",
-    "운영현황 전달",
-    "일정 조정 요청"
+    "센터 방문점검 실시"
   ],
   "ontology_overlap_hotspots": [
     "배너 이미지 게시",
@@ -308,13 +294,13 @@
     "stage_top_candidate_alignment": {
       "aligned": 13,
       "misaligned": 0,
-      "not_applicable": 177
+      "not_applicable": 188
     }
   },
   "comparison_scope": {
-    "before_title_count": 177,
-    "after_title_count": 190,
-    "compared_title_count": 190,
+    "before_title_count": 201,
+    "after_title_count": 201,
+    "compared_title_count": 201,
     "intersection_only": false
   }
 }

@@ -4,8 +4,10 @@ import re
 from collections.abc import Iterable
 from typing import Any
 
+from app.admin_system_semantic import admin_system_semantic_adjustment
 from app.form_interface_semantic import form_interface_semantic_adjustment
 from app.interface_ui_semantic import interface_ui_semantic_adjustment
+from app.meal_venue_context_semantic import meal_venue_context_semantic_adjustment
 from app.notification_semantic import notification_communication_semantic_adjustment
 from app.reporting_review_semantic import (
     refine_reporting_review_title_signals,
@@ -650,13 +652,16 @@ def semantic_compatibility(
     semantic_metadata: dict[str, Any] | None,
     candidate_id: str | None = None,
 ) -> tuple[int, tuple[str, ...], tuple[str, ...]]:
-    if not semantic_metadata:
-        return 0, (), ()
-
-    signals = infer_title_semantic_signals(title)
     score = 0
     reasons: list[str] = []
     fields: list[str] = []
+
+    if not semantic_metadata:
+        return _finalize_semantic_compatibility(
+            title, candidate_id, semantic_metadata, score, tuple(reasons), tuple(fields)
+        )
+
+    signals = infer_title_semantic_signals(title)
 
     if is_result_status_reporting_compound(title):
         for field in sorted(signals):
@@ -714,13 +719,31 @@ def semantic_compatibility(
                 fields.append("action")
             reasons.append(f"action status_work {status_action} soft boost")
 
-    score, reasons, fields = transfer_sharing_semantic_adjustment(
+    return _finalize_semantic_compatibility(
         title,
         candidate_id,
         semantic_metadata,
         score,
         tuple(reasons),
         tuple(fields),
+    )
+
+
+def _finalize_semantic_compatibility(
+    title: str,
+    candidate_id: str | None,
+    semantic_metadata: dict[str, Any] | None,
+    score: int,
+    reasons: tuple[str, ...],
+    fields: tuple[str, ...],
+) -> tuple[int, tuple[str, ...], tuple[str, ...]]:
+    score, reasons, fields = transfer_sharing_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
     )
     score, reasons, fields = notification_communication_semantic_adjustment(
         title,
@@ -747,6 +770,22 @@ def semantic_compatibility(
         fields,
     )
     score, reasons, fields = reporting_review_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    score, reasons, fields = admin_system_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    score, reasons, fields = meal_venue_context_semantic_adjustment(
         title,
         candidate_id,
         semantic_metadata,

@@ -69,7 +69,7 @@ class P5BCandidateRecommendationTests(unittest.TestCase):
 
     def test_fix2_emergency_drill_titles(self) -> None:
         cases = {
-            "민방위 대피 훈련": ("emergency_drill", "🚨"),
+            "민방위 대피 훈련": ("evacuation_drill", "person running"),
             "비상소집훈련 참석": ("emergency_drill", "🚨"),
         }
         for title, expected in cases.items():

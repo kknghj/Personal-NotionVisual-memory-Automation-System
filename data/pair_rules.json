@@ -330,5 +330,24 @@
         "interface_dominance_effective": 0
       }
     ]
+  },
+  "catalog_phrase": {
+    "comment": "P5-B sprint 2 — schedule timing lookup (calendar tracking, not document review)",
+    "rules": [
+      {
+        "type": "phrase_substrings",
+        "phrases": [
+          "제작시기확인",
+          "시행시기확인",
+          "발송시기확인",
+          "표창제작시기",
+          "제작일정확인"
+        ],
+        "candidate_id": "work_calendar_organization",
+        "sort_secondary_wp": 3,
+        "keyword_workflow_resolution": 3,
+        "interface_dominance_effective": 0
+      }
+    ]
   }
 }

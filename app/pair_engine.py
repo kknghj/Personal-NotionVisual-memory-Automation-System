@@ -87,6 +87,12 @@ class PairRuleEngine:
             if r is not None:
                 out.append(r)
 
+        catalog = self._rules.get("catalog_phrase")
+        if isinstance(catalog, dict):
+            r = self._try_catalog_phrase(canonical, catalog, rule_tier, candidates)
+            if r is not None:
+                out.append(r)
+
         return out
 
     def _try_prep(
@@ -539,4 +545,35 @@ class PairRuleEngine:
                 data=self._synthetic_prep_data(rule, rule.get("visual", {})),
                 rule_tier=rule_tier,
             )
+        return None
+
+    def _try_catalog_phrase(
+        self,
+        canonical: str,
+        catalog: dict[str, Any],
+        rule_tier: int,
+        candidates: dict[str, Any],
+    ) -> Optional[PairResolution]:
+        """Standalone catalog compounds (no action lemma) — P5-B sprint catalog gaps."""
+        for rule in catalog.get("rules", []):
+            if not isinstance(rule, dict) or rule.get("type") != "phrase_substrings":
+                continue
+            phrases = rule.get("phrases")
+            if not isinstance(phrases, list):
+                continue
+            for ph in _sorted_terms_length_desc([str(p) for p in phrases]):
+                if not ph or ph not in canonical:
+                    continue
+                cid = str(rule.get("candidate_id", ""))
+                base = candidates.get(cid)
+                if not isinstance(base, dict):
+                    continue
+                matched = str(rule.get("matched_literal", ph))
+                return self._prep_resolution(
+                    rule=rule,
+                    candidate_id=cid,
+                    matched=matched,
+                    data=dict(base),
+                    rule_tier=rule_tier,
+                )
         return None
