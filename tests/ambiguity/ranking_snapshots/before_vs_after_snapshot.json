@@ -2634,19 +2634,6 @@
   {
     "title": "노션 일정 공유",
     "before": {
-      "top_candidate": "notion_docs_touchup",
-      "ambiguity_gap": 0.008,
-      "high_ambiguity": true,
-      "ranking_depth": 2,
-      "top5_candidates": [
-        "notion_docs_touchup",
-        "work_calendar_organization"
-      ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
-      "suppression_applied": false
-    },
-    "after": {
       "top_candidate": "work_calendar_organization",
       "ambiguity_gap": 0.048,
       "high_ambiguity": true,
@@ -2657,6 +2644,19 @@
       ],
       "top_semantic_bonus": 2,
       "semantic_bonus_total": 2,
+      "suppression_applied": false
+    },
+    "after": {
+      "top_candidate": "notion_docs_touchup",
+      "ambiguity_gap": 0.008,
+      "high_ambiguity": true,
+      "ranking_depth": 2,
+      "top5_candidates": [
+        "notion_docs_touchup",
+        "work_calendar_organization"
+      ],
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
       "suppression_applied": false
     },
     "changed": true,
@@ -2671,8 +2671,8 @@
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": -2,
+      "total_delta": -2
     },
     "suppression_change": {
       "before": false,
@@ -9728,16 +9728,16 @@
   {
     "title": "캘린더 일정 공유",
     "before": {
-      "top_candidate": "running_appointment",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
+      "top_candidate": "work_calendar_organization",
+      "ambiguity_gap": 0.055,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "running_appointment",
-        "work_calendar_organization"
+        "work_calendar_organization",
+        "running_appointment"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 2,
       "suppression_applied": false
     },
     "after": {
@@ -9753,20 +9753,20 @@
       "semantic_bonus_total": 2,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 2,
-      "total_delta": 2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -9774,7 +9774,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
@@ -10061,7 +10061,7 @@
     "title": "표창 제작시기 확인",
     "before": {
       "top_candidate": "work_calendar_organization",
-      "ambiguity_gap": 0.069,
+      "ambiguity_gap": 0.083,
       "high_ambiguity": false,
       "ranking_depth": 5,
       "top5_candidates": [
@@ -10072,7 +10072,7 @@
         "phone_call"
       ],
       "top_semantic_bonus": 0,
-      "semantic_bonus_total": 22,
+      "semantic_bonus_total": 0,
       "suppression_applied": false
     },
     "after": {
@@ -10104,7 +10104,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": -22
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,

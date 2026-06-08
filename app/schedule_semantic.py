@@ -53,6 +53,9 @@ CONFIRM_ACTION_TERM = "확인"
 
 SCHEDULE_SOFT_BONUS = 12
 GENERIC_REVIEW_PENALTY = 8
+CALENDAR_SHARE_SOFT_BONUS = 2
+CALENDAR_SHARE_TRANSFER_TERMS: frozenset[str] = frozenset({"공유", "전달"})
+NOTION_CHANNEL_TERMS: frozenset[str] = frozenset({"노션"})
 
 
 def schedule_date_verification_anchor_active(title: str) -> bool:
@@ -103,6 +106,16 @@ def schedule_date_verification_anchor_active_from_canonical(canonical: str) -> b
     return not any(term in canonical for term in DOCUMENT_OBJECT_BLOCKER_TERMS)
 
 
+def calendar_schedule_share_anchor_active(title: str) -> bool:
+    """Explicit calendar + share/transfer without a competing channel anchor."""
+    canonical = _canonical_title_text(title)
+    if any(term in canonical for term in NOTION_CHANNEL_TERMS):
+        return False
+    if "캘린더" not in canonical:
+        return False
+    return any(term in canonical for term in CALENDAR_SHARE_TRANSFER_TERMS)
+
+
 def schedule_semantic_adjustment(
     title: str,
     candidate_id: str | None,
@@ -111,7 +124,7 @@ def schedule_semantic_adjustment(
     reasons: tuple[str, ...],
     fields: tuple[str, ...],
 ) -> tuple[int, tuple[str, ...], tuple[str, ...]]:
-    if not candidate_id or not schedule_date_verification_anchor_active(title):
+    if not candidate_id:
         return score, reasons, fields
 
     bonus = 0
@@ -119,12 +132,19 @@ def schedule_semantic_adjustment(
     adj_reasons = list(reasons)
     adj_fields = list(fields)
 
-    if candidate_id in SCHEDULE_CANDIDATE_IDS:
-        bonus += SCHEDULE_SOFT_BONUS
-        adj_reasons.append("schedule date verification soft boost")
-    elif candidate_id in GENERIC_REVIEW_CANDIDATE_IDS:
-        penalty += GENERIC_REVIEW_PENALTY
-        adj_reasons.append("schedule date verification generic review soft penalty")
+    if schedule_date_verification_anchor_active(title):
+        if candidate_id in SCHEDULE_CANDIDATE_IDS:
+            bonus += SCHEDULE_SOFT_BONUS
+            adj_reasons.append("schedule date verification soft boost")
+        elif candidate_id in GENERIC_REVIEW_CANDIDATE_IDS:
+            penalty += GENERIC_REVIEW_PENALTY
+            adj_reasons.append("schedule date verification generic review soft penalty")
+    elif (
+        calendar_schedule_share_anchor_active(title)
+        and candidate_id == WORK_CALENDAR_ORGANIZATION_ID
+    ):
+        bonus += CALENDAR_SHARE_SOFT_BONUS
+        adj_reasons.append("calendar schedule share soft boost")
 
     adjusted = max(0, score + bonus - penalty)
     return adjusted, tuple(adj_reasons), tuple(adj_fields)

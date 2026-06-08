@@ -3254,9 +3254,7 @@
       "primary_object": "date_time",
       "object_type": "deadline_date",
       "interaction_mode": "check_deadline",
-      "schedule_intent": "deadline_verification",
-      "visibility": "internal",
-      "tone": "neutral"
+      "schedule_intent": "deadline_verification"
     }
   },
   "external_admin_system": {
@@ -3907,9 +3905,7 @@
       "primary_object": "date_time",
       "object_type": "calendar_date",
       "interaction_mode": "check_schedule",
-      "schedule_intent": "date_verification",
-      "visibility": "internal",
-      "tone": "neutral"
+      "schedule_intent": "date_verification"
     }
   },
   "broadcast_channel_adjust": {
