@@ -2,7 +2,8 @@
 
 Case notes (competing candidates — not enforced here):
 - ``분기별 예산 집행 현황 정리``: spreadsheet_work may compete with status_summary.
-- ``주요사업 추진현황 주간회의 자료 작성``: document_edit may compete with status_summary.
+- ``주요사업 추진현황 주간회의 자료 작성``: sample_cases labels document_edit; semantic may still rank status_summary.
+- ``민원 처리 현황 내부자료 작성``: sample_cases labels document_edit; semantic may still rank status_summary.
 - ``부서별 현황 자료 공유``: document_sharing may compete with status_sharing.
 - Channel hints (메일/카톡/메신저): see ``tests/test_status_channel_boundaries.py``.
 - Formal document writing (보고서/공고문/…): see ``tests/test_status_document_edit_boundaries.py``.
@@ -179,6 +180,30 @@ class StatusWorkflowExactMatchTests(unittest.TestCase):
         assert match is not None
         self.assertEqual(match.candidate_id, "status_summary")
         self.assertEqual(match.data["visual"]["value"], "📋")
+
+    def test_status_material_writing_sample_cases_label_document_edit(self) -> None:
+        for title in (
+            "주요사업 추진현황 주간회의 자료 작성",
+            "민원 처리 현황 내부자료 작성",
+        ):
+            with self.subTest(title=title):
+                hit = find_exact_title_match(title, self._cases)
+                self.assertIsNotNone(hit)
+                assert hit is not None
+                self.assertEqual(hit["workflow_type"], "document_edit")
+                self.assertEqual(hit["visual"]["value"], "📝")
+
+    def test_status_summary_sample_cases_visual_is_clipboard(self) -> None:
+        for title in (
+            "프로젝트 진행 현황 정리",
+            "분기별 예산 집행 현황 정리",
+        ):
+            with self.subTest(title=title):
+                hit = find_exact_title_match(title, self._cases)
+                self.assertIsNotNone(hit)
+                assert hit is not None
+                self.assertEqual(hit["workflow_type"], "status_summary")
+                self.assertEqual(hit["visual"]["value"], "📋")
 
     def test_status_sharing_exact_visual(self) -> None:
         hit = find_exact_title_match("서버 장애 대응 현황 공유", self._cases)
