@@ -9,6 +9,10 @@ from app.form_interface_semantic import form_interface_semantic_adjustment
 from app.interface_ui_semantic import interface_ui_semantic_adjustment
 from app.meal_venue_context_semantic import meal_venue_context_semantic_adjustment
 from app.notification_semantic import notification_communication_semantic_adjustment
+from app.object_priority_semantic import (
+    object_priority_semantic_adjustment,
+    refine_object_priority_title_signals,
+)
 from app.reporting_review_semantic import (
     refine_reporting_review_title_signals,
     reporting_review_semantic_adjustment,
@@ -98,6 +102,7 @@ FIELD_WEIGHTS: dict[str, int] = {
     "publish_distribute": 2,
     "send_share": 2,
     "request_approval": 2,
+    "primary_object": 2,
     "object_type": 1,
     "visibility": 1,
     "tone": 1,
@@ -644,6 +649,7 @@ def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
     _apply_document_flow_stage_signals(title, signals)
     refine_reporting_review_title_signals(canonical, signals)
     refine_status_reporting_title_signals(canonical, signals)
+    refine_object_priority_title_signals(canonical, signals)
     return signals
 
 
@@ -786,6 +792,14 @@ def _finalize_semantic_compatibility(
         fields,
     )
     score, reasons, fields = meal_venue_context_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    score, reasons, fields = object_priority_semantic_adjustment(
         title,
         candidate_id,
         semantic_metadata,

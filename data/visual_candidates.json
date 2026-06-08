@@ -6007,5 +6007,63 @@
       "visibility": "internal",
       "tone": "formal"
     }
+  },
+  "physical_item_inspection": {
+    "visual": {
+      "type": "emoji",
+      "value": "🛏️"
+    },
+    "workflow_priority": 1,
+    "meaning": [
+      {
+        "text": "매트리스상태확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "침대상태확인",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "매트리스",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "침대",
+        "workflow_resolution": 3,
+        "interface_dominance": 0
+      },
+      {
+        "text": "상태확인",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      },
+      {
+        "text": "현황확인",
+        "workflow_resolution": 2,
+        "interface_dominance": 0
+      }
+    ],
+    "interface_memory": [
+      "매트리스",
+      "침대",
+      "상태 확인"
+    ],
+    "usage_context": [
+      "을지훈련 매트리스 상태 확인",
+      "매트리스 상태 확인",
+      "침대 상태 확인"
+    ],
+    "semantic_metadata": {
+      "primary_object": "physical_item",
+      "object_type": "equipment_asset",
+      "interaction_mode": "inspect_verify",
+      "object_priority": "subject_over_action",
+      "semantic_role": "physical_item_inspection",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   }
 }
