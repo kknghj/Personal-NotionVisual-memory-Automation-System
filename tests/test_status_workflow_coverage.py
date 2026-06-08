@@ -164,6 +164,7 @@ class StatusWorkflowExactMatchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls._cases = load_sample_cases()
+        cls._cands = load_visual_candidates()
 
     def test_all_status_workflow_titles_have_exact_match_rows(self) -> None:
         for title in sorted(self.EXPECTED_STATUS_TITLES):
@@ -174,10 +175,10 @@ class StatusWorkflowExactMatchTests(unittest.TestCase):
                 self.assertIn("workflow_type", hit)
 
     def test_status_summary_exact_visual(self) -> None:
-        hit = find_exact_title_match("프로젝트 진행 현황 정리", self._cases)
-        assert hit is not None
-        self.assertEqual(hit["visual"]["value"], "📝")
-        self.assertEqual(hit["workflow_type"], "status_summary")
+        match = find_best_visual_candidate_match("프로젝트 진행 현황 정리", self._cands)
+        assert match is not None
+        self.assertEqual(match.candidate_id, "status_summary")
+        self.assertEqual(match.data["visual"]["value"], "📋")
 
     def test_status_sharing_exact_visual(self) -> None:
         hit = find_exact_title_match("서버 장애 대응 현황 공유", self._cases)

@@ -1,0 +1,190 @@
+{
+  "representative": [
+    {
+      "query": "추진현황",
+      "title": "법령제도 개선 건의과제 추진현황 현행화 안내",
+      "top1": "progress_monitoring",
+      "visual": "🚦",
+      "top2": [
+        "progress_monitoring",
+        "mail_action"
+      ]
+    },
+    {
+      "query": "추진현황",
+      "title": "주요사업 추진현황 주간회의 자료 작성",
+      "top1": "status_summary",
+      "visual": "📋",
+      "top2": [
+        "status_summary",
+        "progress_monitoring"
+      ]
+    },
+    {
+      "query": "추진현황",
+      "title": "추진현황 제출",
+      "top1": "document_submission",
+      "visual": "📄",
+      "top2": [
+        "document_submission",
+        "progress_monitoring"
+      ]
+    },
+    {
+      "query": "진행상황 정리",
+      "status": "NOT IN TEST SET"
+    },
+    {
+      "query": "접수 현황",
+      "title": "교육 신청 접수 현황 공유",
+      "top1": "status_sharing",
+      "visual": "paper airplane",
+      "top2": [
+        "status_sharing",
+        "document_submission"
+      ]
+    },
+    {
+      "query": "접수 현황",
+      "title": "신청 접수 현황 업데이트",
+      "top1": "status_update",
+      "visual": "🔄",
+      "top2": [
+        "status_update",
+        "document_submission"
+      ]
+    },
+    {
+      "query": "신청 현황",
+      "title": "교육 신청 현황 업데이트",
+      "top1": "status_update",
+      "visual": "🔄",
+      "top2": [
+        "status_update"
+      ]
+    },
+    {
+      "query": "운영 현황 정리",
+      "title": "현장 안전관리 운영 현황 정리",
+      "top1": "status_summary",
+      "visual": "📋",
+      "top2": [
+        "status_summary"
+      ]
+    },
+    {
+      "query": "현장 안전관리 운영 현황 정리",
+      "title": "현장 안전관리 운영 현황 정리",
+      "top1": "status_summary",
+      "visual": "📋",
+      "top2": [
+        "status_summary"
+      ]
+    },
+    {
+      "query": "주요사업 추진현황 주간회의 자료 작성",
+      "title": "주요사업 추진현황 주간회의 자료 작성",
+      "top1": "status_summary",
+      "visual": "📋",
+      "top2": [
+        "status_summary",
+        "progress_monitoring"
+      ]
+    },
+    {
+      "query": "프로젝트 진행 현황 정리",
+      "title": "프로젝트 진행 현황 정리",
+      "top1": "status_summary",
+      "visual": "📋",
+      "top2": [
+        "status_summary"
+      ]
+    }
+  ],
+  "anchors": {
+    "document_edit": "📝",
+    "approval_request": "📝",
+    "document_review": "📄",
+    "result_reporting": "🗣️",
+    "spreadsheet_work": "grid-rectangle-2x3"
+  },
+  "anchor_top1_sample": [
+    {
+      "title": "강사 배정 요청",
+      "top1": "document_edit",
+      "visual": "📝"
+    },
+    {
+      "title": "게시 승인 요청",
+      "top1": "approval_request",
+      "visual": "📝"
+    },
+    {
+      "title": "결과보고 승인 요청",
+      "top1": "result_reporting",
+      "visual": "🗣️"
+    },
+    {
+      "title": "결과보고 전달",
+      "top1": "result_reporting",
+      "visual": "🗣️"
+    },
+    {
+      "title": "결과보고 확인",
+      "top1": "result_reporting",
+      "visual": "🗣️"
+    },
+    {
+      "title": "계획안 수정 요청",
+      "top1": "document_edit",
+      "visual": "📝"
+    },
+    {
+      "title": "공문 결재 요청",
+      "top1": "approval_request",
+      "visual": "📝"
+    },
+    {
+      "title": "공문 확인",
+      "top1": "document_review",
+      "visual": "📄"
+    },
+    {
+      "title": "교육 운영 결과 현황 정리",
+      "top1": "result_reporting",
+      "visual": "🗣️"
+    },
+    {
+      "title": "교육결과 보고",
+      "top1": "result_reporting",
+      "visual": "🗣️"
+    },
+    {
+      "title": "문서 검토",
+      "top1": "document_review",
+      "visual": "📄"
+    },
+    {
+      "title": "사업 운영 결과 현황 보고",
+      "top1": "result_reporting",
+      "visual": "🗣️"
+    },
+    {
+      "title": "성과 분석 결과 현황 보고",
+      "top1": "result_reporting",
+      "visual": "🗣️"
+    },
+    {
+      "title": "시트 입력 요청",
+      "top1": "document_edit",
+      "visual": "📝"
+    },
+    {
+      "title": "엑셀 취합 요청",
+      "top1": "spreadsheet_work",
+      "visual": "grid-rectangle-2x3"
+    }
+  ],
+  "anchor_top1_count": 32,
+  "status_summary_visual": "📋"
+}

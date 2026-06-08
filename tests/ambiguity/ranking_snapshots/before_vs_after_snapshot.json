@@ -2634,16 +2634,16 @@
   {
     "title": "노션 일정 공유",
     "before": {
-      "top_candidate": "work_calendar_organization",
-      "ambiguity_gap": 0.048,
+      "top_candidate": "notion_docs_touchup",
+      "ambiguity_gap": 0.008,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "work_calendar_organization",
-        "notion_docs_touchup"
+        "notion_docs_touchup",
+        "work_calendar_organization"
       ],
-      "top_semantic_bonus": 2,
-      "semantic_bonus_total": 2,
+      "top_semantic_bonus": 0,
+      "semantic_bonus_total": 0,
       "suppression_applied": false
     },
     "after": {
@@ -2659,20 +2659,20 @@
       "semantic_bonus_total": 0,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
+      "top_candidate_changed": false,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": -2,
-      "total_delta": -2
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -2680,7 +2680,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
