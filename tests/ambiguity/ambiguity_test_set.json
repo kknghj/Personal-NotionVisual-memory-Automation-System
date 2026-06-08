@@ -685,5 +685,25 @@
   {
     "title": "바이브코딩 아이디어 브레인스토밍",
     "case_group": "p5b_sprint2_candidate_expansion"
+  },
+  {
+    "title": "을지훈련 매트리스 상태 확인",
+    "case_group": "metadata_pilot_m1_tracking"
+  },
+  {
+    "title": "공문 확인",
+    "case_group": "metadata_pilot_m1_tracking"
+  },
+  {
+    "title": "결과보고 확인",
+    "case_group": "metadata_pilot_m1_tracking"
+  },
+  {
+    "title": "자료 검토",
+    "case_group": "metadata_pilot_m1_tracking"
+  },
+  {
+    "title": "문서 검토",
+    "case_group": "metadata_pilot_m1_tracking"
   }
 ]

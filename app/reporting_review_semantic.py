@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from app.object_priority_semantic import withhold_generic_review_boost
 from app.workflow_resolution import _canonical_title_text
 
 OBJECT_BOUND_TRANSFER_OBJECT_TERMS: frozenset[str] = frozenset(
@@ -224,9 +225,15 @@ def reporting_review_semantic_adjustment(
     if has_review and not has_reporting:
         has_object_review = _title_has_object_specific_review_compound(canonical)
         if candidate_id in REVIEW_CANDIDATE_IDS:
-            if has_object_review and candidate_id == GENERIC_DOCUMENT_REVIEW_ID:
+            if (
+                has_object_review or withhold_generic_review_boost(title)
+            ) and candidate_id == GENERIC_DOCUMENT_REVIEW_ID:
                 adj_reasons.append(
                     "object_specific_review compound withholds generic document_review boost"
+                )
+            elif withhold_generic_review_boost(title):
+                adj_reasons.append(
+                    "object_priority physical anchor withholds generic review boost"
                 )
             else:
                 bonus += REPORTING_REVIEW_SOFT_BONUS

@@ -1,0 +1,318 @@
+# Snapshot Diff Summary
+
+- before: `tests/ambiguity/ambiguity_results/2026-06-08_object_priority_metadata_pilot_before_scoring_log.json`
+- after: `tests/ambiguity/ambiguity_results/2026-06-08_object_priority_metadata_pilot_after_scoring_log.json`
+- compared titles: 206
+
+## changed top1
+
+- 을지훈련 매트리스 상태 확인
+  document_review -> physical_item_inspection
+  semantic_bonus: 11 -> 18
+
+## semantic improvements
+
+- 을지훈련 매트리스 상태 확인: semantic_bonus: 11 -> 18
+
+## regression candidates
+
+- (none)
+
+## ambiguity changes
+
+- tie count: 40 -> 39 (delta -1)
+
+- QR 출석 등록: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 강사 배정 요청: ambiguity_gap=0.0170 -> ambiguity_gap=0.0170
+  - ambiguity_gap: 0.0170 -> 0.0170 (unchanged)
+- 강사단 평가회 사전 준비 사항 리스트: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 강사비 지급 요청: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 게시 승인 요청: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 결과보고 승인 요청: ambiguity_gap=0.0140 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0140 -> 0.0140 (unchanged)
+- 결과보고 전달: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 결과보고 확인: ambiguity_gap=0.0140 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0140 -> 0.0140 (unchanged)
+- 결과자료 메일 발송: ambiguity_gap=0.0020 -> ambiguity_gap=0.0020
+  - ambiguity_gap: 0.0020 -> 0.0020 (unchanged)
+- 결과자료 배포: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 결재 검토: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 계획서 검토 요청: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 계획안 수정 요청: ambiguity_gap=0.1120 -> ambiguity_gap=0.1120
+  - ambiguity_gap: 0.1120 -> 0.1120 (unchanged)
+- 고객 문의 대응 현황 공유: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 고객 문의 처리 현황 업데이트: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 고객 민원 처리 현황 확인: ambiguity_gap=0.0200 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0200 -> 0.0140 (narrowed)
+- 공문 게시: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 공문 결재 요청: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 공문 수신자 지정 관련 알아보기: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 공문 전달: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 공문 확인: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 공익감사단 4월 수당 신청: ambiguity_gap=0.0020 -> ambiguity_gap=0.0020
+  - ambiguity_gap: 0.0020 -> 0.0020 (unchanged)
+- 공지사항 배포: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 과일간식 짐 차에 싣기: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 과장 주재 주간회의 참석: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 교육 신청 접수 현황 공유: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 교육 운영 결과 현황 정리: ambiguity_gap=0.0540 -> ambiguity_gap=0.0540
+  - ambiguity_gap: 0.0540 -> 0.0540 (unchanged)
+- 교육결과 보고: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 교육일정 협조 요청: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 구글폼 신청 접수: ambiguity_gap=0.0030 -> ambiguity_gap=0.0030
+  - ambiguity_gap: 0.0030 -> 0.0030 (unchanged)
+- 네이버폼 신청 안내: ambiguity_gap=0.0700 -> ambiguity_gap=0.0700
+  - ambiguity_gap: 0.0700 -> 0.0700 (unchanged)
+- 네이버폼 신청 접수: ambiguity_gap=0.0550 -> ambiguity_gap=0.0550
+  - ambiguity_gap: 0.0550 -> 0.0550 (unchanged)
+- 노션 일정 공유: ambiguity_gap=0.0080 -> ambiguity_gap=0.0080
+  - ambiguity_gap: 0.0080 -> 0.0080 (unchanged)
+- 다기능사무기기 보유현황 제출: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 도시락 준비: ambiguity_gap=0.1650 -> ambiguity_gap=0.1650
+  - ambiguity_gap: 0.1650 -> 0.1650 (unchanged)
+- 메일링 리스트 발송: ambiguity_gap=0.0070 -> ambiguity_gap=0.0070
+  - ambiguity_gap: 0.0070 -> 0.0070 (unchanged)
+- 문서 검토: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 미처리 민원 현황 확인: ambiguity_gap=0.0200 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0200 -> 0.0140 (narrowed)
+- 민방위 대피 훈련: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 민원 처리 현황 내부자료 작성: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 바이브코딩 아이디어 브레인스토밍: ambiguity_gap=0.0030 -> ambiguity_gap=0.0030
+  - ambiguity_gap: 0.0030 -> 0.0030 (unchanged)
+- 배너 이미지 게시: ambiguity_gap=0.0020 -> ambiguity_gap=0.0020
+  - ambiguity_gap: 0.0020 -> 0.0020 (unchanged)
+- 법령제도 개선 건의과제 추진현황 현행화 안내: ambiguity_gap=0.0400 -> ambiguity_gap=0.0400
+  - ambiguity_gap: 0.0400 -> 0.0400 (unchanged)
+- 보도자료 검토 요청: ambiguity_gap=0.0110 -> ambiguity_gap=0.0110
+  - ambiguity_gap: 0.0110 -> 0.0110 (unchanged)
+- 보도자료 게시: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 보도자료 배포: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 보안 취약점 조치 현황 보고: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 보험 가입현황 제출: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 본인인증화면 수정 제안: ambiguity_gap=0.1700 -> ambiguity_gap=0.1700
+  - ambiguity_gap: 0.1700 -> 0.1700 (unchanged)
+- 부서별 업무 추진 현황 정리: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 부서별 현황 자료 공유: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 분기별 예산 집행 현황 정리: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 분석자료 전달: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 비상소집 응소자 현황 제출: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 사업 운영 결과 현황 보고: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 서비스 점검 공지: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 설문폼 수정 요청: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 성과 분석 결과 현황 보고: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 세금계산서 검토: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 센터 방문점검 실시: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 수정사항 검토 요청: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 슬랙 채널 안내: ambiguity_gap=0.0340 -> ambiguity_gap=0.0340
+  - ambiguity_gap: 0.0340 -> 0.0340 (unchanged)
+- 시스템 개발 진행 현황 보고: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 시스템 개발 진행 현황 업데이트: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 식사 준비: ambiguity_gap=0.1650 -> ambiguity_gap=0.1650
+  - ambiguity_gap: 0.1650 -> 0.1650 (unchanged)
+- 식생활교육 보도자료 확인: ambiguity_gap=0.0140 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0140 -> 0.0140 (unchanged)
+- 신규 채용 검토 현황 보고: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 신청 승인: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 신청 접수 현황 업데이트: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 신청내용 확인 요청: ambiguity_gap=0.0140 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0140 -> 0.0140 (unchanged)
+- 신청서 메일 발송: ambiguity_gap=0.0070 -> ambiguity_gap=0.0070
+  - ambiguity_gap: 0.0070 -> 0.0070 (unchanged)
+- 신청안내 게시: ambiguity_gap=0.0770 -> ambiguity_gap=0.0770
+  - ambiguity_gap: 0.0770 -> 0.0770 (unchanged)
+- 신청화면 수정 요청: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 실적자료 제출: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 안내문 게시: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 안내문 송부: ambiguity_gap=0.0770 -> ambiguity_gap=0.0770
+  - ambiguity_gap: 0.0770 -> 0.0770 (unchanged)
+- 안내문 확인 요청: ambiguity_gap=0.0100 -> ambiguity_gap=0.0100
+  - ambiguity_gap: 0.0100 -> 0.0100 (unchanged)
+- 안내자료 게시: ambiguity_gap=0.0770 -> ambiguity_gap=0.0770
+  - ambiguity_gap: 0.0770 -> 0.0770 (unchanged)
+- 앱 신규버전 배포: ambiguity_gap=0.0190 -> ambiguity_gap=0.0190
+  - ambiguity_gap: 0.0190 -> 0.0190 (unchanged)
+- 앱 업데이트 공지: ambiguity_gap=0.0070 -> ambiguity_gap=0.0070
+  - ambiguity_gap: 0.0070 -> 0.0070 (unchanged)
+- 업데이트 파일 배포: ambiguity_gap=0.0540 -> ambiguity_gap=0.0540
+  - ambiguity_gap: 0.0540 -> 0.0540 (unchanged)
+- 업무 자동화 구축 현황 보고: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 엑셀 취합 요청: ambiguity_gap=0.0730 -> ambiguity_gap=0.0730
+  - ambiguity_gap: 0.0730 -> 0.0730 (unchanged)
+- 예산 사용 승인 요청: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 예산 집행 현황 점검 보고: ambiguity_gap=0.0540 -> ambiguity_gap=0.0540
+  - ambiguity_gap: 0.0540 -> 0.0540 (unchanged)
+- 온라인 신청 접수: ambiguity_gap=0.0590 -> ambiguity_gap=0.0590
+  - ambiguity_gap: 0.0590 -> 0.0590 (unchanged)
+- 운영 관련 질의 응답: ambiguity_gap=0.0020 -> ambiguity_gap=0.0020
+  - ambiguity_gap: 0.0020 -> 0.0020 (unchanged)
+- 운영계획 결재 요청: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 운영계획 공지: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 운영지침 공문 발송: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 을지훈련 매트리스 상태 확인: ambiguity_gap=0.0000 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0000 -> 0.0140 (widened)
+- 일정 조정 요청: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 일정표 발송: ambiguity_gap=0.0300 -> ambiguity_gap=0.0300
+  - ambiguity_gap: 0.0300 -> 0.0300 (unchanged)
+- 자료 검토: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 자료 검토 요청: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 자료 제출: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 자료 제출 검토: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 자료 제출 보완 요청: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 자료 제출 승인: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 자료 제출 요청: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 자료 제출 후 승인: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 자료제출검토: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 재택 필요 자료 드라이브 업로드: ambiguity_gap=0.0020 -> ambiguity_gap=0.0020
+  - ambiguity_gap: 0.0020 -> 0.0020 (unchanged)
+- 점검 결과 현황 공유: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 점검자료 메일 송부: ambiguity_gap=0.0040 -> ambiguity_gap=0.0040
+  - ambiguity_gap: 0.0040 -> 0.0040 (unchanged)
+- 정산 승인 요청: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 정산결과 보고: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 정책자료 게시: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 제출 자료 검토: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 제출자료 메일 안내: ambiguity_gap=0.0670 -> ambiguity_gap=0.0670
+  - ambiguity_gap: 0.0670 -> 0.0670 (unchanged)
+- 제출자료검토: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 주요사업 추진현황 주간회의 자료 작성: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 진행상황 보고: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 참가폼 제출 요청: ambiguity_gap=0.0310 -> ambiguity_gap=0.0310
+  - ambiguity_gap: 0.0310 -> 0.0310 (unchanged)
+- 참석 협조 요청: ambiguity_gap=0.0320 -> ambiguity_gap=0.0320
+  - ambiguity_gap: 0.0320 -> 0.0320 (unchanged)
+- 참석자 명단 전달: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 참석현황 공유: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 채팅방 공지 등록: ambiguity_gap=0.0140 -> ambiguity_gap=0.0140
+  - ambiguity_gap: 0.0140 -> 0.0140 (unchanged)
+- 최종 승인: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 최종결과 보고: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 추가 검토 요청: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 추진현황 제출: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 카카오톡 공지 전달: ambiguity_gap=0.0240 -> ambiguity_gap=0.0240
+  - ambiguity_gap: 0.0240 -> 0.0240 (unchanged)
+- 캘린더 일정 공유: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 커피, 차 픽업: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 탕비실 간식 선호 조사: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 파일 업로드 안내: ambiguity_gap=0.0340 -> ambiguity_gap=0.0340
+  - ambiguity_gap: 0.0340 -> 0.0340 (unchanged)
+- 표창 제작시기 확인: ambiguity_gap=0.0690 -> ambiguity_gap=0.0690
+  - ambiguity_gap: 0.0690 -> 0.0690 (unchanged)
+- 학부모강사 활동현황표 수합: ambiguity_gap=0.0160 -> ambiguity_gap=0.0160
+  - ambiguity_gap: 0.0160 -> 0.0160 (unchanged)
+- 행사 준비 현황 관계자 공유: ambiguity_gap=0.0940 -> ambiguity_gap=0.0940
+  - ambiguity_gap: 0.0940 -> 0.0940 (unchanged)
+- 행사 준비 현황 중간보고: ambiguity_gap=0.0930 -> ambiguity_gap=0.0930
+  - ambiguity_gap: 0.0930 -> 0.0930 (unchanged)
+- 행사결과 전달: ambiguity_gap=0.0710 -> ambiguity_gap=0.0710
+  - ambiguity_gap: 0.0710 -> 0.0710 (unchanged)
+- 행사계획 승인 요청: ambiguity_gap=0.0200 -> ambiguity_gap=0.0200
+  - ambiguity_gap: 0.0200 -> 0.0200 (unchanged)
+- 행사안내 공고: ambiguity_gap=0.0400 -> ambiguity_gap=0.0400
+  - ambiguity_gap: 0.0400 -> 0.0400 (unchanged)
+- 행사자료 메일 송부: ambiguity_gap=0.0020 -> ambiguity_gap=0.0020
+  - ambiguity_gap: 0.0020 -> 0.0020 (unchanged)
+- 행사자료 송부: ambiguity_gap=0.0750 -> ambiguity_gap=0.0750
+  - ambiguity_gap: 0.0750 -> 0.0750 (unchanged)
+- 행사포스터 배포: ambiguity_gap=0.0710 -> ambiguity_gap=0.0710
+  - ambiguity_gap: 0.0710 -> 0.0710 (unchanged)
+- 현황자료 전달: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 홍보물 게시: ambiguity_gap=0.0020 -> ambiguity_gap=0.0020
+  - ambiguity_gap: 0.0020 -> 0.0020 (unchanged)
+- 홍보물 시안 검토: ambiguity_gap=0.0010 -> ambiguity_gap=0.0010
+  - ambiguity_gap: 0.0010 -> 0.0010 (unchanged)
+- 화상회의 링크 안내: ambiguity_gap=0.0370 -> ambiguity_gap=0.0370
+  - ambiguity_gap: 0.0370 -> 0.0370 (unchanged)
+- 활동결과 제출: ambiguity_gap=0.0580 -> ambiguity_gap=0.0580
+  - ambiguity_gap: 0.0580 -> 0.0580 (unchanged)
+- 회의 참석 요청: ambiguity_gap=0.0000 -> ambiguity_gap=0.0000
+  - ambiguity_gap: 0.0000 -> 0.0000 (unchanged)
+- 회의결과 전달: ambiguity_gap=0.0560 -> ambiguity_gap=0.0560
+  - ambiguity_gap: 0.0560 -> 0.0560 (unchanged)
+- 회의자료 메일 공유: ambiguity_gap=0.0070 -> ambiguity_gap=0.0070
+  - ambiguity_gap: 0.0070 -> 0.0070 (unchanged)
+
+## movement clusters
+
+- document_review -> physical_item_inspection: 1
