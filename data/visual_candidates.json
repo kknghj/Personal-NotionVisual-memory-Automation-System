@@ -3246,7 +3246,18 @@
       "제출 마감",
       "일정 기한 관리",
       "혜택 만료 확인"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "time_scheduling"
+      ],
+      "primary_object": "date_time",
+      "object_type": "deadline_date",
+      "interaction_mode": "check_deadline",
+      "schedule_intent": "deadline_verification",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "external_admin_system": {
     "visual": {
@@ -3888,7 +3899,18 @@
       "혜택 마감일 특정",
       "표창 제작시기 확인",
       "제작 일정 확인"
-    ]
+    ],
+    "semantic_metadata": {
+      "workflow_fit": [
+        "time_scheduling"
+      ],
+      "primary_object": "date_time",
+      "object_type": "calendar_date",
+      "interaction_mode": "check_schedule",
+      "schedule_intent": "date_verification",
+      "visibility": "internal",
+      "tone": "neutral"
+    }
   },
   "broadcast_channel_adjust": {
     "visual": {

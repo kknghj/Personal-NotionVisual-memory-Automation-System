@@ -1,41 +1,41 @@
 {
   "source_logs": {
-    "before": "tests/ambiguity/ambiguity_results/2026-06-08_object_priority_metadata_pilot_before_scoring_log.json",
-    "after": "tests/ambiguity/ambiguity_results/2026-06-08_object_priority_metadata_pilot_after_scoring_log.json"
+    "before": "tests/ambiguity/ambiguity_results/2026-06-08_schedule_metadata_pilot_before_scoring_log.json",
+    "after": "tests/ambiguity/ambiguity_results/2026-06-08_schedule_metadata_pilot_after_scoring_log.json"
   },
   "movement_metrics": {
     "total_titles": 206,
-    "top_candidate_changed_count": 1,
+    "top_candidate_changed_count": 2,
     "no_candidate_before": 3,
     "no_candidate_after": 3,
     "no_candidate_decrease": 0,
-    "semantic_bonus_total_before": 2410,
-    "semantic_bonus_total_after": 2403,
-    "semantic_bonus_total_delta": -7,
+    "semantic_bonus_total_before": 2403,
+    "semantic_bonus_total_after": 2385,
+    "semantic_bonus_total_delta": -18,
     "top_semantic_bonus_applied_before_count": 164,
-    "top_semantic_bonus_applied_after_count": 164,
-    "top_semantic_bonus_applied_delta": 0,
+    "top_semantic_bonus_applied_after_count": 166,
+    "top_semantic_bonus_applied_delta": 2,
     "suppression_applied_before_count": 30,
     "suppression_applied_after_count": 30,
     "high_ambiguity_before": 91,
-    "high_ambiguity_after": 91,
-    "high_ambiguity_delta": 0,
+    "high_ambiguity_after": 90,
+    "high_ambiguity_delta": -1,
     "average_ambiguity_gap_before": 0.035,
-    "average_ambiguity_gap_after": 0.035,
-    "average_ranking_depth_before": 2.223,
+    "average_ambiguity_gap_after": 0.036,
+    "average_ranking_depth_before": 2.238,
     "average_ranking_depth_after": 2.238,
-    "ranking_depth_delta": 0.015,
-    "titles_with_depth_increase": 3,
+    "ranking_depth_delta": 0.0,
+    "titles_with_depth_increase": 0,
     "titles_with_top2_competition_before": 145,
     "titles_with_top2_competition_after": 145,
-    "ambiguity_gap_improved_count": 1,
-    "ambiguity_gap_worsened_count": 2,
+    "ambiguity_gap_improved_count": 3,
+    "ambiguity_gap_worsened_count": 0,
     "ambiguity_gap_unchanged_count": 142
   },
   "change_label_counts": {
     "generic_noise_reduction": 10,
-    "ranking_shift": 1,
-    "stable": 195
+    "ranking_shift": 2,
+    "stable": 194
   },
   "top_candidate_distribution_after": {
     "allowance_request_document": 1,
@@ -72,7 +72,6 @@
     "messenger_chat": 1,
     "none": 3,
     "notice_posting": 4,
-    "notion_docs_touchup": 1,
     "performance_aggregation": 1,
     "physical_item_inspection": 1,
     "prep_paired_event_party": 2,
@@ -88,7 +87,6 @@
     "qr_code_scan_auth": 2,
     "result_reporting": 10,
     "review_request": 7,
-    "running_appointment": 1,
     "site_inspection_visit": 1,
     "snack_item": 1,
     "spreadsheet_work": 2,
@@ -100,7 +98,7 @@
     "survey_form": 2,
     "tax_invoice_review": 1,
     "urgent_notice": 2,
-    "work_calendar_organization": 3
+    "work_calendar_organization": 5
   },
   "most_improved_top_10": [
     {
@@ -239,7 +237,7 @@
   "semantic_recommender_assessment": {
     "semantic_rows_increased": false,
     "retrieval_coverage_improved": false,
-    "candidate_competition_increased": true,
+    "candidate_competition_increased": false,
     "summary": "semantic workflow competition increased: more titles have candidate rows, semantic metadata contributes to ranking, and generic token rows are explicitly dampened"
   },
   "keyword_dominance_remaining_areas": [
@@ -254,7 +252,6 @@
     "구글드라이브 공유",
     "구글폼 신청 접수",
     "네이버폼 신청 접수",
-    "노션 일정 공유",
     "도시락 준비",
     "드라이브 폴더 공유",
     "로그인 화면 수정",
@@ -262,7 +259,8 @@
     "바이브코딩 아이디어 브레인스토밍",
     "본인인증화면 수정 제안",
     "비영리민간단체 전수조사 현황 회신",
-    "센터 방문점검 실시"
+    "센터 방문점검 실시",
+    "센터별 운영실적 취합"
   ],
   "ontology_overlap_hotspots": [
     "배너 이미지 게시",

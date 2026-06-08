@@ -1264,11 +1264,12 @@
     "title": "고객 민원 처리 현황 확인",
     "before": {
       "top_candidate": "status_check",
-      "ambiguity_gap": 0.02,
+      "ambiguity_gap": 0.014,
       "high_ambiguity": true,
-      "ranking_depth": 4,
+      "ranking_depth": 5,
       "top5_candidates": [
         "status_check",
+        "physical_item_inspection",
         "document_review",
         "slide_deck_final_review",
         "phone_call"
@@ -1307,10 +1308,8 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "physical_item_inspection"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -2648,32 +2647,32 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "notion_docs_touchup",
-      "ambiguity_gap": 0.008,
+      "top_candidate": "work_calendar_organization",
+      "ambiguity_gap": 0.048,
       "high_ambiguity": true,
       "ranking_depth": 2,
       "top5_candidates": [
-        "notion_docs_touchup",
-        "work_calendar_organization"
+        "work_calendar_organization",
+        "notion_docs_touchup"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 2,
       "suppression_applied": false
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "ranking_shift",
     "change_labels": [
-      "stable"
+      "ranking_shift"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -2681,7 +2680,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "top candidate changed without a clear semantic improvement signal"
     ]
   },
   {
@@ -3326,11 +3325,12 @@
     "title": "미처리 민원 현황 확인",
     "before": {
       "top_candidate": "status_check",
-      "ambiguity_gap": 0.02,
+      "ambiguity_gap": 0.014,
       "high_ambiguity": true,
-      "ranking_depth": 4,
+      "ranking_depth": 5,
       "top5_candidates": [
         "status_check",
+        "physical_item_inspection",
         "document_review",
         "slide_deck_final_review",
         "phone_call"
@@ -3369,10 +3369,8 @@
     ],
     "ranking_change": {
       "top_candidate_changed": false,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "physical_item_inspection"
-      ],
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
@@ -7164,18 +7162,19 @@
   {
     "title": "을지훈련 매트리스 상태 확인",
     "before": {
-      "top_candidate": "document_review",
-      "ambiguity_gap": 0.0,
+      "top_candidate": "physical_item_inspection",
+      "ambiguity_gap": 0.014,
       "high_ambiguity": true,
-      "ranking_depth": 4,
+      "ranking_depth": 5,
       "top5_candidates": [
+        "physical_item_inspection",
+        "status_check",
         "document_review",
         "slide_deck_final_review",
-        "status_check",
         "phone_call"
       ],
-      "top_semantic_bonus": 11,
-      "semantic_bonus_total": 27,
+      "top_semantic_bonus": 18,
+      "semantic_bonus_total": 20,
       "suppression_applied": false
     },
     "after": {
@@ -7194,22 +7193,20 @@
       "semantic_bonus_total": 20,
       "suppression_applied": false
     },
-    "changed": true,
-    "change_type": "ranking_shift",
+    "changed": false,
+    "change_type": "stable",
     "change_labels": [
-      "ranking_shift"
+      "stable"
     ],
     "ranking_change": {
-      "top_candidate_changed": true,
-      "ranking_depth_delta": 1,
-      "entered_top5": [
-        "physical_item_inspection"
-      ],
+      "top_candidate_changed": false,
+      "ranking_depth_delta": 0,
+      "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 7,
-      "total_delta": -7
+      "top_delta": 0,
+      "total_delta": 0
     },
     "suppression_change": {
       "before": false,
@@ -7217,7 +7214,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate changed without a clear semantic improvement signal"
+      "top candidate remained stable"
     ]
   },
   {
@@ -9744,32 +9741,32 @@
       "suppression_applied": false
     },
     "after": {
-      "top_candidate": "running_appointment",
-      "ambiguity_gap": 0.001,
-      "high_ambiguity": true,
+      "top_candidate": "work_calendar_organization",
+      "ambiguity_gap": 0.055,
+      "high_ambiguity": false,
       "ranking_depth": 2,
       "top5_candidates": [
-        "running_appointment",
-        "work_calendar_organization"
+        "work_calendar_organization",
+        "running_appointment"
       ],
-      "top_semantic_bonus": 0,
-      "semantic_bonus_total": 0,
+      "top_semantic_bonus": 2,
+      "semantic_bonus_total": 2,
       "suppression_applied": false
     },
-    "changed": false,
-    "change_type": "stable",
+    "changed": true,
+    "change_type": "ranking_shift",
     "change_labels": [
-      "stable"
+      "ranking_shift"
     ],
     "ranking_change": {
-      "top_candidate_changed": false,
+      "top_candidate_changed": true,
       "ranking_depth_delta": 0,
       "entered_top5": [],
       "exited_top5": []
     },
     "semantic_bonus_change": {
-      "top_delta": 0,
-      "total_delta": 0
+      "top_delta": 2,
+      "total_delta": 2
     },
     "suppression_change": {
       "before": false,
@@ -9777,7 +9774,7 @@
       "changed": false
     },
     "notes": [
-      "top candidate remained stable"
+      "top candidate changed without a clear semantic improvement signal"
     ]
   },
   {
@@ -10080,7 +10077,7 @@
     },
     "after": {
       "top_candidate": "work_calendar_organization",
-      "ambiguity_gap": 0.069,
+      "ambiguity_gap": 0.083,
       "high_ambiguity": false,
       "ranking_depth": 5,
       "top5_candidates": [
@@ -10091,7 +10088,7 @@
         "phone_call"
       ],
       "top_semantic_bonus": 0,
-      "semantic_bonus_total": 22,
+      "semantic_bonus_total": 0,
       "suppression_applied": false
     },
     "changed": false,
@@ -10107,7 +10104,7 @@
     },
     "semantic_bonus_change": {
       "top_delta": 0,
-      "total_delta": 0
+      "total_delta": -22
     },
     "suppression_change": {
       "before": false,

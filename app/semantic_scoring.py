@@ -13,6 +13,10 @@ from app.object_priority_semantic import (
     object_priority_semantic_adjustment,
     refine_object_priority_title_signals,
 )
+from app.schedule_semantic import (
+    refine_schedule_title_signals,
+    schedule_semantic_adjustment,
+)
 from app.reporting_review_semantic import (
     refine_reporting_review_title_signals,
     reporting_review_semantic_adjustment,
@@ -103,6 +107,7 @@ FIELD_WEIGHTS: dict[str, int] = {
     "send_share": 2,
     "request_approval": 2,
     "primary_object": 2,
+    "schedule_intent": 2,
     "object_type": 1,
     "visibility": 1,
     "tone": 1,
@@ -650,6 +655,7 @@ def infer_title_semantic_signals(title: str) -> dict[str, set[str]]:
     refine_reporting_review_title_signals(canonical, signals)
     refine_status_reporting_title_signals(canonical, signals)
     refine_object_priority_title_signals(canonical, signals)
+    refine_schedule_title_signals(canonical, signals)
     return signals
 
 
@@ -800,6 +806,14 @@ def _finalize_semantic_compatibility(
         fields,
     )
     score, reasons, fields = object_priority_semantic_adjustment(
+        title,
+        candidate_id,
+        semantic_metadata,
+        score,
+        reasons,
+        fields,
+    )
+    score, reasons, fields = schedule_semantic_adjustment(
         title,
         candidate_id,
         semantic_metadata,
