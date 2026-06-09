@@ -238,7 +238,9 @@ def build_recommendation_log_entry(
     assert candidates is not None
     snapshot = _catalog_ranking_snapshot(key_title, candidates)
     entry.update(snapshot)
-    entry["recommendation_path"] = "visual_candidates"
+    entry["recommendation_path"] = (
+        "no_candidate" if snapshot.get("no_candidate") else "visual_candidates"
+    )
     entry["workflow_resolution"] = _workflow_resolution_payload(
         key_title,
         catalog_match=catalog_match,

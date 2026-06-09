@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Feedback UI MVP</title>
+  <link rel="stylesheet" href="feedback.css"/>
+</head>
+<body>
+  <header>
+    <h1>Feedback UI (내부 실험)</h1>
+    <p class="subtitle">추천 → accepted / override / no_candidate 기록</p>
+  </header>
+
+  <section class="panel" id="input-section">
+    <h2>1. 제목 입력</h2>
+    <label for="title">업무 제목</label>
+    <input id="title" type="text" placeholder="예: 보고서 확인" autocomplete="off"/>
+    <button type="button" id="btn-recommend">추천 실행</button>
+    <p id="recommend-status" class="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel hidden" id="result-section">
+    <h2>2. 추천 결과</h2>
+    <div id="recommendation-meta"></div>
+    <div id="top-visual" class="top-visual"></div>
+    <p id="recommend-reason" class="reason"></p>
+    <h3>Top candidates</h3>
+    <ul id="candidate-list" class="candidate-list"></ul>
+  </section>
+
+  <section class="panel hidden" id="action-section">
+    <h2>3. 피드백 기록</h2>
+    <div class="action-row">
+      <button type="button" id="btn-accept" class="primary">Accept 추천</button>
+      <button type="button" id="btn-no-candidate" class="warn">No candidate</button>
+    </div>
+
+    <details id="override-panel" open>
+      <summary>Override (catalog 또는 직접 입력)</summary>
+      <div class="override-grid">
+        <label for="catalog-select">Catalog 후보</label>
+        <select id="catalog-select">
+          <option value="">— catalog에서 선택 —</option>
+        </select>
+
+        <p class="divider">또는 직접 입력</p>
+
+        <label for="manual-type">Visual type</label>
+        <select id="manual-type">
+          <option value="emoji">emoji</option>
+          <option value="notion_icon">notion_icon</option>
+        </select>
+
+        <label for="manual-value">Value</label>
+        <input id="manual-value" type="text" placeholder="📄 또는 grid-rectangle-2x3"/>
+
+        <label for="manual-color">Color (optional)</label>
+        <input id="manual-color" type="text" placeholder="green, blue, …"/>
+
+        <label for="override-reason">Correction reason</label>
+        <select id="override-reason">
+          <option value="">— 선택 —</option>
+          <option value="wrong_top_candidate">wrong_top_candidate</option>
+          <option value="catalog_gap">catalog_gap</option>
+          <option value="action_vs_object">action_vs_object</option>
+          <option value="channel_vs_object">channel_vs_object</option>
+          <option value="document_vs_status">document_vs_status</option>
+          <option value="boundary_ambiguity">boundary_ambiguity</option>
+          <option value="personal_preference">personal_preference</option>
+          <option value="other">other</option>
+        </select>
+
+        <label for="user-note">메모 (optional)</label>
+        <textarea id="user-note" rows="2" placeholder="왜 바꿨는지 간단히"></textarea>
+
+        <button type="button" id="btn-override" class="secondary">Override 저장</button>
+      </div>
+    </details>
+    <p id="feedback-status" class="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel">
+    <h2>4. Recent feedback (20)</h2>
+    <button type="button" id="btn-refresh-recent" class="small">새로고침</button>
+    <div id="recent-table-wrap">
+      <table id="recent-table">
+        <thead>
+          <tr>
+            <th>시각</th>
+            <th>제목</th>
+            <th>type</th>
+            <th>system → final</th>
+            <th>reason</th>
+          </tr>
+        </thead>
+        <tbody id="recent-body">
+          <tr><td colspan="5" class="empty">불러오는 중…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="footer"><a href="/docs">API docs</a> · <a href="/">기본 추천 UI</a></p>
+  <script src="feedback.js"></script>
+</body>
+</html>

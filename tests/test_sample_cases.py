@@ -85,7 +85,7 @@ class SampleCasesExactMatchPriorityTests(unittest.TestCase):
         from app.main import recommend_icon
 
         title = "점심 카톡 확인"
-        with patch("app.main.find_best_visual_candidate_match") as mock_find:
+        with patch("app.recommendation_response.find_best_visual_candidate_match") as mock_find:
             mock_find.side_effect = AssertionError(
                 "find_best_visual_candidate_match must not run when sample_cases exact matches"
             )

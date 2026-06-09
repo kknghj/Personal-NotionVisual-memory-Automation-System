@@ -1,15 +1,20 @@
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.data_loader import load_sample_cases, load_visual_candidates
-from app.models import RecommendRequest, RecommendResponse, Visual
-from app.recommendation_logging import log_recommendation_execution
-from app.recommender import find_best_visual_candidate_match, find_exact_title_match
+from app.feedback_api import router as feedback_router
+from app.models import RecommendRequest, RecommendResponse
+from app.recommendation_response import run_recommendation
 
 app = FastAPI(title="Notion Icon Automation", version="0.1.0")
 
 _sample_cases: list | None = None
 _visual_candidates: dict | None = None
+
+_STATIC_DIR = Path(__file__).resolve().parent / "static"
 
 
 def get_sample_cases() -> list:
@@ -25,6 +30,13 @@ def get_visual_candidates() -> dict:
         _visual_candidates = load_visual_candidates()
     return _visual_candidates
 
+
+app.include_router(feedback_router)
+app.mount(
+    "/ui/feedback",
+    StaticFiles(directory=_STATIC_DIR / "feedback", html=True),
+    name="feedback-ui",
+)
 
 _INDEX_HTML = """<!DOCTYPE html>
 <html lang="ko">
@@ -68,7 +80,7 @@ _INDEX_HTML = """<!DOCTYPE html>
   <div id="summary" aria-live="polite"></div>
   <p style="margin-top:1.25rem;font-size:.875rem;color:#52525b"><strong>전체 JSON</strong></p>
   <pre id="out">응답이 여기에 표시됩니다.</pre>
-  <p class="hint">API 문서: <a href="/docs">/docs</a></p>
+  <p class="hint">API 문서: <a href="/docs">/docs</a> · Feedback UI: <a href="/ui/feedback/">/ui/feedback</a></p>
   <script>
     const form = document.getElementById('f');
     const out = document.getElementById('out');
@@ -77,8 +89,12 @@ _INDEX_HTML = """<!DOCTYPE html>
     function fillSummary(data) {
       summary.style.display = 'block';
       summary.replaceChildren();
-      const v = data.visual || {};
-      if (v.type === 'emoji') {
+      const v = data.visual;
+      if (!v) {
+        const p = document.createElement('p');
+        p.textContent = '적합한 후보 없음 (no_candidate)';
+        summary.appendChild(p);
+      } else if (v.type === 'emoji') {
         const em = document.createElement('p');
         em.style.fontSize = '2rem';
         em.style.margin = '0 0 .35rem 0';
@@ -145,57 +161,11 @@ def index() -> str:
 
 @app.post("/recommend-icon", response_model=RecommendResponse)
 def recommend_icon(body: RecommendRequest) -> RecommendResponse:
-    case = find_exact_title_match(body.title, get_sample_cases())
-    if case is not None:
-        visual = case.get("visual")
-        if not visual or not isinstance(visual, dict):
-            raise HTTPException(
-                status_code=500,
-                detail="일치하는 케이스에 visual 필드가 없습니다.",
-            )
-        raw_reason = case.get("reason")
-        reason = (
-            raw_reason.strip()
-            if isinstance(raw_reason, str) and raw_reason.strip()
-            else "data/sample_cases.json의 제목과 정확히 일치하는 사례의 visual을 사용합니다."
-        )
-        wfs = case.get("workflow_resolution")
-        if isinstance(wfs, int):
-            reason = f"{reason} (기록된 workflow_resolution={wfs})"
-        response = RecommendResponse(visual=Visual(**visual), reason=reason)
-        log_recommendation_execution(
+    try:
+        return run_recommendation(
             body.title,
-            case=case,
-            recommended_visual=response.visual.model_dump(exclude_none=True),
+            sample_cases=get_sample_cases(),
+            visual_candidates=get_visual_candidates(),
         )
-        return response
-
-    visual_candidates = get_visual_candidates()
-    cand = find_best_visual_candidate_match(body.title, visual_candidates)
-    if cand is None:
-        log_recommendation_execution(body.title, candidates=visual_candidates)
-        raise HTTPException(
-            status_code=404,
-            detail="data/sample_cases 및 data/visual_candidates meaning 키워드와 일치하는 항목이 없습니다.",
-        )
-
-    data, cid, matched, wp, kres, idom = cand
-    visual = data.get("visual")
-    if not visual or not isinstance(visual, dict):
-        raise HTTPException(
-            status_code=500,
-            detail="선택된 data/visual_candidates 항목에 visual 필드가 없습니다.",
-        )
-    reason = (
-        "data/sample_cases에 같은 제목이 없어 data/visual_candidates로 매칭했습니다. "
-        f"제목에 meaning「{matched}」가 포함되어 후보「{cid}」를 선택했습니다 "
-        f"(정렬: interface_dominance={idom}, keyword_workflow_resolution={kres}, workflow_priority={wp})."
-    )
-    response = RecommendResponse(visual=Visual(**visual), reason=reason)
-    log_recommendation_execution(
-        body.title,
-        catalog_match=cand,
-        candidates=visual_candidates,
-        recommended_visual=response.visual.model_dump(exclude_none=True),
-    )
-    return response
+    except ValueError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
