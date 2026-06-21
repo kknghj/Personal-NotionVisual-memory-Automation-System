@@ -18,6 +18,7 @@ from app.p5b_feedback_analyzer import (
     format_statistics_report,
     load_recommendation_index,
 )
+from app.feedback_ranking_snapshot import infer_ranking_confidence
 
 
 FIXTURE_RECOMMENDATION = {
@@ -251,6 +252,65 @@ class P5BFeedbackAnalyzerTests(unittest.TestCase):
 
     def test_default_margin_threshold(self) -> None:
         self.assertEqual(DEFAULT_MARGIN_THRESHOLD, 0.03)
+
+    def test_accepted_stores_accept_quality_unstable(self) -> None:
+        entry = {
+            "feedback_type": "accepted",
+            "accept_quality": "unstable",
+            "top1_top2_margin": 0.001,
+        }
+        result = classify_accepted(entry, None)
+        self.assertEqual(result, "unstable_accept")
+
+    def test_analyzer_prefers_feedback_log_margin_without_recommendation_join(self) -> None:
+        entry = {
+            "recommendation_id": "orphan",
+            "input_title": "재택 필요 자료 드라이브 이동",
+            "feedback_type": "accepted",
+            "top1_top2_margin": 0.001,
+            "top1_candidate_id": "folder_organization",
+            "top2_candidate_id": "taxi_service",
+        }
+        row = enrich_feedback_row(entry, {})
+        self.assertEqual(row.margin, 0.001)
+        self.assertEqual(row.accept_class, "unstable_accept")
+        self.assertEqual(row.workflow, "folder_organization")
+
+    def test_legacy_feedback_without_schema_fields(self) -> None:
+        entry = {
+            "recommendation_id": "stable-mail",
+            "feedback_type": "accepted",
+        }
+        row = enrich_feedback_row(entry, self.rec_index)
+        self.assertEqual(row.accept_class, "stable_accept")
+        self.assertAlmostEqual(row.margin or 0, 0.43, places=2)
+
+        legacy_no_rec = {
+            "feedback_type": "accepted",
+        }
+        self.assertEqual(classify_accepted(legacy_no_rec, None), "unsure_accept")
+
+    def test_ranking_confidence_thresholds(self) -> None:
+        self.assertEqual(infer_ranking_confidence(0.001), "low")
+        self.assertEqual(infer_ranking_confidence(0.05), "medium")
+        self.assertEqual(infer_ranking_confidence(0.08), "high")
+        self.assertEqual(infer_ranking_confidence(None), "unknown")
+
+    def test_accepted_memo_not_counted_as_override_taxonomy(self) -> None:
+        entry = {
+            "feedback_type": "accepted",
+            "accept_quality": "unstable",
+            "ranking_confidence_note": "폴더 추천은 맞지만 taxi_service와 거의 동점",
+            "top1_top2_margin": 0.001,
+            "system_recommended_visual": {"type": "emoji", "value": "📁"},
+            "final_selected_visual": {"type": "emoji", "value": "📁"},
+        }
+        row = enrich_feedback_row(entry, {})
+        summary = analyze_feedback_rows([row])
+        self.assertEqual(summary["overall"]["override_count"], 0)
+        self.assertEqual(summary["overall"]["accepted_count"], 1)
+        self.assertEqual(summary["acceptance_metrics"]["unstable_accept_count"], 1)
+        self.assertEqual(summary["override_metrics"]["ranking_instability"]["count"], 0)
 
 
 if __name__ == "__main__":

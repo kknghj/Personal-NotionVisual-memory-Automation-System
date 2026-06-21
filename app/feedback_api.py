@@ -8,6 +8,12 @@ from fastapi import APIRouter, HTTPException, Query
 
 from app.data_loader import load_visual_candidates
 from app.feedback_logging import log_user_feedback
+from app.feedback_ranking_snapshot import (
+    ACCEPT_QUALITIES,
+    load_recommendation_index,
+    merge_ranking_snapshot,
+    normalize_accept_quality,
+)
 from app.feedback_read import read_recent_feedback
 from app.models import (
     OVERRIDE_REASONS,
@@ -43,6 +49,25 @@ def _resolve_storage_feedback_type(body: FeedbackRequest) -> str:
     if body.system_recommended_visual is None and body.final_selected_visual is not None:
         return "manual_without_recommendation"
     return normalized
+
+
+def _resolve_recommendation_entry(recommendation_id: str | None) -> dict[str, Any] | None:
+    if not recommendation_id:
+        return None
+    return load_recommendation_index().get(recommendation_id)
+
+
+def _resolve_ranking_snapshot(body: FeedbackRequest) -> dict[str, Any]:
+    client_snapshot = (
+        body.ranking_snapshot.model_dump(exclude_none=True)
+        if body.ranking_snapshot is not None
+        else {}
+    )
+    recommendation = _resolve_recommendation_entry(body.recommendation_id)
+    return merge_ranking_snapshot(
+        client_snapshot=client_snapshot,
+        recommendation=recommendation,
+    )
 
 
 @router.post("/feedback", response_model=FeedbackResponse)
@@ -81,6 +106,17 @@ def post_feedback(body: FeedbackRequest) -> FeedbackResponse:
     else:
         final = body.final_selected_visual
 
+    if body.accept_quality is not None and body.accept_quality not in ACCEPT_QUALITIES:
+        raise HTTPException(
+            status_code=422,
+            detail=f"accept_quality must be one of {sorted(ACCEPT_QUALITIES)}.",
+        )
+    if body.accept_quality is not None and storage_type != "accepted":
+        raise HTTPException(
+            status_code=422,
+            detail="accept_quality is only valid for accepted feedback.",
+        )
+
     system_payload: dict[str, Any] | None = (
         body.system_recommended_visual.model_dump(exclude_none=True)
         if body.system_recommended_visual
@@ -90,6 +126,16 @@ def post_feedback(body: FeedbackRequest) -> FeedbackResponse:
         final.model_dump(exclude_none=True) if final else None
     )
 
+    ranking_snapshot = _resolve_ranking_snapshot(body)
+    margin = ranking_snapshot.get("top1_top2_margin")
+
+    accept_quality: str | None = None
+    ranking_confidence_note: str | None = None
+    if storage_type == "accepted":
+        accept_quality = normalize_accept_quality(body.accept_quality, margin=margin)
+        note = (body.ranking_confidence_note or "").strip()
+        ranking_confidence_note = note or None
+
     ok = log_user_feedback(
         body.input_title,
         feedback_type=storage_type,
@@ -98,6 +144,9 @@ def post_feedback(body: FeedbackRequest) -> FeedbackResponse:
         final_selected_visual=final_payload,
         override_reason=body.override_reason,
         user_note=body.user_note,
+        accept_quality=accept_quality,
+        ranking_confidence_note=ranking_confidence_note,
+        ranking_snapshot=ranking_snapshot or None,
     )
     if not ok:
         raise HTTPException(status_code=500, detail="feedback log write failed.")

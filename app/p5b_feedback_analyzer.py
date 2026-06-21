@@ -19,6 +19,7 @@ from typing import Any, Literal
 
 from app.feedback_export import format_visual_display
 from app.feedback_logging import DEFAULT_LOG_PATH as DEFAULT_FEEDBACK_PATH
+from app.feedback_ranking_snapshot import extract_margin_from_entry, load_recommendation_index
 from app.recommendation_logging import DEFAULT_LOG_PATH as DEFAULT_RECOMMENDATION_PATH
 
 DEFAULT_MARGIN_THRESHOLD = 0.03
@@ -30,7 +31,7 @@ OverrideTaxonomy = Literal[
     "ranking_instability",
     "metadata_gap",
 ]
-AcceptTaxonomy = Literal["stable_accept", "unstable_accept"]
+AcceptTaxonomy = Literal["stable_accept", "unstable_accept", "unsure_accept"]
 
 BOUNDARY_PATTERNS: dict[str, tuple[str, ...]] = {
     "action_vs_object": ("이동", "자료", "준비", "정리", "수정", "작성"),
@@ -73,13 +74,9 @@ def _load_jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def load_recommendation_index(path: Path | None = None) -> dict[str, dict[str, Any]]:
-    log_path = path or DEFAULT_RECOMMENDATION_PATH
-    index: dict[str, dict[str, Any]] = {}
-    for row in _load_jsonl(log_path):
-        rid = row.get("recommendation_id")
-        if isinstance(rid, str) and rid:
-            index[rid] = row
-    return index
+    from app.feedback_ranking_snapshot import load_recommendation_index as _load_index
+
+    return _load_index(path)
 
 
 def _visuals_equal(left: dict[str, Any] | None, right: dict[str, Any] | None) -> bool:
@@ -98,20 +95,32 @@ def _feedback_bucket(feedback_type: str) -> str:
     return "other"
 
 
-def compute_top_margin(recommendation: dict[str, Any] | None) -> float | None:
-    if not recommendation:
-        return None
-    gap = recommendation.get("ambiguity_gap")
-    if isinstance(gap, (int, float)):
-        return float(gap)
-    candidates = recommendation.get("candidates") or []
-    if len(candidates) < 2:
-        return None
-    first = candidates[0].get("score")
-    second = candidates[1].get("score")
-    if isinstance(first, (int, float)) and isinstance(second, (int, float)):
-        return round(float(first) - float(second), 3)
-    return None
+def compute_top_margin(
+    entry: dict[str, Any] | None = None,
+    recommendation: dict[str, Any] | None = None,
+) -> float | None:
+    return extract_margin_from_entry(entry, recommendation)
+
+
+def _entry_top_candidates(entry: dict[str, Any]) -> list[dict[str, Any]]:
+    top1 = entry.get("top1_candidate_id")
+    if not isinstance(top1, str) or not top1.strip():
+        return []
+    rows: list[dict[str, Any]] = [
+        {
+            "candidate_id": top1.strip(),
+            "score": entry.get("top1_score"),
+        }
+    ]
+    top2 = entry.get("top2_candidate_id")
+    if isinstance(top2, str) and top2.strip():
+        rows.append(
+            {
+                "candidate_id": top2.strip(),
+                "score": entry.get("top2_score"),
+            }
+        )
+    return rows
 
 
 def is_ambiguous_margin(margin: float | None, threshold: float) -> bool:
@@ -123,14 +132,28 @@ def _contains_any(text: str, hints: tuple[str, ...]) -> bool:
     return any(hint in text or hint.lower() in lowered for hint in hints)
 
 
-def _top_candidates(recommendation: dict[str, Any] | None) -> list[dict[str, Any]]:
+def _top_candidates(
+    entry: dict[str, Any] | None = None,
+    recommendation: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    if entry:
+        from_entry = _entry_top_candidates(entry)
+        if from_entry:
+            return from_entry
     if not recommendation:
         return []
     raw = recommendation.get("candidates") or []
     return [row for row in raw if isinstance(row, dict)]
 
 
-def _workflow_key(recommendation: dict[str, Any] | None) -> str:
+def _workflow_key(
+    entry: dict[str, Any] | None = None,
+    recommendation: dict[str, Any] | None = None,
+) -> str:
+    if entry:
+        top1 = entry.get("top1_candidate_id")
+        if isinstance(top1, str) and top1.strip():
+            return top1.strip()
     if not recommendation:
         return "unknown"
     top = recommendation.get("top_candidate")
@@ -150,13 +173,16 @@ def _visual_key(visual: dict[str, Any] | None) -> str:
     return display or "none"
 
 
-def _semantic_bonus_weak(recommendation: dict[str, Any] | None) -> bool:
-    tops = _top_candidates(recommendation)[:2]
+def _semantic_bonus_weak(
+    entry: dict[str, Any] | None = None,
+    recommendation: dict[str, Any] | None = None,
+) -> bool:
+    tops = _top_candidates(entry, recommendation)[:2]
     if len(tops) < 2:
         return False
     bonus1 = int(tops[0].get("semantic_bonus") or 0)
     bonus2 = int(tops[1].get("semantic_bonus") or 0)
-    margin = compute_top_margin(recommendation)
+    margin = compute_top_margin(entry, recommendation)
     return bonus1 == 0 and bonus2 == 0 and is_ambiguous_margin(margin, DEFAULT_MARGIN_THRESHOLD)
 
 
@@ -166,9 +192,17 @@ def classify_accepted(
     *,
     margin_threshold: float = DEFAULT_MARGIN_THRESHOLD,
 ) -> AcceptTaxonomy:
-    margin = compute_top_margin(recommendation)
-    if margin is None:
+    explicit = entry.get("accept_quality")
+    if explicit == "stable":
+        return "stable_accept"
+    if explicit == "unstable":
         return "unstable_accept"
+    if explicit == "unsure":
+        return "unsure_accept"
+
+    margin = compute_top_margin(entry, recommendation)
+    if margin is None:
+        return "unsure_accept"
     if margin >= margin_threshold:
         return "stable_accept"
     return "unstable_accept"
@@ -186,7 +220,7 @@ def classify_override(
     override_reason = str(entry.get("override_reason") or "").strip()
     user_note = str(entry.get("user_note") or "")
     note_text = f"{override_reason} {user_note}"
-    margin = compute_top_margin(recommendation)
+    margin = compute_top_margin(entry, recommendation)
 
     if visuals_match:
         if _contains_any(user_note, _RANKING_INSTABILITY_HINTS) or (
@@ -194,7 +228,7 @@ def classify_override(
             and is_ambiguous_margin(margin, margin_threshold)
         ):
             return "ranking_instability"
-        if _semantic_bonus_weak(recommendation) or _contains_any(note_text, _METADATA_GAP_HINTS):
+        if _semantic_bonus_weak(entry, recommendation) or _contains_any(note_text, _METADATA_GAP_HINTS):
             return "metadata_gap"
         if is_ambiguous_margin(margin, margin_threshold):
             return "ranking_instability"
@@ -230,14 +264,18 @@ class AnalyzedFeedbackRow:
     boundary_hits: list[str] = field(default_factory=list)
 
 
-def detect_boundary_patterns(title: str, recommendation: dict[str, Any] | None) -> list[str]:
+def detect_boundary_patterns(
+    title: str,
+    entry: dict[str, Any] | None = None,
+    recommendation: dict[str, Any] | None = None,
+) -> list[str]:
     hits: list[str] = []
     text = title.strip()
     for pattern_name, keywords in BOUNDARY_PATTERNS.items():
         if sum(1 for kw in keywords if kw in text) >= 2:
             hits.append(pattern_name)
 
-    tops = _top_candidates(recommendation)
+    tops = _top_candidates(entry, recommendation)
     if len(tops) >= 2:
         id1 = str(tops[0].get("candidate_id") or "")
         id2 = str(tops[1].get("candidate_id") or "")
@@ -246,7 +284,7 @@ def detect_boundary_patterns(title: str, recommendation: dict[str, Any] | None) 
             if {id1, id2} == pair:
                 hits.append(label)
 
-    margin = compute_top_margin(recommendation)
+    margin = compute_top_margin(entry, recommendation)
     if is_ambiguous_margin(margin, DEFAULT_MARGIN_THRESHOLD) and hits:
         return hits
     if is_ambiguous_margin(margin, DEFAULT_MARGIN_THRESHOLD) and len(tops) >= 2:
@@ -263,17 +301,21 @@ def enrich_feedback_row(
     rid = entry.get("recommendation_id")
     recommendation = recommendation_index.get(rid) if isinstance(rid, str) else None
     bucket = _feedback_bucket(str(entry.get("feedback_type") or ""))
-    margin = compute_top_margin(recommendation)
+    margin = compute_top_margin(entry, recommendation)
     row = AnalyzedFeedbackRow(
         entry=entry,
         recommendation=recommendation,
         bucket=bucket,
         margin=margin,
-        workflow=_workflow_key(recommendation),
+        workflow=_workflow_key(entry, recommendation),
         system_visual=_visual_key(entry.get("system_recommended_visual")),
         final_visual=_visual_key(entry.get("final_selected_visual")),
         is_ambiguous=is_ambiguous_margin(margin, margin_threshold),
-        boundary_hits=detect_boundary_patterns(str(entry.get("input_title") or ""), recommendation),
+        boundary_hits=detect_boundary_patterns(
+            str(entry.get("input_title") or ""),
+            entry,
+            recommendation,
+        ),
     )
     if bucket == "accepted":
         row.accept_class = classify_accepted(
@@ -319,6 +361,7 @@ def analyze_feedback_rows(
 
     stable = sum(1 for row in accepted_rows if row.accept_class == "stable_accept")
     unstable = sum(1 for row in accepted_rows if row.accept_class == "unstable_accept")
+    unsure = sum(1 for row in accepted_rows if row.accept_class == "unsure_accept")
 
     override_classes = Counter(row.override_class for row in override_rows if row.override_class)
     override_total = len(override_rows) or 1
@@ -449,8 +492,10 @@ def analyze_feedback_rows(
         "acceptance_metrics": {
             "stable_accept_count": stable,
             "unstable_accept_count": unstable,
+            "unsure_accept_count": unsure,
             "stable_accept_pct": _ratio(stable, len(accepted_rows) or 1),
             "unstable_accept_pct": _ratio(unstable, len(accepted_rows) or 1),
+            "unsure_accept_pct": _ratio(unsure, len(accepted_rows) or 1),
             "margin_threshold": margin_threshold,
         },
         "override_metrics": {
@@ -524,6 +569,8 @@ def format_statistics_report(summary: dict[str, Any]) -> str:
         f"- **Override rate:** {overall['override_rate_pct']}% ({overall['override_count']}/{overall['total_logs']})",
         f"- **Unstable accept rate:** {acceptance['unstable_accept_pct']}% "
         f"({acceptance['unstable_accept_count']}/{overall['accepted_count']} accepted)",
+        f"- **Unsure accept rate:** {acceptance.get('unsure_accept_pct', 0)}% "
+        f"({acceptance.get('unsure_accept_count', 0)} accepted)",
         f"- **Ambiguity rate (margin ≤ {margin_threshold}):** "
         f"{ambiguity['overall_ambiguity_rate_pct']}%",
         "",
@@ -542,6 +589,8 @@ def format_statistics_report(summary: dict[str, Any]) -> str:
         f"({acceptance['stable_accept_count']})",
         f"- unstable_accept: **{acceptance['unstable_accept_pct']}%** "
         f"({acceptance['unstable_accept_count']})",
+        f"- unsure_accept: **{acceptance.get('unsure_accept_pct', 0)}%** "
+        f"({acceptance.get('unsure_accept_count', 0)})",
         f"- margin threshold: `{margin_threshold}`",
         "",
         "## Override Metrics",
@@ -736,6 +785,13 @@ def format_insights_report(summary: dict[str, Any]) -> str:
     )
 
     lines.extend(["", "## Accepted Memo Feature", ""])
+    lines.extend(
+        [
+            "**Status: implemented (schema v2).** UI accepts `accept_quality` + "
+            "`ranking_confidence_note` on Accept; see `reports/p5b_feedback_schema_v2_plan.md`.",
+            "",
+        ]
+    )
     if unstable_without_signal or multi_feedback:
         lines.extend(
             [

@@ -72,6 +72,35 @@ class FeedbackApiTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertTrue(rows[0]["accepted_system_recommendation"])
 
+    def test_post_feedback_accepted_with_quality_and_snapshot(self) -> None:
+        res = post_feedback(
+            FeedbackRequest(
+                recommendation_id="rec-2",
+                input_title="재택 필요 자료 드라이브 이동",
+                feedback_type="accepted",
+                system_recommended_visual={"type": "emoji", "value": "📁"},
+                final_selected_visual={"type": "emoji", "value": "📁"},
+                accept_quality="unstable",
+                ranking_confidence_note="폴더는 맞지만 taxi와 거의 동점",
+                ranking_snapshot={
+                    "top1_candidate_id": "folder_organization",
+                    "top1_visual": "📁",
+                    "top1_score": 0.761,
+                    "top2_candidate_id": "taxi_service",
+                    "top2_visual": "🚕",
+                    "top2_score": 0.76,
+                    "top1_top2_margin": 0.001,
+                    "ranking_confidence": "low",
+                },
+            )
+        )
+        self.assertEqual(res.feedback_type, "accepted")
+        row = self._read_feedback()[0]
+        self.assertEqual(row["accept_quality"], "unstable")
+        self.assertEqual(row["top1_top2_margin"], 0.001)
+        self.assertEqual(row["ranking_confidence"], "low")
+        self.assertIn("taxi", row["ranking_confidence_note"])
+
     def test_post_feedback_override_requires_reason(self) -> None:
         from fastapi import HTTPException
 

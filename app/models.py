@@ -31,6 +31,17 @@ class RecommendResponse(BaseModel):
     candidates: list[RankedCandidate] = Field(default_factory=list)
 
 
+class RankingSnapshotInput(BaseModel):
+    top1_candidate_id: Optional[str] = None
+    top1_visual: Optional[str] = None
+    top1_score: Optional[float] = None
+    top2_candidate_id: Optional[str] = None
+    top2_visual: Optional[str] = None
+    top2_score: Optional[float] = None
+    top1_top2_margin: Optional[float] = None
+    ranking_confidence: Optional[Literal["low", "medium", "high", "unknown"]] = None
+
+
 OVERRIDE_REASONS: frozenset[str] = frozenset(
     {
         "wrong_top_candidate",
@@ -53,6 +64,9 @@ class FeedbackRequest(BaseModel):
     final_selected_visual: Optional[Visual] = None
     override_reason: Optional[str] = None
     user_note: Optional[str] = None
+    accept_quality: Optional[Literal["stable", "unstable", "unsure"]] = None
+    ranking_confidence_note: Optional[str] = None
+    ranking_snapshot: Optional[RankingSnapshotInput] = None
 
 
 class FeedbackResponse(BaseModel):

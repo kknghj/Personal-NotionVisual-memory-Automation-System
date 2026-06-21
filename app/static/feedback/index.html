@@ -31,9 +31,22 @@
 
   <section class="panel hidden" id="action-section">
     <h2>3. 피드백 기록</h2>
+    <div id="low-confidence-banner" class="low-confidence hidden" aria-live="polite"></div>
     <div class="action-row">
       <button type="button" id="btn-accept" class="primary">Accept 추천</button>
       <button type="button" id="btn-no-candidate" class="warn">No candidate</button>
+    </div>
+
+    <div id="accept-quality-panel" class="accept-quality hidden">
+      <p class="accept-quality-lead">이 추천은 맞지만 다소 애매한가요? (선택) 메모를 남길 수 있습니다.</p>
+      <fieldset class="accept-quality-options">
+        <legend>accept_quality</legend>
+        <label><input type="radio" name="accept-quality" value="stable"/> 안정적으로 맞음</label>
+        <label><input type="radio" name="accept-quality" value="unstable"/> 맞지만 애매함</label>
+        <label><input type="radio" name="accept-quality" value="unsure"/> 잘 모르겠음</label>
+      </fieldset>
+      <label for="accept-note">note (optional)</label>
+      <textarea id="accept-note" rows="2" placeholder="ranking confidence 메모"></textarea>
     </div>
 
     <details id="override-panel" open>
@@ -91,7 +104,7 @@
             <th>제목</th>
             <th>type</th>
             <th>system → final</th>
-            <th>reason</th>
+            <th>quality / reason</th>
           </tr>
         </thead>
         <tbody id="recent-body">

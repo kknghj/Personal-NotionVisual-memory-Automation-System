@@ -1,8 +1,13 @@
 /** Feedback UI MVP — vanilla JS */
 
+const MARGIN_STABLE_THRESHOLD = 0.03;
+const MARGIN_HIGH_THRESHOLD = 0.07;
+
 const state = {
   recommendation: null,
   catalog: [],
+  rankingSnapshot: null,
+  isLowConfidence: false,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -16,6 +21,91 @@ function visualDisplay(v) {
 function setStatus(el, text, kind) {
   el.textContent = text || "";
   el.className = "status" + (kind ? ` ${kind}` : "");
+}
+
+function computeMargin(top1Score, top2Score) {
+  if (typeof top1Score !== "number" || typeof top2Score !== "number") return null;
+  return Math.round((top1Score - top2Score) * 1000) / 1000;
+}
+
+function inferRankingConfidence(margin) {
+  if (margin === null || margin === undefined) return "unknown";
+  if (margin < MARGIN_STABLE_THRESHOLD) return "low";
+  if (margin < MARGIN_HIGH_THRESHOLD) return "medium";
+  return "high";
+}
+
+function inferDefaultAcceptQuality(margin) {
+  if (margin === null || margin === undefined) return "unsure";
+  if (margin >= MARGIN_STABLE_THRESHOLD) return "stable";
+  return "unstable";
+}
+
+function buildRankingSnapshot(candidates) {
+  if (!candidates || candidates.length === 0) {
+    return {
+      top1_candidate_id: null,
+      top1_visual: null,
+      top1_score: null,
+      top2_candidate_id: null,
+      top2_visual: null,
+      top2_score: null,
+      top1_top2_margin: null,
+      ranking_confidence: "unknown",
+    };
+  }
+  const top1 = candidates[0];
+  const top2 = candidates.length > 1 ? candidates[1] : null;
+  const margin = top2 ? computeMargin(top1.score, top2.score) : null;
+  return {
+    top1_candidate_id: top1.candidate_id,
+    top1_visual: visualDisplay(top1.visual),
+    top1_score: top1.score,
+    top2_candidate_id: top2 ? top2.candidate_id : null,
+    top2_visual: top2 ? visualDisplay(top2.visual) : null,
+    top2_score: top2 ? top2.score : null,
+    top1_top2_margin: margin,
+    ranking_confidence: inferRankingConfidence(margin),
+  };
+}
+
+function selectedAcceptQuality() {
+  const checked = document.querySelector('input[name="accept-quality"]:checked');
+  return checked ? checked.value : null;
+}
+
+function setAcceptQualityDefault(value) {
+  const input = document.querySelector(`input[name="accept-quality"][value="${value}"]`);
+  if (input) input.checked = true;
+}
+
+function renderLowConfidenceUi(snapshot) {
+  const banner = $("low-confidence-banner");
+  const panel = $("accept-quality-panel");
+  const margin = snapshot ? snapshot.top1_top2_margin : null;
+  const isLow = margin !== null && margin < MARGIN_STABLE_THRESHOLD;
+
+  state.isLowConfidence = isLow;
+  if (!isLow) {
+    banner.classList.add("hidden");
+    banner.replaceChildren();
+    panel.classList.add("hidden");
+    return;
+  }
+
+  banner.classList.remove("hidden");
+  banner.replaceChildren();
+  const warning = document.createElement("p");
+  warning.textContent = "⚠️ 2순위와 점수 차이가 작습니다.";
+  banner.appendChild(warning);
+  if (snapshot.top2_candidate_id) {
+    const detail = document.createElement("p");
+    detail.textContent = `top2: ${snapshot.top2_visual || "—"} ${snapshot.top2_candidate_id} · margin: ${margin}`;
+    banner.appendChild(detail);
+  }
+
+  panel.classList.remove("hidden");
+  setAcceptQualityDefault(inferDefaultAcceptQuality(margin));
 }
 
 async function loadCatalog() {
@@ -39,6 +129,7 @@ async function loadCatalog() {
 
 function renderRecommendation(data) {
   state.recommendation = data;
+  state.rankingSnapshot = buildRankingSnapshot(data.candidates || []);
   $("result-section").classList.remove("hidden");
   $("action-section").classList.remove("hidden");
 
@@ -93,6 +184,9 @@ function renderRecommendation(data) {
       list.appendChild(li);
     }
   }
+
+  renderLowConfidenceUi(state.rankingSnapshot);
+  $("accept-note").value = "";
 }
 
 async function runRecommend() {
@@ -159,18 +253,38 @@ async function submitFeedback(payload) {
   }
 }
 
+function rankingSnapshotPayload() {
+  const snap = state.rankingSnapshot;
+  if (!snap) return undefined;
+  const payload = { ...snap };
+  Object.keys(payload).forEach((key) => {
+    if (payload[key] === null || payload[key] === undefined) delete payload[key];
+  });
+  return Object.keys(payload).length ? payload : undefined;
+}
+
 async function acceptRecommendation() {
   const rec = state.recommendation;
   if (!rec || rec.no_candidate || !rec.visual) {
     setStatus($("feedback-status"), "accept할 추천이 없습니다.", "err");
     return;
   }
+
+  const snapshot = state.rankingSnapshot || buildRankingSnapshot(rec.candidates || []);
+  const margin = snapshot.top1_top2_margin;
+  const acceptQuality =
+    selectedAcceptQuality() || inferDefaultAcceptQuality(margin);
+  const note = $("accept-note").value.trim();
+
   await submitFeedback({
     recommendation_id: rec.recommendation_id,
     input_title: currentTitle(),
     feedback_type: "accepted",
     system_recommended_visual: rec.visual,
     final_selected_visual: rec.visual,
+    accept_quality: acceptQuality,
+    ranking_confidence_note: note || undefined,
+    ranking_snapshot: rankingSnapshotPayload(),
   });
 }
 
@@ -188,6 +302,7 @@ async function recordNoCandidate() {
     final_selected_visual: null,
     override_reason: rec.no_candidate ? "catalog_gap" : undefined,
     user_note: rec.no_candidate ? "시스템 no_candidate 확인" : "추천은 있었으나 적합 후보 없음으로 기록",
+    ranking_snapshot: rankingSnapshotPayload(),
   });
 }
 
@@ -216,7 +331,20 @@ async function saveOverride() {
     final_selected_visual: finalVisual,
     override_reason: overrideReason,
     user_note: userNote || undefined,
+    ranking_snapshot: rankingSnapshotPayload(),
   });
+}
+
+function formatRecentMeta(row) {
+  const parts = [];
+  if (row.accept_quality) parts.push(`quality=${row.accept_quality}`);
+  if (row.ranking_confidence_note) parts.push(row.ranking_confidence_note);
+  if (row.top1_top2_margin !== undefined && row.top1_top2_margin !== null) {
+    parts.push(`margin=${row.top1_top2_margin}`);
+  }
+  if (row.override_reason) parts.push(row.override_reason);
+  if (row.user_note) parts.push(row.user_note);
+  return parts.filter(Boolean).join(" | ") || "—";
 }
 
 async function loadRecent() {
@@ -242,7 +370,7 @@ async function loadRecent() {
         row.input_title || "",
         row.feedback_type || "",
         `${visualDisplay(row.system_recommended_visual)} → ${visualDisplay(row.final_selected_visual)}`,
-        [row.override_reason, row.user_note].filter(Boolean).join(" | "),
+        formatRecentMeta(row),
       ];
       for (const text of cells) {
         const td = document.createElement("td");

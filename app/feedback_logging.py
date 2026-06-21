@@ -102,6 +102,9 @@ def build_feedback_log_entry(
     override_reason: str | None = None,
     user_note: str | None = None,
     accepted_system_recommendation: bool | None = None,
+    accept_quality: str | None = None,
+    ranking_confidence_note: str | None = None,
+    ranking_snapshot: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build one JSON object for a user feedback event (without timestamp)."""
     if feedback_type not in FEEDBACK_TYPES:
@@ -121,7 +124,7 @@ def build_feedback_log_entry(
     else:
         accepted = accepted_system_recommendation
 
-    return {
+    entry: dict[str, Any] = {
         "recommendation_id": recommendation_id,
         "input_title": input_title.strip(),
         "system_recommended_visual": system_visual,
@@ -131,6 +134,19 @@ def build_feedback_log_entry(
         "user_note": user_note if user_note else None,
         "accepted_system_recommendation": accepted,
     }
+
+    if feedback_type == "accepted":
+        if accept_quality:
+            entry["accept_quality"] = accept_quality
+        note = (ranking_confidence_note or "").strip()
+        entry["ranking_confidence_note"] = note or None
+
+    if ranking_snapshot:
+        for key, value in ranking_snapshot.items():
+            if value is not None:
+                entry[key] = value
+
+    return entry
 
 
 def append_feedback_log(
@@ -156,6 +172,9 @@ def log_user_feedback(
     override_reason: str | None = None,
     user_note: str | None = None,
     accepted_system_recommendation: bool | None = None,
+    accept_quality: str | None = None,
+    ranking_confidence_note: str | None = None,
+    ranking_snapshot: dict[str, Any] | None = None,
     log_path: Path | None = None,
 ) -> bool:
     """Record one user feedback event.
@@ -174,6 +193,9 @@ def log_user_feedback(
             override_reason=override_reason,
             user_note=user_note,
             accepted_system_recommendation=accepted_system_recommendation,
+            accept_quality=accept_quality,
+            ranking_confidence_note=ranking_confidence_note,
+            ranking_snapshot=ranking_snapshot,
         )
         body["timestamp"] = _utc_timestamp()
         append_feedback_log(body, log_path=log_path)

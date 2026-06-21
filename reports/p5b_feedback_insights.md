@@ -17,10 +17,12 @@ The four-class override taxonomy **captures live UI behavior** better than legac
 ## Gaps Observed
 
 - **Duplicate feedback on same recommendation_id:** 1 case(s). Users re-filed override memos when accepted lacked a note field (e.g. folder vs taxi at margin 0.001).
-- **Unstable accepts without user note:** 9/9 — silent low-confidence accepts.
+- **Unstable accepts without user note:** 1/1 — silent low-confidence accepts.
 - **Override used as ranking memo:** 1 override(s) where system visual matched final selection.
 
 ## Accepted Memo Feature
+
+**Status: implemented (schema v2).** UI accepts `accept_quality` + `ranking_confidence_note` on Accept; see `reports/p5b_feedback_schema_v2_plan.md`.
 
 **Recommendation: yes — pilot accepted memo / quality flag.**
 
@@ -58,7 +60,6 @@ Keep observation-first: analyzer computes classes today; persist only after poli
 ## Next Experiments
 
 - channel_vs_document boundary tests for reporting/전달 titles
-- raise tie-break weight or semantic bonus floor for unstable accepts
 
 ## Human Review Queue
 

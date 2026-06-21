@@ -6,7 +6,8 @@
 
 - **Total logs:** 28
 - **Override rate:** 25.0% (7/28)
-- **Unstable accept rate:** 69.2% (9/13 accepted)
+- **Unstable accept rate:** 7.7% (1/13 accepted)
+- **Unsure accept rate:** 61.5% (8 accepted)
 - **Ambiguity rate (margin ≤ 0.03):** 25.0%
 
 ## Overall Metrics
@@ -21,7 +22,8 @@
 ## Acceptance Metrics
 
 - stable_accept: **30.8%** (4)
-- unstable_accept: **69.2%** (9)
+- unstable_accept: **7.7%** (1)
+- unsure_accept: **61.5%** (8)
 - margin threshold: `0.03`
 
 ## Override Metrics
@@ -105,8 +107,8 @@
 | running_appointment | 1 | 100.0% | 100.0% | 0 | 0 |
 | training_session_attendance | 1 | 100.0% | 100.0% | 0 | 0 |
 | folder_organization | 2 | 50.0% | 100.0% | 1 | 1 |
-| document_reporting | 4 | 50.0% | 25.0% | 2 | 0 |
-| coding | 2 | 50.0% | 0.0% | 1 | 0 |
+| document_reporting | 4 | 50.0% | 25.0% | 0 | 0 |
+| coding | 2 | 50.0% | 0.0% | 0 | 0 |
 | document_review | 2 | 0.0% | 50.0% | 0 | 0 |
 | approval_request | 1 | 0.0% | 0.0% | 0 | 0 |
 | food_meeting | 1 | 0.0% | 0.0% | 0 | 0 |
@@ -120,11 +122,11 @@
 | 🧑‍🏫 | 1 | 0.0 | 100.0% | 0 |
 | 🏃 | 1 | 0.002 | 100.0% | 0 |
 | 📁 | 2 | 0.001 | 50.0% | 1 |
-| 🗣️ | 4 | 0.02 | 50.0% | 2 |
-| angle-brackets-solidus (blue) | 2 | 0.1 | 50.0% | 1 |
-| grid-rectangle-2x3 (green) | 1 | — | 0.0% | 1 |
-| 💰 | 1 | — | 0.0% | 1 |
-| 📌 | 1 | — | 0.0% | 1 |
+| 🗣️ | 4 | 0.02 | 50.0% | 0 |
+| angle-brackets-solidus (blue) | 2 | 0.1 | 50.0% | 0 |
+| grid-rectangle-2x3 (green) | 1 | — | 0.0% | 0 |
+| 💰 | 1 | — | 0.0% | 0 |
+| 📌 | 1 | — | 0.0% | 0 |
 | 📄 | 1 | 0.032 | 0.0% | 0 |
 
 ## Boundary Candidates
@@ -138,7 +140,6 @@
 
 ### Immediate
 
-- Review margin threshold / tie-break policy — unstable accepts exceed 20%.
 - Add metadata boost/penalty for near-tie pairs flagged as ranking_instability.
 - Catalog gap backlog: 8 no_candidate events.
 
